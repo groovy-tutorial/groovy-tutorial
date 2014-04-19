@@ -2,7 +2,7 @@
 
 Variables provide the basic "containers" into which values are stored for processing. As mentioned in [Data Types](), Groovy provides _dynamic typing_, freeing the programmer from having to explicitly declare a data type for a variable. This results in a variable's value being flexible enough to hold a changing value throughout the variable's lifespan.
 
-The programmer may chose to use _explicit types_ for some or all variables. This is likely to be a decision based on desired constraints and readability.
+The programmer may chose to use _explicit types_ (also referred to as _strong typing_) for some or all variables. This is likely to be a decision based on desired constraints and readability.
 
 ### Variable names
 Variable names must meet the following criteria:
@@ -31,10 +31,10 @@ Variables can be assigned a value at declaration:
     def myNumber = 1
     def myName = "Fred Nurk"
 
-A variable can be declared as being of a specific data type: 
+A variable can be declared as being of a specific data type. When using a type, drop the `def` keyword: 
  
-    def Integer myNum = 1
-    def String myName = "Fred nurk"
+    Integer myNum = 1
+    String myName = "Fred nurk"
 
 ### Dynamic Typing
 If a specific data type is not declared Groovy will handle the variable's data type. The table below illustrates Groovy's selection of a data type based on a value
@@ -57,7 +57,7 @@ If a specific data type is not declared Groovy will handle the variable's data t
 It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`. 
 
 ### The `null` Value
-Variables that are not assigned a value at declaration are provided a `null` value. This is a special reference that indicates the variable is devoid of a value.
+Variables that are not assigned a value at declaration are provided a `null` value by default. This is a special reference that indicates the variable is devoid of a value.
 
 Variables can be explicitly assigned `null`:
 

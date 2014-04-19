@@ -1,8 +1,14 @@
 # Table of contents
 
-[Preface](Preface.html.md)
+### [Front-matter](FrontMatter.html.md)
 
-[Introduction](Introduction.html.md)
+### [Preface](Preface.html.md)
+
+### [Introduction](Introduction.html.md)
+
+### [Useful references](References.html.md)
+
+### [Colophon](Colophon.html.md)
 
 ## Section 1. [A Tutorial Introduction](Section1.html.md) 
 
@@ -18,7 +24,6 @@
 2. [Strings and GStrings](Section2/Chapter2/Strings.html.md)
 4. [Lists and Collections](Section2/Chapter2/ListsCollections.html.md)
 5. [Constants](Section2/Chapter2/Constants.html.md)
-6. [Enums](Section2/Chapter2/Enums.html.md)
 5. [Arithmetic Operators](Section2/Chapter2/ArithmeticOperators.html.md)
 6. [Relational and Logical Operators](Section2/Chapter2/RelationalLogicalOperators.html.md)
 7. [Type Conversions](Section2/Chapter2/TypeConversions.html.md)
@@ -40,6 +45,12 @@
 6. [Summary](Section2/Chapter3/Summary.html.md)
 
 ### Chapter 4. Classes
+ 1.
+ 1.
+ 1.
+ 1.
+ 1. [The `with` method]()
+ 1. [The `?.` dereference operator]()
 
 ### Chapter 5. Closures
 
@@ -47,7 +58,9 @@
 
 ### Chapter 7. Input and Output
 
-### Chapter 8. Metaprogramming
+### Chapter 8. Builders and Templates
+
+### Chapter 9. Metaprogramming
 
 ## Section 3. [Key tools]
 1. [GroovyDoc](Section3/GroovyDoc.html.md)
