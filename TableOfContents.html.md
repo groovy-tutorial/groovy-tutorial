@@ -51,6 +51,7 @@
  1.
  1. [The `with` method]()
  1. [The `?.` dereference operator]()
+ 1. [`enum`]()
 
 ### Chapter 5. Closures
 
