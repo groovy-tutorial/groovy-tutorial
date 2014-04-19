@@ -1,8 +1,19 @@
 ## Variables
 
-Variables provide the basic "containers" into which values are stored for processing.
+Variables provide the basic "containers" into which values are stored for processing. As mentioned in [Data Types](), Groovy provides _dynamic typing_, freeing the programmer from having to explicitly declare a data type for a variable. This results in a variable's value being flexible enough to hold a changing value throughout the variable's lifespan.
 
-Groovy is a dynamically-typed language. This means that variables don't need to be declared as being of a specific data type.
+The programmer may chose to use _explicit types_ for some or all variables. This is likely to be a decision based on desired constraints and readability.
+
+### Variable names
+Variable names must meet the following criteria:
+
+ - Must start with a letter (upper-case [A-Z] or lower-case [a-z])
+   - The underscore (`_`) is also allowed but very strongly discouraged 
+ - Must only contain letters, digits (0-9) or an underscore (`_`)
+   - The dollar-sign (`$`) is also allowed but very strongly discouraged 
+ - Must not match a keyword (reserved word)
+ 
+The use of literate variable names that comply to the criteria is encouraged. For example, a variable named `x` provides little information as to its role whereas `accountNumber` is likely to be clear within the context of a broader system.
 
 ### Variable Declaration and Assignment
 
@@ -19,24 +30,35 @@ Variables can be assigned a value at declaration:
 
     def myNumber = 1
     def myName = "Fred Nurk"
-    
-Variables that are not assigned a value at declaration are provided a `null` value. This is a special reference that indicates the variable is devoid of a value.
 
 A variable can be declared as being of a specific data type: 
  
     def Integer myNum = 1
     def String myName = "Fred nurk"
 
-Groovy will convert values assigned to variables into the variable's declared data type. For example, the code below declares a variable of type "String" and then assigns it 3.14 (a number). The assertion that the variable remains of type "String" will succeed, indicating that `3.14` was converted to a String value by Groovy before being assigned to the `myName` variable.
+### Dynamic Typing
+If a specific data type is not declared Groovy will handle the variable's data type. The table below illustrates Groovy's selection of a data type based on a value
 
-    def String myName = "Fred nurk"
-    myName = 3.14
-    assert myName.class == java.lang.String
+|Value  |Assigned Type|
+|:------|:------------|
+|`true`|java.lang.Boolean|
+|`'a'`|java.lang.String|
+|`"This is a String"`|java.lang.String|
+|`"Hello ${Larry}"`|org.codehaus.groovy.runtime.GStringImpl|
+|`127`|java.lang.Integer|
+|`32767`|java.lang.Integer|
+|`2147483647`|java.lang.Integer|
+|`9223372036854775807`|java.lang.Long|
+|`92233720368547758070`|java.math.BigInteger|
+|`3.14`|java.math.BigDecimal|
+|`3.4028235E+38`|java.math.BigDecimal|
+|`1.7976931348623157E+308`|java.math.BigDecimal|
 
-Care must be taken to not rely totally on this automatic conversion. In the example below the assertion will fail as the `myPi` variable is declared as an `Integer` and the assignment drops the fractional component of `3.14`:
+It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`. 
 
-    def pi = 3.14
-    def Integer myPi = pi
-    assert myPi == pi
+### The `null` Value
+Variables that are not assigned a value at declaration are provided a `null` value. This is a special reference that indicates the variable is devoid of a value.
 
-Further discussion regarding type conversion please refer to [Type Conversions](TypeConversions).
+Variables can be explicitly assigned `null`:
+
+    def id = null

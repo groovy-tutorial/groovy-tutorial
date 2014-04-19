@@ -15,6 +15,7 @@
 ### Chapter 2. [Types, operators and expressions](Section2/Chapter2.html.md)
 2. [Data Types](Section2/Chapter2/DataTypes.html.md)
 1. [Variables](Section2/Chapter2/Variables.html.md)
+2. [Strings and GStrings](Section2/Chapter2/Strings.html.md)
 4. [Lists and Collections](Section2/Chapter2/ListsCollections.html.md)
 5. [Constants](Section2/Chapter2/Constants.html.md)
 6. [Enums](Section2/Chapter2/Enums.html.md)
