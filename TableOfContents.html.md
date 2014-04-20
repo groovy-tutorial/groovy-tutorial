@@ -22,14 +22,13 @@
 2. [Data Types](Section2/Chapter2/DataTypes.html.md)
 1. [Variables](Section2/Chapter2/Variables.html.md)
 2. [Strings and GStrings](Section2/Chapter2/Strings.html.md)
-4. [Lists and Collections](Section2/Chapter2/ListsCollections.html.md)
 5. [Constants](Section2/Chapter2/Constants.html.md)
-5. [Arithmetic Operators](Section2/Chapter2/ArithmeticOperators.html.md)
-6. [Relational and Logical Operators](Section2/Chapter2/RelationalLogicalOperators.html.md)
-7. [Type Conversions](Section2/Chapter2/TypeConversions.html.md)
-8. [Increment and Decrement Operators](Section2/Chapter2/IncrementDecrementOperators.html.md)
-9. [Bitwise Operators](Section2/Chapter2/BitwiseOperators.html.md)
-10. [Assignment Operators and Expressions](Section2/Chapter2/AssignmentOperatorsExpressions.html.md)
+6. [Operators](Section2/Chapter2/Operators.html.md)
+1. [Type Conversions](Operators/TypeConversions.html.md)
+3. [Ranges](Section2/Chapter2/Ranges.html.md)
+4. [Arrays](Section2/Chapter2/Arrays.html.md)
+5. [Lists](Section2/Chapter2/Lists.html.md)
+6. [Collections](Section2/Chapter2/Collections.html.md)
 11. [Conditional Expressions](Section2/Chapter2/ConditionalExpressions.html.md)
 12. [Precedence and Order of Evaluation](Section2/Chapter2/Precedence.html.md)
 13. [Summary](Section2/Chapter2/Summary.html.md)
@@ -45,10 +44,11 @@
 6. [Summary](Section2/Chapter3/Summary.html.md)
 
 ### Chapter 4. Classes
- 1.
- 1.
- 1.
- 1.
+ 1. [Introduction to Object-oriented Programming]()
+ 1. [Classes]()
+ 1. [Methods](Section2/Chapter4/Methods.html.md)
+ 1. [Inheritance]()
+ 1. [Interfaces]()
  1. [The `with` method]()
  1. [The `?.` dereference operator]()
  1. [`enum`]()
@@ -63,8 +63,11 @@
 
 ### Chapter 9. Metaprogramming
 
+### Chapter 10. Aspect-oriented programming
+
 ## Section 3. [Key tools]
 1. [GroovyDoc](Section3/GroovyDoc.html.md)
+2. [Gradle]((Section3/Gradle.html.md))
 
 
 
