@@ -35,6 +35,38 @@ A variable can be declared as being of a specific data type. When using a type, 
  
     Integer myNum = 1
     String myName = "Fred nurk"
+    
+### Assigning values
+Groovy provides a number of options that make assignment easier. In the first example a number of variables are declared and assigned a value in a single statement:
+
+    def number1 = 10, number2 = 20
+    
+    assert number1 == 10
+    assert number2 == 20
+
+The next code example is a copy of the previous example but the two variables are explicitly declared as Integers:
+
+    Integer number1 = 10, number2 = 20
+        
+    assert number1 == 10
+    assert number2 == 20
+
+A set of variables can be assigned values from a list:
+
+    def number1, number2
+    (number1, number2) = [10, 20]
+    
+    assert number1 == 10
+    assert number2 == 20
+    
+In the next example a third variable is introduced but the assignment list only provides two elements. This will result in `number1` and `number2` being set but `number3` remaining without a value (`null`):
+
+    def number1, number2, number3
+    (number1, number2, number3) = [10, 20]
+    
+    assert number1 == 10
+    assert number2 == 20
+    assert number3 == null
 
 ### Dynamic Typing
 If a specific data type is not declared Groovy will handle the variable's data type. The table below illustrates Groovy's selection of a data type based on a value

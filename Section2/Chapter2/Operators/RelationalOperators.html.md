@@ -32,7 +32,15 @@ Can we infer that Groovy is undertaking some sort of natural language processing
  * [TODO]
 
 ### Spaceship
-The spaceship operator
+The spaceship operator comes from the Perl programming language. 
+
+Expression|Result
+:--|:--:
+LHS less than RHS|-1
+LHS = RHS|0
+LHS greater than RHS|1
+
+The following assertions all resolve as true:
 
     assert 2 <=> 2 == 0
     assert 1 <=> 2 == -1

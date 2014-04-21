@@ -23,6 +23,7 @@
 1. [Variables](Section2/Chapter2/Variables.html.md)
 2. [Strings and GStrings](Section2/Chapter2/Strings.html.md)
 5. [Constants](Section2/Chapter2/Constants.html.md)
+6. [The `assert` statement](Section2/Chapter2/Assert.html.md)
 6. [Operators](Section2/Chapter2/Operators.html.md)
 1. [Type Conversions](Operators/TypeConversions.html.md)
 3. [Ranges](Section2/Chapter2/Ranges.html.md)
@@ -31,6 +32,7 @@
 6. [Collections](Section2/Chapter2/Collections.html.md)
 11. [Conditional Expressions](Section2/Chapter2/ConditionalExpressions.html.md)
 12. [Precedence and Order of Evaluation](Section2/Chapter2/Precedence.html.md)
+13. [Errors and Exceptions](Section2/Chapter2/ErrorsExceptions.html.md)
 13. [Summary](Section2/Chapter2/Summary.html.md)
 
 ### Chapter 3. [Control Flow](Section2/Chapter3.html.md)
@@ -59,15 +61,13 @@
 
 ### Chapter 7. Input and Output
 
-### Chapter 8. Builders and Templates
+### Chapter 8. Unit Testing
 
-### Chapter 9. Metaprogramming
+### Chapter 9. Builders and Templates
 
-### Chapter 10. Aspect-oriented programming
+### Chapter 10. Metaprogramming
 
-## Section 3. [Key tools]
-1. [GroovyDoc](Section3/GroovyDoc.html.md)
-2. [Gradle]((Section3/Gradle.html.md))
+
 
 
 
