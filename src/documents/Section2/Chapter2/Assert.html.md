@@ -1,4 +1,7 @@
-## The `assert` statement
+---
+title: "The assert statement"
+layout: "default"
+---
 
 The `assert` statement is perhaps out of order being described here but it will be relied on heavily in code examples.
 

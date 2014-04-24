@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>The Groovy 2 Handbook</title>
+	<%- @getBlock("meta").toHTML() %>
+	<%- @getBlock('styles').add(@site.styles).toHTML() %>
+
+</head>
+<body>
+	<!-- Menu -->
+<div class="navbar navbar-inverse navbar-fixed-top">
+<div class="container">
+<div class="navbar-header">
+<a class="navbar-brand" href="/">Grails 2 Handbook</a>
+</div>
+<div class="navbar-collapse collapse">
+<ul class="nav navbar-nav">
+<li class="active"><a href="/TableOfContents">Contents</a></li>
+</ul>
+</div><!--/.navbar-collapse -->
+</div>
+</div>
+
+		<div class="container">
+<!-- Content -->
+<section id="content" class="content">
+<h1><%= @document.title %></h1>
+<%- @content %>
+</section>
+
+<!-- Footer -->
+<footer>
+<p class="pull-left">&copy; Duncan Dickinson <%- (new Date()).getFullYear() %><br/>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/4.0/80x15.png" /></a>
+</p>
+<p class="pull-right">
+This website was last updated at <%= @site.date.toISOString() %>
+</p>
+</footer>
+</div><!-- /container -->
+
+<!-- scripts -->
+<%- @getBlock('scripts').add(@site.scripts).toHTML() %>
+</body>
+</html>

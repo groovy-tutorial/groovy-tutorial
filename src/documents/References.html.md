@@ -1,4 +1,7 @@
-# Useful References
+---
+title: "Useful References"
+layout: "default"
+---
 
 There's a number of useful references available for those wishing to delve into the world of Groovy. Whilst search engines can be handy the listing below is aimed at guiding you to pertinent resources.
 
