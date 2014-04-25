@@ -24,6 +24,28 @@
 <div class="container">
 <!-- Content -->
 <section id="content" class="content">
+
+<%= @book.getTitle() %>
+
+<ul>
+<% for chapter in @book.getChapterList(): %>
+     <li> <%- chapter %> 
+        <ul>
+            <% for entry in @book.getChapterToc(chapter): %>
+            <li> <%- entry %> </li>
+            <% end %>
+        </ul>
+     </li>
+     
+<% end %>
+</ul>
+
+<ul>
+<% for chapter in @book.getFrontMatterToc(): %>
+     <li> <%- chapter %> </li> 
+<% end %>
+</ul>
+
 <h1 class="page-header"><%= @document.title %></h1>
 <%- @content %>
 </section>
