@@ -1,0 +1,28 @@
+{
+    "name": "docpad-plugin-book",
+    "version": "2.0.1",
+    "description": "DocPad plugin that adds the ability to structure a book",
+    "homepage": "https://github.com/yourgithubusername/docpad-plugin-yourpluginname",
+    "keywords": [
+    ],
+    "author": "Duncan Dickinson <duncan@dickinson.name>",
+    "maintainers": [
+        "Duncan Dickinson <duncan@dickinson.name>"
+    ],
+    "contributors": [
+    ],
+    "bugs": {
+        "url": "https://github.com/yourgithubusername/docpad-plugin-yourpluginname/issues"
+    },
+    "repository" : {
+        "type": "git",
+        "url": "https://github.com/yourgithubusername/docpad-plugin-yourpluginname.git"
+    },
+    "engines" : {
+        "node": ">=0.8"
+    },
+    "peerDependencies": {
+        "docpad": "6"
+    },
+    "main": "./src/docpad-plugin-book.plugin.coffee"
+}

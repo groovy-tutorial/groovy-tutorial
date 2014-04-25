@@ -1,5 +1,7 @@
-## Arithmetic Operators
-
+---
+title: "Arithmetic Operators"
+layout: "default"
+---
 The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people.
 
 ### Additive Operators

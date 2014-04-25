@@ -3,7 +3,8 @@
 	<title>The Groovy 2 Handbook</title>
 	<%- @getBlock("meta").toHTML() %>
 	<%- @getBlock('styles').add(@site.styles).toHTML() %>
-
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 </head>
 <body>
 	<!-- Menu -->
@@ -20,10 +21,10 @@
 </div>
 </div>
 
-		<div class="container">
+<div class="container">
 <!-- Content -->
 <section id="content" class="content">
-<h1><%= @document.title %></h1>
+<h1 class="page-header"><%= @document.title %></h1>
 <%- @content %>
 </section>
 

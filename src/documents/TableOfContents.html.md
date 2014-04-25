@@ -34,6 +34,7 @@ layout: "default"
 11. [Conditional Expressions](Section2/Chapter2/ConditionalExpressions)
 12. [Precedence and Order of Evaluation](Section2/Chapter2/Precedence)
 13. [Errors and Exceptions](Section2/Chapter2/ErrorsExceptions)
+1.  [Regular Expressions](Section2/Chapter2/RegularExpressions)
 13. [Summary](Section2/Chapter2/Summary)
 
 ### Chapter 3. [Control Flow](Section2/Chapter3)
@@ -46,29 +47,22 @@ layout: "default"
 5. [Try, Catch and Finally](Section2/Chapter3/TryCatchFinally)
 6. [Summary](Section2/Chapter3/Summary)
 
-### Chapter 4. Classes
- 1. [Introduction to Object-oriented Programming]()
- 1. [Classes]()
- 1. [Methods](Section2/Chapter4/Methods)
- 1. [Inheritance]()
- 1. [Interfaces]()
- 1. [The `with` method]()
- 1. [The `?.` dereference operator]()
- 1. [`enum`]()
-<!--
-### Chapter 5. Closures
+### Chapter 4. Closures
 
-### Chapter 6. Regular Expressions
+### Chapter 5. Classes
+1. [Introduction to Object-oriented Programming]()
+1. [Classes]()
+1. [Methods](Section2/Chapter4/Methods)
+1. [Inheritance]()
+1. [Interfaces]()
+1. [The `with` method]()
+1. [The `?.` dereference operator]()
+1. [`enum`]()
 
-### Chapter 7. Input and Output
-
-### Chapter 8. Unit Testing
-
-### Chapter 9. Builders and Templates
-
-### Chapter 10. Metaprogramming
--->
-
+### Chapter 6. Input and Output
+1. [The Command Line]()
+1. [Files]()
+1. [Databases]()
 
 
 
