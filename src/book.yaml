@@ -1,0 +1,129 @@
+---
+title: The Groovy 2 Handbook
+info: 
+    edition: 0.0.1-DRAFT
+    abstract: An introductory text for budding Groovy developers
+    keywordset:
+        - groovy
+        - java
+        - programming
+        - language
+        - software
+        - development
+
+    legalnotice: 
+        title: CC-BY
+        para: This work is licensed under a Creative Commons Attribution 4.0 International License
+        href: 
+        mediaobject: 
+            alt: Creative Commons Attribution 4.0 International License
+            imageobjects:
+                - role: large
+                  fileref: http://i.creativecommons.org/l/by/4.0/88x31.png
+                - role: small
+                  fileref: http://i.creativecommons.org/l/by/4.0/80x15.png}
+
+    copyright:
+        year: 2014
+        holders:
+            - Duncan Dickinson
+        
+    authorgroup:
+        - author:
+            personname:
+                firstname: Duncan
+                surname: Dickinson
+verso:
+    fileref: /Verso
+    
+acknowledgements:
+    #paras:
+
+dedication:
+    #paras:
+
+toc:
+    fileref: /TOC
+
+preface:
+    fileref: /Preface
+    
+colophon:
+    fileref: /Colophon
+
+bibliography:
+    fileref: /Bibliography
+
+parts:
+    01:
+        fileref: /parts/01/
+        #chapters:
+    02:
+        fileref: /parts/02/
+        chapters:
+            01: 
+                fileref: /parts/02/chapters/01/
+                section_filerefs:
+                    - Introduction
+                    - StatementTermination
+                    - ReservedWords
+                    - Comments
+                
+            02:
+                fileref: /parts/02/chapters/02/
+                section_filerefs:
+                    - Introduction
+                    - Data Types
+                    - Variables
+                    - StringsAndGStrings
+                    - Constants
+                    - TheAssertStatement
+                    - Operators
+                    - TypeConversions
+                    - Ranges
+                    - Arrays
+                    - Lists
+                    - Collections
+                    - ConditionalExpressions
+                    - PrecedenceAndOrderOfEvaluation
+                    - ErrorsAndExceptions
+                    - RegularExpressions
+                    - Summary
+
+            03:
+                fileref: /parts/02/chapters/03/
+                section_filerefs:
+                    - StatementsAndBlocks
+                    - If-Else
+                    - Switch
+                    - Loops - While
+                    - Loops - For
+                    - Break and Continue
+                    - Try, Catch and Finally
+                    - Summary
+                
+            04:
+                fileref: /parts/02/chapters/04/
+                section_filerefs: 
+                    - Introduction
+                
+            05:
+                fileref: /parts/02/chapters/05/
+                section_filerefs:
+                    - Introduction
+                    - Classes
+                    - Methods
+                    - Inheritance
+                    - Interfaces
+                    - The with method
+                    - The ?. dereference operator
+                    - enum
+
+            06:
+                fileref: /parts/02/chapters/06/
+                section_filerefs: 
+                    - Introduction
+                    - The Command Line
+                    - Files
+                    - Databases
+...

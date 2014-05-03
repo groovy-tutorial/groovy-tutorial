@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>Comments</title>
+	<meta name="abstract" content="Comments are used to clarify sections of Groovy code. 
+Groovy supports two types of comments - single line and multi-line."/>
+</head>
+<body>
+
+<h1 id="title">Comments</h1>
+
+<p>Comments are used to clarify sections of Groovy code. 
+Groovy supports two types of comments - single line and multi-line. </p>
+
+<h2 id="single-linecomments">Single-line comments</h2>
+
+<p>A single-line comment is introduced with two forward slash characters <code>//</code>:</p>
+
+<pre><code class="groovy">//This is a single-line comment
+</code></pre>
+
+<p>Single-line comments can be appended to a Groovy statement:</p>
+
+<pre><code>def radius = 10
+def pi = 3.14 //This is not very precise
+def area = pi * (radius * radius)
+</code></pre>
+
+<h2 id="multi-linecomments">Multi-line comments</h2>
+
+<p>A multi-line comment is introduced by the characters <code>/*</code> and terminated with the characters <code>*/</code>. Generally, the <code>/*</code> and <code>*/</code> appear on their own line:</p>
+
+<pre><code>/*
+This is a multiline comment
+and here is the second line
+*/
+</code></pre>
+
+<p>Multi-line comments are most commonly formatted with an asterisk (<code>*</code>) on each line, aligned with the introductory asterisk as follows:</p>
+
+<pre><code>/*
+ * This is a multiline comment
+ * and here is the second line
+ */
+</code></pre>
+
+<p>Multi-line comments can be introduced and terminated on a single line:</p>
+
+<pre><code>/* This is a multiline comment on a single line */
+</code></pre>
+
+<p>Nesting within a multi-line comment is not possible, rendering the following code invalid:</p>
+
+<pre><code>/*
+ * Multi-line comments cannot 
+ * /* be nested */
+*/
+</code></pre>
+
+<h2 id="usagetoavoid">Usage to avoid</h2>
+
+<p>In a similar vein to single-line comments, multi-line comments can be appended to a statement. However, the single-line comment is generally more readable than the following example:</p>
+
+<pre><code>def radius = 10
+def pi = 3.14 /*This is not very precise*/
+def area = pi * (radius * radius)
+</code></pre>
+
+<p>Even less expected is a multi-line comment appended to a statement in the following manner:</p>
+
+<pre><code>def radius = 10
+def pi = 3.14 /*This is not very precise
+                and should really use java.lang.Math.PI
+              */
+def area = pi * (radius * radius)
+</code></pre>
+
+<p>In such a case the multi-line comment should appear above the statement being discussed:</p>
+
+<pre><code>def radius = 10
+/*
+ * This is not very precise
+ * and should really use java.lang.Math.PI
+*/
+def pi = 3.14 
+def area = pi * (radius * radius)    
+</code></pre>
+
+<p>Use of a comment within a statement should never be contemplated as it results in code that is hard to read:</p>
+
+<pre><code>def radius = 10
+def pi = 3.14
+def area = pi * /* I should find out how to square */ (radius * radius)
+</code></pre>
+
+</body>
+</html>

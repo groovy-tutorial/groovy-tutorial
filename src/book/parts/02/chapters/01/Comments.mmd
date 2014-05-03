@@ -1,11 +1,18 @@
-## Comments
+---
+Title:    Comments  
+Abstract: Comments are used to clarify sections of Groovy code. 
+          Groovy supports two types of comments - single line and multi-line.  
+...
+# [%Title]
 
-Comments are used to clarify sections of Groovy code. Groovy supports two types of comments - single line and multi-line. 
+[%Abstract] 
 
-### Single-line comments
+## Single-line comments
 A single-line comment is introduced with two forward slash characters `//`:
 
-    //This is a single-line comment
+```groovy
+//This is a single-line comment
+```
     
 Single-line comments can be appended to a Groovy statement:
 
@@ -13,7 +20,7 @@ Single-line comments can be appended to a Groovy statement:
     def pi = 3.14 //This is not very precise
     def area = pi * (radius * radius)
 
-### Multi-line comments
+## Multi-line comments
     
 A multi-line comment is introduced by the characters `/*` and terminated with the characters `*/`. Generally, the `/*` and `*/` appear on their own line:
 
@@ -40,7 +47,7 @@ Nesting within a multi-line comment is not possible, rendering the following cod
      * /* be nested */
     */
     
-### Usage to avoid    
+## Usage to avoid    
 In a similar vein to single-line comments, multi-line comments can be appended to a statement. However, the single-line comment is generally more readable than the following example:
 
     def radius = 10

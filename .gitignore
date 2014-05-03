@@ -3,3 +3,6 @@ node_modules/
 .idea
 .project
 .settings
+.gradle
+.classpath
+bak/
