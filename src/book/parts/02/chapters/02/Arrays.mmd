@@ -46,6 +46,40 @@ println myArray.length
 println myArray.size()
 ```
 
+Sort an array
+```groovy
+myArray.sort()
+println myArray
+```
+
+TODO: myArray.binarySearch
+
+Use closures
+```groovy
+myArray.each() {
+    println "Name: $it"
+}
+```
+
+### Copying arrays
+```java
+public static void arraycopy(Object src,
+                             int srcPos,
+                             Object dest,
+                             int destPos,
+                             int length)
+```
+
+The following code copies the whole array:
+```groovy
+System.arraycopy(myArray, 0, newArray, 0, newArray.length)
+println newArray
+```
+
+
+
+
+###
 `java.util.Arrays` has a number of 
 
 ## Multidimensional arrays
