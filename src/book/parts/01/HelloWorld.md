@@ -23,6 +23,7 @@ The Groovy Console should look something like the following screen grab:
 ![Groovy Console ](img/GroovyConsole.png)
 
 The main parts of the console are:
+
  1. The top half is the editor area for adding your Groovy scipt
  2. The bottom half is the output area that displays the results of your script
  3. The menu provides the standard tools for opening and saving files (`File`) and cut/copy/paste (`Edit`)
@@ -35,7 +36,7 @@ The main parts of the console are:
 Once you have the Groovy Console open, enter the following line in the editor area:
 
 ````
-print "hello, world"
+print 'hello, world'
 ````
 
 Once that's ready, go to the menu and select `Script -> Run` and you should see your output in the bottom half of the window something like the image below:
@@ -60,6 +61,7 @@ Hello.main();
 ```
 
 When I look at the code above I see why Groovy is so appealing to me:
+
  1. Groovy lets me focus on solving the problem and not working through so much decoration code.
  	* Groovy doesn't need semi-colons at the end of each statement
  	* Groovy essentially builds the `Hello` class around the script
@@ -72,11 +74,12 @@ Groovy gives us the brevity and flexibility of a scripting language (such as Pyt
 ## Going a little further
 Now that we can output something to the screen, let's try and make our example a little more personal. Clear the Groovy Console editor and enter the following:
 
-````
+````groovy
 println "hello, ${args[0]}"
 ````
 
 Before we try to run this, let's look at what's in the code:
+
  1. `print` has become `println` - this does the same thing as our previous use of `print` but adds a new line at the end of the output. 
  	* This makes the output easier to read when we're running on the command line
  2. Instead of the text `world` we're now using `${args[0]}`:
@@ -102,7 +105,7 @@ hello, Newman
 Of course you can change "Newman" to be any name so feel free to try out your name, the dog's name etc. However, make sure you add a name - your script needs that parameter or you'll see a disconcerting error.
 
 ### Compiling Groovy
-You can compile a Groovy script into a `class` file - the same type of file that Java developers compile their code into. The resulting `class` file is in bytecode format that can be read by the Java Virtual Machine (JVM). 
+You can compile a Groovy script into a `class` file - the same type of file that Java developers compile their code into. The resulting `class` file is in bytecode format that can be read by the Java Virtual Machine (JVM). Once compiled to bytecode, Groovy code can work on the same JVM that runs existing Java systems - this is extremely handy if you work in a Java-centric organisation but want to use Groovy.
 
 In order to compile `Hello.groovy` we will use the `groovyc` command in the command-prompt as follows:
 ````
@@ -118,6 +121,7 @@ groovy --classpath=. Hello Jerry
 You should see the output `hello, Jerry`.
 
 This uses the `groovy` command to run your compiled script but how?
+
  1. The `--classpath=.` parameter tells `groovy` to look for `.class` files in the current directory (denoted as `.`)
  2. 'Hello' is a little confusing until we remember that we named our script file `Hello.groovy`
  	1. When `groovyc` compiled our script it generated a class named `Hello` with a `main` method around our single line so that, behind the scenes, the code looked like the Java version discussed earlier
@@ -125,45 +129,11 @@ This uses the `groovy` command to run your compiled script but how?
 
 The call to `groovy` basically says "Run the main method in the Hello class and pass it Jerry as the parameter".
 
-### Running in Java
-_Note: This section gets complicated so have a try and see how you go. If you can't get it to work just move on and come back to it another time._
-
-At this point you could email a friend with the `Hello.groovy` file and they could run it using the `groovy` command. This would also let them read the file and "hack" it if they wanted. Alternatively you could email `hello.class` and they could use the `groovy` command but wouldn't be able to read it.[^If they were skilled then they could decompile to class file so this approach isn't as secure as you might assume]. In both cases your friend would need to have Groovy installed on their own machine.
-
-That last point is an important reason why Groovy and the other JVM-based languages are so useful. Our compiled `class` file can actually also be run using the standard Java application installed on so many PCs, laptops, servers etc. Using the `java` command, our friend could run our application but we need to send them two things:
- 1. Our `hello.class` file
- 2. A copy of a file containing the Groovy core and support modules.
-
-The second item is packaged as a `jar` (or *J*ava *AR*chive) and contains the set of essential compiled Groovy classes. We need this as Groovy, in compiling our script, relies on using its own library. Fortunately, you got a copy of this file when you installed Groovy. It's likely to be named something like `groovy-all-2.3.6.jar` and is stored in the `embeddable` directory of you Groovy installation. On most systems you can find it by running the following command in the command prompt:
-
-On Linux and OS X:
-````
-ls $GROOVY_HOME/embeddable
-````
-
-On Windows:
-````
-dir %GROOVY_HOME%/embeddable
-````
-
-If you're having no luck using the command prompt, try the search feature in your file browser or open the archive you downloaded to install Groovy. As a last-ditched effort try <http://search.maven.org/remotecontent?filepath=org/codehaus/groovy/groovy-all/2.3.6/groovy-all-2.3.6.jar> - just change the version number to match what you've installed.
-
-Once you've found the groovy-all jar file, *copy* it to the same directory in which you've saved `hello.class` and then run:
-
-````
-java -classpath groovy-all-2.3.6.jar:. Hello Kramer
-````
-
-This does much the same as our call to `groovy --classpath=. Hello Jerry` but the call to the `java` application requires us to tell Java where to find the groovy-all archive. Essentially, the `groovy` application sets this up for us and then calls `java`.
-
-If our friend has Java installed (they'd only need the JRE, not the JDK) then we could email them both `groovy-all-2.3.6.jar` and `hello.class` and tell them how to run our program. Well maybe this is OK for our fellow coders but it isn't something to email your nan.
-
 ## Moving on
 At this point we've done a few things:
+
  1. Opened the Groovy Console, written a very basic script and run it in the Groovy Console
  2. Personalised the script and run it on the command prompt, passing it a parameter
  3. Compiled the Groovy file into a bytecode `.class` file and run it
- 
-If the stars aligned then you may have also been able to run your `hello.class` file using the direct call to `java` but don't stress if that didn't work.
 
 Let's move onto writing some more useful Groovy.

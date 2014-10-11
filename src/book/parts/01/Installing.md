@@ -1,6 +1,6 @@
 ---
-Title:		Installing Groovy
-Abstract:	
+Title:		Installing Groovy  
+Abstract:	  
 ...
 # [%Title]
 
@@ -59,15 +59,18 @@ gvm install groovy 2.3.6
  
 ### Checking Groovy
 Once you have the JDK and Groovy installed, run the following command to double-check your Groovy version:
+
 ````
 groovy -v
 ````
 You should see something like the following output:
+
 ````
 Groovy Version: 2.3.6 JVM: 1.7.0_60 Vendor: Oracle Corporation OS: Mac OS X
 ````
 
 This tells me that I am running:
+
  * Groovy 2.3.6
  * The Oracle Java 7 JVM
  * The Mac OS X operating system
@@ -76,6 +79,7 @@ This tells me that I am running:
 The [GroovyDownload][] page provides binary and source releases for Groovy. These are perfectly fine to use but you'll need to setup your system path to get up and running.
 
 For those on Mac OS X you can also explore one of the following package manager options:
+
  * [MacPorts](https://www.macports.org/)
  * [Homebrew](http://brew.sh/)
 

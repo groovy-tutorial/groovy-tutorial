@@ -142,4 +142,19 @@ parts:
                 - The Command Line
                 - Files
                 - Databases
+        
+          07:
+            title: Chapter 7. Building larger programs
+            fileref: /parts/02/chapters/07/
+            section_filerefs: 
+                - Introduction
+                - Grapes
+                - Gradle
+        
+          08:
+            title: Chapter 8. Deploying your program
+            fileref: /parts/02/chapters/06/
+            section_filerefs: 
+                - Introduction
+                - Deploying Scripts
 ...
