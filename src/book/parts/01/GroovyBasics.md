@@ -75,23 +75,46 @@ println score.class
 
 You should see `class java.lang.Integer` displayed - basically it's telling you that `score` is an Integer (its full name is `java.lang.Integer`). If you change the variable to a value of a different data type you'll see the variable's data type also changes:
 
-````
+````groovy
 def score = 10
 println score.class
-score = "win!"
+score = 'win!'
 println score.class
 ````
 
 For most of this book I'll actively avoid using explicit data types as I'd like you to get used to dynamic typing. However, it's useful to know what's happening "under the hood", especially when you start working with existing Java libraries.
 
-### Arrays and sets
-Arrays contain . 
+### Strings
+It's useful to understand how Groovy treats strings as this can affect the efficiency of your program. There are a two main ways in which you can declare a string: using single or double quotes
 
+Using single quotes (`'...'`): these are fixed strings and tell Groovy that the string is as we've written it (e.g. `def pet = 'dog'`)
+
+Using double quotes (`"..."`): these are called GStrings and let us interpolate (insert) variables into our string. In order to have Groovy insert the value of a variable we use the `$` symbol in front of the variable name - as you can see with `$pet` below:
+
+````groovy
+def pet = 'dog'  
+println "I own a $pet"
 ````
+
+Working with basic strings is fine but if you need to build up a large piece of text throughout a program they can become very inefficient. We'll look into this at a later point.
+
+### Lists and sets
+List variables contain several items and are declared using square brackets (`[...]`). 
+
+````groovy
 def temperatures = [10, 5, 8, 3, 6]
 ````
 
-Sets are much like arrays but each element in a set is unique
+In the temperatures example the list contains just numbers but Groovy lists can contain a mix of data types:
+
+````groovy
+def mixed = [1, true, 'rabbit', 3.14]
+println mixed[2]
+````
+
+In the example above you'll notice I've printed out `mixed[2]` - the list item with index 2. Somewhat confusingly this causes `rabbit` to be displayed. This is because lists are zero-based and the first item is at index 0, not index 1. Where we use `mixed[2]` we're asking for the third item in the list.
+
+Sets are much like arrays but each element in a set is unique:
 
 ````
 def names = ['sally', 'bob', 'sally', 'jane'] as Set
@@ -101,15 +124,20 @@ println names
 If you try the code above you'll get `[sally, bob, jane]` - the set just ignores the repeated element.
 
 ### Maps
+Maps allow us to build up a type of look-up table using keys and values. Each key is unique and points to a value in the map. In the example below we see the start of a basic periodic table:
 
 ````
-def chemicals = ['h': 'hydrogen',
+def periodic = ['h': 'hydrogen',
                  'he': 'helium', 
                  'li': 'lithium']
                  
-println chemicals['li']
-println chemicals.li
+println periodic['li']
+println periodic.li
 ````
+
+You should also note that we can access map items using the key in square brackets (`[]`), much as we did with lists: `println periodic['li']`. We can also use the period (`.`) followed by the key: `println periodic.li`. I prefer the latter but sometimes you need to use square brackets if you're using a key that's a reserved word[^reswords].
+
+[^reswords]: Reserved words have meaning to Groovy and can't be used in the wrong place (such as a variable name). For more information, see the [list of reserved words](../02/chapters/01/ReservedWords)
 
 ## Expressions and operators
 ### Arithmetic operators
@@ -145,4 +173,26 @@ println 10 + 2 * 3  // = 16
 ````
 
 ### Assignment and comparison
-Using Groovy as a calculator is perhaps a little underwhelming. If we can capture the results of an expression then we can use it in further processing.
+Using Groovy as a calculator is perhaps a little underwhelming. If we can capture the results of an expression then we can use it in further processing. In the example below I add up four numbers and store the result in the `total` variable. I then divide `total` by 4 to determine the `average`. Lastly, I print the value of `average`:
+
+````groovy
+def total = 2 + 7 + 4 + 3
+def average = total / 4
+println average
+````
+
+The code above works just fine but what if `total` was the sum of more (or less) that four numbers? This would result in the `average` being wrong. Instead of writing such a fixed program I could put my list of numbers into a list called `scores` by using `def scores = [2, 7, 4, 3]`. 
+
+At first glance this might sound useful as I could add more numbers to the `scores` list but I'd need a way to determine how many items are stored in my `scores` list. Luckily, the list has a method called `size` that will tell me how many items are in the `scores` list. Furthermore, lists also have a handy `sum` method that will return to us the sum of all of the list items. 
+
+Let's take a look at how I've changed my previous code to work a little smarter:
+
+````groovy
+def scores = [2, 7, 4, 3]
+def total = scores.sum()
+def average = total / scores.size()
+println average
+````
+
+Whilst the code above is reasonably simple, it shows us that we can use variables and methods to make our code more versatile. The numbers in the `scores` variable can change and we can add or remove list items but the calculation will handle this. Let's look at methods a bit more to find out what they are and how they help.
+
