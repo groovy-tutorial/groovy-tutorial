@@ -60,14 +60,52 @@ parts:
     title: Introduction
     fileref: /parts/00
   01:
-    title: A Tutorial Introduction
-    fileref: /parts/01/
-    section_filerefs:
-      - Installing
-      - SomeBasicGroovy
+    title: The Groovy Tutorials
+    chapters:
+        01:
+            title: Trail 1. Get started
+            fileref: /parts/01/chapters/Trail_01_GetStarted/
+            section_filerefs: 
+                - 01_Installing
+                - 02_HelloWorld
+                - 03_GroovyBasics
+                - 04_Conditionals
+                - 05_Loops
+                - 06_UsingObjects
+                - 07_ImportingLibraries
+                - 08_Annotations
+        02:
+            title: Trail 2. Methods and closures
+            fileref: /parts/01/chapters/Trail_02_MethodsClosures/
+            section_filerefs: 
+                - 01_Introduction
+                - 02_Methods
+                - 03_Closures
+        03:
+            title: Trail 3. Objects
+            fileref: /parts/01/chapters/Trail_03_Objects/
+            section_filerefs: 
+                - 01_Introduction
+        04:
+            title: Trail 4. Files
+            fileref: /parts/01/chapters/Trail_04_Files/
+            section_filerefs: 
+                - 01_Introduction
+        05:
+            title: Trail 5. Databases
+            fileref: /parts/01/chapters/Trail_01_GetStarted/
+            section_filerefs: 
+                - 01_Introduction
+                - 02_Basics
+        06:
+            title: Trail 6. Building larger programs
+            fileref: /parts/01/chapters/Trail_06_LargerPrograms/
+            section_filerefs: 
+                - 01_Introduction
+                - 02_DeployingScripts
+                - 03_GradleBasics
   02:
-      title: Language Guide
-      fileref: /parts/02/
+      title: Groovy Language Guide
       chapters:
           01: 
             title: Chapter 1. The basics
@@ -102,7 +140,7 @@ parts:
                 - Summary
 
           03:
-            title: Chapter 3.  
+            title: Chapter 3. Program Flow 
             fileref: /parts/02/chapters/03/
             section_filerefs:
                 - StatementsAndBlocks
@@ -142,19 +180,9 @@ parts:
                 - The Command Line
                 - Files
                 - Databases
-        
-          07:
-            title: Chapter 7. Building larger programs
-            fileref: /parts/02/chapters/07/
-            section_filerefs: 
-                - Introduction
-                - Grapes
-                - Gradle
-        
-          08:
-            title: Chapter 8. Deploying your program
-            fileref: /parts/02/chapters/06/
-            section_filerefs: 
-                - Introduction
-                - Deploying Scripts
+  03:
+      title: The Groovy API
+      
+  04:
+      title: JDK Extensions        
 ...
