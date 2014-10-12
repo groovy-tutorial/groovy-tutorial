@@ -56,10 +56,9 @@ bibliography:
   fileref: /Bibliography
 
 parts:
-  00:
-    title: Introduction
-    fileref: /parts/00
   01:
+    title: Introduction
+  02:
     title: The Groovy Tutorials
     chapters:
         01:
@@ -104,7 +103,7 @@ parts:
                 - 01_Introduction
                 - 02_DeployingScripts
                 - 03_GradleBasics
-  02:
+  03:
       title: Groovy Language Guide
       chapters:
           01: 

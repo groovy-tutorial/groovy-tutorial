@@ -1,10 +1,14 @@
 ---
-title: "Arithmetic Operators"
-layout: "default"
----
+Title:		Arithmetic Operators  
+Abstract:	
+...
+# [%Title]
+
+[%Abstract] 
+
 The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people.
 
-### Additive Operators
+## Additive Operators
 |Operator|Name   |
 |:------:|:------|
 |+       |Plus   |
@@ -23,7 +27,7 @@ The `+` operator can also be used to concatenate two strings:
 
     String mySentence = 'This is a game ' + 'of two halves'
 
-### Multiplicative Operators
+## Multiplicative Operators
 
 |Operator|Name     |
 |:------:|:--------|
@@ -39,7 +43,17 @@ Multiplicative operators are left-associative:
 
     assert 10 * 6 / 2 == 30
 
-### Precedence
+## The Power operator
+
+The power operator (`**`) is used to raise a number to the power of  the second number:
+
+````groovy
+assert 5**3 == 125
+````
+
+This is a handy shortcut to using `java.lang.Math.pow(5, 3)`
+
+## Precedence
 Multiplicative operators have precedence over additive operators. 
 
     assert 10 - 1 * 10 == 0
@@ -75,4 +89,5 @@ $$x = {-b \pm \sqrt{b^2-4ac} \over 2a}$$
     x = ((-1 * b) + Math.sqrt((b * b) - (4 * a * c))) / (2 * a)
     assert x == -0.2
     
-_Note: The solution given above is not a complete implementation of the equation - it is provided for demonstration purposes ony._
+_Note: The solution given above is not a complete implementation of the equation - it is provided for demonstration purposes only._
+
