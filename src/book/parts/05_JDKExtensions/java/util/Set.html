@@ -1,0 +1,440 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>Set (Groovy JDK enhancements)</title>
+    
+    <link rel="stylesheet" type="text/css" href="../../stylesheet.css" title="Style">
+    <script type="text/javascript">
+        function windowTitle() {
+            parent.document.title = document.title;
+        }
+    </script>
+</head>
+
+<body class="center" onload="windowTitle();">
+
+    <!-- ========== START OF NAVBAR ========== -->
+    <a name="navbar_top"><!-- --></a>
+
+    <div class="topNav">
+        <ul class="navList" title="Navigation">
+            <li><a href="../../overview-summary.html">Overview</a></li>
+            <li><a href="package-summary.html">Package</a></li>
+            <li class="navBarCell1Rev">Class</li>
+            <li><a href="../../index-all.html">Index</a></li>
+        </ul>
+    </div>
+
+    <!-- =========== END OF NAVBAR =========== -->
+
+    <!-- ======== START OF class DATA ======== -->
+
+    <div class="header">
+        <div class="subTitle">Package: <strong>java.util</strong></div>
+        <h2>Interface Set</h2>
+    </div>
+
+    <div class="contentContainer">
+
+    <!-- ========== METHOD SUMMARY =========== -->
+
+        <a name="method_summary"><!-- --></a>
+
+        <div class="summary">
+            <ul class="blockList">
+                <li class="blockList">
+                    <ul class="blockList">
+                        <li class="blockList">
+                            <h3>Methods Summary</h3>
+                            <table border="0" cellpadding="3" cellspacing="0" class="overviewSummary">
+                               <caption><span>Methods</span><span class="tabEnd">&nbsp;</span></caption>
+                                <tbody>
+                                    <tr>
+                                        <th>Return type</th>
+                                        <th>Name and parameters</th>
+                                    </tr>
+                                    
+                                    <tr class="altColor">
+                                        <td align="right" valign="top" width="1%">
+                                            <span> <code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a></code></span>
+                                        </td>
+                                        <td>
+                                            <code><strong><a href="#asImmutable()">asImmutable</a></strong>()</code>
+                                            <br>
+                                            A convenience method for creating an immutable list.
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr class="rawColor">
+                                        <td align="right" valign="top" width="1%">
+                                            <span> <code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a></code></span>
+                                        </td>
+                                        <td>
+                                            <code><strong><a href="#asSynchronized()">asSynchronized</a></strong>()</code>
+                                            <br>
+                                            A convenience method for creating a synchronized Set.
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr class="altColor">
+                                        <td align="right" valign="top" width="1%">
+                                            <span> <code>boolean</code></span>
+                                        </td>
+                                        <td>
+                                            <code><strong><a href="#equals(java.util.Set)">equals</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> other)</code>
+                                            <br>
+                                            Compare the contents of two Sets for equality using Groovy's coercion rules.
+
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr class="rawColor">
+                                        <td align="right" valign="top" width="1%">
+                                            <span> <code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a></code></span>
+                                        </td>
+                                        <td>
+                                            <code><strong><a href="#minus(java.lang.Iterable)">minus</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html" title="Class in java.lang">Iterable</a> removeMe)</code>
+                                            <br>
+                                            Create a Set composed of the elements of the first Set minus the
+elements from the given Iterable.
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr class="altColor">
+                                        <td align="right" valign="top" width="1%">
+                                            <span> <code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a></code></span>
+                                        </td>
+                                        <td>
+                                            <code><strong><a href="#minus(java.lang.Object)">minus</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html" title="Class in java.lang">Object</a> removeMe)</code>
+                                            <br>
+                                            Create a Set composed of the elements of the first Set minus the given element.
+                                        </td>
+                                    </tr>
+                                    
+                                    <tr class="rawColor">
+                                        <td align="right" valign="top" width="1%">
+                                            <span> <code><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a></code></span>
+                                        </td>
+                                        <td>
+                                            <code><strong><a href="#minus(java.util.Collection)">minus</a></strong>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html" title="Class in java.util">Collection</a> removeMe)</code>
+                                            <br>
+                                            Create a Set composed of the elements of the first Set minus the
+elements of the given Collection.
+                                        </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                        </li>
+                        
+                        <ul class="blockList">
+                            <li class="blockList">
+                            <h4>Methods inherited from interface java.util.<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html" title="Class in java.util">Collection</a></h4>
+                                <p>
+                                    <code><strong><a href="../../java/util/Collection.html#addAll(java.lang.Object[])">addAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#asBoolean()">asBoolean</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#asImmutable()">asImmutable</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#asSynchronized()">asSynchronized</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#asType(java.lang.Class)">asType</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#collect()">collect</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#collect(groovy.lang.Closure)">collect</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#collect(java.util.Collection, groovy.lang.Closure)">collect</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#collectAll(groovy.lang.Closure)">collectAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#collectAll(java.util.Collection, groovy.lang.Closure)">collectAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#collectNested(groovy.lang.Closure)">collectNested</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#containsAll(java.lang.Object[])">containsAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#disjoint(java.util.Collection)">disjoint</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#eachPermutation(groovy.lang.Closure)">eachPermutation</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#find()">find</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#find(groovy.lang.Closure)">find</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#findAll()">findAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#findAll(groovy.lang.Closure)">findAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#findResult(groovy.lang.Closure)">findResult</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#findResult(java.lang.Object, groovy.lang.Closure)">findResult</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#flatten()">flatten</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#flatten(groovy.lang.Closure)">flatten</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#getAt(java.lang.String)">getAt</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#grep()">grep</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#grep(java.lang.Object)">grep</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#groupBy(java.util.List)">groupBy</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#inject(groovy.lang.Closure)">inject</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#inject(java.lang.Object, groovy.lang.Closure)">inject</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#intersect(java.util.Collection)">intersect</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#isCase(java.lang.Object)">isCase</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#leftShift(java.lang.Object)">leftShift</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#multiply(java.lang.Number)">multiply</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#plus(java.lang.Iterable)">plus</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#plus(java.lang.Object)">plus</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#plus(java.util.Collection)">plus</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#removeAll(groovy.lang.Closure)">removeAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#removeAll(java.lang.Object[])">removeAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#retainAll(groovy.lang.Closure)">retainAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#retainAll(java.lang.Object[])">retainAll</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#sort(groovy.lang.Closure)">sort</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#split(groovy.lang.Closure)">split</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#toList()">toList</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#toListString()">toListString</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#toListString(int)">toListString</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#toSet()">toSet</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#unique()">unique</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#unique(boolean)">unique</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#unique(boolean, groovy.lang.Closure)">unique</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#unique(boolean, java.util.Comparator)">unique</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#unique(groovy.lang.Closure)">unique</a></strong></code>, <code><strong><a href="../../java/util/Collection.html#unique(java.util.Comparator)">unique</a></strong></code>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                        <ul class="blockList">
+                            <li class="blockList">
+                            <h4>Methods inherited from interface java.lang.<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html" title="Class in java.lang">Iterable</a></h4>
+                                <p>
+                                    <code><strong><a href="../../java/lang/Iterable.html#any(groovy.lang.Closure)">any</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#asList()">asList</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectEntries()">collectEntries</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectEntries(groovy.lang.Closure)">collectEntries</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectEntries(java.util.Map)">collectEntries</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectEntries(java.util.Map, groovy.lang.Closure)">collectEntries</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectMany(groovy.lang.Closure)">collectMany</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectMany(java.util.Collection, groovy.lang.Closure)">collectMany</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectNested(groovy.lang.Closure)">collectNested</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#collectNested(java.util.Collection, groovy.lang.Closure)">collectNested</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#combinations()">combinations</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#combinations(groovy.lang.Closure)">combinations</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#count(groovy.lang.Closure)">count</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#count(java.lang.Object)">count</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#countBy(groovy.lang.Closure)">countBy</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#drop(int)">drop</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#dropWhile(groovy.lang.Closure)">dropWhile</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#each(groovy.lang.Closure)">each</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#eachCombination(groovy.lang.Closure)">eachCombination</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#eachWithIndex(groovy.lang.Closure)">eachWithIndex</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#every(groovy.lang.Closure)">every</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#findResults(groovy.lang.Closure)">findResults</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#first()">first</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#flatten()">flatten</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#flatten(groovy.lang.Closure)">flatten</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#getAt(int)">getAt</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#groupBy(groovy.lang.Closure)">groupBy</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#groupBy(java.lang.Object)">groupBy</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#groupBy(java.util.List)">groupBy</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#join(java.lang.String)">join</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#last()">last</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#max()">max</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#max(groovy.lang.Closure)">max</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#max(java.util.Comparator)">max</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#min()">min</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#min(groovy.lang.Closure)">min</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#min(java.util.Comparator)">min</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sort()">sort</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sort(boolean)">sort</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sort(boolean, groovy.lang.Closure)">sort</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sort(boolean, java.util.Comparator)">sort</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sort(groovy.lang.Closure)">sort</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sum()">sum</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sum(groovy.lang.Closure)">sum</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sum(java.lang.Object)">sum</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#sum(java.lang.Object, groovy.lang.Closure)">sum</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#take(int)">take</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#takeWhile(groovy.lang.Closure)">takeWhile</a></strong></code>, <code><strong><a href="../../java/lang/Iterable.html#toList()">toList</a></strong></code>
+                                </p>
+                            </li>
+                        </ul>
+                        
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    <!-- ============ METHOD DETAIL ========== -->
+
+    <a name="method_detail"><!-- --></a>
+
+
+        <div class="details">
+            <ul class="blockList">
+                <li class="blockList">
+                    <ul class="blockList">
+                        <li class="blockList">
+                            <h3>Methods Detail</h3>
+
+                            
+                            <a name="asImmutable()"><!-- --></a>
+
+                            <ul class="blockListLast">
+                                <li class="blockList">
+
+                                    <h4>public <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> <b>asImmutable</b>()</h4>
+
+                                    <p>A convenience method for creating an immutable list.</p>
+
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Returns:</b></dt>
+                                        <dd>an immutable Set</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Since:</b></dt>
+                                        <dd>1.0</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>See Also:</b></dt>
+                                        
+                                        <dd><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#unmodifiableSet(java.util.Set)" title="Class in java.util">Collections#unmodifiableSet(java.util.Set)</a></dd>
+                                        
+                                    </dl>
+                                    
+
+                                </li>
+                            </ul>
+
+                            
+                            <a name="asSynchronized()"><!-- --></a>
+
+                            <ul class="blockListLast">
+                                <li class="blockList">
+
+                                    <h4>public <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> <b>asSynchronized</b>()</h4>
+
+                                    <p>A convenience method for creating a synchronized Set.</p>
+
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Returns:</b></dt>
+                                        <dd>a synchronized Set</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Since:</b></dt>
+                                        <dd>1.0</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>See Also:</b></dt>
+                                        
+                                        <dd><a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collections.html#synchronizedSet(java.util.Set)" title="Class in java.util">Collections#synchronizedSet(java.util.Set)</a></dd>
+                                        
+                                    </dl>
+                                    
+
+                                </li>
+                            </ul>
+
+                            
+                            <a name="equals(java.util.Set)"><!-- --></a>
+
+                            <ul class="blockListLast">
+                                <li class="blockList">
+
+                                    <h4>public boolean <b>equals</b>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> other)</h4>
+
+                                    <p>Compare the contents of two Sets for equality using Groovy's coercion rules.
+<p>
+Returns <tt>true</tt> if the two sets have the same size, and every member
+of the specified set is contained in this set (or equivalently, every member
+of this set is contained in the specified set).
+If numbers exist in the sets, then they are compared as numbers,
+for example 2 == 2L.  If both sets are <code>null</code>, the result
+is true; otherwise if either set is <code>null</code>, the result
+is <code>false</code>. Example usage:
+<pre class="groovyTestCase">
+Set s1 = ["a", 2]
+def s2 = [2, 'a'] as Set
+Set s3 = [3, 'a']
+def s4 = [2.0, 'a'] as Set
+def s5 = [2L, 'a'] as Set
+assert s1.equals(s2)
+assert !s1.equals(s3)
+assert s1.equals(s4)
+assert s1.equals(s5)</pre></p>
+
+                                    
+                                    <dl>
+                                        <dt><b>Parameters:</b></dt>
+                                        
+                                        <dd><code>other</code> -  the Set being compared to</dd>
+                                        
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Returns:</b></dt>
+                                        <dd><tt>true</tt> if the contents of both sets are identical</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Since:</b></dt>
+                                        <dd>1.8.0</dd>
+                                    </dl>
+                                    
+
+                                    
+
+                                </li>
+                            </ul>
+
+                            
+                            <a name="minus(java.lang.Iterable)"><!-- --></a>
+
+                            <ul class="blockListLast">
+                                <li class="blockList">
+
+                                    <h4>public <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> <b>minus</b>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Iterable.html" title="Class in java.lang">Iterable</a> removeMe)</h4>
+
+                                    <p>Create a Set composed of the elements of the first Set minus the
+elements from the given Iterable.</p>
+
+                                    
+                                    <dl>
+                                        <dt><b>Parameters:</b></dt>
+                                        
+                                        <dd><code>removeMe</code> -  the items to remove from the Set</dd>
+                                        
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Returns:</b></dt>
+                                        <dd>the resulting Set</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Since:</b></dt>
+                                        <dd>1.8.7</dd>
+                                    </dl>
+                                    
+
+                                    
+
+                                </li>
+                            </ul>
+
+                            
+                            <a name="minus(java.lang.Object)"><!-- --></a>
+
+                            <ul class="blockListLast">
+                                <li class="blockList">
+
+                                    <h4>public <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> <b>minus</b>(<a href="http://docs.oracle.com/javase/7/docs/api/java/lang/Object.html" title="Class in java.lang">Object</a> removeMe)</h4>
+
+                                    <p>Create a Set composed of the elements of the first Set minus the given element.</p>
+
+                                    
+                                    <dl>
+                                        <dt><b>Parameters:</b></dt>
+                                        
+                                        <dd><code>removeMe</code> -  the element to remove from the Set</dd>
+                                        
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Returns:</b></dt>
+                                        <dd>the resulting Set</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Since:</b></dt>
+                                        <dd>1.5.0</dd>
+                                    </dl>
+                                    
+
+                                    
+
+                                </li>
+                            </ul>
+
+                            
+                            <a name="minus(java.util.Collection)"><!-- --></a>
+
+                            <ul class="blockListLast">
+                                <li class="blockList">
+
+                                    <h4>public <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Set.html" title="Class in java.util">Set</a> <b>minus</b>(<a href="http://docs.oracle.com/javase/7/docs/api/java/util/Collection.html" title="Class in java.util">Collection</a> removeMe)</h4>
+
+                                    <p>Create a Set composed of the elements of the first Set minus the
+elements of the given Collection.</p>
+
+                                    
+                                    <dl>
+                                        <dt><b>Parameters:</b></dt>
+                                        
+                                        <dd><code>removeMe</code> -  the items to remove from the Set</dd>
+                                        
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Returns:</b></dt>
+                                        <dd>the resulting Set</dd>
+                                    </dl>
+                                    
+
+                                    
+                                    <dl>
+                                        <dt><b>Since:</b></dt>
+                                        <dd>1.5.0</dd>
+                                    </dl>
+                                    
+
+                                    
+
+                                </li>
+                            </ul>
+
+                            
+
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- ========= END OF class DATA ========= -->
+
+    <!-- ======= START OF BOTTOM NAVBAR ====== -->
+    <a name="navbar_bottom"><!-- --></a>
+    <a href="#skip-navbar_bottom" title="Skip navigation links"></a>
+
+    <div class="topNav">
+        <ul class="navList" title="Navigation">
+            <li><a href="../../overview-summary.html">Overview</a></li>
+            <li><a href="package-summary.html">Package</a></li>
+            <li class="navBarCell1Rev">Class</li>
+            <li><a href="../../index-all.html">Index</a></li>
+        </ul>
+    </div>
+    <!-- =========== END OF NAVBAR =========== -->
+
+</body>
+</html>

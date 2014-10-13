@@ -17,6 +17,4 @@ The following libraries are imported into Groovy by default:
 - `groovy.lang.*`
 - `groovy.util.*`
 
-Since Groovy 2.3, those running on Java 7 (or later) also have automatic access to `java.nio.*`
-
 Scripts are able to make use of classes within these packages without explicitly importing them.

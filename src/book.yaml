@@ -179,9 +179,9 @@ parts:
                 - The Command Line
                 - Files
                 - Databases
-  03:
+  04:
       title: The Groovy API
       
-  04:
+  05:
       title: JDK Extensions        
 ...
