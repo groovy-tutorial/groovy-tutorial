@@ -14,7 +14,7 @@ There are a few methods for installing Groovy on your system and this section wi
 | Java JDK		|	7
 | Groovy		|	2.3
 
-_Note: It is notoriously difficult to provide this type of information in a stable manner as versions are upgraded and URLs broken. The [GroovyDownload][] page is the primary resource to return to if the links below appear to be broken._
+_Note: It is notoriously difficult to provide this type of information in a stable manner as versions are upgraded and URLs broken. The [Groovy Download][] page is the primary resource to return to if the links below appear to be broken._
 
 ## Install a Java Virtual Machine
 All methods for installing Groovy require that you have a Java Virtual Machine (JVM) installed. For the purposes of this book we'll use the Java 7 SE JDK (Java 7 Standard Edition Development Kit)[^You'll notice that Java 7 may also be represented as Java 1.7 - the former is the Java Platform version number (7) and the latter is the version string (1.7)]. 
@@ -45,22 +45,27 @@ Once you have the JDK and Groovy installed you should see the GroovyConsole appl
 The Groovy enVironment Manager (GVM) is the best tool for getting Groovy running on your system. The GVM homepage is <http://gvmtool.net/> but you don't need to visit it to run an installation. 
 
 If you are comfortable with using the terminal then you just need to run the following command as a regular user[^curl]:
-```
+
+```bash
 curl -s get.gvmtool.net | bash
 ```
-Once `vvm` has been installed, run the following command to determine which versions go Groovy are available:
-```
+
+Once the `gvm` has been installed, run the following command to determine which versions go Groovy are available:
+
+```bash
 gvm list groovy
 ```
+
 You'll see a large table of version numbers but are most interested in those marked with 2.3.x - you'll want the version with the highest value of x (e.g. 2.3.6). To install Groovy you now just call `gvm` as below:
-```
+
+```bash
 gvm install groovy 2.3.6
 ``` 
  
 ### Checking Groovy
 Once you have the JDK and Groovy installed, run the following command to double-check your Groovy version:
 
-````
+````bash
 groovy -v
 ````
 You should see something like the following output:
@@ -83,8 +88,10 @@ For those on Mac OS X you can also explore one of the following package manager 
  * [MacPorts](https://www.macports.org/)
  * [Homebrew](http://brew.sh/)
 
-Linux users may find Groovy packages in their distribution's package repository.
+Linux users may find Groovy packages in their distribution's package repository but check the version being installed.
 
 [JDK]: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html "Oracle JDK Downloads"
+
+[GroovyDownload]:	http://groovy.codehaus.org/Download "Groovy Download"
+
 [^curl]: The `curl` command line tool is used for transferring data. It's very likely that your Linux distribution's package manager (`yum`, `apt-get` etc) includes a copy of cURL but if it doesn't, visit <http://curl.haxx.se/> to download it.
-[GroovyDownload]: http://groovy.codehaus.org/Download "Groovy Download"

@@ -17,4 +17,4 @@ The following libraries are imported into Groovy by default:
 - `groovy.lang.*`
 - `groovy.util.*`
 
-Scripts are able to make use of classes within these packages without explicitly importing them.
+Groovy score is able to make use of classes within these packages without explicitly importing them.

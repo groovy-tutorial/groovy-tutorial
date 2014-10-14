@@ -1,33 +1,13 @@
 ---
-Title:		Groovy Basics  
-Abstract:	Let's get started with some Groovy essentials. In this section we'll look at language elements that 
+Title:		Variables  
+Abstract:	 
 ...
 # [%Title]
 
 [%Abstract] 
 
-## Comments
-Comments don't actually perform any action - they're used to help you describe what's going on to other programmers reading your code. In the code example below we add a small comment to describe what's going on:
 
-````
-//This displays a well-known bit of text
-println "hello, world"
-````
-
-The `//` indicates to Groovy that everything after is a comment and not code. For longer comments that span several lines the comment will start with `/*` and finish with `*/`. In the example below you can this being used but note that the `*` at the start of each line is customary and used to make the comment more readable.
-
-````
-/*
- * The history of the 'hello, world' example is a long and interesting one.
- * blah blah blah
- * blah blah blah
- */
-println "hello, world"
-````
-
-You'll see various comments used in the coming examples.
-
-## Variables and data types
+## Variables
 Variables are (perhaps unsurprisingly), items that can change. Essentially it is a "slot" that can hold a value. Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
 
 ````
@@ -84,19 +64,7 @@ println score.class
 
 For most of this book I'll actively avoid using explicit data types as I'd like you to get used to dynamic typing. However, it's useful to know what's happening "under the hood", especially when you start working with existing Java libraries.
 
-### Strings
-It's useful to understand how Groovy treats strings as this can affect the efficiency of your program. There are a two main ways in which you can declare a string: using single or double quotes
 
-Using single quotes (`'...'`): these are fixed strings and tell Groovy that the string is as we've written it (e.g. `def pet = 'dog'`)
-
-Using double quotes (`"..."`): these are called GStrings and let us interpolate (insert) variables into our string. In order to have Groovy insert the value of a variable we use the `$` symbol in front of the variable name - as you can see with `$pet` below:
-
-````groovy
-def pet = 'dog'  
-println "I own a $pet"
-````
-
-Working with basic strings is fine but if you need to build up a large piece of text throughout a program they can become very inefficient. We'll look into this at a later point.
 
 ### Lists and sets
 List variables contain several items and are declared using square brackets (`[...]`). 

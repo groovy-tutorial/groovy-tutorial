@@ -1,5 +1,5 @@
 ---
-Title:      Arays
+Title:      Arrays
 Abstract:   
 ...
 # [%Title]

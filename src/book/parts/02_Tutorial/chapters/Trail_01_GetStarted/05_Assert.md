@@ -1,6 +1,10 @@
 ---
-Title: "The assert statement"
+Title:	The assert statement
+Abstract:	  
 ...
+# [%Title]
+
+[%Abstract] 
 
 The `assert` statement is perhaps out of order being described here but it will be relied on heavily in code examples.
 
