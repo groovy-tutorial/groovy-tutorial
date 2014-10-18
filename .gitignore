@@ -6,3 +6,5 @@ node_modules/
 .gradle
 .classpath
 bak/
+/build/
+/bin/

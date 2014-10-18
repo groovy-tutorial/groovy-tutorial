@@ -1,54 +1,27 @@
-// This build script uses snakeyaml for load YAML settings about database for Querydsl.
-import org.yaml.snakeyaml.Yaml
-buildscript {
-  repositories {
-	mavenCentral()
-  }
-  dependencies {
-	classpath group: 'org.yaml', name: 'snakeyaml', version: '1.10'
-  }
-}
-
 apply plugin: 'eclipse'
+apply plugin: 'groovy'
+apply plugin: 'application'
 
+mainClassName = 'name.dickinson.duncan.book.util.Loader'
 
 project.ext {
-	srcBookDir = 'src/book/'
-	srcHtmlAssets = 'src/assets/html/'
-	bookConfig = 'src/book.yaml'
+	srcBookDir = 'src/main/resources/book'
+	srcAssets = 'src/main/resources/assets'
+	bookConfig = 'src/main/resources/book.yaml'
 }
 
-task clean << {
-	println 'Default Cleaning!'
+repositories { mavenCentral() }
+dependencies {
+	compile group: 'org.yaml', name: 'snakeyaml', version: '1.10'
+	compile 'org.codehaus.groovy:groovy-all:2.3.7'
 }
 
-task loadBookTree << {
-	project.ext.bookTree = fileTree(project.srcBookDir).include('**/*.mmd')
-}
 
-task listMmdFiles(dependsOn: loadBookTree)<< {
-	project.bookTree.each {File file ->
-		println file
-	}
-}
 
-task mmdHtml << {
-	
-}
 
-task multimarkdown(type:Exec) {
-	executable = 'multimarkdown' 
-    args = ['-v']
-}
 
-task loadBookConfig << {
-	def input = new FileInputStream(project.bookConfig)
-	Yaml yaml = new Yaml();
-	project.ext.bookConfigYaml = yaml.load(input)
-}
 
-task buildHtmlSnippets(dependsOn: loadBookConfig) << {
-	println project.bookConfigYaml
-}
+
+
 
 

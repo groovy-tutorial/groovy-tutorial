@@ -1,6 +1,6 @@
 ---
-title: The Groovy 2 Handbook
-info: 
+bookinfo: 
+  title: The Groovy 2 Handbook
   edition: 0.0.1-DRAFT
   abstract: An introductory text for budding Groovy developers
   keywordset:
@@ -30,9 +30,7 @@ info:
           personname:
               firstname: Duncan
               surname: Dickinson
-verso:
-  fileref: /Verso
-  generate: Yes  
+  
 acknowledgements:
   paras:
     - Java is a registered trademark of Oracle and/or its affiliates. 
@@ -41,9 +39,6 @@ acknowledgements:
 dedication:
   paras:
     - To ...
-
-toc:
-  fileref: /TOC
 
 prefaces: 
   - fileref: /Foreword
@@ -63,125 +58,29 @@ parts:
     chapters:
         01:
             title: Trail 1. Get started
-            fileref: /parts/01/chapters/Trail_01_GetStarted/
-            section_filerefs: 
-                - 01_Installing
-                - 02_HelloWorld
-                - 03_GroovyBasics
-                - 04_Conditionals
-                - 05_Loops
-                - 06_UsingObjects
-                - 07_ImportingLibraries
-                - 08_Annotations
         02:
             title: Trail 2. Methods and closures
-            fileref: /parts/01/chapters/Trail_02_MethodsClosures/
-            section_filerefs: 
-                - 01_Introduction
-                - 02_Methods
-                - 03_Closures
         03:
             title: Trail 3. Objects
-            fileref: /parts/01/chapters/Trail_03_Objects/
-            section_filerefs: 
-                - 01_Introduction
         04:
             title: Trail 4. Files
-            fileref: /parts/01/chapters/Trail_04_Files/
-            section_filerefs: 
-                - 01_Introduction
         05:
             title: Trail 5. Databases
-            fileref: /parts/01/chapters/Trail_01_GetStarted/
-            section_filerefs: 
-                - 01_Introduction
-                - 02_Basics
         06:
             title: Trail 6. Building larger programs
-            fileref: /parts/01/chapters/Trail_06_LargerPrograms/
-            section_filerefs: 
-                - 01_Introduction
-                - 02_DeployingScripts
-                - 03_GradleBasics
   03:
       title: Groovy Language Guide
       chapters:
           01: 
-            title: Chapter 1. The basics
-            fileref: /parts/02/chapters/01/
-            section_filerefs:
-                - Introduction
-                - StatementTermination
-                - ReservedWords
-                - Comments
-                - BuiltIn
-                
+            title: Chapter 1. The basics                
           02:
             title: Chapter 2. Types, operators and expressions
-            fileref: /parts/02/chapters/02/
-            section_filerefs:
-                - Introduction
-                - DataTypes
-                - Variables
-                - StringsAndGStrings
-                - Constants
-                - TheAssertStatement
-                - Operators
-                - TypeConversions
-                - Ranges
-                - Arrays
-                - Lists
-                - Collections
-                - ConditionalExpressions
-                - PrecedenceAndOrderOfEvaluation
-                - ErrorsAndExceptions
-                - RegularExpressions
-                - Summary
-
           03:
             title: Chapter 3. Program Flow 
-            fileref: /parts/02/chapters/03/
-            section_filerefs:
-                - StatementsAndBlocks
-                - If-Else
-                - Switch
-                - Loops - While
-                - Loops - For
-                - Break and Continue
-                - Try, Catch and Finally
-                - Summary
-                
           04:
-            title: Chapter 4. Closures
-            fileref: /parts/02/chapters/04/
-            section_filerefs: 
-                - Introduction
-                
+            title: Chapter 4. Closures   
           05:
             title: Chapter 5. Object-oriented programming
-            fileref: /parts/02/chapters/05/
-            section_filerefs:
-                - Introduction
-                - Classes
-                - Methods
-                - Inheritance
-                - Interfaces
-                - Key Object Methods
-                - The ?. dereference operator
-                - Expando
-                - enum
-
           06:
-            title: Chapter 6. Input and Output
-            fileref: /parts/02/chapters/06/
-            section_filerefs: 
-                - Introduction
-                - The Command Line
-                - Files
-                - Databases
-  04:
-      title: The Groovy API
-      
-  05:
-      title: JDK Extensions        
+            title: Chapter 6. Input and Output  
 ...
