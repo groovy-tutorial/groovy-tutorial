@@ -14,12 +14,9 @@ repositories { mavenCentral() }
 dependencies {
 	compile group: 'org.yaml', name: 'snakeyaml', version: '1.10'
 	compile 'org.codehaus.groovy:groovy-all:2.3.7'
+	compile gradleApi()
+	compile localGroovy()
 }
-
-
-
-
-
 
 
 

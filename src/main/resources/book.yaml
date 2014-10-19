@@ -2,7 +2,7 @@
 bookinfo: 
   title: The Groovy 2 Handbook
   edition: 0.0.1-DRAFT
-  abstract: An introductory text for budding Groovy developers
+  description: An introductory text for budding Groovy developers
   keywordset:
       - groovy
       - java
@@ -10,77 +10,45 @@ bookinfo:
       - language
       - software
       - development
-  legalnotice: 
-      title: CC-BY
-      para: This work is licensed under a Creative Commons Attribution 4.0 International License
-      href: 
-      mediaobject: 
-          alt: Creative Commons Attribution 4.0 International License
-          imageobjects:
-              - role: large
-                fileref: http://i.creativecommons.org/l/by/4.0/88x31.png
-              - role: small
-                fileref: http://i.creativecommons.org/l/by/4.0/80x15.png}
+  legalnotices:
+    - title: Licence (CC-BY)
+      paras: 
+        - This work is licensed under a Creative Commons Attribution 4.0 International License
+      href: http://creativecommons.org/licenses/by/4.0/
+    - title: Trademarks
+      paras: 
+        - Java is a registered trademark of Oracle and/or its affiliates. 
   copyright:
-      year: 2014
+      years: 
+        - 2014
       holders:
-          - Duncan Dickinson 
+        - Duncan Dickinson 
   authorgroup:
-      - author:
-          personname:
-              firstname: Duncan
-              surname: Dickinson
-  
-acknowledgements:
-  paras:
-    - Java is a registered trademark of Oracle and/or its affiliates. 
-    - Other names may be trademarks of their respective owners. 
+      - {firstname: Duncan, surname: Dickinson}
+
 
 dedication:
-  paras:
-    - To ...
-
-prefaces: 
-  - fileref: /Foreword
-  - fileref: /Introduction
+  fileref: /dedication
     
 colophon:
-  fileref: /Colophon
-
-bibliography:
-  fileref: /Bibliography
+  fileref: /colophon
 
 parts:
-  01:
-    title: Introduction
-  02:
-    title: The Groovy Tutorials
+  - title: Introduction
+  - title: The Groovy Tutorials
     chapters:
-        01:
-            title: Trail 1. Get started
-        02:
-            title: Trail 2. Methods and closures
-        03:
-            title: Trail 3. Objects
-        04:
-            title: Trail 4. Files
-        05:
-            title: Trail 5. Databases
-        06:
-            title: Trail 6. Building larger programs
-  03:
-      title: Groovy Language Guide
-      chapters:
-          01: 
-            title: Chapter 1. The basics                
-          02:
-            title: Chapter 2. Types, operators and expressions
-          03:
-            title: Chapter 3. Program Flow 
-          04:
-            title: Chapter 4. Closures   
-          05:
-            title: Chapter 5. Object-oriented programming
-          06:
-            title: Chapter 6. Input and Output  
+        - title: Trail 1. Get started
+        - title: Trail 2. Methods and closures
+        - title: Trail 3. Objects
+        - title: Trail 4. Files
+        - title: Trail 5. Databases
+        - title: Trail 6. Building larger programs
+  - title: Groovy Language Guide
+    chapters:
+        - title: Chapter 1. The basics       
+        - title: Chapter 2. Types, operators and expressions
+        - title: Chapter 3. Program Flow
+        - title: Chapter 4. Closures
+        - title: Chapter 5. Object-oriented programming
+        - title: Chapter 6. Input and Output
 ...
