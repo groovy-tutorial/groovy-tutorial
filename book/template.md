@@ -1,6 +1,6 @@
 ---
-Title:		
-Abstract:	
+Title: 
+Abstract: 
 ...
 # [%Title]
 

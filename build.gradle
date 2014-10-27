@@ -5,15 +5,15 @@ apply plugin: 'application'
 mainClassName = 'name.dickinson.duncan.book.util.Loader'
 
 project.ext {
-	srcBookDir = 'src/main/resources/book'
-	srcAssets = 'src/main/resources/assets'
-	bookConfig = 'src/main/resources/book.yaml'
+	srcBookDir = 'book'
+	srcAssets = 'book/assets'
+	bookConfig = 'book/book.yaml'
 }
 
 repositories { mavenCentral() }
 dependencies {
 	compile group: 'org.yaml', name: 'snakeyaml', version: '1.10'
-	compile 'org.codehaus.groovy:groovy-all:2.3.7'
+	//compile 'org.codehaus.groovy:groovy-all:2.3.7'
 	compile gradleApi()
 	compile localGroovy()
 }

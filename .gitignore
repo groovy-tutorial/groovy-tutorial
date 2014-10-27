@@ -8,3 +8,5 @@ node_modules/
 bak/
 /build/
 /bin/
+/.nb-gradle/private/
+.nb-gradle
