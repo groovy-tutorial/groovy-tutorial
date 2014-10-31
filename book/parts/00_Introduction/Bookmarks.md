@@ -1,12 +1,8 @@
----
-Title:		Handy bookmarks  
-Abstract:	Between Groovy and Java there's a lot of useful websites - this is a few key ones you'll want to have in your browser.
-...
-# [%Title]
+## Bookmarks
 
-[%Abstract] 
+Between Groovy and Java there's a lot of useful websites - this is a few key ones you'll want to have in your browser.
 
-Key Groovy pages:
+### Key Groovy pages
 
   1. [Groovy homepage](http://groovy.codehaus.org/)
   2. [The new Groovy homepage (beta)](http://beta.groovy-lang.org/)

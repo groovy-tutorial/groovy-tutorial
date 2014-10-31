@@ -1,0 +1,28 @@
+--- 
+title: The Groovy 2 Tutorial
+edition: 0.0.1-DRAFT
+description: An introductory text for budding Groovy developers
+keywordset:
+  - groovy
+  - java
+  - programming
+  - language
+  - software
+  - development
+legalnotices:
+- title: Licence (CC-BY)
+  paras: 
+    - This work is licensed under a Creative Commons Attribution 4.0 International License
+  href: http://creativecommons.org/licenses/by/4.0/
+- title: Trademarks
+  paras: 
+    - Java is a registered trademark of Oracle and/or its affiliates. 
+copyright:
+  years: 
+    - 2014
+  holders:
+    - Duncan Dickinson 
+authorgroup:
+  - firstname: Duncan
+    surname: Dickinson
+...

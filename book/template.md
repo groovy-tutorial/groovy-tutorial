@@ -1,7 +1,0 @@
----
-Title: 
-Abstract: 
-...
-# [%Title]
-
-[%Abstract] 
