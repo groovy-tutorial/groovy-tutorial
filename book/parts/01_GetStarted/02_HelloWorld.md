@@ -1,15 +1,10 @@
 ---
-Title:  Your first lines of Groovy
-Abstract:  It has become a tradition (maybe an unwritten law) that the first lines of code that you write in a new language are to output the line `hello, world`. So let's start up the Groovy Console and get going.
-Base Header Level: 2
+Title:	Your first lines of Groovy
+Abstract:	It has become a tradition (maybe an unwritten law) that the first lines of code that you write in a new language are to output the line `hello, world`. So let's start up the Groovy Console and get going.
 ---
 
-# [%Title]
-[%Abstract] 
-
 # Starting with the console
-The Groovy Console provides a handy environment for preparing and testing basic Groovy scripts. In order to 
-open the console you need to start a command line (or terminal) session and enter the following command:
+The Groovy Console provides a handy environment for preparing and testing basic Groovy scripts. In order to open the console you need to start a command line (or terminal) session and enter the following command:
 
 ````bash
 groovyConsole
@@ -51,17 +46,11 @@ If you see the output `hello, world` then congratulations - you've taken your fi
 # Examining the script 
 Our first Groovy script is very simple: it uses the `print` method (function) to output the string `hello world` to the console.
 
-For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" code such that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
+For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
 
-```java
-class Hello {
-    public static void main(String[] args) {
-        System.out.print("hello, world");
-    }
-}
-
-Hello.main();
-```
+<code-snippet url="src/hello.groovy">
+	<figcaption>A Java version of "Hello, World"</figcaption>
+</code-snippet>
 
 When I look at the code above I see why Groovy is so appealing to me:
 
@@ -93,9 +82,10 @@ Before we try to run this, let's look at what's in the code:
 
 Don't worry if this appears to be a big jump from our `hello, world` - there's a range of concepts being introduced and we'll work through them in this tutorial section. For now, put the code into your Groovy Console and know that, when run, your script will say hello to a specified person.
     
-You now need to save your script so go to the `File` menu and select `Save`. When prompted, name the file `hello.groovy` and save it into a directory you can access. 
+You now need to save your script so go to the `File` menu and select `Save`. When prompted, name the file `Hello.groovy` and save it into a directory you can access. 
 
-Unfortunately we can't run this script in the Groovy Console as it doesn't provide an option for passing in a parameter. Follow this process to run the script:
+Unfortunately we can't run this script in the Groovy Console as it doesn't provide an option for passing in a command-line parameter. Follow this process to run the script:
+
  1. Open a command prompt (terminal) and change to the directory (`cd`) into which you saved `Hello.groovy`.
  2. Type the command `groovy Hello.groovy Newman` and press the `return` key
 
@@ -113,10 +103,10 @@ You can compile a Groovy script into a `class` file - the same type of file that
 In order to compile `Hello.groovy` we will use the `groovyc` command in the command-prompt as follows:
 
 ````
-groovyc Hello.groovy
+groovyc hello.groovy
 ````
 
-When you look at the directory contents you should now see a file named `hello.class`. Don't try to read the contents of the file - it's now in bytecode.
+When you look at the directory contents you should now see a file named `Hello.class`. Don't try to read the contents of the file - it's now in bytecode.
 
 In order to run your new application you enter the following command:
 
@@ -130,7 +120,7 @@ This uses the `groovy` command to run your compiled script but how?
 
  1. The `--classpath=.` parameter tells `groovy` to look for `.class` files in the current directory (denoted as `.`)
  2. 'Hello' is a little confusing until we remember that we named our script file `Hello.groovy`
-     1. When `groovyc` compiled our script it generated a class named `Hello` with a `main` method around our single line so that, behind the scenes, the code looked like the Java version discussed earlier
+     - When `groovyc` compiled our script it generated a class named `Hello` with a `main` method around our single line so that, behind the scenes, the code turned into something like the Java version discussed earlier
  3. And `Jerry` is the name of the person we're greeting
 
 The call to `groovy` basically says "Run the main method in the Hello class and pass it Jerry as the parameter".
