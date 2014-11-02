@@ -19,6 +19,7 @@ Abstract:
 |`<<`   `>>`   `>>>`   `~`<br/>   `&` `|` `^`	| Bitwise Operators
 |`+=`  `-=`  `*=`  `/=`  `&=`  &#124;=<br/> \
 `^=`  `%=`  `<<=`  `>>=`  `>>>=`	| The Compound Assignment Operators
+| `?.`	| Safe Navigation Operator
 
 
 ## Order of operations
