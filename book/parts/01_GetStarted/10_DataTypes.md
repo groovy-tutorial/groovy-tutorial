@@ -4,7 +4,6 @@ Abstract:
 ...
 
 #Data types
-Groovy allows you to create and use variables without declaring a data type - often called _dynamic typing_. Java, on the other hand, uses _static typing_ and you need to tell Java the data type you want to use when declaring a variable. Once again, Groovy is flexible and lets you use dynamic or static typing (or both) in your programs.
 
 Groovy does not preclude the programmer from explicitly declaring a data type, particularly when it would be pertinent to constrain the values being managed. Furthermore, knowledge of data types is very useful for a number of reasons:
 
