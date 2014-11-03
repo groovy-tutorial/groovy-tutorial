@@ -77,23 +77,181 @@ The code above is very poorly behaved - it modifies `list` by adding a new item.
 
 >Deep down in the computer, `scores` and `list` are names that point to the same piece of memory. Understanding how programming languages handle memory is an extremely important part of programming. I don't really cover it in this tutorial but start by looking up "memory management" in wikipedia.
 
-## Multiple parameters
-
-## Default values for parameters
-
 ## Declaring data types for parameters
 
 > As methods create your Application Programming Interface (API), it can be called by other people's code and they could be using another JVM language (such as Java). It can make their life a little easier if you indicate the data types your expecting for your parameters. Alternatively, you can stay true to dynamic typing and let people know through your documentation.
 
+## Multiple parameters
+
+```groovy
+def callFriend(name, phone, message) {
+    println "Dialling $name on $phone"
+    println "Hi, $name - $message"
+}
+```
+
+Either of these calls would work:
+
+```groovy
+callFriend('Barry', '0400 123 456', 'Did you see that local sporting team?')
+
+callFriend 'Alex', '07 3344 0000', 'Could you please check on my pets whilst I\'m away?'
+```
+
+## Default Values for Parameters
+
+
+```groovy
+def displayMessage (message, title = 'Important message:', border = true) {
+
+    def borderText = ''
+    
+    if (border) {
+         borderText = '-----------------------------------------------------------'
+    }
+
+    println """\
+    $borderText
+    $title
+    \t $message
+    $borderText
+    """
+}
+```
+
+The `displayMethod` can be called in a number of ways:
+
+* `displayMessage 'Preparing to shut down. Please save your work'` - 
+* `displayMessage 'The system appears to have crashed', 'Error!'`
+* `displayMessage 'Be prepared for the happiness patrol', 'Public announcement:', false` 
+
+## Named Arguments
+
+You can 
+
+```groovy
+def displayMessage (options, message) {
+
+    def borderText = ''    
+    if (options.border || ! options.containsKey(border)) {
+         borderText = '-----------------------------------------------------------'
+    }
+    
+    if (!options.title) {
+         options.title = 'Important message:'
+    }
+
+    println """\
+    $borderText
+    $options.title
+    \t $message
+    $borderText
+    """
+}
+```
+
+* `displayMessage(title: 'Canberra', border: true, 'The capital of Australia')`
+* `displayMessage title: 'Time', "It is now ${new Date()}"`
+* `displayMessage border: false, 'Hang in there little buddy!'`
+
+## Variable Arguments (Varargs)
+
+There are times where we want to . One such method is to use an array for a catch-all parameter 
+
+```groovy
+buyGroceries 'The Corner Store', ['apples', 'cat food', 'cream']
+
+def buyGroceries(store, items) {
+    println "I'm off to $store to buy:"
+    for (item in items) {
+        println "  -$item"
+    }
+}
+```
+
+
+
+Groovy supports the use of variable arguments using the "three-dot" (`...`) notation for the last (and only the last) parameter:
+
+```groovy
+buyGroceries 'apples', 'cat food', 'cream'
+
+def buyGroceries(... items) {
+    for (item in items) {
+        println item
+    }
+}
+```
+
+We can set a specific data type for the `items` parameter by placing the type before the `...`:
+
+```groovy
+def buyGroceries(String... items) {
+    for (item in items) {
+        println item
+    }
+}
+```
+
+
+
+```groovy
+buyGroceries 'The Corner Store', 'apples', 'cat food', 'cream'
+
+def buyGroceries(store, ... items) {
+    println "I'm off to $store to buy:"
+    for (item in items) {
+        println "  -$item"
+    }
+}
+```
+
+Putting a parameter after the variable arguments parameter doesn't make a great deal of sense as it'd be tricky to work out where `items` finished. So, even if `def buyGroceries(store, ...items, travelTime)` was legitimate (and it isn't) I'd suggest that readability is lost and `travelTime` should appear before `items`. Alternatively, using an array for `items` would solve the problem.
+
 # Return value
 
 ```groovy
-Number determineAverage(List<Number> list) { 
-    return  list.sum() / list.size()
+println determineAverage(10, 20, 30, 40)
+
+def determineAverage(... list) { 
+    return list.sum() / list.size()
+}
+```
+
+Using the `return` reserved word isn't required as Groovy will return the result of the last statement:
+
+```groovy
+println determineAverage(10, 20, 30, 40)
+
+def determineAverage(... list) { 
+    list.sum() / list.size()
+}
+```
+
+A method can use `return` at different points of a method. This allows you to exit a method at an arbitrary point 
+
+<!-- example of return to just exit -->
+
+You can also return a value:
+
+```groovy
+def isEven(num) {
+    if (num % 2 == 0) {
+        return true
+    }
+    return false
 }
 ```
 
 ## Declaring data types for return values
+
+```groovy
+println determineAverage(10, 20, 30, 40)
+
+Number determineAverage(... list) { 
+    return list.sum() / list.size()
+}
+```
 
 # Variable scope
 
