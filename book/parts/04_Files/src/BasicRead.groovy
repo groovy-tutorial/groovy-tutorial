@@ -10,8 +10,8 @@ import java.nio.file.Files
 import java.nio.file.Paths
 import java.nio.file.Path
 
-//Load the `sampledir` path as an absolute path
-def path = Paths.get("sampledir/poem/snowyriver.txt").toAbsolutePath()
+//Load the `sampledir` path as a relative path
+def path = Paths.get("sampledir/poem/snowyriver.txt")
 
 //We can check if the path exists using `Files.notExists`
 if (Files.notExists(path)) {
