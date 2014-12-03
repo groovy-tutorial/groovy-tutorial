@@ -1,6 +1,6 @@
 ---
 Title:	Data types  
-Abstract:	
+Description:	
 ...
 
 #Data types
@@ -98,5 +98,5 @@ Groovy will convert values assigned to variables into the variable's declared da
 Care must be taken to not rely totally on this automatic conversion. In the example below the assertion will fail as the `myPi` variable is declared as an `Integer` and the assignment drops the fractional component of `3.14`:
 
     def pi = 3.14
-    def Integer myPi = pi
+    Integer myPi = pi
     assert myPi == pi

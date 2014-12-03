@@ -5,9 +5,7 @@ Description:	Handling file I/O (Input/Output) is a "bread and butter" task for p
 
 Java originally shipped a library (`java.io`) for handling input and output from elements such as files, network resources and devices. A new library, called NIO (`java.nio`), was released in Java 1.4 and extended in Java 7. This later extension is usually referred to as NIO.2 but you'll find these classes in the `java.nio` packages.
 
-As of Groovy 2.3, there has been extended (i.e. Groovy-friendly) support for `java.nio.file.Path`.
-
-I'll focus on using the NIO packages in the tutorials on file I/O. 
+As you'd expect, Groovy lets you use `java.io` and `java.nio` packages. Groovy has a number of enhancements to the `java.io` package and, as of Groovy 2.3, there has been extended (i.e. Groovy-friendly) support for `java.nio.file.Path`. I'll focus on using the NIO packages in the tutorials on file I/O. 
 
 ## Key concepts
 
@@ -15,12 +13,12 @@ There are a few key concepts that you should get your head around if you're goin
 
 <pre>
 C:\ or /
-    users
-        bill
-            documents
+    users/
+        bill/
+            documents/
         	    letter.txt
-        jane
-            music
+        jane/
+            music/
         	    song.mp3
 </pre>
 
@@ -62,11 +60,35 @@ As a programmer this can be rather frustrating as you can write Groovy code that
 
 #### Relative paths
 
+
 ### URIs and URLs
+Universal Resource Identifiers[^uri] provide a string format for referring to resources. The most common form of URI is the URL[^url] (Uniform Resource Locator) and we'll focus mostly on these. URNs[^urn] (Uniform Resource Names) aren't as common - examples include ISBNs[^isbn] and UUIDs[^uuid].
 
-A URL (Uniform Resource Locator) also defines a path to a resource. If you've used a web browser then you've definitely seen a URL. 
+[^uri]: <http://en.wikipedia.org/wiki/Uniform_resource_identifier>
+[^url]: <http://en.wikipedia.org/wiki/Uniform_resource_locator>
+[^urn]: <http://en.wikipedia.org/wiki/Uniform_resource_name>
+[^isbn]: <http://en.wikipedia.org/wiki/International_Standard_Book_Number>
+[^uuid]: <http://en.wikipedia.org/wiki/Universally_unique_identifier>
 
-`<scheme name>://<host>[:<port>]/<path>`
+A URL also defines a path to a resource. If you've used a web browser then you've definitely seen a URL. 
+
+`<scheme name>://<host>[:<port>]/<path>[?<query_string>][#<fragment_id>]`
+
+* `<scheme name>`: 
+	* You'll have used the `http` and `https` schemes when browsing the Web
+	* The `ftp` scheme is used for the File Transfer Protocol
+* `<host>`: 
+	* This could be a domain name such as `groovy.codehaus.org`
+	* ... or the IP address `199.193.192.103`
+* `[<port>]`: 
+* `<path>`: The path points to the resource being requested 
+	* For example: `/home/index.html`
+* `[?<query_string>]`: One or more key/value pairs
+	* The `&` character is used as the delimeter to separate each key/value pair
+	* For example: name=fred&answer=yes
+* `[#<fragment_id>]`: Points to a place (anchor) within the requested resource
+	* This is often used to point to a place within a web page such as a heading.
+	* For example: `#chapter01`
 
 Here are a few examples:
 
@@ -75,6 +97,6 @@ Here are a few examples:
 
 <file://>
 
-### Temporary files
+
 
 
