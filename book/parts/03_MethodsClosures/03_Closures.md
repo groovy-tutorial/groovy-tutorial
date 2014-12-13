@@ -1,6 +1,6 @@
 ---
-Title:	Closures
-Description:	A closure is a method function that is either named (stored in a variable) or anonymous (passed directly to a method).
+title:	Closures
+description:	A closure is a method function that is either named (stored in a variable) or anonymous (passed directly to a method).
 ...
 
 Intro stuff [^terms]

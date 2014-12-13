@@ -1,6 +1,6 @@
 ---
-Title:	Operators  
-Abstract:	
+title:	Operators  
+description:	
 ...
 
 # Operators

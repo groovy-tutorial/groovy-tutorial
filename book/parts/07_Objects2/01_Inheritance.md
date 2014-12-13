@@ -1,10 +1,8 @@
 ---
-Title:      Inheritance
-Abstract:   
+title:	Inheritance
+description:	
 ...
-# [%Title]
 
-_[%Abstract]_ 
 
 ## The Object superclass
 

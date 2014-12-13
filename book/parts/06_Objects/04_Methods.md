@@ -1,10 +1,7 @@
 ---
-Title:      Methods
-Abstract:   
+title:      Methods
+description:   
 ...
-# [%Title]
-
-_[%Abstract]_ 
 
 ## The `main` method
 Groovy classes can declare a method named `main` 

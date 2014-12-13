@@ -1,6 +1,6 @@
 ---
-Title:		Deploying scripts  
-Abstract:	  
+title:		Deploying scripts  
+description:	  
 ...
 # [%Title]
 

@@ -1,10 +1,7 @@
 ---
-Title:      Introduction
-Abstract:   
+title:	Introduction
+description:	
 ...
-# [%Title]
-
-_[%Abstract]_ 
 
 ## `is`
 

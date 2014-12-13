@@ -1,6 +1,6 @@
 ---
-Title:	Your first lines of Groovy
-Abstract:	It has become a tradition (maybe an unwritten law) that the first lines of code that you write in a new language are to output the line `hello, world`. So let's start up the Groovy Console and get going.
+title:	Your first lines of Groovy
+description:	It has become a tradition (maybe an unwritten law) that the first lines of code that you write in a new language are to output the line `hello, world`. So let's start up the Groovy Console and get going.
 ---
 
 # Starting with the console

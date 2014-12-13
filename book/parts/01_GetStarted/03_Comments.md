@@ -1,6 +1,6 @@
 ---
-Title:	Comments  
-Abstract:	Comments are used to clarify sections of Groovy code.
+title:	Comments  
+description:	Comments are used to clarify sections of Groovy code.
 	Groovy supports two types of comments - single line and multi-line.  
 ...
 

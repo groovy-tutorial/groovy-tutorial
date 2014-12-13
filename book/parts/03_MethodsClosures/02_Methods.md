@@ -1,6 +1,6 @@
 ---
-Title:		Methods and Closures  
-Abstract:	Methods help us break code into logical and reusable segments. Closures let us store these methods as variables so that we can pass them around to be used by other methods.  
+title:		Methods and Closures  
+description:	Methods help us break code into logical and reusable segments. Closures let us store these methods as variables so that we can pass them around to be used by other methods.  
 ...
 
 # Methods

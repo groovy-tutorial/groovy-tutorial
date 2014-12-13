@@ -1,6 +1,6 @@
 ---
-Title:	Conditionals
-Description:	Conditional statements let you determine when to run sections of code.
+title:	Conditionals
+description:	Conditional statements let you determine when to run sections of code.
 ...
 
 # The `if` statement

@@ -1,6 +1,6 @@
 ---
-Title:	The `assert` statement
-Abstract:	The `assert` statement is handy for checking if we have the correct result or if there was a problem in our code.
+title:	The `assert` statement
+description:	The `assert` statement is handy for checking if we have the correct result or if there was a problem in our code.
 ...
 
 # Using `assert`

@@ -1,6 +1,6 @@
 ---
-Title:	Variables  
-Abstract:	Variables are one of the most basic of programming constructs and help us to track values in our program.
+title:	Variables  
+description:	Variables are one of the most basic of programming constructs and help us to track values in our program.
 ...
 
 # Variables

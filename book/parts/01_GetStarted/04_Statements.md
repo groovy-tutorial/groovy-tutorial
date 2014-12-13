@@ -1,6 +1,6 @@
 ---
-Title:	Statements  
-Abstract: 	A Groovy program is made up from lots of statements, each telling the computer to do something.
+title:	Statements  
+description: 	A Groovy program is made up from lots of statements, each telling the computer to do something.
 ...
 # Statement structure
 A Groovy statement is generally completed by an end-of-line (EOL) character such as a carriage return:

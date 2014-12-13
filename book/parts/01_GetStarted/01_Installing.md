@@ -1,6 +1,6 @@
 ---
-Title:	Installing Groovy  
-Abstract:	Before we start anything let's get Groovy installed and running. 
+title:	Installing Groovy  
+description:	Before we start anything let's get Groovy installed and running. 
 ...
 
 # Introduction

@@ -1,6 +1,6 @@
 ---
-Title:	Introduction
-Description:	Handling file I/O (Input/Output) is a "bread and butter" task for programmers. Groovy builds on Java's strong file handling libraries by adding a number of handy extras.
+title:	Files
+description:	Handling file I/O (Input/Output) is a "bread and butter" task for programmers. Groovy builds on Java's strong file handling libraries by adding a number of handy extras.
 ...
 
 Java originally shipped a library (`java.io`) for handling input and output from elements such as files, network resources and devices. A new library, called NIO (`java.nio`), was released in Java 1.4 and extended in Java 7. This later extension is usually referred to as NIO.2 but you'll find these classes in the `java.nio` packages.

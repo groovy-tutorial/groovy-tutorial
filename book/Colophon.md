@@ -1,5 +1,5 @@
 ---
-title: "Colophon"
+title:	Colophon
 ...
 
 A number of technologies were used in the production of this book - most of them are open source:

@@ -2,4 +2,13 @@
 title: The Groovy 2 Tutorial
 edition: 0.0.1-DRAFT
 description: An introductory text for budding Groovy developers
+copyright:
+  years: 
+    - 2014
+  holders:
+    - Duncan Dickinson 
+authorgroup:
+  - firstname: Duncan
+    surname: Dickinson
+    email: duncan@dickinson.name
 ...

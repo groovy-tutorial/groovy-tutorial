@@ -1,6 +1,6 @@
 ---
-Title:      Fields
-Abstract:   
+title:	Fields
+description:	
 ...
 # [%Title]
 

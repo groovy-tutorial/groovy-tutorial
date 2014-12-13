@@ -1,6 +1,6 @@
 ---
-Title:      Expando
-Abstract:   The Expando class lets you create objects on the fly. 
+title:      Expando
+description:   The Expando class lets you create objects on the fly. 
 ...
 # [%Title]
 

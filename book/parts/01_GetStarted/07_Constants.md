@@ -1,6 +1,6 @@
 ---
-Title:    Constants
-Abstract:   
+title:    Constants
+description:   
 ...
 # [%Title]
 

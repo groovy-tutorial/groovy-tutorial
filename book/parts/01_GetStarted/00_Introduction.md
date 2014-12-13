@@ -1,4 +1,4 @@
 ---
-Title:	Getting started
-Abstract:	
+title:	Getting started
+description:	
 ...

@@ -1,6 +1,6 @@
 ---
-Title:    Reserved Words  
-Abstract: Groovy reserves a set of keywords that cannot be used as identifiers.  
+title:    Reserved Words  
+description: Groovy reserves a set of keywords that cannot be used as identifiers.  
 ...
 
 # Reserved words

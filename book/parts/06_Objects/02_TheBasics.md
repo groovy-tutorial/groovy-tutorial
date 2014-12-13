@@ -1,6 +1,6 @@
 ---
-Title:      Introduction
-Abstract:   At its core, Groovy is an object-oriented programming language. 
+title:	The basics of OO
+description:	At its core, Groovy is an object-oriented programming language. 
             This section introduces a range of object-oriented terminology and 
             provides you with a set of resources that will help you really hone
             those object-oriented programming skills.

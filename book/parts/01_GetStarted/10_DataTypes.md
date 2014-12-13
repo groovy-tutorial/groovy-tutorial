@@ -1,6 +1,6 @@
 ---
-Title:	Data types  
-Description:	
+title:	Data types  
+description:	
 ...
 
 #Data types

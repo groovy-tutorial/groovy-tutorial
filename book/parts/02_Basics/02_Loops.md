@@ -1,6 +1,6 @@
 ---
-Title:	Looping
-Description:	Loops provide an easy way to repeat a set of statements.
+title:	Looping
+description:	Loops provide an easy way to repeat a set of statements.
 ...
 
 # The `for` Loop
