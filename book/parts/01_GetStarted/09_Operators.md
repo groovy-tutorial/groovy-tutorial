@@ -20,7 +20,7 @@ Abstract:
 |`+=`  `-=`  `*=`  `/=`  `&=`  &#124;=<br/> \
 `^=`  `%=`  `<<=`  `>>=`  `>>>=`	| The Compound Assignment Operators
 | `?.`	| Safe Navigation Operator
-
+| `*.`	| Spread Operator
 
 ## Order of operations
 
