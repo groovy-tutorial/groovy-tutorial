@@ -6,9 +6,9 @@ description:	It has become a tradition (maybe an unwritten law) that the first l
 # Starting with the console
 The Groovy Console provides a handy environment for preparing and testing basic Groovy scripts. In order to open the console you need to start a command line (or terminal) session and enter the following command:
 
-````bash
-groovyConsole
-````
+```bash
+groovyConsole &
+```
 
 _Note: Windows users may also find a link to `Groovy Console` in their Start menu._
 
@@ -46,11 +46,17 @@ If you see the output `hello, world` then congratulations - you've taken your fi
 # Examining the script 
 Our first Groovy script is very simple: it uses the `print` method (function) to output the string `hello world` to the console.
 
-For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
+For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" or "boilerplate" code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
 
-<code-snippet url="src/hello.groovy">
-	<figcaption>A Java version of "Hello, World"</figcaption>
-</code-snippet>
+```java
+class Hello {
+    public static void main(String[] args) {
+       System.out.print("hello, world");
+    }
+}
+ 
+Hello.main();
+```
 
 When I look at the code above I see why Groovy is so appealing to me:
 
@@ -60,25 +66,28 @@ When I look at the code above I see why Groovy is so appealing to me:
  2. The Groovy code is much more readable and this *should* help reduce bugs (or at least make finding them easier)
  3. Most Java code is valid Groovy code - you can copy that Java code into the Groovy Console and run it - it will work 
  4. Groovy lets you use the comprehensive standard Java libraries and the extensive third-party libraries written by the Java developer community.
+	 1. But also extends these standard libraries with some great timesavers.
 
 Groovy gives us the brevity and flexibility of a scripting language (such as Python, Ruby and Perl) whilst letting us tap into the galaxy of existing Java libraries.
 
 # Going a little further
 Now that we can output something to the screen, let's try and make our example a little more personal. Clear the Groovy Console editor and enter the following:
 
-````groovy
+```groovy
 println "hello, ${args[0]}"
-````
+```
 
 Before we try to run this, let's look at what's in the code:
 
  1. `print` has become `println` - this does the same thing as our previous use of `print` but adds a new line at the end of the output. 
      * This makes the output easier to read when we're running on the command line
  2. Instead of the text `world` we're now using `${args[0]}`:
-    * `args` is a built-in variable (an array) that holds any command-line arguments we pass to the script
+    * `args` is a variable (an array[^array]) that holds any command-line arguments we pass to the script
         * You may have noticed `String[] args` in the Java version of `hello, world` - essentially Groovy is writing that segment of code for you.
         * `args[0]` is the first element in the `args` array - this is the first parameter (command-line argument) passed to the script
     * The `${...}` notation tells Groovy that the contents need to the resolved into a value - in this case Groovy needs to determine the value of `args[0]` before displaying the output
+
+[^array]: More about arrays in a little bit
 
 Don't worry if this appears to be a big jump from our `hello, world` - there's a range of concepts being introduced and we'll work through them in this tutorial section. For now, put the code into your Groovy Console and know that, when run, your script will say hello to a specified person.
     

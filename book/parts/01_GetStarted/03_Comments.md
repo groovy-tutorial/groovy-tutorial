@@ -1,8 +1,16 @@
 ---
 title:	Comments  
-description:	Comments are used to clarify sections of Groovy code.
-	Groovy supports two types of comments - single line and multi-line.  
+description:	Comments are used to clarify sections of Groovy code. Groovy supports two types of comments - single line and multi-line.  
 ...
+
+# Introduction
+
+Comments are read by the Groovy compiler - they're purely used to help humans follow your code. They're really important once your code becomes more complex and your programs larger. Key places you'll see/use comments are:
+
+1. When a complex algorithm is being used
+2. When specific business logic is being implemented
+2. For documenting interfaces that other coders will use
+3. To remind you why you chose one approach over another - really handy when you revisit the code in 6-weeks and say "why did I do it that way?".
 
 # Single-line comments
 A single-line comment is introduced with two forward slash characters `//`:
@@ -90,3 +98,9 @@ Use of a comment within a statement should never be contemplated as it results i
     def pi = 3.14
     def area = pi * /* I should find out how to square */ (radius * radius)
 ```
+
+# Groovydoc
+
+Java provides a very handy tool for documenting the outward-facing aspects of your code - i.e. those items that others may reuse  - it's called javadoc[^javadoc]. Groovy has its own version called `groovydoc`. Essentially this is the same tool as `javadoc` but is run over groovy code. I won't go into `groovydoc` now - it'll come up when we explore object-oriented programming.
+
+[^javadoc]: See the [Javadoc guide](http://docs.oracle.com/javase/1.5.0/docs/tooldocs/windows/javadoc.html)

@@ -3,7 +3,7 @@ title:	Variables
 description:	Variables are one of the most basic of programming constructs and help us to track values in our program.
 ...
 
-# Variables
+# Introduction
 Variables are (perhaps unsurprisingly), items that can change. Essentially it is a "box" that can hold a value. Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
 
 ```groovy
@@ -72,10 +72,10 @@ assert number3 == null
 ## Variable names
 Variable names must meet the following criteria:
 
- - Must start with a letter (upper-case [A-Z] or lower-case [a-z])
-   - The underscore (`_`) is also allowed but very strongly discouraged 
- - Must only contain letters, digits (0-9) or an underscore (`_`)
-   - The dollar-sign (`$`) is also allowed but very strongly discouraged 
+- Must start with a letter (upper-case [A-Z] or lower-case [a-z])
+	   - The underscore (`_`) is also allowed but very strongly discouraged 
+- Must only contain letters, digits (0-9) or an underscore (`_`)
+	- The dollar-sign (`$`) is also allowed but very strongly discouraged 
  - Must not match a keyword (reserved word)
  
 The use of literate variable names that comply to the criteria is encouraged. For example, a variable named `x` provides little information as to its role whereas `accountNumber` is likely to be clear within the context of a broader system.
@@ -86,8 +86,8 @@ Data types define the sort of data a variable can hold. Most programming languag
 * Booleans
 	* A logical value of `true` or `false`
 * Characters and strings
-	* A single letter, number or symbol (e.g. `#`)
-	* A piece of text (referred to as a string)
+	* A character is a single letter, number or symbol (e.g. `#`)
+	* A piece of text is referred to as a string
 * Numbers
 	* Integers (whole numbers) both positive and negative
 	* Decimals (fractional numbers) both positive and negative
@@ -98,7 +98,7 @@ Data types define the sort of data a variable can hold. Most programming languag
 * Maps
 	* A variable that holds a number of values, each referred to by a key
 * Ranges
-	* 
+	* A numeric sequence between a start and an end value - e.g. 1 to 10
 
 Being an object-oriented programming language, Groovy lets you also define your own  types of objects (called classes).
 

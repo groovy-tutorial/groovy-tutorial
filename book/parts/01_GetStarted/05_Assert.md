@@ -4,11 +4,11 @@ description:	The `assert` statement is handy for checking if we have the correct
 ...
 
 # Using `assert`
-The `assert` statement is perhaps out of order being described here but it will be relied on heavily in code examples.
+The `assert` statement is perhaps out of order being described here but it will be relied on in many code examples.
 
 >Note: two operators are used in the examples below - `==` (two equals signs) is equality operator and `!=` is the inequality operator. Both are discussed later.
 
-The `assert` statement evaluates a boolean expression (one that is `true` or `false`). If the result is `false` then the assertion has failed, the program is halted and an error is reported. The following example provides an obviously incorrect statement
+The `assert` statement evaluates a boolean expression (one that is `true` or `false`). If the result is `false` then the assertion has failed, the program is halted and an error is reported. The following example provides an obviously incorrect statement:
 
 ```groovy
 assert 1 == 2
@@ -31,9 +31,22 @@ For the purposes of our tutorial scripts, using asserts is a handy way to demons
 
 The following example illustrates a class handling a failed assertion by logging the problem - don't be concerned if you don't follow the code as it utilises a number of concepts not yet visited:
 
-<code-snippet url="src/assert.groovy">
-	<figcaption>Example of handling a failed assertion</figcaption>
-</code-snippet>
+```groovy
+import groovy.util.logging.*
+
+@Log
+class AssertionTest {
+    static void runTest() {
+        try {
+            assert true == false : 'true cannot be false'
+        } catch(Error err) {
+            log.severe "An assertion failed ${err}"
+        } 
+    }
+}
+
+AssertionTest.runTest() 
+```
 
 >You may have noticed `@Log` in that last code snippet. This is called an annotation and is marked using an "at" (`@`) sign followed by a class name. These are used to markup code and will be discussed in a later chapter. 
 
