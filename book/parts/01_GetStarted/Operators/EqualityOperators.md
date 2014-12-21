@@ -1,4 +1,4 @@
-## Equality Operators
+# Equality Operators
 [Table: The equality operators]
 |Operator|Name     
 |:------:|:--------
@@ -22,7 +22,7 @@ def str2 = 'Hello'
 assert str1 == str2
 ```
 
-### Precedence
+## Precedence
 In the following example, the equality operator (`!=`) is evaluated before the assignment operator (`=`), resulting in the value of `truth` being the boolean value `true`:
 
 ```groovy

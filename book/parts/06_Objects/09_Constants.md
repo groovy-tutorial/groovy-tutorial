@@ -1,10 +1,7 @@
 ---
 title:    Constants
 description:   
-...
-# [%Title]
-
-[%Abstract] 
+---
 
 Constants are just that - they don't change. Use of constants improves code by providing a reference point for comparison. Constants are usually declared with upper-case names (e.g. `MAX_PASSENGERS`). 
 

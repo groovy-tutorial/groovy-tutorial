@@ -2,8 +2,8 @@
 
 [Table: Simple assignment operator]
 |Operator|
-|:------:|
-|=|
+|:------:|  
+|`=`|
 
 The equals (`=`) sign is used to assign a value to a variable:
 

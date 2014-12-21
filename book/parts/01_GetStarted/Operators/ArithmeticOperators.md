@@ -1,5 +1,5 @@
 # Arithmetic operators
-The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people.
+The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people from their early school days.
 
 ## Additive Operators
 [Table: The additive operators]
@@ -19,7 +19,7 @@ Additive operators are left-associative - they are assessed from left to right:
 
 >The `+` operator can also be used to concatenate (join) two strings:  
 > `def mySentence = 'This is a game ' + 'of two halves'`  
-> I'd suggest that you avoid using this as Groovy has better options that we'll see soon.
+> I'd suggest that you avoid using this as Groovy has better options that we'll look at shortly.
 
 
 ## Multiplicative Operators
@@ -31,7 +31,7 @@ Additive operators are left-associative - they are assessed from left to right:
 |/       |Divide   |
 |%       |Remainder|
 
-The remainder operator (`%`) is also commonly referred to as the _modulus_ operator. The 
+The remainder operator (`%`) is also commonly referred to as the _modulus_ operator and returns the remainder of a division: 
 
     assert 13 % 2 == 1
 
