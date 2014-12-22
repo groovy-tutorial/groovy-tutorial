@@ -30,7 +30,7 @@ println me.@name
 10.3 as int
 ```
 
-## Check Identity With `Is`
+## Check Identity With `is`
 
 ```groovy
 @groovy.transform.EqualsAndHashCode

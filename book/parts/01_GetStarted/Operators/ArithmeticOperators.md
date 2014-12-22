@@ -1,7 +1,7 @@
-# Arithmetic operators
+## Arithmetic operators
 The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people from their early school days.
 
-## Additive Operators
+### Additive Operators
 [Table: The additive operators]
 |Operator|Name   |
 |:------:|:------|
@@ -22,7 +22,7 @@ Additive operators are left-associative - they are assessed from left to right:
 > I'd suggest that you avoid using this as Groovy has better options that we'll look at shortly.
 
 
-## Multiplicative Operators
+### Multiplicative Operators
 
 [Table: The multiplicative operators]
 |Operator|Name     |
@@ -39,7 +39,7 @@ Multiplicative operators are left-associative:
 
     assert 10 * 6 / 2 == 30
 
-## The Power operator
+### The Power operator
 
 [Table: The power operator]
 |Operator|Name     |
@@ -55,7 +55,7 @@ assert 5**3 == 125
 > This is a handy shortcut to using  
 > `java.lang.Math.pow(5, 3)`
 
-## Precedence
+### Precedence
 Multiplicative operators have precedence over additive operators. 
 
 ```groovy
@@ -108,4 +108,86 @@ assert x == -0.2
 
 > Note: The solution given above is not a complete implementation of the equation - it is provided for demonstration purposes only.
 
+### Customising the Arithmetic Operators
 
+As Groovy supports something called "operator overloading", it's possible for classes to determine how they want the arithmetic operators to behave. This is done by overloading the following methods:
+
+* `plus`
+* `minus`
+* `div`
+* `mod`
+* `multiply`
+* `power`
+
+
+Here's a disastrous implementation of a class that defies all mathematical sense:
+
+```groovy
+class BrokenNumber extends Number {
+    def value = 0
+    
+    BrokenNumber(val) {
+        this.value = val
+    }
+    
+    float floatValue() {
+        value as float
+    }
+    
+    int intValue() {
+        value as int
+    }
+    
+    long longValue() {
+        value as long
+    }
+    
+    double doubleValue() {
+        value as double
+    }
+    
+    String toString() {
+        "$value"
+    }
+    
+    //Overloads +
+    public plus(Number right) {
+        right + value + 200
+    }
+    
+    //Overloads -
+    public minus(Number right) {
+        value - right + 10
+    }
+    
+    //Overloads /
+    public div(Number right) {
+        0
+    }
+    
+    //Overloads %
+    public mod(Number right) {
+        4
+    }
+    
+    //Overloads *
+    public multiply(Number right) {
+        value * right * 2
+    }
+    
+    //Overloads **
+    public power(Number exponent) {
+        value + exponent
+    }
+}
+
+def myNum1 = new BrokenNumber(16)
+def myNum2 = new BrokenNumber(10)
+
+println myNum1 + myNum2
+println myNum1 - 1
+println myNum2 / 2
+println myNum2 % 2
+println myNum1 * myNum2
+println myNum2**2
+```

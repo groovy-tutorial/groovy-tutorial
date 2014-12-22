@@ -32,7 +32,17 @@ if ('easy' < 123) println "It's easier than 123"
 |:------:|
 |<=>      |  
 
-The spaceship operator comes from the Perl programming language. 
+The spaceship operator comes from the Perl programming language. The Spaceship operator is most often seen where sorting is done. In the example below the `sort` function uses the closure to define the sort algorithm and this is where the spaceship lands:
+
+```groovy
+def nums = [42, -99, 6.3, 1, 612, 1, -128, 28, 0]
+
+//Descending
+println nums.sort{n1, n2 -> n2<=>n1 }
+
+//Ascending
+println nums.sort{n1, n2 -> n1<=>n2 }
+```
 
 |Expression|Result
 |:--|:--:
@@ -47,3 +57,14 @@ assert 2 <=> 2 == 0
 assert 1 <=> 2 == -1
 assert 2 <=> 1 == 1
 ```
+
+### The `compareTo` method
+Essentially, the `compareTo` method is used by Groovy to assess the result of relational operations:
+
+```groovy
+assert 1.compareTo(2) == -1
+```
+
+>There is a reasonable assumption that the two operands can be coerced (cast) into a similar type. This is why `1.compareTo('cat')` just won't work.
+
+Custom classes can determine their own appropriate algorithm for `compareTo` and this will be available when you use the relationship operators.
