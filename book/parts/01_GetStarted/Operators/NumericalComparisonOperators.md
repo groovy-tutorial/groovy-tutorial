@@ -1,1 +1,0 @@
-## Numerical Comparison Operators
