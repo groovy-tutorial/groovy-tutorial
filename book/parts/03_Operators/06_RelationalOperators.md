@@ -9,7 +9,7 @@
 |<=      |Less than or equal to
 |<=>     |Spaceship
 
-Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`). All of the following assertions are `true`:
+Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`). All of the following operations resolve to `true`:
 
 ```groovy
 assert 5 > 2
@@ -44,6 +44,8 @@ println nums.sort{n1, n2 -> n2<=>n1 }
 println nums.sort{n1, n2 -> n1<=>n2 }
 ```
 
+The following table indicates the result for spaceship expressions (LHS = left-hand side, RHS = right-hand side):
+
 |Expression|Result
 |:--|:--:
 |LHS less than RHS|-1
@@ -58,7 +60,7 @@ assert 1 <=> 2 == -1
 assert 2 <=> 1 == 1
 ```
 
-### The `compareTo` method
+# The `compareTo` method
 Essentially, the `compareTo` method is used by Groovy to assess the result of relational operations:
 
 ```groovy
@@ -67,4 +69,30 @@ assert 1.compareTo(2) == -1
 
 >There is a reasonable assumption that the two operands can be coerced (cast) into a similar type. This is why `1.compareTo('cat')` just won't work.
 
-Custom classes can determine their own appropriate algorithm for `compareTo` and this will be available when you use the relationship operators.
+Custom classes can determine their own appropriate algorithm for the `Comparable`'s `compareTo` and this will be available when you use the relationship operators.
+
+```groovy
+class Num implements Comparable {
+    def val
+    
+    @Override
+    int compareTo(obj) {
+         if (val < obj.val) {
+             return -1
+         } else if (val > obj.val) {
+             return 1
+         } else {
+             return 0
+         } 
+    }
+}
+
+def a = new Num(val: 2)
+def b = new Num(val: 5)
+
+assert a < b
+assert b > a
+assert a != b
+```
+
+>You'll notice that I've tested `a != b` - this equality operator actually calls the `compareTo`

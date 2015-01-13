@@ -70,4 +70,3 @@ if (game == 'chess') {
 }
 ```
 
-# The `switch` statement

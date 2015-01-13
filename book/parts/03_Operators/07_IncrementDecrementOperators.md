@@ -22,7 +22,6 @@ assert 10-- == 10
 ```
 
 
-
 The increment and decrement behaves differently depending on the type of value being used:
 
 Booleans

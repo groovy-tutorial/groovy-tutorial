@@ -4,7 +4,7 @@ description:	Groovy supports a range of operators - those you know from primary 
 ---
 
 # Introduction
-Operators are used with variables and the context in which they're used will vary the resulting output. This chapter purely lists the range of operators available to you and the following chapters describe each in more detail.
+Operators are used with variables and the context in which they're used will vary the resulting output. This introduction lists the range of operators available to you and the following chapters describe each in more detail.
 
 ## Arithmetic and Conditional Operators
 |Operator(s)         							  |Type
@@ -64,3 +64,28 @@ Operators are used with variables and the context in which they're used will var
 | `is`	| Identity Operator	|  
 | `instanceof`	| Type Comparison	|  
 [Table: Object Operators]
+
+## Operator Overloading
+
+Groovy supports something called "operator overloading" and it's possible for classes to determine how they want operators to behave. Throughout this section I'll provide some examples of overloading. 
+
+Operator overloading can be used in your own classes via the following methods:
+
+|Method|Operator|  
+| :------	| :------:	|  
+| plus	| `+`	|  
+| minus	| `-`	|  
+| div	| `/`	|  
+| mod	| `%`	|  
+| multiply	| `*`	|  
+| power	| `**`	|  
+| equals	| `==`	| 
+| compareTo	| `<=>`, `>`, `<`	| 
+| rightShift	| `>>`	|  
+| leftShift	| `<<`	|  
+| next	| `++`	|  
+| previous	| `--`	|  
+
+>This list doesn't include all possible operators, just the main ones
+
+You might note that you can use the methods instead of the operators - e.g. `10.plus(2)` - but your code will be far less readable.

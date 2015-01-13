@@ -55,3 +55,46 @@ assert truth == true
 
 ### Custom Equality
 
+It is possible to define a custom implementation of `==` by overriding the `equals(Object obj)` method. This can be handy if your object has a simple method for determining equality, such as comparing staff members by their ID:
+
+```groovy
+class StaffMember {
+    def id
+    
+    @Override
+    boolean equals(obj) {
+        if (this.id == obj.id) {
+            return true
+        } else {
+            return false 
+        }
+    }
+}
+
+def fred = new StaffMember(id: 12)
+def jan = new StaffMember(id: 47)
+def janet = new StaffMember(id: 47)
+
+assert fred != jan
+assert jan == janet
+``` 
+
+The Groovy package `groovy.transform` provides a handy annotation that generates an `equals` implementation which compares the object's properties. This reduces the previous `StaffMember` class to even fewer lines of code:
+
+```groovy
+@groovy.transform.EqualsAndHashCode
+class StaffMember {
+    def id
+}
+
+def fred = new StaffMember(id: 12)
+def jan = new StaffMember(id: 47)
+def janet = new StaffMember(id: 47)
+
+assert fred != jan
+assert jan == janet
+```
+
+>The `HashCode` aspect to the annotation indicates that the `hashCode` method is overridden. This method generates a hash code[^hash] that aids in identifying an instance of the class.
+
+[^hash]: See <http://en.wikipedia.org/wiki/Java_hashCode()>

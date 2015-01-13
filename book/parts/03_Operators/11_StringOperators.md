@@ -1,6 +1,6 @@
 ---
 title:	String Operators
-description:	Groovy provides a very handy set of operators 
+description:	Groovy provides a very handy set of operators for working with Strings.
 ---
 
 # Introduction
@@ -22,7 +22,6 @@ The concatenate operator joins two strings together:
 ```groovy
 println  'It was the best of times.' << 'It was the worst of times.'
 ```
-
 
 The above example is rather daft as we could have just put both strings together in the same set of quotes. You're more likely to see strings added to over the course of a program:
 
@@ -139,7 +138,36 @@ I'll leave it to you to see what happens :)
 
 # Increment and Decrement Operators
 
+The increment operator will move the last character of the string to its next value:
 
+```groovy
+def str = 'hello'
+str++
+assert str == 'hellp'
+```
+
+The increment/decrement actually works across the Unicode character codes[^unicode] so don't expect code to just use 'a' to 'z':
+
+```groovy
+def str = 'fo%'
+str--
+assert str == 'fo$'
+```
+
+For a small experiment, try the following code - it will display a subset of the Unicode characters:
+
+```groovy
+//\u00A1 is the Unicode character for an inverted exclamation mark
+def chr = '\u00A1'
+for (i in 161..191) {
+    println chr
+    chr++
+}
+```
+
+I'm sure that this is useful somewhere.....
+
+[^unicode]: See the [Unicode Character Code Charts](http://www.unicode.org/charts/)
 
 # Warning: Strings Are Expensive!
 
