@@ -29,4 +29,3 @@ println names
 
 If you try the code above you'll get `[sally, bob, jane]` - the set just ignores the repeated element.
 
-## Multidimensional lists
