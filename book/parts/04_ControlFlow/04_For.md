@@ -1,6 +1,6 @@
 ---
-title:	Looping
-description:	Loops provide an easy way to repeat a set of statements.
+title:	The `for` Loop
+description:	Groovy supports both a for-each loop and the C-style for loop.
 ---
 The `for` loop will  repeat a block of code whilst its condition is `true`:
 
@@ -10,7 +10,7 @@ for (<condition>) {
 }
 ```
 
-# The `for`-each Loop
+# The `for-in` Loop
 
 The for-each loop basically says "for each element is this collection, perform the following":
 
@@ -20,9 +20,9 @@ for (<var> in <iterator>) {
 }
 ```
 
->That wasn't a formatting error (`for`-each) - as, unlike `if-else` -  the for-each loop doesn't actually have a keyword `each`. 
+>The `for-in` loop may also be referred to as the for-each loop but I prefer the former as the `in` keyword is part of the syntax.
 
-In the Groovy for-each loop we have a variable (`var`) provided as the next item in the `iterator`[^iterator]. In most cases this is a collection of objects such as a list or map.
+In the Groovy for-in loop we have a variable (`var`) provided as the next item in the `iterator`[^iterator]. In most cases this is a collection of objects such as a list or map.
 
 You can't change the iterator within a loop - it'd just be too confusing! That means code such as the following causes an exception and won't run:
 
@@ -138,7 +138,7 @@ for (<Type> <var>: <iterator>) {
 }
 ```
 
-Unlike Groovy's for-each loop, the Java version:
+Unlike Groovy's for-in loop, the Java version:
 
 - uses `:` instead if `in`
 - Requires you to declare a data type for the iteration variable
@@ -226,7 +226,7 @@ These are often used in event-based systems. Essentially, the program will enter
 
 >The term 'infinite' should set off an alarm in your head - be careful as this type of coding can cause your system to stop responding!
 
-The C-style loop doesn't protect you from altering the thing you're working on and, perhaps inadvertently, creating an infinite loop. That means that the code below needs the safety break provided by (`&& i < 20`) as the loop keeps altering the size of `scores`. If you take out `&& i < 20` and run the code below it won't stop unless you interrupt it or you run out of system resources:
+The C-style loop doesn't protect you from altering the thing you're working on and, perhaps inadvertently, creating an infinite loop. That means that the code below needs the safety brake provided by (`&& i < 20`) as the loop keeps altering the size of `scores`. If you take out `&& i < 20` and run the code below it won't stop unless you interrupt it or you run out of system resources:
 
 ```groovy
 def scores = [4, 8, 2]
