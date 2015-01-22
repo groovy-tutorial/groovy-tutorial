@@ -1,41 +1,45 @@
+/*
+ * An example
+ *
+ * Please refer to the HyperSQL documentation for details regarding that product:
+ *   http://hsqldb.org/doc/2.0/guide/index.html
+ */
+
 @GrabConfig(systemClassLoader=true)
 @Grab(group='org.hsqldb', module='hsqldb', version='2.3.2')
-
 import groovy.sql.Sql
 
-
-def create_table = '''
+def createSchema = '''
 CREATE TABLE temperatures (
     value DECIMAL(4,2)
 )
 '''
 
-def clear_db = '''
-DROP TABLE temperatures
+def dropSchema = '''
+DROP TABLE IF EXISTS temperatures
 '''
+
+def sql
 
 def db = [url: 'jdbc:hsqldb:mem:temperatures', 
           user: 'sa', 
           password: '', 
           driver: 'org.hsqldb.jdbc.JDBCDriver']
 
-def sql
-
-try {          
-    sql = Sql.newInstance(db.url, db.user, db.password, db.driver)
+try { 
+    //Connect to the database         
+    sql = Sql.newInstance(db)
 } catch (java.sql.SQLException sqlex) {
     println "Exception connecting to database: ${sqlex.getMessage()}"
     return 1
 }
 
-try {
-    sql.execute(clear_db)
-} catch (java.sql.SQLException sqlex) {
-    //Ignore
-}
+//Run the DROP TABLE command
+sql.execute(dropSchema)
 
 try {
-    sql.execute(create_table)
+    //Create the 
+    sql.execute(createSchema)
 } catch (java.sql.SQLException sqlex) {
     println "Exception creating table: ${sqlex.getMessage()}"
     return 1
