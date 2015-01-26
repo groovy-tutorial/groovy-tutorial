@@ -1,12 +1,7 @@
 ---
 Title:		Maps   
-Abstract:	 
-...
-# [%Title]
-
-[%Abstract] 
-
-### Maps
+Description:	 
+---
 Maps allow us to build up a type of look-up table using keys and values. Each key is unique and points to a value in the map. In the example below we see the start of a basic periodic table:
 
 ```groovy

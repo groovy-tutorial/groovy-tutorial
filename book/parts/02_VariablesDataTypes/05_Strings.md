@@ -1,4 +1,7 @@
-## Strings
+---
+Title:		Strings  
+Description:	 
+...
 
 There are a two main ways in which you can declare a string in Groovy: using single or double quotes
 

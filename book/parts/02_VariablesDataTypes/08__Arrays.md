@@ -1,10 +1,7 @@
 ---
 Title:      Arrays
-Abstract:   
+Description:   
 ...
-# [%Title]
-
-_[%Abstract]_ 
 
 To declare an array of Strings
 
