@@ -10,3 +10,4 @@ bak/
 /bin/
 /.nb-gradle/private/
 .nb-gradle
+output
