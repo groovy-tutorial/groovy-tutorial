@@ -1,10 +1,7 @@
 ---
 title:	String Operators
 description:	Groovy provides a very handy set of operators for working with Strings.
----
-
-# Introduction
-
+...
 |Operator(s)       |Type
 |:-------------------:|:-----------| 
 |`+`, `<<`	| Concatenate Operator	|   
@@ -226,6 +223,6 @@ When I run these scripts in groovyConsole I can see that the results are very di
 
 To me this is evidence enough for me to use '<<=' over `+=`!
 
-## Templates
+# Templates
 
 If you find yourself building strings around boilerplate text - such as a form letter - consider using Groovy's templating system. We'll look at templates in the section on files.

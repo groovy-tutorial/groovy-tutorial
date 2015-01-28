@@ -1,5 +1,6 @@
-## Numbers
-
+---
+title: Numbers
+...
 Groovy supports the various types of numbers that you'd expect. 
 
 >This section will give you an overview that will cover most types of numbers but if you expect to be handling very large or very small numbers and calculations with such numbers then you really need to do some research to make sure you don't become a victim of truncation (where parts of the number are chopped off) and other issues with precision.
@@ -11,7 +12,7 @@ assert 1.plus(1) == 2
 assert 1 + 1 == 2
 ```
 
-### Integers
+# Integers
 Integers are whole numbers and can be negative or positive:
 
 ```groovy
@@ -27,7 +28,7 @@ def distanceEarthToSun = 149597870700
 def distanceNeptuneToSun = distanceEarthToSun * 30
 ```
 
-### Decimals
+# Decimals
 Decimal numbers provide a fraction and can be negative or positive:
 
 ```groovy
@@ -37,7 +38,7 @@ def pi = 3.14159
 def absoluteZero = -273.15
 ```
 
-#### Scientific notation 
+# Scientific notation 
 Base-10 (decimal) scientific notation ($a * 10^b$) can also be used by placing an `e` or `E` before the exponent:
 
 ```groovy

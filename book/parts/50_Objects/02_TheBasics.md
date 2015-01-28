@@ -5,10 +5,6 @@ description:	At its core, Groovy is an object-oriented programming language.
             provides you with a set of resources that will help you really hone
             those object-oriented programming skills.
 ...
-# [%Title]
-
-_[%Abstract]_ 
-
 Object-oriented programming is often referred to by its acronym "OO" or "OOP" and has been around for some time. We won't delve into history here - check the [Further reading][] section if you'd like to learn more. For now though, let's describe the essentials of OOP.
 
 The object-oriented programming approach models concepts based on a combination of *properties* and *methods*. The concept being modelled may be a real-world entity such as a person, a car or a tree. It may also be a "virtual" concept such as a bank account, an HTTP server or a sales report.

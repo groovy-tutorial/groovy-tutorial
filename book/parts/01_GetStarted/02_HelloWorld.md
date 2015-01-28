@@ -1,9 +1,7 @@
 ---
 title:	Your first lines of Groovy
 description:	It has become a tradition (maybe an unwritten law) that the first lines of code that you write in a new language are to output the line `hello, world`. So let's start up the Groovy Console and get going.
----
-
-# Starting with the console
+...
 The Groovy Console provides a handy environment for preparing and testing basic Groovy scripts. In order to open the console you need to start a command line (or terminal) session and enter the following command:
 
 ```bash

@@ -1,11 +1,6 @@
 ---
-title:	
-description:	
----
-
-# Object Operators
-
-
+title: Object Operators		
+...
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
 | `?.`	| Safe Navigation Operator|

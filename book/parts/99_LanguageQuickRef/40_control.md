@@ -1,8 +1,9 @@
-# Conditional (Branching) Statements
+---
+title: Conditional (Branching) Statements
+...
+# `if-else`
 
-## `if-else`
-
-### `if`
+## `if`
 
 <pre>
 if (<i>expression</i>) {
@@ -15,7 +16,7 @@ Single-line version:
 if (<i>expression</i>) <i>statement</i>
 </pre>
 
-### `else`
+## `else`
 
 <pre>
 if (<i>expression</i>) {
@@ -30,7 +31,7 @@ Single-line version:
 if (<i>expression</i>) <i>statement</i> else <i>statement</i>
 </pre>
 
-### `if-else-if`
+## `if-else-if`
 
 <pre>
 if (<i>expression</i>) {
@@ -42,7 +43,7 @@ if (<i>expression</i>) {
 }
 </pre>
 
-## `switch`
+# `switch`
 <pre>
 switch(<i>expression</i>) {
     case <i>expression</i>:
@@ -58,9 +59,9 @@ switch(<i>expression</i>) {
 - `break` is optional - its absence will cause fall-through to next case
 - `default:` section is optional
 
-## `try-catch-finally`
+# `try-catch-finally`
 
-### `try-catch`
+## `try-catch`
 To catch any exception raised in a `try` block:
 <pre>
 try {
@@ -103,7 +104,7 @@ try {
 }
 </pre>
 
-### `finally`
+## `finally`
 <pre>
 try {
     <i>statement(s)</i>

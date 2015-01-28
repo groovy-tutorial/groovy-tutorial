@@ -1,9 +1,6 @@
 ---
-title:	
-description:	
----
-
-# Collection operators
+title: Collection operators		
+...
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
 | `in`	| Membership Operator	|  

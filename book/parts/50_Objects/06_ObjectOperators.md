@@ -1,9 +1,8 @@
 ---
 title:	Object-related Operators
-description:	Blah
----
-
-## Field override
+description:	
+...
+# Field override
 
 
 ```groovy

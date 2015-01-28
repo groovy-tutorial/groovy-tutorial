@@ -1,6 +1,6 @@
 ---
 title:	Introduction
----
+...
 I like Groovy.
 
 I like the way it lets me use the Java skills I've built up over the years but it makes it easier to code solutions to problems. I like the way it doesn't, well, get in the way. With Groovy I can:

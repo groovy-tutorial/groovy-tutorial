@@ -2,8 +2,6 @@
 title:		Methods and Closures  
 description:	Methods help us break code into logical and reusable segments. Closures let us store these methods as variables so that we can pass them around to be used by other methods.  
 ...
-
-# Methods
 Methods (sometimes also called functions) are blocks of code that can be run more than once and encapsulate a segment of logic. We define a method by writing the code that will be run when the method is called. Calling a method is the process of your code asking the method to start.
 
 Groovy, like Java, is object-oriented and works around classes. C is procedural and works around functions. Whilst the methods described here may look a bit like C-style programming that lets you build libraries of functions, what is really happening is Groovy is wrapping your code in a `class` definition behind the scenes. Your only likely to create "raw" methods, like the ones below, as a means to break up your scripts. More usually you'll create methods within your classes.

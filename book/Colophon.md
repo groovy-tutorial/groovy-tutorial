@@ -1,7 +1,6 @@
 ---
 title:	Colophon  
----
-
+...
 A number of technologies were used in the production of this book:
 
 - The code is, of course, primarily written using the Groovy distribution

@@ -1,5 +1,6 @@
-# The Simple Assignment Operator
-
+---
+title: The Simple Assignment Operator
+...
 [Table: Simple assignment operator]
 |Operator|
 |:------:|  

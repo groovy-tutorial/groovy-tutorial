@@ -1,5 +1,6 @@
-## Relational Operators
-
+---
+title: Relational Operators
+...
 [Table: The relational operators]
 |Operator|Name     
 |:------:|:--------
@@ -26,7 +27,7 @@ Ordinarily, the operands used in a relational comparison can be compared in a me
 if ('easy' < 123) println "It's easier than 123"
 ```
 
-### Spaceship
+# Spaceship
 [Table: The spaceship operator]
 |Operator|  
 |:------:|

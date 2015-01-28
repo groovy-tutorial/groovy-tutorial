@@ -1,4 +1,6 @@
-# Classes
+---
+title: Classes
+...
 >Note: Groovy doesn't enforce access modifiers such as `private` and `protected` - these are used in an advisory capacity.
 
 The simplest class declaration:
@@ -48,11 +50,11 @@ Class modifiers (optional, 0..1):
 :Specifies the interface(s) implemented by this class 
 :Multiple interfaces can be declared, separated by a comma (`,`)
 
-## Package Name
+# Package Name
 
 
 
-## Fields
+# Fields
 
 <pre>
 [def | static | access modifier] fieldName <i>[= operation]</i>
@@ -61,7 +63,7 @@ Class modifiers (optional, 0..1):
 Accessing fields
 :Fields can be accessed using dot-point notation (e.g. `myObj.name`)
 
-### Properties
+## Properties
 Instance fields defined using the `def` statement and static fields declared without an access are referred to as _properties_ and default getter and setter methods are automatically provided by Groovy. 
 
 |Field example | Generated setter | Generated getter |  
@@ -75,16 +77,16 @@ A getter and/or setter can be explicitly provided.
 Accessing properties
 :Property access using dot-point notation actually causes the getter or setter to be called, depending on the operation.
 
-### Instance Fields
+## Instance Fields
 
 Instance fields can be accessed via the `this.` keyword.
 
-### Static Fields
+## Static Fields
 
 
 
 
-## Instance Initializers
+# Instance Initializers
 The instance initializer block is contained within curly braces (`{...}`) and is called _once_ when a new class instance is created (using the `new` statement): 
 
 <pre>
@@ -97,7 +99,7 @@ Zero or more instance initializer blocks can be provided and are evaluated in or
 
 The instance initializer block is evaluated before any pertinent constructor is evaluated.
 
-## Static Initializers
+# Static Initializers
 The static initializer block is contained within curly braces prefixed with the `static` keyword (`static {...}`) and is called _once_ when a  class is initialised: 
 
 <pre>
@@ -113,7 +115,7 @@ In general terms, a class is initialised (and the static initializer(s) evaluate
 - A new instance of the class is requested
 - A static field or method is accessed
 
-## Methods
+# Methods
 <pre>
 <i>[method modifiers]</i> <i>[def | static | access_modifier]</i> <i>[return_type]</i> methodName(<i>[params]</i>) 
   <i>[throws exception_types]</i>{
@@ -162,10 +164,10 @@ Returning values
 	- `return`  with no expression will cause `null` to be returned
 - If no `return` statement is provided, the result of the method's final expression is returned.
 	
-### Instance Method Declarations
+## Instance Method Declarations
 Instance methods can access instance fields and methods, and are able to use the `this` keyword.
 
-### Static Method Declarations
+## Static Method Declarations
 Static methods use the `static` method modifier, cannot access instance fields and methods, and aren't able to use `this`.
 
 <pre>

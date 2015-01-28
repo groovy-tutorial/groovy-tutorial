@@ -1,8 +1,7 @@
 ---
 title:    Constants
 description:   
----
-
+...
 Constants are just that - they don't change. Use of constants improves code by providing a reference point for comparison. Constants are usually declared with upper-case names (e.g. `MAX_PASSENGERS`). 
 
 The term _constant_ may also be referred to by its synonym _immutable_.  

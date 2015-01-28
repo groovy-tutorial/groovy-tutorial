@@ -1,7 +1,7 @@
 ---
 title:	The `while` loop
 description:	
----
+...
 The `while` loop will  repeat a block of code whilst its condition is `true`:
 
 ```groovy

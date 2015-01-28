@@ -1,4 +1,6 @@
-## Objects
+---
+title: Objects
+...
 >We'll cover a lot more on Objects in a later tutorial as they're so central to Groovy. For now, this overview should help you get an understanding of how objects are used.
 
 Groovy is an object-oriented programming language and it's essential to understand what this means if you're to really get to grips with coding. 
@@ -19,7 +21,7 @@ But what is an object? Well, an object is an encapsulation of properties and met
 		* `setName(name)` takes 1 parameter (`name`) and sets the person's name to that value
 	* Methods are sometimes called _functions_
 
-### Declaring and using an object
+# Declaring and using an object
 
 Let's look at a Groovy script that declares a new object:
 
@@ -125,7 +127,7 @@ def david = new Person(name: 'David', email: 'david@example.com')
 def sarah = new Person(name: 'Sarah', email: 'sarah@example.com')
 ```
 
-### Existing classes
+# Existing classes
 
 The great strength/benefit/bonus of object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API)[^bookmarks]. 
 
@@ -160,7 +162,7 @@ println quote.size()
 
 The example above demonstrates how we can call methods on an object instance and you'll see this used in the rest of the tutorials. Be sure to try out the code above to see what it does!
 
-### Method calls on literal values
+# Method calls on literal values
 Literal values are best thought of the value you would write down:
 
 * Boolean:
@@ -190,7 +192,7 @@ This definitely looks a bit odd but think of it this way:
 
 This can start to be very useful when you look at lists and ranges - something we'll get to soon. 
 
-### Summary
+# Summary
 We won't much deeper into objects for now but I hope this section makes the syntax a little less confusing.
 
 [^bookmarks]: Check the Bookmarks section for links to a variety of APIs and their documented classes and methods.

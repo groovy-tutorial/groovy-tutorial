@@ -2,9 +2,6 @@
 title:	Arithmetic and Conditional Operators  
 description:	
 ...
-
-# Introduction
-
 Groovy utilises a strong complement of arithmetic and conditional operators. You're likely to know many of them from your school days. 
 
 |Operator(s)         							  |Type

@@ -1,8 +1,7 @@
 ---
 title:	Legal Notices
----
-
-Acknowledgement of trademarks etc:
+...
+Acknowledgement of trademarks:
 
 - Java is a registered trademark of Oracle and/or its affiliates.
 - Apple and OS X are trademarks of Apple Inc., registered in the U.S. and other countries

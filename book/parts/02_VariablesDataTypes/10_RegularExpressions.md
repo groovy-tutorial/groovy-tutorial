@@ -1,11 +1,7 @@
 ---
 title:	Regular Expressions
 description:	
----
-
-# Introduction
-
-
+...
 To define the pattern we use the `~/ /`
 
 ```groovy

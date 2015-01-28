@@ -1,3 +1,3 @@
 ---
-title:	Methods and closures
+title:	Methods and Closures
 ...

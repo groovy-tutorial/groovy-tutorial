@@ -1,4 +1,6 @@
-## Equality Operators
+---
+title: Equality Operators
+...
 [Table: The equality operators]
 |Operator|Name     
 |:------:|:--------
@@ -22,7 +24,7 @@ def str2 = 'Hello'
 assert str1 == str2
 ```
 
-### What Is Equality?
+# What Is Equality?
 
 Equality can be a little tricky. Think about the statement "Hey cool, we have the same car!". This could mean that we have the same make and model but different instances of a car *or* it could mean that we share a car. 
 
@@ -45,7 +47,7 @@ assert ! obj1.equals(obj2)
 assert obj1.equals(obj3)
 ```
 
-### Precedence
+# Precedence
 In the following example, the equality operator (`!=`) is evaluated before the assignment operator (`=`), resulting in the value of `truth` being the boolean value `true`:
 
 ```groovy
@@ -53,7 +55,7 @@ def truth = 'cats' != 'dogs'
 assert truth == true
 ```
 
-### Custom Equality
+# Custom Equality
 
 It is possible to define a custom implementation of `==` by overriding the `equals(Object obj)` method. This can be handy if your object has a simple method for determining equality, such as comparing staff members by their ID:
 

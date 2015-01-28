@@ -1,14 +1,13 @@
 ---
-title:	Introduction
+title:	Key Object Methods
 description:	
 ...
+# `is`
 
-## `is`
-
-## `toString`
+# `toString`
 
 
-## `equals` and `hashCode`
+# `equals` and `hashCode`
 
 ```
 class Person {}

@@ -1,8 +1,7 @@
 ---
 title:	Exceptions
 description:	
----
-
+...
 There are two sides to the `java.lang.Throwable` family tree:
 
 `java.lang.Exception`

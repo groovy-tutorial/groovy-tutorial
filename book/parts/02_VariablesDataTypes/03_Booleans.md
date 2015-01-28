@@ -1,5 +1,6 @@
-## Booleans
-
+---
+title: Booleans
+...
 Boolean variables are perhaps the simplest and can hold a value of either `true` or `false`.
 
 ```groovy
@@ -7,11 +8,11 @@ def truth = true
 def lies = false
 ```
 
-### Useful Methods
+# Useful Methods
 
 Booleans have a small number of methods that you generally won't find yourself using as they (mostly) have equivalent operators that are more "natural" to read and write.
 
-#### `and(right)`
+## `and(right)`
 Performs a logical 'and'
 
 ```groovy  
@@ -22,7 +23,7 @@ assert truth.and(lies) == false
 
 The conditional And operator (`&&`) is equivalent to the `and` method and the assertion above could also be written as `assert truth && lies == false`
 
-#### `or(right)`
+## `or(right)`
 Performs a logical 'or'
 
 ```groovy  

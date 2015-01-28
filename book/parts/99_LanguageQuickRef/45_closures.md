@@ -1,5 +1,6 @@
-# Closures
-
+---
+title: Closures
+...
 Basic form:
 <pre>
 <i>[assignment]</i> {

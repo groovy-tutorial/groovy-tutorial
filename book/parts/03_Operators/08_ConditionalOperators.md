@@ -1,10 +1,7 @@
 ---
 title:	Conditional Operators
 description:	
----
-
-# Introduction
-
+...
 You'll most often see Conditional-and (`&&`) and Conditional-or (`||`) used in conditional statements such as `if`. We also use them in expressions such as `assert` to determine if a statement is `true` or `false`.
 
 The Conditional Operator (`?:`) is a short-form variant of the `if-else` statement that really helps with code readability. It's also referred to as the "elvis" operator and the "ternary" operator.
@@ -16,7 +13,7 @@ The Conditional Operator (`?:`) is a short-form variant of the `if-else` stateme
 |`||`	|  Conditional-or	| 
 |`?:`	|  Conditional operator	|  
 
-## What Is Truth?
+# What Is Truth?
 
 All of the following statements resolve as `true` and the assertions all pass:
 
@@ -37,7 +34,7 @@ assert !''
 assert !null
 ```
 
-## Evaluation
+# Evaluation
 
 Conditional operators are evaluated left-to-right. The assertion in the following code passes as the result of `true && false` is `false` but is then or'd with `true`, resulting in `true`:
 
@@ -126,7 +123,7 @@ if (salary < 75000) {
 assert tax == 20000
 ```
 
-##Default values
+# Default values
 
 The conditional operator is also really useful for default values - these are used when you want to make sure a variable always has a value. In the code below the `Person` class has been prepared to ensure that any instance that has not been explicitly given a value for the `name` property is assigned `Anonymous` as the name:
 

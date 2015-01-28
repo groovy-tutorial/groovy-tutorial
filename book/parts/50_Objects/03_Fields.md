@@ -2,10 +2,6 @@
 title:	Fields
 description:	
 ...
-# [%Title]
-
-_[%Abstract]_ 
-
 A class's fields are used to describe an object. Some fields describe properties of the object (e.g. name, age, height), some describe the state of the object (e.g. active, alive, employed), and some may be used 
 
 

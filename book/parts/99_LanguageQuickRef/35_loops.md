@@ -1,12 +1,13 @@
-# Loops
-
+---
+title: Loops
+...
 The following statements affect loops: 
 
 - `break` causes the enclosing loop to complete
 	- No further iterations are performed
 - `continue` causes the current iteration to end and control is passed to the enclosing loop to evaluate the next iteration. 
 
-## `for`
+# `for`
 Groovy-style iteration:
 <pre>
 for (<i>[Type] parameter</i> in <i>expression</i>) {
@@ -43,7 +44,7 @@ for (<i>[init_expression]</i>; <i>[expression]</i>; <i>[update_expression]</i>) 
 	- This occurs prior to the next evaluation of `expression`
 	- Optional
 
-## `while`
+# `while`
 
 <pre>
 while (<i>expression</i>) {
@@ -51,6 +52,6 @@ while (<i>expression</i>) {
 }
 </pre>
 
-## `do while`
+# `do while`
 
 This is not supported in Groovy.

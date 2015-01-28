@@ -1,5 +1,6 @@
-## Increment and Decrement Operators
-
+---
+title: Increment and Decrement Operators
+...
 |Operator|Name	| 
 |:------:|:--------	| 
 |++      |Increment	| 
@@ -73,7 +74,7 @@ Enums
 	assert task == Priority.HIGH
 	```
 
-### Customising the Increment and Decrement Operators
+# Customising the Increment and Decrement Operators
 
 By overloading `next` and `previous` methods, a custom class can support the increment and decrement operators.
 

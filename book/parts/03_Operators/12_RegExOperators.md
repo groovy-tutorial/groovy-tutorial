@@ -1,10 +1,6 @@
 ---
-title:	
-description:	
----
-
-# Regular Expression Operators
-
+title:	Regular Expression Operators	
+...
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
 | `=~`	| Find	|  

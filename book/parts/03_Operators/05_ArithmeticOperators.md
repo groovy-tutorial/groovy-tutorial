@@ -1,7 +1,9 @@
-## Arithmetic operators
+---
+title: Arithmetic operators
+...
 The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people from their early school days.
 
-### Additive Operators
+# Additive Operators
 [Table: The additive operators]
 |Operator|Name   |
 |:------:|:------|
@@ -22,7 +24,7 @@ Additive operators are left-associative - they are assessed from left to right:
 > I'd suggest that you avoid using this as Groovy has better options that we'll look at shortly.
 
 
-### Multiplicative Operators
+# Multiplicative Operators
 
 [Table: The multiplicative operators]
 |Operator|Name     |
@@ -39,7 +41,7 @@ Multiplicative operators are left-associative:
 
     assert 10 * 6 / 2 == 30
 
-### The Power operator
+# The Power operator
 
 [Table: The power operator]
 |Operator|Name     |
@@ -55,7 +57,7 @@ assert 5**3 == 125
 > This is a handy shortcut to using  
 > `java.lang.Math.pow(5, 3)`
 
-### Precedence
+# Precedence
 Multiplicative operators have precedence over additive operators. 
 
 ```groovy

@@ -1,9 +1,7 @@
 ---
 title:	Bitwise Operators
 description:	
----
-
-# Introduction
+...
 I have to admit that I haven't seen many instances of bitwise manipulation since my university assignments. That's not to say they're not used or not important - I've just not done a lot of programming on
 
 [Table: The bitwise operators]
@@ -19,7 +17,7 @@ I have to admit that I haven't seen many instances of bitwise manipulation since
 
 [^xor]: Known as an Exclusive OR
 
-## Truth Tables
+# Truth Tables
 
 Truth tables describe the results of various logical operations. The truth tables below illustrate the NOT, AND, OR and XOR logic.
 

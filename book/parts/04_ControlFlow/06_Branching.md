@@ -1,9 +1,7 @@
 ---
 title:	Branching statements
 description:	
----
-
-
+...
 # `break`
 
 We first came across the use of `break` in the `switch` statement - it's used to indicate the end of the set of statements for the `case` and signals that the `switch` statement has completed.

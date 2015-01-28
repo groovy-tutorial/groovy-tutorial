@@ -2,7 +2,6 @@
 Title:		Strings  
 Description:	 
 ...
-
 There are a two main ways in which you can declare a string in Groovy: using single or double quotes
 
 | Method | Usage
@@ -13,7 +12,7 @@ There are a two main ways in which you can declare a string in Groovy: using sin
 |Three double quotes (`"""..."""`)	| a multi-line GString  
 
 
-### Escape sequences
+# Escape sequences
 
 Strings can contain escape sequences, allowing you to use non-printable characters in your text.
 
@@ -59,7 +58,7 @@ As the backslash (`\`) is used to escape characters, it needs an escape of its o
 println 'c:\\documents\\report.doc'
 ```
 
-### GStrings
+# GStrings
 In order to have Groovy interpolate the value of a variable we use the `$` symbol in front of the variable name - as you can see with `$pet` below:
 
 ```groovy
@@ -94,7 +93,7 @@ println "$word has ${word.length()} letters"
 
 >The code `word.length()` calls the `length` method available on a string - we'll cover what this means shortly.
 
-### Multiline Strings
+# Multiline Strings
 
 The examples given so far use short strings but longer strings would be cumbersome to type using lots of new lines. Instead, Groovy provides multiline strings - the code below declares a multiline fixed string:
 
@@ -131,6 +130,6 @@ And he raced him down the mountain like a torrent down its bed,
 While the others stood and watched in very fear."""
 ```
 
-### Building Strings
+# Building Strings
 
 Working with basic strings is fine but if you need to build up a large piece of text throughout a program they can become very inefficient. We'll look into this at a later point.

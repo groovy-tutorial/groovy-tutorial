@@ -2,10 +2,6 @@
 title:      Expando
 description:   The Expando class lets you create objects on the fly. 
 ...
-# [%Title]
-
-_[%Abstract]_ 
-
 In the example below the `monster` variable is dynamically assigned a set of fields and
 methods (through the use of closures).
 

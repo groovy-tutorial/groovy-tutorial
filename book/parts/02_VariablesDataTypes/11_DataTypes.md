@@ -2,9 +2,6 @@
 title:	Data types  
 description:	
 ...
-
-#Data types
-
 Groovy does not preclude the programmer from explicitly declaring a data type, particularly when it would be pertinent to constrain the values being managed. Furthermore, knowledge of data types is very useful for a number of reasons:
 
  1. Use of JVM-compatible libraries may require knowledge of the data types required by method calls.
@@ -12,7 +9,7 @@ Groovy does not preclude the programmer from explicitly declaring a data type, p
  2. Conversion between different data types (such as decimal numbers to whole numbers) can cause truncation and other (perhaps unexpected) results.
 	 - Essential knowledge if your program relies on calculations 
 
-## Using a specific type
+# Using a specific type
 A variable can be declared as being of a specific data type. When using a type, drop the `def` keyword: 
 
 ```groovy
@@ -20,7 +17,7 @@ Integer myNum = 1
 String myName = "Fred nurk"
 ```
 
-## Groovy's use of types
+# Groovy's use of types
 The table below illustrates Groovy's selection of a data type based on a value
 
 [Table: Groovy's use of types]
@@ -41,14 +38,14 @@ The table below illustrates Groovy's selection of a data type based on a value
 
 It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`. 
 
-## The `null` Value
+# The `null` Value
 Variables that are not assigned a value at declaration are provided a `null` value by default. This is a special reference that indicates the variable is devoid of a value.
 
 Variables can be explicitly assigned `null`:
 
     def id = null
 
-## Available data types
+# Available data types
 As Groovy imports the `java.lang` package as well as the `java.math.BigDecimal` and `java.math.BigInteger` classes by default, a range of data types are available for immediate use:
 
  - `Boolean`: to store a logical value of `true` or `false`
@@ -84,10 +81,10 @@ The table below maps the types defined in `java.lang` against their equivalent p
 
 As an object-oriented language Groovy also provides a mechanism for declaring new data types (objects) that extend and encapsulate information to meet a range of requirements. This will be discussed further in [Chapter 4. Classes]()
 
-## Autoboxing
-_Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing_.
+# Autoboxing
+_Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing.
 
-## Type Conversions
+# Type Conversions
 
 Groovy will convert values assigned to variables into the variable's declared data type. For example, the code below declares a variable of type "String" and then assigns it 3.14 (a number). The assertion that the variable remains of type "String" will succeed, indicating that `3.14` was converted to a String value by Groovy before being assigned to the `myName` variable.
 

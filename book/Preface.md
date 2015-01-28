@@ -1,7 +1,6 @@
 ---
 title:	Preface
----
-
+...
 This is version 0.1.0-SNAPSHOT of "The Groovy Tutorial"[^snap]
 
 ## Releases

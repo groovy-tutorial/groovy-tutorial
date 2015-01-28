@@ -2,8 +2,6 @@
 title:	Variables  
 description:	Variables are one of the most basic of programming constructs and help us to track values in our program.
 ...
-
-# Introduction
 Variables are (perhaps unsurprisingly), items that can change. Essentially it is a "box" that can hold a value. Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
 
 ```groovy

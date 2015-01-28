@@ -1,7 +1,6 @@
-
-# The Groovy Tutorial
-
-
+---
+title: The Groovy Tutorial
+...
 ![](img/groovy-logo.svg)
 
 Author

@@ -1,7 +1,7 @@
 ---
 title:	The `for` Loop
 description:	Groovy supports both a for-each loop and the C-style for loop.
----
+...
 The `for` loop will  repeat a block of code whilst its condition is `true`:
 
 ```groovy

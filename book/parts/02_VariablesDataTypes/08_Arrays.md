@@ -1,8 +1,6 @@
 ---
 Title:      Arrays
-Description:   
 ...
-
 To declare an array of Strings
 
 ```groovy
@@ -33,7 +31,7 @@ Arrays can be of any type and the `Object` class provides a flexible type when y
 Object[] bag = new Object[4]
 ```
 
-## Manipulating arrays
+# Manipulating arrays
 
 ```groovy
 println myArray.length
@@ -58,7 +56,7 @@ myArray.each() {
 }
 ```
 
-### Copying arrays
+# Copying arrays
 ```java
 public static void arraycopy(Object src,
                              int srcPos,
@@ -76,7 +74,7 @@ println newArray
 
 
 
-###
+#Array methods
 `java.util.Arrays` has a number of 
 
 ## Multidimensional arrays

@@ -1,6 +1,7 @@
-# Operators
-
-## Arithmetic and Conditional Operators
+---
+title: Operators
+...
+# Arithmetic and Conditional Operators
 |Operator(s)         							  |Type
 |:-------------------------------:|:------------------------------|
 |`=`	| Simple Assignment Operator|
@@ -15,7 +16,7 @@
 `^=`  `%=`  `<<=`  `>>=`  `>>>=`	| The Compound Assignment Operators|
 [Table: Arithmetic and Conditional Operators]
 
-## String Operators
+# String Operators
 
 |Operator(s)       |Type
 |:-------------------:|:-----------| 
@@ -28,7 +29,7 @@
 |`++` `--`	| Increment and Decrement Operators	| 
 [Table: String Operators]
 
-## Regular Expression Operators
+# Regular Expression Operators
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
@@ -36,7 +37,7 @@
 | `==~`	| Match	|  
 [Table: Regular Expression Operators]
 
-## Collection Operators
+# Collection Operators
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
@@ -47,7 +48,7 @@
 | `[]`	| Subscript Operator	|  
 [Table: Collection Operators]
 
-## Object Operators
+# Object Operators
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  

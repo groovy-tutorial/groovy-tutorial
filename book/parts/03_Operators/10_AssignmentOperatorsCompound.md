@@ -1,8 +1,7 @@
 ---
 title:	Compound Assignment Operators
 description:	The compound assignment operators help make code that bit more compact by performing an operation in-place.
----
-
+...
 The compound assignment operators[^aug] really just conflates an operation that involves a variable which is, it turn, used to store the result. Let's look at an example to make this clearer. In the example below I really just want to add 10 to the `cost` variable:
 
 ```groovy

@@ -1,8 +1,7 @@
 ---
 title:	Loops and closures
 description:	
----
-# Closures and Loops
+...
 A number of Groovy classes (such as Lists and Maps) support methods like `each` which call a closure on each member of a collection. These are similar to loops (`for` and `while`) but each call to the closure is discreet and you can't use the `break` branching to exit the loop but you can use `return` as somewhat of a proxy for `continue`.
 
 ```groovy

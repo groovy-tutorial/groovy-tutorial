@@ -2,8 +2,6 @@
 title:	Installing Groovy  
 description:	Before we start anything let's get Groovy installed and running. 
 ...
-
-# Introduction
 There are a few methods for installing Groovy on your system and this section will describe the basics for getting started. Before you get started make sure that any installations are for the versions listed in the table below:
 
 |System		|	Version

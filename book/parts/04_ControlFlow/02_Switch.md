@@ -1,8 +1,7 @@
 ---
 title:	The `switch` Statement
 description:	
----
-
+...
 There are times when the number of possibilities are larger than a readable `if-else-if` statement can handle. There are also times where we want to execute a specific set of statements but then "fall through" to others. It's in these places that the `switch` statement comes in handy.
 
 Let's take a look at an example:

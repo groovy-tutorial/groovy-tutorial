@@ -1,13 +1,14 @@
-# Variables
-
+---
+title: Variables
+...
 | Type | Examples |  
 |  ------	| ------  	|  
 | Boolean	| `true`, `false`	| 
 | Number	| `1`, `3.14`, `1.67e-27`, `0xff` (hex), `071` (oct)	|  
 | String	| `'Hello, world'`, `"Hello, world"`	|  
-| List	| `[4, 'cat', myObject]`	|  
+| List	| `[]`, `[4, 'cat', myObject]`	|  
 | Set	| `[4, 8, 2, 19] as Set`	|  
-| Map	| `['h': 'hydrogen', 'he': 'helium']`  	|  
+| Map	| `[:]`, `['h': 'hydrogen', 'he': 'helium']`  	|  
 | Range	| `1..10`	|  
 | Regular expression	| `~/<expression>/`	|  
 
