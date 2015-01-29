@@ -14,7 +14,7 @@ The Groovy Console should look something like the following screen grab:
 
 ![Screen shot of the Groovy Console application window][GroovyConsole]
 
-[GroovyConsole]: GroovyConsole.png "Screen shot of the Groovy Console application window" height=400px
+[GroovyConsole]: resources/images/GroovyConsole.png "Screen shot of the Groovy Console application window" height=400px
 
 The main parts of the console are:
 
@@ -37,7 +37,7 @@ Once that's ready, go to the menu and select `Script -> Run` and you should see 
 
 ![Screen shot of the Groovy Console application window with the hello, world script][GroovyConsoleHW] 
 
-[GroovyConsoleHW]: GroovyConsoleOutput.png "Screen shot of the Groovy Console application window with the `hello, world` script" height=400px
+[GroovyConsoleHW]: resources/images/GroovyConsoleOutput.png "Screen shot of the Groovy Console application window with the `hello, world` script" height=400px
  
 If you see the output `hello, world` then congratulations - you've taken your first step into a larger world.
 
