@@ -1,5 +1,5 @@
 ---
-title:	Arithmetic and Conditional Operators  
+title:	Numeric Operators  
 description:	
 ...
 Groovy utilises a strong complement of arithmetic and conditional operators. You're likely to know many of them from your school days. 
