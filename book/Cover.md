@@ -1,10 +1,10 @@
 ---
 title: The Groovy Tutorial
 ...
-![](img/groovy-logo.svg)
+![](resources/images/logo.svg)
 
 Author
-:Duncan Dickinson
+: Duncan Dickinson
 
 
 
