@@ -4,7 +4,7 @@ description:	Groovy supports a range of operators - those you know from primary 
 ...
 Operators are used with variables and the context in which they're used will vary the resulting output. This introduction lists the range of operators available to you and the following chapters describe each in more detail.
 
-## Arithmetic and Conditional Operators
+# Arithmetic and Conditional Operators
 |Operator(s)         							  |Type
 |:-------------------------------:|:------------------------------|
 |`=`	| Simple Assignment Operator|
@@ -19,7 +19,7 @@ Operators are used with variables and the context in which they're used will var
 `^=`  `%=`  `<<=`  `>>=`  `>>>=`	| The Compound Assignment Operators|
 [Table: Arithmetic and Conditional Operators]
 
-## String Operators
+# String Operators
 
 |Operator(s)       |Type
 |:-------------------:|:-----------| 
@@ -32,7 +32,7 @@ Operators are used with variables and the context in which they're used will var
 |`++` `--`	| Increment and Decrement Operators	| 
 [Table: String Operators]
 
-## Regular Expression Operators
+# Regular Expression Operators
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
@@ -40,7 +40,7 @@ Operators are used with variables and the context in which they're used will var
 | `==~`	| Match	|  
 [Table: Regular Expression Operators]
 
-## Collection Operators
+# Collection Operators
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
@@ -51,7 +51,7 @@ Operators are used with variables and the context in which they're used will var
 | `[]`	| Subscript Operator	|  
 [Table: Collection Operators]
 
-## Object Operators
+# Object Operators
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
@@ -63,7 +63,7 @@ Operators are used with variables and the context in which they're used will var
 | `instanceof`	| Type Comparison	|  
 [Table: Object Operators]
 
-## Operator Overloading
+# Operator Overloading
 
 Groovy supports something called "operator overloading" and it's possible for classes to determine how they want operators to behave. Throughout this section I'll provide some examples of overloading. 
 
