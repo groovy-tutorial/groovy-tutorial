@@ -4,6 +4,8 @@ title:	Colophon
 A number of technologies were used in the production of this book:
 
 - The code is, of course, primarily written using the Groovy distribution
+- The book is assembled using a small Gradle-based Groovy application I strung together.
+	- You can find the source [here](https://bitbucket.org/groovytutorial/book-definition) 
 - [MultiMarkdown Composer](http://multimarkdown.com/) was used as my primary editor
 - The text has been converted using the [MultiMarkdown](http://fletcherpenney.net/multimarkdown/) tool.
 - The [Groovy/Grails Tool Suite](http://grails.org/products/ggts) was used to test some of the sample code.

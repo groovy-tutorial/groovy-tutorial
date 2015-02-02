@@ -19,9 +19,9 @@ I really hope that this tutorial gives you a basis in understanding the Groovy l
 
 If you find something wrong I'd really appreciate you letting me know:
 
-- Check out the [issue tracker](https://bitbucket.org/duncan_dickinson/groovy-language/issues?status=new&status=open) and see if it's already been reported
+- Check out the [issue tracker](https://bitbucket.org/groovytutorial/groovy-tutorial/issues?status=new&status=open) and see if it's already been reported
 	- If not then please create a new issue
-- The [source text](https://bitbucket.org/duncan_dickinson/groovy-language) is written in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/). If you feel confident in doing so, why not put together a correction and [create a pull request](https://confluence.atlassian.com/display/BITBUCKET/Fork+a+Repo,+Compare+Code,+and+Create+a+Pull+Request) 
+- The [source text](https://bitbucket.org/groovytutorial/groovy-tutorial/) is written in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/). If you feel confident in doing so, why not put together a correction and [create a pull request](https://confluence.atlassian.com/display/BITBUCKET/Fork+a+Repo,+Compare+Code,+and+Create+a+Pull+Request) 
 
 Please remember that I'm not a big corporation or an automaton - I can't  respond immediately to queries and I am an assemblage of emotions that respond well to encouragement and positive encouragement a lot better than negativity.
 
