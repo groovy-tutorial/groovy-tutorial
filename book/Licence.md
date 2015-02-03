@@ -5,6 +5,8 @@ title:	Licence
 
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
 
+All code samples are licensed under the <a href='https://www.apache.org/licenses/LICENSE-2.0.html'>Apache License, Version 2.0</a>
+
 ## Your Rights and This Book
 I'm making the "Groovy Tutorial" freely available because I feel that open source projects such as Groovy deserve to have a variety of documentation that helps people use open source software. This body of work is one that took a significant amount of unpaid time but I have benefitted from many people's work in developing open source software and the associated, freely available text, that they make available. 
 
