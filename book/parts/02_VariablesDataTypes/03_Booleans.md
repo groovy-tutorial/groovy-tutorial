@@ -1,6 +1,9 @@
 ---
-title: Booleans
+title:	Booleans
+status:	in-progress
+description:	Booleans help you get to the truth of the matter.
 ...
+
 Boolean variables are perhaps the simplest and can hold a value of either `true` or `false`.
 
 ```groovy

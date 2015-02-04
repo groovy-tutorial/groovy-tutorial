@@ -1,6 +1,9 @@
 ---
-title: Ranges
+title:	Ranges
+status:	in-progress
+description:	Ranges describe a range of numbers.
 ...
+
 Ranges define a starting point, an end and the size of the steps in between. Let's look at a well-known type of range:
 
 ```groovy

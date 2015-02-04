@@ -1,16 +1,12 @@
 ---
-title: Numbers
+title:	Numbers
+status:	in-progress
+description:	Groovy supports the various types of numbers that you'd expect - and makes it easy to use them
 ...
-Groovy supports the various types of numbers that you'd expect. 
 
->This section will give you an overview that will cover most types of numbers but if you expect to be handling very large or very small numbers and calculations with such numbers then you really need to do some research to make sure you don't become a victim of truncation (where parts of the number are chopped off) and other issues with precision.
+* Integers (whole numbers)
+* Decimals
 
-Numbers all have a range of methods but most of these are best used in their operator form. For example, the `plus` method is used add two numbers together but using the plain addition operator (`+`) we learnt in primary school is easier to read:
-
-```groovy
-assert 1.plus(1) == 2
-assert 1 + 1 == 2
-```
 
 # Integers
 Integers are whole numbers and can be negative or positive:
@@ -56,3 +52,5 @@ In the previous two examples you can see a signed (positive or negative) integer
 
 * `e-27` is negatively signed
 * `e11` can also be written as `e+11` and is positively signed
+
+>This section will give you an overview that will cover most types of numbers but if you expect to be handling very large or very small numbers and calculations with such numbers then you really need to do some research to make sure you don't become a victim of truncation (where parts of the number are chopped off) and other issues with precision.

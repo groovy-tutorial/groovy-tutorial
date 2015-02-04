@@ -1,22 +1,27 @@
 ---
 title:	Installing Groovy  
+status:	in-progress
 description:	Before we start anything let's get Groovy installed and running. 
 ...
 There are a few methods for installing Groovy on your system and this section will describe the basics for getting started. Before you get started make sure that any installations are for the versions listed in the table below:
 
 |System		|	Version
 |-----------------|----------------
-| Java JDK		|	7 (8 is fine too)
+| Java JDK		|	8 (7 is fine too)
 | Groovy		|	2.3.6 (or higher)
 
 >Note: It is notoriously difficult to provide this type of information in a stable manner as versions are upgraded and URLs broken. The [Groovy Download]() page is the primary resource to return to if the links below appear to be broken.
 
+# Don't Install Groovy
+
+I know this chapter is about installing Groovy but perhaps it's worth leaving this until later. The [Groovy web console](http://groovyconsole.appspot.com) is an online Groovy console that should let you run most of the sample code provided in this tutorial. Provided you have web access you can skip through to the next chapter and get straight into writing some code!
+
 # Install a Java Virtual Machine
-All methods for installing Groovy require that you have a Java Virtual Machine (JVM) installed. For the purposes of this book we'll use the Java 7 SE JDK (Java 7 Standard Edition Development Kit)[^You'll notice that Java 7 may also be represented as Java 1.7 - the former is the Java Platform version number (7) and the latter is the version string (1.7)]. 
+All methods for installing Groovy require that you have a Java Virtual Machine (JVM) installed. For the purposes of this book we'll use the Java 8 SE JDK (Java 8 Standard Edition Development Kit)[^You'll notice that Java 8 may also be represented as Java 1.8 - the former is the Java Platform version number (8) and the latter is the version string (1.7)]. 
 
 >Note: If you look around for Java downloads you'll likely come across Java Runtime Environment (JRE) downloads. The JRE provides enough functionality to run a compiled application but not to compile your Groovy code. You'll need the JDK to create Groovy programs.
 
-To install the Java 7 JDK, head to the Oracle site and locate the download appropriate to your platform: [JDK][]. For the most part these installs are straight-forward and have enough associated documentation so we won't go through this step-by-step.
+To install the Java JDK, head to the Oracle site and locate the download appropriate to your platform: [JDK][]. For the most part these installs are straight-forward and have enough associated documentation so we won't go through this step-by-step.
 
 Before moving onto the Groovy installation I'd like to make you aware that the Oracle JDK is not the only version of the JDK available. As you become more comfortable with working in a Java-based environment you might like to take a look at the following alternatives:
 
@@ -51,10 +56,10 @@ Once the `gvm` has been installed, run the following command to determine which 
 gvm list groovy
 ```
 
-You'll see a large table of version numbers but are most interested in those marked with 2.3.x - you'll want the version with the highest value of x (e.g. 2.3.6). To install Groovy you now just call `gvm` as below:
+You'll see a large table of version numbers but are most interested in those marked with 2.4.x - you'll want the version with the highest value of x (e.g. 2.4). To install Groovy you now just call `gvm` as below:
 
 ```bash
-gvm install groovy 2.3.6
+gvm install groovy 2.4.0
 ``` 
  
 ### Checking Groovy
@@ -66,14 +71,14 @@ groovy -v
 You should see something like the following output:
 
 ````
-Groovy Version: 2.3.6 JVM: 1.7.0_60 Vendor: Oracle Corporation OS: Mac OS X
+Groovy Version: 2.4.0 JVM: 1.8.0_31 Vendor: Oracle Corporation OS: Mac OS X
 ````
 
 This tells me that I am running:
 
- * Groovy 2.3.6
- * The Oracle Java 7 JVM
- * The Mac OS X operating system
+ * Groovy 2.4.0
+ * The Oracle Java 8 JVM
+ * The Apple Mac OS X operating system
 
 ### Alternatives
 The [Groovy Download][] page provides binary and source releases for Groovy. These are perfectly fine to use but you'll need to setup your system path to get up and running.
@@ -85,7 +90,7 @@ For those on Mac OS X you can also explore one of the following package manager 
 
 Linux users may find Groovy packages in their distribution's package repository but check the version being installed.
 
-[JDK]: http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html "Oracle JDK Downloads"
+[JDK]: http://www.oracle.com/technetwork/java/javase/downloads/index.html "Oracle JDK Downloads"
 
 [Groovy Download]:	http://groovy.codehaus.org/Download "Groovy Download"
 

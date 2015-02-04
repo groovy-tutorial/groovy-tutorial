@@ -1,9 +1,8 @@
 ---
-title: Objects
+title:	Objects
+status:	in-progress
+description:	Groovy is an object-oriented programming language and it's essential to understand what this means if you're to really get to grips with coding in Groovy. 
 ...
->We'll cover a lot more on Objects in a later tutorial as they're so central to Groovy. For now, this overview should help you get an understanding of how objects are used.
-
-Groovy is an object-oriented programming language and it's essential to understand what this means if you're to really get to grips with coding. 
 
 But what is an object? Well, an object is an encapsulation of properties and methods:
 
@@ -20,6 +19,8 @@ But what is an object? Well, an object is an encapsulation of properties and met
 		* `getName()` would return the person's name
 		* `setName(name)` takes 1 parameter (`name`) and sets the person's name to that value
 	* Methods are sometimes called _functions_
+
+>We'll cover a lot more on Objects in a later tutorial as they're so central to Groovy. For now, this overview should help you get an understanding of how objects are used.
 
 # Declaring and using an object
 
@@ -129,7 +130,7 @@ def sarah = new Person(name: 'Sarah', email: 'sarah@example.com')
 
 # Existing classes
 
-The great strength/benefit/bonus of object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API)[^bookmarks]. 
+The great strength/benefit/bonus of object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API). 
 
 If we were going to create a variable to hold a string (a piece of text) we would do something like:
 
@@ -192,9 +193,8 @@ This definitely looks a bit odd but think of it this way:
 
 This can start to be very useful when you look at lists and ranges - something we'll get to soon. 
 
-# Summary
-We won't much deeper into objects for now but I hope this section makes the syntax a little less confusing.
 
-[^bookmarks]: Check the Bookmarks section for links to a variety of APIs and their documented classes and methods.
+
+
 
 

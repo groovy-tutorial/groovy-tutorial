@@ -1,7 +1,9 @@
 ---
-Title:		Strings  
-Description:	 
+title:	Strings  
+status:	in-progress
+description:	Strings are pieces of text.
 ...
+
 There are a two main ways in which you can declare a string in Groovy: using single or double quotes
 
 | Method | Usage

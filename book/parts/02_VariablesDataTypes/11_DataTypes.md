@@ -1,7 +1,9 @@
 ---
 title:	Data types  
-description:	
+status:	in-progress
+description:	Groovy does a good job of working out what sort of variable your using (numbers, strings, booleans etc) but let's look at what's going on under the hood.
 ...
+
 Groovy does not preclude the programmer from explicitly declaring a data type, particularly when it would be pertinent to constrain the values being managed. Furthermore, knowledge of data types is very useful for a number of reasons:
 
  1. Use of JVM-compatible libraries may require knowledge of the data types required by method calls.

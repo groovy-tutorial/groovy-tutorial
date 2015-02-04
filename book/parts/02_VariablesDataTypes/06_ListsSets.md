@@ -1,7 +1,9 @@
 ---
-Title:		Lists and sets  
-Description:	 
+title:	Lists and sets  
+status:	in-progress
+description:	Having a single number or string is useful but lists help you keep them together.
 ...
+
 # Lists
 
 List variables contain several items and are declared using square brackets (`[...]`). 
@@ -23,7 +25,7 @@ In the example above you'll notice I've printed out `mixed[2]` - the list item w
 It may surprise some programmers that `println mixed[-3]` is valid - it's a very handy approach to accessing list items from the end of the list. Item `-1` is the last in the list so `mixed[-3]` will be the value `true`.
 
 # Sets
-Sets are much like arrays but each element in a set is unique:
+Sets are much like lists but each element in a set is unique:
 
 ````
 def names = ['sally', 'bob', 'sally', 'jane'] as Set

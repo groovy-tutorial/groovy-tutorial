@@ -1,7 +1,9 @@
 ---
 title:	Regular Expressions
-description:	
+status:	in-progress
+description:	Regular expressions give us a powerful (and confusing) way of sifting through text.
 ...
+
 To define the pattern we use the `~/ /`
 
 ```groovy

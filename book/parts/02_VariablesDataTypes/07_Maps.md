@@ -1,8 +1,10 @@
 ---
-Title:		Maps   
-Description:	 
+title:	Maps  
+status:	in-progress
+description:	Maps allow us to build up a type of look-up table using keys and values. 
 ...
-Maps allow us to build up a type of look-up table using keys and values. Each key is unique and points to a value in the map. In the example below we see the start of a basic periodic table:
+
+Each key in a map is unique and points to a value in the map. In the example below we see the start of a basic periodic table:
 
 ```groovy
 def periodic = ['h': 'hydrogen',

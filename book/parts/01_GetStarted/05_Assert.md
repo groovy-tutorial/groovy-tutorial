@@ -1,9 +1,9 @@
 ---
 title:	The `assert` statement
-description:	The `assert` statement is handy for checking if we have the correct result or if there was a problem in our code.
+status:	in-progress
+description:	The "assert" statement is handy for checking if we have the correct result or if there was a problem in our code.
 ...
 
-# Using `assert`
 The `assert` statement is perhaps out of order being described here but it will be relied on in many code examples.
 
 >Note: two operators are used in the examples below - `==` (two equals signs) is equality operator and `!=` is the inequality operator. Both are discussed later.
