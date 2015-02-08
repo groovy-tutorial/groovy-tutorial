@@ -32,6 +32,14 @@ It may surprise some programmers that `println mixed[-3]` is valid - it's a very
 
 The `get()` method can also be used to access a list element by its index - e.g. `mixed.get(3)` gives us `3.14`.
 
+I can provide multiple indexes in the subscript notation and grab the specified elements from the list. In the example below I grab elements 0 and 2 (`temperatures[0, 2]`) and then elements 1, 3 and 4 (`temperatures[1, 3, 4]`):
+
+```groovy
+def temperatures = [10, 5, 8, 3, 6]
+assert temperatures[0, 2] == [10, 8]
+assert temperatures[1, 3, 4] == [5, 3, 6]
+```
+
 ## Adding elements
 
 To add an element to a list we use the `add()` method or the `<<` operator:
