@@ -23,7 +23,7 @@ If you find something wrong I'd really appreciate you letting me know:
 	- If not then please create a new issue
 - The [source text](https://bitbucket.org/groovytutorial/groovy-tutorial/) is written in [MultiMarkdown](http://fletcherpenney.net/multimarkdown/). If you feel confident in doing so, why not put together a correction and [create a pull request](https://confluence.atlassian.com/display/BITBUCKET/Fork+a+Repo,+Compare+Code,+and+Create+a+Pull+Request) 
 
-Please remember that I'm not a big corporation or an automaton - I can't  respond immediately to queries and I am an assemblage of emotions that respond well to encouragement and positive encouragement a lot better than negativity.
+Please remember that I'm not a big corporation or an automaton - I can't  respond immediately to queries and I am an assemblage of emotions that respond well to positive encouragement a lot better than negativity.
 
 ## Bookmarks
 
@@ -34,17 +34,21 @@ Core resources to have at-hand:
 - [The Groovy homepage](http://www.groovy-lang.org/) is a great starting point.
 - The latest Groovy API documents are available at:
 	- [The Groovy API](http://groovy-lang.org/api.html)
+		- aka the GAPI
 	- [The Groovy extensions to the JDK](http://groovy-lang.org/gdk.html)
 		- aka the GDK
 - The [Java API](http://docs.oracle.com/javase/7/docs/api/) always comes in handy
 	- So do [The Java Tutorials](http://docs.oracle.com/javase/tutorial/)
-- Whilst not a perfect fit for Groovy, I tend to use the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) as my coding standard.
+- Whilst not a perfect fit for Groovy, I tend to use the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) as my stern mentor.
 
 Great blogs and sites that provide Groovy coding examples:
 
 - [Mr Haki](http://mrhaki.blogspot.com.au/search/label/Groovy) - A really useful site containing heaps of Groovy code examples.
 - [DZone](http://www.dzone.com/links/tag/groovy.html) - Features a number of Groovy articles.
 - [InfoQ](http://www.infoq.com/groovy) - Another useful site for Groovy articles.
+- My own [Workbench](http://workbench.duncan.dickinson.name) blog is very young but has a few Groovy samples.
+
+The book [Groovy in Action (2nd Edition)](http://www.manning.com/koenig2/) will help you go further with your Groovy programming.
 
 If you find yourself stuck and needing some help, the following channels are worth tuning into:
 

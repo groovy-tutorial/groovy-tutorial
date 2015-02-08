@@ -1,10 +1,10 @@
 ---
 title:	Declaring Variables  
-status:	in-progress
+status:	draft
 description:	Let's look at how you declare a variable and what it is you're actually declaring.
 ...
 
-Variables are (perhaps unsurprisingly), items that can change. Essentially it is a "box" that can hold a value. Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
+Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
 
 ```groovy
 def score
@@ -69,16 +69,17 @@ assert number2 == 20
 assert number3 == null
 ```
 
-## Variable names
+# Variable names
 Variable names must meet the following criteria:
 
 - Must start with a letter (upper-case [A-Z] or lower-case [a-z])
-	   - The underscore (`_`) is also allowed but very strongly discouraged 
+	   - The underscore (`_`) is also allowed but this is very strongly discouraged 
 - Must only contain letters, digits (0-9) or an underscore (`_`)
 	- The dollar-sign (`$`) is also allowed but very strongly discouraged 
  - Must not match a keyword (reserved word)
  
 The use of literate variable names that comply to the criteria is encouraged. For example, a variable named `x` provides little information as to its role whereas `accountNumber` is likely to be clear within the context of a broader system.
+
 
 # Data Types
 Data types define the sort of data a variable can hold. Most programming language feature the following data types:
@@ -87,11 +88,12 @@ Data types define the sort of data a variable can hold. Most programming languag
 	* A logical value of `true` or `false`
 * Characters and strings
 	* A character is a single letter, number or symbol (e.g. `#`)
-	* A piece of text is referred to as a string
+	* A piece of text is referred to as a "string"
 * Numbers
 	* Integers (whole numbers) both positive and negative
 	* Decimals (fractional numbers) both positive and negative
-* Dates
+* Dates and times
+	* You know, like dates and times
 * Lists and sets
 	* A variable that holds a number of values (list)
 	* A variable that holds unique values (set)

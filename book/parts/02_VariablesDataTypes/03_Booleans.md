@@ -1,6 +1,6 @@
 ---
 title:	Booleans
-status:	in-progress
+status:	draft
 description:	Booleans help you get to the truth of the matter.
 ...
 
@@ -15,8 +15,7 @@ def lies = false
 
 Booleans have a small number of methods that you generally won't find yourself using as they (mostly) have equivalent operators that are more "natural" to read and write.
 
-## `and(right)`
-Performs a logical 'and'
+The `and(right)` method performs a logical 'and'
 
 ```groovy  
 def truth = true
@@ -26,8 +25,7 @@ assert truth.and(lies) == false
 
 The conditional And operator (`&&`) is equivalent to the `and` method and the assertion above could also be written as `assert truth && lies == false`
 
-## `or(right)`
-Performs a logical 'or'
+The `or(right)` method performs a logical 'or'
 
 ```groovy  
 def truth = true

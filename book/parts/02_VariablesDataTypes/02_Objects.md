@@ -1,6 +1,6 @@
 ---
 title:	Objects
-status:	in-progress
+status:	draft
 description:	Groovy is an object-oriented programming language and it's essential to understand what this means if you're to really get to grips with coding in Groovy. 
 ...
 
@@ -89,7 +89,7 @@ def getEmail() {
     return this.email
 }
 
-def seteEmail(email) {
+def setEmail(email) {
     this.email = email
 }
 ```
@@ -128,6 +128,51 @@ def david = new Person(name: 'David', email: 'david@example.com')
 def sarah = new Person(name: 'Sarah', email: 'sarah@example.com')
 ```
 
+# Useful Methods
+
+In the Groovy/Java family tree, `java.lang.Object` is the grand-daddy of all classes. Using a system called "inheritance", each new class inherits attributes such as methods and properties from their forebears. Even the `Person` class I described above inherits from `java.lang.Object` and the Groovy developers been enhanced that class further! This means that all classes have built-in features that we can access. Let's look at a few of them.
+
+## `class`
+
+The `class` property is used to access the Class that defines the object. This can be really useful when we want to check what sort of object we're dealing with.
+
+```groovy
+class Person {
+    def name
+    def email
+}
+
+def david = new Person(name: 'David', email: 'david@example.com')
+
+println david.class.name
+```
+
+## `dump()`
+
+This will return a String that describes the object instance's internals. Try out the following code to see what gets dumped:
+
+```groovy
+class Person {
+    def name
+    def email
+}
+
+def david = new Person(name: 'David', email: 'david@example.com')
+
+println david.dump()
+```
+
+## `with()`
+
+This method works with closures (we'll cover them later) to give us an easy format for accessing a object's properties in methods. In the example below I wrap some code using `with` and don't have to use `david.name` and `david.email` to access those properties:
+
+```groovy
+david.with {
+    println name
+    println email 
+}
+```
+
 # Existing classes
 
 The great strength/benefit/bonus of object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API). 
@@ -163,7 +208,7 @@ println quote.size()
 
 The example above demonstrates how we can call methods on an object instance and you'll see this used in the rest of the tutorials. Be sure to try out the code above to see what it does!
 
-# Method calls on literal values
+# Classes and literal values
 Literal values are best thought of the value you would write down:
 
 * Boolean:
@@ -177,7 +222,7 @@ Literal values are best thought of the value you would write down:
 
 >We use single- or double-quotes for string literals otherwise Groovy thinks the text is actually code and tries to interpret it.
 
-We can call methods directly on literal values as Groovy will create an appropriate instance for us:
+We can call methods directly on literal values as Groovy will create an appropriate object instance for us:
 
 ```groovy
 assert 1.plus(1) == 2
@@ -192,6 +237,12 @@ This definitely looks a bit odd but think of it this way:
 >`1.plus(1)` also looks odd because we're used to seeing `1 + 1`. Both formats are supported but the latter is easier to read.
 
 This can start to be very useful when you look at lists and ranges - something we'll get to soon. 
+
+Lastly, as the literal is put into an object we can access methods and properties for the object. In the example below I can see what data type Groovy is actually using when I use 3.14:
+
+```groovy
+println 3.14.class.name
+```
 
 
 

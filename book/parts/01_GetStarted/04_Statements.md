@@ -1,6 +1,6 @@
 ---
 title:	Statements  
-status:	in-progress
+status:	draft
 description: 	A Groovy program is made up from lots of statements, each telling the computer to do something.
 ...
 

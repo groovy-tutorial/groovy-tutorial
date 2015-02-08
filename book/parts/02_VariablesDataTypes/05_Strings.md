@@ -1,6 +1,6 @@
 ---
 title:	Strings  
-status:	in-progress
+status:	draft
 description:	Strings are pieces of text.
 ...
 
@@ -9,25 +9,32 @@ There are a two main ways in which you can declare a string in Groovy: using sin
 | Method | Usage
 | ------ | ------	
 |Single quotes (`'...'`)	| these are fixed strings and tell Groovy that the string is as we've written it (e.g. `def pet = 'dog'`). 
-|Double quotes (`"..."`)	| these are called GStrings and let us interpolate (insert) variables into our string.  
+|Double quotes (`"..."`)	| these are called GStrings and let us interpolate (insert) variables into our string.  (e.g. `def petDescription = "My pet is a $pet"`)
 |Three single quotes (`'''...'''`)	| a multi-line fixed string  
 |Three double quotes (`"""..."""`)	| a multi-line GString  
 
+Here's a quick example of a fixed string and a GString in action:
+
+```groovy
+def pet = 'dog'
+def petDescription = "My pet is a $pet"
+println petDescription
+```
 
 # Escape sequences
 
 Strings can contain escape sequences, allowing you to use non-printable characters in your text.
 
 [Table: escape sequences]
-|Sequence | Character  
+|Sequence | Character  	| 
 | ------	| ------	|  
-| \\n	| line feed  
-| \\f	| form feed  
-| \\r	| carriage return
-| \\t	| horizontal tab  
-| \\'	| single quote  
-| \\"	| double quote  
-| \\\\	| backslash  
+| \\n	| line feed  	| 
+| \\f	| form feed  	| 
+| \\r	| carriage return	| 
+| \\t	| horizontal tab  	| 
+| \\'	| single quote  	| 
+| \\"	| double quote  	| 
+| \\\\	| backslash  	| 
 
 The line feed (`\\n`) is often used to move to a new line:
 
@@ -126,6 +133,7 @@ GStrings can also be defined using the multiline format:
 
 ```groovy
 def animal = 'velociraptor'
+
 println """But the man from Snowy River let the ${animal} have his head,
 And he swung his stockwhip round and gave a cheer,
 And he raced him down the mountain like a torrent down its bed,
@@ -134,4 +142,66 @@ While the others stood and watched in very fear."""
 
 # Building Strings
 
-Working with basic strings is fine but if you need to build up a large piece of text throughout a program they can become very inefficient. We'll look into this at a later point.
+Working with basic strings is fine but if you need to build up a large piece of text throughout a program they can become very inefficient. We'll look into this in the tutorial on Operators.
+
+# Useful Methods
+
+Strings (text) are important aspects to human-based systems so most programming languages provide a number of methods for modifying, search, slicing and dicing strings. Groovy provides a number of helpful methods you can use with strings and we'll look at just a few of them here:
+
+* `length()` : returns the number of characters in a string
+* `reverse()`: returns the mirrored version of the string
+* `toUpperCase()` and `toLowerCase()`: returns the string with all of the characters converted to upper or lower case.
+
+```groovy
+def str = 'Hello, World'
+println str.length()
+println str.reverse()
+println str.toUpperCase()
+println str.toLowerCase()
+```
+
+The `trim()` method returns the string with any leading and trailing whitespace removed:
+
+```groovy
+def str = '  Hello, World  '
+println str.trim()
+```
+
+The `substring` method returns a subsection of a string and can be used in two possible ways:
+
+* Provide a start index (e.g. `substring(7)`) to get the subsection that includes that index (i.e. the 7th character in the string) through to the end of the string
+* Provide a start and an end index (e.g. `substring(7, 9)`) to get the subsection that includes that start index through to the end index of the string
+
+```groovy
+def str = 'Hello, World'
+println str.substring(7)
+println str.substring(7,9)
+```
+
+A number of methods are provided to help you with basic searching:
+
+* The `indexOf` and `lastIndexOf` methods return the index (location) of the specified character in the string
+* `contains`, `startsWith`, and `endsWith` return `true` or `false` if the supplied parameter is located within the string
+
+```groovy
+def str = 'Hello, World'
+
+//These methods return the index of the requested character
+println str.indexOf(',')
+println str.lastIndexOf('o')
+
+//These methods check if the string contains another string
+println str.contains('World')
+println str.startsWith('He')
+println str.endsWith('rld')
+```
+
+Lastly, `replace` lets us provide a string that we want to change to a new value:
+
+```groovy
+def str = 'Hello, World'
+
+println str.replace('World', 'Fred')
+```
+
+Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in a an up-coming chapter. Additionally, the tutorial on Operators will look into this in more depth.

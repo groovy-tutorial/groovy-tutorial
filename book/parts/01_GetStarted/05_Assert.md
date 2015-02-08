@@ -1,6 +1,6 @@
 ---
 title:	The `assert` statement
-status:	in-progress
+status:	draft
 description:	The "assert" statement is handy for checking if we have the correct result or if there was a problem in our code.
 ...
 
@@ -50,4 +50,4 @@ AssertionTest.runTest()
 
 >You may have noticed `@Log` in that last code snippet. This is called an annotation and is marked using an "at" (`@`) sign followed by a class name. These are used to markup code and will be discussed in a later chapter. 
 
-`assert` is also very useful when testing and a range of assertions will be discussed in the chapter on unit testing.
+`assert` is also very useful when testing and a range of assertions will be discussed in a future tutorial on unit testing.
