@@ -4,7 +4,9 @@ status:	in-progress
 description:	Regular expressions give us a powerful (and confusing) way of sifting through text.
 ...
 
-To define the pattern we use the `~/ /`
+Regular expressions (RegExes) often get entire books devoted to them and you'll find some developers are RegEx ninjas and others (like myself) are RegEx numpties. The [Java Tutorial's Regular Expression trail](http://docs.oracle.com/javase/tutorial/essential/regex/) is a useful reference as is [Wikipedia](https://en.wikipedia.org/wiki/Regular_expression). There are also a number of online tools such as [RegExr](http://www.regexr.com) that come in very handy when trying to debug that elusive RegEx pattern.
+
+To define the regular expression pattern we use the `~/ /` syntax:
 
 ```groovy
 def regex = ~/\n/
@@ -12,33 +14,10 @@ def regex = ~/\n/
 
 Underpinning Groovy's regular expression functionality is the Java class `java.util.regex.Pattern`. Groovy handles the compiling of the pattern and this helps you focus on the struggle of getting the regular expression correct :)
 
-# Regular Expression Methods
 
-`matcher`
-:
+## Regular Expression Syntax
 
-`matches`
-:
 
-`split`
-:	
-
-A number of String methods can accept a regular expression
-
-`findAll`
-:
-
-`matches`
-:
-
-`replaceAll`
-:
-
-`replaceFirst`
-:
-
-`splitEachLine`
-:
 
 # Characters
 
@@ -117,6 +96,34 @@ for (line in lines) {
 | `{n}?`	| Exactly _n_ matches	|  
 | `{n, }?`	| At least _n_ matches	|  
 | `{n,m}?`	| At least _n_ but not more that _m_ matches	| 
+
+# Useful Methods
+
+`matcher`
+:
+
+`matches`
+:
+
+`split`
+:	
+
+A number of String methods can accept a regular expression
+
+`findAll`
+:
+
+`matches`
+:
+
+`replaceAll`
+:
+
+`replaceFirst`
+:
+
+`splitEachLine`
+:
 
 # Further reading
 The Java documentation for the `Pattern` class provides a full listing of [regular expression constructs](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
