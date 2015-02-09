@@ -1,7 +1,7 @@
 ---
 title:	Data types  
-status:	in-progress
-description:	Groovy does a good job of working out what sort of variable your using (numbers, strings, booleans etc) but let's look at what's going on under the hood.
+status:	draft
+description:	Groovy does a good job of working out what sort of variable you're using (numbers, strings, booleans etc) but let's look at what's going on under the hood.
 ...
 
 Groovy does not preclude the programmer from explicitly declaring a data type, particularly when it would be pertinent to constrain the values being managed. Furthermore, knowledge of data types is very useful for a number of reasons:
@@ -11,6 +11,29 @@ Groovy does not preclude the programmer from explicitly declaring a data type, p
  2. Conversion between different data types (such as decimal numbers to whole numbers) can cause truncation and other (perhaps unexpected) results.
 	 - Essential knowledge if your program relies on calculations 
 
+Most of Java's "core" classes (types) are defined in the `java.lang` package. Groovy enhances some of these in the GDK to give you extra flexibility.
+
+# Groovy's use of types
+The table below illustrates Groovy's selection of a data type based on a literal value:
+
+[Table: Groovy's use of types]
+|Value  |Assigned Type|
+|:------|:------------|
+|`true`|java.lang.Boolean|
+|`'a'`|java.lang.String|
+|`"This is a String"`|java.lang.String|
+|`"Hello ${Larry}"`|org.codehaus.groovy.runtime.GStringImpl|
+|`127`|java.lang.Integer|
+|`32767`|java.lang.Integer|
+|`2147483647`|java.lang.Integer|
+|`9223372036854775807`|java.lang.Long|
+|`92233720368547758070`|java.math.BigInteger|
+|`3.14`|java.math.BigDecimal|
+|`3.4028235E+38`|java.math.BigDecimal|
+|`1.7976931348623157E+308`|java.math.BigDecimal|
+
+It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`. 
+
 # Using a specific type
 A variable can be declared as being of a specific data type. When using a type, drop the `def` keyword: 
 
@@ -19,8 +42,9 @@ Integer myNum = 1
 String myName = "Fred nurk"
 ```
 
-Suffixes can also be used if you want to be really specific about the data type Groovy is to use for a number:
+Suffixes can also be used if you want to be really specific about the data type Groovy is to use for a number. When using suffixes you use the def keyword to define the variable: `def dozen = 12i`
 
+[Table: Type suffixes supported by Groovy]
 |Suffix |Type |  Example |  
 | ------	| ------	| ------	|  
 | `I` or `i`	| Integer	| `12i`	|  
@@ -44,26 +68,6 @@ This failure occurs because Float will shorten (narrow) the value to `3.1415927`
 println 3.1415926535.class.name
 ```
 
-# Groovy's use of types
-The table below illustrates Groovy's selection of a data type based on a value
-
-[Table: Groovy's use of types]
-|Value  |Assigned Type|
-|:------|:------------|
-|`true`|java.lang.Boolean|
-|`'a'`|java.lang.String|
-|`"This is a String"`|java.lang.String|
-|`"Hello ${Larry}"`|org.codehaus.groovy.runtime.GStringImpl|
-|`127`|java.lang.Integer|
-|`32767`|java.lang.Integer|
-|`2147483647`|java.lang.Integer|
-|`9223372036854775807`|java.lang.Long|
-|`92233720368547758070`|java.math.BigInteger|
-|`3.14`|java.math.BigDecimal|
-|`3.4028235E+38`|java.math.BigDecimal|
-|`1.7976931348623157E+308`|java.math.BigDecimal|
-
-It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`. 
 
 # The `null` Value
 Variables that are not assigned a value at declaration are provided a `null` value by default. This is a special reference that indicates the variable is devoid of a value.
@@ -76,19 +80,20 @@ Variables can be explicitly assigned `null`:
 As Groovy imports the `java.lang` package as well as the `java.math.BigDecimal` and `java.math.BigInteger` classes by default, a range of data types are available for immediate use:
 
  - `Boolean`: to store a logical value of `true` or `false`
- - `Byte`: an integral type 
- - `Short`: 
- - `Character`:
- - `Integer`: 
- - `Long`: 
- - `Float`:
- - `Double`:
- - `BigDecimal`:
- - `BigInteger`:
- - `String`:
- - `GString`: 
- - `Object`: This is the base class for all other classes. 
- - `Closure`: 
+ - Numbers (based on `java.lang.Number`): 
+       - `Byte` 
+	- `Short`
+	- `Integer`
+	- `Long`
+	- `Float`
+	- `Double`
+	- `BigDecimal`
+	- `BigInteger`
+ - `Character`: A single character such as a letter or non-printing character
+ - `String`: A regular Java-esque piece of text
+ - `GString`: A Groovy string that allows for interpolation
+ - `Object`: This is the base class for all other classes 
+ - `Closure`: The class that holds closure values
 
 The types listed above are often referred to as _reference types_, indicating that they relate to a class definition. Groovy also provides a set of _primitive types_ that are more closely aligned to the C programming language than an object-oriented language such as Java and Groovy. In most cases, use of a reference type should be preferred and Groovy's dynamic typing uses _reference types_. 
 
@@ -116,7 +121,7 @@ println Float.MIN_VALUE
 println Float.MAX_VALUE
 ```
 
-As an object-oriented language Groovy also provides a mechanism for declaring new data types (objects) that extend and encapsulate information to meet a range of requirements. 
+As an object-oriented language Groovy also provides a mechanism for declaring new data types (objects) that extend and encapsulate information to meet a range of requirements. These implicitly extend the `java.lag.Object` class.
 
 ### Autoboxing
 _Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing.

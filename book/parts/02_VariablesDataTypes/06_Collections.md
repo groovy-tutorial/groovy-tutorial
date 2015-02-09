@@ -51,7 +51,7 @@ mixed.add(101)
 println mixed
 ```
 
-# Sets
+## Sets
 Sets are much like lists but each element in a set is unique:
 
 ```groovy
@@ -77,15 +77,16 @@ The `first()` and `last()` methods return the first and last elements in a list.
 ```groovy 
 def periodic = ['hydrogen', 'helium', 'lithium']
 println periodic.first()
-println periodic.last()
 println periodic.head()
+println periodic.last()
 ```
 
-The `tail()` method returns the list minus the first (head) element:
+The `tail()` method returns the list minus the first (head) element and the `init()` method returns the list minus the last element:
 
 ```groovy
 def periodic = ['hydrogen', 'helium', 'lithium']
 assert periodic.tail() == ['helium', 'lithium']
+assert periodic.init() == ['hydrogen', 'helium']
 ```
 
 The `contains()` method returns `true` if the requested element is contained in the list:

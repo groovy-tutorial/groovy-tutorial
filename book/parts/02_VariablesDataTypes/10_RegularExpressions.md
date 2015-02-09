@@ -1,10 +1,10 @@
 ---
 title:	Regular Expressions
-status:	in-progress
+status:	draft
 description:	Regular expressions give us a powerful (and confusing) way of sifting through text.
 ...
 
-Regular expressions (RegExes) often get entire books devoted to them and you'll find some developers are RegEx ninjas and others (like myself) are RegEx numpties. The [Java Tutorial's Regular Expression trail](http://docs.oracle.com/javase/tutorial/essential/regex/) is a useful reference as is [Wikipedia](https://en.wikipedia.org/wiki/Regular_expression). There are also a number of online tools such as [RegExr](http://www.regexr.com) that come in very handy when trying to debug that elusive RegEx pattern.
+Regular expressions (RegEx's) get entire books devoted to them and you'll find some developers are RegEx ninjas and others (like myself) are RegEx numpties. This chapter will introduce the basics but the [Java Tutorial's Regular Expression trail](http://docs.oracle.com/javase/tutorial/essential/regex/) is a useful reference as is [Wikipedia](https://en.wikipedia.org/wiki/Regular_expression) for those seeking RegEx glory. There are also a number of online tools such as [RegExr](http://www.regexr.com) that come in very handy when trying to debug that elusive RegEx pattern.
 
 To define the regular expression pattern we use the `~/ /` syntax:
 
@@ -26,7 +26,7 @@ assert httpsUrl.matches(regex)
 assert ! ftpUrl.matches(regex)
 ```
 
-In the code above, `~/https?:\/\/.*/` is the regular expression pattern that's essentially looking for any string starting with `http` or `https`. The `s?` will match 0 or 1 `s` in the pattern. You'll notice the odd-looking `\/\/` - I need to escape the forward slashes in `http://` so that Groovy doesn't confuse them with the slashes used to define the regular expression pattern (`~/../`).
+In the code above, `~/https?:\/\/.*/` is the regular expression pattern that's essentially looking for any string starting with `http` or `https`. The `s?` will match 0 or 1 occurrence of `s` in the pattern. You'll notice the odd-looking `\/\/` - I need to escape the forward slashes in `http://` so that Groovy doesn't confuse them with the slashes used to define the regular expression pattern (`~/../`).
 
 We'll also look at the special operators for regular expressions in the next tutorial: Operators.
 
@@ -149,6 +149,20 @@ println speech.findAll(~/\blike\w*\b/)
 
 >Like, wow!
 
+The example below provides a very basic word counter by seeking out the `\b\w+\b` pattern and displaying the size of the list returned by `findAll`:
+
+```groovy
+def poem = '''\
+ Across the stony ridges,
+  Across the rolling plain,
+ Young Harry Dale, the drover,
+  Comes riding home again.'''
+  
+def regex = ~/\b\w+\b/
+
+println poem.findAll(regex).size()
+```
+
 The `replaceFirst()` and `replaceAll()` methods seek out matches and replace them in a manner that their names implies:
 
 ```groovy
@@ -158,7 +172,6 @@ def speech = '''This like guy like I know but like don\'t really like
 println speech.replaceAll(~/\blike\b/, 'um')
 println speech.replaceFirst(~/\bguy\b/, 'marmoset')
 ```
-
 
 The `splitEachLine()` method is very handy when handling structured files such as comma-separated files. You can see in the example below that the first parameter is the pattern that will match commas (`~/,/`) and the second parameter is a closure that will do something for each line. Within the closure,  the `it` variable is a list with each element being the delimited segment of the text with the line:
 
@@ -194,7 +207,7 @@ def matcher = regex.matcher(httpUrl)
 assert matcher.matches() == true
 ```
 
-The `split()` uses a pattern as a delimiter and returns the elements of the parameter broken up by the delimiter. In my example below I split the domain up based on the period (`.`) delimiter:
+The `split()` method uses a pattern as a delimiter and returns the elements of the parameter broken up by the delimiter. In my example below I split the domain up based on the period (`.`) delimiter:
 
 ```groovy
 def regex = ~/\./
