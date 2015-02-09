@@ -1,7 +1,9 @@
 ---
 title:	String Operators
+status:	in-progress
 description:	Groovy provides a very handy set of operators for working with Strings.
 ...
+
 |Operator(s)       |Type
 |:-------------------:|:-----------| 
 |`+`, `<<`	| Concatenate Operator	|   
