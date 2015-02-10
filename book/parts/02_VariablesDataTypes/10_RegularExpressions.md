@@ -138,6 +138,15 @@ def httpUrl = 'http://www.example.com/'
 assert httpUrl.matches(regex)
 ```
 
+The `find()` method returns the first match against the pattern within the string. In the example below the `find()` will return the match against the port number in the URL:
+
+```groovy
+def regex = ~/:[0-9]+/
+def httpUrl = 'http://www.example.com:8080/'
+
+println httpUrl.find(regex)
+```
+
 The `findAll()` method returns a list of matches for the pattern. In the example below I am returned all words in `speech` that start with `like`:
 
 ```groovy
