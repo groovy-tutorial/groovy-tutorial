@@ -1,6 +1,11 @@
 ---
-title: Relational Operators
+title:	Relational Operators
+status:	draft
+description:	Less than, greater than and so on - it's all about how the operands relate.
 ...
+
+Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`). 
+
 [Table: The relational operators]
 |Operator|Name     
 |:------:|:--------
@@ -10,7 +15,7 @@ title: Relational Operators
 |<=      |Less than or equal to
 |<=>     |Spaceship
 
-Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`). All of the following operations resolve to `true`:
+All of the following operations resolve to `true`:
 
 ```groovy
 assert 5 > 2
@@ -28,12 +33,14 @@ if ('easy' < 123) println "It's easier than 123"
 ```
 
 # Spaceship
+The spaceship operator comes from the Perl programming language. The Spaceship operator is most often seen where sorting is done. 
+
 [Table: The spaceship operator]
 |Operator|  
 |:------:|
 |<=>      |  
 
-The spaceship operator comes from the Perl programming language. The Spaceship operator is most often seen where sorting is done. In the example below the `sort` function uses the closure to define the sort algorithm and this is where the spaceship lands:
+In the example below the `sort` function uses the closure to define the sort algorithm and this is where the spaceship lands:
 
 ```groovy
 def nums = [42, -99, 6.3, 1, 612, 1, -128, 28, 0]
@@ -50,7 +57,7 @@ The following table indicates the result for spaceship expressions (LHS = left-h
 |Expression|Result
 |:--|:--:
 |LHS less than RHS|-1
-|LHS = RHS|0
+|LHS equals RHS|0
 |LHS greater than RHS|1
 
 The following assertions all resolve as true:
@@ -61,8 +68,8 @@ assert 1 <=> 2 == -1
 assert 2 <=> 1 == 1
 ```
 
-# The `compareTo` method
-Essentially, the `compareTo` method is used by Groovy to assess the result of relational operations:
+# Overloading the relational operators
+The `compareTo` method is used by Groovy to assess the result of relational operations:
 
 ```groovy
 assert 1.compareTo(2) == -1
@@ -70,7 +77,7 @@ assert 1.compareTo(2) == -1
 
 >There is a reasonable assumption that the two operands can be coerced (cast) into a similar type. This is why `1.compareTo('cat')` just won't work.
 
-Custom classes can determine their own appropriate algorithm for the `Comparable`'s `compareTo` and this will be available when you use the relationship operators.
+Java's [`Comparable`](http://docs.oracle.com/javase/8/docs/api/index.html) interface is implemented by classes that allow instances to be compared. Custom classes can determine their own appropriate algorithm for the `Comparable`'s `compareTo` method and this will be available when you use the relational operators.
 
 ```groovy
 class Num implements Comparable {
@@ -90,10 +97,12 @@ class Num implements Comparable {
 
 def a = new Num(val: 2)
 def b = new Num(val: 5)
+def c = new Num(val: 2)
 
 assert a < b
 assert b > a
 assert a != b
+assert a == c
 ```
 
->You'll notice that I've tested `a != b` - this equality operator actually calls the `compareTo`
+>You'll notice that I've tested `a != b` and `a == c` - these equality operators actually calls the `compareTo` method.

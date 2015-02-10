@@ -1,18 +1,20 @@
 ---
 title:	Operator Overloading
-status:	in-progress
+status:	draft
 description:	Groovy provides a mechanism for classes to define how they respond to the various operators.
 ...
 
-Groovy supports something called "operator overloading" and it's possible for classes to determine how they want operators to behave. Throughout this section I'll provide some examples of overloading but before we go too far, let's take a look at what "Operator Overloading" actually means.
+Groovy supports something called "operator overloading" and it's possible for classes to determine how they want operators to behave. Throughout this tutorial I'll provide some examples of overloading but before we go too far, let's take a look at what "operator overloading" actually means.
 
-The C++ language provides a mechanism for programmers to customise how operators such as `+` (plus) and `-` (minus) work. This functionality isn't provided in Java but is available to Groovy programmers. Essentially, a class can include certain methods that replace (overload) the default implementation - as such methods are tied to specific operators  
+The C++ language provides a mechanism for programmers to customise how operators such as `+` (plus) and `-` (minus) work. This functionality isn't provided in Java but is available to Groovy programmers. Essentially, a class can include certain methods that replace (overload) the default implementation - as such methods are tied to specific operators.
 
-You might note that you can use the methods instead of the operators - e.g. `10.plus(2)` - but your code will be far less readable.
+Consider the `+` operator, as seen in many great additions. You can use the operator in a statement such as `10 + 2` but you can also use the `plus` method instead: `10.plus(2)`. I'd argue (strongly) that using the `plus` method in your code will be far less readable. However, you should be able to see that using the `+` operator actually results in the `plus` method being called.
 
-Whilst all of this this means that you can use operator overload for evil - say, by creating a numerical class that ignores all mathematical sense - you'll only use operator overloading sparingly. Where it does become extremely useful is in the core Groovy classes and the Groovy extensions to the JDK. 
+This this means that you can use operator overloading for evil - say, by creating a numerical class that ignores all mathematical sense. Aside from developer practical jokes you'll probably only use operator overloading every now and then. Where it does become extremely useful is in the core Groovy classes and the Groovy extensions to the JDK. 
 
-Operator overloading can be used in classes via the following methods:
+In the coming chapters you'll see a range of operator usage that isn't available to the Java developer but made available through Groovy's extensions to the JDK and through the GAPI.
+
+To highlight all of this, operator overloading can be used in classes via the methods associated in the following table:
 
 |Method|Operator|  
 | :------	| :------:	|  

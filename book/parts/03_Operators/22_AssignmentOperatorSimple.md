@@ -1,5 +1,7 @@
 ---
-title: The Simple Assignment Operator
+title:	The Simple Assignment Operator
+status:	draft
+description:	Assigns a value to a variable
 ...
 [Table: Simple assignment operator]
 |Operator|

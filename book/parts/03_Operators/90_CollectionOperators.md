@@ -1,6 +1,9 @@
 ---
 title: Collection operators		
 ...
+
+!!!! <<  and +
+
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
 | `in`	| Membership Operator	|  

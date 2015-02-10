@@ -1,10 +1,13 @@
 ---
 title:	Numeric Operators  
-description:	
+status:	draft
+description:	There are many numeric operators available in Groovy - you're likely to know many of them from your school days. 
 ...
-Groovy utilises a strong complement of arithmetic and conditional operators. You're likely to know many of them from your school days. 
 
-|Operator(s)         							  |Type
+The following chapters will describe each of the numerical operators in further detail.  In this tutorial I just lay the list of operators out for you to quickly see and then describe operator precedence - the order in which the operators are evaluated.
+
+[Table: Groovy's numerical operators]
+|Operator(s)	| Type |
 |:-------------------------------:|:------------------------------|
 |`=`	| Simple Assignment Operator|
 |`!`	| Logical Complement Operator|
@@ -17,7 +20,7 @@ Groovy utilises a strong complement of arithmetic and conditional operators. You
 |`+=`  `-=`  `*=`  `/=`  `&=`  `|=`<br/> \
 `^=`  `%=`  `<<=`  `>>=`  `>>>=`	| The Compound Assignment Operators|
 
-## Operator Precedence
+# Operator Precedence
 Operator precedence describes the order in which operators are evaluated. For example, most people know that the multiplication operator is evaluated before the addition, resulting in the following code displaying `20` (and not `60`):
 
 ```groovy
@@ -31,7 +34,7 @@ def result = (10 + 2) * 5
 println result
 ```
 
->Note that you can't write the code above as `println (10 + 2) * 5` - Groovy can't evaluate it correctly.
+>Note that you can't write the code above as `println (10 + 2) * 5` - Groovy can't evaluate it correctly. You'd need to write it as `println ((10 + 2) * 5)`
 
 Operators with the same (equal) precedence (e.g. `+` and `-`) are evaluated depending on their _associativity_. There are three types of associativity:
 
@@ -58,7 +61,7 @@ println a
 
 >You don't tend to see code such as that given above out "in the wild"
 
-### Order of Precedence
+## Order of Precedence
 
 The order of precedence (highest to lowest) for the arithmetic operators is as follows:
 

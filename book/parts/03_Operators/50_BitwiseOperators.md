@@ -1,8 +1,9 @@
 ---
 title:	Bitwise Operators
-description:	
+status:	draft
+description:	They're bit-oriented and not so much "wise"
 ...
-I have to admit that I haven't seen many instances of bitwise manipulation since my university assignments. That's not to say they're not used or not important - I've just not done a lot of programming on
+I have to admit that I haven't seen many instances of bitwise manipulation since my university assignments. That's not to say they're not used or not important - I've just not done a lot of programming that's called on bitwise operators.
 
 [Table: The bitwise operators]
 |Operator|Name     
@@ -21,7 +22,7 @@ I have to admit that I haven't seen many instances of bitwise manipulation since
 
 Truth tables describe the results of various logical operations. The truth tables below illustrate the NOT, AND, OR and XOR logic.
 
-| Not (`-`) | Result |
+| Not (`~`) | Result |
 |-----|:-----:|
 | Not 0 | 0 |
 | Not 1 | 1 |
@@ -55,15 +56,14 @@ The unix file permission scheme uses binary flags for read, write and execute pe
 - WRITE has the binary value 010 (decimal 2)
 - EXECUTE has the binary value 100 (decimal 4)
 
->I use decimal in my example code but you'll usually see binary manipulated using hexadecimal (`0x1f`) or octal (`037`) notation
 
 Let's look at the example code first and then I'll discuss it:
 
 ```groovy
 //Create global variables for the permissions
-READ = 4      //100
-WRITE = 2     //010
-EXECUTE = 1   //001
+READ = 0b100      
+WRITE = 0b010     
+EXECUTE = 0b001  
 
 println 'Checking for READ:'
 checkFile(READ)
@@ -98,12 +98,12 @@ def displayFilePermission(val) {
 
 >Please note that I'm not really happy with my example (above) but it's the best I could come up with.
 
-First up I set the flags for each of the three elements:
+First up I set the flags for each of the three elements using the `0b` prefix to indicate binary numbers:
 
 ```groovy
-READ = 4      //100
-WRITE = 2     //010
-EXECUTE = 1   //001
+READ = 0b100      
+WRITE = 0b010     
+EXECUTE = 0b001
 ```
 
 I then call my `checkFile` method to see which permissions match what I'm seeking. The third call to `checkFile` is the more interesting as I OR two flags: `READ | EXECUTE`. If I OR the READ flag (`100`) with the  EXECUTE flag (`001`) I get `101` (decimal 5):
@@ -200,7 +200,7 @@ assert 2 >> 1 == 1	//Right-shift once
 The code below displays a table in which each row represents a value that's be left-shifted by one position more than the prior row:
 
 ```groovy
-def value = 0x0000FF    //Binary: 0000 0000 0000 0000 1111 1111
+def value = 0b0000_0000_0000_0000_1111_1111
 
 println '| Shift   | Hex      | Decimal  | Octal    | Binary                   |'
 println '|---------|----------|----------|----------|--------------------------|'

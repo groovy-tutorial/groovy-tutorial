@@ -1,5 +1,7 @@
 ---
-title: Arithmetic operators
+title:	Arithmetic operators
+status:	draft
+description:	These are one of the 3 R's (Reading, wRiting and aRithmetic) - that's it at the end.
 ...
 The five arithmetic operators (`+`, `-`, `*`, `/`, `%`) are familiar to most people from their early school days.
 
@@ -84,7 +86,7 @@ However, we could use parentheses purely for the sake of clarity:
 assert (3 * 3) + (4 * 4) == (5 * 5)
 ```
  
-> Naturally, we should have used the power operator for those calculations  
+> Naturally, we should have used the power operator for those calculations : 
 > `assert 3**2 + 4**2 == 5**2`
    
 Nested parentheses can be used to further delineate an expression. The innermost parentheses are evaluated first, then moving outwards:

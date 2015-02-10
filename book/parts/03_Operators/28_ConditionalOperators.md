@@ -1,6 +1,7 @@
 ---
 title:	Conditional Operators
-description:	
+status:	draft
+description:	These help you lay out your logic.
 ...
 You'll most often see Conditional-and (`&&`) and Conditional-or (`||`) used in conditional statements such as `if`. We also use them in expressions such as `assert` to determine if a statement is `true` or `false`.
 
@@ -96,7 +97,9 @@ def taxBracket = salary < 75000 ? 'Bracket 1': 'Bracket 2'
 assert taxBracket == 'Bracket 2'
 ```
 
-In the code above the relational expression (`salary < 75000`) is evaluated and, in this case, resolves to `false` and the third operand (`Bracket 2`) is evaluated and assigned to `taxBracket`. As the operand is just a string there's no real evaluation but we can use any expression that will return a result. The code below will calculate income tax based on the person's income:
+In the code above the relational expression (`salary < 75000`) is evaluated and, in this case, resolves to `false` and the third operand (`Bracket 2`) is evaluated and assigned to `taxBracket`. As the operand is just a string there's no real evaluation but we can use any expression that will return a result. 
+
+The code below will calculate income tax based on the person's income:
 
 ```groovy
 def salary = 100000
@@ -106,7 +109,7 @@ def tax = salary < 75000 ? salary * 0.1: salary * 0.2
 assert tax == 20000
 ```
 
->Note that only one of the second or third operands are evaluated. For example, if the conditional resolves to `true` the third operand will not be evaluated.
+>Note that only one of the second _or_ third operands are evaluated. For example, if the conditional resolves to `true` the third operand will not be evaluated.
 
 A major benefit of the conditional operator is readability. Consider the previous code being re-written using an `if` statement and I trust you'll see that `?:` makes for more compact and readable code:
 
@@ -123,7 +126,7 @@ if (salary < 75000) {
 assert tax == 20000
 ```
 
-# Default values
+## Default values
 
 The conditional operator is also really useful for default values - these are used when you want to make sure a variable always has a value. In the code below the `Person` class has been prepared to ensure that any instance that has not been explicitly given a value for the `name` property is assigned `Anonymous` as the name:
 

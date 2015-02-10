@@ -1,12 +1,16 @@
 ---
-title: Increment and Decrement Operators
+title:	Increment and Decrement Operators
+status:	draft
+description:	Number goes up. Number goes down.
 ...
+
+The increment operator increments a value to its next value. When you increment or decrement a variable using `++` or `--` the variable is modified to the new value.
+
 |Operator|Name	| 
 |:------:|:--------	| 
 |++      |Increment	| 
 |--      |Decrement	| 
 
-The increment operator increments a value to its next value. When you increment or decrement a variable using `++` or `--` the variable is modified to the new value.
 
 The increment and decrement operators come in two flavours, prefix and postfix:
 
@@ -37,7 +41,7 @@ Numbers
 	assert num == 11
 	```
 
-Strings and characters
+Characters
 :	Characters move to the previous (`--`) or next (`++`) character:
 
 	```groovy
@@ -46,6 +50,7 @@ Strings and characters
 	assert ch == 'b'
 	```
 
+Strings
 :	Strings are a little odd and it is the last character in the string that is affected:
 	
 	```groovy
@@ -74,7 +79,9 @@ Enums
 	assert task == Priority.HIGH
 	```
 
-# Customising the Increment and Decrement Operators
+:	We'll get to Enums much later. 
+
+# Overloading the Increment and Decrement Operators
 
 By overloading `next` and `previous` methods, a custom class can support the increment and decrement operators.
 

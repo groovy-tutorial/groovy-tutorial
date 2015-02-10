@@ -1,12 +1,15 @@
 ---
-title: The Complement Operator
+title:	The Complement Operator
+status:	draft
+description:	The complement operator negates everything!
 ...
+
+The exclamation (`!`) sign is used switch a value to its opposite boolean value. In boolean algebra[^bool] this is referred to as a Not (or negation) operator.
+
 [Table: Complement operator]
 |Operator|
 |:------:|  
 |`!`|
-
-The exclamation (`!`) sign is used switch a value to its opposite boolean value. In boolean algebra[^bool] this is referred to as a Not (or negation) operator.
 
 The following example makes sure that "not true" is the same as "false":
 

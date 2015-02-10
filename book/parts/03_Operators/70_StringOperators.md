@@ -4,6 +4,8 @@ status:	in-progress
 description:	Groovy provides a very handy set of operators for working with Strings.
 ...
 
+You'll spend a lot of your career manipulating strings so anything that makes them less of a hassle is nice. Groovy helps you with the following operators overloaded for your string work.
+
 |Operator(s)       |Type
 |:-------------------:|:-----------| 
 |`+`, `<<`	| Concatenate Operator	|   
@@ -54,6 +56,7 @@ When you concatenate a string with a number Groovy will cast the number into a s
 
 ```groovy
 assert '1' + 1 == '11'
+assert 1 + '1' == '11'
 ```
 
 If you're really wanting to add a string to a number you need to make sure you explicitly turn the string into a number:
@@ -76,9 +79,11 @@ println quote
 
 This saves you from having to use `quote = quote << 'It was the worst of times.'`
 
+>`+=` also appends but don't use it - you'll see why in a moment.
+
 # Remove Operator
 
-The remove operator (`-`) removes the first instance of a string or regular expression from another string. The easiest for just removes the first instance of a specific string - in the case of the example below, 'of ' is removed:
+The remove operator (`-`) removes the first instance of a string or regular expression from another string. The easiest form just removes the first instance of a specific string - in the case of the example below, 'of ' is removed:
 
 ```groovy
 quote = 'It was the worst of times.' - 'of '
@@ -90,9 +95,7 @@ The example above will display `It was the worst times.`
 A regular expression pattern can also be used if you want to use a pattern. In the example below, the first occurrence of "bat" or "rat" is removed, resulting in `cat  rat monkey` (_note the double space_)
 
 ```groovy
-import java.util.regex.Pattern
-
-println 'cat bat rat monkey' - Pattern.compile("[br]at")
+println 'cat bat rat monkey' - ~/[br]at/
 ```
 
 # Remove In-Place Operator
@@ -108,10 +111,8 @@ println quote
 ...and it can also use patterns: 
 
 ```groovy
-import java.util.regex.Pattern
-
 def str = 'cat bat rat monkey'
-str -= Pattern.compile("[br]at")
+str -= ~/[br]at/
 println str
 ```
 
@@ -125,7 +126,7 @@ print 'hello\n' * 10
 
 # Repeat In-PlaceOperator
 
-This one appliese the mutliplier against the variable and stores the result back in the variable:
+This one applies the mutliplier against the variable and stores the result back in the variable:
 
 ```groovy
 def complaint = 'ow'
@@ -227,4 +228,4 @@ To me this is evidence enough for me to use '<<=' over `+=`!
 
 # Templates
 
-If you find yourself building strings around boilerplate text - such as a form letter - consider using Groovy's templating system. We'll look at templates in the section on files.
+If you find yourself building strings around boilerplate text - such as a form letter - consider using Groovy's templating system. We'll look at templates in their own tutorial.

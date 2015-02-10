@@ -1,13 +1,18 @@
 ---
-title: Equality Operators
+title:	Equality Operators
+status:	draft
+description:	Used to determine if two things match
 ...
+
+The equality operators return a boolean (`true` or `false`) result from a comparison. 
+
 [Table: The equality operators]
 |Operator|Name     
 |:------:|:--------
 |==      |Equal to 
 |!=      |Not equal to
 
-The equality operators return a boolean (`true` or `false`) result from a comparison. All of the following comparisons evaluate as being `true`
+All of the following comparisons evaluate as being `true`:
 
 ```groovy
 assert -99 == -99
@@ -26,7 +31,7 @@ assert str1 == str2
 
 # What Is Equality?
 
-Equality can be a little tricky. Think about the statement "Hey cool, we have the same car!". This could mean that we have the same make and model but different instances of a car *or* it could mean that we share a car. 
+Equality can be a little tricky - both for Groovy and humanity. Think about the statement "Hey cool, we have the same car!". This could mean that we have the same make and model but different instances of a car *or* it could mean that we share a car. 
 
 For those coming from a Java background, `==` is used to determine if the two variables reference the same instance and the `equals` method is used to determine if two variables are equivalent. Groovy conflates `==` and `equals` to perform the same comparison.
 
@@ -55,7 +60,7 @@ def truth = 'cats' != 'dogs'
 assert truth == true
 ```
 
-# Custom Equality
+# Overloading Equality
 
 It is possible to define a custom implementation of `==` by overriding the `equals(Object obj)` method. This can be handy if your object has a simple method for determining equality, such as comparing staff members by their ID:
 
@@ -98,5 +103,7 @@ assert jan == janet
 ```
 
 >The `HashCode` aspect to the annotation indicates that the `hashCode` method is overridden. This method generates a hash code[^hash] that aids in identifying an instance of the class.
+
+Check out the chapter on Relational Operators as the `compareTo` mo
 
 [^hash]: See <http://en.wikipedia.org/wiki/Java_hashCode()>
