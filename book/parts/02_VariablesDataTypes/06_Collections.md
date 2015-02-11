@@ -13,6 +13,14 @@ Collections group a number of values in a single container. The Java [Collection
 
 List variables contain several items and are declared using square brackets (`[...]`). 
 
+The example below declares a variable (`temperatures`) as an empty list:
+
+```groovy
+def temperatures = []
+```
+
+The next examples declares the `temperatures` list with some initial values:
+
 ```groovy
 def temperatures = [10, 5, 8, 3, 6]
 ```
@@ -122,6 +130,12 @@ friends << 'jake'
 # Maps
 
 Maps allow us to build up a type of look-up table using keys and values. Other languages call these dictionaries or associated arrays.
+
+An empty map is declared using `[:]` and the example below shows this in use when declaring the `periodic` variable.
+
+```groovy
+def periodic = [:]
+```
 
 Each key in a map is unique and points to a value in the map. In the example below we see the start of a basic periodic table by declaring a variable (`periodic`) with a set of key-value pairs (`key: value`) each separated by a comma (`,`) and held within square brackets (`[...]`):
 
