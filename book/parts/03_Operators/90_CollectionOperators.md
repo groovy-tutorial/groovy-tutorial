@@ -1,24 +1,31 @@
 ---
 title:	Collection operators
-status:	in-progress
-description:	
+status:	draft
+description:	Working with Lists and Maps is made easier with these handy operators.
 ...
+
+A number of operators are provided for working with Lists and Maps. Some overload operators such as `+` and `<<` whilst others (such as `in`) are more collection-oriented. Certain operators work with both Lists and Maps whilst others apply to only one.
 
 |Operator(s)     |Type
 |:------------------:|:--------------------|  
+| `in`	| Membership Operator	|
 | `<<`	| Append operator	|  
 | `+`	| Addition operator	|  
 | `-`	| Subtraction operator	|  
-| `+=` `-=`	| Compound assignment operators	| 
-| `in`	| Membership Operator	|  
+| `+=` `-=`	| Compound assignment operators	|   
 | `*`	| Spread Operator	|  
 | `*.`	| Spread-Dot Operator	|  
 | `..`	| Range Operator	|  
 | `[]`	| Subscript Operator	| 
 
-I finish this chapter off with a little bit of mucking around with set theory.
+This chapter won't discuss the following operators as they've been described earlier:
 
-# Membership Operator 
+- The Range operator creates a list of sequential values and is usually seen with numbers. This is how we created Ranges in the tutorial on Variables.
+- The Subscript operator is used to access items in a List or a Map and this was also discussed in the tutorial on Variables.
+
+To finish this chapter off I'll do a little bit of mucking around with set theory.
+
+# Membership Operator (Lists and Maps)
 
 The `in` operator is used to determine if an item is "in" a list or is a key in a map.
 
@@ -36,9 +43,9 @@ assert 'Science' in grades
 assert !('French' in grades)
 ```
 
-# Append
+# Append (Lists and Maps)
 
-The `<<` operator adds a new element to a list:
+The `<<` operator adds a new element to an existing list:
 
 ```groovy
 def friends = ['Frank', 'Larry']
@@ -46,7 +53,7 @@ friends << 'Jane'
 println friends
 ```
 
-It's important to note that appending a list to a list will see the new element contain a list:
+It's important to note that appending a list to a list will add a new element that contains the list in the right-hand operand:
 
 ```groovy
 def friends = ['Frank', 'Larry']
@@ -64,7 +71,7 @@ assert friends == ['Frank', 'Larry', 'Jane', 'Greg']
 
 >Also check out the Spread operator
 
-I can also use `<<` to append a new key:value pair to a list:
+I can also use `<<` to append a new key:value pair to a map:
 
 ```groovy
 def grades = [:]
@@ -74,9 +81,9 @@ grades << ['Science': 'B']
 println grades
 ```
 
-If I was to add `grades << ['Science': 'F']` to the code above, the value for `Science` would be changed to `F` as the map's keys are unique.
+If I was to add another line `grades << ['Science': 'F']` to the code above, the value for `Science` would be changed to `F` as the map's keys are unique.
 
-# Addition
+# Addition (Lists and Maps)
 
 The addition operator (`+`) returns a __*new*__ list with the right-hand operand added:
 
@@ -103,7 +110,7 @@ def set = [2, 4, 6, 8] as Set
 assert union + [8, 10] == [2, 4, 6, 8, 10] as Set
 ```
 
-The addition operator will either add a key:value pair to a map of alter the value held against an existing key. In the example below I create a new map with a result for my French class and then create another map with a reduced English score:
+The addition operator will either add a key:value pair to a map or alter the value held against an existing key. In the example below I create a new map item with a result for my French class and then change an existing map item with a reduced English score:
 
 ```groovy
 def grades = ['Maths': 'A',
@@ -114,7 +121,7 @@ assert grades + ['French': 'F'] == ['Maths': 'A', 'English': 'C', 'Science': 'B'
 assert grades + ['English': 'D'] == ['Maths': 'A', 'English': 'D', 'Science': 'B']
 ```
 
-# Subtraction
+# Subtraction (Lists and Maps)
 
 The subtraction (`-`) operator will return a __*new*__ list with an element removed _if_ the list contains the element:
 
@@ -140,7 +147,7 @@ When subtraction is applied to a Map the right-hand operand needs to be a key:va
 
 1. I attempt to remove `['English': 'D']` but it's not in `grades` so nothing happens
 2. I attempt to remove `['French': 'F']` but it's not in `grades` so nothing happens
-3. I attempt to remove `['English': 'C']` and __it is__ in `grades` so nothing happens
+3. I attempt to remove `['English': 'C']` and __it is__ in `grades` so the removal occurs.
 
 ```groovy
 def grades = ['Maths': 'A',
@@ -152,28 +159,16 @@ assert grades - ['French': 'F'] == ['Maths': 'A', 'English': 'C', 'Science': 'B'
 assert grades - ['English': 'C'] == ['Maths': 'A', 'Science': 'B']
 ```
 
-# Compound Assignment Operators
+# Compound Assignment Operators (Lists and Maps)
 
-Just as we saw with numbers, the addition and subtraction operators returns a value but don't actually change the variable involved in the operation
-
-```groovy
-def grades = ['Maths': 'A',
-    'English': 'C',
-    'Science': 'B']
-
-assert grades + ['French': 'F'] == ['Maths': 'A', 'English': 'C', 'Science': 'B', 'French': 'F']
-assert grades + ['English': 'D'] == ['Maths': 'A', 'English': 'D', 'Science': 'B']
-assert grades == ['Maths': 'A', 'English': 'C', 'Science': 'B']
-```
-
-If I actually wanted to change the value of `grades` I would have needed to assign the resultant back into the variable as follows:
+Just as we saw with numbers, the addition and subtraction operators returns a value but don't actually change the variable involved in the operation. To change the value of `grades` I would have needed to assign the resultant back into the variable as follows:
 
 ```groovy
 grades = grades + ['French': 'F'] 
 assert grades  == ['Maths': 'A', 'English': 'C', 'Science': 'B', 'French': 'F']
 ```
 
-This means I could also have written the previous example using the `+=` compound assignment:
+If we want to use the `grades` variable as the left-hand operand and change its value we can use the compound assignment operators. This means I could also have written the previous example using the `+=` compound assignment:
 
 ```groovy
 grades += ['French': 'F'] 
@@ -199,9 +194,9 @@ Groovy let me change something that's immutable! I should go to the mailing list
 
 Hang on! What `asImmutable()` does is set the elements of the list to be unchangeable but it doesn't make the `grades` variable immutable. As the `+` operator actually returns a new list value, Groovy is correct in assigning that new value to `grades`. 
 
-If I'd used `grades << ['French': 'F']` instead of grades += ['French': 'F'] I would get an `java.lang.UnsupportedOperationException` as I'm actually trying to add a new element to `grades`.
+If I'd used `grades << ['French': 'F']` instead of grades += ['French': 'F'] I would get a `java.lang.UnsupportedOperationException` as I'm actually trying to add a new element to `grades`.
 
-If I really want to make `grades` completely immutable (constant) then I'd need to use the `final` modifier and declare `grades` within a class. The code below demonstrates how I'd set up the class and then attempts to change `grades` and causes an exception.
+If I really want to make `grades` completely immutable (constant) then I'd need to use the `final` modifier and declare `grades` within a class. The code below demonstrates how I'd set up the class and ensure that attempts to change `grades` cause an exception:
 
 ```groovy
 class Report {
@@ -214,29 +209,80 @@ def myReport = new Report()
 myReport.grades += ['French': 'F'] 
 ```
 
+Running the code above will earn you a `groovy.lang.ReadOnlyPropertyException`.
 
-# Spread Operator
-Extracts each item in the collection
+# Spread Operator (Lists)
 
-Helpful when you need to include a collection's individual items in another collection or when your collection can be used as parameters in a method call.
+The Spread operator extracts each element in the List into another list or a method's parameters. This is helpful when you need to include a list's individual items in another list or when your list can be used as parameters in a method call.
 
-Example 1 - adding one collection's items to another collection
+## Extracting Into Lists
+
+In the first example, one lists's items are extracted into another list:
 
 ```groovy
 def list = [1, 2, 6, 9]
 def list2 = [*list, 12, 34]
-//Result is list2 = [1, 2, 6, 9, 12, 34]
+assert list2 == [1, 2, 6, 9, 12, 34]
 ```
 
-Example 2 - using the collection items as a parameter list
+This usage looks rather like the `addAll()` method but you may need to be mindful as to the position in which the list is extracted. The example below uses `addAll()` but results in `list2` being ordered differently than in the previous example:
+
+```groovy
+def list = [1, 2, 6, 9]
+def list2 = [12, 34]
+list2.addAll(list)
+assert list2 == [12, 34, 1, 2, 6, 9]
+```
+
+In this last example I demonstrate an easy approach to creating a union of the two lists:
+
+```groovy
+def list = [1, 2, 6, 9]
+def list2 = [12, 34]
+assert [*list, *list2] == [1, 2, 6, 9, 12, 34]
+```
+
+## Extracting as Parameters
+
+In the next example I extract the items in the `score` list out, each aligning with the parameters in the 
 
 ```groovy
 def mean(num1, num2, num3) {
   (num1 + num2 + num3) / 3
 }
-def scores = [4, 8, 1]
-mean(*scores)
+def scores = [4, 8, 3]
+assert mean(*scores) == 5
 ```
+
+That last example is a little bit of a goldilocks moment - I have exactly the same number of items in the list as the method has parameters. I also have a pretty limited version of the `mean` method - it only works on 3 numbers. However, a method with a varargs parameter is a little less fairy tale:
+
+```groovy
+def mean(...nums) {
+  def total = 0
+  for (item in nums) {
+    total += item
+  }
+  return total / nums.size()
+}
+
+def scores = [4, 8, 3]
+assert mean(*scores) == 5
+```
+
+One last example of using the spread operator:
+
+```groovy
+def buyGroceries(...items) {
+    for (item in items) {
+        println item
+    }
+}
+
+def shoppingList = ['apples', 'cat food', 'cream']
+buyGroceries(*shoppingList)
+```
+
+>Realistically, the `items` parameter is a list but it proves the point. We'll look into this type of method parameter in the tutorial on methods.
 
 ## Multiply Operator
 
@@ -247,7 +293,7 @@ def list = [2, 4, 6]
 println list * 4
 ```
 
-# Spread-Dot Operator
+# Spread-Dot Operator (Lists)
 The `*.` operator calls an action (method) on each item in the list and returns a new list containing the results. In the example below I call the `reverse()` method on each list element:
 
 ```groovy
@@ -260,74 +306,13 @@ The spread operator mimics the `collect()` method - with the previous example be
 ['carrot', 'cabbage', 'cauliflower'].collect{it?.reverse()}
 ```
 
-The spread operator makes the call using the "Safe navigation Operator" (`?.`) to make sure that the list elements isn't null - refer to the Object Operators section for more information. In the next example I include a `null` in the list and the returned list features the `null`:
+The spread operator makes the method call using the "Safe navigation Operator" (`?.`) to make sure that the list element isn't null - refer to the Object Operators section for more information. In the next example I include a `null` in the list and the returned list features the `null`:
 
 ```groovy
 println(['carrot', 'cabbage', null, 'cauliflower']*.reverse())
 ```
 
-For maps I can't use `*.` so need to use the `collect()` method:
-
-```groovy
-grades = ['Maths': 'A',
-        'English': 'C',
-        'Science': 'B']
-
-grades.collect{
-    println it
-    return it
-}
-```
-
-# Range Operator
-
-Creates a list of sequential values
-
-Usually seen with numbers 
-
-Can be used with classes implementing `java.lang.Comparable` and providing the `next()` and `previous()` methods
-
-Example: `println 1..10` _(inclusive range)_
-Example: `println 'a'..'k'` _(inclusive range)_
-Example: `println 1..<99` _(half-open range)_
-Example: Can be handy when dealing with `enums`:
-
-```groovy
-enum Priority {
-    LOW,MEDIUM,HIGH,URGENT
-}
-
-def focus = Priority.HIGH..Priority.URGENT
-```
-	
-# Subscript Operator
-
-Allows you to address a position (location) in a collection instead of using the `get`/`getAt` and `put`/`putAt` methods
-
-Groovy collections are zero-based - the first item in a list is at position 0 (zero)
-
-Example: working with a list
-
-```groovy
-def scores = [5, 8, 2, 11]
-assert scores[1] == 8
-scores[3] = 18
-assert scores[3] != 11
-```
-
-Example: working with a map
-
-```groovy
-def team = [captain: 'Bill', goalie: 'Jane', sub: 'Jim']
-
-//The next two statements do the same thing
-println team['goalie']
-println team.goalie
-
-// Change the sub
-team['sub'] = 'Sally'
-println team['sub']
-```
+For maps I can't use `*.` so need to use the `collect()` method.
 
 # A Little Set Theory
 

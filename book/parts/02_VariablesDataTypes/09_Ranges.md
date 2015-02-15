@@ -36,6 +36,28 @@ def countdown = 10.1..1.1
 println countdown
 ```
 
+## Half-Open Ranges
+
+Ranges aren't just limited to inclusive ranges such as `1..10`. You can also declare a _half-open range_ using `..<` - that's two periods and a less-than. This denotes that the range ends prior to the number to the right. In the example below I setup a grading criteria that avoids an overlap between the grades:
+
+```groovy
+def gradeA = 90..100
+def gradeB = 80..<90
+def gradeC = 65..<80
+def gradeD = 50..<65
+def gradeF = 0..<50
+```
+
+I could tweak the above code if I want to get fancy:
+
+```groovy
+def gradeA = 90..100
+def gradeB = 80..<gradeA.getFrom()
+def gradeC = 65..<gradeB.getFrom()
+def gradeD = 50..<gradeC.getFrom()
+def gradeF = 0..<gradeD.getFrom()
+```
+
 ## Ranges of Objects
 
 Ranges are primarily used with numbers but they can be of any object type that can be iterated through. This basically means that Groovy needs to know what object comes next in the range - these objects provide a `next` and `previous` method to determine this sequence. Over time you'll discover various options for use in ranges but numbers really are the main type. 
@@ -47,7 +69,52 @@ def alphabet = 'a'..'z'
 println alphabet
 ```
 
-## Ranges and Lists
+### Ranges and Enums
+
+>We'll look into Enums when we start looking at creating objects in a later tutorial
+
+Ranges can be handy when dealing with `enums` as they give us the ability to set a subset of enum values. In the example below I create a handy helpdesk tool:
+
+1. Setup an `enum` listing the possible ticket priorities
+2. Create a new `class` to describe helpdesk tickets
+3. Setup a `helpdeskQueue` containing a list of tickets
+4. Set the `focus` variable as a range of `Priority` values
+5. Go through the list of tickets and pick up any that are set to the `priority` I care about.
+
+```groovy
+enum Priority {
+    LOW,MEDIUM,HIGH,URGENT
+}
+
+class Ticket {
+    def priority
+    def title
+}
+
+def helpdeskQueue = [
+    new Ticket(priority: Priority.HIGH, title: 'My laptop is on fire'),
+    new Ticket(priority: Priority.LOW, title: 'Where is the any key'),
+    new Ticket(priority: Priority.URGENT, title: 'I am the CEO and I need a coffee'),
+    new Ticket(priority: Priority.MEDIUM, title: 'I forgot my password')
+]
+
+def focus = Priority.HIGH..Priority.URGENT
+
+for (ticket in helpdeskQueue) {
+    if (ticket.priority in focus) {
+        println "You need to see to: ${ticket.title}"
+    }
+}
+```
+
+Try the example above out with various settings for the `focus` variable:
+
+- `def focus = Priority.MEDIUM..Priority.URGENT`
+	- Gives us more tickets to see to :(
+- `def focus = Priority.HIGH..Priority.LOW`
+	- Is actually similar to `4..1` and leaves out the tickets marked `URGENT`
+
+## Ranges and List Indexes
 
 You can access a subset of a list using a range subscript. In the example below I use the subscript `[1..3]` to grab a new list containing elements 1 through 3 of the `temperatures` list. 
 

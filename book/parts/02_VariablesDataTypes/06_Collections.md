@@ -46,7 +46,30 @@ I can provide multiple indexes in the subscript notation and grab the specified 
 def temperatures = [10, 5, 8, 3, 6]
 assert temperatures[0, 2] == [10, 8]
 assert temperatures[1, 3, 4] == [5, 3, 6]
+assert temperatures[1..3] == [5, 8, 3]
 ```
+
+Ranges can also be used in the subscript notation and, as demonstrated in the example below, return a list containing the items who's indexes are included in the range:
+
+```groovy
+def temperatures = [10, 5, 8, 3, 6]
+assert temperatures[1..3] == [5, 8, 3]
+```
+
+We can also use a mix of individual indexes and ranges as we see fit:
+
+```groovy
+def temperatures = [10, 5, 8, 3, 6]
+assert temperatures[0..1, 3] == [10, 5, 3]
+assert temperatures[0..1, 1..3] == [10, 5, 5, 8, 3]
+assert temperatures[0..1, 1..3, 4] == [10, 5, 5, 8, 3, 6]
+```
+
+What? Let's take a look:
+
+- `temperatures[0..1, 3]` returns a list containing the elements of `temperatures` with the indexes 0, 1 and 3
+- `temperatures[0..1, 1..3]` returns a list using two ranges to select the indexes. As index item `1` is requested twice, the returned list features the item (`5`) twice.
+- `temperatures[0..1, 1..3, 4]` does the same as the previous statement but adds in the item at index `4`
 
 ## Adding elements
 
