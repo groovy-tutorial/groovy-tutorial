@@ -1,7 +1,11 @@
 ---
 title:	Control Flow Statements  
-description:	Most code needs to reflect a decision-making process. A decision may be an either-or in which we process one set of statements rather than another. Another decision may be to run the same set of statements for a finite (or infinite) period. Control flow statements give code the power to go beyond top-to-bottom execution of statements.  
+status:	draft
+description:	Control flow statements give code the power to go beyond top-to-bottom execution of statements.  
 ...
+
+Most code needs to reflect a decision-making process. A decision may be an either-or in which we process one set of statements rather than another. Another decision may be to run the same set of statements for a finite (or infinite) period. 
+
 Groovy supports a range of control-flow statements:
 
 * The conditional statements:

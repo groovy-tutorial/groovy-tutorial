@@ -1,8 +1,16 @@
 ---
 title:	Branching statements
-description:	
+status:	draft
+description:	These statements may let you improve the efficiency of  switches, loops and methods.
 ...
-# `break`
+
+Groovy has three branching statements:
+
+- `break`
+- `continue`
+- `return`
+
+# break
 
 We first came across the use of `break` in the `switch` statement - it's used to indicate the end of the set of statements for the `case` and signals that the `switch` statement has completed.
 
@@ -58,7 +66,7 @@ println "The square root of 64 is $num"
 As Groovy resolves a number other than `0` to be `true`, `++num` will allow the loop to commence and we still rely on `break` to get us out of the loop.
 
 
-# `continue`
+# continue
 The `continue` reserved word will cause the next iteration of the loop - ignoring anything within the rest of the current iteration. In the loop below I use `continue` to ignore `'Earth'`.
 
 ```groovy
@@ -134,7 +142,7 @@ for (flower in flowers) {
 }
 ```
 
-# `return`
+# return
 
 The `return` statement is used to hand control back to the caller[^call]. In most cases, `return` is used in a method or closure to return a value. In the most basic usage, the keyword `return` just appears on a line by itself:
 
@@ -167,5 +175,5 @@ return circumference / diameter
 
 Using `return` within the body of a script[^body] will cause it to exit as the command-line/terminal is the caller. When exiting you can choose to return a value - usually `0` if the script succeeds, or an error number if it fails.
 
-[^body]: By body I mean not in a method or closure but the `main` part of the script.
+[^body]: By body I mean the `main` part of the script.
 [^call]: The caller is the section of code that called the method/closure.

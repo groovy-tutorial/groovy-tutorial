@@ -1,6 +1,7 @@
 ---
 title:	The `for` Loop
-description:	Groovy supports both a for-each loop and the C-style for loop.
+status:	draft
+description:	Groovy supports for-in loops, for-each loops and the C-style for loop.
 ...
 The `for` loop will  repeat a block of code whilst its condition is `true`:
 
@@ -159,7 +160,9 @@ for (String planet: planets) {
 }
 ```
 
-The Java version has no real benefit over the Groovy approach so I'd stick with the Groovy `for (<var> in <iterator>)`. The Groovy approach also make for easier iteration of maps.
+>`for (def planet: planets)` would also work
+
+The Java version has no real benefit over the Groovy approach so I'd stick with the Groovy `for (<var> in <iterator>)`. The Groovy approach also makes for easier iteration over maps.
 
 If you really want to set a data type for your iteration variable you can still be Groovy about it:
 
