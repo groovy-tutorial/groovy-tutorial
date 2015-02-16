@@ -11,6 +11,6 @@ Acknowledgement of trademarks:
 
 None of the companies listed above endorse this book.
 
-The Groovy logo that features on the [cover page](/index.html) was sourced from the [groovy-website GithHub project](https://github.com/groovy/groovy-website/blob/master/site/src/site/assets/img/groovy-logo-colored.svg)
+The Groovy logo that features on the [cover page](/index.html) was sourced from the [groovy-website GitHub project](https://github.com/groovy/groovy-website/blob/master/site/src/site/assets/img/groovy-logo-colored.svg)
 
 If you believe that any part of this text infringes on your intellectual property, copyright, trademark(s) or any other legal structure then please [contact me](mailto:groovy@duncan.dickinson.name) - I'm sure we can sort it out. 
