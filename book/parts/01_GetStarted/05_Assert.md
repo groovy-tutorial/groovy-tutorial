@@ -27,9 +27,11 @@ assert true == false : Math.sqrt(64)
 ```
 
 # Handling failed assertions
-For the purposes of our tutorial scripts, using asserts is a handy way to demonstrate a result or a problem. However, it's not good practice to have a program suddenly just quit when an assertion fails. When you start writing large programs, your code should aim to "fail gracefully" unless it's really in a position where bailing out is the only option. Groovy (unlike Java) does not provide a mechanism for turning off assertions but the error raised by a failed assertion can be caught within a `try-catch` and handled in a meaningful manner. This will be discussed later.
+For the purposes of our tutorial scripts, using asserts is a handy way to demonstrate a result for a problem. However, it's not good practice to have a program suddenly just quit when an assertion fails. When you start writing large programs, your code should aim to "fail gracefully" unless it's really in a position where bailing out is the only option. 
 
-The following example illustrates a class handling a failed assertion by logging the problem - don't be concerned if you don't follow the code as it utilises a number of concepts not yet visited:
+Groovy (unlike Java) does not provide a mechanism for turning off assertions so be careful about where you use the `assert` statement in larger systems. Remember that a failed `assert` raises an `Error` (which signals a critical problem) rather than an `Exception` (from which a program is more likely to recover). Arguably, in running (production) systems, assertions are best suited to dark places in code that should never be reached - they flag when the extremely unlikely condition has happened.  
+
+The error raised by a failed assertion can be caught within a `try-catch` and handled but this isn't how errors are usually treated (we normally just let them happen). The following example illustrates a class handling a failed assertion by logging the problem - don't be concerned if you don't follow the code as it utilises a number of concepts not yet visited:
 
 ```groovy
 import groovy.util.logging.*
@@ -39,7 +41,7 @@ class AssertionTest {
     static void runTest() {
         try {
             assert true == false : 'true cannot be false'
-        } catch(Error err) {
+        } catch(AssertionError err) {
             log.severe "An assertion failed ${err}"
         } 
     }
@@ -50,4 +52,4 @@ AssertionTest.runTest()
 
 >You may have noticed `@Log` in that last code snippet. This is called an annotation and is marked using an "at" (`@`) sign followed by a class name. These are used to markup code and will be discussed in a later chapter. 
 
-`assert` is also very useful when testing and a range of assertions will be discussed in a future tutorial on unit testing.
+Although it's Java-focussed, check out the [Programming with Assertions guide](http://docs.oracle.com/javase/8/docs/technotes/guides/language/assert.html) for more information.

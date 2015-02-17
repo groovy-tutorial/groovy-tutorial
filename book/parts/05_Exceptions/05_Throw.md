@@ -90,3 +90,7 @@ catch (IllegalStateException | ArithmeticException e) {
 ```
 
 Upon having the exception thrown at me I could use the `getCause()` method to determine if there was an underlying cause.
+
+# Creating Your Own Exception
+
+Whilst you can write your own Exceptions (they're just objects after all), you should look to the pre-packaged ones and see if they meet your needs. Alternatively, consider if you can write a subclass that provides refinement to an existing exception rather than just extending `Exception`.

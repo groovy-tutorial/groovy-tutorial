@@ -6,8 +6,8 @@ description:	Exceptions and Errors are just objects that can bring your program 
 
 Groovy takes on Java's approach to raising, handling and reporting errors and exceptions:
 
-- Errors are serious problems that usually cause an application to halt ("crash"). In most cases you won't handle these - they'll happen and you'll go back to your code to see if they could have been prevented.
-- Exceptions are less serious and applications, with good exception handling set up, will be able to keep going. 
+- **Errors** are serious problems that usually cause an application to halt ("crash"). In most cases you won't handle these - they'll happen and the program will fall over.
+- **Exceptions** are less serious and applications, with good exception handling set up, may be able to keep going. 
 
 At the heart of this model is the `java.lang.Throwable`[^throw] class. Exceptions and Errors are are two sides to the `Throwable` family tree:
 

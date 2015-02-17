@@ -1,10 +1,10 @@
 ---
 title:	Arrays
 status:	in-progress
-description:	You should use collections rather than arrays but you should probably know about arrays. 
+description:	Use collections rather than arrays but you should probably know about arrays. 
 ...
 
-For my money, the collections we've just looked at (lists, sets maps) are more versatile than arrays and collections are my preferred approach. However, there's a lot of code out there using arrays so let's take a quick look.
+For my money, the collections we've just looked at (lists, sets, maps) are more versatile than arrays and collections are my preferred approach. However, there's a lot of code out there using arrays so let's take a quick look.
 
 Arrays contain a fixed number of elements of a specified data type.  Let's look at an example of array declaration and usage:
 
@@ -14,26 +14,27 @@ Number[] point = new Number[2]
 point[0] = 27
 point[1] = -153
 
-assert point.size() == 2
+assert point.length == 2
 ```
 
-So let's dissect that last bit of code:
+So let's dissect that chunk of code:
 
 - The `point` variable is declared using `Number[] point = new Number[2]`
 	- `Number[]` indicates that we want an array of Numbers
 		- `[]` indicates that the variable is an array, not just a single Number value
 		- We don't use `def` as we're specifying the data type
-	- `new Number[2]` sets `point` to be an empty array that can contain two (2) elements
+	- `new Number[2]` sets `point` to be an empty array that can contain two (2) elements of the `Number` class (or a subtype thereof).
 - Arrays are zero-based, meaning that the first element is at index 0
 	- `point[0]` is the first element
 	- `point[1]` is the second
-- `point.size()` returns the number of elements in the array
-	- Note that the range of indexes for an array is `0..(point.size() - 1)`
+- `point.length` returns the number of elements in the array
+	- Note that the range of indexes for an array is `0..(point.length - 1)`
 
->`point.length` would also work and provides the same result as `point.size()` 
+>`point.size()` would also work and provides the same result as `point.length` 
 
-It's important to note that the `size` of an array is fixed at declaration. If you decide that you need to expand the array then you'll slap your forehead and ask "Why didn't I use collections?". If you dig your heels in and stay with arrays you might check out the `java.lang.System.arraycopy` method and learn the gentle art of copying and resizing arrays. Then, you'll start using collections.	
 If I'd tried something like `point[2] = 99` I would get a `java.lang.ArrayIndexOutOfBoundsException` as the array can only hold 2 elements.
+
+It's important to note that the `size` of an array is fixed at declaration. If you decide that you need to expand the array then you'll slap your forehead and ask "Why didn't I use collections?". If you dig your heels in and stay with arrays you might check out the `java.lang.System.arraycopy` method and learn the gentle art of copying and resizing arrays. Then, you'll start using collections.
 
 We can be more direct in creating the array and provide the values up-front. In the example below I create an array that can hold two elements and I load the values into the array:
 
@@ -47,7 +48,7 @@ So, why did I pick `Number`? Well, I want an array of numerical values but perha
 Number[] point = [27.9, -153]
 ```
 
-If I really wanted to be specific I could have declare `point` as an array of `Integer` values:
+If I really wanted to be specific about the type of number I could have declared `point` as an array of `Integer` values:
 
 ```groovy
 Integer[] point = [27, -153]
@@ -73,7 +74,7 @@ Without wanting to be repetitive, the example above would probably be easier to 
 
 # Manipulating arrays
 
-We've seen the `sort()` method and `length` property - both indicating how many elements the array can hold.
+We've seen the `size()` method and `length` property - both indicating how many elements the array can hold.
 
 Sorting an array is easy with the `sort()` method:
 
