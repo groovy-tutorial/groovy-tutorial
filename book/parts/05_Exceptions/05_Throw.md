@@ -1,5 +1,6 @@
 ---
 title: 	Causing an Exception
+status:	in-progress
 description:	The `throw` keyword is used to intentionally cause an exception
 ...
  Often, `new` is used within a `throw` statement to initialise a new exception instance. The example below will `throw` a `new` instance of the `IllegalStateException`. As part of creating the new exception instance I pass it a message to help inform the user as to why they're getting an exception:

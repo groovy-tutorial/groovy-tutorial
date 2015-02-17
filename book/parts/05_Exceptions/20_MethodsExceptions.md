@@ -1,5 +1,6 @@
 ---
 title:	Methods and Exceptions  
+status:	in-progress
 description:	
 ...
 The code in this chapter is rather skewed as we'd rarely throw an exception and catch it within the same `try-catch` block. Rather, we're most likely to throw an exception from a method back to the caller and we use `try` blocks to catch exceptions from methods we're calling.
