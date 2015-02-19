@@ -11,3 +11,4 @@ If you find something wrong I'd really appreciate you letting me know:
 	- Also check out [critic markup](http://fletcher.github.io/MultiMarkdown-4/criticmarkup) - it's a useful method for marking up changes
 
 If you'd like to look at how the tutorial is "compiled", please check out <https://bitbucket.org/groovytutorial/book-definition>
+
