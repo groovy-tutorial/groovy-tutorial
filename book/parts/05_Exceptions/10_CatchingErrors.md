@@ -3,7 +3,9 @@ title:	Catching Errors
 status:	in-progress
 description:	You can catch an error but you probably shouldn't.
 ...
-Before we go too far on this one please note that **errors indicate serious/abnormal problems and shouldn't be caught**. Errors are different to exceptions as they indicate a fundamental issue rather than a recoverable problem. It's highly unlikely you'll ever need to handle an error so treat it like a cold and don't try to catch one. They may "crash" your program but it's likely any treatment that you try to apply will make things worse.
+Before we go too far on this one please note that **errors indicate serious/abnormal problems and shouldn't be caught**. 
+
+Errors are different to exceptions as they indicate a fundamental issue rather than a recoverable problem. It's highly unlikely you'll ever need to handle an error so treat it like a cold and don't try to catch one. They may "crash" your program but it's likely any treatment that you try to apply will make things worse. For example, if somehow you managed to catch a `java.lang.OutOfMemoryError`, how would you respond?
 
 >I was unsure if I should even include this section but feel it more useful to flag that, whilst you can handle errors, you probably shouldn't.
 

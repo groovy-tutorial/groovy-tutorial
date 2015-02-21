@@ -3,7 +3,10 @@ title: 	Causing an Exception
 status:	in-progress
 description:	The `throw` keyword is used to intentionally cause an exception
 ...
- Often, `new` is used within a `throw` statement to initialise a new exception instance. The example below will `throw` a `new` instance of the `IllegalStateException`. As part of creating the new exception instance I pass it a message to help inform the user as to why they're getting an exception:
+
+The `throw` statement will cause an exception to be thrown. You'll use this inside your own code to either throw an exception type already provided by Java or Groovy or to throw an exception type that you have developed. Remembering that exceptions are classes, you can create your own subclass of `Exception` for you own project. Let's take a small step back for now and see how we throw an exception. 
+
+Often, `new` is used within a `throw` statement to initialise a new exception instance. The example below will `throw` a `new` instance of the `IllegalStateException`. As part of creating the new exception instance I pass it a message to help inform the user as to why they're getting an exception:
 
 ```groovy
 def numerator = 10
@@ -16,11 +19,11 @@ try {
         return numerator / denominator
     }
 } catch (any) {
-    println "${any.message} (${any.class})"
+    println "${any.message} (${any.class.name})"
 }
 ```
 
-You can use `new` to create a new instance of an exception but this won't cause the exception to be thrown - you'll need to `throw` it. The long-form would appear as:
+You can use `new` to create a new instance of an exception but this won't cause the exception to be thrown - you'll need to `throw` it. The long-form version of the previous example would appear as:
 
 ```groovy
 def ise = new IllegalStateException('I haven\'t learnt how to divide negative numbers')

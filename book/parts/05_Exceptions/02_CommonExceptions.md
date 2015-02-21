@@ -4,11 +4,11 @@ status:	in-progress
 description:	Take a look at some exceptions you're likely to see through the day.
 ...
 
-In the following sections we'll thrown some errors and exceptions (on purpose) so that we can check out some of the most common 
+In the following sections we'll thrown some errors and exceptions (on purpose) so that we can check out some of the most common children of `java.lang.Throwable` you're likely to see. As a bonus we'll also discover a few approaches to avoiding them.
 
 # java.lang.NullPointerException
 
-The good old `NullPointerException` will haunt your debugging sessions for years to come. Basically it means that you've tried to call a method or access a property on an object that isn't there (i.e. the variable is `null`).
+The good old `NullPointerException` (NPE) will haunt your debugging sessions for years to come. Basically it means that you've tried to call a method or access a property on an object that isn't there (i.e. the variable is `null`). Let's cause an NPE - it's easy:
 
 ```groovy
 def tmp = null
@@ -32,7 +32,7 @@ assert true == false : 'This cannot be'
 
 When your Groovy assertions fail you actually seem to receive a `org.codehaus.groovy.runtime.powerassert.PowerAssertionError` - a subclass of `java.lang.AssertionError`.
 
-The `assert` statement is usually seen in tests and small scripts. It's usually better to signal an incorrect state/situation using `throws`. 
+The `assert` statement is usually seen in tests and small scripts. It's usually better to signal an incorrect state/situation using `throws` - more about them in a later chapter.
 
 # java.lang.NumberFormatException
 
@@ -100,11 +100,11 @@ if (jim.respondsTo('getName')) {
 }
 ```
 
-The `respondsTo()` method just checks if the method exists but we may want to be certain that the methods exists _and_ has the parameter list we're after. To achieve this we need to call `respondsTo()` with a second parameter, a list of the method argument types we expect - `respondsTo(String name, Object[] argTypes)`
+The `respondsTo()` method just checks if the method exists but we may want to be certain that the methods exists _and_ has the parameter list we're after. To achieve this we need to call `respondsTo()` with a second parameter, a list of the method argument types we expect - `respondsTo(String name, Object[] argTypes)`.
 
 # java.lang.IndexOutOfBoundsException
 
- 
+These appear when you attempt to `get()` an index from a list that isn't there. The code below attempts to get the 5th element from a 3-element list:
 
 ```groovy
 def list = [0, 1, 2]
@@ -118,7 +118,7 @@ def list = [0, 1, 2]
 println list[5]
 ```
 
-Checking `list.size()` before trying to access 
+Checking `list.size()` (or the `length` property) before trying to access is another option:
 
 ```groovy
 def list = [0, 1, 2]
@@ -128,19 +128,43 @@ if (list.size() >= 5) {
 }
 ```
 
-## ArrayIndexOutOfBoundsException
+Of course the `for-in` loop will iterate through the list and not try to give you an element that isn't there. 
 
+>The same can't be said for the C-style `for` loop or `while`
 
+```groovy
+def list = [0, 1, 2]
+
+for (item in list) {
+    println item
+}
+```
+
+## java.lang.ArrayIndexOutOfBoundsException
+
+If you just had to use an array ()instead of a list) then you'll get an `ArrayIndexOutOfBoundsException` if you attempt to use an array index that isn't there:
 
 ```groovy
 Integer[] nums = [0, 1, 2]
 nums[5]
 ```
 
+We can use the `length` property to make sure we don't try to access an element that isn't there:
+
 ```groovy
 Integer[] nums = [0, 1, 2]
 
 if (nums.length >= 5) {
     nums[5]
+}
+```
+
+The `for-in` loop is also handy for staying within the bounds:
+
+```groovy
+Integer[] nums = [0, 1, 2]
+
+for (item in nums) {
+    println item
 }
 ```
