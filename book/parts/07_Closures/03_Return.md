@@ -1,9 +1,22 @@
 ---
 title:	Returning Values
-status:	
+status:	in-progress
 description:	Closures can return values just like methods.
 ... 
+
  
+```groovy
+def max = { num1, num2 ->
+    if (num1 >= num2) {
+        num1
+    } else if (num2 > num1) {
+        num2
+    } 
+}
+
+println max(14, 6)
+```
+
 
 ```groovy
 def myClosure = { num1, num2 ->
@@ -20,13 +33,9 @@ def myClosure = { num1, num2 ->
 println myClosure(14, 6)
 ```
 
-However, unlike a method, closures can't explicitly define the data type of a return value
+Unlike a method, closures can't explicitly define the data type of a return value. You might take a crack at `Integer maxNumber = {num1, num2 -> ...}` to set the return type but this statement won't work as `maxNumber` doesn't hold the result of the closure - it holds a reference to the closure.
 
-`Integer getMaxNumber(num1, num2) {...}`
-:	This method signature is valid
+>`Closure myClosure = { num1, num2 -> ...}` will work as the `myClosure` variable is actually of the `Closure` data type.
 
-`Integer maxNumber = {num1, num2 -> ...}`
-:	This statement won't work 
 
-`Closure myClosure = { num1, num2 -> ...}`
-:	This will work as the `myClosure` variable is actually of the `Closure` data type
+
