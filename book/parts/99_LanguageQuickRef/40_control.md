@@ -1,39 +1,41 @@
 ---
-title: Conditional (Branching) Statements
+title:	Conditional (Branching) Statements
+status:	draft
 ...
-# `if-else`
 
-## `if`
+# if-else
 
-<pre>
+## if
+
+<pre><code class="groovy hljs xml">
 if (<i>expression</i>) {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
 Single-line version:
-<pre>
+<pre><code class="groovy hljs xml">
 if (<i>expression</i>) <i>statement</i>
-</pre>
+</code></pre>
 
-## `else`
+## else
 
-<pre>
+<pre><code class="groovy hljs xml">
 if (<i>expression</i>) {
     <i>statement(s)</i>
 } else {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
 Single-line version:
-<pre>
+<pre><code class="groovy hljs xml">
 if (<i>expression</i>) <i>statement</i> else <i>statement</i>
-</pre>
+</code></pre>
 
-## `if-else-if`
+## if-else-if
 
-<pre>
+<pre><code class="groovy hljs xml">
 if (<i>expression</i>) {
     <i>statement(s)</i>
 } else if (<i>expression</i>) {
@@ -41,10 +43,10 @@ if (<i>expression</i>) {
 } else {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
-# `switch`
-<pre>
+# switch
+<pre><code class="groovy hljs xml">
 switch(<i>expression</i>) {
     case <i>expression</i>:
 	<i>statement(s)</i>
@@ -53,35 +55,38 @@ switch(<i>expression</i>) {
     default:
         <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
 -  0 to _n_ `case` blocks can be used
 - `break` is optional - its absence will cause fall-through to next case
 - `default:` section is optional
 
-# `try-catch-finally`
+# try-catch-finally
 
-## `try-catch`
+## try-catch
 To catch any exception raised in a `try` block:
-<pre>
+
+<pre><code class="groovy hljs xml">
 try {
     <i>statement(s)</i>
 } catch(any) {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
 To catch a specific exception use the specific exception type:
-<pre>
+
+<pre><code class="groovy hljs xml">
 try {
     <i>statement(s)</i>
 } catch(<i>Exception</i> e) {
     <i>statement(s)</i>
 } 
-</pre>
+</code></pre>
 
 Provide multiple `catch` blocks to handle different exceptions:
-<pre>
+
+<pre><code class="groovy hljs xml">
 try {
     <i>statement(s)</i>
 } catch(<i>Exception</i> e) {
@@ -89,10 +94,11 @@ try {
 } catch(<i>Exception</i> e) {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
 Provide a "catch-all" for unexpected exceptions:
-<pre>
+
+<pre><code class="groovy hljs xml">
 try {
     <i>statement(s)</i>
 } catch(<i>Exception</i> e) {
@@ -102,10 +108,10 @@ try {
 } catch(any) {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>
 
-## `finally`
-<pre>
+## finally
+<pre><code class="groovy hljs xml">
 try {
     <i>statement(s)</i>
 } catch(any) {
@@ -113,4 +119,4 @@ try {
 } finally {
     <i>statement(s)</i>
 }
-</pre>
+</code></pre>

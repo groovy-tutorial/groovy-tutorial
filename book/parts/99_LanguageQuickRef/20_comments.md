@@ -1,6 +1,8 @@
 ---
-title: Comments
+title:	Comments
+status:	draft
 ...
+
 | Type | Syntax |  
 |  ------	| ------	|  
 | Single-line	| `//comment`	|  
