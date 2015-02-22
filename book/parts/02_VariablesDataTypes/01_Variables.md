@@ -48,7 +48,7 @@ You can assign values to variables defined on a single line:
 def number1 = 10, number2 = 20
 ```
 
-A set of variables can be assigned values from a list:
+A set of variables can be assigned values from a list (multiple assignment):
 
 ```groovy
 def number1, number2
@@ -67,6 +67,16 @@ def number1, number2, number3
 assert number1 == 10
 assert number2 == 20
 assert number3 == null
+```
+
+Finally, we can perform multiple assignment at the point of declaring the variables:
+
+```groovy
+def (number1, number2, number3) = [10, 20, 30]
+
+assert number1 == 10
+assert number2 == 20
+assert number3 == 30
 ```
 
 # Variable names

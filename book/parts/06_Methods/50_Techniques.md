@@ -227,7 +227,7 @@ So there's a lot going on here that we haven't covered in the tutorials so far b
 1. I then created a spock test `Specification` subclass called `AvgSpec`
 	2. The first test is `def "average of #values gives #result"(values, result)`
 		3. This runs a series of tests using the data table in the `where:` block
-		4. Yes, that's right, Groovy will let you use a GString as the name of the method - that's v.cool
+		4. Yes, that's right, Groovy will let you use a string as the name of the method - that's v.cool but you can't use interpolation (`${}`).
 	4. The second test is `def "determineAverage called with #values throws #exception"(values, exception)`
 		5. This checks to make sure that the `IllegalArgumentException` is thrown for incorrect parameters
 
