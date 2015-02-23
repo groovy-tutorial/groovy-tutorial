@@ -1,6 +1,6 @@
 ---
 title:	Throwing an exception
-status:	in-progress
+status:	draft
 description:	You method can throw an exception.
 ...
 
@@ -39,6 +39,8 @@ def determineAverage(...values)
 }
 ```
 
-Groovy doesn't require that you explicitly provide a `throws` listing if your method throws an exception or passes up an exception that it doesn't handle. However, if your method is to be used by others, I'd suggest that including `throws` is worth the effort. You may note that I placed `throws` on a second line - this helps readability as it breaks up the display of the signature just slightly.
+Groovy doesn't require that you explicitly provide a `throws` listing if your method throws an exception or passes up an exception that it doesn't handle. However, if your method is to be used by others, I'd suggest that including `throws` is worth the effort. 
+
+You may note that, in that last example, I placed `throws` on a second line - this helps readability as it breaks up the display of the signature just slightly.
 
 [^sign]: This is the section of the method definition contain the return type, method name, parameters and thrown exceptions. As always, [Wikipedia has some further information](https://en.wikipedia.org/wiki/Type_signature#Method_signature) 

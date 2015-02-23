@@ -1,6 +1,6 @@
 ---
 title:	Methods and Exceptions  
-status:	in-progress
+status:	draft
 description:	Another small chapter on technique
 ...
 

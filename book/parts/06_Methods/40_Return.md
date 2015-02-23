@@ -1,6 +1,6 @@
 ---
 title:	Return value
-status:	in-progress
+status:	draft
 description:	Most methods are built to return an answer.
 ...
 
@@ -39,7 +39,7 @@ printer('hello, world')
 
 That use of `return` in the last bit of code was redundant as the method would exit anyway (it had nothing left to do). However, this can be handy if the last expression to run in a method returns a value that _we don't want_ as the return value for our method.
 
-Anything after a return is inaccessible, as illustrated by me even more useless method:
+Anything after a return is inaccessible, as illustrated by my even more useless method:
 
 ```groovy
 def printer(message) {

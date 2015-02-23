@@ -1,6 +1,6 @@
 ---
 title:	How Much Should We try?
-status:	in-progress
+status:	draft
 description:	Just a small chapter on technique
 ...
 

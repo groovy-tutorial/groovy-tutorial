@@ -1,6 +1,6 @@
 ---
 title:	Documenting a method
-status:	in-progress
+status:	draft
 description:	GroovDoc helps us document our methods
 ...
 
@@ -13,7 +13,7 @@ Let's look at a Groovy method that features GroovyDoc comments:
  * Returns the average of the parameters
  *
  * @param values  a series of numerical values
- * @throws IllegalArgumentException if a parameter is a String
+ * @throws IllegalArgumentException if a values parameter is a String
  * @returns The average of the values
  */
 def determineAverage(...values) 

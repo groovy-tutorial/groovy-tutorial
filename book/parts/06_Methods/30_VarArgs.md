@@ -1,10 +1,10 @@
 ---
 title:	Variable Arguments (Varargs)
-status:	in-progress
+status:	draft
 description:	Some methods are happy to take as many parameters as you can muster.
 ...
 
-There are times where we want to pass a variable number of parameters to the method but the parameter list for a method is fixed 
+There are times where we want to pass a variable number of parameters to the method. However, the parameter list for a method is fixed.
 
 One approach is to use a list for a catch-all parameter, such as `items` does in the code below:
 
@@ -54,4 +54,6 @@ def buyGroceries(store, ... items) {
 }
 ```
 
-Putting a parameter after the variable arguments parameter doesn't make a great deal of sense as it'd be tricky to work out where `items` finished. So, even if `def buyGroceries(store, ...items, travelTime)` was legitimate (and it isn't) I'd suggest that readability is lost and `travelTime` should appear before `items`. Alternatively, going back to using an array for `items` would solve the problem.
+So the `items` parameter is actually a list inside `buyGroceries` but the caller just passes a series of values to the method.
+
+>Putting a parameter after the variable arguments parameter doesn't make a great deal of sense as it'd be tricky to work out where `items` finished. So, even if `def buyGroceries(store, ...items, travelTime)` was legitimate (and it isn't) I'd suggest that readability is lost and `travelTime` should appear before `items`. Alternatively, going back to using an array for `items` would solve the problem.

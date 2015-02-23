@@ -1,19 +1,23 @@
 ---
-title:	Overview  
-status:	in-progress
+title:	The Basics  
+status:	draft
 description:	A basic overview of methods
 ...
 
-Groovy, like Java, is object-oriented and works around classes. C and Pascal are procedural and works around functions. Whilst the methods described here may look a bit like C-style programming that lets you build libraries of functions, what is really happening is Groovy is wrapping your code in a `class` definition behind the scenes. You're only likely to create "raw" methods, like the ones below, as a means to break up your scripts. More usually you'll create methods within your classes.
+Groovy, like Java, is object-oriented and works around classes. C and Pascal are procedural and work around functions. Whilst the methods described here may look a bit like C-style programming that lets you build libraries of functions, what is really happening is Groovy wraps your code in a `class` definition behind the scenes. You're only likely to create "raw" methods, like the ones below, as a means to break up your scripts. More usually you'll create methods within your classes.
 
 Methods have a number of features:
 
-1. Methods have names - this allows you to call your method in a meaningful way
-2. Methods can accept parameters - these are inputs into your method that can affect how your method operates
-3. Methods can return a result value - this can be captured by a parameter from the code calling the method
-4. Methods have their own scope - they can have their own variables and not inadvertently affect the rest of your program
+1. Methods have names
+	- this allows you to call your method in a meaningful way
+2. Methods can accept parameters
+	- these are inputs into your method that can affect how your method operates
+3. Methods can return a result value 
+	- this can be captured by a variable from the code calling the method
+4. Methods have their own scope
+	- they can have their own variables and not inadvertently affect the rest of your program
 
-We've already looked at various methods of use with variables such as lists and maps so you've seen methods being called throughout the previous chapters.
+We've already looked at various methods for use with variables such as lists and maps so you've seen methods being called throughout the previous chapters.
 
 Let's start by examining a new method we'll write to calculate the average of the numbers in a list:
 

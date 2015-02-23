@@ -1,6 +1,6 @@
 ---
 title:	Anatomy of an Exception
-status:	in-progress
+status:	draft
 description:	Before we handle the exception let's see what it looks like.
 ...
 
@@ -9,7 +9,7 @@ description:	Before we handle the exception let's see what it looks like.
 ```groovy
 try {
     def person = null
-    null.getName()
+    person.getName()
 } catch (any) {
     println "Exception received: ${any.class.name}"
     println()
@@ -35,7 +35,7 @@ try {
 : We get: `Cannot invoke method getName() on null object`
 
 `getCause()`
-: This isn't always set but can be handy to know.
+: This isn't always set but can be handy to know. Essentially this is set if the exception is "relaying" another exception.
 
 : We get: `null`
 

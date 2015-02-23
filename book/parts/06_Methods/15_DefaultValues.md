@@ -1,6 +1,6 @@
 ---
 title:	Default Values for Parameters
-status:	in-progress
+status:	draft
 description:	Parameters can have a default value to indicate the most likely usage
 ---
 

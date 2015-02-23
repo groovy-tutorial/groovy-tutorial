@@ -1,6 +1,6 @@
 ---
 title:	Catching Errors
-status:	in-progress
+status:	draft
 description:	You can catch an error but you probably shouldn't.
 ...
 Before we go too far on this one please note that **errors indicate serious/abnormal problems and shouldn't be caught**. 

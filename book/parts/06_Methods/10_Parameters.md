@@ -1,6 +1,6 @@
 ---
 title:	Parameters
-status:	in-progress
+status:	draft
 description:	Parameters are method inputs that are used by the method to produce a result.
 ...
 
@@ -32,7 +32,7 @@ def determineAverage(list) {
 
 The code above is very poorly behaved - it modifies `list` by adding a new item. Unless you provided documentation that explicitly states that you will change a parameter, most developers will assume that their parameters will be safely untouched by your method.
 
->Deep down in the computer, `scores` and `list` are names that point to the same piece of memory. Understanding how programming languages handle memory is an extremely important part of programming. I don't really cover it in this tutorial but start by looking up ["memory management" in Wikipedia](https://en.wikipedia.org/wiki/Memory_management).
+>Deep down in the system, `scores` and `list` are names that point to the same piece of memory. Understanding how programming languages handle memory is an extremely important part of programming. I don't really cover it in this tutorial but start by looking up ["memory management" in Wikipedia](https://en.wikipedia.org/wiki/Memory_management).
 
 # Declaring data types for parameters
 
@@ -44,7 +44,7 @@ def determineAverage(ArrayList list) {
 }
 ```
 
-As you start to develop classes and larger programs, methods create your Application Programming Interface (API). Such methods can be called by other people's code and they could be using another JVM language (such as Java). It can make their life a little easier if you indicate the data types your expecting for your parameters. Alternatively, you can stay true to dynamic typing and let people know through your documentation.
+As you start to develop classes and larger programs, methods create your Application Programming Interface (API). Such methods can be called by other people's code and they could be using another JVM language (such as Java). It can make their life a little easier if you indicate the data types you're expecting for your parameters. Alternatively, you can stay true to dynamic typing and let people know through your documentation.
 
 # Multiple parameters
 

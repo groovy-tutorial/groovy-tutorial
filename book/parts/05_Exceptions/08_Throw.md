@@ -1,10 +1,10 @@
 ---
 title: 	Causing an Exception
-status:	in-progress
+status:	draft
 description:	The `throw` keyword is used to intentionally cause an exception
 ...
 
-The `throw` statement will cause an exception to be thrown. You'll use this inside your own code to either throw an exception type already provided by Java or Groovy or to throw an exception type that you have developed. Remembering that exceptions are classes, you can create your own subclass of `Exception` for you own project. Let's take a small step back for now and see how we throw an exception. 
+The `throw` statement will cause an exception to be thrown. You'll use this inside your own code to either throw an exception type already provided by Java or Groovy or to throw an exception type that you have developed. Remembering that exceptions are classes, you can create your own subclass of `Exception` for your own project. Let's take a small step back for now and see how we throw an exception. 
 
 Often, `new` is used within a `throw` statement to initialise a new exception instance. The example below will `throw` a `new` instance of the `IllegalStateException`. As part of creating the new exception instance I pass it a message to help inform the user as to why they're getting an exception:
 
@@ -53,7 +53,7 @@ try {
 }
 ```
 
-The code above makes a little more sense than some of my earlier examples as denominator may be `0` or a negative number and we are concerned with both possibilities. As mentioned earlier, we can use `|` to handle more than one exception type within the same `catch` block: 
+The code above makes a little more sense than my earlier example as `denominator` may be `0` or a negative number and we are concerned with both possibilities. As mentioned earlier, we can use `|` to handle more than one exception type within the same `catch` block: 
 
 ```groovy
 def numerator = 10

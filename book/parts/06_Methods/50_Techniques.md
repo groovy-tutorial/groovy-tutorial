@@ -1,6 +1,6 @@
 ---
 title:	Techniques
-status:	in-progress
+status:	draft
 description:	Various ideas to help your method writing but not your method acting.
 ...
 

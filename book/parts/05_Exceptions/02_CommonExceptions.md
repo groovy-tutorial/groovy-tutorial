@@ -1,6 +1,6 @@
 ---
 title:	Common Exceptions
-status:	in-progress
+status:	draft
 description:	Take a look at some exceptions you're likely to see through the day.
 ...
 
@@ -142,7 +142,7 @@ for (item in list) {
 
 ## java.lang.ArrayIndexOutOfBoundsException
 
-If you just had to use an array ()instead of a list) then you'll get an `ArrayIndexOutOfBoundsException` if you attempt to use an array index that isn't there:
+If you just had to use an array (instead of a list) then you'll get an `ArrayIndexOutOfBoundsException` if you attempt to use an array index that isn't there:
 
 ```groovy
 Integer[] nums = [0, 1, 2]

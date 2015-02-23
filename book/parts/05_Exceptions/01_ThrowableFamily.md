@@ -1,6 +1,6 @@
 ---
 title:	The Throwable Family
-status:	in-progress
+status:	draft
 description:	Exceptions and Errors are just objects that can bring your program to a rapid halt.
 ...
 
@@ -20,7 +20,7 @@ When writing Groovy applications you're likely to interact with exceptions in th
 - Throwing your own exceptions using (`throw`) to signal that something's gone wrong in your code.
 - Being surprised and frustrated when exceptions "just happen"
 
-Your goal should be to use defensive coding that seeks to handle what you think is necessary but be prepared for issues to arise and use facilities such as logging to help you determine the root-cause.
+Your goal should be to use defensive coding and testing that seeks to handle what you think is necessary but be prepared for issues to arise and use facilities such as logging to help you determine the root-cause.
 
 
 
