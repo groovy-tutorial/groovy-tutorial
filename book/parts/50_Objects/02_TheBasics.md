@@ -1,5 +1,6 @@
 ---
 title:	The basics of OO
+status:	in-progress
 description:	At its core, Groovy is an object-oriented programming language. 
             This section introduces a range of object-oriented terminology and 
             provides you with a set of resources that will help you really hone
@@ -13,9 +14,7 @@ The properties of an object (also referred to as fields) hold data that is impor
 
 Methods (less often referred to as functions) provide a means of accessing and manipulating the object's properties and behaviours. *Encapsulation* is an important concept in OOP and relates to the use of methods to hide and even protect an object's properties from direct access. Essentially, other code interacts with the object via its methods - often referred to as its interface. 
 
-
-
-## Classes
+# Classes
 Object-oriented programmers use *classes* to classify objects. As such, a class defines the fields (properties) and methods of an
 
 In Groovy the `class` keyword if used when declaring a new class:
@@ -52,31 +51,31 @@ Instead of using the `def` keyword the variable could be declared as being of th
 Person john = new Person(name: 'John')
 ```
 
-##Interfaces
+#Interfaces
 *Interfaces* provide a method for defining programming interfaces. 
 
 The example below defines an interface named `exercise` with a single method `run`:
-```
-interface exercise {
-    def run(int distance)
-}
-```
-You'll notice that the `run` method 
 
 ```
-class Athlete extends Person implements exercise {
+class Person {
+    def name
+}
+
+interface Exercise {
+    def run(int distance)
+}
+
+class Athlete extends Person implements Exercise {
     def run(int distance) {
         println "I'm off for a ${distance}km run."
     }
 }
-```
 
-```
 def robert = new Athlete(name: 'Rob')
 robert.run(10)
 ```
 
-##Packages
+# Packages
 Groovy allows programmers to group objects into `packages`. In the following snippet the `Person` class is allocated to the `myobjects` package:
 
 ```
@@ -89,7 +88,7 @@ class Person {}
 Packages are central to using others' code in your programs and 
 
 
-##Inheritance
+#Inheritance
 A *superclass* is one that other classes inherit from. These "child" classes are referred to as being *subclasses* and 
 
 Unlike some other OO languages (e.g. C++), Groovy does not support multiple inheritance. This means that a class cannot extend more than one superclass. However, Groovy classes can implement more than one interface.
@@ -111,7 +110,29 @@ def sally = new StaffMember(name: 'Sally', staffID: 765)
 sally.getIdentification()
 ```
 
+# Traits
 
+
+```groovy
+class ProjectMethod {
+}
+
+trait Agile {
+    def iterationLength = 4
+    def backlog = [:]
+    def developmentTeam = []
+    
+    
+}
+
+class Scrum
+    extends ProjectMethod 
+    implements Agile {
+
+    def productOwner
+    def scrumMaster
+}
+```
 
 ## Further reading
 [Wikipedia](http://en.wikipedia.org/wiki/Object-oriented_programming) is a handy starting point for many programming topics.

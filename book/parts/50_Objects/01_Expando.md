@@ -1,9 +1,9 @@
 ---
-title:      Expando
-description:   The Expando class lets you create objects on the fly. 
+title:	Expando
+status:	in-progress
+description:	The Expando class lets you create objects on the fly. 
 ...
-In the example below the `monster` variable is dynamically assigned a set of fields and
-methods (through the use of closures).
+In the example below the `monster` variable is dynamically assigned a set of fields and methods (through the use of closures).
 
 ```
 def monster = new Expando()
@@ -47,8 +47,10 @@ By using the `Expando` class instead of a `Map`, the instance fields can be acce
 ## Using Expando
 
 TODO
+
+```groovy
 //This is a basic CSV (Comma-separated file)  described as a string
-def table = '''
+def table = '''\
 name,email,phone
 Fred,fred@email.com,555-678345
 Alex,alex@email.com,555-987123
@@ -115,3 +117,4 @@ for (row in csv) {
 for (contact in contactList) {
     print contact.toCSV('\t', true)
 }
+```
