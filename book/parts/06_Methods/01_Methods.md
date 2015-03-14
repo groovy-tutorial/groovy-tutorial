@@ -58,7 +58,7 @@ Let's look at the main components of that script:
 1. The method is called with the `scores` variable passed as a parameter
 1. The return value (result) of `determineAverage` is stored in the `result` variable.
 
-
+In the example I called the method using `determineAverage(scores)` but, in many cases, I don't need to use the parentheses and `determineAverage scores` would have also worked. That's why `println 'hello, world'` works just fine. This works really well when you start to use Groovy to construct [domain-specific languages](http://groovy-lang.org/dsls.html).
 
 
 

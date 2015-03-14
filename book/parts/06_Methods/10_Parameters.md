@@ -30,7 +30,7 @@ def determineAverage(list) {
 }
 ```
 
-The code above is very poorly behaved - it modifies `list` by adding a new item. Unless you provided documentation that explicitly states that you will change a parameter, most developers will assume that their parameters will be safely untouched by your method.
+The code above is __very__ poorly behaved - it modifies `list` by adding a new item. Unless you provided documentation that explicitly states that you will change a parameter, most developers will assume that their parameters will be safely untouched by your method.
 
 >Deep down in the system, `scores` and `list` are names that point to the same piece of memory. Understanding how programming languages handle memory is an extremely important part of programming. I don't really cover it in this tutorial but start by looking up ["memory management" in Wikipedia](https://en.wikipedia.org/wiki/Memory_management).
 
