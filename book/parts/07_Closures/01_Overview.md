@@ -57,9 +57,9 @@ cls()
 
 That's pretty nifty! We can define a function when needed and store it in a variable. This variable can then be passed to methods and other closures as a parameter.
 
-## The it parameter
+## The 'it' parameter
 
-Anonymous functions get a single parameter named `it` by default. That means that you can use `it` as a parameter inside your function and it will contain the parameter passed in the call to the closure.
+Anonymous functions get a single parameter named `it` by default. That means that you can use `it` as a parameter inside your function and `it` will contain the parameter passed in the call to the closure.
 
 Let's write a version of the `printer` method that took a parameter:
 

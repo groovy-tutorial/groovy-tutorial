@@ -80,3 +80,5 @@ def cls = { grades, name ->
 
 cls(maths: 'D', science: 'C', art: 'A', 'Albert')
 ```
+
+So closures and methods are rather similar - there's no black magic going on. 
