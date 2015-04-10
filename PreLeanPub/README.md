@@ -1,3 +1,8 @@
+# NOTE
+
+As of April 2015 I moved over to the LeanPub system. This folder contains a copy of the text prior to moving over. It is likely to be out of date but I keep it in case someone's interested.
+
+
 # The Groovy 2 Tutorial
 
 This repository contains the source text for The Groovy 2 Tutorial. The live site for the tutorial is <http://www.groovy-tutorial.org>. I have an [associated news site](<http://news.groovy-tutorial.org>) to which I post information/updates.
