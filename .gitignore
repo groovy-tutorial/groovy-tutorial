@@ -11,3 +11,8 @@ bak/
 /.nb-gradle/private/
 .nb-gradle
 output
+groovytutorial/preview
+groovytutorial/published
+groovytutorial/site
+.dropbox
+Iconr
