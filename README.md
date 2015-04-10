@@ -1,0 +1,1 @@
+This repository contains the source text used to create the [LeanPub version of the Groovy 2 Tutorial](https://leanpub.com/groovytutorial)
