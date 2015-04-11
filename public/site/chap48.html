@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>42. Common Exceptions</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-common-exceptions"><span class="section-number">42. </span>Common Exceptions</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>Let’s take a look at some exceptions you’re likely to see through the day.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>In the following sections we’ll thrown some errors and exceptions (on purpose) so that we can check out some of the most common children of <code>java.lang.Throwable</code> you’re likely to see. As a bonus we’ll also discover a few approaches to avoiding them.</p>
+
+<h3 id="leanpub-auto-javalangnullpointerexception">java.lang.NullPointerException</h3>
+
+<p>The good old <code>NullPointerException</code> (NPE) will haunt your debugging sessions for years to come. Basically it means that you’ve tried to call a method or access a property on an object that isn’t there (i.e. the variable is <code>null</code>). Let’s cause an NPE - it’s easy:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">tmp</code> <code class="o">=</code> <code class="n">null</code>
+<code class="n">tmp</code><code class="p">.</code><code class="n">class</code>
+</pre></div>
+
+</div>
+
+<p>To avoid these, check for <code>null</code> by:</p>
+
+<ul><li>Using the Safe Navigation operator (<code>tmp?.class</code>)</li>
+  <li>Checking the variable with an <code>if</code> statement before trying to access it</li>
+</ul><h3 id="leanpub-auto-javalangassertionerror">java.lang.AssertionError</h3>
+
+<p>This is an <code>Error</code>, not an <code>Exception</code> and occurs when your <code>assert</code> expression evaluates to <code>false</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">assert</code> <code class="nb">true</code> <code class="o">==</code> <code class="nb">false</code> <code class="o">:</code> <code class="err">'</code><code class="n">This</code> <code class="n">cannot</code> <code class="n">be</code><code class="err">'</code>
+</pre></div>
+
+</div>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p><code>: 'This cannot be'</code> sets the error message for a failed assertion</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>When your Groovy assertions fail you actually seem to receive a <code>org.codehaus.groovy.runtime.powerassert.PowerAssertionError</code> - a subclass of <code>java.lang.AssertionError</code>.</p>
+
+<p>The <code>assert</code> statement is usually seen in tests and small scripts. It’s usually better to signal an incorrect state/situation using <code>throws</code> - more about them in a later chapter.</p>
+
+<h3 id="leanpub-auto-javalangnumberformatexception">java.lang.NumberFormatException</h3>
+
+<p>Groovy can be used as a dynamic language so there are times where you may try to do something to a value that just can’t be done. Trying to convince something that it can be a number when it really can’t be will give you a <code>NumberFormatException</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="err">'</code><code class="n">Kitten</code><code class="err">'</code> <code class="n">as</code> <code class="n">Integer</code>
+</pre></div>
+
+</div>
+
+<p>If you really need a variable to be a specific type you could use the class check feature of the <code>switch</code> statement. In the code below I check if <code>value</code> is of a type within the <code>Number</code> family tree before I try to convert it to an <code>Integer</code>. If it isn’t, I could <code>throw</code> and exception or handle it in some other way:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">value</code> <code class="o">=</code> <code class="err">'</code><code class="n">kitten</code><code class="err">'</code>
+
+<code class="k">switch</code> <code class="p">(</code><code class="n">value</code><code class="p">)</code> <code class="p">{</code>
+    <code class="k">case</code> <code class="n">Number</code>:
+        <code class="n">value</code> <code class="o">=</code> <code class="n">value</code> <code class="n">as</code> <code class="n">Integer</code>
+        <code class="k">break</code><code class="p">;</code>
+    <code class="nl">default:</code>
+        <code class="n">println</code> <code class="err">'</code><code class="n">I</code> <code class="n">should</code> <code class="n">throw</code> <code class="n">an</code> <code class="n">exception</code><code class="err">'</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-groovylangmissingpropertyexception">groovy.lang.MissingPropertyException</h3>
+
+<p>This exception happens when you try to access an object’s property but it doesn’t have that property. In the example below, my <code>Person</code> class doesn’t have a <code>name</code> property:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code> <code class="p">{}</code>
+<code class="n">def</code> <code class="n">jim</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">()</code>
+<code class="n">jim</code><code class="p">.</code><code class="n">name</code>
+</pre></div>
+
+</div>
+
+<p>Using <code>try-catch</code> around this sort of exception can let you <a href="https://en.wikipedia.org/wiki/Duck_typing">duck type</a> - an approach that uses an object’s properties and methods to determine if something is possible. </p>
+
+<p>I reckon that the <code>hasProperty()</code> method available on all Groovy objects is a cleaner approach than the <code>try-catch</code> option. We can check the object has the property before trying to use it and without causing an exception:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code> <code class="p">{}</code>
+<code class="n">def</code> <code class="n">jim</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">()</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">jim</code><code class="p">.</code><code class="n">hasProperty</code><code class="p">(</code><code class="err">'</code><code class="n">name</code><code class="err">'</code><code class="p">))</code> <code class="p">{</code>
+    <code class="n">jim</code><code class="p">.</code><code class="n">name</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-groovylangmissingmethodexception">groovy.lang.MissingMethodException</h3>
+
+<p>This exception appears when you call a method on an object that doesn’t support the method. The lack of a <code>getName()</code> method on the <code>Person</code> class will cause an exception for poor old <code>jim</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code> <code class="p">{}</code>
+<code class="n">def</code> <code class="n">jim</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">()</code>
+<code class="n">jim</code><code class="p">.</code><code class="n">getName</code><code class="p">()</code>
+</pre></div>
+
+</div>
+
+<p>There’s no <code>hasMethod()</code> method - it’s called <code>respondsTo()</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code> <code class="p">{}</code>
+<code class="n">def</code> <code class="n">jim</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">()</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">jim</code><code class="p">.</code><code class="n">respondsTo</code><code class="p">(</code><code class="err">'</code><code class="n">getName</code><code class="err">'</code><code class="p">))</code> <code class="p">{</code>
+    <code class="n">jim</code><code class="p">.</code><code class="n">getName</code><code class="p">()</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>The <code>respondsTo()</code> method just checks if the method exists but we may want to be certain that the methods exists <em>and</em> has the parameter list we’re after. To achieve this we need to call <code>respondsTo()</code> with a second parameter, a list of the method argument types we expect - <code>respondsTo(String name, Object[] argTypes)</code>.</p>
+
+<h3 id="leanpub-auto-javalangindexoutofboundsexception">java.lang.IndexOutOfBoundsException</h3>
+
+<p>These appear when you attempt to <code>get()</code> an index from a list that isn’t there. The code below attempts to get the 5th element from a 3-element list:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">list</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+<code class="n">println</code> <code class="n">list</code><code class="p">.</code><code class="n">get</code><code class="p">(</code><code class="mi">5</code><code class="p">)</code>
+</pre></div>
+
+</div>
+
+<p>Note that if we’d written that code in a slightly different way, we’d get <code>null</code> returned rather than an exception raised:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">list</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+<code class="n">println</code> <code class="n">list</code><code class="p">[</code><code class="mi">5</code><code class="p">]</code>
+</pre></div>
+
+</div>
+
+<p>Checking <code>list.size()</code> (or the <code>length</code> property) before trying to access is another option:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">list</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">list</code><code class="p">.</code><code class="n">size</code><code class="p">()</code> <code class="o">&gt;=</code> <code class="mi">5</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">println</code> <code class="n">list</code><code class="p">.</code><code class="n">get</code><code class="p">(</code><code class="mi">5</code><code class="p">)</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>Of course the <code>for-in</code> loop will iterate through the list and not try to give you an element that isn’t there. </p>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>The same can’t be said for the C-style <code>for</code> loop or <code>while</code></p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">list</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+
+<code class="k">for</code> <code class="p">(</code><code class="n">item</code> <code class="n">in</code> <code class="n">list</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">println</code> <code class="n">item</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-javalangarrayindexoutofboundsexception">java.lang.ArrayIndexOutOfBoundsException</h3>
+
+<p>If you just had to use an array (instead of a list) then you’ll get an <code>ArrayIndexOutOfBoundsException</code> if you attempt to use an array index that isn’t there:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">Integer</code><code class="p">[]</code> <code class="n">nums</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+<code class="n">nums</code><code class="p">[</code><code class="mi">5</code><code class="p">]</code>
+</pre></div>
+
+</div>
+
+<p>We can use the <code>length</code> property to make sure we don’t try to access an element that isn’t there:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">Integer</code><code class="p">[]</code> <code class="n">nums</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">nums</code><code class="p">.</code><code class="n">length</code> <code class="o">&gt;=</code> <code class="mi">5</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">nums</code><code class="p">[</code><code class="mi">5</code><code class="p">]</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>The <code>for-in</code> loop is also handy for staying within the bounds:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">Integer</code><code class="p">[]</code> <code class="n">nums</code> <code class="o">=</code> <code class="p">[</code><code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">2</code><code class="p">]</code>
+
+<code class="k">for</code> <code class="p">(</code><code class="n">item</code> <code class="n">in</code> <code class="n">nums</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">println</code> <code class="n">item</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+</div>
+</body>
+</html>

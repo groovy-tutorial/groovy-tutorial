@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>13. Strings</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-strings"><span class="section-number">13. </span>Strings</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>Strings are pieces of text.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>There are a two main ways in which you can declare a string in Groovy: single or double quotes</p>
+
+
+<p class="table-title">The String section</p>
+
+<table width="wide" style="width: 100%;">
+  <thead>
+    <tr><th>Method</th>
+      <th>Usage</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>Single quotes (<code>'...'</code>)</td>
+      <td>These are fixed strings and tell Groovy that the string is as we’ve written it (e.g. <code>def pet = 'dog'</code>).</td>
+    </tr>
+    <tr><td>Double quotes (<code>"..."</code>)</td>
+      <td>These are called GStrings and let us interpolate (insert) variables into our string.  (e.g. <code>def petDescription = "My pet is a $pet"</code>)</td>
+    </tr>
+    <tr><td>Three single quotes (<code>'''...'''</code>)</td>
+      <td>A multi-line fixed string</td>
+    </tr>
+    <tr><td>Three double quotes (<code>"""..."""</code>)</td>
+      <td>A multi-line GString</td>
+    </tr>
+  </tbody>
+</table><p>Here’s a quick example of a fixed string and a GString in action:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Fixed strings and GStrings</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">pet</code> <code class="o">=</code> <code class="err">'</code><code class="n">dog</code><code class="err">'</code>
+<code class="n">def</code> <code class="n">petDescription</code> <code class="o">=</code> <code class="s">"My pet is a $pet"</code>
+<code class="n">println</code> <code class="n">petDescription</code>
+</pre></div>
+
+  <hr /></div>
+
+<h3 id="leanpub-auto-escape-sequences">Escape sequences</h3>
+
+<p>Strings can contain escape sequences, allowing you to use non-printable characters in your text.</p>
+
+
+<p class="table-title">Escape sequences</p>
+
+<table>
+  <thead>
+    <tr><th>Sequence</th>
+      <th>Character</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>\n</td>
+      <td>line feed</td>
+    </tr>
+    <tr><td>\f</td>
+      <td>form feed</td>
+    </tr>
+    <tr><td>\r</td>
+      <td>carriage return</td>
+    </tr>
+    <tr><td>\t</td>
+      <td>horizontal tab</td>
+    </tr>
+    <tr><td>\’</td>
+      <td>single quote</td>
+    </tr>
+    <tr><td>\”</td>
+      <td>double quote</td>
+    </tr>
+    <tr><td>\\</td>
+      <td>backslash</td>
+    </tr>
+  </tbody>
+</table><p>The line feed (<code>\\n</code>) is often used to move to a new line:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">The line feed</p>
+
+  <hr /><div class="highlight"><pre><code class="n">print</code> <code class="err">'</code><code class="n">Hi</code> <code class="err">\</code><code class="n">n</code> <code class="n">there</code><code class="err">\</code><code class="n">n</code><code class="err">'</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>You’ll notice the use of <code>print</code> in the example above - the final <code>\\n</code> performs the same as <code>println</code> and moves to a new line.</p>
+
+<p>The form feed (<code>\\f</code>) and carriage return (<code>\\r</code>) aren’t often used. Form feed indicates a new page and carriage return goes back to the start of the line.</p>
+
+<p>The horizontal tab (<code>\\t</code>) is essentially the same as the <code>tab</code> key on your keyboard. It’s useful for formatting things like tables of information:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Sequences</p>
+
+  <hr /><div class="highlight"><pre><code class="n">println</code> <code class="err">'</code><code class="n">name</code><code class="err">\</code><code class="n">tage</code><code class="err">\</code><code class="n">tcolour</code><code class="err">'</code>
+<code class="n">println</code> <code class="err">'</code><code class="n">Sam</code><code class="err">\</code><code class="n">t12</code><code class="err">\</code><code class="n">tblue</code><code class="err">'</code>
+<code class="n">println</code> <code class="err">'</code><code class="n">Alice</code><code class="err">\</code><code class="n">t8</code><code class="err">\</code><code class="n">tgreen</code><code class="err">'</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>If you wish to use a quote within your string that matches the quote type you’re using to surround your string then you need to escape the internal quote using the <code>\</code> character. In the code below you can see the quotes being escaped (<code>\'</code> and <code>\"</code>):</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Escape, escape!</p>
+
+  <hr /><div class="highlight"><pre><code class="n">println</code> <code class="err">'</code><code class="n">That</code><code class="err">\'</code><code class="n">s</code> <code class="n">mine</code><code class="err">'</code>
+<code class="n">println</code> <code class="s">"I said </code><code class="se">\"</code><code class="s">NO!</code><code class="se">\"</code><code class="s">"</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>As the backslash (<code>\</code>) is used to escape characters, it needs an escape of its own. In order to use a backslash in a string you need to double it up (<code>\\</code>) as in the example below:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Backslashing</p>
+
+  <hr /><div class="highlight"><pre><code class="n">println</code> <code class="err">'</code><code class="n">c</code><code class="o">:</code><code class="err">\\</code><code class="n">documents</code><code class="err">\\</code><code class="n">report</code><code class="p">.</code><code class="n">doc</code><code class="err">'</code>
+</pre></div>
+
+  <hr /></div>
+
+<h3 id="leanpub-auto-gstrings">GStrings</h3>
+<p>In order to have Groovy interpolate the value of a variable we use the <code>$</code> symbol in front of the variable name - as you can see with <code>$pet</code> below:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">GStrings</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">pet</code> <code class="o">=</code> <code class="err">'</code><code class="n">dog</code><code class="err">'</code>  
+<code class="n">println</code> <code class="s">"I own a $pet"</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>This can be handy if you have a number of variables that you’d like to use in a string:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Interpolating strings</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">name</code> <code class="o">=</code> <code class="err">'</code><code class="n">Sally</code><code class="err">'</code>
+<code class="n">def</code> <code class="n">hobby</code> <code class="o">=</code> <code class="err">'</code><code class="n">surfing</code><code class="err">'</code>
+<code class="n">println</code> <code class="s">"Did you know that $name likes $hobby?"</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <h3 id="leanpub-auto-avoid--for-string-concatenation">Avoid <code>+</code> for String concatenation</h3>
+  <p>This helps escape the use of the addition operator (<code>+</code>) to concatenate (join) strings: 
+	<code>println 'hello ' + 'world</code> 
+You’ll see this in a lot of Java code and I, for one, am pleased to see that Groovy lets us pretend this never happened.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>GStrings also let you interpolate more complicated expressions into a string by using <code>${...}</code>. In the following example we perform a calculation within the GString:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Operation in a GString</p>
+
+  <hr /><div class="highlight"><pre>println "10 to the power of 6 is <code class="cp">${</code><code class="mi">10</code><code class="o">**</code><code class="mi">6</code><code class="cp">}</code>"
+</pre></div>
+
+  <hr /></div>
+
+<p>We can also access information about a variable in the same manner:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Operation in a GString</p>
+
+  <hr /><div class="highlight"><pre>def word = 'Supercalifragilisticexpialidocious'
+println "<code class="nv">$word</code> has <code class="cp">${</code><code class="n">word</code><code class="o">.</code><code class="n">length</code><code class="p">()</code><code class="cp">}</code> letters"
+</pre></div>
+
+  <hr /></div>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>The code <code>word.length()</code> calls the <code>length</code> method available on a string - we’ll cover what this means shortly.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><h3 id="leanpub-auto-multiline-strings">Multiline Strings</h3>
+
+<p>The examples given so far use short strings but longer strings would be cumbersome to type using lots of new lines. Instead, Groovy provides multiline strings - the code below declares a multiline fixed string:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">A Multiline string</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">poem</code> <code class="o">=</code> <code class="err">'''</code><code class="n">But</code> <code class="n">the</code> <code class="n">man</code> <code class="n">from</code> <code class="n">Snowy</code> <code class="n">River</code> <code class="n">let</code> <code class="n">the</code> <code class="n">pony</code> <code class="n">have</code> <code class="n">his</code> <code class="n">head</code><code class="p">,</code>
+<code class="n">And</code> <code class="n">he</code> <code class="n">swung</code> <code class="n">his</code> <code class="n">stockwhip</code> <code class="n">round</code> <code class="n">and</code> <code class="n">gave</code> <code class="n">a</code> <code class="n">cheer</code><code class="p">,</code>
+<code class="n">And</code> <code class="n">he</code> <code class="n">raced</code> <code class="n">him</code> <code class="n">down</code> <code class="n">the</code> <code class="n">mountain</code> <code class="n">like</code> <code class="n">a</code> <code class="n">torrent</code> <code class="n">down</code> <code class="n">its</code> <code class="n">bed</code><code class="p">,</code>
+<code class="n">While</code> <code class="n">the</code> <code class="n">others</code> <code class="n">stood</code> <code class="n">and</code> <code class="n">watched</code> <code class="n">in</code> <code class="n">very</code> <code class="n">fear</code><code class="p">.</code><code class="err">'''</code>
+
+<code class="n">print</code> <code class="n">poem</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>If you run the code above you’ll see that new lines are used at the correct points in the display but the first line is not quite right. You can modify this slightly and place a backslash (<code>\</code>) at the start of the string - using statement continuation for readability:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Fixing the first line</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">poem</code> <code class="o">=</code> <code class="err">'''</code>\
+<code class="n">But</code> <code class="n">the</code> <code class="n">man</code> <code class="n">from</code> <code class="n">Snowy</code> <code class="n">River</code> <code class="n">let</code> <code class="n">the</code> <code class="n">pony</code> <code class="n">have</code> <code class="n">his</code> <code class="n">head</code><code class="p">,</code>
+<code class="n">And</code> <code class="n">he</code> <code class="n">swung</code> <code class="n">his</code> <code class="n">stockwhip</code> <code class="n">round</code> <code class="n">and</code> <code class="n">gave</code> <code class="n">a</code> <code class="n">cheer</code><code class="p">,</code>
+<code class="n">And</code> <code class="n">he</code> <code class="n">raced</code> <code class="n">him</code> <code class="n">down</code> <code class="n">the</code> <code class="n">mountain</code> <code class="n">like</code> <code class="n">a</code> <code class="n">torrent</code> <code class="n">down</code> <code class="n">its</code> <code class="n">bed</code><code class="p">,</code>
+<code class="n">While</code> <code class="n">the</code> <code class="n">others</code> <code class="n">stood</code> <code class="n">and</code> <code class="n">watched</code> <code class="n">in</code> <code class="n">very</code> <code class="n">fear</code><code class="p">.</code><code class="err">'''</code>
+
+<code class="n">print</code> <code class="n">poem</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <h3 id="leanpub-auto-use-the-backslash">Use the backslash</h3>
+  <p>Without the backslash the code above would cause a blank newline to be printed.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>GStrings can also be defined using the multiline format:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">A multiline GString</p>
+
+  <hr /><div class="highlight"><pre>def animal = 'velociraptor'
+
+println """But the man from Snowy River let the <code class="cp">${</code><code class="n">animal</code><code class="cp">}</code> have his head,
+And he swung his stockwhip round and gave a cheer,
+And he raced him down the mountain like a torrent down its bed,
+While the others stood and watched in very fear."""
+</pre></div>
+
+  <hr /></div>
+
+<h3 id="leanpub-auto-building-strings">Building Strings</h3>
+
+<p>Working with basic strings is fine but if you need to build up a large piece of text throughout a program they can become very inefficient. We’ll look into this in the tutorial on Operators.</p>
+
+<h3 id="leanpub-auto-useful-methods-2">Useful Methods</h3>
+
+<p>Strings (text) are important aspects to human-based systems so most programming languages provide a number of methods for modifying, search, slicing and dicing strings. Groovy provides a number of helpful methods you can use with strings and we’ll look at just a few of them here:</p>
+
+<ul><li><code>length()</code> : returns the number of characters in a string</li>
+  <li><code>reverse()</code>: returns the mirrored version of the string</li>
+  <li><code>toUpperCase()</code> and <code>toLowerCase()</code>: returns the string with all of the characters converted to upper or lower case.</li>
+</ul><div class="code-block">
+  <p class="codeblock-title">Some String methods</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">str</code> <code class="o">=</code> <code class="err">'</code><code class="n">Hello</code><code class="p">,</code> <code class="n">World</code><code class="err">'</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">length</code><code class="p">()</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">reverse</code><code class="p">()</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">toUpperCase</code><code class="p">()</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">toLowerCase</code><code class="p">()</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>The <code>trim()</code> method returns the string with any leading and trailing whitespace removed:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Trimming a String</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">str</code> <code class="o">=</code> <code class="err">'</code>  <code class="n">Hello</code><code class="p">,</code> <code class="n">World</code>  <code class="err">'</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">trim</code><code class="p">()</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>The <code>substring</code> method returns a subsection of a string and can be used in two possible ways:</p>
+
+<ul><li>Provide a start index (e.g. <code>substring(7)</code>) to get the subsection that includes that index (i.e. the 7th character in the string) through to the end of the string</li>
+  <li>Provide a start and an end index (e.g. <code>substring(7, 9)</code>) to get the subsection that includes that start index through to the end index of the string</li>
+</ul><div class="code-block">
+  <p class="codeblock-title">Substrings</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">str</code> <code class="o">=</code> <code class="err">'</code><code class="n">Hello</code><code class="p">,</code> <code class="n">World</code><code class="err">'</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">substring</code><code class="p">(</code><code class="mi">7</code><code class="p">)</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">substring</code><code class="p">(</code><code class="mi">7</code><code class="p">,</code><code class="mi">9</code><code class="p">)</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>A number of methods are provided to help you with basic searching:</p>
+
+<ul><li>The <code>indexOf</code> and <code>lastIndexOf</code> methods return the index (location) of the specified character in the string</li>
+  <li><code>contains</code>, <code>startsWith</code>, and <code>endsWith</code> return <code>true</code> or <code>false</code> if the supplied parameter is located within the string</li>
+</ul><div class="code-block">
+  <p class="codeblock-title">Basic searching</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">str</code> <code class="o">=</code> <code class="err">'</code><code class="n">Hello</code><code class="p">,</code> <code class="n">World</code><code class="err">'</code>
+
+<code class="c1">//These methods return the index of the requested character</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">indexOf</code><code class="p">(</code><code class="sc">','</code><code class="p">)</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">lastIndexOf</code><code class="p">(</code><code class="sc">'o'</code><code class="p">)</code>
+
+<code class="c1">//These methods check if the string contains another string</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">contains</code><code class="p">(</code><code class="err">'</code><code class="n">World</code><code class="err">'</code><code class="p">)</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">startsWith</code><code class="p">(</code><code class="err">'</code><code class="n">He</code><code class="err">'</code><code class="p">)</code>
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">endsWith</code><code class="p">(</code><code class="err">'</code><code class="n">rld</code><code class="err">'</code><code class="p">)</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>Lastly, <code>replace</code> lets us provide a string that we want to change to a new value:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Replacing text</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">str</code> <code class="o">=</code> <code class="err">'</code><code class="n">Hello</code><code class="p">,</code> <code class="n">World</code><code class="err">'</code>
+
+<code class="n">println</code> <code class="n">str</code><code class="p">.</code><code class="n">replace</code><code class="p">(</code><code class="err">'</code><code class="n">World</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in a an up-coming chapter. Additionally, the tutorial on Operators will look into this in more depth.</p>
+</div>
+</body>
+</html>

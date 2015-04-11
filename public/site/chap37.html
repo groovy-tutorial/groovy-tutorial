@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>33. Object Operators</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-object-operators-1"><span class="section-number">33. </span>Object Operators</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>These operators help you check classes and instances.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>It could be argued that all operators are object operators as nearly every variable or value in Groovy is an object. However, these operators are all about working with and checking on the object’s structure.</p>
+
+
+<p class="table-title">Object operators</p>
+
+<table>
+  <thead>
+    <tr><th style="text-align: center">Operator(s)</th>
+      <th style="text-align: left">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align: center"><code>?.</code></td>
+      <td style="text-align: left">Safe Navigation Operator</td>
+    </tr>
+    <tr><td style="text-align: center"><code>as</code></td>
+      <td style="text-align: left">Casting Operator</td>
+    </tr>
+    <tr><td style="text-align: center"><code>is</code></td>
+      <td style="text-align: left">Identity Operator</td>
+    </tr>
+    <tr><td style="text-align: center"><code>instanceof</code></td>
+      <td style="text-align: left">Type Comparison</td>
+    </tr>
+    <tr><td style="text-align: center"><code>.@</code></td>
+      <td style="text-align: left">Field Operator</td>
+    </tr>
+    <tr><td style="text-align: center"><code>.&amp;</code></td>
+      <td style="text-align: left">Method Reference</td>
+    </tr>
+  </tbody>
+</table><h3 id="leanpub-auto-safe-navigation-operator">Safe Navigation Operator</h3>
+
+<p>The Safe Navigation operator (<code>?.</code>) checks to make sure that a variable isn’t <code>null</code> before calling the requested method. Consider the following code:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Hitting a null</p>
+
+  <hr /><div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code><code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">fred</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+
+<code class="c1">//various statements</code>
+<code class="n">fred</code> <code class="o">=</code> <code class="n">null</code>
+<code class="c1">//various statements</code>
+
+<code class="n">println</code> <code class="n">fred</code><code class="p">.</code><code class="n">name</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>As <code>fred</code> somehow became <code>null</code> at some point in the code, that call to <code>fred.name</code> causes a nasty <code>java.lang.NullPointerException</code> (aka the NPE). This happens a lot as variable (in this case <code>fred</code>) can end up being <code>null</code> for a number of reasons, including:</p>
+
+<ul><li>The variable never gets set in the first place - perhaps the initialisation failed but we didn’t catch it properly</li>
+  <li>A method returns <code>null</code> instead of an object instance</li>
+  <li>We get passed a parameter that has <code>null</code> value.</li>
+</ul><p>In order to stop the NPE you’ll normally see developers using an <code>if</code> statement to check that the variable isn’t <code>null</code> before trying to call a method:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Checking for null</p>
+
+  <hr /><div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code><code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">fred</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+
+<code class="c1">//various statements</code>
+<code class="n">fred</code> <code class="o">=</code> <code class="n">null</code>
+<code class="c1">//various statements</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">fred</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">println</code> <code class="n">fred</code><code class="p">.</code><code class="n">name</code>
+<code class="p">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <p>In the code above, <code>if (fred)</code> equates to true if <code>fred</code> isn’t null - it’s a handy bit of Groovy syntax we’ll cover when we get to the <code>if</code> statement in the next tutorial.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>Groovy’s Safe Navigation operator saves some time and code. In the code below, Groovy checks that the <code>fred</code> variable isn’t <code>null</code>  before trying to access the <code>name</code> property - giving us a compact piece of code: <code>fred?.name</code>.</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Safe navigation</p>
+
+  <hr /><div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code><code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">fred</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+
+<code class="c1">//various statements</code>
+<code class="n">fred</code> <code class="o">=</code> <code class="n">null</code>
+<code class="c1">//various statements</code>
+
+<code class="n">println</code> <code class="n">fred</code><code class="o">?</code><code class="p">.</code><code class="n">name</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>You’ll see that “null” is displayed - this is because <code>fred</code> is <code>null</code>. Groovy doesn’t even try to access the <code>name</code> property.</p>
+
+<h3 id="leanpub-auto-casting-operator">Casting Operator</h3>
+
+<p>The Casting operator (<code>as</code>) changes the data type of a value or variable to the specified class. This is sometimes called “casting”, “type conversion” or “coercing”. You’ll have seen this in action when we created a Set:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">nums</code> <code class="o">=</code> <code class="p">[</code><code class="mi">1</code><code class="p">,</code> <code class="mi">6</code><code class="p">,</code> <code class="mi">3</code><code class="p">,</code> <code class="mi">9</code><code class="p">,</code> <code class="mi">3</code><code class="p">]</code> <code class="n">as</code> <code class="n">Set</code>
+</pre></div>
+
+</div>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>For those that like to know the secret sauce, this actually casts <code>num</code> to be a <code>java.util.LinkedHashSet</code>. I know this because <code>nums.class.name</code> knows this.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>The <code>as</code> tells Groovy that you want to convert the item to be of the specified data type (class) - in the example above I use <code>Set</code>. The code below demonstrates a few more conversions:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">assert</code> <code class="mf">3.14</code> <code class="n">as</code> <code class="n">Integer</code> <code class="o">==</code> <code class="mi">3</code>
+<code class="n">assert</code> <code class="mi">101</code> <code class="n">as</code> <code class="n">String</code> <code class="o">==</code> <code class="err">'</code><code class="mi">101</code><code class="err">'</code>
+<code class="n">assert</code> <code class="nb">true</code> <code class="n">as</code> <code class="n">String</code> <code class="o">==</code> <code class="err">'</code><code class="nb">true</code><code class="err">'</code>
+<code class="n">assert</code> <code class="err">'</code><code class="mi">987</code><code class="err">'</code> <code class="n">as</code> <code class="n">Integer</code> <code class="o">==</code> <code class="mi">987</code>
+</pre></div>
+
+</div>
+
+<p>You’ll note that the cast can be lossy - <code>3.14 as Integer</code> caused the value to be truncated to <code>3</code>. Not all values can be cast to all types and code such as <code>'hello, world' as Integer</code> causes an exception.</p>
+
+<h3 id="leanpub-auto-identity-operator">Identity Operator</h3>
+
+<p>The Identity operator (<code>is</code>) determines if two variables are referencing the same object instance. This “operator” is really a method that you call by using <code>obj1.is(obj2)</code> to check if <code>obj1</code> and <code>obj2</code> reference the same instance.</p>
+
+<p>As we saw in the chapters on Equality Operators and Relational Operators, Groovy uses the <code>==</code> operator to determine if two objects are equivalent based on their state. Using <code>==</code> for this purpose is really useful and improves code readability <em>but</em> it means that the traditional Java use of <code>==</code> to determine if two objects reference the same instance needs a replacement in Groovy. The <code>is</code> method is that replacement.</p>
+
+<p>In the code below I describe a <code>Person</code> class and use a very helpful annotation (<code>@groovy.transform.EqualsAndHashCode</code>) so that Groovy sets up the approach to determining if two instances of <code>Person</code> are the same - such that <code>==</code> returns <code>true</code>. I’ve decided that all people will have a unique identifier and, provided two instances have the same identifier, they’re the same person. This means that all three variations (<code>fred</code>, <code>freddie</code>, <code>frederick</code>) of the person with the ID <code>345</code> are equal (<code>==</code>) to each other. However, by using <code>is</code> I can see that, whilst <code>fred</code> and <code>freddie</code> point to the same instance of Person, <code>frederick</code> points to a different instance.</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Can I see some identification?</p>
+
+  <hr /><div class="highlight"><pre><code class="err">@</code><code class="n">groovy</code><code class="p">.</code><code class="n">transform</code><code class="p">.</code><code class="n">EqualsAndHashCode</code><code class="p">(</code><code class="n">includes</code><code class="o">=</code><code class="s">"id"</code><code class="p">)</code>
+<code class="n">class</code> <code class="n">Person</code><code class="p">{</code>
+    <code class="n">def</code> <code class="n">id</code>
+    <code class="n">def</code> <code class="n">name</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">fred</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">id</code><code class="o">:</code> <code class="mi">345</code><code class="p">,</code> <code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+<code class="n">def</code> <code class="n">freddie</code> <code class="o">=</code> <code class="n">fred</code>
+<code class="n">def</code> <code class="n">frederick</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">id</code><code class="o">:</code> <code class="mi">345</code><code class="p">,</code> <code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Frederick</code><code class="err">'</code><code class="p">)</code>
+
+<code class="c1">//Check that they're all the same person</code>
+<code class="n">assert</code> <code class="n">fred</code> <code class="o">==</code> <code class="n">freddie</code>
+<code class="n">assert</code> <code class="n">fred</code> <code class="o">==</code> <code class="n">frederick</code>
+<code class="n">assert</code> <code class="n">freddie</code> <code class="o">==</code> <code class="n">frederick</code>
+
+<code class="c1">//Check which variable points to the same instance</code>
+<code class="n">assert</code> <code class="n">fred</code><code class="p">.</code><code class="n">is</code><code class="p">(</code><code class="n">freddie</code><code class="p">)</code>
+<code class="n">assert</code> <code class="o">!</code> <code class="n">fred</code><code class="p">.</code><code class="n">is</code><code class="p">(</code><code class="n">frederick</code><code class="p">)</code>
+</pre></div>
+
+  <hr /></div>
+
+<h3 id="leanpub-auto-type-comparison">Type Comparison</h3>
+
+<p>The Type Comparison operator (<code>instanceof</code>) is used to determine if a variable is an instance of the specified class.</p>
+
+<p>In this next example I check to make sure that <code>fred</code> is a <code>Person</code>:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Type comparison</p>
+
+  <hr /><div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code><code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">fred</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+
+<code class="n">assert</code> <code class="n">fred</code> <code class="n">instanceof</code> <code class="n">Person</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>Checking the variable’s type can be useful in dynamically typed languages such as Groovy as it lets us check before we call a property or method that may not be there:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code><code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">fred</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">)</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">fred</code> <code class="n">instanceof</code> <code class="n">Person</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">println</code> <code class="n">fred</code><code class="o">?</code><code class="p">.</code><code class="n">name</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>In my <code>Person</code> example I’m not really using the full benefits of object-oriented programming that we can leverage in Groovy - primarily because we’re yet to get up to that. However, trust me when I say that class hierarchies and interfaces give us a handy way to build up a family tree of classes and that we can use <code>instanceof</code> to check if the object instance has a legacy that helps us achieve an outcome. For example, the <code>Integer</code> and <code>Float</code> classes are a subclass (child) of the <code>Number</code> class.</p>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <h3 id="leanpub-auto-meanwhile-under-the-sea">Meanwhile, under the sea</h3>
+  <p>It’s a bit like the <a href="http://en.wikipedia.org/wiki/Linnaean_taxonomy">Linnaean taxonomy</a>: <code>assert octopus instanceof Mollusc</code> and <code>slug instanceof Mollusc</code>. Check out the <a href="http://eol.org/pages/2195/overview">Encyclopedia of Life</a> to learn more about molluscs - those little guys are really cool.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>In the example below I set up an <code>add</code> method that adds two numbers (handy!). Before I try to add those two numbers I use <code>instanceof</code> to make sure they’re actually Numbers. If they aren’t, I throw an exception at you.</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="nf">add</code><code class="p">(</code><code class="n">num1</code><code class="p">,</code> <code class="n">num2</code><code class="p">)</code> <code class="p">{</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">num1</code> <code class="n">instanceof</code> <code class="n">Number</code> <code class="o">&amp;&amp;</code> <code class="n">num2</code> <code class="n">instanceof</code> <code class="n">Number</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">return</code> <code class="n">num1</code> <code class="o">+</code> <code class="n">num2</code>
+    <code class="p">}</code>
+    <code class="n">throw</code> <code class="n">new</code> <code class="n">IllegalArgumentException</code><code class="p">(</code><code class="err">'</code><code class="n">Parameters</code> <code class="n">must</code> <code class="n">be</code> <code class="n">Numbers</code><code class="err">'</code><code class="p">)</code>
+<code class="p">}</code>
+
+<code class="n">assert</code> <code class="n">add</code><code class="p">(</code><code class="mi">1</code><code class="p">,</code> <code class="mi">6</code><code class="p">)</code> <code class="o">==</code> <code class="mi">7</code>
+<code class="n">assert</code> <code class="n">add</code><code class="p">(</code><code class="mf">3.14</code><code class="p">,</code> <code class="mf">9.2</code><code class="p">)</code> <code class="o">==</code> <code class="mf">12.34</code>
+
+<code class="n">add</code><code class="p">(</code><code class="err">'</code><code class="n">Rabbit</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Flower</code><code class="err">'</code><code class="p">)</code>
+</pre></div>
+
+</div>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <p>Granted, I could have declared <code>def add(Number num1, Number num2)</code> but that wouldn’t be very dynamic of me.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><h3 id="leanpub-auto-field-operator-and-method-reference">Field Operator and Method Reference</h3>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>I won’t discuss these two operators to any depth at this point. </p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>The Field operator (<code>.@</code>) provides direct access to an object’s property (field) rather than using a getter/setter. <em>Use with a lot of caution or, even better, don’t use it at all.</em></p>
+
+<p>The Method Reference operator (<code>.&amp;</code>) returns a reference to an object method. This can be handy when you’d like to use the method as a closure. This is a very useful feature so use it at will!</p>
+
+<p>In the example below I describe the <code>Person</code> class. When I then create an instance called <code>example</code> you’ll notice that:</p>
+
+<ul><li><code>example.name = 'Fred'</code> causes <code>setName()</code> to be called</li>
+  <li><code>println example.name</code> causes <code>getName()</code> to be called</li>
+  <li><code>example.@name = 'Jane'</code> and <code>println example.@name</code> both access the <code>name</code> property directly.</li>
+  <li><code>def intro = example.&amp;introduceSelf</code> sets <code>intro</code> as a pointer (closure) to the <code>introduceSelf</code> method.
+    <ul><li>Which is then called using <code>intro()</code></li>
+    </ul></li>
+</ul><div class="code-block">
+  <p class="codeblock-title">Field operators and method references</p>
+
+  <hr /><div class="highlight"><pre>class Person {
+    def name
+    
+    def setName(name) {
+        println 'You called setName()'
+        this.name = name
+    }
+    
+    def getName() {
+        println 'You called getName()'
+        return this.name
+    }
+    
+    def introduceSelf() {
+        println "Hi, my name is <code class="cp">${</code><code class="n">this</code><code class="o">.</code><code class="n">name</code><code class="cp">}</code>"
+    }
+}
+
+def example = new Person()
+
+//example.name actually calls the getter or setter
+example.name = 'Fred'
+println example.name
+
+//example.@name directly access the field
+example.@name = 'Jane'
+println example.@name
+
+//intro holds the reference to the introduceSelf method
+def intro = example.<code class="err">&amp;</code>introduceSelf
+
+//This next line calls introduceSelf()
+intro()
+</pre></div>
+
+  <hr /></div>
+</div>
+</body>
+</html>

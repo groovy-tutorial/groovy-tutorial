@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>2. Your first lines of Groovy</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-your-first-lines-of-groovy"><span class="section-number">2. </span>Your first lines of Groovy</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>It has become a tradition (maybe an unwritten law) that the first lines of code that you write in a new language are to output the line <code>hello, world</code>. So let’s start up the Groovy Console and get going.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>The Groovy Console provides a handy environment for preparing and testing basic Groovy scripts. In order to open the console you need to start a command line (or terminal) session and enter the following command:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Start the console</p>
+
+  <hr /><div class="highlight"><pre>groovyConsole <code class="p">&amp;</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>On Windows…
+Windows users may also find a link to <code>Groovy Console</code> in their Start menu.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>The Groovy Console should look something like the following screen grab:</p>
+
+<div class="image-with-caption center">
+  <img src="images/GroovyConsole.png" alt="Screen shot of the Groovy Console application window" /><p class="caption">Screen shot of the Groovy Console application window</p>
+</div>
+
+<p>The main parts of the console are:</p>
+
+<ol class="numeric"><li>The top half is the editor area for adding your Groovy script</li>
+  <li>The bottom half is the output area that displays the results of your script</li>
+  <li>The menu provides the standard tools for opening and saving files (<code>File</code>) and cut/copy/paste (<code>Edit</code>)</li>
+  <li>The <code>Script</code> menu gives you a number of functions you’ll use as you work through this book:
+    <ol class="numeric"><li><code>Run</code> will run the script</li>
+      <li><code>Run Selection</code> allows you to select (highlight) part of your script and run only that section</li>
+    </ol></li>
+  <li>The <code>View</code> menu lets you reset the output area (<code>Clear Output</code>)
+    <ol class="numeric"><li>I’d suggest that you select <code>Auto Clear Output on Run</code> as this helps reduce confusion </li>
+    </ol></li>
+</ol><p>Once you have the Groovy Console open, enter the following line in the editor area:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Let’s get groovy</p>
+
+  <hr /><div class="highlight"><pre><code class="n">print</code> <code class="err">'</code><code class="n">hello</code><code class="p">,</code> <code class="n">world</code><code class="err">'</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <p>Groovy web console
+Don’t forget that you can also try out the <a href="http://groovyconsole.appspot.com">Groovy web console</a> - it’ll run this code just fine.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>Once that’s ready, go to the menu and select <code>Script -&gt; Run</code> and you should see your output in the bottom half of the window something like the image below:</p>
+
+<div class="image-with-caption center">
+  <img src="images/GroovyConsoleOutput.png" alt="Screen shot of the Groovy Console application window with the hello, world script" /><p class="caption">Screen shot of the Groovy Console application window with the hello, world script</p>
+</div>
+
+<p>If you see the output <code>hello, world</code> then congratulations - you’ve taken your first step into a larger world.</p>
+
+<h3 id="leanpub-auto-examining-the-script">Examining the script</h3>
+<p>Our first Groovy script is very simple: it uses the <code>print</code> method (function) to output the string <code>hello world</code> to the console.</p>
+
+<p>For those that have come from languages such as C++ and Java the script <code>print "hello, world"</code> probably appears to be missing items such as imported libraries for output and “container” or “boilerplate” code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Hello,world - Java style</p>
+
+  <hr /><div class="highlight"><pre><code class="kd">class</code> <code class="nc">Hello</code> <code class="o">{</code>
+    <code class="kd">public</code> <code class="kd">static</code> <code class="kt">void</code> <code class="nf">main</code><code class="o">(</code><code class="n">String</code><code class="o">[]</code> <code class="n">args</code><code class="o">)</code> <code class="o">{</code>
+       <code class="n">System</code><code class="o">.</code><code class="na">out</code><code class="o">.</code><code class="na">print</code><code class="o">(</code><code class="s">"hello, world"</code><code class="o">);</code>
+    <code class="o">}</code>
+<code class="o">}</code>
+ 
+<code class="n">Hello</code><code class="o">.</code><code class="na">main</code><code class="o">();</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>When I look at the code above I see why Groovy is so appealing to me:</p>
+
+<ol class="numeric"><li>Groovy lets me focus on solving the problem and not working through so much decoration code.
+    <ul><li>Groovy doesn’t need semi-colons at the end of each statement</li>
+      <li>Groovy essentially builds the <code>Hello</code> class around the script</li>
+    </ul></li>
+  <li>The Groovy code is much more readable and this <em>should</em> help reduce bugs (or at least make finding them easier)</li>
+  <li>Most Java code is valid Groovy code - you can copy that Java code into the Groovy Console and run it - it will work </li>
+  <li>Groovy lets you use the comprehensive standard Java libraries and the extensive third-party libraries written by the Java developer community.
+    <ol class="numeric"><li>But also extends these standard libraries with some great timesavers.</li>
+    </ol></li>
+</ol><p>Groovy gives us the brevity and flexibility of a scripting language (such as Python, Ruby and Perl) whilst letting us tap into the galaxy of existing Java libraries.</p>
+
+<h3 id="leanpub-auto-going-a-little-further">Going a little further</h3>
+<p>Now that we can output something to the screen, let’s try and make our example a little more personal. Clear the Groovy Console editor and enter the following:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Using command-line arguments</p>
+
+  <hr /><div class="highlight"><pre>println "hello, <code class="cp">${</code><code class="n">args</code><code class="p">[</code><code class="mi">0</code><code class="p">]</code><code class="cp">}</code>"
+</pre></div>
+
+  <hr /></div>
+
+<p>Before we try to run this, let’s look at what’s in the code:</p>
+
+<ol class="numeric"><li><code>print</code> has become <code>println</code> - this does the same thing as our previous use of <code>print</code> but adds a new line at the end of the output. 
+    <ul><li>This makes the output easier to read when we’re running on the command line</li>
+    </ul></li>
+  <li>Instead of the text <code>world</code> we’re now using <code>${args[0]}</code>:
+    <ul><li><code>args</code> is a variable (an array<sup id="fnref-array"><a href="chap04.html#fn-array" rel="footnote">1</a></sup>) that holds any command-line arguments we pass to the script
+        <ul><li>You may have noticed <code>String[] args</code> in the Java version of <code>hello, world</code> - essentially Groovy is writing that segment of code for you.</li>
+          <li><code>args[0]</code> is the first element in the <code>args</code> array - this is the first parameter (command-line argument) passed to the script</li>
+        </ul></li>
+      <li>The <code>${...}</code> notation tells Groovy that the contents need to the resolved into a value - in this case Groovy needs to determine the value of <code>args[0]</code> before displaying the output</li>
+    </ul></li>
+</ol><p>Don’t worry if this appears to be a big jump from our <code>hello, world</code> - there’s a range of concepts being introduced and we’ll work through them in this tutorial section. For now, put the code into your Groovy Console and know that, when run, your script will say hello to a specified person.</p>
+
+<p>You now need to save your script so go to the <code>File</code> menu and select <code>Save</code>. When prompted, name the file <code>Hello.groovy</code> and save it into a directory you can access. </p>
+
+<p>Unfortunately we can’t run this script in the Groovy Console as it doesn’t provide an option for passing in a command-line parameter. Follow this process to run the script:</p>
+
+<ol class="numeric"><li>Open a command prompt (terminal) and change to the directory (<code>cd</code>) into which you saved <code>Hello.groovy</code>.</li>
+  <li>Type the command <code>groovy Hello.groovy Newman</code> and press the <code>return</code> key</li>
+</ol><p>You should see the following output:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">hello</code><code class="p">,</code> <code class="n">Newman</code>
+</pre></div>
+
+</div>
+
+<p>Of course you can change “Newman” to be any name so feel free to try out your name, the dog’s name etc. However, make sure you add a name - your script needs that parameter or you’ll see a disconcerting error.</p>
+
+<h3 id="leanpub-auto-compiling-groovy">Compiling Groovy</h3>
+<p>You can compile a Groovy script into a <code>class</code> file - the same type of file that Java developers compile their code into. The resulting <code>class</code> file is in bytecode format that can be read by the Java Virtual Machine (JVM). Once compiled to bytecode, Groovy code can work on the same JVM that runs existing Java systems - this is extremely handy if you work in a Java-centric organisation but want to use Groovy.</p>
+
+<p>In order to compile <code>Hello.groovy</code> we will use the <code>groovyc</code> command in the command-prompt as follows:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">groovyc</code> <code class="n">hello</code><code class="p">.</code><code class="n">groovy</code>
+</pre></div>
+
+</div>
+
+<p>When you look at the directory contents you should now see a file named <code>Hello.class</code>. Don’t try to read the contents of the file - it’s now in bytecode.</p>
+
+<p>In order to run your new application you enter the following command:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">groovy</code> <code class="o">--</code><code class="n">classpath</code><code class="o">=</code><code class="p">.</code> <code class="n">Hello</code> <code class="n">Jerry</code>
+</pre></div>
+
+</div>
+
+<p>You should see the output <code>hello, Jerry</code>.</p>
+
+<p>This uses the <code>groovy</code> command to run your compiled script but how?</p>
+
+<ol class="numeric"><li>The <code>--classpath=.</code> parameter tells <code>groovy</code> to look for <code>.class</code> files in the current directory (denoted as <code>.</code>)</li>
+  <li>‘Hello’ is a little confusing until we remember that we named our script file <code>Hello.groovy</code>
+    <ul><li>When <code>groovyc</code> compiled our script it generated a class named <code>Hello</code> with a <code>main</code> method around our single line so that, behind the scenes, the code turned into something like the Java version discussed earlier</li>
+    </ul></li>
+  <li>And <code>Jerry</code> is the name of the person we’re greeting</li>
+</ol><p>The call to <code>groovy</code> basically says “Run the main method in the Hello class and pass it Jerry as the parameter”.</p>
+
+<h3 id="leanpub-auto-moving-on">Moving on</h3>
+<p>At this point we’ve done a few things:</p>
+
+<ol class="numeric"><li>Opened the Groovy Console, written a very basic script and run it in the Groovy Console</li>
+  <li>Personalised the script and run it on the command prompt, passing it a parameter</li>
+  <li>Compiled the Groovy file into a bytecode <code>.class</code> file and run it</li>
+</ol><p>Let’s move onto writing some more useful Groovy.</p>
+
+<div class="footnotes">
+  <ol><li id="fn-array">More about arrays in a little bit<a href="chap04.html#fnref-array" rev="footnote">↩</a></li>
+  </ol></div>
+</div>
+</body>
+</html>

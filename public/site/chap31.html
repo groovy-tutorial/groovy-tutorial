@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>27. Conditional Operators</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-conditional-operators"><span class="section-number">27. </span>Conditional Operators</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>These help you lay out your logic.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>You’ll most often see Conditional-and (<code>&amp;&amp;</code>) and Conditional-or (<code>||</code>) used in conditional statements such as <code>if</code>. We also use them in expressions such as <code>assert</code> to determine if a statement is <code>true</code> or <code>false</code>.</p>
+
+<p>The Conditional Operator (<code>?:</code>) is a short-form variant of the <code>if-else</code> statement that really helps with code readability. It’s also referred to as the “elvis” operator and the “ternary” operator.</p>
+
+
+<p class="table-title">The conditional operators</p>
+
+<table>
+  <thead>
+    <tr><th style="text-align: center">Operator</th>
+      <th style="text-align: left">Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align: center"><code>&amp;&amp;</code></td>
+      <td style="text-align: left">Conditional-and</td>
+    </tr>
+    <tr><td style="text-align: center"><code>||</code></td>
+      <td style="text-align: left">Conditional-or</td>
+    </tr>
+    <tr><td style="text-align: center"><code>?:</code></td>
+      <td style="text-align: left">Conditional operator</td>
+    </tr>
+  </tbody>
+</table><h3 id="leanpub-auto-what-is-truth">What Is Truth?</h3>
+
+<p>All of the following statements resolve as <code>true</code> and the assertions all pass:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">assert</code> <code class="mi">1</code>
+<code class="n">assert</code> <code class="nb">true</code>
+<code class="n">assert</code> <code class="err">'</code><code class="n">Hello</code><code class="err">'</code>
+</pre></div>
+
+</div>
+
+<p>Obviously <code>false</code> is false but so is <code>0</code>, <code>''</code> (empty string) and <code>null</code>. </p>
+
+<p>The complement operator (<code>!</code>) can be used to negate an expression, allowing the following assertions to pass:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">assert</code> <code class="o">!</code><code class="nb">false</code>
+<code class="n">assert</code> <code class="o">!</code><code class="mi">0</code>
+<code class="n">assert</code> <code class="o">!</code><code class="err">''</code>
+<code class="n">assert</code> <code class="o">!</code><code class="n">null</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-evaluation">Evaluation</h3>
+
+<p>Conditional operators are evaluated left-to-right. The assertion in the following code passes as the result of <code>true &amp;&amp; false</code> is <code>false</code> but is then or’d with <code>true</code>, resulting in <code>true</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">assert</code> <code class="nb">true</code> <code class="o">&amp;&amp;</code> <code class="nb">false</code> <code class="o">||</code> <code class="nb">true</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-conditional-and">Conditional-And</h3>
+<p>Conditional-and uses the boolean AND to determine if a statement is <code>true</code> or <code>false</code>. In order to be <code>true</code>, both the left-hand and right-hand operands must evaluate to true, as described in the truth table below:</p>
+
+
+<p class="table-title">AND Truth Table</p>
+
+<table>
+  <thead>
+    <tr><th style="text-align: center">LHS</th>
+      <th style="text-align: center">RHS</th>
+      <th style="text-align: center">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr><td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr><td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr><td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table><p>In a conditional-and statement, both expressions are always evaluated. In the example below, <code>++counter</code> is evaluated (giving counter now equal to 1) before the conditional is assessed:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">counter</code> <code class="o">=</code> <code class="mi">0</code>
+<code class="n">def</code> <code class="n">result</code> <code class="o">=</code> <code class="nb">true</code> <code class="o">&amp;&amp;</code> <code class="o">++</code><code class="n">counter</code>
+
+<code class="n">assert</code> <code class="n">result</code> <code class="o">==</code> <code class="nb">true</code>
+<code class="n">assert</code> <code class="n">counter</code> <code class="o">==</code> <code class="mi">1</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-conditional-or">Conditional-Or</h3>
+<p>Conditional-or uses the boolean OR to determine if a statement is <code>true</code> or <code>false</code>. In order to be <code>true</code>, either the left-hand or right-hand operands must evaluate to true, as described in the truth table below:</p>
+
+
+<p class="table-title">OR Truth Table</p>
+
+<table>
+  <thead>
+    <tr><th style="text-align: center">LHS</th>
+      <th style="text-align: center">RHS</th>
+      <th style="text-align: center">Result</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">0</td>
+    </tr>
+    <tr><td style="text-align: center">1</td>
+      <td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr><td style="text-align: center">0</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+    <tr><td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+      <td style="text-align: center">1</td>
+    </tr>
+  </tbody>
+</table><p>In a conditional-or statement, each expression is evaluated in left-to-right order until either an expression resolves to <code>true</code> or no expressions are left (resulting in <code>false</code> overall). Once an expression is evaluated to <code>true</code> no further evaluation of the conditional is performed. This is important to keep in mind if you have an expression performing an operation that you later rely on as it may never be evaluated. In the example below I demonstrate a similar block of code used in the conditional-and section but I’ll use a conditional-or. The final assertion (<code>assert counter == 1</code>) will fail as <code>++counter</code> is never evaluated:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">counter</code> <code class="o">=</code> <code class="mi">0</code>
+<code class="n">def</code> <code class="n">result</code> <code class="o">=</code> <code class="nb">true</code> <code class="o">||</code> <code class="o">++</code><code class="n">counter</code>
+
+<code class="n">assert</code> <code class="n">result</code> <code class="o">==</code> <code class="nb">true</code>
+<code class="n">assert</code> <code class="n">counter</code> <code class="o">==</code> <code class="mi">1</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-conditional-operator">Conditional Operator</h3>
+
+<p>The conditional operator (<code>?:</code>) is most commonly used when assigning a value to a variable. A conditional expression is used for the first operand and placed to the left of the question-mark. If this resolves to <code>true</code> then the second operand is evaluated, otherwise the third operator is evaluated. This sounds a little confusing so let’s look at an example:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">A basic tax calculator</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">salary</code> <code class="o">=</code> <code class="mi">100000</code>
+
+<code class="n">def</code> <code class="n">taxBracket</code> <code class="o">=</code> <code class="n">salary</code> <code class="o">&lt;</code> <code class="mi">75000</code> <code class="o">?</code> <code class="err">'</code><code class="n">Bracket</code> <code class="mi">1</code><code class="err">'</code><code class="o">:</code> <code class="err">'</code><code class="n">Bracket</code> <code class="mi">2</code><code class="err">'</code>
+
+<code class="n">assert</code> <code class="n">taxBracket</code> <code class="o">==</code> <code class="err">'</code><code class="n">Bracket</code> <code class="mi">2</code><code class="err">'</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>In the code above the relational expression (<code>salary &lt; 75000</code>) is evaluated and, in this case, resolves to <code>false</code> and the third operand (<code>Bracket 2</code>) is evaluated and assigned to <code>taxBracket</code>. As the operand is just a string there’s no real evaluation but we can use any expression that will return a result. </p>
+
+<p>The code below will calculate income tax based on the person’s income:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">More tax</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">salary</code> <code class="o">=</code> <code class="mi">100000</code>
+
+<code class="n">def</code> <code class="n">tax</code> <code class="o">=</code> <code class="n">salary</code> <code class="o">&lt;</code> <code class="mi">75000</code> <code class="o">?</code> <code class="n">salary</code> <code class="o">*</code> <code class="mf">0.1</code><code class="o">:</code> <code class="n">salary</code> <code class="o">*</code> <code class="mf">0.2</code>
+
+<code class="n">assert</code> <code class="n">tax</code> <code class="o">==</code> <code class="mi">20000</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>Note that only one of the second <em>or</em> third operands are evaluated. For example, if the conditional resolves to <code>true</code> the third operand will not be evaluated.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>A major benefit of the conditional operator is readability. Consider the previous code being re-written using an <code>if</code> statement and I trust you’ll see that <code>?:</code> makes for more compact and readable code:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">A less readable option</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">salary</code> <code class="o">=</code> <code class="mi">100000</code>
+<code class="n">def</code> <code class="n">tax</code> <code class="o">=</code> <code class="mi">0</code>
+
+<code class="k">if</code> <code class="p">(</code><code class="n">salary</code> <code class="o">&lt;</code> <code class="mi">75000</code><code class="p">)</code> <code class="p">{</code> 
+    <code class="n">tax</code> <code class="o">=</code> <code class="n">salary</code> <code class="o">*</code> <code class="mf">0.1</code>
+<code class="p">}</code> <code class="k">else</code> <code class="p">{</code>
+    <code class="n">tax</code> <code class="o">=</code> <code class="n">salary</code> <code class="o">*</code> <code class="mf">0.2</code>
+<code class="p">}</code>
+
+<code class="n">assert</code> <code class="n">tax</code> <code class="o">==</code> <code class="mi">20000</code>
+</pre></div>
+
+  <hr /></div>
+
+<h4 id="leanpub-auto-default-values">Default values</h4>
+
+<p>The conditional operator is also really useful for default values - these are used when you want to make sure a variable always has a value. In the code below the <code>Person</code> class has been prepared to ensure that any instance that has not been explicitly given a value for the <code>name</code> property is assigned <code>Anonymous</code> as the name:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Using <code>?:</code> to set a default value</p>
+
+  <hr /><div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code> <code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+    
+    <code class="n">def</code> <code class="n">Person</code><code class="p">(</code><code class="n">name</code> <code class="o">=</code> <code class="err">''</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">setName</code><code class="p">(</code><code class="n">name</code><code class="p">)</code>
+    <code class="p">}</code>
+    
+    <code class="n">def</code> <code class="n">setName</code><code class="p">(</code><code class="n">name</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">this</code><code class="p">.</code><code class="n">name</code> <code class="o">=</code> <code class="n">name</code> <code class="o">?:</code> <code class="err">'</code><code class="n">Anonymous</code><code class="err">'</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">jim</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">()</code>
+<code class="n">println</code> <code class="n">jim</code><code class="p">.</code><code class="n">name</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>Instead of writing <code>this.name = name ? name: 'Anonymous'</code> you’ll notice that I didn’t provide a second operand. This is another bonus for the ternary operator - if the conditional resolves to <code>true</code> and no second operand is provided, the result of the conditional is returned. This is a boring way to say that in <code>this.name = name ?: 'Anonymous'</code> if <code>name</code> is not false then it is assigned to <code>this.name</code>.</p>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <h3 id="leanpub-auto-use-constants">Use constants</h3>
+  <p>It’s usually best to use constants for default values - that way you can easily test a value in other sections of your code.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><h4 id="leanpub-auto-avoiding-npes">Avoiding NPEs</h4>
+<p>NPEs (Null-Pointer Expressions) are the bane of Java and Groovy programmers. You’ll see a lot of code checking for <code>null</code> and this reduces readability. This is usually in the form <code>if (myObj != null) {...}</code> or using the conditional operator <code>(myObj != null) ? ... : ...</code>.</p>
+
+<p>As <code>null</code> evaluates to <code>false</code> in Groovy, the conditional operator provides a compact means by which to check if an object is <code>null</code> before trying to access the object:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">myObj</code> <code class="o">=</code> <code class="n">null</code>
+<code class="n">def</code> <code class="n">dump</code> <code class="o">=</code>  <code class="n">myObj</code> <code class="o">?</code> <code class="n">myObj</code><code class="p">.</code><code class="n">dump</code><code class="p">()</code> <code class="o">:</code> <code class="err">''</code>
+</pre></div>
+
+</div>
+
+<p>In the example above I test <code>myObj</code> and, if it isn’t <code>null</code> then <code>dump</code> is given the value returned by <code>myObj.dump()</code>. Otherwise an empty string (<code>''</code>) is returned.</p>
+
+<p>As an alternative, the safe-navigation operator (<code>?.</code>) can be used to test for <code>null</code> prior to attempting access on the object:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">myObj</code> <code class="o">=</code> <code class="n">null</code>
+<code class="n">def</code> <code class="n">dump</code> <code class="o">=</code> <code class="n">myObj</code><code class="o">?</code><code class="p">.</code><code class="n">dump</code><code class="p">()</code>
+</pre></div>
+
+</div>
+
+<p>The safe navigation operator is discussed further under Object Operators.</p>
+
+<h5 id="leanpub-auto-in-java">In Java</h5>
+<p>In the code below I’ve provided a small example of checking for <code>null</code> in Java. You’ll note that we need to be explicit on our conditional (<code>(t == null)</code>):</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Checking for null in Java</p>
+
+  <hr /><div class="highlight"><pre><code class="kd">public</code> <code class="kd">class</code> <code class="nc">NullTest</code> <code class="o">{</code>
+    <code class="kd">public</code> <code class="kd">static</code> <code class="kt">void</code> <code class="nf">main</code><code class="o">(</code><code class="n">String</code><code class="o">[]</code> <code class="n">args</code><code class="o">)</code> <code class="o">{</code>
+        <code class="n">NullTest</code> <code class="n">t</code> <code class="o">=</code> <code class="kc">null</code><code class="o">;</code>
+
+        <code class="n">String</code> <code class="n">output</code> <code class="o">=</code> <code class="o">(</code><code class="n">t</code> <code class="o">==</code> <code class="kc">null</code><code class="o">)</code> <code class="o">?</code> <code class="s">"Null"</code> <code class="o">:</code> <code class="s">"Not null"</code><code class="o">;</code>
+        
+        <code class="n">System</code><code class="o">.</code><code class="na">out</code><code class="o">.</code><code class="na">println</code><code class="o">(</code><code class="n">output</code><code class="o">);</code>
+    <code class="o">}</code>
+<code class="o">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>To prove that I’m not just bloating my code to prove a point, here’s a slightly more compact version of the example:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Checking for null in Java - compacted</p>
+
+  <hr /><div class="highlight"><pre><code class="kd">public</code> <code class="kd">class</code> <code class="nc">NullTest</code> <code class="o">{</code>
+    <code class="kd">public</code> <code class="kd">static</code> <code class="kt">void</code> <code class="nf">main</code><code class="o">(</code><code class="n">String</code><code class="o">[]</code> <code class="n">args</code><code class="o">)</code> <code class="o">{</code>
+        <code class="n">NullTest</code> <code class="n">t</code> <code class="o">=</code> <code class="kc">null</code><code class="o">;</code>
+        <code class="n">System</code><code class="o">.</code><code class="na">out</code><code class="o">.</code><code class="na">println</code><code class="o">(</code><code class="n">t</code><code class="o">==</code><code class="kc">null</code> <code class="o">?</code> <code class="s">"Null"</code> <code class="o">:</code> <code class="s">"Not null"</code><code class="o">);</code>
+    <code class="o">}</code>
+<code class="o">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>You’ll note that I didn’t bother with the <code>output</code> variable and dropped the parentheses (they’re not required). The code is reasonably compact but rewritten in Groovy it gets even tidier:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Checking for null in Groovy</p>
+
+  <hr /><div class="highlight"><pre><code class="n">class</code> <code class="n">NullTest</code> <code class="p">{</code>
+    <code class="k">static</code> <code class="n">main</code><code class="p">(</code><code class="n">args</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">def</code> <code class="n">t</code> <code class="o">=</code> <code class="n">null</code>
+        <code class="n">println</code><code class="p">(</code><code class="n">t</code> <code class="o">?</code> <code class="err">'</code><code class="n">Null</code><code class="err">'</code> <code class="o">:</code> <code class="err">'</code><code class="n">Not</code> <code class="n">null</code><code class="err">'</code><code class="p">)</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>You still need to check for <code>null</code> in Groovy but the shortened conditional operator and the safe navigation operator really do help cut down on the boiler-plate stuff.</p>
+</div>
+</body>
+</html>

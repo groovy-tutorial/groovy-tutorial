@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>18. Data types</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-data-types-1"><span class="section-number">18. </span>Data types</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>Groovy does a good job of working out what sort of variable you’re using (numbers, strings, booleans etc) but let’s look at what’s going on under the hood.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>Groovy does not preclude the programmer from explicitly declaring a data type, particularly when it would be pertinent to constrain the values being managed. Furthermore, knowledge of data types is very useful for a number of reasons:</p>
+
+<ol class="numeric"><li>Use of JVM-compatible libraries may require knowledge of the data types required by method calls.
+    <ul><li>Important if you want to mine the rich collection of existing Java libraries</li>
+    </ul></li>
+  <li>Conversion between different data types (such as decimal numbers to whole numbers) can cause truncation and other (perhaps unexpected) results.
+    <ul><li>Essential knowledge if your program relies on calculations </li>
+    </ul></li>
+</ol><p>Most of Java’s “core” classes (types) are defined in the <code>java.lang</code> package. Groovy enhances some of these in the GDK to give you extra flexibility.</p>
+
+<h3 id="leanpub-auto-groovys-use-of-types">Groovy’s use of types</h3>
+<p>The table below illustrates Groovy’s selection of a data type based on a literal value:</p>
+
+
+<p class="table-title">Groovy’s use of types</p>
+
+<table>
+  <thead>
+    <tr><th style="text-align: left">Value</th>
+      <th style="text-align: left">Assigned Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align: left"><code>true</code></td>
+      <td style="text-align: left">java.lang.Boolean</td>
+    </tr>
+    <tr><td style="text-align: left"><code>'a'</code></td>
+      <td style="text-align: left">java.lang.String</td>
+    </tr>
+    <tr><td style="text-align: left"><code>"This is a String"</code></td>
+      <td style="text-align: left">java.lang.String</td>
+    </tr>
+    <tr><td style="text-align: left"><code>"Hello ${Larry}"</code></td>
+      <td style="text-align: left">org.codehaus.groovy.runtime.GStringImpl</td>
+    </tr>
+    <tr><td style="text-align: left"><code>127</code></td>
+      <td style="text-align: left">java.lang.Integer</td>
+    </tr>
+    <tr><td style="text-align: left"><code>32767</code></td>
+      <td style="text-align: left">java.lang.Integer</td>
+    </tr>
+    <tr><td style="text-align: left"><code>2147483647</code></td>
+      <td style="text-align: left">java.lang.Integer</td>
+    </tr>
+    <tr><td style="text-align: left"><code>9223372036854775807</code></td>
+      <td style="text-align: left">java.lang.Long</td>
+    </tr>
+    <tr><td style="text-align: left"><code>92233720368547758070</code></td>
+      <td style="text-align: left">java.math.BigInteger</td>
+    </tr>
+    <tr><td style="text-align: left"><code>3.14</code></td>
+      <td style="text-align: left">java.math.BigDecimal</td>
+    </tr>
+    <tr><td style="text-align: left"><code>3.4028235E+38</code></td>
+      <td style="text-align: left">java.math.BigDecimal</td>
+    </tr>
+    <tr><td style="text-align: left"><code>1.7976931348623157E+308</code></td>
+      <td style="text-align: left">java.math.BigDecimal</td>
+    </tr>
+  </tbody>
+</table><p>It is important to note that the type is selected at each assignment - a variable that is assigned a string such as <code>"Hello"</code> is typed as <code>java.lang.String</code> but changes to <code>java.lang.Integer</code> when later assigned the value <code>101</code>. </p>
+
+<h3 id="leanpub-auto-using-a-specific-type">Using a specific type</h3>
+<p>A variable can be declared as being of a specific data type. When using a type, drop the <code>def</code> keyword: </p>
+
+<div class="code-block">
+  <p class="codeblock-title">Declaring a variable using a specific type</p>
+
+  <hr /><div class="highlight"><pre><code class="n">Integer</code> <code class="n">myNum</code> <code class="o">=</code> <code class="mi">1</code>
+<code class="n">String</code> <code class="n">myName</code> <code class="o">=</code> <code class="s">"Fred nurk"</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>Suffixes can also be used if you want to be really specific about the data type Groovy is to use for a number. When using suffixes you use the def keyword to define the variable: <code>def dozen = 12i</code></p>
+
+
+<p class="table-title">Type suffixes supported by Groovy</p>
+
+<table>
+  <tbody>
+    <tr><td>Suffix</td>
+      <td>Type</td>
+      <td>Example</td>
+    </tr>
+    <tr><td>——</td>
+      <td>——</td>
+      <td>——</td>
+    </tr>
+    <tr><td><code>I</code> or <code>i</code></td>
+      <td>Integer</td>
+      <td><code>12i</code></td>
+    </tr>
+    <tr><td><code>L</code> or <code>l</code></td>
+      <td>Long</td>
+      <td><code>23423l</code></td>
+    </tr>
+    <tr><td><code>G</code> or <code>g</code></td>
+      <td>BigInteger</td>
+      <td><code>1_000_000g</code></td>
+    </tr>
+    <tr><td><code>F</code> or <code>f</code></td>
+      <td>Float</td>
+      <td><code>3.1415f</code></td>
+    </tr>
+    <tr><td><code>D</code> or <code>d</code></td>
+      <td>Double</td>
+      <td><code>3.1415d</code></td>
+    </tr>
+    <tr><td><code>G</code> or <code>g</code></td>
+      <td>BigDecimal</td>
+      <td><code>3.1415g</code></td>
+    </tr>
+  </tbody>
+</table><p>You may have noticed that BigInteger and BigDecimal have the same suffix - this isn’t a typo - Groovy works out which one you need simply by determining if the number is a whole number (BigInteger) or a decimal (BigDecimal).</p>
+
+<p>If you’re going to use explicit types then you need to know limitations of that type. For example, the following code will fail:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">assert</code> <code class="mf">3.1415926535f</code> <code class="o">==</code> <code class="mf">3.1415926535</code><code class="n">d</code>
+</pre></div>
+
+</div>
+
+<p>This failure occurs because Float will shorten (narrow) the value to <code>3.1415927</code> - not a mistake you’d want to make when measuring optics for your space telescope! You can see which type Groovy will use automatically by running this snippet of code:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">println</code> <code class="mf">3.1415926535</code><code class="p">.</code><code class="n">class</code><code class="p">.</code><code class="n">name</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-the-null-value">The <code>null</code> Value</h3>
+<p>Variables that are not assigned a value at declaration are provided a <code>null</code> value by default. This is a special reference that indicates the variable is devoid of a value.</p>
+
+<p>Variables can be explicitly assigned <code>null</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">id</code> <code class="o">=</code> <code class="n">null</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-available-data-types">Available data types</h3>
+<p>As Groovy imports the <code>java.lang</code> package as well as the <code>java.math.BigDecimal</code> and <code>java.math.BigInteger</code> classes by default, a range of data types are available for immediate use:</p>
+
+<ul><li><code>Boolean</code>: to store a logical value of <code>true</code> or <code>false</code></li>
+  <li>Numbers (based on <code>java.lang.Number</code>): 
+    <ul><li><code>Byte</code> </li>
+      <li><code>Short</code></li>
+      <li><code>Integer</code></li>
+      <li><code>Long</code></li>
+      <li><code>Float</code></li>
+      <li><code>Double</code></li>
+      <li><code>BigDecimal</code></li>
+      <li><code>BigInteger</code></li>
+    </ul></li>
+  <li><code>Character</code>: A single character such as a letter or non-printing character</li>
+  <li><code>String</code>: A regular Java-esque piece of text</li>
+  <li><code>GString</code>: A Groovy string that allows for interpolation</li>
+  <li><code>Object</code>: This is the base class for all other classes </li>
+  <li><code>Closure</code>: The class that holds closure values</li>
+</ul><p>The types listed above are often referred to as <em>reference types</em>, indicating that they relate to a class definition. Groovy also provides a set of <em>primitive types</em> that are more closely aligned to the C programming language than an object-oriented language such as Java and Groovy. In most cases, use of a reference type should be preferred and Groovy’s dynamic typing uses <em>reference types</em>. </p>
+
+<h4 id="leanpub-auto-primitive-types">Primitive types</h4>
+<p>The table below maps the types defined in <code>java.lang</code> against their equivalent primitive types:</p>
+
+
+<p class="table-title">The primitive types</p>
+
+<table>
+  <thead>
+    <tr><th style="text-align: left">Type</th>
+      <th style="text-align: left">Primitive type</th>
+      <th style="text-align: left">Value range</th>
+      <th style="text-align: center">Size (bits)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td style="text-align: left">Boolean</td>
+      <td style="text-align: left"><code>boolean</code></td>
+      <td style="text-align: left"><code>true</code> or <code>false</code></td>
+      <td style="text-align: center">-</td>
+    </tr>
+    <tr><td style="text-align: left">Byte</td>
+      <td style="text-align: left"><code>byte</code></td>
+      <td style="text-align: left">-128 to 127, inclusive</td>
+      <td style="text-align: center">8</td>
+    </tr>
+    <tr><td style="text-align: left">Short</td>
+      <td style="text-align: left"><code>short</code></td>
+      <td style="text-align: left">-32768 to 32767, inclusive</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr><td style="text-align: left">Character</td>
+      <td style="text-align: left"><code>char</code></td>
+      <td style="text-align: left">‘\u0000’ to ‘\uffff’ inclusive</td>
+      <td style="text-align: center">16</td>
+    </tr>
+    <tr><td style="text-align: left">Integer</td>
+      <td style="text-align: left"><code>int</code></td>
+      <td style="text-align: left">-2147483648 to 2147483647, inclusive</td>
+      <td style="text-align: center">32</td>
+    </tr>
+    <tr><td style="text-align: left">Long</td>
+      <td style="text-align: left"><code>long</code></td>
+      <td style="text-align: left">-9223372036854775808 to 9223372036854775807, inclusive</td>
+      <td style="text-align: center">64</td>
+    </tr>
+    <tr><td style="text-align: left">Float</td>
+      <td style="text-align: left"><code>float</code></td>
+      <td style="text-align: left">32-bit IEEE 754 floating-point numbers</td>
+      <td style="text-align: center">32</td>
+    </tr>
+    <tr><td style="text-align: left">Double</td>
+      <td style="text-align: left"><code>double</code></td>
+      <td style="text-align: left">64-bit IEEE 754 floating-point numbers</td>
+      <td style="text-align: center">64</td>
+    </tr>
+  </tbody>
+</table><p>You can check those value ranges by using the <code>MIN_VALUE</code> and <code>MAX_VALUE</code> constants available on the various classes representing numbers:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Determining value range</p>
+
+  <hr /><div class="highlight"><pre><code class="n">println</code> <code class="n">Integer</code><code class="p">.</code><code class="n">MIN_VALUE</code>
+<code class="n">println</code> <code class="n">Integer</code><code class="p">.</code><code class="n">MAX_VALUE</code>
+<code class="n">println</code> <code class="n">Float</code><code class="p">.</code><code class="n">MIN_VALUE</code>
+<code class="n">println</code> <code class="n">Float</code><code class="p">.</code><code class="n">MAX_VALUE</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>As an object-oriented language Groovy also provides a mechanism for declaring new data types (objects) that extend and encapsulate information to meet a range of requirements. These implicitly extend the <code>java.lag.Object</code> class.</p>
+
+<h5 id="leanpub-auto-autoboxing">Autoboxing</h5>
+<p><em>Autoboxing</em> refers to the automatic conversion of a primitive type to a reference type. <em>Unboxing</em> is the reverse of _Autoboxing.</p>
+
+<h3 id="leanpub-auto-type-conversions">Type Conversions</h3>
+
+<p>Groovy will convert values assigned to variables into the variable’s declared data type. For example, the code below declares a variable of type “String” and then assigns it 3.14 (a number). The assertion that the variable remains of type “String” will succeed, indicating that <code>3.14</code> was converted to a String value by Groovy before being assigned to the <code>myName</code> variable.</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Checking the type</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">String</code> <code class="n">myName</code> <code class="o">=</code> <code class="s">"Fred nurk"</code>
+<code class="n">myName</code> <code class="o">=</code> <code class="mf">3.14</code>
+<code class="n">assert</code> <code class="n">myName</code><code class="p">.</code><code class="n">class</code> <code class="o">==</code> <code class="n">java</code><code class="p">.</code><code class="n">lang</code><code class="p">.</code><code class="n">String</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>Care must be taken to not rely totally on this automatic conversion. In the example below the assertion will fail as the <code>myPi</code> variable is declared as an <code>Integer</code> and the assignment drops the fractional component of <code>3.14</code>:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">pi</code> <code class="o">=</code> <code class="mf">3.14</code>
+<code class="n">Integer</code> <code class="n">myPi</code> <code class="o">=</code> <code class="n">pi</code>
+<code class="n">assert</code> <code class="n">myPi</code> <code class="o">==</code> <code class="n">pi</code>
+</pre></div>
+
+</div>
+
+<h4 id="leanpub-auto-casting">Casting</h4>
+
+<p>The <code>as</code> operator can be used to cast (change) a value to another class. </p>
+
+<div class="code-block">
+  <p class="codeblock-title">Casting</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">pi</code> <code class="o">=</code> <code class="mf">3.1415926535</code> <code class="n">as</code> <code class="n">Integer</code>
+<code class="n">assert</code> <code class="mi">3</code> <code class="o">==</code> <code class="n">pi</code>
+</pre></div>
+
+  <hr /></div>
+
+<table class="tip sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_key.png" alt="tip" width="50px" /></td>
+    <td>
+      <p>You’ve seen this before… <code>def myGroceries = ['milk', 'honey'] as Set</code> - this is actually just casting the list to the <code>Set</code> data type.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>This will be discussed further in the Operators tutorial.</p>
+
+<h4 id="leanpub-auto-converting-numbers">Converting Numbers</h4>
+
+<p><code>java.lang.Number</code> provides a number of methods for converting numbers between the various numerical data types:</p>
+
+<ul><li><code>byteValue()</code> </li>
+  <li><code>doubleValue()</code>
+    <ul><li>also <code>toDouble()</code></li>
+    </ul></li>
+  <li><code>floatValue()</code>
+    <ul><li>also <code>toFloat()</code></li>
+    </ul></li>
+  <li><code>intValue()</code>
+    <ul><li>also <code>toInteger()</code></li>
+    </ul></li>
+  <li><code>longValue()</code>
+    <ul><li>also <code>toLong()</code></li>
+    </ul></li>
+  <li><code>shortValue()</code></li>
+  <li><code>toBigInteger()</code></li>
+  <li><code>toBigDecimal()</code></li>
+</ul><p>Here’s a small example of grabbing the whole (integer) component from a number:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Getting the integer</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">pi</code> <code class="o">=</code> <code class="mf">3.1415926535</code>
+<code class="n">assert</code> <code class="mi">3</code> <code class="o">==</code> <code class="n">pi</code><code class="p">.</code><code class="n">intValue</code><code class="p">()</code>
+<code class="n">assert</code> <code class="mi">3</code> <code class="o">==</code> <code class="n">pi</code><code class="p">.</code><code class="n">toInteger</code><code class="p">()</code>
+</pre></div>
+
+  <hr /></div>
+</div>
+</body>
+</html>

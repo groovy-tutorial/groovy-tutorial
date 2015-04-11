@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>40. Branching statements</title>
+<link href="stylesheet.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+<div id="leanpub-toc">
+<h2></h2>
+<ol class="toc has-parts">
+<ul class='toc has-parts'>
+  <li>
+    <ul>
+      <li>
+        <a href='chap00.html#leanpub-auto-introduction'>Introduction</a>
+      </li>
+      <li>
+        <a href='chap01.html#leanpub-auto-legal-notices'>Legal Notices</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap02.html#leanpub-auto-getting-started'><span class="section-number">I </span>Getting started</a>
+    <ul>
+      <li>
+        <a href='chap03.html#leanpub-auto-installing-groovy'><span class="section-number">1. </span>Installing Groovy</a>
+      </li>
+      <li>
+        <a href='chap04.html#leanpub-auto-your-first-lines-of-groovy'><span class="section-number">2. </span>Your first lines of Groovy</a>
+      </li>
+      <li>
+        <a href='chap05.html#leanpub-auto-comments'><span class="section-number">3. </span>Comments</a>
+      </li>
+      <li>
+        <a href='chap06.html#leanpub-auto-statements'><span class="section-number">4. </span>Statements</a>
+      </li>
+      <li>
+        <a href='chap07.html#leanpub-auto-the-assert-statement'><span class="section-number">5. </span>The <code>assert</code> statement</a>
+      </li>
+      <li>
+        <a href='chap08.html#leanpub-auto-reserved-words'><span class="section-number">6. </span>Reserved Words</a>
+      </li>
+      <li>
+        <a href='chap09.html#leanpub-auto-packages'><span class="section-number">7. </span>Packages</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap10.html#leanpub-auto-variables'><span class="section-number">II </span>Variables</a>
+    <ul>
+      <li>
+        <a href='chap11.html#leanpub-auto-declaring-variables'><span class="section-number">8. </span>Declaring Variables</a>
+      </li>
+      <li>
+        <a href='chap12.html#leanpub-auto-data-types'><span class="section-number">9. </span>Data Types</a>
+      </li>
+      <li>
+        <a href='chap13.html#leanpub-auto-objects'><span class="section-number">10. </span>Objects</a>
+      </li>
+      <li>
+        <a href='chap14.html#leanpub-auto-booleans'><span class="section-number">11. </span>Booleans</a>
+      </li>
+      <li>
+        <a href='chap15.html#leanpub-auto-numbers'><span class="section-number">12. </span>Numbers</a>
+      </li>
+      <li>
+        <a href='chap16.html#leanpub-auto-strings'><span class="section-number">13. </span>Strings</a>
+      </li>
+      <li>
+        <a href='chap17.html#leanpub-auto-collections'><span class="section-number">14. </span>Collections</a>
+      </li>
+      <li>
+        <a href='chap18.html#leanpub-auto-arrays'><span class="section-number">15. </span>Arrays</a>
+      </li>
+      <li>
+        <a href='chap19.html#leanpub-auto-ranges'><span class="section-number">16. </span>Ranges</a>
+      </li>
+      <li>
+        <a href='chap20.html#leanpub-auto-regular-expressions'><span class="section-number">17. </span>Regular Expressions</a>
+      </li>
+      <li>
+        <a href='chap21.html#leanpub-auto-data-types-1'><span class="section-number">18. </span>Data types</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap22.html#leanpub-auto-operators'><span class="section-number">III </span>Operators</a>
+    <ul>
+      <li>
+        <a href='chap23.html#leanpub-auto-operators-1'><span class="section-number">19. </span>Operators</a>
+      </li>
+      <li>
+        <a href='chap24.html#leanpub-auto-numeric-operators'><span class="section-number">20. </span>Numeric Operators</a>
+      </li>
+      <li>
+        <a href='chap25.html#leanpub-auto-simple-assignment-operator'><span class="section-number">21. </span>Simple Assignment Operator</a>
+      </li>
+      <li>
+        <a href='chap26.html#leanpub-auto-the-complement-operator'><span class="section-number">22. </span>The Complement Operator</a>
+      </li>
+      <li>
+        <a href='chap27.html#leanpub-auto-equality-operators'><span class="section-number">23. </span>Equality Operators</a>
+      </li>
+      <li>
+        <a href='chap28.html#leanpub-auto-arithmetic-operators'><span class="section-number">24. </span>Arithmetic operators</a>
+      </li>
+      <li>
+        <a href='chap29.html#leanpub-auto-relational-operators'><span class="section-number">25. </span>Relational Operators</a>
+      </li>
+      <li>
+        <a href='chap30.html#leanpub-auto-increment-and-decrement-operators'><span class="section-number">26. </span>Increment and Decrement Operators</a>
+      </li>
+      <li>
+        <a href='chap31.html#leanpub-auto-conditional-operators'><span class="section-number">27. </span>Conditional Operators</a>
+      </li>
+      <li>
+        <a href='chap32.html#leanpub-auto-bitwise-operators'><span class="section-number">28. </span>Bitwise Operators</a>
+      </li>
+      <li>
+        <a href='chap33.html#leanpub-auto-compound-assignment-operators'><span class="section-number">29. </span>Compound Assignment Operators</a>
+      </li>
+      <li>
+        <a href='chap34.html#leanpub-auto-string-operators-1'><span class="section-number">30. </span>String Operators</a>
+      </li>
+      <li>
+        <a href='chap35.html#leanpub-auto-regular-expression-operators-1'><span class="section-number">31. </span>Regular Expression Operators</a>
+      </li>
+      <li>
+        <a href='chap36.html#leanpub-auto-collection-operators-1'><span class="section-number">32. </span>Collection operators</a>
+      </li>
+      <li>
+        <a href='chap37.html#leanpub-auto-object-operators-1'><span class="section-number">33. </span>Object Operators</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap38.html#leanpub-auto-control-flow-statements'><span class="section-number">IV </span>Control Flow Statements</a>
+    <ul>
+      <li>
+        <a href='chap39.html#leanpub-auto-introduction-1'><span class="section-number">34. </span>Introduction</a>
+      </li>
+      <li>
+        <a href='chap40.html#leanpub-auto-blocks'><span class="section-number">35. </span>Blocks</a>
+      </li>
+      <li>
+        <a href='chap41.html#leanpub-auto-the-if-statement'><span class="section-number">36. </span>The <code>if</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap42.html#leanpub-auto-the-switch-statement'><span class="section-number">37. </span>The <code>switch</code> Statement</a>
+      </li>
+      <li>
+        <a href='chap43.html#leanpub-auto-the-for-loop'><span class="section-number">38. </span>The <code>for</code> Loop</a>
+      </li>
+      <li>
+        <a href='chap44.html#leanpub-auto-the-while-loop'><span class="section-number">39. </span>The <code>while</code> loop</a>
+      </li>
+      <li>
+        <a href='chap45.html#leanpub-auto-branching-statements'><span class="section-number">40. </span>Branching statements</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap46.html#leanpub-auto-exceptions'><span class="section-number">V </span>Exceptions</a>
+    <ul>
+      <li>
+        <a href='chap47.html#leanpub-auto-the-throwable-family'><span class="section-number">41. </span>The Throwable Family</a>
+      </li>
+      <li>
+        <a href='chap48.html#leanpub-auto-common-exceptions'><span class="section-number">42. </span>Common Exceptions</a>
+      </li>
+      <li>
+        <a href='chap49.html#leanpub-auto-anatomy-of-an-exception'><span class="section-number">43. </span>Anatomy of an Exception</a>
+      </li>
+      <li>
+        <a href='chap50.html#leanpub-auto-try-catch-finally'><span class="section-number">44. </span>Try-Catch-Finally</a>
+      </li>
+      <li>
+        <a href='chap51.html#leanpub-auto-how-much-should-we-try'><span class="section-number">45. </span>How Much Should We try?</a>
+      </li>
+      <li>
+        <a href='chap52.html#leanpub-auto-causing-an-exception'><span class="section-number">46. </span>Causing an Exception</a>
+      </li>
+      <li>
+        <a href='chap53.html#leanpub-auto-catching-errors'><span class="section-number">47. </span>Catching Errors</a>
+      </li>
+      <li>
+        <a href='chap54.html#leanpub-auto-methods-and-exceptions'><span class="section-number">48. </span>Methods and Exceptions</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href='chap55.html#leanpub-auto-methods'><span class="section-number">VI </span>Methods</a>
+    <ul>
+      <li>
+        <a href='chap56.html#leanpub-auto-the-basics'><span class="section-number">49. </span>The Basics</a>
+      </li>
+      <li>
+        <a href='chap57.html#leanpub-auto-parameters'><span class="section-number">50. </span>Parameters</a>
+      </li>
+      <li>
+        <a href='chap58.html#leanpub-auto-default-values-for-parameters'><span class="section-number">51. </span>Default Values for Parameters</a>
+      </li>
+      <li>
+        <a href='chap59.html#leanpub-auto-named-arguments'><span class="section-number">52. </span>Named Arguments</a>
+      </li>
+      <li>
+        <a href='chap60.html#leanpub-auto-variable-arguments-varargs'><span class="section-number">53. </span>Variable Arguments (Varargs)</a>
+      </li>
+      <li>
+        <a href='chap61.html#leanpub-auto-return-value'><span class="section-number">54. </span>Return value</a>
+      </li>
+      <li>
+        <a href='chap62.html#leanpub-auto-throwing-an-exception'><span class="section-number">55. </span>Throwing an exception</a>
+      </li>
+      <li>
+        <a href='chap63.html#leanpub-auto-documenting-a-method'><span class="section-number">56. </span>Documenting a method</a>
+      </li>
+      <li>
+        <a href='chap64.html#leanpub-auto-techniques'><span class="section-number">57. </span>Techniques</a>
+      </li>
+      <li>
+        <a href='chap65.html#leanpub-auto-colophon'>Colophon</a>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+</ol>
+</div>
+<div id="leanpub-main">
+<h2 id="leanpub-auto-branching-statements"><span class="section-number">40. </span>Branching statements</h2>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>These statements may let you improve the efficiency of  switches, loops and methods.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>Groovy has three branching statements:</p>
+
+<ul><li><code>break</code></li>
+  <li><code>continue</code></li>
+  <li><code>return</code></li>
+</ul><h3 id="leanpub-auto-break">break</h3>
+
+<p>We first came across the use of <code>break</code> in the <code>switch</code> statement - it’s used to indicate the end of the set of statements for the <code>case</code> and signals that the <code>switch</code> statement has completed.</p>
+
+<p>The <code>break</code> reserved word is also used to exit out of a loop  - even if there are more iterations possible. In the code below I iterate through the list until I reach the value <code>'Earth'</code> and then <code>break</code> out of the loop:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Break</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">planets</code> <code class="o">=</code> <code class="p">[</code>
+    <code class="err">'</code><code class="n">Mercury</code><code class="err">'</code><code class="p">,</code>
+    <code class="err">'</code><code class="n">Venus</code><code class="err">'</code><code class="p">,</code>
+    <code class="err">'</code><code class="n">Earth</code><code class="err">'</code><code class="p">,</code>
+    <code class="err">'</code><code class="n">Mars</code><code class="err">'</code>
+<code class="p">]</code>
+
+<code class="k">for</code> <code class="p">(</code><code class="n">planet</code> <code class="n">in</code> <code class="n">planets</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">println</code> <code class="n">planet</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">planet</code> <code class="o">==</code> <code class="err">'</code><code class="n">Earth</code><code class="err">'</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">break</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>When we looked at the <code>while</code> loop I gave an example of setting a <code>flag</code> variable and checking that as the loop’s condition. This could have been refined using <code>break</code> and not using <code>flag</code> at all:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">num</code> <code class="o">=</code> <code class="mi">0</code>
+
+<code class="k">while</code> <code class="p">(</code><code class="nb">true</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">num</code><code class="o">++</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">num</code><code class="o">**</code><code class="mi">2</code> <code class="o">==</code> <code class="mi">64</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">break</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+
+<code class="n">println</code> <code class="s">"The square root of 64 is $num"</code>
+</pre></div>
+
+</div>
+
+<table class="warning sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_warning.png" alt="warning" width="50px" /></td>
+    <td>
+      <p>Be cautious with this sort of code - it doesn’t take much to create an infinite loop.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>I’ll refine that <code>while</code> loop just a little further:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">num</code> <code class="o">=</code> <code class="mi">0</code>
+
+<code class="k">while</code> <code class="p">(</code><code class="o">++</code><code class="n">num</code><code class="p">)</code> <code class="p">{</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">num</code><code class="o">**</code><code class="mi">2</code> <code class="o">==</code> <code class="mi">64</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">break</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+
+<code class="n">println</code> <code class="s">"The square root of 64 is $num"</code>
+</pre></div>
+
+</div>
+
+<p>As Groovy resolves a number other than <code>0</code> to be <code>true</code>, <code>++num</code> will allow the loop to commence and we still rely on <code>break</code> to get us out of the loop.</p>
+
+<h3 id="leanpub-auto-continue">continue</h3>
+<p>The <code>continue</code> reserved word will cause the next iteration of the loop - ignoring anything within the rest of the current iteration. In the loop below I use <code>continue</code> to ignore <code>'Earth'</code>.</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Continue</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">planets</code> <code class="o">=</code> <code class="p">[</code>
+    <code class="err">'</code><code class="n">Mercury</code><code class="err">'</code><code class="p">,</code>
+    <code class="err">'</code><code class="n">Venus</code><code class="err">'</code><code class="p">,</code>
+    <code class="err">'</code><code class="n">Earth</code><code class="err">'</code><code class="p">,</code>
+    <code class="err">'</code><code class="n">Mars</code><code class="err">'</code>
+<code class="p">]</code>
+
+<code class="k">for</code> <code class="p">(</code><code class="n">planet</code> <code class="n">in</code> <code class="n">planets</code><code class="p">)</code> <code class="p">{</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">planet</code> <code class="o">==</code> <code class="err">'</code><code class="n">Earth</code><code class="err">'</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">continue</code>
+    <code class="p">}</code>
+    <code class="n">println</code> <code class="n">planet</code>
+<code class="p">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<h3 id="leanpub-auto-labelled-branching">Labelled branching</h3>
+
+<p>If you have a secret desire to create spaghetti code that quickly becomes unreadable then labels are for you! </p>
+
+<p>Labels are used when you have nested loops - a loop within a loop. Both <code>break</code> and <code>continue</code> can be given a label that directs the program to another nesting level. In the example below I label the first loop <code>flowerlist</code> and, when I get to the colour <code>'Green'</code> in the inner loop, my <code>continue</code> is directed not at the inner loop but at the outer one labelled <code>flowerlist</code> - this is called a “labelled continue”:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">Using labels</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="n">colours</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">Red</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Orange</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Yellow</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Green</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Blue</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Indigo</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Violet</code><code class="err">'</code><code class="p">]</code>
+
+<code class="n">def</code> <code class="n">flowers</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">daisy</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rose</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">tulip</code><code class="err">'</code><code class="p">]</code>
+
+<code class="nl">flowerlist:</code>
+    <code class="k">for</code> <code class="p">(</code><code class="n">flower</code> <code class="n">in</code> <code class="n">flowers</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">for</code> <code class="p">(</code><code class="n">colour</code> <code class="n">in</code> <code class="n">colours</code><code class="p">)</code> <code class="p">{</code>
+            <code class="k">if</code> <code class="p">(</code><code class="n">colour</code> <code class="o">==</code> <code class="err">'</code><code class="n">Green</code><code class="err">'</code><code class="p">)</code> <code class="p">{</code>
+                <code class="k">continue</code> <code class="n">flowerlist</code>
+            <code class="p">}</code>
+            <code class="n">println</code> <code class="s">"$colour $flower"</code>
+        <code class="p">}</code>
+    <code class="p">}</code>
+</pre></div>
+
+  <hr /></div>
+
+<p>As you can see, the label consists of a name, followed by a colon (<code>:</code>) that appears above the loop being labelled. The code above will display the following: </p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">Red</code> <code class="n">daisy</code>
+<code class="n">Orange</code> <code class="n">daisy</code>
+<code class="n">Yellow</code> <code class="n">daisy</code>
+<code class="n">Red</code> <code class="n">rose</code>
+<code class="n">Orange</code> <code class="n">rose</code>
+<code class="n">Yellow</code> <code class="n">rose</code>
+<code class="n">Red</code> <code class="n">tulip</code>
+<code class="n">Orange</code> <code class="n">tulip</code>
+<code class="n">Yellow</code> <code class="n">tulip</code>
+</pre></div>
+
+</div>
+
+<table class="information sidebarish">
+  <tbody>
+    <tr><td class="sidebar-icon">
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
+    <td>
+      <p>Perhaps our business logic dictated that no rainbow colour below ‘Yellow’ was to be associated with a flower - it’s a silly example.</p>
+
+    </td>
+  </tr>
+  </tbody>
+</table><p>A labelled <code>break</code> works much the same way and defers control back to the loop designated by the label.</p>
+
+<p>There are times when labels are useful but really think about what you need to do before resorting to them. For example, using a <code>break</code> in the code above would have done the job:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">colours</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">Red</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Orange</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Yellow</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Green</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Blue</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Indigo</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">Violet</code><code class="err">'</code><code class="p">]</code>
+
+<code class="n">def</code> <code class="n">flowers</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">daisy</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rose</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">tulip</code><code class="err">'</code><code class="p">]</code>
+
+<code class="k">for</code> <code class="p">(</code><code class="n">flower</code> <code class="n">in</code> <code class="n">flowers</code><code class="p">)</code> <code class="p">{</code>
+    <code class="k">for</code> <code class="p">(</code><code class="n">colour</code> <code class="n">in</code> <code class="n">colours</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">if</code> <code class="p">(</code><code class="n">colour</code> <code class="o">==</code> <code class="err">'</code><code class="n">Green</code><code class="err">'</code><code class="p">)</code> <code class="p">{</code>
+            <code class="k">break</code>
+        <code class="p">}</code>
+        <code class="n">println</code> <code class="s">"$colour $flower"</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<h3 id="leanpub-auto-return">return</h3>
+
+<p>The <code>return</code> statement is used to hand control back to the caller<sup id="fnref-call"><a href="chap45.html#fn-call" rel="footnote">1</a></sup>. In most cases, <code>return</code> is used in a method or closure to return a value. In the most basic usage, the keyword <code>return</code> just appears on a line by itself:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="c1">//some code</code>
+<code class="k">return</code>
+</pre></div>
+
+</div>
+
+<p>Any code that appears below the <code>return</code> is unreachable and is never evaluated:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="c1">//some code... </code>
+<code class="k">return</code>
+<code class="c1">//unreachable code...</code>
+</pre></div>
+
+</div>
+
+<p>Return can be provided a value and this is returned to the caller:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="c1">//some code</code>
+<code class="k">return</code> <code class="mf">3.14</code>
+</pre></div>
+
+</div>
+
+<p>You can use an expression in the <code>return</code> statement and the result is returned:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="c1">//some code</code>
+<code class="k">return</code> <code class="n">circumference</code> <code class="o">/</code> <code class="n">diameter</code>
+</pre></div>
+
+</div>
+
+<p>Using <code>return</code> within the body of a script<sup id="fnref-body"><a href="chap45.html#fn-body" rel="footnote">2</a></sup> will cause it to exit as the command-line/terminal is the caller. When exiting you can choose to return a value - usually <code>0</code> if the script succeeds, or an error number if it fails.</p>
+
+<div class="footnotes">
+  <ol><li id="fn-call">The caller is the section of code that called the method/closure.<a href="chap45.html#fnref-call" rev="footnote">↩</a></li>
+    <li id="fn-body">By body I mean the <code>main</code> part of the script.<a href="chap45.html#fnref-body" rev="footnote">↩</a></li>
+  </ol></div>
+</div>
+</body>
+</html>
