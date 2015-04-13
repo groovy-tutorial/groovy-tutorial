@@ -63,5 +63,13 @@ mainmatter.txt
 06_45_MethodThrows.md
 06_48_MethodDoc.md
 06_50_Techniques.md
+07_00_Introduction.md
+07_01_Overview.md
+07_02_Parameters.md
+07_03_Return.md
+07_05_MethodParameters.md
+07_10_ClosureLoop.md
+07_15_OtherUsefulMethods.md
+07_20_ClosureScope.md
 backmatter.txt
 Colophon.md

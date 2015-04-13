@@ -1,5 +1,1 @@
----
-title:	Object-oriented programming
-status:	in-progress
-description:	
-...
+-# Object-oriented programming

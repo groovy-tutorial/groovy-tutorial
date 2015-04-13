@@ -13,8 +13,8 @@ I> Groovy reserves a set of keywords that cannot be used as identifiers.
 | null | package | private | protected | public |
 | return | short | static | strictfp | super |
 | switch | synchronized | this | threadsafe | throw |
-| throws | transient | true | try | void |
-| volatile | while 	| 	|	| | 
+| throws | trait | transient | true | try | 
+| void | volatile | while 	| 	|	| 
 
 Groovy relies of a number of key words that it reserves for its own use. This means that you shouldn't use these words for the names of variables and other items you declare. For example, the code below won't run as `package` is a reserved word:
 
