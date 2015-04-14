@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>21. Simple Assignment Operator</title>
+<title>61. Closures as Method Parameters</title>
 <link href="stylesheet.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -266,74 +266,136 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="leanpub-auto-simple-assignment-operator"><span class="section-number">21. </span>Simple Assignment Operator</h2>
+<h2 id="leanpub-auto-closures-as-method-parameters"><span class="section-number">61. </span>Closures as Method Parameters</h2>
 
 <table class="information sidebarish">
   <tbody>
     <tr><td class="sidebar-icon">
       <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
     <td>
-      <p>Assigns a value to a variable</p>
+      <p>Closures get really interesting when you start passing them around</p>
 
     </td>
   </tr>
   </tbody>
-</table><p class="table-title">Simple assignment operator</p>
+</table><p>We often say closures are first-class citizens in Groovy. This means that you can use them across the language in a similar manner to other first-class citizens, such as variables. </p>
 
-<table>
-  <thead>
-    <tr><th style="text-align: center">Operator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="text-align: center"><code>=</code></td>
-    </tr>
-  </tbody>
-</table><p>The equals (<code>=</code>) sign is used to assign a value to a variable:</p>
+<p>The best example to start our exploration is the <code>each</code> method that’s available to your collections (lists and maps). <code>each</code> can be called on a list or a map and is passed a closure as a parameter, allowing you to perform operations on each member of the collection. In the next example I call <code>each</code> on the <code>numList</code> variable and pass it a very basic closure as a parameter:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">age</code> <code class="o">=</code> <code class="mi">101</code>
-<code class="n">def</code> <code class="n">name</code> <code class="o">=</code> <code class="s">"Fred"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">numList</code> <code class="o">=</code> <code class="p">[</code><code class="mi">6</code><code class="p">,</code> <code class="mi">9</code><code class="p">,</code> <code class="mi">11</code><code class="p">,</code> <code class="mi">4</code><code class="p">,</code> <code class="mi">7</code><code class="p">]</code>
+<code class="n">def</code> <code class="n">myClosure</code> <code class="o">=</code> <code class="p">{</code> <code class="n">println</code> <code class="n">it</code> <code class="p">}</code>
+<code class="n">numList</code><code class="p">.</code><code class="n">each</code><code class="p">(</code><code class="n">myClosure</code><code class="p">)</code>
 </pre></div>
 
 </div>
 
-<table class="warning sidebarish">
-  <tbody>
-    <tr><td class="sidebar-icon">
-      <img class="sidebar-image" src="images/leanpub_warning.png" alt="warning" width="50px" /></td>
-    <td>
-      <p>Assignment and equality
-Be aware that the <code>=</code> and <code>==</code> operators perform different roles. In Groovy the equality operator (<code>==</code>) is used to determine if two things are the same.</p>
-
-    </td>
-  </tr>
-  </tbody>
-</table><p>In the following code the variable <code>count</code> is assigned the numeric value <code>10</code>:</p>
+<p>However, we can avoid <code>myClosure</code> altogether as we don’t really need to use it anywhere else in our code. So, we use an anonymous closure - one that doesn’t get a name (i.e. assigned to a variable). This is really useful if we don’t need to use the closure outside of the method being called:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">count</code> <code class="o">=</code> <code class="mi">10</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">numList</code> <code class="o">=</code> <code class="p">[</code><code class="mi">6</code><code class="p">,</code> <code class="mi">9</code><code class="p">,</code> <code class="mi">11</code><code class="p">,</code> <code class="mi">4</code><code class="p">,</code> <code class="mi">7</code><code class="p">]</code>
+<code class="n">numList</code><code class="p">.</code><code class="n">each</code><code class="p">({</code> <code class="n">println</code> <code class="n">it</code> <code class="p">})</code>
 </pre></div>
 
 </div>
 
-<p>If we then wanted compare <code>count</code> with another value (<code>11</code>) we need to use the <code>==</code> operator:   </p>
+<p>Whilst the closure can be placed within the <code>(...)</code> parentheses, this becomes cumbersome for larger anonymous closures so Groovy lets us drop the parentheses:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">==</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">numList</code> <code class="o">=</code> <code class="p">[</code><code class="mi">6</code><code class="p">,</code> <code class="mi">9</code><code class="p">,</code> <code class="mi">11</code><code class="p">,</code> <code class="mi">4</code><code class="p">,</code> <code class="mi">7</code><code class="p">]</code>
+<code class="n">numList</code><code class="p">.</code><code class="n">each</code> <code class="p">{</code> <code class="n">println</code> <code class="n">it</code> <code class="p">}</code>
 </pre></div>
 
 </div>
 
-<p>Use of <code>=</code> in the comparison will cause a compilation error:</p>
+<p>For a final example, we can call the <code>each</code> method directly against the literal array, just to prove that Groovy has a versatile and flexible syntax:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">=</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="cp">[</code><code class="mi">6</code><code class="p">,</code> <code class="mi">9</code><code class="p">,</code> <code class="mi">11</code><code class="p">,</code> <code class="mi">4</code><code class="p">,</code> <code class="mi">7</code><code class="cp">]</code><code class="x">.each { println it }</code>
 </pre></div>
 
 </div>
 
-<p>Rest assured that if you accidentally use the simple assignment operator (<code>=</code>) instead of the equality operator (<code>==</code>) you’ll not be the first in making that mistake.</p>
+<h3 id="leanpub-auto-methods-with-closure-parameters">Methods with Closure Parameters</h3>
+
+<p>Your own methods can accept one or more closures as a parameter. When doing this we usually follow a basic convention of:</p>
+
+<ul><li>Use <code>closure</code> as the parameter name</li>
+  <li>Put the <code>closure</code> parameter at the end of the parameter list</li>
+</ul><p>In the example below, the <code>mutator</code> method accepts a closure as the second parameter:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="nf">mutator</code><code class="p">(</code><code class="n">value</code><code class="p">,</code> <code class="n">closure</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">closure</code><code class="p">(</code><code class="n">value</code><code class="p">)</code>
+<code class="p">}</code>
+
+<code class="n">mutator</code> <code class="mi">10</code><code class="p">,</code> <code class="p">{</code><code class="n">it</code><code class="o">**</code><code class="mi">2</code><code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>We are able to call <code>mutator</code> in a number of ways:</p>
+
+<ul><li><code>mutator(10, {it**2})</code></li>
+  <li><code>mutator 10, {it**2}</code></li>
+  <li><code>mutator(10) {it**2}</code></li>
+</ul><p>Those last two options are very useful if you’re going to pass a non-trivial closure as it helps the reader see that the last parameter is a closure and not some random block.</p>
+
+<p>Here’s another example, a method <code>findPrimes</code> that accepts a list of numbers (such as a range) and a closure. The method loops through the list and, when it determines the item is a prime number it will call our closure:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="nf">findPrimes</code><code class="p">(</code><code class="n">list</code><code class="p">,</code> <code class="n">closure</code><code class="p">)</code> <code class="p">{</code>
+    <code class="k">for</code> <code class="p">(</code><code class="n">num</code> <code class="n">in</code> <code class="n">list</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">def</code> <code class="n">isPrime</code> <code class="o">=</code> <code class="nb">true</code>
+        <code class="k">if</code> <code class="p">(</code><code class="n">num</code> <code class="o">!=</code> <code class="mi">2</code><code class="p">)</code> <code class="p">{</code>
+            <code class="k">for</code> <code class="p">(</code><code class="n">divisor</code> <code class="n">in</code> <code class="p">(</code><code class="mf">2.</code><code class="p">.</code><code class="n">num</code><code class="o">/</code><code class="mi">2</code><code class="p">))</code> <code class="p">{</code>
+                <code class="k">if</code> <code class="p">(</code><code class="n">num</code> <code class="o">%</code> <code class="n">divisor</code> <code class="o">==</code> <code class="mi">0</code><code class="p">)</code> <code class="p">{</code>
+                    <code class="n">isPrime</code> <code class="o">=</code> <code class="nb">false</code>
+                    <code class="k">break</code>
+                <code class="p">}</code>
+            <code class="p">}</code>
+        <code class="p">}</code>
+        <code class="k">if</code> <code class="p">(</code><code class="n">isPrime</code><code class="p">)</code> <code class="p">{</code>
+            <code class="n">closure</code><code class="p">(</code><code class="n">num</code><code class="p">)</code>
+        <code class="p">}</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">numList</code> <code class="o">=</code> <code class="p">(</code><code class="mf">1..100</code><code class="p">)</code>
+<code class="n">findPrimes</code> <code class="n">numList</code><code class="p">,</code> <code class="p">{</code> <code class="n">println</code> <code class="s">"I found a prime: $it"</code> <code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>If I wanted to be specific about my parameter data types, the correct data type for <code>closure</code> is <code>Closure</code>.  This lets me prepare a more static method signature of <code>def findPrimes(List list, Closure closure) </code></p>
+
+<p>One last round at this one - this time to set a return value from the <code>findPrimes</code> method. The code is not really different to the previous example but it throws a number of items together: a typed method signature, a closure parameter, and a return value for the method (the list of primes).</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">List</code> <code class="nf">findPrimes</code><code class="p">(</code><code class="n">List</code> <code class="n">list</code><code class="p">,</code> <code class="n">Closure</code> <code class="n">closure</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">def</code> <code class="n">result</code> <code class="o">=</code> <code class="p">[]</code>
+    <code class="k">for</code> <code class="p">(</code><code class="n">num</code> <code class="n">in</code> <code class="n">list</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">def</code> <code class="n">isPrime</code> <code class="o">=</code> <code class="nb">true</code>
+        <code class="k">if</code> <code class="p">(</code><code class="n">num</code> <code class="o">!=</code> <code class="mi">2</code><code class="p">)</code> <code class="p">{</code>
+            <code class="k">for</code> <code class="p">(</code><code class="n">divisor</code> <code class="n">in</code> <code class="p">(</code><code class="mf">2.</code><code class="p">.</code><code class="n">num</code><code class="o">/</code><code class="mi">2</code><code class="p">))</code> <code class="p">{</code>
+                <code class="k">if</code> <code class="p">(</code><code class="n">num</code> <code class="o">%</code> <code class="n">divisor</code> <code class="o">==</code> <code class="mi">0</code><code class="p">)</code> <code class="p">{</code>
+                    <code class="n">isPrime</code> <code class="o">=</code> <code class="nb">false</code>
+                    <code class="k">break</code>
+                <code class="p">}</code>
+            <code class="p">}</code>
+        <code class="p">}</code>
+        <code class="k">if</code> <code class="p">(</code><code class="n">isPrime</code><code class="p">)</code> <code class="p">{</code>
+            <code class="n">result</code> <code class="o">&lt;&lt;</code> <code class="n">num</code>
+            <code class="n">closure</code><code class="p">(</code><code class="n">num</code><code class="p">)</code>
+        <code class="p">}</code>
+    <code class="p">}</code>
+    <code class="k">return</code> <code class="n">result</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">primes</code> <code class="o">=</code> <code class="n">findPrimes</code> <code class="mf">0..100</code><code class="p">,</code> <code class="p">{</code> <code class="n">println</code> <code class="s">"I found a prime: $it"</code> <code class="p">}</code>
+</pre></div>
+
+</div>
 </div>
 </body>
 </html>

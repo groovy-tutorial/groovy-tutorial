@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>21. Simple Assignment Operator</title>
+<title>64. Closure scope</title>
 <link href="stylesheet.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -266,74 +266,145 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="leanpub-auto-simple-assignment-operator"><span class="section-number">21. </span>Simple Assignment Operator</h2>
+<h2 id="leanpub-auto-closure-scope"><span class="section-number">64. </span>Closure scope</h2>
 
 <table class="information sidebarish">
   <tbody>
     <tr><td class="sidebar-icon">
       <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
     <td>
-      <p>Assigns a value to a variable</p>
+      <p>Closures can call into the context from which they were created.</p>
 
     </td>
   </tr>
   </tbody>
-</table><p class="table-title">Simple assignment operator</p>
+</table><p>In the first chapter on closures I mentioned that: Closures represent a reference to a function (method) that is accompanied by a referencing environment. Up to now we’ve mainly used closures as methods that can be referenced by variables or passed as parameters. Methods declared in classes can access the fields in their class and closures can also access items such as variables available in the context from which they were created.</p>
 
-<table>
-  <thead>
-    <tr><th style="text-align: center">Operator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="text-align: center"><code>=</code></td>
-    </tr>
-  </tbody>
-</table><p>The equals (<code>=</code>) sign is used to assign a value to a variable:</p>
+<p>I’ve tried to demonstrate this concept in the example below. You’ll notice that my basic closure refers to a variable <code>code</code> that isn’t a declared parameter of the closure nor is it a variable declared within the closure. Rather, <code>code</code> references a variable available within the scope in which the closure is declared - i.e. <code>code</code> can be accessed by the <code>doubleCross</code> closure as both are declared in the same block. </p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">age</code> <code class="o">=</code> <code class="mi">101</code>
-<code class="n">def</code> <code class="n">name</code> <code class="o">=</code> <code class="s">"Fred"</code>
+  <p class="codeblock-title">A small example of context</p>
+
+  <hr /><div class="highlight"><pre><code class="n">def</code> <code class="nf">spyMethod</code><code class="p">(</code><code class="n">closure</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">closure</code><code class="p">()</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">code</code> <code class="o">=</code> <code class="err">'</code><code class="n">eagle</code><code class="err">'</code>
+
+<code class="c1">//This is the closure</code>
+<code class="n">def</code> <code class="n">doubleCross</code> <code class="o">=</code> <code class="p">{</code><code class="n">println</code> <code class="s">"The code is $code"</code><code class="p">}</code>
+
+<code class="n">spyMethod</code><code class="p">(</code><code class="n">doubleCross</code><code class="p">)</code>
+
+<code class="n">code</code> <code class="o">=</code> <code class="err">'</code><code class="n">badger</code><code class="err">'</code>
+<code class="n">spyMethod</code><code class="p">(</code><code class="n">doubleCross</code><code class="p">)</code>
+</pre></div>
+
+  <hr /></div>
+
+<h3 id="leanpub-auto-a-more-involved-example">A More Involved Example</h3>
+
+<p>My <code>doubleCross</code> was quite basic and perhaps makes the usefulness of this concept appear to be ho-hum. In fact, it’s extremely useful and opens the door to techniques such as Domain Specific Languages - something for you to research later. For now, I’ll take you through a step-by-step example of a more complex use of closure context.</p>
+
+<p>First of all I’ll create a very basic class to describe an address book Contact. For each contact I’ll record their name and phone number. I’ll also define a closure named <code>call</code> and this is a simple function that I can use when calling the contact.</p>
+
+<div class="code-block">
+<div class="highlight"><pre>class Contact {
+    def name
+    def phone
+
+    def final call = { message -&gt; 
+        println "Calling <code class="cp">${</code><code class="n">this</code><code class="o">.</code><code class="n">name</code><code class="cp">}</code> on <code class="cp">${</code><code class="n">this</code><code class="o">.</code><code class="n">phone</code><code class="cp">}</code> with the message: '<code class="nv">$messa</code>\
+ge'"
+    }
+}
 </pre></div>
 
 </div>
 
-<table class="warning sidebarish">
+<table class="information sidebarish">
   <tbody>
     <tr><td class="sidebar-icon">
-      <img class="sidebar-image" src="images/leanpub_warning.png" alt="warning" width="50px" /></td>
+      <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
     <td>
-      <p>Assignment and equality
-Be aware that the <code>=</code> and <code>==</code> operators perform different roles. In Groovy the equality operator (<code>==</code>) is used to determine if two things are the same.</p>
+      <h3 id="leanpub-auto-final">Final?</h3>
+  <p>You may notice the <code>final</code> I used in the <code>call</code> definition. This keyword lets me set <code>call</code> to being a constant - it can’t be changed after it’s been defined</p>
 
     </td>
   </tr>
   </tbody>
-</table><p>In the following code the variable <code>count</code> is assigned the numeric value <code>10</code>:</p>
+</table><p>Once I’ve defined the <code>Contact</code> class I’ll create a couple of contacts - Andrew and Sally.</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">count</code> <code class="o">=</code> <code class="mi">10</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">andrew</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Contact</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Andrew</code><code class="err">'</code><code class="p">,</code> <code class="n">phone</code><code class="o">:</code> <code class="err">'</code><code class="o">+</code><code class="mi">61</code> <code class="mi">432</code> <code class="mi">321</code> <code class="mi">736</code><code class="err">'</code><code class="p">)</code>
+<code class="n">def</code> <code class="n">sally</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Contact</code><code class="p">(</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Sally</code><code class="err">'</code><code class="p">,</code> <code class="n">phone</code><code class="o">:</code> <code class="err">'</code><code class="o">+</code><code class="mi">61</code> <code class="mi">400</code> <code class="mi">800</code> <code class="mi">900</code><code class="err">'</code><code class="p">)</code>
 </pre></div>
 
 </div>
 
-<p>If we then wanted compare <code>count</code> with another value (<code>11</code>) we need to use the <code>==</code> operator:   </p>
+<p>I’ll then create a list of Contacts I need to call back (perhaps my mobile phone battery died) and add Andrew and Sally. You’ll note that I don’t add the Contact instances to the call-back list, I actually add the closure for each contact. Think of this as the statement “I’ll add to the list the activity of calling the contact”.</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">==</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">needToCallBack</code> <code class="o">=</code> <code class="p">[]</code>
+<code class="n">needToCallBack</code> <code class="o">&lt;&lt;</code> <code class="n">andrew</code><code class="p">.</code><code class="n">call</code>
+<code class="n">needToCallBack</code> <code class="o">&lt;&lt;</code> <code class="n">sally</code><code class="p">.</code><code class="n">call</code>
 </pre></div>
 
 </div>
 
-<p>Use of <code>=</code> in the comparison will cause a compilation error:</p>
+<p>Imagine that a whole lot of other code now “does stuff” and eventually we discard the <code>andrew</code> and <code>sally</code> variables:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">=</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">andrew</code> <code class="o">=</code> <code class="n">null</code>
+<code class="n">sally</code> <code class="o">=</code> <code class="n">null</code>
 </pre></div>
 
 </div>
 
-<p>Rest assured that if you accidentally use the simple assignment operator (<code>=</code>) instead of the equality operator (<code>==</code>) you’ll not be the first in making that mistake.</p>
+<p>Now this is where it gets interesting. What if my mobile battery is now recharged and I want to start calling people back? Surely the fact that I blew away my <code>andrew</code> and <code>sally</code> variables would make this impossible? Well, remember how my <code>needToCallBack</code> list contains references to the <code>call</code> closures? These closures actually hang on to their original context - the <code>andrew</code> and <code>sally</code> instances.</p>
+
+<p>All of this means that I can now use the <code>each</code> method on <code>needToCallBack</code> and I can realise those closures:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">needToCallBack</code><code class="p">.</code><code class="n">each</code> <code class="p">{</code> <code class="n">it</code><code class="p">(</code><code class="err">'</code><code class="n">It</code><code class="err">\'</code><code class="n">s</code> <code class="n">Duncan</code> <code class="n">here</code><code class="p">,</code> <code class="n">sorry</code> <code class="n">I</code> <code class="n">missed</code> <code class="n">your</code> <code class="n">call</code><code class="err">'</code><code class="p">)</code> <code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>This will now cause each of the <code>call</code> closures to be called - allowing me to get back in touch with <code>andrew</code> and <code>sally</code>.</p>
+
+<p>I broke up the code in the discussion so present it all here in full for you copy and try out for yourself:</p>
+
+<div class="code-block">
+  <p class="codeblock-title">The Complete Script</p>
+
+  <hr /><div class="highlight"><pre>class Contact {
+    def name
+    def phone
+    
+    //A closure for calling the contact
+    def final call = { message -&gt; 
+        println "Calling <code class="cp">${</code><code class="n">this</code><code class="o">.</code><code class="n">name</code><code class="cp">}</code> on <code class="cp">${</code><code class="n">this</code><code class="o">.</code><code class="n">phone</code><code class="cp">}</code> with the message: '<code class="nv">$messa</code>\
+ge'"
+    }
+}
+
+def andrew = new Contact(name: 'Andrew', phone: '+61 432 321 736')
+def sally = new Contact(name: 'Sally', phone: '+61 400 800 900')
+
+def needToCallBack = []
+needToCallBack <code class="err">&lt;</code><code class="nt">&lt; andrew</code><code class="err">.call</code>
+<code class="err">needToCallBack</code> <code class="err">&lt;&lt;</code> <code class="err">sally.call</code>
+
+<code class="err">//</code> <code class="err">Lots</code> <code class="err">of</code> <code class="err">other</code> <code class="err">code</code> <code class="err">......</code>
+
+<code class="na">andrew =</code> <code class="err">null</code>
+<code class="na">sally =</code> <code class="err">null</code>
+
+<code class="err">needToCallBack.each</code> <code class="err">{</code> <code class="err">it('It\'s</code> <code class="err">Duncan</code> <code class="err">here,</code> <code class="err">sorry</code> <code class="err">I</code> <code class="err">missed</code> <code class="err">your</code> <code class="err">call')</code> <code class="err">}</code>
+</pre></div>
+
+  <hr /></div>
 </div>
 </body>
 </html>

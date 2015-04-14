@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>21. Simple Assignment Operator</title>
+<title>60. Returning Values</title>
 <link href="stylesheet.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -266,74 +266,55 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="leanpub-auto-simple-assignment-operator"><span class="section-number">21. </span>Simple Assignment Operator</h2>
+<h2 id="leanpub-auto-returning-values"><span class="section-number">60. </span>Returning Values</h2>
 
 <table class="information sidebarish">
   <tbody>
     <tr><td class="sidebar-icon">
       <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
     <td>
-      <p>Assigns a value to a variable</p>
+      <p>Closures can return values just like methods.</p>
 
     </td>
   </tr>
   </tbody>
-</table><p class="table-title">Simple assignment operator</p>
+</table><p>Just like methods, closures can return a value. In fact both closures and methods always return a value.</p>
 
-<table>
-  <thead>
-    <tr><th style="text-align: center">Operator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="text-align: center"><code>=</code></td>
-    </tr>
-  </tbody>
-</table><p>The equals (<code>=</code>) sign is used to assign a value to a variable:</p>
+<p>In this next example, the result of the last expression is returned (the value of <code>num1</code> or <code>num2</code>):</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">age</code> <code class="o">=</code> <code class="mi">101</code>
-<code class="n">def</code> <code class="n">name</code> <code class="o">=</code> <code class="s">"Fred"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">max</code> <code class="o">=</code> <code class="p">{</code> <code class="n">num1</code><code class="p">,</code> <code class="n">num2</code> <code class="o">-&gt;</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">num1</code> <code class="o">&gt;=</code> <code class="n">num2</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">num1</code>
+    <code class="p">}</code> <code class="k">else</code> <code class="k">if</code> <code class="p">(</code><code class="n">num2</code> <code class="o">&gt;</code> <code class="n">num1</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">num2</code>
+    <code class="p">}</code> 
+<code class="p">}</code>
+
+<code class="n">println</code> <code class="n">max</code><code class="p">(</code><code class="mi">14</code><code class="p">,</code> <code class="mi">6</code><code class="p">)</code>
 </pre></div>
 
 </div>
 
-<table class="warning sidebarish">
-  <tbody>
-    <tr><td class="sidebar-icon">
-      <img class="sidebar-image" src="images/leanpub_warning.png" alt="warning" width="50px" /></td>
-    <td>
-      <p>Assignment and equality
-Be aware that the <code>=</code> and <code>==</code> operators perform different roles. In Groovy the equality operator (<code>==</code>) is used to determine if two things are the same.</p>
-
-    </td>
-  </tr>
-  </tbody>
-</table><p>In the following code the variable <code>count</code> is assigned the numeric value <code>10</code>:</p>
+<p>Alternatively, we can use the <code>return</code> statement to explicitly exit the closure and return a value:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">count</code> <code class="o">=</code> <code class="mi">10</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">myClosure</code> <code class="o">=</code> <code class="p">{</code> <code class="n">num1</code><code class="p">,</code> <code class="n">num2</code> <code class="o">-&gt;</code>
+    <code class="k">if</code> <code class="p">(</code><code class="n">num1</code> <code class="o">&gt;=</code> <code class="n">num2</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">return</code> <code class="n">num1</code>
+    <code class="p">}</code> <code class="k">else</code> <code class="k">if</code> <code class="p">(</code><code class="n">num2</code> <code class="o">&gt;</code> <code class="n">num1</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">return</code> <code class="n">num2</code>
+    <code class="p">}</code> 
+<code class="p">}</code>
+
+<code class="n">println</code> <code class="n">myClosure</code><code class="p">(</code><code class="mi">14</code><code class="p">,</code> <code class="mi">6</code><code class="p">)</code>
 </pre></div>
 
 </div>
 
-<p>If we then wanted compare <code>count</code> with another value (<code>11</code>) we need to use the <code>==</code> operator:   </p>
+<p>Unlike a method, closures can’t explicitly define the data type of a return value. You might take a crack at <code>Integer maxNumber = {num1, num2 -&gt; ...}</code> to set the return type but this statement won’t work as <code>maxNumber</code> doesn’t hold the result of the closure - it holds a reference to the closure.</p>
 
-<div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">==</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
-</pre></div>
-
-</div>
-
-<p>Use of <code>=</code> in the comparison will cause a compilation error:</p>
-
-<div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">=</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
-</pre></div>
-
-</div>
-
-<p>Rest assured that if you accidentally use the simple assignment operator (<code>=</code>) instead of the equality operator (<code>==</code>) you’ll not be the first in making that mistake.</p>
+<p><code>Closure myClosure = { num1, num2 -&gt; ...}</code> will work as the <code>myClosure</code> variable is actually of the <code>Closure</code> data type.</p>
 </div>
 </body>
 </html>

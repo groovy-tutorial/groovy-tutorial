@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>21. Simple Assignment Operator</title>
+<title>62. Loops and closures</title>
 <link href="stylesheet.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -266,74 +266,122 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="leanpub-auto-simple-assignment-operator"><span class="section-number">21. </span>Simple Assignment Operator</h2>
+<h2 id="leanpub-auto-loops-and-closures"><span class="section-number">62. </span>Loops and closures</h2>
 
 <table class="information sidebarish">
   <tbody>
     <tr><td class="sidebar-icon">
       <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
     <td>
-      <p>Assigns a value to a variable</p>
+      <p>Some collection methods that accept a closure look like a loop but you do need to take a little care.</p>
 
     </td>
   </tr>
   </tbody>
-</table><p class="table-title">Simple assignment operator</p>
+</table><p>A number of Groovy types (such as lists and maps) support methods like <code>each</code> which call a closure on each member of a collection. These are similar to loops (<code>for</code> and <code>while</code>) but each call to the closure is discreet and you can’t use the <code>break</code> branching statement to exit as you would with a loop. However, you can use <code>return</code> as somewhat of a proxy for <code>continue</code>.</p>
 
-<table>
-  <thead>
-    <tr><th style="text-align: center">Operator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="text-align: center"><code>=</code></td>
-    </tr>
-  </tbody>
-</table><p>The equals (<code>=</code>) sign is used to assign a value to a variable:</p>
+<p>In this chapter we’ll take a look at a number of these methods.</p>
+
+<h3 id="leanpub-auto-each">
+  <code>each</code>
+</h3>
+
+<p>We looked at <code>each</code> in the previous chapter but let’s do one more. In the example below I determine the average of a list of numbers and then use the <code>each</code> method to tell us something about each number’s relationship to the average:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">age</code> <code class="o">=</code> <code class="mi">101</code>
-<code class="n">def</code> <code class="n">name</code> <code class="o">=</code> <code class="s">"Fred"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">scores</code> <code class="o">=</code> <code class="p">[</code><code class="mi">2</code><code class="p">,</code> <code class="mi">4</code><code class="p">,</code> <code class="mi">6</code><code class="p">,</code> <code class="mi">8</code><code class="p">,</code> <code class="mi">10</code><code class="p">]</code>
+<code class="n">def</code> <code class="n">total</code> <code class="o">=</code> <code class="mi">0</code>
+<code class="n">def</code> <code class="n">average</code> <code class="o">=</code> <code class="mi">0</code>
+
+<code class="k">for</code> <code class="p">(</code><code class="n">i</code> <code class="n">in</code> <code class="n">scores</code><code class="p">)</code> <code class="p">{</code>
+    <code class="n">total</code> <code class="o">+=</code> <code class="n">i</code>
+<code class="p">}</code>
+
+<code class="n">average</code> <code class="o">=</code> <code class="n">total</code> <code class="o">/</code> <code class="n">scores</code><code class="p">.</code><code class="n">size</code>
+
+<code class="n">println</code> <code class="s">"The average of the scores ($scores) is $average"</code>
+
+<code class="n">scores</code><code class="p">.</code><code class="n">each</code> <code class="p">{</code>
+    <code class="n">print</code> <code class="s">"The value $it is "</code>
+
+    <code class="k">if</code> <code class="p">(</code><code class="n">it</code> <code class="o">&gt;</code> <code class="n">average</code><code class="p">)</code> <code class="p">{</code>
+       <code class="n">println</code> <code class="err">'</code><code class="n">above</code> <code class="n">average</code><code class="err">'</code>
+    <code class="p">}</code> <code class="k">else</code> <code class="k">if</code> <code class="p">(</code><code class="n">it</code> <code class="o">&lt;</code> <code class="n">average</code><code class="p">)</code> <code class="p">{</code>
+        <code class="n">println</code> <code class="err">'</code><code class="n">below</code> <code class="n">average</code><code class="err">'</code>
+    <code class="p">}</code> <code class="k">else</code> <code class="p">{</code>
+        <code class="n">println</code> <code class="err">'</code><code class="n">average</code><code class="err">'</code>
+    <code class="p">}</code>
+<code class="p">}</code>
 </pre></div>
 
 </div>
 
-<table class="warning sidebarish">
-  <tbody>
-    <tr><td class="sidebar-icon">
-      <img class="sidebar-image" src="images/leanpub_warning.png" alt="warning" width="50px" /></td>
-    <td>
-      <p>Assignment and equality
-Be aware that the <code>=</code> and <code>==</code> operators perform different roles. In Groovy the equality operator (<code>==</code>) is used to determine if two things are the same.</p>
+<h3 id="leanpub-auto-collect">
+  <code>collect</code>
+</h3>
 
-    </td>
-  </tr>
-  </tbody>
-</table><p>In the following code the variable <code>count</code> is assigned the numeric value <code>10</code>:</p>
+<p>The collect method calls a closure for each item in a list and returns a list of the results from each closure call. This next example takes a list of test scores and uses the closure’s algorithm for returning a list of grades:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">count</code> <code class="o">=</code> <code class="mi">10</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">grades</code> <code class="o">=</code> <code class="p">[</code><code class="mi">45</code><code class="p">,</code> <code class="mi">70</code><code class="p">,</code> <code class="mi">95</code><code class="p">,</code> <code class="mi">51</code><code class="p">].</code><code class="n">collect</code> <code class="p">{</code>
+    <code class="k">switch</code><code class="p">(</code><code class="n">it</code><code class="p">)</code> <code class="p">{</code>
+        <code class="k">case</code> <code class="p">(</code><code class="mf">90..100</code><code class="p">)</code>:
+            <code class="sc">'A'</code>
+            <code class="k">break</code>
+        <code class="k">case</code> <code class="p">(</code><code class="mf">70..89</code><code class="p">)</code>:
+            <code class="sc">'B'</code>
+            <code class="k">break</code>
+        <code class="k">case</code> <code class="p">(</code><code class="mf">50..69</code><code class="p">)</code>:
+            <code class="sc">'C'</code>
+            <code class="k">break</code>
+        <code class="nl">default:</code>
+            <code class="sc">'F'</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+
+<code class="n">println</code> <code class="n">grades</code>
 </pre></div>
 
 </div>
 
-<p>If we then wanted compare <code>count</code> with another value (<code>11</code>) we need to use the <code>==</code> operator:   </p>
+<h3 id="leanpub-auto-sort">
+  <code>sort</code>
+</h3>
+
+<p>The <code>sort</code> method, when called on a list, will use the closure to evaluate a sorting algorithm and alter the list to reflect its sorted form.</p>
+
+<p>In the next example I provide a very basic sorting closure - one that just returns the length of the string it’s passed. This means that the <code>sort</code> method will return a list with the shortest string first:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">==</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">assert</code> <code class="p">[</code><code class="err">'</code><code class="n">cat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rabbit</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">ox</code><code class="err">'</code><code class="p">].</code><code class="n">sort</code><code class="p">{</code><code class="n">it</code><code class="p">.</code><code class="n">length</code><code class="p">()}</code> <code class="o">==</code> <code class="p">[</code><code class="err">'</code><code class="n">ox</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">cat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rabbit</code><code class="err">'</code><code class="p">]</code>
 </pre></div>
 
 </div>
 
-<p>Use of <code>=</code> in the comparison will cause a compilation error:</p>
+<p>In this use of <code>sort</code> the closure accepts a single parameter and returns a numerical value. <code>sort</code> uses this result to determine the list item’s new place in the sorted list. A string of length <code>2</code> will be placed at an earlier index to a string with a length of <code>6</code>.</p>
+
+<p>It’s important to remember that the list is changed by the <code>sort</code> method - the next example highlights this as the <code>animals</code> variable is different after <code>sort</code> is called.</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">=</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">animals</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">cat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rabbit</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">ox</code><code class="err">'</code><code class="p">]</code>
+<code class="n">animals</code><code class="p">.</code><code class="n">sort</code><code class="p">{</code><code class="n">it</code><code class="p">.</code><code class="n">length</code><code class="p">()}</code> 
+<code class="n">assert</code> <code class="n">animals</code> <code class="o">==</code> <code class="p">[</code><code class="err">'</code><code class="n">ox</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">cat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rabbit</code><code class="err">'</code><code class="p">]</code>
 </pre></div>
 
 </div>
 
-<p>Rest assured that if you accidentally use the simple assignment operator (<code>=</code>) instead of the equality operator (<code>==</code>) you’ll not be the first in making that mistake.</p>
+<p>When  the <code>sort</code> method is passed a closure that accepts two parameters then it works through the list by comparing neighbours. As sort changes the list, these neighbours change, resulting in the closure undertaking a number of comparisons, at least equal to the number of list items. This is powerful stuff so let’s look at a sorting closure I used when discussing Relational Operators:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">nums</code> <code class="o">=</code> <code class="p">[</code><code class="mi">42</code><code class="p">,</code> <code class="o">-</code><code class="mi">99</code><code class="p">,</code> <code class="mf">6.3</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">612</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="o">-</code><code class="mi">128</code><code class="p">,</code> <code class="mi">28</code><code class="p">,</code> <code class="mi">0</code><code class="p">]</code>
+
+<code class="c1">//Ascending</code>
+<code class="n">nums</code><code class="p">.</code><code class="n">sort</code><code class="p">{</code><code class="n">n1</code><code class="p">,</code> <code class="n">n2</code> <code class="o">-&gt;</code> <code class="n">n1</code><code class="o">&lt;=&gt;</code><code class="n">n2</code> <code class="p">}</code>
+
+<code class="n">assert</code> <code class="n">nums</code> <code class="o">==</code> <code class="p">[</code><code class="o">-</code><code class="mi">128</code><code class="p">,</code> <code class="o">-</code><code class="mi">99</code><code class="p">,</code> <code class="mi">0</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mi">1</code><code class="p">,</code> <code class="mf">6.3</code><code class="p">,</code> <code class="mi">28</code><code class="p">,</code> <code class="mi">42</code><code class="p">,</code> <code class="mi">612</code><code class="p">]</code>
+</pre></div>
+
+</div>
 </div>
 </body>
 </html>

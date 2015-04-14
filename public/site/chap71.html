@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>21. Simple Assignment Operator</title>
+<title>63. Useful Methods That Use Closures</title>
 <link href="stylesheet.css" type="text/css" rel="stylesheet" />
 </head>
 <body>
@@ -266,74 +266,125 @@
 </ol>
 </div>
 <div id="leanpub-main">
-<h2 id="leanpub-auto-simple-assignment-operator"><span class="section-number">21. </span>Simple Assignment Operator</h2>
+<h2 id="leanpub-auto-useful-methods-that-use-closures"><span class="section-number">63. </span>Useful Methods That Use Closures</h2>
 
 <table class="information sidebarish">
   <tbody>
     <tr><td class="sidebar-icon">
       <img class="sidebar-image" src="images/leanpub_info-circle.png" alt="information" width="50px" /></td>
     <td>
-      <p>Assigns a value to a variable</p>
+      <p>Groovy has a number of ready to go uses for closures</p>
 
     </td>
   </tr>
   </tbody>
-</table><p class="table-title">Simple assignment operator</p>
+</table><p>Groovy adds a number of methods to <code>java.lang.Object</code> that gives you the power of closures baked into many of the data types you’ll use on a daily basis.</p>
 
-<table>
-  <thead>
-    <tr><th style="text-align: center">Operator</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr><td style="text-align: center"><code>=</code></td>
-    </tr>
-  </tbody>
-</table><p>The equals (<code>=</code>) sign is used to assign a value to a variable:</p>
+<h3 id="leanpub-auto-any">
+  <code>any</code>
+</h3>
+
+<p>The <code>any</code> method is passed a closure that evaluates a criteria (condition). If any element in the collection meets that criteria, <code>true</code> is returned. Importantly, <code>any</code> will only iterate through the list until it the criteria is met.</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">age</code> <code class="o">=</code> <code class="mi">101</code>
-<code class="n">def</code> <code class="n">name</code> <code class="o">=</code> <code class="s">"Fred"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">scores</code> <code class="o">=</code> <code class="p">[</code><code class="mi">10</code><code class="p">,</code> <code class="mi">8</code><code class="p">,</code> <code class="mi">11</code><code class="p">,</code> <code class="mi">6</code><code class="p">]</code>
+<code class="n">assert</code> <code class="n">scores</code><code class="p">.</code><code class="n">any</code> <code class="p">{</code><code class="n">it</code> <code class="o">&gt;</code> <code class="mi">10</code><code class="p">}</code> <code class="o">==</code> <code class="nb">true</code>
 </pre></div>
 
 </div>
 
-<table class="warning sidebarish">
-  <tbody>
-    <tr><td class="sidebar-icon">
-      <img class="sidebar-image" src="images/leanpub_warning.png" alt="warning" width="50px" /></td>
-    <td>
-      <p>Assignment and equality
-Be aware that the <code>=</code> and <code>==</code> operators perform different roles. In Groovy the equality operator (<code>==</code>) is used to determine if two things are the same.</p>
+<h3 id="leanpub-auto-find-and-findall"><code>find</code> and <code>findAll</code></h3>
 
-    </td>
-  </tr>
-  </tbody>
-</table><p>In the following code the variable <code>count</code> is assigned the numeric value <code>10</code>:</p>
+<p>The <code>find</code> method locates the first item in a collection that meets the criteria set in the closure:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="n">def</code> <code class="n">count</code> <code class="o">=</code> <code class="mi">10</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">animals</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">dog</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">cat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">mouse</code><code class="err">'</code><code class="p">]</code>
+<code class="n">assert</code> <code class="n">animals</code><code class="p">.</code><code class="n">find</code> <code class="p">{</code><code class="n">it</code> <code class="n">in</code> <code class="p">[</code><code class="err">'</code><code class="n">rat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">mouse</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">wild</code> <code class="n">pig</code><code class="err">'</code><code class="p">]</code> <code class="p">}</code> <code class="o">==</code> <code class="err">'</code><code class="n">rat</code><code class="err">'</code>
 </pre></div>
 
 </div>
 
-<p>If we then wanted compare <code>count</code> with another value (<code>11</code>) we need to use the <code>==</code> operator:   </p>
+<p>The <code>findAll</code> method is similar to <code>find</code> but returns all collection items that meet the criteria set by the closure:</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">==</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">animals</code> <code class="o">=</code> <code class="p">[</code><code class="err">'</code><code class="n">dog</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">rat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">cat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">mouse</code><code class="err">'</code><code class="p">]</code>
+<code class="n">assert</code> <code class="n">animals</code><code class="p">.</code><code class="n">findAll</code> <code class="p">{</code><code class="n">it</code> <code class="n">in</code> <code class="p">[</code><code class="err">'</code><code class="n">rat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">mouse</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">wild</code> <code class="n">pig</code><code class="err">'</code><code class="p">]</code> <code class="p">}</code> <code class="o">==</code> <code class="p">[</code><code class="err">'</code><code class="n">rat</code><code class="err">'</code><code class="p">,</code> <code class="err">'</code><code class="n">mouse</code><code class="err">'</code><code class="p">]</code>
 </pre></div>
 
 </div>
 
-<p>Use of <code>=</code> in the comparison will cause a compilation error:</p>
+<h3 id="leanpub-auto-split">
+  <code>split</code>
+</h3>
+
+<p>The <code>split</code> method splits a collection into two lists: the first list contains all items that meet the criteria set by the closure parameter and the second list contains all remaining items.</p>
+
+<p>In the example below I use the <code>split</code> method to get a list of those who got a score over 100 and those that didn’t.</p>
 
 <div class="code-block">
-<div class="highlight"><pre><code class="k">if</code> <code class="p">(</code><code class="n">count</code> <code class="o">=</code> <code class="mi">11</code><code class="p">)</code> <code class="n">println</code> <code class="s">"Count is 11"</code>
+<div class="highlight"><pre><code class="n">def</code> <code class="n">players</code> <code class="o">=</code> <code class="p">[</code>
+    <code class="p">[</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Fred</code><code class="err">'</code><code class="p">,</code> <code class="n">topScore</code><code class="o">:</code> <code class="mi">120</code><code class="p">],</code>
+    <code class="p">[</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Sally</code><code class="err">'</code><code class="p">,</code> <code class="n">topScore</code><code class="o">:</code> <code class="mi">200</code><code class="p">],</code>
+    <code class="p">[</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Felix</code><code class="err">'</code><code class="p">,</code> <code class="n">topScore</code><code class="o">:</code> <code class="mi">101</code><code class="p">],</code>
+    <code class="p">[</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Albert</code><code class="err">'</code><code class="p">,</code> <code class="n">topScore</code><code class="o">:</code> <code class="mi">12</code><code class="p">],</code>
+    <code class="p">[</code><code class="n">name</code><code class="o">:</code> <code class="err">'</code><code class="n">Jane</code><code class="err">'</code><code class="p">,</code> <code class="n">topScore</code><code class="o">:</code> <code class="mi">20</code><code class="p">]</code>
+<code class="p">]</code>
+
+<code class="n">def</code> <code class="n">result</code> <code class="o">=</code> <code class="n">players</code><code class="p">.</code><code class="n">split</code> <code class="p">{</code><code class="n">it</code><code class="p">.</code><code class="n">topScore</code> <code class="o">&gt;</code> <code class="mi">100</code><code class="p">}</code>
+
+<code class="n">result</code><code class="p">[</code><code class="mi">0</code><code class="p">].</code><code class="n">each</code> <code class="p">{</code><code class="n">println</code> <code class="s">"$it.name is in the hall of fame"</code><code class="p">}</code>
+
+<code class="n">result</code><code class="p">[</code><code class="mi">1</code><code class="p">].</code><code class="n">each</code> <code class="p">{</code><code class="n">println</code> <code class="s">"$it.name missed out"</code><code class="p">}</code>
 </pre></div>
 
 </div>
 
-<p>Rest assured that if you accidentally use the simple assignment operator (<code>=</code>) instead of the equality operator (<code>==</code>) you’ll not be the first in making that mistake.</p>
+<h3 id="leanpub-auto-with-1">
+  <code>with</code>
+</h3>
+
+<p>The <code>with</code> method provides a handy approach to calling several methods and manipulating fields for an object. </p>
+
+<p>In the example below I use <code>with</code> to perform a set of operations on an instance of the <code>Person</code> class:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">class</code> <code class="n">Person</code> <code class="p">{</code>
+    <code class="n">def</code> <code class="n">name</code>
+    <code class="n">def</code> <code class="n">email</code>
+    <code class="n">def</code> <code class="n">mobile</code>
+    
+    <code class="n">def</code> <code class="n">printBusinessCard</code><code class="p">(){</code>
+        <code class="n">println</code> <code class="s">"$name"</code>
+        <code class="n">println</code> <code class="s">"e: $email"</code>
+        <code class="n">println</code> <code class="s">"m: $mobile"</code>
+    <code class="p">}</code>
+<code class="p">}</code>
+
+<code class="n">def</code> <code class="n">john</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">()</code>
+
+<code class="n">john</code><code class="p">.</code><code class="n">with</code> <code class="p">{</code>
+    <code class="n">name</code> <code class="o">=</code> <code class="err">'</code><code class="n">John</code> <code class="n">Smith</code><code class="err">'</code>
+    <code class="n">email</code> <code class="o">=</code> <code class="err">'</code><code class="n">john</code><code class="err">@</code><code class="n">example</code><code class="p">.</code><code class="n">com</code><code class="err">'</code>
+    <code class="n">mobile</code> <code class="o">=</code> <code class="err">'</code><code class="mo">0401</code> <code class="mi">999</code> <code class="mi">888</code><code class="err">'</code>
+    <code class="n">printBusinessCard</code><code class="p">()</code>
+<code class="p">}</code>
+</pre></div>
+
+</div>
+
+<p>This approach can be really useful when creating an object. In the snippet below I create a new <code>Person</code> and set up their details at the same time:</p>
+
+<div class="code-block">
+<div class="highlight"><pre><code class="n">def</code> <code class="n">stacey</code> <code class="o">=</code> <code class="n">new</code> <code class="n">Person</code><code class="p">().</code><code class="n">with</code> <code class="p">{</code>
+    <code class="n">name</code> <code class="o">=</code> <code class="err">'</code><code class="n">Stacey</code> <code class="n">Jane</code><code class="err">'</code>
+    <code class="n">email</code> <code class="o">=</code> <code class="err">'</code><code class="n">stacy</code><code class="err">@</code><code class="n">example</code><code class="p">.</code><code class="n">com</code><code class="err">'</code>
+    <code class="n">mobile</code> <code class="o">=</code> <code class="err">'</code><code class="mo">0401</code> <code class="mi">333</code> <code class="mi">666</code><code class="err">'</code>
+    <code class="k">return</code> <code class="n">it</code>
+<code class="p">}</code>
+<code class="n">stacey</code><code class="p">.</code><code class="n">printBusinessCard</code><code class="p">()</code>
+</pre></div>
+
+</div>
 </div>
 </body>
 </html>
