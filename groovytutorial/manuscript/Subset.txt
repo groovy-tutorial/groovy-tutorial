@@ -6,3 +6,6 @@
 07_10_ClosureLoop.md
 07_15_OtherUsefulMethods.md
 07_20_ClosureScope.md
+08_00_Introduction.md
+08_01_Expando.md
+08_02_TheBasics.md

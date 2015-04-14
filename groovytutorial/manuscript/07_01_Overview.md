@@ -18,13 +18,13 @@ In the last tutorial we looked at methods and this prepares us as we start to lo
 	cls()
 
 
-So what about `def cls = this.&printer`? Well, `.&` is the Method Reference operator and it returns a reference to the `printer()` method. I use `this` in the script as I need to reference a class method - remember that Groovy wraps the script in a class.
+So what about `def cls = this.&printer`? Well, `.&` is the Method Reference operator and it returns a reference to the `printer()` method. I use `this` in the script as I need to reference the current instance in which I'm running - remember that Groovy wraps the script in a class.
 
 Once I have the reference I can then call the closure with `cls()`.
 
 Note the following:
 
-1. When I define the closure (`def cls = this.&printer`) I don't but the parentheses after the method name (`printer`)
+1. When I define the closure (`def cls = this.&printer`) I don't put the parentheses after the method name (`printer`)
 2. When I call the closure I pass in the parameters
 
 Say I set this up a little differently and create a `Test` class with two `printer` methods - one that takes a parameter and one that doesn't:
@@ -64,7 +64,7 @@ That's pretty nifty! We can define a function when needed and store it in a vari
 
 Anonymous functions get a single parameter named `it` by default. That means that you can use `it` as a parameter inside your function and `it` will contain the parameter passed in the call to the closure.
 
-Let's write a version of the `printer` method that took a parameter:
+Let's write a version of the `printer` method that takes a parameter:
 
 
 	def cls = { println "Hello, $it" }

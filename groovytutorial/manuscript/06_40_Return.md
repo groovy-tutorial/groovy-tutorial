@@ -99,3 +99,22 @@ A data type can be declared for the return value by replacing `def` with the cla
 
 
 This is very handy if your method is to be accessed as part of an API, especially by Java programs.
+
+## Sequential method calls
+
+In many examples I have used a method's returned value to set a value of a variable, in an `assert` or as the input to a `println`. As the return value has its own type, we can actually call a method straight from the method call. This can be useful if one method call is just an intermediary step towards our goal and we don't want to explicitly store its return value.
+
+In the example below I call the `tokenize` method which returns a List of the words in the `poem` I then call the `size` method for that list to determine how many words are in the poem:
+
+	def poem = '''\
+	Once a jolly swagman camped by a billabong
+	Under the shade of a coolibah tree,
+	And he sang as he watched and waited till his billy boiled:
+	"Who'll come a-waltzing Matilda, with me?"
+	'''
+	
+	poem.tokenize().size()
+
+T> ## Safely navigate the sequence
+T> If we needed to be cautious we could have used the safe navigation operator:
+T> `poem?.tokenize()?.size()`
