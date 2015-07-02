@@ -1,5 +1,0 @@
----
-title:	Reading files
-description:	
-...
-

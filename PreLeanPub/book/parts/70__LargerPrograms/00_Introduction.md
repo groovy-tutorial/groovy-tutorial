@@ -1,3 +1,0 @@
----
-title:	Writing larger programs
-...
