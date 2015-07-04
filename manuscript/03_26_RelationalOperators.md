@@ -5,13 +5,13 @@ I> Less than, greater than and so on - it's all about how the operands relate.
 Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`). 
 
 {title="The relational operators"}
-|Operator|Name     
-|:------:|:--------
-|\>      |Greater than
-|\>=     |Greater than or equal to
-|<       |Less than
-|<=      |Less than or equal to
-|<=>     |Spaceship
+|Operator|Name|     
+|:------:|:--------|
+|\>      |Greater than|
+|\>=     |Greater than or equal to|
+|<       |Less than|
+|<=      |Less than or equal to|
+|`<=> `    |Spaceship|
 
 All of the following operations resolve to `true`:
 
@@ -33,7 +33,7 @@ The spaceship operator comes from the Perl programming language. The Spaceship o
 {title="The spaceship operator"}
 |Operator|  
 |:------:|
-|<=>      |  
+|`<=>`      |  
 
 In the example below the `sort` function uses the closure to define the sort algorithm and this is where the spaceship lands:
 

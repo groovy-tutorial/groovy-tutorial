@@ -36,7 +36,7 @@ Decimal numbers provide a fraction and can be negative or positive:
 
 
 ## Scientific notation 
-Base-10 (decimal) scientific notation ($a * 10^b$) can also be used by placing an `e` or `E` before the exponent:
+Base-10 (decimal) scientific notation ({$$}a * 10^b{/$$}) can also be used by placing an `e` or `E` before the exponent:
 
 {title="Using SN",lang=groovy}
 	def atomicMass = 1.67e-27

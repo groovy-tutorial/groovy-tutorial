@@ -1,6 +1,6 @@
 #Regular Expression Operators
 
-I> These are useful for comparing strings to regular expressions. Still don't help you work out the regular expression.
+I> These are useful for comparing strings to regular expressions. They still don't help you work out the regular expression.
 
 The Variables tutorial covered regular expression (pattern) variables described the `find` and `match` methods. These operators are similar to these methods but return `true` or `false` if the pattern is found in (`find`) or matches (`match`) the first operand (a string).
 

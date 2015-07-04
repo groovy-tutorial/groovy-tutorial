@@ -14,7 +14,7 @@ To highlight all of this, operator overloading can be used in classes via the me
 
 {title="Methods for overloading operators"}
 |Method|Operator|  
-|:------	|:------:	|  
+|:------|:------:|  
 | plus	| `+`	|  
 | minus	| `-`	|  
 | div	| `/`	|  

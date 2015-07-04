@@ -40,7 +40,7 @@ Operators with the same (equal) precedence (e.g. `+` and `-`) are evaluated depe
 
 For example, the additive operators (`+` and `-`) are left associative, meaning that they are evaluated left to right. The expression `6 + 2 - 4` is evaluated as the result of `6 + 2` minus `4`. 
 
-I> In the `6 + 2 - 4` example the result would be the same regardless (`4`) but in other expressions the associativity does matter - consider`6 / 2 * 4`
+I> In the `6 + 2 - 4` example the result would be the same regardless (`4`) but in other expressions the associativity does matter - consider `6 / 2 * 4`
 
 The simple assignment operator (`=`) is right associative, resulting in the following code displaying a result of `2`:
 

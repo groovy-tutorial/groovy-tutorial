@@ -60,7 +60,7 @@ Static imports can help your code look a little cleaner as they give you an easy
 
 `import static java.lang.Math.PI as pi`
 :	This is a _static_ import with _aliasing_
-:	This is the same as the previous `import` but I can use the `as` keyword to rename the item being imported - I've decided to use `PI` but using the lowercase `pi`
+:	This is the same as the previous `import` but I can use the `as` keyword to rename the item being imported - I've decided to use `PI` but refer to it using the lowercase form (`pi`)
 
 `import static java.util.UUID.randomUUID as generateId`
 :	This is also a _static_ import with _aliasing_ but I've imported the `randomUUID` static method and given in the alias `generateId`

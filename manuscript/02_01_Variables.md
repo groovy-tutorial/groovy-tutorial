@@ -81,7 +81,7 @@ Finally, we can perform multiple assignment at the point of declaring the variab
 Variable names must meet the following criteria:
 
 - Must start with a letter (upper-case [A-Z] or lower-case [a-z])
-	   - The underscore (`_`) is also allowed but this is very strongly discouraged 
+	  - The underscore (`_`) is also allowed but this is very strongly discouraged 
 - Must only contain letters, digits (0-9) or an underscore (`_`)
 	- The dollar-sign (`$`) is also allowed but very strongly discouraged 
  - Must not match a keyword (reserved word)

@@ -52,11 +52,12 @@ If I really wanted to be specific about the type of number I could have declared
 	Integer[] point = [27, -153]
 
 
-Arrays can also be declared to be of a primitive type such as `int`:
+Arrays can also be declared to be of a primitive type such as `int`[^primitives]:
 
 
 	int[] point = [27, -153]
 
+[^primitives]: Primitive types are discussed in the [Data Types chapter](#chdatatypes).
 
 Going further with subtypes etc, arrays can be of any type and the `Object` class provides a flexible type when your array needs to hold a mixture of values (e.g. numbers, strings, various types):
 

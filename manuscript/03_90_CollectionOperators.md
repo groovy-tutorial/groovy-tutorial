@@ -105,7 +105,7 @@ Adding to a Set returns a set with the union sans any duplicates:
 
 
 	def set = [2, 4, 6, 8] as Set
-	assert union + [8, 10] == [2, 4, 6, 8, 10] as Set
+	assert set + [8, 10] == [2, 4, 6, 8, 10] as Set
 
 
 The addition operator will either add a key:value pair to a map or alter the value held against an existing key. In the example below I create a new map item with a result for my French class and then change an existing map item with a reduced English score:
@@ -243,7 +243,7 @@ In this last example I demonstrate an easy approach to creating a union of the t
 
 ### Extracting as Parameters
 
-In the next example I extract the items in the `score` list out, each aligning with the parameters in the 
+In the next example I extract the items in the `score` list out, each aligning with the parameters in the method signature:
 
 
 	def mean(num1, num2, num3) {
@@ -281,7 +281,7 @@ One last example of using the spread operator:
 	buyGroceries(*shoppingList)
 
 
->Realistically, the `items` parameter is a list but it proves the point. We'll look into this type of method parameter in the tutorial on methods.
+T>Realistically, the `items` parameter is a list but it proves the point. We'll look into this type of method parameter in the tutorial on methods.
 
 ### Multiply Operator
 

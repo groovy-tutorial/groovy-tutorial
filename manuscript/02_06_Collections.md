@@ -213,11 +213,10 @@ Map keys don't have to be strings - they can be a mix of strings, numbers or oth
 
 {title="Different types of keys",lang=groovy}
 	class Chicken {
-	    def name
-	    
-		String toString() {
-	        return "I am $name".toString()
-	    }
+		def name
+	    	String toString() {
+	       		return "I am $name".toString()
+	    	}
 	}
 	
 	def cluckers = new Chicken(name: 'Cluckers')
@@ -256,7 +255,7 @@ In the example above:
 	1. `mixedMap.cluckers`
 6. `println mixedMap` is called to display the map contents
 
->I'd suggest you stick with strings as keys for now. I'd also suggest that using one type for your keys will usually make life a lot easier.
+T> I'd suggest you stick with strings as keys for now. I'd also suggest that using one type for your keys will usually make life a lot easier.
 
 For those interested in such things, the `(cluckers)` key isn't affected if I change the value of `cluckers` later on. If you append the code below to the chicken example you'll see that `mixedMap.get(cluckers)` will now return `null` as the match fails. You'll also notice that `println mixedMap` is the same output you get before changing `cluckers`:
 

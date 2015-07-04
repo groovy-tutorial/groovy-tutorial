@@ -75,7 +75,7 @@ If the result above is surprising and the expected result was 90 then parenthese
 
 The elements within parentheses have precedence over the rest of the evaluation. This results in `(10 - 1)` being evaluated first and the result being multiplied by 10.
 
-If we consider Pythagoras' theorem: ($a^2 + b^2 = c^2$) the operator precedence will yield the correct answer without requiring parentheses:
+If we consider Pythagoras' theorem: ({$$}a^2 + b^2 = c^2{$$}) the operator precedence will yield the correct answer without requiring parentheses:
 
 
 	assert 3 * 3 + 4 * 4 == 5 * 5

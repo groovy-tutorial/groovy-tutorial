@@ -17,7 +17,7 @@ The complement operator results in the following:
 
 {title="The complement truth table"}
 |Value|Complement|  
-| ------	| ------	|  
+|------|------|  
 |`true`	| `false`	|  
 |`false`	| `true`	|  
 

@@ -204,7 +204,7 @@ You'll note that I didn't bother with the `output` variable and dropped the pare
 	class NullTest {
 	    static main(args) {
 	        def t = null
-	        println(t ? 'Null' : 'Not null')
+	        println(t ? 'Not null' : 'Null')
 	    }
 	}
 

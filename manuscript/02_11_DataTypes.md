@@ -1,4 +1,4 @@
-# Data types  
+# Data types {#chdatatypes} 
 
 I> Groovy does a good job of working out what sort of variable you're using (numbers, strings, booleans etc) but let's look at what's going on under the hood.
 
@@ -122,14 +122,14 @@ You can check those value ranges by using the `MIN_VALUE` and `MAX_VALUE` consta
 As an object-oriented language Groovy also provides a mechanism for declaring new data types (objects) that extend and encapsulate information to meet a range of requirements. These implicitly extend the `java.lag.Object` class.
 
 #### Autoboxing
-_Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing.
+_Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing_.
 
 ## Type Conversions
 
 Groovy will convert values assigned to variables into the variable's declared data type. For example, the code below declares a variable of type "String" and then assigns it 3.14 (a number). The assertion that the variable remains of type "String" will succeed, indicating that `3.14` was converted to a String value by Groovy before being assigned to the `myName` variable.
 
 {title="Checking the type",lang=groovy}
-	def String myName = "Fred nurk"
+	String myName = "Fred nurk"
 	myName = 3.14
 	assert myName.class == java.lang.String
 

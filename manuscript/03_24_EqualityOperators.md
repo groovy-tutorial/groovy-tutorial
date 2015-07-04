@@ -31,9 +31,9 @@ All of the following comparisons evaluate as being `true`:
 
 Equality can be a little tricky - both for Groovy and humanity. Think about the statement "Hey cool, we have the same car!". This could mean that we have the same make and model but different instances of a car *or* it could mean that we share a car. 
 
-For those coming from a Java background, `==` is used to determine if the two variables reference the same instance and the `equals` method is used to determine if two variables are equivalent. Groovy conflates `==` and `equals` to perform the same comparison.
-
-The `is` method performs the Groovy equivalent of Java's `==` and returns `true` if two variables refer to the same instance of an object
+T> ##Groovy != Java
+T> For those coming from a Java background, `==` is used to determine if the two variables reference the same instance and the `equals` method is used to determine if two variables are equivalent. Groovy conflates `==` and `equals` to perform the same comparison.
+T> The `is` method performs the Groovy equivalent of Java's `==` and returns `true` if two variables refer to the same instance of an object
 
 {title="Using `is` and `==`",lang=groovy}
 	def obj1 = new Object()

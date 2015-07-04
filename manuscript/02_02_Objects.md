@@ -134,7 +134,7 @@ You can create lots of `Person` instances and each will exist in their own conte
 
 ## Useful Methods
 
-In the Groovy/Java family tree, `java.lang.Object` is the grand-daddy of all classes. Using a system called "inheritance", each new class inherits attributes such as methods and properties from their forebears. Even the `Person` class I described above inherits from `java.lang.Object` and the Groovy developers been enhanced that class further! This means that all classes have built-in features that we can access. Let's look at a few of them.
+In the Groovy/Java family tree, `java.lang.Object` is the grand-daddy of all classes. Using a system called "inheritance", each new class inherits attributes such as methods and properties from their forebears. Even the `Person` class I described above inherits from `java.lang.Object` and the Groovy developers have enhanced that class further! This means that all classes have built-in features that we can access. Let's look at a few of them.
 
 ### `class`
 

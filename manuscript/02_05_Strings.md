@@ -2,7 +2,7 @@
 
 I> Strings are pieces of text.
 
-There are a two main ways in which you can declare a string in Groovy: single or double quotes
+There are two main ways in which you can declare a string in Groovy: single or double quotes
 
 {title="The String section",width="wide"}
 | Method | Usage |
@@ -35,7 +35,7 @@ Strings can contain escape sequences, allowing you to use non-printable characte
 | \\"	| double quote  	| 
 | \\\\	| backslash  	| 
 
-The line feed (`\\n`) is often used to move to a new line:
+The line feed (`\n`) is often used to move to a new line:
 
 {title="The line feed",lang=groovy}
 	print 'Hi \n there\n'
@@ -83,7 +83,7 @@ This can be handy if you have a number of variables that you'd like to use in a 
 
 T> ## Avoid `+` for String concatenation
 T> This helps escape the use of the addition operator (`+`) to concatenate (join) strings: 
-T>	`println 'hello ' + 'world` 
+T>	`println 'hello ' + 'world'` 
 T> You'll see this in a lot of Java code and I, for one, am pleased to see that Groovy lets us pretend this never happened.
 
 GStrings also let you interpolate more complicated expressions into a string by using `${...}`. In the following example we perform a calculation within the GString:
@@ -203,4 +203,4 @@ Lastly, `replace` lets us provide a string that we want to change to a new value
 	println str.replace('World', 'Fred')
 
 
-Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in a an up-coming chapter. Additionally, the tutorial on Operators will look into this in more depth.
+Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in an up-coming chapter. Additionally, the tutorial on Operators will look into this in more depth.

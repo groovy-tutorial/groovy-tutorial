@@ -227,4 +227,4 @@ To me this is evidence enough for me to use '<<=' over `+=`!
 
 ## Templates
 
-If you find yourself building strings around boilerplate text - such as a form letter - consider using Groovy's templating system. We'll look at templates in their own tutorial.
+If you find yourself building strings around boilerplate text - such as a form letter - consider using [Groovy's templating system](http://www.groovy-lang.org/templating.html). 
