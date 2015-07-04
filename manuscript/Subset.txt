@@ -2,7 +2,7 @@ frontmatter.txt
 Introduction.md
 LegalNotice.md
 mainmatter.txt
-01_00_GetStarted.md
+01_00_Introduction.md
 01_01_Installing.md
 01_02_HelloWorld.md
 01_03_RunningScript.md
@@ -22,4 +22,3 @@ mainmatter.txt
 09_00_Introduction.md
 backmatter.txt
 Colophon.md
-

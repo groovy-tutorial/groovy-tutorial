@@ -2,7 +2,7 @@ frontmatter.txt
 Introduction.md
 LegalNotice.md
 mainmatter.txt
-01_00_GetStarted.md
+01_00_Introduction.md
 01_01_Installing.md
 01_02_HelloWorld.md
 01_03_RunningScript.md
@@ -76,5 +76,14 @@ mainmatter.txt
 08_00_Introduction.md
 08_01_Expando.md
 08_02_TheBasics.md
+08_03_CreateClass.md
+08_04_Constructors.md
+08_05_UsefulClassAnnotations.md
+08_06_ClassMembers.md
+08_06_InterfacesAndTraits.md
+08_07_Inheritance.md
+08_08_Enums.md
+08_09_OtherTopics.md
+09_00_Introduction.md
 backmatter.txt
 Colophon.md
