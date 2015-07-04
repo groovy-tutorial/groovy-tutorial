@@ -22,7 +22,7 @@ Groovy supports a range of control-flow statements:
 	* `continue`
 	* `return`
 
-This chapter will describe the conditional and looping statements and discuss how and where the `break` and `continue` branching statements fit in. 
+This section will describe the conditional and looping statements and discuss how and where the `break` and `continue` branching statements fit in. 
 
 The `try-catch-finally` statement will be explored in the "Exceptions" chapter.
 

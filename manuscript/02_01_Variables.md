@@ -2,10 +2,6 @@
 
 I> Let's look at how you declare a variable and what it is you're actually declaring.
 
-Variables are (perhaps unsurprisingly), items that can change. Essentially a variable is a "box" that can hold a value. Groovy is a "dynamic language" in that it allows you to easily store and manipulate variables regardless of their value. This places it in similar company to Python and Ruby but, as a child of Java, Groovy can also operate as a "typed language". In typed languages we can specify the data type (e.g. a number or piece of text) of the variable.
-
-Groovy lets us work in both language modes - dynamic and typed - and this flexibility makes it that much easier to use.
-
 Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
 
 {title="Defining a variable",lang=groovy}
@@ -93,7 +89,7 @@ Variable names must meet the following criteria:
 The use of literate variable names that comply to the criteria is encouraged. For example, a variable named `x` provides little information as to its role whereas `accountNumber` is likely to be clear within the context of a broader system.
 
 
-# Data Types
+## Data Types
 Data types define the sort of data a variable can hold. Most programming language feature the following data types:
 
 * Booleans

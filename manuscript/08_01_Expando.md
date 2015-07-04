@@ -2,7 +2,7 @@
 
 I>The Expando class lets you create objects on the fly. 
 
-Before getting stuck into formal object definition, let's take a look at the `Expando` class that ships with Groovy. Expando provides a very flexible way to construct an object on the fly.
+Before getting stuck into formal object definitions, let's take a look at the `Expando` class that ships with Groovy. Expando provides a very flexible way to construct an object on the fly.
 
 In the example below the `monster` variable is dynamically assigned a set of fields and methods (through the use of closures).
 
