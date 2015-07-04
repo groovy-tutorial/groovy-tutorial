@@ -24,7 +24,7 @@ As I mentioned at the very beginning of this book, [Groovy in Action (2nd Editio
 For those coming from the Java world, Gradle is an excellent replacement for [Apache Maven](http://maven.apache.org/) and [Apache Ant](http://ant.apache.org/).
 
 ## Use the Groovy ecosystem
-There are several high-quality projects that use Groovy, it's worth checking them out:
+There are [several high-quality projects that use Groovy](http://www.groovy-lang.org/ecosystem.html), it's worth checking them out:
 
 - [Grails](https://grails.org/) - a full-stack web application framework for the Java Virtual Machine
 	- That means it's a great tool-set for building web applications
