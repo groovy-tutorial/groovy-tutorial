@@ -1,0 +1,2 @@
+# Static Methods and Variables
+

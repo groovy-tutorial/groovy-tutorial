@@ -1,4 +1,4 @@
-# Objects
+# Objects {#chobjects}
 
 I> Groovy is an object-oriented programming language and it's essential to understand what this means if you're to really get to grips with coding in Groovy. 
 
@@ -100,8 +100,10 @@ After we've declared the `Person` class we can now create instances of the class
 {title="Creating an instance",lang=groovy}
 	def david = new Person(name: 'David', email: 'david@example.com')
 
-
 We use `def david` as we would for other variables and then use `new Person` to indicated that `david` will hold an instance of the `Person` class. Lastly we call a special method called a _constructor_ that Groovy provides us for our objects: `(name: 'David', email: 'david@example.com')`. This sets up `david` with starting values for the properties.
+
+Q> ## What is `this`?
+Q> You may have noticed in my class declaration that I've used the `this` keyword in methods (e.g. `this.email = email`) - this denotes properties and methods related to the instance of the class. Using `this` in our class's methods lets us denote that the variable (or method) being called is a property or method of the current instance. It helps us not get mixed up with method parameters with the same name.
 
 I> ## Constructors
 I> Constructors are basically methods but use the class name for the method name. They're also only called when you create a new instance.
@@ -179,7 +181,7 @@ This method works with closures (we'll cover them later) to give us an easy form
 
 ## Existing classes
 
-The great strength/benefit/bonus of object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API). 
+The great strength/benefit/bonus of an object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API). 
 
 If we were going to create a variable to hold a string (a piece of text) we would do something like:
 
@@ -225,7 +227,7 @@ Literal values are best thought of the value you would write down:
 * Strings (text):
 	* 'hi there'
 
->We use single- or double-quotes for string literals otherwise Groovy thinks the text is actually code and tries to interpret it.
+T>We use single- or double-quotes for string literals otherwise Groovy thinks the text is actually code and tries to interpret it.
 
 We can call methods directly on literal values as Groovy will create an appropriate object instance for us:
 

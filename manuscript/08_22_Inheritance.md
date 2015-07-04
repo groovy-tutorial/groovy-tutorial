@@ -1,0 +1,3 @@
+# Inheritance
+
+## Abstract classes
