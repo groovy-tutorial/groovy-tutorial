@@ -14,6 +14,10 @@ In the following tutorials I aim to guide you through the basics of Groovy. I ha
 
 I really hope that this tutorial gives you a basis in understanding the Groovy language and I hope that you start to see why I like Groovy so much.
 
+Q> ## Did you know?
+Q> As of March 2015 Groovy entered the incubation phase at Apache?
+Q> This is the first step towards having Groovy become a full-blown Apache project.
+
 ## Something Wrong?
 
 If you find something wrong I'd really appreciate you letting me know via either:
@@ -56,19 +60,6 @@ If you find yourself stuck and needing some help, the following channels are wor
 - The [Groovy Mailing lists](http://groovy-lang.org/mailing-lists.html) are also worth joining and searching
 
 I suggest to anyone within the orbit of Java that "Effective Java (2nd edition)" by Joshua Bloch should not only be read (repeatedly) but always at-hand.
-
-### Groovy Projects
-
-There are several high-quality projects that use Groovy, it's worth checking them out:
-
-- [Grails](https://grails.org/) - a full-stack web application framework for the Java Virtual Machine
-	- That means it's a great tool-set for building web applications
-- [Griffon](http://new.griffon-framework.org/) - a desktop application toolkit
-- [Gradle](https://www.gradle.org/) - a build automation tool that should be your go-to when building non-trivial programs
-- [Spock](https://code.google.com/p/spock/) - a testing framework
-- [CodeNarc](http://codenarc.sourceforge.net/) - a code analysis tool for Groovy
-
-Whilst it's not written in Groovy, the [Spring Boot](http://projects.spring.io/spring-boot/) project is worth a look as you can use Groovy to quickly write some nifty applications using the Spring framework.
 
 ## Conventions Used in This Book
 
@@ -114,6 +105,8 @@ I'm making the "Groovy Tutorial" freely available because I feel that open sourc
 This work is licensed under a Creative Commons Attribution License - this means that you have the right to share and adapt the text as you see fit *but* you must give me _"appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use"_. If you decide to use the whole text or parts thereof in a manner that derives you an income I think it'd be civil of you to consider contributing to my retirement fund.
 
 All code samples are licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
+
+The "source code" for this book is written in Markdown, based on the [LeanPub Manual](https://leanpub.com/help/manual). You can access the source from my [Git repository](https://bitbucket.org/duncan_dickinson/groovy-tutorial).
 
 I don't provide any warranties, guarantees or  certainties[^note]. You should use this text to help you in your Groovy coding but you are responsible for your journey :)
 

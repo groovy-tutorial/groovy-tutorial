@@ -10,17 +10,14 @@ mainmatter.txt
 01_05_Assert.md
 01_06_ReservedWords.md
 01_07_PackagesLibraries.md
-02_00_Variables.md
-02_01_Variables.md
-02_02_Objects.md
-02_03_Booleans.md
-02_04_Numbers.md
-02_05_Strings.md
-02_06_Collections.md
-02_08_Arrays.md
-02_09_Ranges.md
-02_10_RegularExpressions.md
-02_11_DataTypes.md
+02_00_Introduction.md
+03_00_Introduction.md
+04_00_Introduction.md
+05_00_Introduction.md
+06_00_Introduction.md
+07_00_Introduction.md
+08_00_Introduction.md
+09_00_Introduction.md
 backmatter.txt
 Colophon.md
 
