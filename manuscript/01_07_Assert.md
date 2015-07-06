@@ -13,7 +13,7 @@ The `assert` statement evaluates a boolean expression (one that is `true` or `fa
 	assert 1 == 2
 
 
-An expression can be appended to the `assert` statement after a semicolon (`:`):
+An expression can be appended to the `assert` statement after a colon (`:`):
 
 {title="Assert with expression",lang=groovy}
 	assert true == false : 'true cannot be false'
