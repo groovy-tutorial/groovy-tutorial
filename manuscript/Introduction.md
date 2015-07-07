@@ -46,7 +46,6 @@ Core resources to have at-hand:
 Great blogs and sites that provide Groovy coding examples:
 
 - [Mr Haki](http://mrhaki.blogspot.com.au/search/label/Groovy) - A really useful site containing heaps of Groovy code examples.
-- [DZone](http://www.dzone.com/links/tag/groovy.html) - Features a number of Groovy articles.
 - [InfoQ](http://www.infoq.com/groovy) - Another useful site for Groovy articles.
 - My own [Workbench](http://workbench.duncan.dickinson.name) blog is very young but has a few Groovy samples.
 
