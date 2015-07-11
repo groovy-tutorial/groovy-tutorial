@@ -1,5 +1,7 @@
 # Useful Annotations
 
+I> Note to self: let annotations do my work for me
+
 
 
 ## ToString
@@ -66,20 +68,6 @@ Instead of using the full library path with `@groovy.transform.ToString` you can
 	def agentSmith2 = new Person(name: 'Agent Smith')
 	
 	assert agentSmith == agentSmith2
-
-## TupleConstructor
-
-	@groovy.transform.TupleConstructor
-	class Person {
-	    def name = 'Anonymous'
-	    def email
-	    def mobile
-	}
-	
-	def unknown = new Person()
-	def astrid = new Person('Astrid Smithson')
-	def john = new Person('John Hancock', 'john@example.com')
-	def kelly = new Person('Kelly Grant', 'kelly@example.com', '044 555 555')
 
 
 

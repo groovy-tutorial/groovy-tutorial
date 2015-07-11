@@ -88,17 +88,25 @@ You'll note that, in the `checkAnimalAsPet` method I have a `switch` with no bre
 
 ## Declaring data types for return values
 
-A data type can be declared for the return value by replacing `def` with the class name: `Number determineAverage(... list){..}`:
-
-
-	println determineAverage(10, 20, 30, 40)
+A data type can be declared for the return value by replacing `def` with the class name: 
+e.g. `Number determineAverage(... list){..}`:
 	
 	Number determineAverage(... list) { 
 	    return list.sum() / list.size()
 	}
+	
+	println determineAverage(10, 20, 30, 40)
 
 
 This is very handy if your method is to be accessed as part of an API, especially by Java programs.
+
+You may notice some methods defined with a return type of `void`. This indicates that the method won't return a value:
+
+	void displayText() {
+    	println 'Hello, World'
+	}
+
+I can still use `return` within the method - I just can't return a value.
 
 ## Sequential method calls
 

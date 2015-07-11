@@ -1,5 +1,7 @@
 # The basics of OO
 
+This chapter will provide a whirlwind tour of the various object oriented programming concepts supported by Groovy.
+
 ## Classes
 Object-oriented programmers use *classes* to classify objects. As such, a class defines the fields (properties) and methods of an object.
 
