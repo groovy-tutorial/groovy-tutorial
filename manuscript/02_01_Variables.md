@@ -89,7 +89,7 @@ Variable names must meet the following criteria:
 The use of literate variable names that comply to the criteria is encouraged. For example, a variable named `x` provides little information as to its role whereas `accountNumber` is likely to be clear within the context of a broader system.
 
 
-## Data Types
+## Data Types {#chvariables_datatypes}
 Data types define the sort of data a variable can hold. Most programming language feature the following data types:
 
 * Booleans
