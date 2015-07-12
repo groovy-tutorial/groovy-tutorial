@@ -1,6 +1,6 @@
 -# Methods
 
-#Introduction
+#Introduction {#chmethods}
 
 I> Methods help us break code into logical and reusable segments. 
 

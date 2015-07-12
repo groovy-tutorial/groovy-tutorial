@@ -55,16 +55,13 @@ Let's look at another method - one that needs several parameters:
 	}
 
 
-Either of these calls would work:
-
+Either of these calls would work - it just depends if you want to use the parentheses:
 
 	callFriend('Barry', '0400 123 456', 'Did you see that local sporting team?')
 	
 	callFriend 'Alex', '07 3344 0000', 'Could you please check on my pets whilst I\'m away?'
 
-
 Each parameter may be typed if needed: 
-
 
 	def callFriend(String name, String phone, String message) {..}
 

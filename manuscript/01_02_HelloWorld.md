@@ -42,6 +42,8 @@ If you see the output `hello, world` then congratulations - you've taken your fi
 ## Examining the script 
 Our first Groovy script is very simple: it uses the `print` method (function) to output the string `hello world` to the console.
 
+T> Groovy has a flexible syntax and can accept either `print 'hello, world'` or `print('hello, world')`
+
 For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" or "boilerplate" code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
 
 {title="Hello,world - Java style",lang=java}
