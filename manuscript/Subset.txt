@@ -6,7 +6,7 @@ mainmatter.txt
 08_01_Expando.md
 08_02_TheBasics.md
 08_03_PropertiesFields.md
-08_04_Getters and Setters.md
+08_04_GettersSetters.md
 08_06_Methods.md
 08_07_Constructors.md
 08_08_ClassMembers.md
