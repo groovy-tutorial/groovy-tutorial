@@ -12,6 +12,7 @@ mainmatter.txt
 01_07_Assert.md
 01_08_ReservedWords.md
 01_09_PackagesLibraries.md
+01_10_Grape.md
 02_00_Introduction.md
 02_01_Variables.md
 02_02_Objects.md
