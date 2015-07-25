@@ -1,12 +1,9 @@
 out/
 node_modules/
-.idea
 .project
 .settings
-.gradle
 .classpath
 bak/
-/build/
 /bin/
 /.nb-gradle/private/
 .nb-gradle
@@ -16,3 +13,42 @@ groovytutorial/published
 groovytutorial/site
 .dropbox
 Iconr
+
+### Gradle template
+.gradle
+build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar main (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+
+### JetBrains template
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion
+
+*.iml
+
+## Directory-based project format:
+.idea/
+
+## File-based project format:
+*.ipr
+*.iws
+
+## Plugin-specific files:
+
+# IntelliJ
+/out/
+
+# mpeltonen/sbt-idea plugin
+.idea_modules/
+
+# JIRA plugin
+atlassian-ide-plugin.xml
+
+# Crashlytics plugin (for Android Studio and IntelliJ)
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties

@@ -8,17 +8,7 @@ In this chapter we'll delve more into properties and fields. They're *almost* th
 The class below is composed of three properties and could be used to pass a person's details around in a system. You may come across references to this type of structure as "Groovy beans":
 
 {title="A basic person class with three properties",lang=groovy}
-
-	class Person {
-	    def name
-	    def email
-	    def mobile
-	}
-
-	def astrid = new Person()
-	astrid.name = 'Astrid Smithson'
-	astrid.email = 'astrid@example.com'
-	astrid.mobile = '0418 111 222'
+<<(code/groovy/08/properties_example.groovy)
 
 In the code above I create a new instance of the `Person` class by calling `new Person()` and can then access each property using dot-point notation. This type of class can be really handy when you just need a structure for storing and handing around data - say, for example, you load a record from a database and want to feed it to other classes and their methods for processing. 
 
