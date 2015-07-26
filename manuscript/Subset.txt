@@ -1,3 +1,11 @@
+./07/07_00_Introduction.md
+./07/07_01_Overview.md
+./07/07_02_Parameters.md
+./07/07_03_Return.md
+./07/07_05_MethodParameters.md
+./07/07_06_ClosureLoop.md
+./07/07_07_OtherUsefulMethods.md
+./07/07_08_ClosureScope.md
 ./08/08_00_Introduction.md
 ./08/08_01_Expando.md
 ./08/08_02_TheBasics.md

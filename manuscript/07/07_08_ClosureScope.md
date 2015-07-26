@@ -6,21 +6,8 @@ In the first chapter on closures I mentioned that: Closures represent a referenc
 
 I've tried to demonstrate this concept in the example below. You'll notice that my basic closure refers to a variable `code` that isn't a declared parameter of the closure nor is it a variable declared within the closure. Rather, `code` references a variable available within the scope in which the closure is declared - i.e. `code` can be accessed by the `doubleCross` closure as both are declared in the same block. 
 
-{title="A small example of context",lang="groovy"}
-	def spyMethod(closure) {
-	    closure()
-	}
-	
-	def code = 'eagle'
-
-	//This is the closure
-	def doubleCross = {println "The code is $code"}
-	
-	spyMethod(doubleCross)
-
-	code = 'badger'
-	spyMethod(doubleCross)
-
+{lang=groovy}
+<<[A small example of context](code/07/08/context.groovy)
 
 ## A More Involved Example
 
@@ -66,27 +53,5 @@ This will now cause each of the `call` closures to be called - allowing me to ge
 
 I broke up the code in the discussion so present it all here in full for you copy and try out for yourself:
 
-{title="The Complete Script",lang=groovy}
-    class Contact {
-        def name
-        def phone
-        
-        //A closure for calling the contact
-        def final call = { message -> 
-            println "Calling ${this.name} on ${this.phone} with the message: '$message'"
-        }
-    }
-    
-    def andrew = new Contact(name: 'Andrew', phone: '+61 432 321 736')
-    def sally = new Contact(name: 'Sally', phone: '+61 400 800 900')
-    
-    def needToCallBack = []
-    needToCallBack << andrew.call
-    needToCallBack << sally.call
-    
-    // Lots of other code ......
-    
-    andrew = null
-    sally = null
-    
-    needToCallBack.each { it('It\'s Duncan here, sorry I missed your call') }
+{lang=groovy}
+<<[The complete Groovy message service](code/07/08/scope.groovy)

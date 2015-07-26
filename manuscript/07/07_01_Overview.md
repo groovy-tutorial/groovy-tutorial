@@ -2,14 +2,8 @@
 
 In the last tutorial we looked at methods and this prepares us as we start to look at closures. If you take a look at the following code you're likely to quickly see what the `printer()` method does:
 
-
-	def printer(){
-	    println 'Hello, world'
-	}
-	
-	def cls = this.&printer
-	cls()
-
+{lang=groovy}
+<<[Using a method reference](code/07/01/method_reference.groovy)
 
 So what about `def cls = this.&printer`? Well, `.&` is the Method Reference operator and it returns a reference to the `printer()` method. I use `this` in the script as I need to reference the current instance in which I'm running - remember that Groovy wraps the script in a class.
 
@@ -22,21 +16,8 @@ Note the following:
 
 Say I set this up a little differently and create a `Test` class with two `printer` methods - one that takes a parameter and one that doesn't:
 
-
-	class Test {
-	    static printer(){
-	        println 'Hello, world'
-	    }
-	    
-	    static printer(name) {
-	        println "Hello, $name"
-	    }
-	}
-	
-	def cls = Test.&printer
-	cls()
-	cls('Newman')
-
+{lang=groovy}
+<<[Overloading and method references](code/07/01/method_reference_class.groovy)
 
 You'll see if you run that last example that the call to the closure (`cls`) will result in the associated method being called depending on the parameters I provide.
 
@@ -46,10 +27,8 @@ In the first examples of this chapter I used the Method Reference operator to po
 
 In the next example I create an anonymous function using the regular block syntax (`{..}`) and store the function reference in `cls`:
 
-```groovy
-def cls = { println 'Hello, world' }
-cls()
-```
+{lang=groovy}
+<<[A basic closure](code/07/01/basic_closure.groovy)
 
 That's pretty nifty! We can define a function when needed and store it in a variable. This variable can then be passed to methods and other closures as a parameter.
 
@@ -57,12 +36,10 @@ That's pretty nifty! We can define a function when needed and store it in a vari
 
 Anonymous functions get a single parameter named `it` by default. That means that you can use `it` as a parameter inside your function and `it` will contain the parameter passed in the call to the closure.
 
-Let's write a version of the `printer` method that takes a parameter:
+Let's write a version of the `printer` method that uses the `it` parameter:
 
-
-	def cls = { println "Hello, $it" }
-	cls('Jerry')
-
+{lang=groovy}
+<<[Using `it`](code/07/01/basic_closure_it.groovy)
 
 I> ## More Terminology
 I> I'll use the terms "closures" and "anonymous functions" interchangeably. Whilst we know that there's a difference between the two we usually use anonymous functions with closures rather than via the Method Reference operator.

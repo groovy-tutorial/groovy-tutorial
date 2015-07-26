@@ -31,19 +31,8 @@ The `split` method splits a collection into two lists: the first list contains a
 
 In the example below I use the `split` method to get a list of those who got a score over 100 and those that didn't.
 
-	def players = [
-	    [name: 'Fred', topScore: 120],
-	    [name: 'Sally', topScore: 200],
-	    [name: 'Felix', topScore: 101],
-	    [name: 'Albert', topScore: 12],
-	    [name: 'Jane', topScore: 20]
-	]
-	
-	def result = players.split {it.topScore > 100}
-	
-	result[0].each {println "$it.name is in the hall of fame"}
-	
-	result[1].each {println "$it.name missed out"}
+{lang=groovy}
+<<[Using `split`](code/07/07/split.groovy)
 
 
 ##`with`
@@ -52,35 +41,10 @@ The `with` method provides a handy approach to calling several methods and manip
 
 In the example below I use `with` to perform a set of operations on an instance of the `Person` class:
 
-	class Person {
-	    def name
-	    def email
-	    def mobile
-	    
-	    def printBusinessCard(){
-	        println "$name"
-	        println "e: $email"
-	        println "m: $mobile"
-	    }
-	}
-	
-	def john = new Person()
-	
-	john.with {
-	    name = 'John Smith'
-	    email = 'john@example.com'
-	    mobile = '0401 999 888'
-	    printBusinessCard()
-	}
-
+{lang=groovy}
+<<[Using `with`](code/07/07/with.groovy)
 
 This approach can be really useful when creating an object. In the snippet below I create a new `Person` and set up their details at the same time:
 	
-	def stacey = new Person().with {
-        name = 'Stacey Jane'
-        email = 'stacy@example.com'
-        mobile = '0401 333 666'
-        return it
-    }
-    stacey.printBusinessCard()
-
+{lang=groovy}
+<<[Using `with` at instantiation time](code/07/07/with.groovy)
