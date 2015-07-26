@@ -4,6 +4,7 @@ interface Exercise {
 
 class Athlete implements Exercise {
     def name
+
     def run(int distance) {
         println "I'm off for a ${distance}km run."
     }

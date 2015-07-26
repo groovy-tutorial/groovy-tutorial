@@ -6,28 +6,14 @@ The `groovydoc` command that comes with the Groovy installation can be used to g
 
 Let's look at a Groovy method that features GroovyDoc comments:
 
-	/**
-	 * Returns the average of the parameters
-	 *
-	 * @param values  a series of numerical values
-	 * @throws IllegalArgumentException if a values parameter is a String
-	 * @returns The average of the values
-	 */
-	def determineAverage(...values) 
-	  throws IllegalArgumentException {
-	    for (item in values) {
-	        if (item instanceof String) {
-	            throw new IllegalArgumentException()
-	        }
-	    }
-	    return values.sum() / values.size()
-	}
+{lang=groovy}
+<<[A method with doc comments](code/06/08/groovydoc.groovy)
 
 Taking a look at the commenting:
 
 - The multi-line comment block starts with `/**` to indicate that this is a GroovyDoc
-- The first piece of text provides the summary of the method. It's one line and meant to be terse. 
-- A set of `@param` tags can be provided to describe each parameter. 
+- The first piece of text provides the summary of the method. It's one line and meant to be terse.
+- A set of `@param` tags can be provided to describe each parameter.
 	- The format is `@param <parameter name> <summary>`
 	- You don't provide the parameter type even if you declare one
 - Each exception that can be thrown by the method is listed against a `@throws` tag and provides a summary as to when the exception may be thrown.

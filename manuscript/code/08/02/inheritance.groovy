@@ -11,4 +11,4 @@ class StaffMember extends Person {
 }
 
 def sally = new StaffMember(name: 'Sally', staffID: 765)
-sally.getIdentification()
+sally.identification

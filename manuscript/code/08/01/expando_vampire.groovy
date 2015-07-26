@@ -1,4 +1,4 @@
-def vampire = [:]
+def vampire = [ : ]
 vampire.name = 'Dracula'
 
 vampire.scareVillage = { village ->

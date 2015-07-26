@@ -6,51 +6,23 @@ There are times where we want to pass a variable number of parameters to the met
 
 One approach is to use a list for a catch-all parameter, such as `items` does in the code below:
 
-
-	buyGroceries 'The Corner Store', ['apples', 'cat food', 'cream']
-	
-	def buyGroceries(store, items) {
-	    println "I'm off to $store to buy:"
-	    for (item in items) {
-	        println "  -$item"
-	    }
-	}
-
+{lang=groovy}
+<<[Using a list parameter](code/06/05/list.groovy)
 
 Whilst the list path is an option, Groovy supports the use of variable arguments (varargs) using the "three-dot" (`...`) notation for the last (and only the last) parameter:
 
-
-	buyGroceries 'apples', 'cat food', 'cream'
-	
-	def buyGroceries(... items) {
-	    for (item in items) {
-	        println item
-	    }
-	}
-
+{lang=groovy}
+<<[Using a varargs parameter](code/06/05/varargs.groovy)
 
 We can set a specific data type for the `items` parameter by placing the type before the `...`:
 
-
-	def buyGroceries(String... items) {
-	    for (item in items) {
-	        println item
-	    }
-	}
-
+{lang=groovy}
+<<[Using a typed varargs parameter](code/06/05/varargs_typed.groovy)
 
 Let's return to the first example in this chapter and rewrite it using varargs:
 
-
-	buyGroceries 'The Corner Store', 'apples', 'cat food', 'cream'
-	
-	def buyGroceries(store, ... items) {
-	    println "I'm off to $store to buy:"
-	    for (item in items) {
-	        println "  -$item"
-	    }
-	}
-
+{lang=groovy}
+<<[Varargs instead of a list](code/06/05/list_rewrite.groovy)
 
 So the `items` parameter is actually a list inside `buyGroceries` but the caller just passes a series of values to the method.
 

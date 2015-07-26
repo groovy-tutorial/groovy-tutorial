@@ -14,70 +14,30 @@ Clearly, _kittens_ aren't something that the _average_ calculation can understan
 
 [^pun]: Pun intended
 
-## Comment your method 
-Firstly, make sure that `determineAverage` has some useful documentation such as: 
+## Comment your method
+Firstly, make sure that `determineAverage` has some useful documentation such as:
 
-	/**
-	 * Returns the average of the parameters
-	 *
-	 * @param values  a series of numerical values
-	 * @throws IllegalArgumentException if a parameter is a String
-	 * @returns The average of the values
-	 */
-	def determineAverage(...values) 
-	    return values.sum() / values.size()
-	}
+{lang=groovy}
+<<[Provide comments](code/06/09/doc.groovy)
 
 In the example above I've just added a GroovyDoc comment block that describes what the method does, its parameter and what it will return. At the very least, other developers will see how they _should_ be using my method.
 
 ## Check the parameters
 Next, I can be more defensive in my coding and make sure that the method has a prerequisite that needs to be met before it attempts to run.
 
-	/**
-	 * Returns the average of the parameters
-	 *
-	 * @param values  a series of numerical values
-	 * @throws IllegalArgumentException if a parameter is a String
-	 * @returns The average of the values
-	 */
-	def determineAverage(...values) 
-	  throws IllegalArgumentException {
-	    for (item in values) {
-	        if (item instanceof String) {
-	            throw new IllegalArgumentException()
-	        }
-	    }
-	    return values.sum() / values.size()
-	}
-	
-	//This works:
-	assert determineAverage(12, 18) == 15
-	
-	//This does not work - we get an exception
-	determineAverage(5, 5, 8, 'kitten')
+{lang=groovy}
+<<[Check parameters](code/06/09/check_params.groovy)
 
 The approach above checks to make sure that no parameter is a `String` - if you pass one to the method you'll get an exception thrown back at you. In reality I should make sure that only numbers can be passed in and my check won't pick up a `Boolean` value - more on this in a moment.
 
-What do you think would happen if I called the method with no parameters - `determineAverage()`? 
+What do you think would happen if I called the method with no parameters - `determineAverage()`?
 
 (pause)
 
 Well, the division would attempt to divide by zero and that's a fail so I need to also check that `values` isn't empty (I'll leave out the comments for brevity):
 
-	def determineAverage(...values) 
-	  throws IllegalArgumentException {
-	    for (item in values) {
-	        if (item instanceof String) {
-	            throw new IllegalArgumentException()
-	        }
-	    }
-	    
-	    if (!values) {
-	        return 0
-	    }
-	    
-	    return values.sum() / values.size()
-	}
+{lang=groovy}
+<<[Check *all* parameters](code/06/09/check_params2.groovy)
 
 Note that if no parameters are passed, I return `0`. I really don't like returning `null` from methods as it makes other developers then have to check for `null`. I also don't want to raise an exception - I'm happy enough to say that the average of no values is `0`.
 
@@ -85,24 +45,8 @@ Note that if no parameters are passed, I return `0`. I really don't like returni
 
 If I really want to get specific with the data types I'll take as parameters and return from the method then I can switch to static typing. I can make sure that all my parameters are of type `Number` (or one of its subtypes) and that I will return a value of type `Number`. The code below really gets specific about data types:
 
-	/**
-	 * Returns the average of the parameters
-	 *
-	 * @param values  a series of numerical values
-	 * @throws IllegalArgumentException if a parameter is a String
-	 * @returns The average of the values
-	 */
-	Number determineAverage(Number...values) {
-	    
-	    if (!values) {
-	        return 0 as Number
-	    }
-	    
-	    Integer sum = values.sum() as Integer
-	    Integer n = values.length
-	    Number average = (sum / n) as Number
-	    return  average 
-	}
+{lang=groovy}
+<<[Use typed parameters](code/06/09/typed.groovy)
 
 The following two calls to the method would work:
 
@@ -120,75 +64,12 @@ If you are writing a method that needs to be very specific about data types for 
 
 I'd get into a lot of trouble from experienced developers if I just left this chapter without mentioning testing. I'm hoping that one day there'll be a Testing tutorial added to this book but, until then, check out [Unit Tests section](http://groovy-lang.org/testing.html) on the Groovy website.
 
-Oh ok, here's a little example using [Spock](http://docs.spockframework.org/en/latest/)! 
+Oh ok, here's a little example using [Spock](http://docs.spockframework.org/en/latest/)!
 
 Firstly, this won't run in your groovyConsole. You need to copy the code into the online [Spock web console](http://meetspock.appspot.com)[^sample] and then click on "Run Script":
 
-{title="A Spock example",lang=groovy}
-	import spock.lang.Specification
-	
-	class MathDemo {
-	    /**
-	     * Returns the average of the parameters
-	     *
-	     * @param values  a series of numerical values
-	     * @throws IllegalArgumentException if a parameter is a String
-	     * @returns The average of the values
-	     */
-	    static determineAverage(...values) 
-	      throws IllegalArgumentException {
-	        for (item in values) {
-	            if (! (item instanceof Number)) {
-	                throw new IllegalArgumentException()
-	            }
-	        }
-	        
-	        if (!values) {
-	            return 0
-	        }
-	        
-	        return values.sum() / values.size()
-	    }
-	}
-	
-	class AvgSpec extends Specification {
-	
-	    @Unroll
-	    def "average of #values gives #result"(values, result){
-	        expect:
-	            MathDemo.determineAverage(*values) == result
-	        
-	        where:
-	            values       || result
-	            [1,2,3]      || 2
-	            [2, 7, 4, 4] || 4.25
-	            []           || 0
-	    }
-	    
-	    @Unroll
-	    def "determineAverage called with #values throws #exception"(values, exception){
-	        setup:
-	           def e = getException(MathDemo.&determineAverage, *values)
-	
-	        expect:
-	            exception == e?.class
-	        
-	        where:
-	            values       || exception
-	            ['kitten', 1]|| java.lang.IllegalArgumentException
-	            [99, true]   || java.lang.IllegalArgumentException
-	            [1,2,3]      || null
-	    }
-	    
-	    Exception getException(closure, ...args){
-	        try{
-	            closure.call(args)
-	            return null
-	        } catch(any) {
-	            return any
-	        }
-	    }
-	}
+{lang=groovy}
+<<[A Spock example](code/06/09/spock.groovy)
 
 When you run this in the Spock web console you should get:
 

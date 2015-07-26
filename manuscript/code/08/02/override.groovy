@@ -2,7 +2,7 @@ class Person {
     def name
 
     def getName() {
-        return this.name
+        this.name
     }
 }
 

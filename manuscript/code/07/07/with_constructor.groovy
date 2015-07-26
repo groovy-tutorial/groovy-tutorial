@@ -3,7 +3,7 @@ class Person {
     def email
     def mobile
 
-    def printBusinessCard(){
+    def printBusinessCard() {
         println "$name"
         println "e: $email"
         println "m: $mobile"
@@ -14,6 +14,7 @@ def stacey = new Person().with {
     name = 'Stacey Jane'
     email = 'stacy@example.com'
     mobile = '0401 333 666'
-    return it
+    //This is the same as saying 'return it':
+    it
 }
 stacey.printBusinessCard()

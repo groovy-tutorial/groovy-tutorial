@@ -1,74 +1,21 @@
-# Final 
+# Final
 
 Before we move on from properties and fields, let's just look at one more item
 
-{title='',lang=groovy}
+{lang=groovy}
+<<[Using `final`](code/08/09/final.groovy)
 
-	class Record {
-	    final Date creationDate = new Date()
-	}
-	
-	Record myRec = new Record()
-	
-	//This will fail:
-	myRec.creationDate = new Date()
 
-`groovy.lang.ReadOnlyPropertyException`
-
-{title='',lang=groovy}
-
-	class Record {
-	    final Date creationDate
-	    
-	    Record() {
-	        this.creationDate = new Date()
-	    }
-	    
-	    Record(Date created){
-	        this.creationDate = created
-	    }
-	}
-	
-	Record myRec = new Record()
-	Record myOtherRec = new Record(new Date())
+{lang=groovy}
+<<[Setting a `final` member variable via the constructor](code/08/09/final_constructor.groovy)
 
 But for collections....
 
-{title='',lang=groovy}
-	
-	class Record {
-	    final List authors
-	    
-	    Record(List authors) {
-	        this.authors = authors
-	    }
-	}
-	
-	Record myRec = new Record(['Jim', 'Sally'])
-	println myRec.dump()
-	
-	myRec.authors << 'Duncan'
-	println myRec.dump()
-	
+{lang=groovy}
+<<[This may surprise you](code/08/09/collection.groovy)
+
 This will stop Duncan:
 
-{title='',lang=groovy}
-	
-	class Record {
-	    final List authors
-	    
-	    Record() {
-     	   authors = [].asImmutable()
-    	}
-    	
-	    Record(List authors) {
-	        this.authors = authors.asImmutable()
-	    }
-	}
-	
-	Record myRec = new Record(['Jim', 'Sally'])
-	println myRec.dump()
-	
-	myRec.authors << 'Duncan'
-	println myRec.dump()
+{lang=groovy}
+<<[Really make that collection final](code/08/09/immutable.groovy)
 

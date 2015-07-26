@@ -23,7 +23,7 @@ The main parts of the console are:
       1. `Run` will run the script
       2. `Run Selection` allows you to select (highlight) part of your script and run only that section
   1. The `View` menu lets you reset the output area (`Clear Output`)
-      2. I'd suggest that you select `Auto Clear Output on Run` as this helps reduce confusion 
+      2. I'd suggest that you select `Auto Clear Output on Run` as this helps reduce confusion
 
 Once you have the Groovy Console open, enter the following line in the editor area:
 
@@ -36,24 +36,23 @@ T> Don't forget that you can also try out the [Groovy web console](http://groovy
 Once that's ready, go to the menu and select `Script -> Run` and you should see your output in the bottom half of the window something like the image below:
 
 ![Screen shot of the Groovy Console application window with the hello, world script](images/GroovyConsoleOutput.png)
- 
+
 If you see the output `hello, world` then congratulations - you've taken your first step into a larger world.
 
-## Examining the script 
+## Examining the script
 Our first Groovy script is very simple: it uses the `print` method (function) to output the string `hello world` to the console.
 
 T> Groovy has a flexible syntax and can accept either `print 'hello, world'` or `print('hello, world')`
 
 For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" or "boilerplate" code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
 
-{title="Hello,world - Java style",lang=java}
-	class Hello {
-	    public static void main(String[] args) {
-	       System.out.print("hello, world");
-	    }
-	}
-	 
-	Hello.main();
+{lang=java}
+<<[Hello,world - Java style](code/01/02/Hello.java)
+
+T> ## Running java
+T> To run the code above we'd need to run the following from the command line:
+T> `> javac Hello.java`
+T> `> java -cp . Hello`
 
 When I look at the code above I see why Groovy is so appealing to me:
 
@@ -61,7 +60,7 @@ When I look at the code above I see why Groovy is so appealing to me:
      * Groovy doesn't need semi-colons at the end of each statement
      * Groovy essentially builds the `Hello` class around the script
  2. The Groovy code is much more readable and this *should* help reduce bugs (or at least make finding them easier)
- 3. Most Java code is valid Groovy code - you can copy that Java code into the Groovy Console and run it - it will work 
+ 3. Most Java code is valid Groovy code - you can copy that Java code into the Groovy Console and run it - it will work
  4. Groovy lets you use the comprehensive standard Java libraries and the extensive third-party libraries written by the Java developer community.
 	 1. But also extends these standard libraries with some great timesavers.
 

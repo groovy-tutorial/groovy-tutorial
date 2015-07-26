@@ -4,8 +4,8 @@ class Project {
 
 trait Agile {
     def iterationLength = 4
-    def backlog = []
-    def developmentTeam = []
+    def backlog = [ ]
+    def developmentTeam = [ ]
 
     def startIteration() {
         println """\
@@ -25,14 +25,15 @@ class Scrum
 }
 
 def project = new Scrum().with {
-    name = "Project X"
+    name = 'Project X'
     iterationLength = 2
     productOwner = 'Charlie'
     scrumMaster = 'Bobby'
-    developmentTeam = ['Dean', 'Sam']
+    developmentTeam = [ 'Dean', 'Sam' ]
     backlog << 'As a User I want to press buttons'
     backlog << 'As an Admin I want to lockout users'
-    return it
+    //This returns 'it' (the new instance of Scrum)
+    it
 }
 
 project.startIteration()

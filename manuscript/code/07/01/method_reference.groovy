@@ -1,4 +1,4 @@
-def printer(){
+def printer() {
     println 'Hello, world'
 }
 

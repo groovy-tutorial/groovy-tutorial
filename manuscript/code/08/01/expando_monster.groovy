@@ -1,17 +1,19 @@
 def monster = new Expando()
 
-//Let's add some properties
-monster.name = 'Dr Frankensteins Monster'
-monster.owner = 'Dr Frankenstein'
-monster.height = 8
+monster.with {
+    //Let's add some properties
+    name = 'Dr Frankensteins Monster'
+    owner = 'Dr Frankenstein'
+    height = 8
 
-//Add some closures (methods)
-monster.getOwner = {owner}
-monster.getName = {name}
-monster.getHeight = {height}
+    //Add some closures (methods)
+    getOwner = { owner }
+    getName = { name }
+    getHeight = { height }
 
-monster.scareVillage = { village ->
-    println "Look out $village here comes $name!"
+    scareVillage = { village ->
+        println "Look out $village here comes $name!"
+    }
 }
 
 monster.scareVillage('Darmstadt')

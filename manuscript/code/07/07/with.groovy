@@ -3,7 +3,7 @@ class Person {
     def email
     def mobile
 
-    def printBusinessCard(){
+    def printBusinessCard() {
         println "$name"
         println "e: $email"
         println "m: $mobile"

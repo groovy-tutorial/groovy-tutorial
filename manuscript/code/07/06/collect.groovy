@@ -1,5 +1,5 @@
-def grades = [45, 70, 95, 51].collect {
-    switch(it) {
+def grades = [ 45, 70, 95, 51 ].collect {
+    switch (it) {
         case (90..100):
             'A'
             break

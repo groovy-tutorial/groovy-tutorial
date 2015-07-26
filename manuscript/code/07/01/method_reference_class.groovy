@@ -1,5 +1,5 @@
 class Test {
-    static printer(){
+    static printer() {
         println 'Hello, world'
     }
 

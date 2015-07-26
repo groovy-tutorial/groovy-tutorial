@@ -6,8 +6,10 @@ class Person {
     }
 
     def getName() {
-        return this.name
+        this.name
     }
 }
 
 def john = new Person('John')
+
+println john.dump()

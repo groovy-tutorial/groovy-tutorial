@@ -5,7 +5,7 @@ def spyMethod(closure) {
 def code = 'eagle'
 
 //This is the closure
-def doubleCross = {println "The code is $code"}
+def doubleCross = { println "The code is $code" }
 
 spyMethod(doubleCross)
 

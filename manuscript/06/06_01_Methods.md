@@ -1,4 +1,4 @@
-# The Basics  
+# The Basics
 
 Let's start by examining a new method we'll write to calculate the average of the numbers in a list:
 
@@ -21,13 +21,8 @@ The method name (`determineAverage`) may look a bit odd but it uses a naming str
 
 Let's return to that `determineAverage` method and get a complete script together - you can copy and paste this into `groovyConsole` and run it to experience the method first-hand:
 
-	def scores = [2, 7, 4, 3]
-	def result = determineAverage(scores)
-	println result
-	
-	def determineAverage(list) {
-	    return list.sum() / list.size()
-	}
+{lang=groovy}
+<<[The determineAverage method](code/06/01/determineAverage.groovy)
 
 Let's look at the main components of that script:
 
@@ -38,6 +33,3 @@ Let's look at the main components of that script:
 1. The return value (result) of `determineAverage` is stored in the `result` variable.
 
 In the example I called the method using `determineAverage(scores)` but, in many cases, I don't need to use the parentheses and `determineAverage scores` would have also worked. That's why `println 'hello, world'` works just fine. This works really well when you start to use Groovy to construct [domain-specific languages](http://groovy-lang.org/dsls.html).
-
-
-

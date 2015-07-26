@@ -1,4 +1,4 @@
-def cls = { name, ...pets ->
+def cls = { name, ... pets ->
     println "Hello, $name. How are your $pets?"
 }
 

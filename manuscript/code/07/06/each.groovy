@@ -1,4 +1,4 @@
-def scores = [2, 4, 6, 8, 10]
+def scores = [ 2, 4, 6, 8, 10 ]
 def total = 0
 def average = 0
 

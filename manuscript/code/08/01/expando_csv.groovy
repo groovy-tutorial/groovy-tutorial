@@ -6,21 +6,24 @@ def table = '''\
 	Simon,simon@example.com,555-567321
 	'''
 
+//We define the separator as the comma character
+def separator = ','
+
 //Read the CSV in and break it up by linebreaks
 def csv = table.tokenize()
 
 //Extract the first row - it contains the headers (field names)
-header = csv[0].tokenize(',')
+header = csv[0].tokenize(separator)
 csv.remove(0)
 
-def contactList = []
+def contactList = [ ]
 
 for (row in csv) {
 
     Expando contact = new Expando()
 
     //Now setup the contact class with field names based on the header
-    row.tokenize(',').eachWithIndex { key, value ->
+    row.tokenize(separator).eachWithIndex { key, value ->
         contact.setProperty header[value], key
     }
 
@@ -35,6 +38,6 @@ for (row in csv) {
     contactList << contact
 }
 
-for (contact in contactList) {
-    println contact.getVCard()
+contactList.each {
+    println it.vcard
 }

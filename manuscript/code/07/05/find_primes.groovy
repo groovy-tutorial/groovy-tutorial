@@ -1,16 +1,16 @@
 def findPrimes(list, closure) {
-    for (num in list) {
+    list.each {
         def isPrime = true
-        if (num != 2) {
-            for (divisor in (2..num/2)) {
-                if (num % divisor == 0) {
+        if (it != 2) {
+            for (divisor in (2..it / 2)) {
+                if (it % divisor == 0) {
                     isPrime = false
                     break
                 }
             }
         }
         if (isPrime) {
-            closure(num)
+            closure(it)
         }
     }
 }

@@ -4,15 +4,8 @@ I> Parameters are method inputs that are used by the method to produce a result.
 
 Let's look at the last example from the previous chapter:
 
-
-	def scores = [2, 7, 4, 3]
-	def result = determineAverage(scores)
-	println result
-	
-	def determineAverage(list) {
-	    return list.sum() / list.size()
-	}
-
+{lang=groovy}
+<<[The determineAverage method](code/06/01/determineAverage.groovy)
 
 You might be wondering what happened to the `scores` variable once it was passed to `determineAverage` as a parameter. Basically, Groovy gave it another name (`list`) for use within the method. Inside the method, `list` is just another variable. This means that if `determineAverage` changes `list` in some way, this is reflected in the `scores` variable used in the main script:
 
@@ -21,7 +14,7 @@ You might be wondering what happened to the `scores` variable once it was passed
 	def result = determineAverage(scores)
 	println result
 	println scores
-	
+
 	def determineAverage(list) {
 	    list << 9
 	    return list.sum() / list.size()
@@ -36,7 +29,7 @@ T> Deep down in the system, `scores` and `list` are names that point to the same
 
 Groovy lets you designate a data type for your parameters:
 
-
+{title="Parameter with data type",lang=groovy}
 	def determineAverage(ArrayList list) {
 	    return list.sum() / list.size()
 	}
@@ -48,7 +41,7 @@ As you start to develop classes and larger programs, methods create your Applica
 
 Let's look at another method - one that needs several parameters:
 
-
+{title="Multiple parameters",lang=groovy}
 	def callFriend(name, phone, message) {
 	    println "Dialling $name on $phone"
 	    println "Hi, $name - $message"
@@ -58,10 +51,10 @@ Let's look at another method - one that needs several parameters:
 Either of these calls would work - it just depends if you want to use the parentheses:
 
 	callFriend('Barry', '0400 123 456', 'Did you see that local sporting team?')
-	
+
 	callFriend 'Alex', '07 3344 0000', 'Could you please check on my pets whilst I\'m away?'
 
-Each parameter may be typed if needed: 
+Each parameter may be typed if needed:
 
 	def callFriend(String name, String phone, String message) {..}
 

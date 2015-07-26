@@ -1,4 +1,5 @@
 apply plugin: 'groovy'
+apply plugin: 'java'
 apply plugin: 'codenarc'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
@@ -9,26 +10,24 @@ repositories {
 
 dependencies {
     compile group: 'org.codehaus.groovy', name: 'groovy-all', version: "$project.groovyVersion"
-    //testCompile group: 'org.spockframework', name: 'spock-core', version: "$project.spockVersion"
-}
-
-sourceSets {
-    main {
-        groovy {
-            //srcDirs = [ 'manuscript/code/groovy' ]
-        }
-    }
 }
 
 project.codenarc.toolVersion = project.codeNarcVersion
 
-codenarcMain {
-    ignoreFailures false
-    configFile file('config/codenarc/codenarc.xml')
-    exclude '**/package-info.groovy'
-    maxPriority1Violations 0
-    maxPriority2Violations 10
-    maxPriority3Violations 20
+sourceSets {
+    scripts {
+        groovy {
+            srcDirs = [ 'manuscript/code/' ]
+        }
+        java {
+            srcDirs = [ 'manuscript/code/01/02/java' ]
+        }
+    }
+}
+
+codenarcScripts {
+    ignoreFailures true
+    configFile file('config/codenarc/ruleset.groovy')
 }
 
 task wrapper(type: Wrapper) {

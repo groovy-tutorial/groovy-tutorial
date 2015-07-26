@@ -3,7 +3,7 @@ class Contact {
     def phone
 
     //A closure for calling the contact
-    def final call = { message ->
+    final call = { message ->
         println "Calling ${this.name} on ${this.phone} with the message: '$message'"
     }
 }
@@ -11,7 +11,7 @@ class Contact {
 def andrew = new Contact(name: 'Andrew', phone: '+61 432 321 736')
 def sally = new Contact(name: 'Sally', phone: '+61 400 800 900')
 
-def needToCallBack = []
+def needToCallBack = [ ]
 needToCallBack << andrew.call
 needToCallBack << sally.call
 
