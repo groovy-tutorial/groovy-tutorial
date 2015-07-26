@@ -15,7 +15,7 @@ dependencies {
 sourceSets {
     main {
         groovy {
-            srcDirs = [ 'manuscript/code/groovy' ]
+            //srcDirs = [ 'manuscript/code/groovy' ]
         }
     }
 }

@@ -71,20 +71,8 @@ Constructors are a special type of method that is called when a new instance is 
 
 To define a custom constructor we define a method with the same name as the class but without the `def` preceding it. The example below declares a constructor this way (`Person(name)`):
 
-{title="Constructing a person",lang=groovy}
-	class Person {
-	    def name
-	    
-	    Person(name) {
-	        this.name = name
-	    }
-	    
-	    def getName() {
-	        return this.name
-	    }
-	}
-	
-	def john = new Person('John')
+{lang=groovy}
+<<[Constructing a person](code/groovy/08/02/constructor.groovy)
 
 T> ## The default is now lost
 T> By providing our own constructor, `new Person(name: 'John')` no longer works as it did before. In fact it will now do something rather odd - it will store a Map in John's name field!
@@ -93,19 +81,8 @@ T> By providing our own constructor, `new Person(name: 'John')` no longer works 
 
 The overloading feature of Groovy classes allows us to create multiple versions of the same method. The parameter list for each version of the method varies to allow callers to provide either a different number of parameters (as in the example below) or with the same number of parameters but with different types. Overloading is useful but also consider using default values for parameters as this can help reduce the number of methods you need to write and maintain.
 
-{title="Overloading the `mean` method",lang=groovy}
-	class Math {
-	    static mean(num1, num2) {
-	        (num1 + num2) / 2
-	    }
-	    
-	    static mean(...nums) {
-	        nums.sum() / nums.size()
-	    }
-	    
-	}
-	println Math.mean(10, 20)
-	println Math.mean(2, 4, 6, 8)
+{lang=groovy}
+<<[Overloading the `mean` method](code/groovy/08/02/overload.groovy)
 
 T> ## Overloading constructors
 T> Constructors are just methods so they can also be overloaded.
@@ -115,42 +92,16 @@ T> Constructors are just methods so they can also be overloaded.
 
 The example below defines an interface named `Exercise` with a single method `run`. The `Athlete` class then implements the interface:
 
-{title="Implementing an interface",lang=groovy}
-	interface Exercise {
-        def run(int distance)
-    }
-    
-    class Athlete implements Exercise {
-        def name
-        def run(int distance) {
-            println "I'm off for a ${distance}km run."
-        }
-    }
-    
-    def robert = new Athlete(name: 'Rob')
-    robert.run(10)
-
+{lang=groovy}
+<<[Implementing an interface](code/groovy/08/02/interface.groovy)
 
 ## Inheritance
 A *superclass* is one from which other classes inherit functionality. The "child" classes are referred to as being *subclasses*. A subclass inherits from a superclass through the use of the `extends` keyword.
 
 In the code below, `StaffMember` is a subclass of `Person`. This allows `StaffMember` to access the `name` field defined in `Person`:
 
-{title="Inheritance in action",lang=groovy}
-	class Person {
-	    def name
-	}
-	
-	class StaffMember extends Person {
-	    def staffID
-	    
-	    def getIdentification() {
-	        println "${this.name} - ${this.staffID}"
-	    }
-	}
-
-	def sally = new StaffMember(name: 'Sally', staffID: 765)
-	sally.getIdentification()
+{lang=groovy}
+<<[Inheritance in action](code/groovy/08/02/inheritance.groovy)
 
 Unlike interfaces, superclasses can provide implemented methods and fields that subclasses can utilise. However, Superclasses can work somewhat like interfaces and their methods can be declared as `abstract` to force subclasses to provide their own implementation. 
 
@@ -163,30 +114,8 @@ Subclasses can also override methods and fields implemented by superclasses. Thi
 
 In the example below, `StaffMember` is a subclass of `Person`. The `StaffMember` class overrides the `getName` method and prefixes a string to the `name` returned by the superclass. 
 
-{title="Overriding methods",lang=groovy}
-	class Person {
-	    def name
-	    
-	    def getName() {
-	        return this.name
-	    }
-	}
-	
-	class StaffMember extends Person {
-	    def staffID
-	    
-	    @Override
-	    def getName() {
-	        "Team member ${super.name}"
-	    }
-	    
-	    def getIdentification() {
-	        println "${this.name} - ${this.staffID}"
-	    }
-	}
-	
-	def sally = new StaffMember(name: 'Sally', staffID: 765)
-	println sally.name
+{lang=groovy}
+<<[Overriding methods](code/groovy/08/02/trait.groovy)
 
 T> ## Stop the override
 T> Superclass methods declared with the `final` keyword can't be overridden.
@@ -209,45 +138,8 @@ In the example below:
 4. I can then create an instance of `Scrum` and provide it information for both the `Project`/`Scrum` hierarchy as well as the `Agile` trait.
 	1. I then call the `Agile` trait's `startIteration` method and our project is away!
 
-{title="Applying a trait",lang=groovy}
-	class Project {
-	    def name
-	}
-	
-	trait Agile {
-	    def iterationLength = 4
-	    def backlog = []
-	    def developmentTeam = [] 
-	    
-	    def startIteration() {
-	        println """\
-	            We're staring our $iterationLength week iteration for $name
-	            Team members: $developmentTeam
-	            Backlog: $backlog
-	            """
-	    }
-	}
-	
-	class Scrum
-	    extends Project 
-	    implements Agile {
-	
-	    def productOwner
-	    def scrumMaster
-	}
-	
-	def project = new Scrum().with {
-	    name = "Project X"
-	    iterationLength = 2
-	    productOwner = 'Charlie'
-	    scrumMaster = 'Bobby'
-	    developmentTeam = ['Dean', 'Sam']
-	    backlog << 'As a User I want to press buttons'
-	    backlog << 'As an Admin I want to lockout users'
-	    return it
-	}
-	
-	project.startIteration()
+{lang=groovy}
+<<[Applying a trait](code/groovy/08/02/trait.groovy)
 
 
 ## Packages
