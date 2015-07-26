@@ -17,7 +17,7 @@ Objects consist of fields (data) and methods for interacting with that data. For
 {title="A basic class with a field and a method",lang=groovy}
 	class Person {
 	    def name
-	    
+
 	    def getName() {
 	        return this.name
 	    }
@@ -50,7 +50,7 @@ Static fields and methods are also supported - these apply at a class level. By 
 	    static specie = 'homo sapien'
 	    def name
 	}
-	
+
 	println Person.specie
 
 ### Constants
@@ -60,7 +60,7 @@ An (English) language lawyer might think that the keyword `static` indicates tha
 The `final` keyword precedes static/instance fields and methods to make them constant:
 
 {title="Make it constant with `final`",lang=groovy}
-	class Person { 
+	class Person {
 	    static final specie = 'homo sapien'
 	    def name
 	}
@@ -72,7 +72,7 @@ Constructors are a special type of method that is called when a new instance is 
 To define a custom constructor we define a method with the same name as the class but without the `def` preceding it. The example below declares a constructor this way (`Person(name)`):
 
 {lang=groovy}
-<<[Constructing a person](code/groovy/08/02/constructor.groovy)
+<<[Constructing a person](code/08/02/constructor.groovy)
 
 T> ## The default is now lost
 T> By providing our own constructor, `new Person(name: 'John')` no longer works as it did before. In fact it will now do something rather odd - it will store a Map in John's name field!
@@ -82,7 +82,7 @@ T> By providing our own constructor, `new Person(name: 'John')` no longer works 
 The overloading feature of Groovy classes allows us to create multiple versions of the same method. The parameter list for each version of the method varies to allow callers to provide either a different number of parameters (as in the example below) or with the same number of parameters but with different types. Overloading is useful but also consider using default values for parameters as this can help reduce the number of methods you need to write and maintain.
 
 {lang=groovy}
-<<[Overloading the `mean` method](code/groovy/08/02/overload.groovy)
+<<[Overloading the `mean` method](code/08/02/overload.groovy)
 
 T> ## Overloading constructors
 T> Constructors are just methods so they can also be overloaded.
@@ -93,7 +93,7 @@ T> Constructors are just methods so they can also be overloaded.
 The example below defines an interface named `Exercise` with a single method `run`. The `Athlete` class then implements the interface:
 
 {lang=groovy}
-<<[Implementing an interface](code/groovy/08/02/interface.groovy)
+<<[Implementing an interface](code/08/02/interface.groovy)
 
 ## Inheritance
 A *superclass* is one from which other classes inherit functionality. The "child" classes are referred to as being *subclasses*. A subclass inherits from a superclass through the use of the `extends` keyword.
@@ -101,9 +101,9 @@ A *superclass* is one from which other classes inherit functionality. The "child
 In the code below, `StaffMember` is a subclass of `Person`. This allows `StaffMember` to access the `name` field defined in `Person`:
 
 {lang=groovy}
-<<[Inheritance in action](code/groovy/08/02/inheritance.groovy)
+<<[Inheritance in action](code/08/02/inheritance.groovy)
 
-Unlike interfaces, superclasses can provide implemented methods and fields that subclasses can utilise. However, Superclasses can work somewhat like interfaces and their methods can be declared as `abstract` to force subclasses to provide their own implementation. 
+Unlike interfaces, superclasses can provide implemented methods and fields that subclasses can utilise. However, Superclasses can work somewhat like interfaces and their methods can be declared as `abstract` to force subclasses to provide their own implementation.
 
 T> ## Multiple inheritance is not supported
 T> Unlike some other OO languages (e.g. C++), Groovy does not support multiple inheritance. This means that a class cannot extend more than one superclass. However, Groovy classes can implement more than one interface.
@@ -112,10 +112,10 @@ T> Groovy does support classes implementing multiple interfaces and traits.
 ### Overriding methods
 Subclasses can also override methods and fields implemented by superclasses. This lets subclasses provide more contextual implementations if needed. A subclass can refer directly to superclass fields and methods by using the `super` keyword.
 
-In the example below, `StaffMember` is a subclass of `Person`. The `StaffMember` class overrides the `getName` method and prefixes a string to the `name` returned by the superclass. 
+In the example below, `StaffMember` is a subclass of `Person`. The `StaffMember` class overrides the `getName` method and prefixes a string to the `name` returned by the superclass.
 
 {lang=groovy}
-<<[Overriding methods](code/groovy/08/02/trait.groovy)
+<<[Overriding methods](code/08/02/trait.groovy)
 
 T> ## Stop the override
 T> Superclass methods declared with the `final` keyword can't be overridden.
@@ -139,7 +139,7 @@ In the example below:
 	1. I then call the `Agile` trait's `startIteration` method and our project is away!
 
 {lang=groovy}
-<<[Applying a trait](code/groovy/08/02/trait.groovy)
+<<[Applying a trait](code/08/02/trait.groovy)
 
 
 ## Packages
@@ -156,5 +156,5 @@ Packages are central to using others' code in your programs and allowing your co
 This chapter has provided an extremely brief overview of object-oriented programming supported by small Groovy examples. The following chapters in this section will explore fundamental aspects of fields and methods and the subsequent section will dive far deeper into how to really get OO with Groovy.
 
 I> ## Incomplete section
-I> This section is yet to be completed. 
+I> This section is yet to be completed.
 I> Watch this space.

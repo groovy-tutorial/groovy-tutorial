@@ -8,12 +8,12 @@ In this chapter we'll delve more into properties and fields. They're *almost* th
 The class below is composed of three properties and could be used to pass a person's details around in a system. You may come across references to this type of structure as "Groovy beans":
 
 {lang=groovy}
-<<[A basic person class with three properties](code/groovy/08/01/properties_example.groovy)
+<<[A basic person class with three properties](code/08/01/properties_example.groovy)
 
-In the code above I create a new instance of the `Person` class by calling `new Person()` and can then access each property using dot-point notation. This type of class can be really handy when you just need a structure for storing and handing around data - say, for example, you load a record from a database and want to feed it to other classes and their methods for processing. 
+In the code above I create a new instance of the `Person` class by calling `new Person()` and can then access each property using dot-point notation. This type of class can be really handy when you just need a structure for storing and handing around data - say, for example, you load a record from a database and want to feed it to other classes and their methods for processing.
 
 T> ## `Person` is a type
-T> I could have used `Person astrid = new Person()` 
+T> I could have used `Person astrid = new Person()`
 
 Groovy provides a built-in approach to passing in property values when creating a new instance. The code below creates a new `Person` but sets the property values using [named arguments](#chnamedarguments):
 
@@ -45,7 +45,7 @@ class Person {
 T> ## Use `def` _or_ a type, not both
 T> Whilst `def String name` would work, the `def` is redundant and, by dropping it, you save four keystrokes for something more useful!
 
-People often ask if they should just use `def` or assign an explicit type. My answer is pretty straight-forward: if you know how you'll use it and you'll only use it one way, give it a type. The `name` property is a good example  and I would use `String`. In other situations you may want to be flexible in what you can store so use `def`. 
+People often ask if they should just use `def` or assign an explicit type. My answer is pretty straight-forward: if you know how you'll use it and you'll only use it one way, give it a type. The `name` property is a good example  and I would use `String`. In other situations you may want to be flexible in what you can store so use `def`.
 
 ## Fields
 
