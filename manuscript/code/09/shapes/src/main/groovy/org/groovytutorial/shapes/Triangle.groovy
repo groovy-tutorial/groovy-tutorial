@@ -2,8 +2,10 @@ package org.groovytutorial.shapes
 
 import groovy.transform.ToString
 
-@ToString(includeNames = true, includeFields = true, includeSuper = true)
 class Triangle extends BasicTwoDimensionalShape {
+    ;{
+        shapeName = 'Triangle'
+    }
 
     final Map sides
 
@@ -39,4 +41,8 @@ class Triangle extends BasicTwoDimensionalShape {
         area = Math.sqrt(s * (s - a) * (s - b) * (s - c))
     }
 
+    @Override
+    String getDisplayInfo() {
+        "${super.getDisplayInfo()}: Side A = ${sides.a}; Side B = ${sides.b}; Side C = ${sides.c}; perimeter = $perimeter; area = $area"
+    }
 }

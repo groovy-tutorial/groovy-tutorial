@@ -4,8 +4,10 @@ import groovy.transform.ToString
 
 import static java.lang.Math.PI
 
-@ToString(includeNames = true, includeFields = true, includeSuper = true)
 class Circle extends BasicTwoDimensionalShape {
+    ;{
+        shapeName = 'Circle'
+    }
 
     final Number radius
     final Number diameter
@@ -23,6 +25,11 @@ class Circle extends BasicTwoDimensionalShape {
     @Override
     protected void calculateArea() {
         this.area = this.radius**2 * PI
+    }
+
+    @Override
+    String getDisplayInfo() {
+        "${super.getDisplayInfo()}: radius = $radius; diameter = $diameter; circumference = $circumference; area = $area"
     }
 
     Number getRadius() {

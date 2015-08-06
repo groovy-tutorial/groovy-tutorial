@@ -2,8 +2,9 @@ package org.groovytutorial.shapes
 
 import groovy.transform.ToString
 
-@ToString(includeNames = true, includeFields = true)
 abstract class BasicTwoDimensionalShape implements TwoDimensionalShape {
+
+    protected String shapeName = ''
 
     protected Number perimeter = null
 
@@ -13,6 +14,7 @@ abstract class BasicTwoDimensionalShape implements TwoDimensionalShape {
 
     abstract protected void calculateArea()
 
+    @Override
     Number getPerimeter() {
         if (!perimeter) {
             calculatePerimeter()
@@ -20,10 +22,16 @@ abstract class BasicTwoDimensionalShape implements TwoDimensionalShape {
         perimeter
     }
 
+    @Override
     Number getArea() {
         if (!area) {
             calculateArea()
         }
         area
+    }
+
+    @Override
+    String getDisplayInfo() {
+        return "$shapeName"
     }
 }

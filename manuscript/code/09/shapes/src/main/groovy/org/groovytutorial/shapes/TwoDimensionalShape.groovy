@@ -5,4 +5,6 @@ interface TwoDimensionalShape {
     Number getPerimeter()
 
     Number getArea()
+
+    String getDisplayInfo()
 }

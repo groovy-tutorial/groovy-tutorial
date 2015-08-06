@@ -9,18 +9,16 @@ import org.groovytutorial.shapes.triangle.TriangleIsosceles
 import org.groovytutorial.shapes.triangle.TriangleRightAngled
 
 def shapes = [
-        Rectangle rectangle = new Rectangle(10, 2),
-        Square square = new Square(4),
-        Circle circle = new Circle(8),
-        Triangle triangle = new Triangle(5, 8, 10),
-        TriangleRightAngled triangleRightAngled = new TriangleRightAngled(3, 4),
-        TriangleIsosceles triangleIsosceles = new TriangleIsosceles(2, 8),
-        TriangleEquilateral triangleEquilateral = new TriangleEquilateral(6)
-]
+        new Rectangle(10, 2),
+        new Square(4),
+        new Circle(8),
+        new Triangle(5, 8, 10),
+        new TriangleRightAngled(3, 4),
+        new TriangleIsosceles(2, 8),
+        new TriangleEquilateral(6) ]
 
-shapes*.getPerimeter()
-shapes*.getArea()
 
 shapes.each {
-    println it
+    println it.displayInfo
+    println()
 }
