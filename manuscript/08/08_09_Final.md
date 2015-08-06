@@ -1,6 +1,6 @@
-# Final
+# Final Variables
 
-Before we move on from properties and fields, let's just look at one more item
+The `final` modifier
 
 {lang=groovy}
 <<[Using `final`](code/08/09/final.groovy)
