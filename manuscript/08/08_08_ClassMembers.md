@@ -1,2 +1,2 @@
-# Class Methods and Variables
+# Class Methods and Variables {#chclassmethods}
 

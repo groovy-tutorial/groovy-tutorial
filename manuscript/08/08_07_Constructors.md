@@ -2,26 +2,19 @@
 
 T> Can we build it?
 
-A constructors is a special type of method that is called when instantiating a new instance of a class. We create a new instance every time we use the `new` keyword:
+A constructor is a special type of method that is called when instantiating a new instance of a class. We create a new instance every time we use the `new` keyword:
 
-{title='A basic bean-type class',type=groovy}
+{lang=groovy}
+<<[A basic bean-type class](code/08/07/basic.groovy)
 
-	class Person {
-	    def name
-	    def email
-	    def mobile
-	}
-	
-	def astrid = new Person()
+In the code above I define the `Person` class with three properties and then create a new instance in the `astrid` variable. The `new` keyword indicates to Groovy that a new `Person` instance is to be created. The `Person()` aspect is actually a call to the constructor for the class. However, I haven't actually provided a constructor for the `Person` class so what am I calling? Groovy classes all trace back to the `Object` class - where a class does not explicitly state that it inherits from (subclasses) another class it is automatically seen as a subclass of `Object`.
 
-In the code above I define the `Person` class with three properties and then create a new instance in the `astrid` variable. The `new` keyword indicates to Groovy that a new `Person` instance is to be created. The `Person()` aspect is actually a call to the constructor for the class. However, I haven't actually provided a constructor for the `Person` class so what am I calling? Groovy classes all trace back to the `Object` class - where a class does not explicitly state that it inherits from (subclasses) another class it is automatically seen as a subclass of `Object`. 
-
-Groovy sees `Person()` and knows that the `Person` class doesn't provide a no-parameter (aka no-argument) constructor but `Object` does so that is called and it doesn't really do anything interesting. This whole arrangement means that, unless you explicitly do something to the contrary, your classes automatically have a no-argument constructor.
+Groovy sees `Person()` and knows that the `Person` class doesn't provide a no-parameter (aka no-argument) constructor but `Object` does so that is called and it doesn't really do anything interesting. This whole arrangement means that your classes automatically have a no-argument constructor.
 
 As always, Groovy adds a little extra on top and we've seen that we can use the map notation to assign values to member variables (properties/fields) when we create a new instance:
 
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
-	
+
 Groovy gives you a built-in constructor that accepts a map in which each of the keys match a name of a member variable. This is really useful for bean-type classes that we're really just using to keep data fields together. And nope, you can't just add keys that don't match the name of a member variable.
 
 W> Note that `def astrid = new Person name: 'Astrid Smithson', email: 'astrid@example.com'` won't work - you need the parentheses.
@@ -34,25 +27,12 @@ Whilst the map-based constructor can be useful, you'll probably need to define y
 
 If you need to do something specific in order to sensibly create a new instance of your class you'll need to define one or more constructors. So, let's look at an example:
 
-{title='A basic constructor for `Person`',type=groovy}
-	
-	class Person {
-	    def name
-	    def email
-	    def mobile
-	    
-	    //Here's the constructor:
-	    Person(name) {
-	        this.name = name
-	    }
-	}
-	
-	def astrid = new Person('Astrid Smithson')
-	println astrid.dump()
+{lang=groovy}
+<<[A basic constructor for `Person`](code/08/07/basic_constructor.groovy)
 
 In order to define a constructor we declare a method that:
 
-1. Can have a access modifier (discussed in a later chapter)
+1. Can have an access modifier (discussed in a later chapter)
 2. Has no return value declared - none, not even `void`
 2. Has the same name as the class in which it is defined - yes, it is case-sensitive
 3. Can take 0 or more arguments
@@ -64,29 +44,12 @@ Now that you've supplied a constructor you'll lose the built-in named argument c
 
 This will display: '<Person@45ceff52 name=[name:Astrid Smithson, email:astrid@example.com] email=null mobile=null>`. You should be able to see that the name property is just plain wrong.
 
-By adding the `Person(name)` constructor we've effectively changed `Person` so that it has two constructors: the no-argument constructor and one that accepts the `Person`'s name. If the coder using our `Person` class wanted to add an email or mobile number they'd have to do that after instantiating the instance. 
+By adding the `Person(name)` constructor we've effectively changed `Person` so that it has two constructors: the no-argument constructor and one that accepts the `Person`'s name. If the coder using our `Person` class wanted to add an email or mobile number they'd have to do that after instantiating the instance.
 
 We can define as many constructors as we feel necessary - they all carry the same name as their class but have different parameter lists (à la overloading). In the code below I provide two constructor definitions:
 
-{title='A class with two constructor definitions';lang=groovy}
-	
-	class Person {
-	    private name
-	    def email
-	    def mobile
-	    
-	    Person(name) {
-	        this.name = name
-	    }
-	    
-	    Person(name, email) {
-	        this(name)
-	        this.email = email
-	    }
-	}
-
-	def astrid = new Person('Astrid Smithson', 'astrid@example.com')
-	println astrid.dump()
+{lang=groovy}
+<<[A class with two constructor definitions](code/08/07/overloaded_constructor.groovy)
 
 T> I can still call `new Person()` as the no-argument constructor is still there.
 
@@ -99,25 +62,13 @@ There is a specific rule we have to follow when constructor chaining - calls to 
         this(name)
     }
 
-Before you start writing lots of constructors to allow callers to pass in different numbers of parameters - called [telescoping constructors](https://en.wikipedia.org/wiki/Builder_pattern) - check out the next bit.
+Before you start writing lots of constructors to allow callers to pass in different numbers of parameters - called [telescoping constructors](https://en.wikipedia.org/wiki/Builder_pattern) - check out the next bit :-)
 
 ## TupleConstructor annotation
 The [`@groovy.transform.TupleConstructor`](http://docs.groovy-lang.org/latest/html/gapi/groovy/transform/TupleConstructor.html) is an annotation that we can add to our classes and have a variety of constructors automatically generated for us:
 
-{title='',lang=groovy}
-	
-	@groovy.transform.TupleConstructor
-	class Person {
-	    def name = 'Anonymous'
-	    def email
-	    def mobile
-	}
-	
-	def unknown = new Person()
-	def astrid = new Person('Astrid Smithson')
-	def john = new Person('John Hancock', 'john@example.com')
-	def kelly = new Person('Kelly Grant', 'kelly@example.com', '044 555 555')
-	def dave = new Person(name: 'Dave Smith', email: 'dave@example.com')
+{lang=groovy}
+<<[The `TupleConstructor` annotation](code/08/07/tuple_constructor.groovy)
 
 The `TupleConstructor` annotation gives us the map-based constructor as well as a set of constructors matching the member variables - effectively generating the following constructors:
 
@@ -135,105 +86,47 @@ A stand-alone instance initializer block can be used to provide a base setup for
 
 Instance initializer blocks appear inside the class itself, surrounded by curly braces `{}`:
 
-{title="A basic class with an initializer block",lang=groovy}
+{lang=groovy}
+<<[A basic class with an initializer block](code/08/07/instance_initializer.groovy)
 
-	class Person {
-	   UUID id
-	   String name
-	       
-	    {
-	        this.name = 'Anonymous'
-	        this.id = UUID.randomUUID()
-	    }
-	}
-
-The code above offers nothing over setting the property defaults directly (`UUID id = UUID.randomUUID()`) - it's just a simple example. You can use an initializer block or constructors, or both. The initializer block will be called before any constructor(s). 
+The code above offers nothing over setting the property defaults directly (`UUID id = UUID.randomUUID()`) - it's just a simple example. You can use an initializer block or constructors, or both. The initializer block will be called before any constructor(s).
 
 T> Whilst you can actually provide several initializer blocks, you probably just need to use one - it makes your code a lot easier to follow.
 
 There is a small trap to be wary of when using an instance initializer block - the syntax Groovy uses for passing closures as parameters will cause a failure around initializer blocks in some conditions. The following code is an example of this and won't run:
 
-{title="",lang=groovy}
-	
-	class Person {
-	    private Integer id
-	    private String name = 'Anonymous'
-	       
-	    {
-	        this.id = UUID.randomUUID()
-	    }
-	}
-	
-	Person fred = new Person(name: 'Fred')
+{lang=groovy}
+<<[An initializer block that gets mistaken as a closure](code/08/07/instance_initializer_fail.groovy)
 
 In order to get around this, prefix the initializer block with a semicolon (`;`)[^initprefix]. This stamps a definite statement delimiter against the initializer block:
 
-{title="",lang=groovy}
-	
-	class Person {
-	    private UUID id
-	    private String name = 'Anonymous'
-	       
-	    ;{
-	        this.id = UUID.randomUUID()
-	    }
-	}
-
-	Person fred = new Person(name: 'Fred') 
+{lang=groovy}
+<<[A prefixed initializer block](code/08/07/instance_initializer_win.groovy)
 
 I'd suggest always using the prefix - it isn't messy and makes sure that Groovy knows it's looking at an initializer block.
 
 [^initprefix]: Thanks to Jochen "blackdrag" Theodorou for [his guidance on this](http://mail-archives.apache.org/mod_mbox/incubator-groovy-users/201507.mbox/%3c55A0B6F1.8050007@gmx.org%3e)
 
 ## When and How Things Happen
-It can be frustrating when you've written a nice looking object but things don't happen in the manner you intended. This can be due to the stuff going on behind the scenes that isn't always immediately obvious. Let's take a look at a `Person` object that uses an initializer block and a constructor as well as provide a field setter and a helper method: 
+It can be frustrating when you've written a nice looking class but things don't happen in the manner you intended.
+This can be due to the stuff going on behind the scenes that isn't always immediately obvious.
+Let's take a look at a `Person` object that uses an initializer block and a constructor as well as provide a field setter and a helper method:
 
-{title="",lang=groovy}
-	
-	class Person {
-	    private String name
-	       
-	    ;{
-	        this.name = 'Anonymous'
-	        println "Initialised default name to ${this.name}"
-	    }
-	    
-	    public Person(name) {
-	        this.name = name
-	        println "Constructor called with name: ${this.name}"
-	    }
-	    
-	    public void setName(name){
-	        this.name = name
-	        println "setName called. Name is now: ${this.name}"
-	    }       
-	    
-	    public void changeName(name) {
-	        this.name = name
-	        println "changeName called. Name is now: ${this.name}"
-	    }
-	}
-	
-	Person fred = new Person('Fred')
-	
-	println "After instantiation, name is: $fred.name"
-	
-	fred.name = 'Freda'
-	
-	fred.changeName 'Frederique'
+{lang=groovy}
+<<[Investigate the order of things](code/08/07/ordering.groovy)
 
 Running the code above will yield the following output:
 
-	Initialised default name to Anonymous
-	Constructor called with name: Fred
-	After instantiation, name is: Fred
-	setName called. Name is now: Freda
-	changeName called. Name is now: Frederique 
+    Initialised default name to Anonymous
+    Constructor called with name: Fred
+    After instantiation, name is: Fred
+    setName called. Name is now: Freda
+    changeName called. Name is now: Frederique
 
 From that output we can piece together a basic set of rules that helps us see how things happen:
 
 1. The initialiser block is called before the constructor
-2. Setting a field within object methods (e.g. with `this.name = name` performs a direct change of the field
+2. Setting a field within object methods (e.g. with `this.name = name`) performs a direct change of the field
 3. Setting a field externally (e.g. with `fred.name = 'Freda'`) causes the setter (`setName`) to be called
 
 ## Constructors and instance methods
@@ -243,6 +136,7 @@ However, the `changeName ` method may have been best to use `setName` rather tha
 
 If you do need to provide some checks or other logic before allowing a field to be set then it might be worth placing this logic in another (private) method that doesn't change any instance fields directly. To achieve this, the method's parameters would cover all of the required items for validation (e.g. `private String checkName(name, validNameList)`) and return the name (if valid) or throw an exception if the check fails. The code might look something like:
 
+{lang=groovy}
 	private String checkName(name, validNameList) throws IllegalArgumentException {
         if (name in validNameList) {
             return name

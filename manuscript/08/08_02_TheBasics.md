@@ -1,4 +1,4 @@
-# The basics of OO
+# The basics of OO {#chbasicoo}
 
 This chapter will provide a whirlwind tour of the various object oriented programming concepts supported by Groovy.
 
@@ -153,8 +153,6 @@ As discussed earlier, Groovy allows programmers to group objects into `packages`
 Packages are central to using others' code in your programs and allowing your code to be used elsewhere.
 
 ## Summary
-This chapter has provided an extremely brief overview of object-oriented programming supported by small Groovy examples. The following chapters in this section will explore fundamental aspects of fields and methods and the subsequent section will dive far deeper into how to really get OO with Groovy.
-
-I> ## Incomplete section
-I> This section is yet to be completed.
-I> Watch this space.
+This chapter has provided an extremely brief overview of object-oriented programming supported by small Groovy examples.
+The following chapters in this section will explore fundamental aspects of fields and methods and the subsequent section
+will dive far deeper into how to really get OO with Groovy.

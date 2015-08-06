@@ -8,7 +8,7 @@ In this chapter we'll delve more into properties and fields. They're *almost* th
 The class below is composed of three properties and could be used to pass a person's details around in a system. You may come across references to this type of structure as "Groovy beans":
 
 {lang=groovy}
-<<[A basic person class with three properties](code/08/01/properties_example.groovy)
+<<[A basic person class with three properties](code/08/03/properties_example.groovy)
 
 In the code above I create a new instance of the `Person` class by calling `new Person()` and can then access each property using dot-point notation. This type of class can be really handy when you just need a structure for storing and handing around data - say, for example, you load a record from a database and want to feed it to other classes and their methods for processing.
 
@@ -51,7 +51,7 @@ People often ask if they should just use `def` or assign an explicit type. My an
 
 A _field_ is pretty much the same thing as a _property_ - it's a member variable - but there's a difference: _fields_ are defined with an access modifier and _properties_ are not. An access modifier is used to allow/block access from other code using the class and its member variables and methods.
 
-Q> ##Access modifiers?
+Q> ## Access modifiers?
 Q> [Access modifiers](#chaccessmodifiers) are covered very soon in their own chapter. However, the purpose of the two main access modifiers should be reasonably easy to deduce. `private` is used to hide the element from outside code and should only be accessible by the object itself. `public` is the opposite and allows anyone to access the element.
 
 In the code below I have rewritten the `Person` class using fields rather than properties:

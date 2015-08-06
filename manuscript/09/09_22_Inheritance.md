@@ -1,3 +1,3 @@
-# Inheritance
+# Inheritance {#chinheritance}
 
 ## Abstract classes
