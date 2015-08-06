@@ -161,7 +161,7 @@ ruleset {
     BracesForIfElse
     BracesForMethod
     BracesForTryCatchFinally
-    ClassJavadoc
+    //ClassJavadoc
     ClosureStatementOnOpeningLineOfMultipleLineClosure
     ConsecutiveBlankLines
     FileEndsWithoutNewline
@@ -179,7 +179,7 @@ ruleset {
     SpaceAfterWhile
     SpaceAroundClosureArrow
     //SpaceAroundMapEntryColon
-    SpaceAroundOperator
+    //SpaceAroundOperator
     SpaceBeforeClosingBrace
     SpaceBeforeOpeningBrace
     TrailingWhitespace

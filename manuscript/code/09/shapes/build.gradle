@@ -14,13 +14,13 @@ mainClassName = 'org.groovytutorial.shapes.app.Main'
 
 task runScript(dependsOn: 'classes', type: JavaExec) {
     description 'Runs the groovy script'
-    main = project.mainClassName
+    main = mainClassName
     classpath = sourceSets.main.runtimeClasspath
 }
 
 codenarc.toolVersion = 0.24
 codenarcMain {
-    ignoreFailures false
+    ignoreFailures true
     configFile file('config/codenarc/ruleset.groovy')
     maxPriority1Violations 0
     maxPriority2Violations 10
