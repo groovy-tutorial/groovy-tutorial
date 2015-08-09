@@ -17,7 +17,6 @@ def shapes = [
         new TriangleIsosceles(2, 8),
         new TriangleEquilateral(6) ]
 
-
 shapes.each {
     println it.displayInfo
     println()

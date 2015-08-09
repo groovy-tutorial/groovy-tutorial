@@ -1,9 +1,7 @@
 package org.groovytutorial.shapes
 
-import groovy.transform.ToString
-
 class Rectangle extends BasicTwoDimensionalShape {
-    ;{
+    ; {
         shapeName = 'Rectangle'
     }
 
@@ -27,7 +25,7 @@ class Rectangle extends BasicTwoDimensionalShape {
 
     @Override
     String getDisplayInfo() {
-        "${super.getDisplayInfo()}: length = $length; width = $width; perimeter = $perimeter; area = $area"
+        "${super.displayInfo}: length = $length; width = $width; perimeter = $perimeter; area = $area"
     }
 
     Number getLength() {

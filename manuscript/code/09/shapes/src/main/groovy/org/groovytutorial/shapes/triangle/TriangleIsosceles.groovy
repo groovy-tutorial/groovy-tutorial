@@ -3,7 +3,7 @@ package org.groovytutorial.shapes.triangle
 import org.groovytutorial.shapes.Triangle
 
 class TriangleIsosceles extends Triangle {
-    ;{
+    ; {
         shapeName = 'Triangle - Isosceles'
     }
 

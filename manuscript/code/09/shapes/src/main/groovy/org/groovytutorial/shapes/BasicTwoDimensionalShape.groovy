@@ -1,7 +1,5 @@
 package org.groovytutorial.shapes
 
-import groovy.transform.ToString
-
 abstract class BasicTwoDimensionalShape implements TwoDimensionalShape {
 
     protected String shapeName = ''
@@ -32,6 +30,6 @@ abstract class BasicTwoDimensionalShape implements TwoDimensionalShape {
 
     @Override
     String getDisplayInfo() {
-        return "$shapeName"
+        shapeName
     }
 }

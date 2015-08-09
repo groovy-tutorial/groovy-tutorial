@@ -1,11 +1,9 @@
 package org.groovytutorial.shapes
 
-import groovy.transform.ToString
-
 import static java.lang.Math.PI
 
 class Circle extends BasicTwoDimensionalShape {
-    ;{
+    ; {
         shapeName = 'Circle'
     }
 
@@ -29,7 +27,7 @@ class Circle extends BasicTwoDimensionalShape {
 
     @Override
     String getDisplayInfo() {
-        "${super.getDisplayInfo()}: radius = $radius; diameter = $diameter; circumference = $circumference; area = $area"
+        "${super.displayInfo}: radius = $radius; diameter = $diameter; circumference = $circumference; area = $area"
     }
 
     Number getRadius() {

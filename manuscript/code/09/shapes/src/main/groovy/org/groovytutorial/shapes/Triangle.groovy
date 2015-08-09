@@ -1,9 +1,7 @@
 package org.groovytutorial.shapes
 
-import groovy.transform.ToString
-
 class Triangle extends BasicTwoDimensionalShape {
-    ;{
+    ; {
         shapeName = 'Triangle'
     }
 
@@ -43,6 +41,7 @@ class Triangle extends BasicTwoDimensionalShape {
 
     @Override
     String getDisplayInfo() {
-        "${super.getDisplayInfo()}: Side A = ${sides.a}; Side B = ${sides.b}; Side C = ${sides.c}; perimeter = $perimeter; area = $area"
+        "${super.displayInfo}: Side A = ${sides.a}; Side B = ${sides.b}; Side C = ${sides.c}; \
+            perimeter = $perimeter; area = $area"
     }
 }
