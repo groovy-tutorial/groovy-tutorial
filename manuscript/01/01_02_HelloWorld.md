@@ -47,7 +47,7 @@ T> Groovy has a flexible syntax and can accept either `print 'hello, world'` or 
 For those that have come from languages such as C++ and Java the script `print "hello, world"` probably appears to be missing items such as imported libraries for output and "container" or "boilerplate" code that sets up the context of the code. In fact, if we were to write this code in Java it would look something like:
 
 {lang=java}
-<<[Hello,world - Java style](code/01/02/Hello.java)
+<<[Hello,world - Java style](code/01/02/java/Hello.java)
 
 T> ## Running java
 T> To run the code above we'd need to run the following from the command line:
