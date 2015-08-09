@@ -1,14 +1,18 @@
 import groovy.transform.ToString
 
-@ToString
 enum Gender {
     MALE('male'),
     FEMALE('female')
 
-    final String displayText
+    final String value
 
-    Gender(displayText) {
-        this.displayText = displayText
+    Gender(value) {
+        this.value = value
+    }
+
+    @Override
+    String toString() {
+        value
     }
 }
 
@@ -21,5 +25,5 @@ class Person {
 }
 
 Person jane = new Person(name: 'Jane', gender: Gender.FEMALE)
-
 println jane
+
