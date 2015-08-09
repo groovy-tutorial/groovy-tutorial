@@ -15,9 +15,20 @@ As always, Groovy adds a little extra on top and we've seen that we can use the 
 
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
 
-Groovy gives you a built-in constructor that accepts a map in which each of the keys match a name of a member variable. This is really useful for bean-type classes that we're really just using to keep data fields together. And nope, you can't just add keys that don't match the name of a member variable.
+Groovy gives you a built-in constructor that accepts a map in which each of the keys match a name of a member variable[^mapconstructor]. This is really useful for bean-type classes that we're really just using to keep data fields together. And nope, you can't just add keys that don't match the name of a member variable.
 
 W> Note that `def astrid = new Person name: 'Astrid Smithson', email: 'astrid@example.com'` won't work - you need the parentheses.
+
+[^mapconstructor]: This isn't completely true as Groovy doesn't really generate a `Person` constructor that takes a map
+as its parameter. Instead, the setters for each map key are called after the object has been instantiated. This isn't
+usually a problem until you're [using `final` properties and fields]{#chfinal}
+
+## Maps as constructors
+
+TODO: Text
+
+{lang=groovy}
+<<[Using a map to create a new instance](code/08/07/basic_mapcast.groovy)
 
 ## Writing your own constructor(s)
 Whilst the map-based constructor can be useful, you'll probably need to define your own constructors at some point. This may be due to a few reasons, such as:

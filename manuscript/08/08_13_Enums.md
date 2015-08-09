@@ -30,6 +30,8 @@ In the line `Months myMonth = Months.AUG` you'll see that enums define types but
 The `myMonth` variable is of the enum type `Months` but we don't create the instance by calling `Months myMonth = new Months()`.
 Instead, we assign `myMonth` to the value of one of the constants as `AUG` is a constant of type `Months`.
 
+T> Check out `java.time.Month` if you need an enum for the months.
+
 One more point before moving on, the enum constants don't have to be declared in upper-case, that's just the usual approach
 and mirrors how we declared constants using the `final` modifier. It's a just a standard approach to style rather than
 required by the language.

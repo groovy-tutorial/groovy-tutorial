@@ -1,4 +1,4 @@
-# Final Variables
+# Final Variables{#chfinal}
 
 The `final` modifier
 
@@ -8,6 +8,9 @@ The `final` modifier
 
 {lang=groovy}
 <<[Setting a `final` member variable via the constructor](code/08/09/final_constructor.groovy)
+
+Be warned with the map-based approach to creating new instances as they don't really call a special constructor and
+won't work against `final` properties.
 
 But for collections....
 
