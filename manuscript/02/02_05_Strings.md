@@ -1,4 +1,4 @@
-# Strings  
+# Strings
 
 I> Strings are pieces of text.
 
@@ -6,7 +6,7 @@ There are two main ways in which you can declare a string in Groovy: single or d
 
 {title="The String section",width="wide"}
 | Method | Usage |
-| ------ | ------ |	
+| ------ | ------ |
 |Single quotes (`'...'`)	| These are fixed strings and tell Groovy that the string is as we've written it (e.g. `def pet = 'dog'`). |
 |Double quotes (`"..."`)	| These are called GStrings and let us interpolate (insert) variables into our string.  (e.g. `def petDescription = "My pet is a $pet"`) |
 |Three single quotes (`'''...'''`)	| A multi-line fixed string  |
@@ -25,21 +25,21 @@ Here's a quick example of a fixed string and a GString in action:
 Strings can contain escape sequences, allowing you to use non-printable characters in your text.
 
 {title="Escape sequences"}
-|Sequence | Character  	| 
-|---------|------|  
-| \\n	| line feed  	| 
-| \\f	| form feed  	| 
-| \\r	| carriage return	| 
-| \\t	| horizontal tab  	| 
-| \\'	| single quote  	| 
-| \\"	| double quote  	| 
-| \\\\	| backslash  	| 
+|Sequence | Character  	|
+|---------|------|
+| \\n	| line feed  	|
+| \\f	| form feed  	|
+| \\r	| carriage return	|
+| \\t	| horizontal tab  	|
+| \\'	| single quote  	|
+| \\"	| double quote  	|
+| \\\\	| backslash  	|
 
 The line feed (`\n`) is often used to move to a new line:
 
 {title="The line feed",lang=groovy}
 	print 'Hi \n there\n'
- 
+
 
 You'll notice the use of `print` in the example above - the final `\\n` performs the same as `println` and moves to a new line.
 
@@ -70,7 +70,7 @@ As the backslash (`\`) is used to escape characters, it needs an escape of its o
 In order to have Groovy interpolate the value of a variable we use the `$` symbol in front of the variable name - as you can see with `$pet` below:
 
 {title="GStrings",lang=groovy}
-	def pet = 'dog'  
+	def pet = 'dog'
 	println "I own a $pet"
 
 
@@ -82,8 +82,8 @@ This can be handy if you have a number of variables that you'd like to use in a 
 	println "Did you know that $name likes $hobby?"
 
 T> ## Avoid `+` for String concatenation
-T> This helps escape the use of the addition operator (`+`) to concatenate (join) strings: 
-T>	`println 'hello ' + 'world'` 
+T> This helps escape the use of the addition operator (`+`) to concatenate (join) strings:
+T>	`println 'hello ' + 'world'`
 T> You'll see this in a lot of Java code and I, for one, am pleased to see that Groovy lets us pretend this never happened.
 
 GStrings also let you interpolate more complicated expressions into a string by using `${...}`. In the following example we perform a calculation within the GString:
@@ -110,7 +110,7 @@ The examples given so far use short strings but longer strings would be cumberso
 	And he swung his stockwhip round and gave a cheer,
 	And he raced him down the mountain like a torrent down its bed,
 	While the others stood and watched in very fear.'''
-	
+
 	print poem
 
 
@@ -122,7 +122,7 @@ If you run the code above you'll see that new lines are used at the correct poin
 	And he swung his stockwhip round and gave a cheer,
 	And he raced him down the mountain like a torrent down its bed,
 	While the others stood and watched in very fear.'''
-	
+
 	print poem
 
 T> ## Use the backslash
@@ -132,7 +132,7 @@ GStrings can also be defined using the multiline format:
 
 {title="A multiline GString",lang=groovy}
 	def animal = 'velociraptor'
-	
+
 	println """But the man from Snowy River let the ${animal} have his head,
 	And he swung his stockwhip round and gave a cheer,
 	And he raced him down the mountain like a torrent down its bed,
@@ -184,23 +184,30 @@ A number of methods are provided to help you with basic searching:
 
 {title="Basic searching",lang=groovy}
 	def str = 'Hello, World'
-	
+
 	//These methods return the index of the requested character
 	println str.indexOf(',')
 	println str.lastIndexOf('o')
-	
+
 	//These methods check if the string contains another string
 	println str.contains('World')
 	println str.startsWith('He')
 	println str.endsWith('rld')
 
 
-Lastly, `replace` lets us provide a string that we want to change to a new value:
+The `replace` method lets us provide a string that we want to change to a new value:
 
 {title="Replacing text",lang=groovy}
 	def str = 'Hello, World'
-	
+
 	println str.replace('World', 'Fred')
 
+T> Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in an up-coming chapter.
+Additionally, the tutorial on Operators will look into this in more depth.
 
-Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in an up-coming chapter. Additionally, the tutorial on Operators will look into this in more depth.
+Lastly, and a favourite of mine, is `toURL()`. This converts a String to a `URL` object which, in Groovy has a great `text`
+property that lets us load the text of our favourite web page:
+
+    println 'http://www.example.com/'.toURL().text
+
+

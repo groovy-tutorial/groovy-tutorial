@@ -90,3 +90,19 @@ Properties and fields are much like variables and can be declared with an initia
 
 The initial value doesn't have to be a literal, it can be determined from an expression.
 
+## Casting maps to objects
+
+Groovy gives bean-style objects a really interesting approach to casting[^cast] a map or a list to an object. Let's get
+an example going first:
+
+{lang=groovy}
+<<[Using a map to create a new instance](code/08/03/basic_mapcast.groovy)
+
+For the first person (`astrid`) I explicitly cast the map to a Person instance using
+`[name: 'Astrid Smithson', email: 'astrid@example.com'] as Person`. Groovy creates a new instance of `Person` and calls
+the `name` and `email` setters.
+
+In the case of `gretchen` I don't need to call `as Person` as Groovy infers this from the fact I declared the variable's
+type (`Person gretchen`).
+
+[^cast]: Remember the [`as` operator](#chobjectoperators)?

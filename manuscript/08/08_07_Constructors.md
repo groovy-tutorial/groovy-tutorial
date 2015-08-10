@@ -9,29 +9,27 @@ A constructor is a special type of method that is called when instantiating a ne
 
 In the code above I define the `Person` class with three properties and then create a new instance in the `astrid` variable. The `new` keyword indicates to Groovy that a new `Person` instance is to be created. The `Person()` aspect is actually a call to the constructor for the class. However, I haven't actually provided a constructor for the `Person` class so what am I calling? Groovy classes all trace back to the `Object` class - where a class does not explicitly state that it inherits from (subclasses) another class it is automatically seen as a subclass of `Object`.
 
-Groovy sees `Person()` and knows that the `Person` class doesn't provide a no-parameter (aka no-argument) constructor but `Object` does so that is called and it doesn't really do anything interesting. This whole arrangement means that your classes automatically have a no-argument constructor.
+Groovy sees `Person()` and knows that the `Person` class doesn't provide a no-parameter (aka no-argument or no-args) constructor but `Object` does so that is called and it doesn't really do anything interesting. This whole arrangement means that your classes automatically have a no-argument constructor.
 
 As always, Groovy adds a little extra on top and we've seen that we can use the map notation to assign values to member variables (properties/fields) when we create a new instance:
 
+    def astrid = new Person([name: 'Astrid Smithson', email: 'astrid@example.com'])
+
+You can see that `new Person` is being passed a map consisting of keys that relate to properties in the class. This means you can prepare the map elsewhere in your code and then pass it into the constructor:
+
+    def details = [name: 'Astrid Smithson', email: 'astrid@example.com']
+    def astrid = new Person(details)
+
+Groovy gives us that little bit of syntactic sugar and lets us drop the square brackets (`[]`) in the call:
+
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
 
-Groovy gives you a built-in constructor that accepts a map in which each of the keys match a name of a member variable[^mapconstructor]. This is really useful for bean-type classes that we're really just using to keep data fields together. And nope, you can't just add keys that don't match the name of a member variable.
+Groovy gives you what looks like a built-in constructor that accepts a map (or map-like) syntax in which each of the keys match a name of a member variable[^mapconstructor]. This is really useful for bean-type classes that we're using to keep data fields together. However, this isn't a true constructor as Groovy doesn't generate a `Person` constructor that takes a map as its parameter. Instead, the no-args constructor is called followed by the setters for each key in the map. This isn't usually a problem until you're [using `final` properties and fields]{#chfinal}.
 
 W> Note that `def astrid = new Person name: 'Astrid Smithson', email: 'astrid@example.com'` won't work - you need the parentheses.
 
-[^mapconstructor]: This isn't completely true as Groovy doesn't really generate a `Person` constructor that takes a map
-as its parameter. Instead, the setters for each map key are called after the object has been instantiated. This isn't
-usually a problem until you're [using `final` properties and fields]{#chfinal}
-
-## Maps as constructors
-
-TODO: Text
-
-{lang=groovy}
-<<[Using a map to create a new instance](code/08/07/basic_mapcast.groovy)
-
 ## Writing your own constructor(s)
-Whilst the map-based constructor can be useful, you'll probably need to define your own constructors at some point. This may be due to a few reasons, such as:
+Whilst the no-args constructor and map parameter approach can be useful, you'll probably need to define your own constructors at some point. This may be due to a few reasons, such as:
 
 1. You need information when you create a new instance that is more than just the member variables - perhaps you need to calculate something
 2. You don't want the caller to be able to populate a member variable - perhaps you'll load that from a database or perform a calculation to determine its value
@@ -43,12 +41,12 @@ If you need to do something specific in order to sensibly create a new instance 
 
 In order to define a constructor we declare a method that:
 
-1. Can have an access modifier (discussed in a later chapter)
+1. Can have an access modifier ([discussed in a later chapter](#chaccessmodifiers))
 2. Has no return value declared - none, not even `void`
 2. Has the same name as the class in which it is defined - yes, it is case-sensitive
 3. Can take 0 or more arguments
 
-Now that you've supplied a constructor you'll lose the built-in named argument constructor. Be warned that this isn't always obvious! If we create a new instance using named arguments, our `dump` will show us that `astrid`'s name becomes a list:
+Now that you've supplied a constructor you'll lose the built-in "map constructor". Be warned that this isn't always obvious! If we create a new instance using named arguments, our `dump` will show us that `astrid`'s name becomes a list:
 
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com', mobile: '0418 111 222')
 	println astrid.dump()
@@ -73,7 +71,55 @@ There is a specific rule we have to follow when constructor chaining - calls to 
         this(name)
     }
 
-Before you start writing lots of constructors to allow callers to pass in different numbers of parameters - called [telescoping constructors](https://en.wikipedia.org/wiki/Builder_pattern) - check out the next bit :-)
+T> Before you start writing lots of constructors to allow callers to pass in different numbers of parameters - called [telescoping constructors](https://en.wikipedia.org/wiki/Builder_pattern) - hang tight and we'll get to the `TupleConstructor` annotation shortly.
+
+Before moving on, there's still that no-args constructor that we get even when we don't ask for it. Sometimes we actually want to force
+other developers to use a constructor with arguments. For example the `Person(Integer id)` might use the `id` parameter to load the
+Person's details from a file/database. In this case the no-args constructor could leave us with some sort of zombie person instance
+with no information. One approach to avoiding this is to [prepend the `private` modifier](#chaccessmodifiers) to indicate
+that other coders shouldn't use it:
+
+    private Person() {}
+
+If you want to be really forceful, just throw an exception if someone tries their luck:
+
+    private Person() {
+        throw new IllegalArgumentException('Do not use the no-arg constructor')
+    }
+
+### Lists
+
+Good old Groovy never stops giving us different ways to do things and, in the code below, we can cast a list of values into
+a `Person`:
+
+<<[That list constructs!](code/08/07/constructor_list.groovy)
+
+For `astrid` I cast the three item list explicitly using `as Person` because I didn't supply a type when decalaring the
+variable (`def astrid`). Groovy takes my 3 items, sees that there is a three-argument constructor, and passes it through.
+In the case of `gretchen` I don't need the explicit cast as I declared a type with the variable (`Person gretchen`). The
+list has 2 items so the two-argument constructor is called.
+
+T> I could have declared one constructor, with `mobile` given a default value, and got the same result:
+T>
+T>  Person(name, email, mobile = '') {
+T>      this.name = name
+T>      this.email = email
+T>      this.mobile = mobile
+T>  }
+
+There's two really interesting things to keep in mind with this:
+
+1. The constructor is being called (unlike with the "map constructor")
+2. This will work with the various Groovy and Java classes available
+
+On that last point, let's look at two quick examples to prove I'm not fooling you:
+
+    //Prepare a calendar using YYYY, MM, DD
+    def calendar = [2015, 01, 31] as GregorianCalendar
+
+    //Setup a URL
+    java.net.URL url = ['http', 'www.example.com', 80, '/index.html']
+
 
 ## TupleConstructor annotation
 The [`@groovy.transform.TupleConstructor`](http://docs.groovy-lang.org/latest/html/gapi/groovy/transform/TupleConstructor.html) is an annotation that we can add to our classes and have a variety of constructors automatically generated for us:

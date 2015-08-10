@@ -1,4 +1,4 @@
-# Object Operators	
+# Object Operators {#chobjectoperators}
 
 I> These operators help you check classes and instances.
 
@@ -6,13 +6,13 @@ It could be argued that all operators are object operators as nearly every varia
 
 {title="Object operators"}
 |Operator(s)     |Type
-|:------------------:|:--------------------|  
+|:------------------:|:--------------------|
 | `?.`	| Safe Navigation Operator|
-| `as`	| Casting Operator	|  
-| `is`	| Identity Operator	|  
-| `instanceof`	| Type Comparison	|  
-| `.@`	| Field Operator	|   
-| `.&`	| Method Reference	|  
+| `as`	| Casting Operator	|
+| `is`	| Identity Operator	|
+| `instanceof`	| Type Comparison	|
+| `.@`	| Field Operator	|
+| `.&`	| Method Reference	|
 
 
 ## Safe Navigation Operator
@@ -23,13 +23,13 @@ The Safe Navigation operator (`?.`) checks to make sure that a variable isn't `n
 	class Person{
 	    def name
 	}
-	
+
 	def fred = new Person(name: 'Fred')
-	
+
 	//various statements
 	fred = null
 	//various statements
-	
+
 	println fred.name
 
 
@@ -45,13 +45,13 @@ In order to stop the NPE you'll normally see developers using an `if` statement 
 	class Person{
 	    def name
 	}
-	
+
 	def fred = new Person(name: 'Fred')
-	
+
 	//various statements
 	fred = null
 	//various statements
-	
+
 	if (fred) {
 	    println fred.name
 	}
@@ -65,19 +65,19 @@ Groovy's Safe Navigation operator saves some time and code. In the code below, G
 	class Person{
 	    def name
 	}
-	
+
 	def fred = new Person(name: 'Fred')
-	
+
 	//various statements
 	fred = null
 	//various statements
-	
+
 	println fred?.name
 
 
 You'll see that "null" is displayed - this is because `fred` is `null`. Groovy doesn't even try to access the `name` property.
 
-## Casting Operator 
+## Casting Operator
 
 The Casting operator (`as`) changes the data type of a value or variable to the specified class. This is sometimes called "casting", "type conversion" or "coercing". You'll have seen this in action when we created a Set:
 
@@ -112,16 +112,16 @@ In the code below I describe a `Person` class and use a very helpful annotation 
 	    def id
 	    def name
 	}
-	
+
 	def fred = new Person(id: 345, name: 'Fred')
 	def freddie = fred
 	def frederick = new Person(id: 345, name: 'Frederick')
-	
+
 	//Check that they're all the same person
 	assert fred == freddie
 	assert fred == frederick
 	assert freddie == frederick
-	
+
 	//Check which variable points to the same instance
 	assert fred.is(freddie)
 	assert ! fred.is(frederick)
@@ -137,9 +137,9 @@ In this next example I check to make sure that `fred` is a `Person`:
 	class Person{
 	    def name
 	}
-	
+
 	def fred = new Person(name: 'Fred')
-	
+
 	assert fred instanceof Person
 
 
@@ -149,9 +149,9 @@ Checking the variable's type can be useful in dynamically typed languages such a
 	class Person{
 	    def name
 	}
-	
+
 	def fred = new Person(name: 'Fred')
-	
+
 	if (fred instanceof Person) {
 	    println fred?.name
 	}
@@ -171,10 +171,10 @@ In the example below I set up an `add` method that adds two numbers (handy!). Be
 	    }
 	    throw new IllegalArgumentException('Parameters must be Numbers')
 	}
-	
+
 	assert add(1, 6) == 7
 	assert add(3.14, 9.2) == 12.34
-	
+
 	add('Rabbit', 'Flower')
 
 
@@ -182,7 +182,7 @@ T>Granted, I could have declared `def add(Number num1, Number num2)` but that wo
 
 ## Field Operator and Method Reference
 
-I> I won't discuss these two operators to any depth at this point. 
+I> I won't discuss these two operators to any depth at this point.
 
 The Field operator (`.@`) provides direct access to an object's property (field) rather than using a getter/setter. _Use with a lot of caution or, even better, don't use it at all._
 
@@ -199,35 +199,35 @@ In the example below I describe the `Person` class. When I then create an instan
 {title="Field operators and method references",lang=groovy}
 	class Person {
 	    def name
-	    
+
 	    def setName(name) {
 	        println 'You called setName()'
 	        this.name = name
 	    }
-	    
+
 	    def getName() {
 	        println 'You called getName()'
 	        return this.name
 	    }
-	    
+
 	    def introduceSelf() {
 	        println "Hi, my name is ${this.name}"
 	    }
 	}
-	
+
 	def example = new Person()
-	
+
 	//example.name actually calls the getter or setter
 	example.name = 'Fred'
 	println example.name
-	
+
 	//example.@name directly access the field
 	example.@name = 'Jane'
 	println example.@name
-	
+
 	//intro holds the reference to the introduceSelf method
 	def intro = example.&introduceSelf
-	
+
 	//This next line calls introduceSelf()
 	intro()
 
