@@ -5,7 +5,7 @@ class Configuration {
     static String databasePassword = ''
     static String logFile = ''
 
-    static {
+    static loadConfig() {
         //This is the config file:
         File file = new File('config.json')
 
@@ -22,6 +22,8 @@ class Configuration {
 
     }
 }
+
+Configuration.loadConfig()
 
 println """\
     System database: ${Configuration.databaseName}

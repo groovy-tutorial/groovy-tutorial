@@ -99,7 +99,7 @@ variable (`def astrid`). Groovy takes my 3 items, sees that there is a three-arg
 In the case of `gretchen` I don't need the explicit cast as I declared a type with the variable (`Person gretchen`). The
 list has 2 items so the two-argument constructor is called.
 
-T> I could have declared one constructor, with `mobile` given a default value, and got the same result:
+T> I could have been groovier and declared one constructor, with `mobile` given a default value, and got the same result:
 T>
 T>  Person(name, email, mobile = '') {
 T>      this.name = name

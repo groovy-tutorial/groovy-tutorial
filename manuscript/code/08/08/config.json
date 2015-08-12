@@ -1,0 +1,5 @@
+{
+  "database": "CorporateData",
+  "password": "password",
+  "log": "/tmp/log.txt"
+}
