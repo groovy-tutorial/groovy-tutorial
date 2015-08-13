@@ -1,17 +1,18 @@
 class Record {
-    final Date creationDate
+    static final String owner = 'Secret Corp'
+
+    final GregorianCalendar creationDate
 
     Record() {
-        this.creationDate = new Date()
+        creationDate = new GregorianCalendar()
     }
 
-    Record(Date created) {
-        this.creationDate = created
+    Record(GregorianCalendar created) {
+        creationDate = created
     }
 }
 
-Record myRec = new Record()
-Record myOtherRec = new Record(new Date())
+Record record1 = new Record()
 
-println myRec.dump()
-println myOtherRec.dump()
+GregorianCalendar created = new GregorianCalendar(2015, 5, 4)
+Record record2 = new Record(created)

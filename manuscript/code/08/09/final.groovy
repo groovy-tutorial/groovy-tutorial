@@ -1,8 +1,4 @@
 class Record {
-    final Date creationDate = new Date()
+    static final String owner
+    final Date creationDate
 }
-
-Record myRec = new Record()
-
-//This will fail with a groovy.lang.ReadOnlyPropertyException
-myRec.creationDate = new Date()
