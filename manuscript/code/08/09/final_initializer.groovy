@@ -1,5 +1,5 @@
 class Record {
-    static final String owner
+    static final String OWNER
 
     static {
         owner = 'Secret Corp'

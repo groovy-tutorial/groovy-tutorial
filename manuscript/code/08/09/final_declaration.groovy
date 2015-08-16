@@ -1,5 +1,5 @@
 class Record {
-    static final String owner = 'Secret Corp'
+    static final String OWNER = 'Secret Corp'
     final Date creationDate = new Date()
 }
 

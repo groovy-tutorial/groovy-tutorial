@@ -1,11 +1,3 @@
-./07/07_00_Introduction.md
-./07/07_01_Overview.md
-./07/07_02_Parameters.md
-./07/07_03_Return.md
-./07/07_05_MethodParameters.md
-./07/07_06_ClosureLoop.md
-./07/07_07_OtherUsefulMethods.md
-./07/07_08_ClosureScope.md
 ./08/08_00_Introduction.md
 ./08/08_01_Expando.md
 ./08/08_02_TheBasics.md
@@ -19,10 +11,3 @@
 ./08/08_11_UsefulClassAnnotations.md
 ./08/08_12_LetGoInstance.md
 ./08/08_13_Enums.md
-./09/09_00_Introduction.md
-./09/09_20_Inherfaces.md
-./09/09_21_Traits.md
-./09/09_22_Inheritance.md
-./09/09_50_Packages.md
-./09/09_60_OtherTopics.md
-./10/10_00_Introduction.md

@@ -1,6 +1,4 @@
 import groovy.transform.Canonical
-import groovy.transform.ToString
-import groovy.transform.TupleConstructor
 
 @Canonical
 class Assignment {
@@ -22,7 +20,6 @@ class SubmissionSystem {
 Assignment myAssignment = new Assignment('Fred Nurk', 'I have no idea')
 
 SubmissionSystem system = new SubmissionSystem()
-
 system.submitAssignment(myAssignment)
 println system
 

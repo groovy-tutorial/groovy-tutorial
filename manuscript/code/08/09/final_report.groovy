@@ -1,4 +1,3 @@
-import groovy.transform.Immutable
 import groovy.transform.ToString
 
 @ToString(includeNames = true)
@@ -6,7 +5,7 @@ class FinalReport {
     final List records
 
     FinalReport(List records) {
-        this.records = records as Immutable
+        this.records = records
     }
 }
 
@@ -31,5 +30,7 @@ def recordSet = [
 FinalReport report = new FinalReport(recordSet)
 
 report.records[1].text = 'REDACTED'
-
 println report.records[1]
+
+report.records << new Record('Record Z', 'You just go hacked')
+println report

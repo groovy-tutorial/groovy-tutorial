@@ -1,6 +1,4 @@
 import groovy.transform.Canonical
-import groovy.transform.ToString
-import groovy.transform.TupleConstructor
 
 @Canonical
 class Assignment implements Cloneable {
@@ -8,7 +6,7 @@ class Assignment implements Cloneable {
     String answers
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
+    protected Assignment clone() throws CloneNotSupportedException {
         return new Assignment(studentName, answers)
     }
 }

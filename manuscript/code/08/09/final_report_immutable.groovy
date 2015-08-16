@@ -1,13 +1,10 @@
 import groovy.transform.Immutable
-import groovy.transform.ToString
 
-@ToString(includeNames = true)
 @Immutable
 class FinalReport {
     final List records
 }
 
-@ToString(includeNames = true)
 @Immutable
 class Record {
     Date creationDate = new Date()
@@ -24,4 +21,17 @@ def recordSet = [
 FinalReport report = new FinalReport(recordSet)
 
 //This will fail with groovy.lang.ReadOnlyPropertyException
-report.records[1].text = 'REDACTED'
+try {
+    report.records[1].text = 'REDACTED'
+} catch (ReadOnlyPropertyException e) {
+    println 'Sorry, you can\'t change a record in a final report'
+}
+
+//This will fail with java.lang.UnsupportedOperationException
+try {
+    report.records << new Record(title: 'Record Z', text: 'You just go hacked')
+} catch (UnsupportedOperationException e) {
+    println 'Sorry, you can\'t add a record to a final report'
+}
+
+println report

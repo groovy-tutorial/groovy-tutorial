@@ -1,7 +1,7 @@
 class Record {
-    static final String owner = 'Secret Corp'
+    static final String OWNER = 'Secret Corp'
 
-    final GregorianCalendar creationDate
+    final Calendar creationDate
 
     Record() {
         creationDate = new GregorianCalendar()
