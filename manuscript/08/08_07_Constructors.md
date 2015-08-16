@@ -24,7 +24,7 @@ Groovy gives us that little bit of syntactic sugar and lets us drop the square b
 
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
 
-Groovy gives you what looks like a built-in constructor that accepts a map (or map-like) syntax in which each of the keys match a name of a member variable[^mapconstructor]. This is really useful for bean-type classes that we're using to keep data fields together. However, this isn't a true constructor as Groovy doesn't generate a `Person` constructor that takes a map as its parameter. Instead, the no-args constructor is called followed by the setters for each key in the map. This isn't usually a problem until you're [using `final` properties and fields]{#chfinal}.
+Groovy gives you what looks like a built-in constructor that accepts a map (or map-like) syntax in which each of the keys match a name of a member variable. This is really useful for bean-type classes that we're using to keep data fields together. However, this isn't a true constructor as Groovy doesn't generate a `Person` constructor that takes a map as its parameter. Instead, the no-args constructor is called followed by the setters for each key in the map. This isn't usually a problem until you're [using `final` properties and fields](#chfinal).
 
 W> Note that `def astrid = new Person name: 'Astrid Smithson', email: 'astrid@example.com'` won't work - you need the parentheses.
 
@@ -101,11 +101,14 @@ list has 2 items so the two-argument constructor is called.
 
 T> I could have been groovier and declared one constructor, with `mobile` given a default value, and got the same result:
 T>
+T> {lang="groovy"}
+T> ~~~~~~~~~~~~~~~
 T>  Person(name, email, mobile = '') {
 T>      this.name = name
 T>      this.email = email
 T>      this.mobile = mobile
 T>  }
+T> ~~~~~~~~~~~~~~~
 
 There's two really interesting things to keep in mind with this:
 

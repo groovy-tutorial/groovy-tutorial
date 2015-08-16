@@ -15,17 +15,20 @@ In the code above I've declared one class variable (`owner`) and one instance va
 You'll notice that I've not actually set the value for these so that's the next step. I have three options available to
 me when setting the value for a `final` variable:
 
-Option 1: At the point of declaration (class and instance variables):
-:   {lang=groovy}
-    <<(code/08/09/final_declaration.groovy)
+__Option 1: At the point of declaration (class and instance variables):__
 
-Option 2: In an initializer block (class and instance variables):
-:   {lang=groovy}
-    <<(code/08/09/final_initializer.groovy)
+{lang=groovy}
+<<(code/08/09/final_declaration.groovy)
 
-Option 3: In the constructor (instance variables only):
-:   {lang=groovy}
-    <<(code/08/09/final_constructor.groovy)
+__Option 2: In an initializer block (class and instance variables):__
+
+{lang=groovy}
+<<(code/08/09/final_initializer.groovy)
+
+__Option 3: In the constructor (instance variables only):__
+
+{lang=groovy}
+<<(code/08/09/final_constructor.groovy)
 
 Option 1 is usually best for simple assignments (such as a value or a minor expression) and Option 2 is handy if the
 you need a more complicated expression or set of expressions. The third option is mainly used when the value is passed
@@ -162,7 +165,7 @@ The third option is to have a class implement the `Cloneable` interface. If a th
 in luck and can make a copy (clone):
 
 {lang=groovy}
-<<[TODO](code/08/09/final_clone.groovy)
+<<[Using `Cloneable`](code/08/09/final_clone.groovy)
 
 As `Assignment` provides a `clone` method we just need to call it and we're returned a copy for our own use. Naturally,
 this doesn't help us if the author of `Assignment` doesn't provide us with a `clone` method.

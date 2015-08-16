@@ -53,10 +53,8 @@ individual accounts (after all, you don't want people to just `new CreditCard` d
     * `currency` is the currency used by all Silver Credit Cards
     * `creditLimit` is the maximum limit allowed for this type of account
 * Class methods:
-    * `applyForAccount` is for new customers requesting an account
-        * It would return an instance of `SilverCreditCard` being the newly created account
-    * `loadAccount` is for existing customers wanting to access their account
-        * It would return an instance of `SilverCreditCard` with information loaded from a database
+    * `applyForAccount` is for new customers requesting an account - it would return an instance of `SilverCreditCard` being the newly created account
+    * `loadAccount` is for existing customers wanting to access their account - it would return an instance of `SilverCreditCard` with information loaded from a database
 
 The instance elements represent a single customer's SilverCreditCard account and aid in tracking their account:
 
@@ -90,8 +88,8 @@ Additionally, the initializer block will only be called once so the config file 
 A single property is best shared across all instances
 : This is often the case with configuration properties
 
-The method isn't really specific to an instance
-: The method
+%%The method isn't really specific to an instance
+%%: The method
 
 The class is really just a library of methods
 : Sometimes you just need a set of utility methods

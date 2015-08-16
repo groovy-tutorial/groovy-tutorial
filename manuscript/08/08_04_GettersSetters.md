@@ -39,12 +39,12 @@ Setters and getters **aren't generated for fields**. You need to create your own
 we can't use `p.setName('Bill')` as the setter is not created for us - instead, we access the field directly with `p.name = 'Bill'`:
 
 {lang=groovy}
-<<[Change my ID will you?](code/08/04/fields.groovy)
+<<[A basic field](code/08/04/fields.groovy)
 
 If you do provide a setter for a field (such as `setName` in the code below), an attempt to directly set the field's value (e.g. `p.name = 'Bill'`) is deferred to the setter:
 
 {lang=groovy}
-<<[Change my ID will you?](code/08/04/fields2.groovy)
+<<[A setter](code/08/04/fields2.groovy)
 
 The call to `p.setName` also works but using `p.name` is a little cleaner in terms of aesthetics/style.
 
