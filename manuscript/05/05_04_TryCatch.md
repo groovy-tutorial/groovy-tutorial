@@ -1,6 +1,6 @@
 # Try-Catch-Finally
 
-I> The try-catch-finally statement is used for catching and handling exceptions and errors.
+I> The `try-catch-finally` statement is used for catching and handling exceptions and errors.
 
 The `try-catch-finally` statement can have three forms:
 
@@ -8,35 +8,29 @@ The `try-catch-finally` statement can have three forms:
 2. `try-catch-finally`
 3. `try-finally`
 
-Groovy doesn't support the `try-with-resources` syntax available in Java. Groovy's closure infrastructure often takes care of closing resources for you (you may not even need a `finally` block).[^copout] 
-
-[^copout]: I guess I'll have to make sure I explain this when we get to Files and Databases.
+Groovy doesn't support the `try-with-resources` syntax available in Java. Groovy's closure infrastructure often takes care of closing resources for you (you may not even need a `finally` block).
 
 ## Scope
 Before getting into the specific syntax it's important to point out that the `try` statement presents a block with its own scope. This means that variables declared within the `try` block can't been seen outside the block. In the example below the `assert` fails not because `score` doesn't equal 12 but because the `score` variable is out-of-scope:
 
-
 	try {
 	    def score = 12
 	} catch (any) {
-	
+
 	}
-	
+
 	assert score == 12
 
-
 In fact, the `score` variable won't be visible to the `catch` block or a `finally block`. If you do need to access `score` outside of the `try` block then you should declare it before the `try`:
-
 
 	def score
 	try {
 	    score = 12
 	} catch (any) {
-	
-	}
-	
-	assert score == 12
 
+	}
+
+	assert score == 12
 
 ## try-catch
 The basic format of `try-catch`  is as follows:
@@ -154,7 +148,7 @@ But why use `finally`? Exceptions are used in a large number of places, includin
 - Failure to access a database
 - Trying to access `null`
 
-The `finally` block comes in handy when you need to tidy up resources before either completing the `try` block or losing control to an exception. You'll most commonly see `finally` used to close files, disconnect from databases or return the system to a state in which it can continue. 
+The `finally` block comes in handy when you need to tidy up resources before either completing the `try` block or losing control to an exception. You'll most commonly see `finally` used to close files, disconnect from databases or return the system to a state in which it can continue.
 
 ## try-finally
 The third form of the `try` statement doesn't provide a `catch` block:

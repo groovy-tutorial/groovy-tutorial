@@ -62,9 +62,10 @@ If you are writing a method that needs to be very specific about data types for 
 
 ## Testing
 
-I'd get into a lot of trouble from experienced developers if I just left this chapter without mentioning testing. I'm hoping that one day there'll be a Testing tutorial added to this book but, until then, check out [Unit Tests section](http://groovy-lang.org/testing.html) on the Groovy website.
+I'd get into a lot of trouble from experienced developers if I just left this chapter without mentioning testing.
+So, here's a little example using [Spock](http://docs.spockframework.org/en/latest/)!
 
-Oh ok, here's a little example using [Spock](http://docs.spockframework.org/en/latest/)!
+%%I'm hoping that one day there'll be a Testing tutorial added to this book but, until then, check out [Unit Tests section](http://groovy-lang.org/testing.html) on the Groovy website.
 
 Firstly, this won't run in your groovyConsole. You need to copy the code into the online [Spock web console](http://meetspock.appspot.com)[^sample] and then click on "Run Script":
 

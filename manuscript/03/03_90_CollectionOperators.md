@@ -5,21 +5,21 @@ I> Working with Lists and Maps is made easier with these handy operators.
 A number of operators are provided for working with Lists and Maps. Some overload operators such as `+` and `<<` whilst others (such as `in`) are more collection-oriented. Certain operators work with both Lists and Maps whilst others apply to only one.
 
 |Operator(s)     |Type
-|:------------------:|:--------------------|  
+|:------------------:|:--------------------|
 | `in`	| Membership Operator	|
-| `<<`	| Append operator	|  
-| `+`	| Addition operator	|  
-| `-`	| Subtraction operator	|  
-| `+=` `-=`	| Compound assignment operators	|   
-| `*`	| Spread Operator	|  
-| `*.`	| Spread-Dot Operator	|  
-| `..`	| Range Operator	|  
-| `[]`	| Subscript Operator	| 
+| `<<`	| Append operator	|
+| `+`	| Addition operator	|
+| `-`	| Subtraction operator	|
+| `+=` `-=`	| Compound assignment operators	|
+| `*`	| Spread Operator	|
+| `*.`	| Spread-Dot Operator	|
+| `..`	| Range Operator	|
+| `[]`	| Subscript Operator	|
 
 This chapter won't discuss the following operators as they've been described earlier:
 
-- The Range operator creates a list of sequential values and is usually seen with numbers. This is how we created Ranges in the tutorial on Variables.
-- The Subscript operator is used to access items in a List or a Map and this was also discussed in the tutorial on Variables.
+- The Range operator creates a list of sequential values and is usually seen with numbers. This is how we created [Range variables](#chranges).
+- The Subscript operator is used to access items in a List or a Map and this was discussed in the [tutorial on collection variables](#chcollections).
 
 To finish this chapter off I'll do a little bit of mucking around with set theory.
 
@@ -36,7 +36,7 @@ The `in` operator is used to determine if an item is "in" a list or is a key in 
 	def grades = ['Maths': 'A',
 	    'English': 'C',
 	    'Science': 'B'].asImmutable()
-	
+
 	assert 'Science' in grades
 	assert !('French' in grades)
 
@@ -114,7 +114,7 @@ The addition operator will either add a key:value pair to a map or alter the val
 	def grades = ['Maths': 'A',
 	    'English': 'C',
 	    'Science': 'B']
-	
+
 	assert grades + ['French': 'F'] == ['Maths': 'A', 'English': 'C', 'Science': 'B', 'French': 'F']
 	assert grades + ['English': 'D'] == ['Maths': 'A', 'English': 'D', 'Science': 'B']
 
@@ -152,7 +152,7 @@ When subtraction is applied to a Map the right-hand operand needs to be a key:va
 	def grades = ['Maths': 'A',
 	    'English': 'C',
 	    'Science': 'B']
-	
+
 	assert grades - ['English': 'D'] == ['Maths': 'A', 'English': 'C', 'Science': 'B']
 	assert grades - ['French': 'F'] == ['Maths': 'A', 'English': 'C', 'Science': 'B']
 	assert grades - ['English': 'C'] == ['Maths': 'A', 'Science': 'B']
@@ -163,14 +163,14 @@ When subtraction is applied to a Map the right-hand operand needs to be a key:va
 Just as we saw with numbers, the addition and subtraction operators returns a value but don't actually change the variable involved in the operation. To change the value of `grades` I would have needed to assign the resultant back into the variable as follows:
 
 
-	grades = grades + ['French': 'F'] 
+	grades = grades + ['French': 'F']
 	assert grades  == ['Maths': 'A', 'English': 'C', 'Science': 'B', 'French': 'F']
 
 
 If we want to use the `grades` variable as the left-hand operand and change its value we can use the compound assignment operators. This means I could also have written the previous example using the `+=` compound assignment:
 
 
-	grades += ['French': 'F'] 
+	grades += ['French': 'F']
 	assert grades  == ['Maths': 'A', 'English': 'C', 'Science': 'B', 'French': 'F']
 
 
@@ -184,14 +184,14 @@ Consider the following code and see if you're surprised:
 	def grades = ['Maths': 'A',
 	    'English': 'C',
 	    'Science': 'B'].asImmutable()
-	
-	grades += ['French': 'F'] 
+
+	grades += ['French': 'F']
 	assert grades  == ['Maths': 'A', 'English': 'C', 'Science': 'B', 'French': 'F']
 
 
 Groovy let me change something that's immutable! I should go to the mailing list and report this! The outrage!
 
-Hang on! What `asImmutable()` does is set the elements of the list to be unchangeable but it doesn't make the `grades` variable immutable. As the `+` operator actually returns a new list value, Groovy is correct in assigning that new value to `grades`. 
+Hang on! What `asImmutable()` does is set the elements of the list to be unchangeable but it doesn't make the `grades` variable immutable. As the `+` operator actually returns a new list value, Groovy is correct in assigning that new value to `grades`.
 
 If I'd used `grades << ['French': 'F']` instead of grades += ['French': 'F'] I would get a `java.lang.UnsupportedOperationException` as I'm actually trying to add a new element to `grades`.
 
@@ -203,9 +203,9 @@ If I really want to make `grades` completely immutable (constant) then I'd need 
 	        'English': 'C',
 	        'Science': 'B'].asImmutable()
 	}
-	
+
 	def myReport = new Report()
-	myReport.grades += ['French': 'F'] 
+	myReport.grades += ['French': 'F']
 
 
 Running the code above will earn you a `groovy.lang.ReadOnlyPropertyException`.
@@ -263,7 +263,7 @@ That last example is a little bit of a goldilocks moment - I have exactly the sa
 	  }
 	  return total / nums.size()
 	}
-	
+
 	def scores = [4, 8, 3]
 	assert mean(*scores) == 5
 
@@ -276,7 +276,7 @@ One last example of using the spread operator:
 	        println item
 	    }
 	}
-	
+
 	def shoppingList = ['apples', 'cat food', 'cream']
 	buyGroceries(*shoppingList)
 
@@ -305,7 +305,7 @@ The spread operator mimics the `collect()` method - with the previous example be
 	['carrot', 'cabbage', 'cauliflower'].collect{it?.reverse()}
 
 
-The spread operator makes the method call using the "Safe navigation Operator" (`?.`) to make sure that the list element isn't null - refer to the Object Operators section for more information. In the next example I include a `null` in the list and the returned list features the `null`:
+The spread operator makes the method call using the "Safe navigation Operator" (`?.`) to make sure that the list element isn't null - refer to the [Object Operators](#chobjectoperators) tutorial for more information. In the next example I include a `null` in the list and the returned list features the `null`:
 
 
 	println(['carrot', 'cabbage', null, 'cauliflower']*.reverse())
@@ -354,7 +354,7 @@ If `disjoint()` returns `false` then some elements intersect.
 
 	def list1 = [2, 4, 6, 8]
 	def list2 = [6, 8, 10]
-	
+
 	assert ([*list1, *list2] as Set) - (list1 - list2) - (list2 - list1) == [6, 8] as Set
 
 
@@ -365,21 +365,21 @@ All this got me thinking further and looking into Google's Guava libraries - her
 {title="Sip some guava",lang=groovy}
 	@Grab(group='com.google.guava', module='guava', version='18.0')
 	import static com.google.common.collect.Sets.*
-	
+
 	def list1 = [2, 4, 6, 8] as Set
 	def list2 = [6, 8, 10] as Set
-	
+
 	println "Intersection: " << intersection(list1, list2)
 	println "Union: " << union(list1, list2)
 	println "Difference (list1 - list2): " << difference(list1, list2)
 	println "Difference (list2 - list1): " << difference(list2, list1)
-	
+
 	println "Cartesian product of list1 and list2"
 	for (set in cartesianProduct(list1, list2)) {
 	    println " - $set"
 	}
-	
-	println "Powersets of list1: " 
+
+	println "Powersets of list1: "
 	for (set in powerSet(list1)) {
 	    println " - $set"
 	}

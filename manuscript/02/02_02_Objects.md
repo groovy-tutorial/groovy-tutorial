@@ -5,23 +5,23 @@ I> Groovy is an object-oriented programming language and it's essential to under
 But what is an object? Well, an object is an encapsulation of properties and methods:
 
 * __Properties__ and __Fields__ are variables that hold data about the object
-	* For example, a person object may have properties such as:
-		* `name`
-		* `email`
-	* There is a difference between Properties and Fields but we'll look into that later.
+  * For example, a person object may have properties such as:
+    * `name`
+    * `email`
+  * There is a difference between Properties and Fields but we'll [look into that later](#chpropertiesfields).
 * __Methods__ are a means for accessing and manipulating the object's properties
-	* For example a person object may have methods such as:
-		* `getName()`
-		* `setName(name)`
-	* Methods can take parameters and/or return values. For example:
-		* `getName()` would return the person's name
-		* `setName(name)` takes 1 parameter (`name`) and sets the person's name to that value
-	* Methods are sometimes called _functions_
+  * For example a person object may have methods such as:
+    * `getName()`
+	* `setName(name)`
+  * Methods can take parameters and/or return values. For example:
+	* `getName()` would return the person's name
+	* `setName(name)` takes 1 parameter (`name`) and sets the person's name to that value
+  * Methods are sometimes called _functions_
 
 We use the `class` structure to define this assembly of properties and methods.
 
 I> ## This is just an overview
-I> We'll cover a lot more on Objects in a later tutorial as they're so central to Groovy. For now, this overview should help you get an understanding of how objects are used.
+I> We'll cover a lot more on Objects in a [later tutorial](#choo) as they're so central to Groovy. For now, this overview should help you get an understanding of how objects are used.
 
 ## Declaring and using a class
 
@@ -31,7 +31,7 @@ Let's look at a Groovy script that declares a new class:
 <<[Declaring a new class](code/02/02/declare_class.groovy)
 
 
-A class is defined using the `class` keyword and it's best practice to using an uppercase letter for the first character: `class Person {`
+A class is defined using the `class` keyword and it's best practice to use an uppercase letter for the first character: `class Person {`
 
 
 T> ## Curly brackets
@@ -81,7 +81,7 @@ I> Constructors are basically methods but use the class name for the method name
 
 At some point David changes his email address so we call the `setEmail` method:
 
-	david.setEmail('dave@example.com')`.
+	david.setEmail('dave@example.com')
 
 You can see that the method call uses dot-point notation of `<variable name>.<method name>` - the dot (`.`) separates the variable name (`david`) from the method (`setEmail`).
 
@@ -125,14 +125,14 @@ This will return a String that describes the object instance's internals. Try ou
 
 ### `with()`
 
-This method works with closures (we'll cover them later) to give us an easy format for accessing a object's properties in methods. In the example below I wrap some code using `with` and don't have to use `david.name` and `david.email` to access those properties:
+This method works with closures ([we'll cover them later](#chclosures)) to give us an easy format for accessing a object's properties in methods. In the example below I wrap some code using `with` and don't have to use `david.name` and `david.email` to access those properties:
 
 {lang=groovy}
 <<[The with method](code/02/02/with.groovy)
 
 ## Existing classes
 
-The great strength/benefit/bonus of an object-oriented programming is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API).
+The great strength/benefit/bonus of an object-oriented programming platform such as Java is the vast array of existing libraries of objects that you can reuse in your code. In Groovy and Java the listing of these available objects are referred to as the Application Programming Interface (API).
 
 If we were going to create a variable to hold a string (a piece of text) we would do something like:
 

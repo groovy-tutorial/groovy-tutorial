@@ -1,4 +1,4 @@
-# Methods and Exceptions  
+# Methods and Exceptions
 
 I> Another small chapter on technique
 
@@ -27,7 +27,7 @@ Throwing an exception from a method results in no `return` value being returned 
 	        println 'Finally block has been evaluated'
 	    }
 	}
-	
+
 	testMethod()
 
-We're about to get to the tutorial on Methods.
+We're about to get to the [section on Methods](#chmethods).

@@ -34,6 +34,8 @@ The error raised by a failed assertion can be caught within a `try-catch` and ha
 {lang=groovy}
 <<[Handling failed assertions](code/01/07/handling.groovy)
 
+The section on [Exceptions](#chexceptions) will explain this syntax in more depth.
+
 T> ##Annotations
 T> You may have noticed `@Log` in that last code snippet. This is called an annotation and is marked using an "at" (`@`) sign followed by a class name. These are used to markup code and will be discussed in a later chapter.
 

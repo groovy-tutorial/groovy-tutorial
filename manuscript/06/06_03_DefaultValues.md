@@ -9,7 +9,7 @@ One or more parameters can be defined with a default value. This can be really u
 
 The `displayMethod` can be called in a number of ways:
 
-* `displayMessage 'Preparing to shut down. Please save your work'` -
+* `displayMessage 'Preparing to shut down. Please save your work'`
 * `displayMessage 'The system appears to have crashed', 'Error!'`
 * `displayMessage 'Be prepared for the happiness patrol', 'Public announcement:', false`
 

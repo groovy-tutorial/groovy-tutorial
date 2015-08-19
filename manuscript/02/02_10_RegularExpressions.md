@@ -1,4 +1,4 @@
-# Regular Expressions
+# Regular Expressions {#chregex}
 
 I> Regular expressions give us a powerful (and confusing) way of sifting through text.
 
@@ -10,15 +10,15 @@ To define the regular expression pattern we use the `~/ /` syntax:
 	def regex = ~/\n/
 
 
-Once stored as a variable, this regular expression can be used in a variety of ways. The example below sets up three string variables and tests them against the `regex` pattern by using the `matches` method - which returns `true` if the string matches the pattern: 
+Once stored as a variable, this regular expression can be used in a variety of ways. The example below sets up three string variables and tests them against the `regex` pattern by using the `matches` method - which returns `true` if the string matches the pattern:
 
 {title="Matching against a regex",lang=groovy}
 	def regex = ~/https?:\/\/.*/
-	
+
 	def httpUrl = 'http://www.example.com/'
 	def httpsUrl = 'https://secure.example.com/'
 	def ftpUrl = 'ftp://ftp.example.com/'
-	
+
 	assert httpUrl.matches(regex)
 	assert httpsUrl.matches(regex)
 	assert ! ftpUrl.matches(regex)
@@ -40,14 +40,14 @@ Regular expressions use a number of syntactic elements to define a pattern of te
 These elements are used to match specific literal characters.
 
 {title="Literal characters"}
-|Element | Matches	                         |  
-|:-------:|--------------------------------------|  
-|`g`	| The character `g`	|  
-|`\\`	| The backslash character	|  
-|`\t`	| Tab character	|  
-|`\n`	| Newline character	|  
-|`\f`	| Formfeed character	|  
-|`\r`	| Carriage-return character	|  
+|Element | Matches	                         |
+|:-------:|--------------------------------------|
+|`g`	| The character `g`	|
+|`\\`	| The backslash character	|
+|`\t`	| Tab character	|
+|`\n`	| Newline character	|
+|`\f`	| Formfeed character	|
+|`\r`	| Carriage-return character	|
 
 In the example below I take a section of a poem and use the `split` method to get a list whose elements contain a single line from the poem.
 
@@ -62,11 +62,11 @@ In the example below I take a section of a poem and use the `split` method to ge
 	  And light of heart is he,
 	 And stoutly his old pack-horse
 	  Is trotting by his knee.'''
-	
+
 	def regex = ~/\n/
-	
+
 	def lines = regex.split(poem)
-	
+
 	def i = 1
 	for (line in lines) {
 	    println "Line $i: $line"
@@ -79,54 +79,54 @@ In the example below I take a section of a poem and use the `split` method to ge
 Character classes are used to define character sets and sequences.
 
 {title="Character classes"}
-|Element                   | Matches	                                             | 
-|:------------------------:|--------------------------------------------------|  
-| `[xyz]`	| `x`, `y` or `z`	|  
-| `[^xyz]`	| Not `x`, `y` or `z`	|  
-| `[a-zA-Z]`	| Range of characters (all letters)	|  
-| `[0-9]`	| Range of characters (all numbers)	|  
-| `[a-zA-Z_0-9]`	| Range of characters	| 
+|Element                   | Matches	                                             |
+|:------------------------:|--------------------------------------------------|
+| `[xyz]`	| `x`, `y` or `z`	|
+| `[^xyz]`	| Not `x`, `y` or `z`	|
+| `[a-zA-Z]`	| Range of characters (all letters)	|
+| `[0-9]`	| Range of characters (all numbers)	|
+| `[a-zA-Z_0-9]`	| Range of characters	|
 
 #### Predefined Character Classes
 
 The predefined character classes save you from having to define the class specifically and are handy for seeking out words and whitespace.
 
 {title="Predefined character classes"}
-|Element |Matches                                               |  
-|:----------:|------------------------------------------------|  
-| `.`         | Any character	|  
-| `\d`       | Digits `[0-9]`	|  
-| `\D`       | Non-digits	|  
-| `\s`       | Whitespace	|  
-| `\S`       | Not whitespace	|  
-| `\w`       | Word character `[a-zA-Z_0-9]`	|  
-| `\W`       | Not a word character	| 
+|Element |Matches                                               |
+|:----------:|------------------------------------------------|
+| `.`         | Any character	|
+| `\d`       | Digits `[0-9]`	|
+| `\D`       | Non-digits	|
+| `\s`       | Whitespace	|
+| `\S`       | Not whitespace	|
+| `\w`       | Word character `[a-zA-Z_0-9]`	|
+| `\W`       | Not a word character	|
 
 ### Boundaries
 
 Boundaries, to state the obvious, mark the edge of something - specifically a line or a word.
 
 {title="Boundaries"}
-|Element |Matches                         |  
-|:----------:|-------------------------------|  
-| `^`	   | Start of a line	|  
-| `$`	   | End of a line	|  
-| `\b`	   | Word boundary	|  
-| `\B`	   | Non-word boundary	|  
+|Element |Matches                         |
+|:----------:|-------------------------------|
+| `^`	   | Start of a line	|
+| `$`	   | End of a line	|
+| `\b`	   | Word boundary	|
+| `\B`	   | Non-word boundary	|
 
 ### Quantifiers
 
 These determine how many matches are acceptable. For example `s?` matches the character `s` zero or one time - meaning that I expect that character to be an `s` or, if it's not, move to the next part of the pattern. `s+` means  that I really want at least one `s` at that point.
 
 {title="Quantifiers"}
-|Element      |Matches	                                                                |    
-|:--------------:|----------------------------------------------------------------|  
-| `?`	| Single match	|  
-| `*`	| Zero or more matches	|  
-| `+`	| One or more matches	|  
-| `{n}?`	| Exactly _n_ matches	|  
-| `{n, }?`	| At least _n_ matches	|  
-| `{n,m}?`	| At least _n_ but not more that _m_ matches	| 
+|Element      |Matches	                                                                |
+|:--------------:|----------------------------------------------------------------|
+| `?`	| Single match	|
+| `*`	| Zero or more matches	|
+| `+`	| One or more matches	|
+| `{n}?`	| Exactly _n_ matches	|
+| `{n, }?`	| At least _n_ matches	|
+| `{n,m}?`	| At least _n_ but not more that _m_ matches	|
 
 ## Useful Methods
 
@@ -137,7 +137,7 @@ We saw the `matches()` method at the beginning of the chapter:
 {title="Matching",lang=groovy}
 	def regex = ~/https?:\/\/.*/
 	def httpUrl = 'http://www.example.com/'
-	
+
 	assert httpUrl.matches(regex)
 
 
@@ -146,16 +146,16 @@ The `find()` method returns the first match against the pattern within the strin
 {title="Finding",lang=groovy}
 	def regex = ~/:[0-9]+/
 	def httpUrl = 'http://www.example.com:8080/'
-	
+
 	println httpUrl.find(regex)
 
 
 The `findAll()` method returns a list of matches for the pattern. In the example below I am returned all words in `speech` that start with `like`:
 
 {title="`findAll`",lang=groovy}
-	def speech = '''This like guy like I know but like don\'t really like 
+	def speech = '''This like guy like I know but like don\'t really like
 	 was like so mean but likely to be nice when you know him better.'''
-	
+
 	println speech.findAll(~/\blike\w*\b/)
 
 
@@ -169,18 +169,18 @@ The example below provides a very basic word counter by seeking out the `\b\w+\b
 	  Across the rolling plain,
 	 Young Harry Dale, the drover,
 	  Comes riding home again.'''
-	  
+
 	def regex = ~/\b\w+\b/
-	
+
 	println poem.findAll(regex).size()
 
 
 The `replaceFirst()` and `replaceAll()` methods seek out matches and replace them in a manner that their names implies:
 
 {title="Replacing",lang=groovy}
-	def speech = '''This like guy like I know but like don\'t really like 
+	def speech = '''This like guy like I know but like don\'t really like
 	 was like so mean but likely to be a nice guy when you know him better.'''
-	
+
 	println speech.replaceAll(~/\blike\b/, 'um')
 	println speech.replaceFirst(~/\bguy\b/, 'marmoset')
 
@@ -192,7 +192,7 @@ The `splitEachLine()` method is very handy when handling structured files such a
 	Bill,555-1234,cats
 	Jane,555-7485,dogs
 	Indira,555-0021,birds'''
-	
+
 	csv.splitEachLine(~/,/) {
 	    println "Name: ${it[0]}"
 	}
@@ -224,7 +224,7 @@ The `split()` method uses a pattern as a delimiter and returns the elements of t
 {title="Another split`",lang=groovy}
 	def regex = ~/\./
 	def domain = 'www.example.com'
-	
+
 	println regex.split(domain)
-	
-That last example is simple but you can use some pretty funky patterns to split up a string. 
+
+That last example is simple but you can use some pretty funky patterns to split up a string.

@@ -2,7 +2,7 @@
 
 I> Let's take a look at some exceptions you're likely to see through the day.
 
-In the following sections we'll thrown some errors and exceptions (on purpose) so that we can check out some of the most common children of `java.lang.Throwable` you're likely to see. As a bonus we'll also discover a few approaches to avoiding them.
+In the following sections we'll throw some errors and exceptions (on purpose) so that we can check out some of the most common children of `java.lang.Throwable` you're likely to see. As a bonus we'll also discover a few approaches to avoiding them.
 
 ## java.lang.NullPointerException
 
@@ -28,7 +28,7 @@ This is an `Error`, not an `Exception` and occurs when your `assert` expression 
 
 I> `: 'This cannot be'` sets the error message for a failed assertion
 
-When your Groovy assertions fail you actually seem to receive a `org.codehaus.groovy.runtime.powerassert.PowerAssertionError` - a subclass of `java.lang.AssertionError`.
+When your Groovy assertions fail you actually seem to receive a `org.\-codehaus.\-groovy.\-runtime.\-powerassert.\-PowerAssertionError` - a subclass of `java.lang.AssertionError`.
 
 The `assert` statement is usually seen in tests and small scripts. It's usually better to signal an incorrect state/situation using `throws` - more about them in a later chapter.
 
@@ -44,7 +44,7 @@ If you really need a variable to be a specific type you could use the class chec
 
 
 	def value = 'kitten'
-	
+
 	switch (value) {
 	    case Number:
 	        value = value as Integer
@@ -64,14 +64,14 @@ This exception happens when you try to access an object's property but it doesn'
 	jim.name
 
 
-Using `try-catch` around this sort of exception can let you [duck type](https://en.wikipedia.org/wiki/Duck_typing) - an approach that uses an object's properties and methods to determine if something is possible. 
+Using `try-catch` around this sort of exception can let you [duck type](https://en.wikipedia.org/wiki/Duck_typing) - an approach that uses an object's properties and methods to determine if something is possible.
 
 I reckon that the `hasProperty()` method available on all Groovy objects is a cleaner approach than the `try-catch` option. We can check the object has the property before trying to use it and without causing an exception:
 
 
 	class Person {}
 	def jim = new Person()
-	
+
 	if (jim.hasProperty('name')) {
 	    jim.name
 	}
@@ -92,7 +92,7 @@ There's no `hasMethod()` method - it's called `respondsTo()`:
 
 	class Person {}
 	def jim = new Person()
-	
+
 	if (jim.respondsTo('getName')) {
 	    jim.getName()
 	}
@@ -120,19 +120,19 @@ Checking `list.size()` (or the `length` property) before trying to access is ano
 
 
 	def list = [0, 1, 2]
-	
+
 	if (list.size() >= 5) {
 	    println list.get(5)
 	}
 
 
-Of course the `for-in` loop will iterate through the list and not try to give you an element that isn't there. 
+Of course the `for-in` loop will iterate through the list and not try to give you an element that isn't there.
 
 I> The same can't be said for the C-style `for` loop or `while`
 
 
 	def list = [0, 1, 2]
-	
+
 	for (item in list) {
 	    println item
 	}
@@ -151,7 +151,7 @@ We can use the `length` property to make sure we don't try to access an element 
 
 
 	Integer[] nums = [0, 1, 2]
-	
+
 	if (nums.length >= 5) {
 	    nums[5]
 	}
@@ -161,7 +161,7 @@ The `for-in` loop is also handy for staying within the bounds:
 
 
 	Integer[] nums = [0, 1, 2]
-	
+
 	for (item in nums) {
 	    println item
 	}

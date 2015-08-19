@@ -1,11 +1,11 @@
--# Control Flow Statements  
+-# Control Flow Statements
 
 # Introduction
 
-I> Control flow statements give code the power to go beyond top-to-bottom execution of statements.  
+I> Control flow statements give code the power to go beyond top-to-bottom execution of statements.
 
 
-Most code needs to reflect a decision-making process. A decision may be an either-or in which we process one set of statements rather than another. Another decision may be to run the same set of statements for a finite (or infinite) period. 
+Most code needs to reflect a decision-making process. A decision may be an either-or in which we process one set of statements rather than another. Another decision may be to run the same set of statements for a finite (or infinite) period.
 
 Groovy supports a range of control-flow statements:
 
@@ -22,8 +22,8 @@ Groovy supports a range of control-flow statements:
 	* `continue`
 	* `return`
 
-This section will describe the conditional and looping statements and discuss how and where the `break` and `continue` branching statements fit in. 
+This section will describe the conditional and looping statements and discuss how and where the `break` and `continue` branching statements fit in.
 
-The `try-catch-finally` statement will be explored in the "Exceptions" chapter.
+The `try-catch-finally` statement will be explored in the [Exceptions section](#chexceptions).
 
-The `return` statement will be explored in the "Methods and Closures" chapter.
+The `return` statement will be explored in the [Methods section](#chmethods) and the [Closures section](#chclosures).

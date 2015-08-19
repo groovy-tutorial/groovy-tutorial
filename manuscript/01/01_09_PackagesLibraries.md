@@ -5,15 +5,15 @@ I> Groovy lets you take advantage of the core Java packages (the JDK) so let's t
 Except for very small programs, most Groovy and Java-based programs are made up of packages of code:
 
 - The `package` keyword is used to designate that a class is part of a package and we'll cover this more fully in the tutorial on object-oriented Groovy.
-- The `import` keyword is used to import classes from other packages into a program. 
+- The `import` keyword is used to import classes from other packages into a program.
 
 Consider the sample code below:
 
 {title="Using imports", lang=groovy}
 	package test
-	
+
 	import java.time.Year
-	
+
 	println Year.now()
 
 I've indicated that this code:
@@ -51,11 +51,13 @@ The basic form of imports are the most commonly seen and you should get accustom
 
 ### Static imports
 
-Static imports can help your code look a little cleaner as they give you an easy way to refer to useful constants and functions (methods) declared in other code packages.
- 
+Static imports can help your code look a little cleaner as they give you an easy way to refer to useful constants and functions (methods) declared in other code packages[^classmethods].
+
+[^classmethods]: We'll describe how these are written in the [Class Methods and Variables](#chclassmethods) chapter.
+
 `import static java.lang.Math.PI`
 :	This is a _static_ import
-:	This lets you import static items from another class 
+:	This lets you import static items from another class
 :	In this example I've imported the `PI` constant from the `java.lang.Math` class and can now use it as if it was just part of my code: `println PI`
 
 `import static java.lang.Math.PI as pi`
@@ -92,7 +94,7 @@ There is an extensive body of existing Java libraries available to the Groovy de
 1. [Apache Commons](http://commons.apache.org/)
 1. [Google Guava](https://code.google.com/p/guava-libraries/)
 
-In the olden days (in Java-time) you'd often have to download the third-party library you wanted, download any other libraries it depended on, store them in the correct place (called a Classpath) and then you could start using it. Time went by and systems such as [Apache Maven](http://maven.apache.org) came along to make it easier to grab a copy of your dependencies. This then lead to [The (Maven) Central Repository](http://search.maven.org) and made it even easier to grab the libraries you needed. 
+In the olden days (in Java-time) you'd often have to download the third-party library you wanted, download any other libraries it depended on, store them in the correct place (called a Classpath) and then you could start using it. Time went by and systems such as [Apache Maven](http://maven.apache.org) came along to make it easier to grab a copy of your dependencies. This then lead to [The (Maven) Central Repository](http://search.maven.org) and made it even easier to grab the libraries you needed.
 
 T> ## Other repositories
 T> There are other repositories you can use too - you'll likely come across these as you write more code and seek out new dependencies.

@@ -41,11 +41,11 @@ The line feed (`\n`) is often used to move to a new line:
 	print 'Hi \n there\n'
 
 
-You'll notice the use of `print` in the example above - the final `\\n` performs the same as `println` and moves to a new line.
+You'll notice the use of `print` in the example above - the final `\n` performs the same as `println` and moves to a new line.
 
-The form feed (`\\f`) and carriage return (`\\r`) aren't often used. Form feed indicates a new page and carriage return goes back to the start of the line.
+The form feed (`\f`) and carriage return (`\r`) aren't often used. Form feed indicates a new page and carriage return goes back to the start of the line.
 
-The horizontal tab (`\\t`) is essentially the same as the `tab` key on your keyboard. It's useful for formatting things like tables of information:
+The horizontal tab (`\t`) is essentially the same as the `tab` key on your keyboard. It's useful for formatting things like tables of information:
 
 {title="Sequences",lang=groovy}
 	println 'name\tage\tcolour'
@@ -82,7 +82,7 @@ This can be handy if you have a number of variables that you'd like to use in a 
 	println "Did you know that $name likes $hobby?"
 
 T> ## Avoid `+` for String concatenation
-T> This helps escape the use of the addition operator (`+`) to concatenate (join) strings:
+T> GStrings let us escape Java's use of the addition operator (`+`) to concatenate (join) strings:
 T>	`println 'hello ' + 'world'`
 T> You'll see this in a lot of Java code and I, for one, am pleased to see that Groovy lets us pretend this never happened.
 
@@ -103,7 +103,7 @@ I> The code `word.length()` calls the `length` method available on a string - we
 
 ## Multiline Strings
 
-The examples given so far use short strings but longer strings would be cumbersome to type using lots of new lines. Instead, Groovy provides multiline strings - the code below declares a multiline fixed string:
+The examples given so far use short strings but longer strings would be cumbersome to type using `\n` all over the place. Instead, Groovy provides multiline strings - the code below declares a multiline fixed string:
 
 {title="A Multiline string",lang=groovy}
 	def poem = '''But the man from Snowy River let the pony have his head,
@@ -202,8 +202,8 @@ The `replace` method lets us provide a string that we want to change to a new va
 
 	println str.replace('World', 'Fred')
 
-T> Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in an up-coming chapter.
-Additionally, the tutorial on Operators will look into this in more depth.
+T> Regular expressions provide a comprehensive approach to searching and manipulating strings and are covered in [an up-coming chapter](#chregex).
+Additionally, the tutorial on [Operators](#chops) will look into this in more depth.
 
 Lastly, and a favourite of mine, is `toURL()`. This converts a String to a `URL` object which, in Groovy has a great `text`
 property that lets us load the text of our favourite web page:

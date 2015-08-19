@@ -2,11 +2,9 @@
 
 Let's start by examining a new method we'll write to calculate the average of the numbers in a list:
 
-```groovy
 	def determineAverage(list) {
 	    return list.sum() / list.size()
 	}
-```
 
 Breaking that code up we can see:
 
@@ -27,7 +25,7 @@ Let's return to that `determineAverage` method and get a complete script togethe
 Let's look at the main components of that script:
 
 1. The `determineAverage` method is defined as before
-    * This can appear above or below the other code - Groovy doesn't care but I like to put them at the bottom of scripts so the reader is presented with the main script first
+    * This can appear above or below the other code
 1. A new list of numbers is created: `def scores = [2, 7, 4, 3]`
 1. The method is called with the `scores` variable passed as a parameter
 1. The return value (result) of `determineAverage` is stored in the `result` variable.

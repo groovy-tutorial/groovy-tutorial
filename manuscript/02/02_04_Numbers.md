@@ -1,6 +1,6 @@
 # Numbers
 
-I> Groovy supports the various types of numbers that you'd expect - and makes it easy to use them. We'll take a quick look at those now but the chapter on data types will really get into the depths of messing around with numbers.
+I> Groovy supports the various types of numbers that you'd expect - and makes it easy to use them. We'll take a quick look at those now but the [chapter on data types](#chdatatypes) will really get into the depths of messing around with numbers.
 
 There are two main types of numbers you're likely to need:
 
@@ -30,12 +30,12 @@ Decimal numbers provide a fraction and can be negative or positive:
 
 {title="Using decimals",lang=groovy}
 	def pi = 3.14159
-	
+
 	// Measured in celsius
 	def absoluteZero = -273.15
 
 
-## Scientific notation 
+## Scientific notation
 Base-10 (decimal) scientific notation ({$$}a * 10^b{/$$}) can also be used by placing an `e` or `E` before the exponent:
 
 {title="Using SN",lang=groovy}
@@ -88,7 +88,7 @@ Let's close with a joke:
 
 {title="Lolz",lang=groovy}
 	def value = 0b10
-	
+
 	println "There are only $value types of people in the world - those who know binary and those who don't"
 
 

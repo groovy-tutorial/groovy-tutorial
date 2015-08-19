@@ -18,17 +18,17 @@ The `and(right)` method performs a logical 'and'
 {title="The and method",lang=groovy}
 	def truth = true
 	def lies = false
-	assert truth.and(lies) == false 
+	assert truth.and(lies) == false
 
 
-The conditional And operator (`&&`) is equivalent to the `and` method and the assertion above could also be written as `assert truth && lies == false`
+The [conditional And operator](#chcondops) (`&&`) is equivalent to the `and` method and the assertion above could also be written as `assert truth && lies == false`
 
 The `or(right)` method performs a logical 'or'
 
-{title="The or method",lang=groovy} 
+{title="The or method",lang=groovy}
 	def truth = true
 	def lies = false
-	assert truth.or(lies) == true 
+	assert truth.or(lies) == true
 
 
 The conditional Or operator (`||`) is equivalent to the `or` method and the assertion above could also be written as `assert truth || lies == true`

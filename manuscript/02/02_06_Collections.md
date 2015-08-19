@@ -1,4 +1,4 @@
-# Collections  
+# Collections {#chcollections}
 
 I> Having a single number or string is useful but collections help you keep them together.
 
@@ -9,7 +9,7 @@ Collections group a number of values in a single container. The Java [Collection
 
 ## Lists
 
-List variables contain several items and are declared using square brackets (`[...]`). 
+List variables contain several items and are declared using square brackets (`[...]`).
 
 The example below declares a variable (`temperatures`) as an empty list:
 
@@ -44,10 +44,9 @@ I can provide multiple indexes in the subscript notation and grab the specified 
 	def temperatures = [10, 5, 8, 3, 6]
 	assert temperatures[0, 2] == [10, 8]
 	assert temperatures[1, 3, 4] == [5, 3, 6]
-	assert temperatures[1..3] == [5, 8, 3]
 
 
-Ranges can also be used in the subscript notation and, as demonstrated in the example below, return a list containing the items who's indexes are included in the range:
+Ranges can also be used in the subscript notation and, as demonstrated in the example below, return a list containing the items whose indexes are included in the range:
 
 {title="Using ranges with lists",lang=groovy}
 	def temperatures = [10, 5, 8, 3, 6]
@@ -104,7 +103,7 @@ The `size()` method returns the number of elements in the list:
 
 The `first()` and `last()` methods return the first and last elements in a list. The `head()` method is synonymous with `first()`.
 
-{title="First and last methods",lang=groovy} 
+{title="First and last methods",lang=groovy}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	println periodic.first()
 	println periodic.head()
@@ -122,21 +121,21 @@ The `tail()` method returns the list minus the first (head) element and the `ini
 The `contains()` method returns `true` if the requested element is contained in the list:
 
 {title="Contains method",lang=groovy}
-	def periodic = ['hydrogen', 'helium', 'lithium']      
+	def periodic = ['hydrogen', 'helium', 'lithium']
 	assert periodic.contains('helium') == true
 
 
 The `reverse()` method returns the mirror of the list:
 
 {title="Reverse method",lang=groovy}
-	def periodic = ['hydrogen', 'helium', 'lithium']      
+	def periodic = ['hydrogen', 'helium', 'lithium']
 	println periodic.reverse()
 
 
 The `sort()` will sort the elements in a "natural" order. Basically, this relies on the list elements being comparable in some manner. The `sort` method is best used when the list contents are all of the same type (e.g. strings or numbers):
 
 {title="Sort method",lang=groovy}
-	def periodic = ['hydrogen', 'helium', 'lithium']      
+	def periodic = ['hydrogen', 'helium', 'lithium']
 	periodic.sort()
 
 
@@ -144,7 +143,7 @@ The `asImmutable()` method is a handy way to set the list contents in stone -  "
 
 {title="Don't go changing",lang=groovy}
 	def friends = ['fred', 'sally', 'akbar'].asImmutable()
-	
+
 	//This next line will cause an exception:
 	friends << 'jake'
 
@@ -165,7 +164,7 @@ Each key in a map is unique and points to a value in the map. In the example bel
 	def periodic = ['h': 'hydrogen',
 			'he': 'helium',
 			'li': 'lithium']
-	                 
+
 	println periodic['li']
 	println periodic.li
 	println periodic.get('li')
@@ -174,10 +173,10 @@ Each key in a map is unique and points to a value in the map. In the example bel
 You should also note that we can access map items using:
 
 1. The key in square brackets (`[]`)
-	1. Much as we did with lists: `println periodic['li']`. 
+	1. Much as we did with lists: `println periodic['li']`.
 	2. This is often referred to as _subscript notation_.
-2. We can also use the period (`.`) followed by the key: 
-	3. As in `println periodic.li`. 
+2. We can also use the period (`.`) followed by the key:
+	3. As in `println periodic.li`.
 	1. This is often referred to as _dot-point notation_
 3. Lastly, the `get()` method is passed a key and returns the associated value
 
@@ -199,50 +198,25 @@ To add an element to a map we can use the square bracket, dot-point notation, `<
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
-	        
+
 	periodic['be'] = 'Beryllium'
 	periodic.b = 'Boron'
 	periodic << ['c': 'Carbon']
 	periodic.put('n', 'Nitrogen')
-	
+
 	println periodic
 
 
 ### Keys
 Map keys don't have to be strings - they can be a mix of strings, numbers or other objects. Let's look at an example then go through the various bits of code:
 
-{title="Different types of keys",lang=groovy}
-	class Chicken {
-		def name
-	    	String toString() {
-	       		return "I am $name".toString()
-	    	}
-	}
-	
-	def cluckers = new Chicken(name: 'Cluckers')
-	
-	def mixedMap = [
-	    12:         'Eggs in a carton',
-	    'chicken':  'Egg producer',
-	    (cluckers):   'Head chicken'
-	]
-	
-	println mixedMap[12]
-	println mixedMap.get(12)
-	
-	println mixedMap.chicken
-	println mixedMap['chicken']
-	println mixedMap.get('chicken')
-	
-	println mixedMap[(cluckers)]
-	println mixedMap.get(cluckers)
-	
-	println mixedMap
+{lang=groovy}
+<<[Different types of keys](code/02/06/keys.groovy)
 
 
 In the example above:
 
-1. I create a new class (`Chicken`) 
+1. I create a new class (`Chicken`)
 	1. ... and store a new instance of `Chicken` in the variable `cluckers`
 2. I then create a map variable called `mixedMap` with different types of keys:
 	1. `12` is a number
@@ -275,9 +249,9 @@ The `get` method can be used to get the value for the requested key. A second op
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
-	        
+
 	println periodic.get('he')
-	println periodic.get('he', 'Unknown element')      
+	println periodic.get('he', 'Unknown element')
 	println periodic.get('x', 'Unknown element')
 
 
@@ -287,7 +261,7 @@ The `keySet()` method returns a list containing all of the keys in a map and `va
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
-	        
+
 	println periodic.keySet()
 	println periodic.values()
 
@@ -298,7 +272,7 @@ The `containsKey()` and `containsValue()` methods are useful for checking on map
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
-	        
+
 	println periodic.containsKey('li')
 	println periodic.containsValue('carbon')
 
@@ -309,6 +283,6 @@ The `asImmutable()` method works for maps in the same manner as it does for list
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium'].asImmutable()
-	
-	//This will cause an exception:  
+
+	//This will cause an exception:
 	periodic.x = 'new element'

@@ -1,6 +1,6 @@
-# The `switch` Statement
+# The `switch` Statement {#chswitch}
 
-I> When that if statement gets too big to handle, it's time to switch.
+I> When that if statement gets too big to handle, it's time to `switch`.
 
 There are times when the number of possibilities are larger than a readable `if-else-if` statement can handle. There are also times where we want to execute a specific set of statements but then "fall through" to others. It's in these places that the `switch` statement comes in handy.
 
@@ -11,10 +11,10 @@ Let's take a look at an example:
 	    case 'chess':
 	        println 'I like to play chess'
 	        break
-	    case 'go': 
+	    case 'go':
 	        println 'I can play go if you want'
 	        break
-	    case 'ludo': 
+	    case 'ludo':
 	        println 'I can play ludo if you want'
 	        break
 	    default:
@@ -27,31 +27,29 @@ The `switch` statement evaluates an expression - in the example above it's the v
 The rest of the `switch` block is broken up into `case`s and (optionally) a `default`. Each `case` is assessed against the switch value and the first match is selected. Each case is declared:
 
 - prefixed by the keyword `case`, followed by
-- an expression, and lastly,
-- a colon `:`
+  - an expression, and lastly,
+    - a colon `:`
 
-The `case` expression can be a more complex expression but in our example above I've used a string value (e.g. `chess`). If the value of `game` was `'ludo'` then the statements under `case 'ludo':` are evaluated. 
+The `case` expression can be a more complex expression but in our example above I've used a string value (e.g. `chess`). If the value of `game` was `'ludo'` then the statements under `case 'ludo':` are evaluated.
 
 The `break` statement indicates the end of the set of statements for the `case` and signals that the `switch` statement has completed. In the example above I've used `break` for every case but this isn't required. If `break` isn't provided, execution of the `switch` is said to "fall through" to the next set of statements. Essentially, Groovy will keep evaluating expressions until either a `break` is provided or the end of the `switch` block is reached.
 
 Falling through can be useful if you want to perform the same set of statements for more than one `case`. The example snippet below provides an example of such a case (pun intended):
-
 
     case 'snowboarding':
     case 'snowball fight':
         println 'But it\'s summer!'
         break
 
-
 Here's another example of falling through:
 
 {title="Falling through",lang=groovy}
 	def score = 2
-	
+
 	println 'You win: '
-	
+
 	switch (score) {
-	    case 3: 
+	    case 3:
 	        println '- gift voucher'
 	     case 2:
 	        println '- toy'
@@ -74,7 +72,6 @@ The Groovy  `switch` statement is much more powerful than Java's and can work ac
 >In Java `switch` is limited to the primitive types (and their object wrappers), Strings and Enums and the `case` expression is limited to a value (not an operation).
 
 Groovy achieves through the use of the `isCase` method defined for the `Object` class and overloaded by subclasses such as `Pattern`. Essentially, the switch value is passed to the  `case` instance. In the example below, `10.isCase(score)` would be called:
-
 
 	switch (score) {
 		case 10:
@@ -113,12 +110,12 @@ In the example below I set up a list of URI's[^uri] and assess them against regu
 T>The `each` method calls the closure for each value in a list
 
 {title="Switch with RegEx",lang=groovy}
-	def location = ['urn:isbn:0451450523', 
+	def location = ['urn:isbn:0451450523',
 	                'http://en.wikipedia.org/wiki/Uniform_resource_locator',
 	                'HTTPS://secure.example.com/',
 	                'mailto:duncan@example.com',
 	                'fax:53454567567']
-	
+
 	location.each {
 	    switch( it.toLowerCase() ) {
 	        case ~/^urn:.*/ :
@@ -144,19 +141,19 @@ T>The `each` method calls the closure for each value in a list
 Groovy's `switch` can use a data type (Class) for comparison. Essentially, the switch will use the `instanceof` operator to compare the switch value with a class name provided in the `case`. In the example below I iterate through a list containing elements of various types. I use the `switch` statement to then determine the type of each list item:
 
 {title="Switch with class checks",lang=groovy}
-	def objList = [ 10, 
-	                'hello', 
-	                [1, 5, 8], 
+	def objList = [ 10,
+	                'hello',
+	                [1, 5, 8],
 	                [name: 'Dave'],
 	                ~/\n/
 	              ]
-	
+
 	for (item in objList) {
 	    switch (item) {
 	        case String:
 	            println 'You gave me a string'
 	            break
-	        case Number: 
+	        case Number:
 	            println 'You gave me a number'
 	            break
 	        case List:
@@ -169,4 +166,3 @@ Groovy's `switch` can use a data type (Class) for comparison. Essentially, the s
 	            println "Sorry, I can't handle instances of ${item.class}"
 	    }
 	}
-

@@ -1,4 +1,4 @@
-# Conditional Operators
+# Conditional Operators {#chcondops}
 
 I> These help you lay out your logic.
 
@@ -7,11 +7,11 @@ You'll most often see Conditional-and (`&&`) and Conditional-or (`||`) used in c
 The Conditional Operator (`?:`) is a short-form variant of the `if-else` statement that really helps with code readability. It's also referred to as the "elvis" operator and the "ternary" operator.
 
 {title="The conditional operators"}
-|Operator|Name|   
+|Operator|Name|
 |:------:|:--------|
-|`&&`	|  Conditional-and	|  
-|`||`	|  Conditional-or	| 
-|`?:`	|  Conditional operator	|  
+|`&&`	|  Conditional-and	|
+|`||`	|  Conditional-or	|
+|`?:`	|  Conditional operator	|
 
 ## What Is Truth?
 
@@ -23,7 +23,7 @@ All of the following statements resolve as `true` and the assertions all pass:
 	assert 'Hello'
 
 
-Obviously `false` is false but so is `0`, `''` (empty string) and `null`. 
+Obviously `false` is false but so is `0`, `''` (empty string) and `null`.
 
 The complement operator (`!`) can be used to negate an expression, allowing the following assertions to pass:
 
@@ -46,11 +46,11 @@ Conditional operators are evaluated left-to-right. The assertion in the followin
 Conditional-and uses the boolean AND to determine if a statement is `true` or `false`. In order to be `true`, both the left-hand and right-hand operands must evaluate to true, as described in the truth table below:
 
 {title="AND Truth Table"}
-|LHS  |RHS | Result  
-|:------:|:------:|:------:|  
-|0	| 0	| 0	|  
-|1	| 0	| 0	|  
-|0	| 1	| 0	|  
+|LHS  |RHS | Result
+|:------:|:------:|:------:|
+|0	| 0	| 0	|
+|1	| 0	| 0	|
+|0	| 1	| 0	|
 |1	| 1	| 1	|
 
 In a conditional-and statement, both expressions are always evaluated. In the example below, `++counter` is evaluated (giving counter now equal to 1) before the conditional is assessed:
@@ -58,7 +58,7 @@ In a conditional-and statement, both expressions are always evaluated. In the ex
 
 	def counter = 0
 	def result = true && ++counter
-	
+
 	assert result == true
 	assert counter == 1
 
@@ -67,19 +67,19 @@ In a conditional-and statement, both expressions are always evaluated. In the ex
 Conditional-or uses the boolean OR to determine if a statement is `true` or `false`. In order to be `true`, either the left-hand or right-hand operands must evaluate to true, as described in the truth table below:
 
 {title="OR Truth Table"}
-|LHS  |RHS | Result  
-|:------:|:------:|:------:|  
-|0	| 0	| 0	|  
-|1	| 0	| 1	|  
-|0	| 1	| 1	|  
-|1	| 1	| 1	| 
+|LHS  |RHS | Result
+|:------:|:------:|:------:|
+|0	| 0	| 0	|
+|1	| 0	| 1	|
+|0	| 1	| 1	|
+|1	| 1	| 1	|
 
 In a conditional-or statement, each expression is evaluated in left-to-right order until either an expression resolves to `true` or no expressions are left (resulting in `false` overall). Once an expression is evaluated to `true` no further evaluation of the conditional is performed. This is important to keep in mind if you have an expression performing an operation that you later rely on as it may never be evaluated. In the example below I demonstrate a similar block of code used in the conditional-and section but I'll use a conditional-or. The final assertion (`assert counter == 1`) will fail as `++counter` is never evaluated:
 
 
 	def counter = 0
 	def result = true || ++counter
-	
+
 	assert result == true
 	assert counter == 1
 
@@ -90,21 +90,21 @@ The conditional operator (`?:`) is most commonly used when assigning a value to 
 
 {title="A basic tax calculator",lang=groovy}
 	def salary = 100000
-	
+
 	def taxBracket = salary < 75000 ? 'Bracket 1': 'Bracket 2'
-	
+
 	assert taxBracket == 'Bracket 2'
 
 
-In the code above the relational expression (`salary < 75000`) is evaluated and, in this case, resolves to `false` and the third operand (`Bracket 2`) is evaluated and assigned to `taxBracket`. As the operand is just a string there's no real evaluation but we can use any expression that will return a result. 
+In the code above the relational expression (`salary < 75000`) is evaluated and, in this case, resolves to `false` and the third operand (`Bracket 2`) is evaluated and assigned to `taxBracket`. As the operand is just a string there's no real evaluation but we can use any expression that will return a result.
 
 The code below will calculate income tax based on the person's income:
 
 {title="More tax",lang=groovy}
 	def salary = 100000
-	
+
 	def tax = salary < 75000 ? salary * 0.1: salary * 0.2
-	
+
 	assert tax == 20000
 
 
@@ -115,13 +115,13 @@ A major benefit of the conditional operator is readability. Consider the previou
 {title="A less readable option",lang=groovy}
 	def salary = 100000
 	def tax = 0
-	
-	if (salary < 75000) { 
+
+	if (salary < 75000) {
 	    tax = salary * 0.1
 	} else {
 	    tax = salary * 0.2
 	}
-	
+
 	assert tax == 20000
 
 
@@ -132,16 +132,16 @@ The conditional operator is also really useful for default values - these are us
 {title="Using `?:` to set a default value",lang=groovy}
 	class Person {
 	    def name
-	    
+
 	    def Person(name = '') {
 	        setName(name)
 	    }
-	    
+
 	    def setName(name) {
 	        this.name = name ?: 'Anonymous'
 	    }
 	}
-	
+
 	def jim = new Person()
 	println jim.name
 
@@ -179,9 +179,9 @@ In the code below I've provided a small example of checking for `null` in Java. 
 	public class NullTest {
 	    public static void main(String[] args) {
 	        NullTest t = null;
-	
+
 	        String output = (t == null) ? "Null" : "Not null";
-	        
+
 	        System.out.println(output);
 	    }
 	}
@@ -210,4 +210,4 @@ You'll note that I didn't bother with the `output` variable and dropped the pare
 
 
 You still need to check for `null` in Groovy but the shortened conditional operator and the safe navigation operator really do help cut down on the boiler-plate stuff.
-     
+

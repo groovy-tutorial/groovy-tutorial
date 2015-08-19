@@ -33,7 +33,7 @@ The Safe Navigation operator (`?.`) checks to make sure that a variable isn't `n
 	println fred.name
 
 
-As `fred` somehow became `null` at some point in the code, that call to `fred.name` causes a nasty `java.lang.NullPointerException` (aka the NPE). This happens a lot as variable (in this case `fred`) can end up being `null` for a number of reasons, including:
+As `fred` somehow became `null` at some point in the code, that call to `fred.name` causes a nasty `java.lang.NullPointerException` (aka the NPE). This happens a lot as variables (in this case `fred`) can end up being `null` for a number of reasons, including:
 
 - The variable never gets set in the first place - perhaps the initialisation failed but we didn't catch it properly
 - A method returns `null` instead of an object instance
@@ -57,7 +57,7 @@ In order to stop the NPE you'll normally see developers using an `if` statement 
 	}
 
 
-T>In the code above, `if (fred)` equates to true if `fred` isn't null - it's a handy bit of Groovy syntax we'll cover when we get to the `if` statement in the next tutorial.
+T>In the code above, `if (fred)` equates to true if `fred` isn't null - it's a handy bit of Groovy syntax we'll cover when we get to the [tutorial on the `if` statement]{#chif}.
 
 Groovy's Safe Navigation operator saves some time and code. In the code below, Groovy checks that the `fred` variable isn't `null`  before trying to access the `name` property - giving us a compact piece of code: `fred?.name`.
 
@@ -104,7 +104,7 @@ The Identity operator (`is`) determines if two variables are referencing the sam
 
 As we saw in the chapters on Equality Operators and Relational Operators, Groovy uses the `==` operator to determine if two objects are equivalent based on their state. Using `==` for this purpose is really useful and improves code readability *but* it means that the traditional Java use of `==` to determine if two objects reference the same instance needs a replacement in Groovy. The `is` method is that replacement.
 
-In the code below I describe a `Person` class and use a very helpful annotation (`@groovy.transform.EqualsAndHashCode`) so that Groovy sets up the approach to determining if two instances of `Person` are the same - such that `==` returns `true`. I've decided that all people will have a unique identifier and, provided two instances have the same identifier, they're the same person. This means that all three variations (`fred`, `freddie`, `frederick`) of the person with the ID `345` are equal (`==`) to each other. However, by using `is` I can see that, whilst `fred` and `freddie` point to the same instance of Person, `frederick` points to a different instance.
+In the code below I describe a `Person` class and use a very helpful annotation (`@groovy.\-transform.\-EqualsAndHashCode`) so that Groovy sets up the approach to determining if two instances of `Person` are the same - such that `==` returns `true`. I've decided that all people will have a unique identifier and, provided two instances have the same identifier, they're the same person. This means that all three variations (`fred`, `freddie`, `frederick`) of the person with the ID `345` are equal (`==`) to each other. However, by using `is` I can see that, whilst `fred` and `freddie` point to the same instance of Person, `frederick` points to a different instance.
 
 {title="Can I see some identification?",lang=groovy}
 	@groovy.transform.EqualsAndHashCode(includes="id")

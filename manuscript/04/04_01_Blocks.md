@@ -2,7 +2,7 @@
 
 I> These blocks are not as fun as the wooden version but just as important in building programs.
 
-This chapter is really just a note about syntax - feel free to move to the next chapter after a quick glance here.
+%%This chapter is really just a note about syntax - feel free to move to the next chapter after a quick glance here.
 
 Groovy uses curly brackets `{..}` to enclose blocks of code. These are primarily used to group a set of statements within elements such as control flow, class, method and closure declarations. Blocks also let you "partition off" parts of code so that items such as variables aren't visible to other parts of your code - referred to as "scope".
 
@@ -50,7 +50,7 @@ If the above code was a Groovy script the block structures really would be redun
 
 
 	class Person {
-	
+
 	}
 
 
@@ -58,19 +58,19 @@ If the above code was a Groovy script the block structures really would be redun
 
 
 	def doStuff() {
-	
+
 	}
 
 
 ... in closure declarations
 
 
-	{name -> 
+	{name ->
 	    println "Hello, $name"
 	}
 
 
-## Variable Scope 
+## Variable Scope
 
 Variable Scope refers to the visibility of a variable from other blocks. A variable declared at the top level is visible to blocks nested within it. The reverse, however, is not true. This lets us declare variables within a block that is specific to that block (and any nested blocks) but doesn't interfere with the rest of the program.
 
@@ -78,11 +78,11 @@ In the example below, the code within `Block1` can "see" the `count` variable so
 
 {title="A sample block",lang=groovy}
 	def count = 0
-	
+
 	Block1: {
 	    assert count == 0
 	}
-	
+
 	assert count == 0
 
 
@@ -93,7 +93,7 @@ The second `assert` will fail as `count` is not in scope in the main body of the
 	    def count = 0
 	    assert count == 0
 	}
-	
+
 	assert count == 0
 
 
@@ -102,7 +102,7 @@ In the next example, `count` is visible to the nested bock (`Block2`):
 
 	Block1:{
 	    def count = 0
-	    
+
 	    Block2:{
 	        assert count == 0
 	    }
@@ -113,7 +113,7 @@ What all of this means is that you need to keep an eye on where the variable can
 
 
 	def volume = 11
-	
+
 	if (volume > 10) {
 	    def dbLevel = 'extreme'
 	    println "A volume of $volume is $dbLevel"
@@ -129,7 +129,7 @@ I repeatedly make a mistake in which I declare a variable within a `try` block b
 	} catch (any) {
 	    //Do something to handle the exception
 	}
-	
+
 	println myObj
 
 
@@ -137,11 +137,11 @@ I've put the `def myObj = new Object()` into the `try` block as the instantiatio
 
 
 	def myObj
-	
+
 	try {
 	    myObj = new Object()
 	} catch (any) {
 	    //Do something to handle the exception
 	}
-	
+
 	println myObj

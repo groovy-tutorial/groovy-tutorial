@@ -1,4 +1,4 @@
-# Data types {#chdatatypes} 
+# Data types {#chdatatypes}
 
 I> Groovy does a good job of working out what sort of variable you're using (numbers, strings, booleans etc) but let's look at what's going on under the hood.
 
@@ -7,7 +7,7 @@ Groovy does not preclude the programmer from explicitly declaring a data type, p
  1. Use of JVM-compatible libraries may require knowledge of the data types required by method calls.
 	 - Important if you want to mine the rich collection of existing Java libraries
  2. Conversion between different data types (such as decimal numbers to whole numbers) can cause truncation and other (perhaps unexpected) results.
-	 - Essential knowledge if your program relies on calculations 
+	 - Essential knowledge if your program relies on calculations
 
 Most of Java's "core" classes (types) are defined in the `java.lang` package. Groovy enhances some of these in the GDK to give you extra flexibility.
 
@@ -30,10 +30,10 @@ The table below illustrates Groovy's selection of a data type based on a literal
 |`3.4028235E+38`|java.math.BigDecimal|
 |`1.7976931348623157E+308`|java.math.BigDecimal|
 
-It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`. 
+It is important to note that the type is selected at each assignment - a variable that is assigned a string such as `"Hello"` is typed as `java.lang.String` but changes to `java.lang.Integer` when later assigned the value `101`.
 
 ## Using a specific type
-A variable can be declared as being of a specific data type. When using a type, drop the `def` keyword: 
+A variable can be declared as being of a specific data type. When using a type, drop the `def` keyword:
 
 {title="Declaring a variable using a specific type",lang=groovy}
 	Integer myNum = 1
@@ -43,22 +43,20 @@ A variable can be declared as being of a specific data type. When using a type, 
 Suffixes can also be used if you want to be really specific about the data type Groovy is to use for a number. When using suffixes you use the def keyword to define the variable: `def dozen = 12i`
 
 {title="Type suffixes supported by Groovy"}
-|Suffix |Type |  Example |  
-| ------	| ------	| ------	|  
-| `I` or `i`	| Integer	| `12i`	|  
-| `L` or `l`	| Long	| `23423l`	|  
-|`G` or `g`	| BigInteger	| `1_000_000g`	|  
-|`F` or `f`	| Float	| `3.1415f`	| 
-|`D` or `d`	| Double	| `3.1415d`	|  
-|`G` or `g`	| BigDecimal	| `3.1415g`	|  
+|Suffix|Type|Example|
+|:------:|:------|:------:|
+| `I` or `i`| Integer	| `12i`	|
+| `L` or `l`| Long	| `23423l`	|
+|`G` or `g`	| BigInteger	| `1_000_000g`	|
+|`F` or `f`	| Float	| `3.1415f`	|
+|`D` or `d`	| Double	| `3.1415d`	|
+|`G` or `g`	| BigDecimal	| `3.1415g`	|
 
 You may have noticed that BigInteger and BigDecimal have the same suffix - this isn't a typo - Groovy works out which one you need simply by determining if the number is a whole number (BigInteger) or a decimal (BigDecimal).
 
 If you're going to use explicit types then you need to know limitations of that type. For example, the following code will fail:
 
-
-	assert 3.1415926535f == 3.1415926535d
-
+    assert 3.1415926535f == 3.1415926535d
 
 This failure occurs because Float will shorten (narrow) the value to `3.1415927` - not a mistake you'd want to make when measuring optics for your space telescope! You can see which type Groovy will use automatically by running this snippet of code:
 
@@ -78,8 +76,8 @@ Variables can be explicitly assigned `null`:
 As Groovy imports the `java.lang` package as well as the `java.math.BigDecimal` and `java.math.BigInteger` classes by default, a range of data types are available for immediate use:
 
  - `Boolean`: to store a logical value of `true` or `false`
- - Numbers (based on `java.lang.Number`): 
-	- `Byte` 
+ - Numbers (based on `java.lang.Number`):
+	- `Byte`
 	- `Short`
 	- `Integer`
 	- `Long`
@@ -90,10 +88,11 @@ As Groovy imports the `java.lang` package as well as the `java.math.BigDecimal` 
  - `Character`: A single character such as a letter or non-printing character
  - `String`: A regular Java-esque piece of text
  - `GString`: A Groovy string that allows for interpolation
- - `Object`: This is the base class for all other classes 
+ - `Object`: This is the base class for all other classes
  - `Closure`: The class that holds closure values
 
-The types listed above are often referred to as _reference types_, indicating that they relate to a class definition. Groovy also provides a set of _primitive types_ that are more closely aligned to the C programming language than an object-oriented language such as Java and Groovy. In most cases, use of a reference type should be preferred and Groovy's dynamic typing uses _reference types_. 
+The types listed above are often referred to as _reference types_, indicating that they relate to a class definition. Groovy also provides a set of _primitive types_ that are more closely aligned to the C programming language than an object-oriented language such as Java and Groovy.
+%%In most cases, use of a reference type should be preferred and Groovy's dynamic typing uses _reference types_.
 
 ### Primitive types
 The table below maps the types defined in `java.lang` against their equivalent primitive types:
@@ -121,8 +120,8 @@ You can check those value ranges by using the `MIN_VALUE` and `MAX_VALUE` consta
 
 As an object-oriented language Groovy also provides a mechanism for declaring new data types (objects) that extend and encapsulate information to meet a range of requirements. These implicitly extend the `java.lag.Object` class.
 
-#### Autoboxing
-_Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing_.
+I> ## Autoboxing
+I> _Autoboxing_ refers to the automatic conversion of a primitive type to a reference type. _Unboxing_ is the reverse of _Autoboxing_.
 
 ## Type Conversions
 
@@ -144,7 +143,7 @@ Care must be taken to not rely totally on this automatic conversion. In the exam
 
 ### Casting
 
-The `as` operator can be used to cast (change) a value to another class. 
+The `as` operator can be used to cast (change) a value to another class.
 
 {title="Casting",lang=groovy}
 	def pi = 3.1415926535 as Integer
@@ -152,13 +151,13 @@ The `as` operator can be used to cast (change) a value to another class.
 
 T> You've seen this before... `def myGroceries = ['milk', 'honey'] as Set` - this is actually just casting the list to the `Set` data type.
 
-This will be discussed further in the Operators tutorial.
+This will be discussed further in the [Object Operators tutorial](#chobjectoperators).
 
 ### Converting Numbers
 
 `java.lang.Number` provides a number of methods for converting numbers between the various numerical data types:
 
-* `byteValue()` 
+* `byteValue()`
 * `doubleValue()`
 	* also `toDouble()`
 * `floatValue()`

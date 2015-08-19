@@ -29,17 +29,15 @@ Please remember that I'm not a big corporation or an automaton - I can't  respon
 
 ## Bookmarks
 
-Between Groovy and Java there's a lot of useful websites - this is a few key ones you'll want to have in your browser. 
+Between Groovy and Java there's a lot of useful websites - this is a few key ones you'll want to have in your browser.
 
 Core resources to have at-hand:
 
 - [The Groovy homepage](http://www.groovy-lang.org/) is a great starting point.
 - The latest Groovy API documents are available at:
-	- [The Groovy API](http://groovy-lang.org/api.html)
-		- aka the GAPI
-	- [The Groovy extensions to the JDK](http://groovy-lang.org/gdk.html)
-		- aka the GDK
-- The [Java API](http://docs.oracle.com/javase/7/docs/api/) always comes in handy
+	- [The Groovy API](http://groovy-lang.org/api.html) - aka the GAPI
+	- [The Groovy extensions to the JDK](http://groovy-lang.org/gdk.html) - aka the GDK
+- The [Java API](http://docs.oracle.com/javase/8/docs/api/) always comes in handy
 	- So do [The Java Tutorials](http://docs.oracle.com/javase/tutorial/)
 - Whilst not a perfect fit for Groovy, I tend to use the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) as my stern mentor.
 
@@ -47,13 +45,12 @@ Great blogs and sites that provide Groovy coding examples:
 
 - [Mr Haki](http://mrhaki.blogspot.com.au/search/label/Groovy) - A really useful site containing heaps of Groovy code examples.
 - [InfoQ](http://www.infoq.com/groovy) - Another useful site for Groovy articles.
-- My own [Workbench](http://workbench.duncan.dickinson.name) blog is very young but has a few Groovy samples.
 
 The book [Groovy in Action (2nd Edition)](http://www.manning.com/koenig2/) will help you go further with your Groovy programming.
 
 If you find yourself stuck and needing some help, the following channels are worth tuning into:
 
-- [StackOverflow's Groovy tag](http://stackoverflow.com/questions/tagged/groovy) is really useful 
+- [StackOverflow's Groovy tag](http://stackoverflow.com/questions/tagged/groovy) is really useful
 	- search for an answer before posting a question
 	- Check out their article "[How do I ask a good question?](http://stackoverflow.com/help/how-to-ask)" - it's an excellent outline for asking in a way people may answer
 - The [Groovy Mailing lists](http://groovy-lang.org/mailing-lists.html) are also worth joining and searching
@@ -62,7 +59,7 @@ I suggest to anyone within the orbit of Java that "Effective Java (2nd edition)"
 
 ## Conventions Used in This Book
 
-I've tried to present this book in a manner that will suit both the reader that likes a linear path of front-to-back and those who like to dip in on specific items.  
+I've tried to present this book in a manner that will suit both the reader that likes a linear path of front-to-back and those who like to dip in on specific items.
 
 ### Code
 
@@ -99,7 +96,7 @@ W> ## A warning message
 W> These point out things to worry about
 
 ## Your Rights and This Book
-I'm making the "Groovy Tutorial" freely available because I feel that open source projects such as Groovy deserve to have a variety of documentation that helps people use open source software. This body of work is one that took a significant amount of unpaid time but I have benefitted from many people's work in developing open source software and the associated, freely available text, that they make available. 
+I'm making the "Groovy Tutorial" freely available because I feel that open source projects such as Groovy deserve to have a variety of documentation that helps people use open source software. This body of work is one that took a significant amount of unpaid time but I have benefitted from many people's work in developing open source software and the associated, freely available text, that they make available.
 
 This work is licensed under a Creative Commons Attribution License - this means that you have the right to share and adapt the text as you see fit *but* you must give me _"appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use"_. If you decide to use the whole text or parts thereof in a manner that derives you an income I think it'd be civil of you to consider contributing to my retirement fund.
 

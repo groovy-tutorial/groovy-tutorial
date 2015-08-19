@@ -7,7 +7,7 @@ The Groovy Console provides a handy environment for preparing and testing basic 
 {title="Start the console",lang=bash}
 	groovyConsole &
 
-I> On Windows...
+I> ## On Windows...
 I> Windows users may also find a link to `Groovy Console` in their Start menu.
 
 The Groovy Console should look something like the following screen grab:
@@ -30,7 +30,7 @@ Once you have the Groovy Console open, enter the following line in the editor ar
 {title="Let's get groovy",lang=groovy}
 	print 'hello, world'
 
-T> Groovy web console
+T> ## Groovy web console
 T> Don't forget that you can also try out the [Groovy web console](http://groovyconsole.appspot.com) - it'll run this code just fine.
 
 Once that's ready, go to the menu and select `Script -> Run` and you should see your output in the bottom half of the window something like the image below:

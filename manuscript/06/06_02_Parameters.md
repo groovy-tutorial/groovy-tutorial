@@ -30,7 +30,7 @@ T> Deep down in the system, `scores` and `list` are names that point to the same
 Groovy lets you designate a data type for your parameters:
 
 {title="Parameter with data type",lang=groovy}
-	def determineAverage(ArrayList list) {
+	def determineAverage(List list) {
 	    return list.sum() / list.size()
 	}
 

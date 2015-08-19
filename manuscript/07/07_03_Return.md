@@ -2,9 +2,7 @@
 
 I> Closures can return values just like methods.
 
-Just like methods, closures can return a value. In fact both closures and methods always return a value.
-
-In this next example, the result of the last expression is returned (the value of `num1` or `num2`):
+Just like methods, closures can return a value. In this next example, the result of the last expression is returned (the value of `num1` or `num2`):
 
 {lang=groovy}
 <<[Returning a value](code/07/03/return.groovy)

@@ -1,4 +1,4 @@
-# Ranges
+# Ranges {#chranges}
 
 I> Ranges describe a range of numbers.
 
@@ -6,7 +6,7 @@ Ranges define a starting point and an end point. Let's look at a well-known type
 
 {title="Declaring a range",lang=groovy}
 	def countdown = 10..0
-	
+
 	println countdown.getFrom()
 	println countdown.getTo()
 
@@ -58,7 +58,7 @@ I could tweak the above code if I want to get fancy:
 
 ## Ranges of Objects
 
-Ranges are primarily used with numbers but they can be of any object type that can be iterated through. This basically means that Groovy needs to know what object comes next in the range - these objects provide a `next` and `previous` method to determine this sequence. Over time you'll discover various options for use in ranges but numbers really are the main type. 
+Ranges are primarily used with numbers but they can be of any object type that can be iterated through. This basically means that Groovy needs to know what object comes next in the range - these objects provide a `next` and `previous` method to determine this sequence. Over time you'll discover various options for use in ranges but numbers really are the main type.
 
 Apart from numbers, individual characters (letters) can be used in ranges. In the example below I create a range of lower-case letters:
 
@@ -69,7 +69,7 @@ Apart from numbers, individual characters (letters) can be used in ranges. In th
 
 ### Ranges and Enums
 
-I> We'll look into Enums when we start looking at creating objects in a later tutorial
+I> We'll look into Enums when we start looking at creating objects in [a later tutorial](#chenums)
 
 Ranges can be handy when dealing with `enums` as they give us the ability to set a subset of enum values. In the example below I create a handy helpdesk tool:
 
@@ -83,21 +83,21 @@ Ranges can be handy when dealing with `enums` as they give us the ability to set
 	enum Priority {
 	    LOW,MEDIUM,HIGH,URGENT
 	}
-	
+
 	class Ticket {
 	    def priority
 	    def title
 	}
-	
+
 	def helpdeskQueue = [
 	    new Ticket(priority: Priority.HIGH, title: 'My laptop is on fire'),
 	    new Ticket(priority: Priority.LOW, title: 'Where is the any key'),
 	    new Ticket(priority: Priority.URGENT, title: 'I am the CEO and I need a coffee'),
 	    new Ticket(priority: Priority.MEDIUM, title: 'I forgot my password')
 	]
-	
+
 	def focus = Priority.HIGH..Priority.URGENT
-	
+
 	for (ticket in helpdeskQueue) {
 	    if (ticket.priority in focus) {
 	        println "You need to see to: ${ticket.title}"
@@ -114,7 +114,7 @@ Try the example above out with various settings for the `focus` variable:
 
 ## Ranges and List Indexes
 
-You can access a subset of a list using a range subscript. In the example below I use the subscript `[1..3]` to grab a new list containing elements 1 through 3 of the `temperatures` list. 
+You can access a subset of a list using a range subscript. In the example below I use the subscript `[1..3]` to grab a new list containing elements 1 through 3 of the `temperatures` list.
 
 T> ## Zero-based lists
 T> Remember that lists are zero-based so `5` is element number 1
@@ -131,7 +131,7 @@ Ranges are most often see when we're using loops - we'll get to them in a later 
 
 {title="Looping with ranges",lang=groovy}
 	def countdown = 10..0
-	
+
 	for (i in countdown) {
 	    println "T minus $i and counting"
 	}
@@ -183,7 +183,7 @@ In order to check if a value is contained within a range we use the `containsWit
 	assert countdown.containsWithinBounds(5) == true
 
 
-The `step` method returns a list based going through the range via the specified increment (step). In the example below I step through the range one at a time (`step(1)`) and then two at a time (`step(2)`):
+The `step` method returns a list based on going through the range via the specified increment (step). In the example below I step through the range one at a time (`step(1)`) and then two at a time (`step(2)`):
 
 {title="Stepping",lang=groovy}
 	def countdown = 5..1
@@ -204,7 +204,7 @@ As we're about to see the `step` method is very effective when used with closure
 
 Closures are a method (function) that can be handled in a manner similar to variables. A closure is described within curly brackets `{..}` and can be passed as method parameters.  Closure have a default variable named `it` and this holds a value passed to the closure by its caller.
 
-We'll look into closures much more thoroughly in a later tutorial but, for now, take in the following examples and refer back to them when you get to know closures a little better.
+We'll look into closures much more thoroughly in a [later tutorial](#chclosures) but, for now, take in the following examples and refer back to them when you get to know closures a little better.
 
 The `step` method will call a closure for each item in a range. In the example below I step through `countdown` one number at a time and, for each number, I display a message:
 
@@ -215,7 +215,7 @@ The `step` method will call a closure for each item in a range. In the example b
 	}
 
 I> ## Closure syntax
-I>The syntax `countdown.step(1) {..}` probably looks a bit odd at this point - essentially, the closure is being passed as a parameter to `step`. There's a tutorial covering closures coming up so don't feel too annoyed if these examples don't look right to you.
+I>The syntax `countdown.step(1) {..}` probably looks a bit odd at this point - essentially, the closure is being passed as a parameter to `step`. There's a [tutorial covering closures coming up](#chclosures) so don't feel too annoyed if these examples don't look right to you.
 
 I can use the range literal but need to place it within `(..)`:
 

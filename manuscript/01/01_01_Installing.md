@@ -1,6 +1,6 @@
-# Installing Groovy  
+# Installing Groovy
 
-I> Before we start anything let's get Groovy installed and running. 
+I> Before we start anything let's get Groovy installed and running.
 
 There are a few methods for installing Groovy on your system and this section will describe the basics for getting started. Before you get started make sure that any installations are for the versions listed in the table below:
 
@@ -17,7 +17,7 @@ W> It is notoriously difficult to provide this type of information in a stable m
 I know this chapter is about installing Groovy but perhaps it's worth leaving this until later. The [Groovy web console](http://groovyconsole.appspot.com) is an online Groovy console that should let you run most of the sample code provided in this tutorial. Provided you have web access you can skip through to the next chapter and get straight into writing some code!
 
 ## Install a Java Virtual Machine
-All methods for installing Groovy require that you have a Java Virtual Machine (JVM) installed. For the purposes of this book we'll use the Java 8 SE JDK (Java 8 Standard Edition Development Kit). You'll notice that Java 8 may also be represented as Java 1.8 - the former is the Java Platform version number (8) and the latter is the version string (1.7). 
+All methods for installing Groovy require that you have a Java Virtual Machine (JVM) installed. For the purposes of this book we'll use the Java 8 SE JDK (Java 8 Standard Edition Development Kit). You'll notice that Java 8 may also be represented as Java 1.8 - the former is the Java Platform version number (8) and the latter is the version string (1.8).
 
 W> ## JDK not JRE
 W> If you look around for Java downloads you'll likely come across Java Runtime Environment (JRE) downloads. The JRE provides enough functionality to run a compiled application but not to compile your Groovy code. You'll need the JDK to create Groovy programs.
@@ -32,7 +32,7 @@ Once you have the JDK installed it's time to get Groovy. We'll be using Groovy 2
 The following subsections will guide you through an installation based on which platform you're using.
 
 ### Windows
-The [Groovy Download](http://groovy-lang.org/download.html) page includes links to a Windows installer - download this and run the installer using the provided defaults (it's as easy as that). 
+The [Groovy Download](http://groovy-lang.org/download.html) page includes links to a Windows installer - download this and run the installer using the provided defaults (it's as easy as that).
 
 Just make sure you're downloading a 2.4.x version!
 
@@ -40,7 +40,7 @@ Just make sure you're downloading a 2.4.x version!
 Once you have the JDK and Groovy installed you should see the GroovyConsole application in your Windows 7 Start menu. Start up the GroovyConsole application and you should be good to go.
 
 ### Mac OSX and Linux
-The Groovy enVironment Manager (GVM) is the best tool for getting Groovy running on your system. The GVM homepage is <http://gvmtool.net/> but you don't need to visit it to run an installation. 
+The Groovy enVironment Manager (GVM) is the best tool for getting Groovy running on your system. The GVM homepage is <http://gvmtool.net/> but you don't need to visit it to run an installation.
 
 If you are comfortable with using the terminal then you just need to run the following command as a regular user[^curl]:
 
@@ -53,12 +53,12 @@ Once the `gvm` has been installed, run the following command to determine which 
 You'll see a large table of version numbers but are most interested in those marked with 2.4.x - you'll want the version with the highest value of x (e.g. 2.4). To install Groovy you now just call `gvm` as below:
 
 	gvm install groovy 2.4.0
- 
+
 ### Checking Groovy (all platforms)
 Once you have the JDK and Groovy installed, run the following command to double-check your Groovy version:
 
 	groovy -v
-	
+
 You should see something like the following output:
 
 	Groovy Version: 2.4.0 JVM: 1.8.0_31 Vendor: Oracle Corporation OS: Mac OS X
