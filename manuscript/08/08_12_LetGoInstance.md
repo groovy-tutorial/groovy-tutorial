@@ -6,7 +6,7 @@ Sometimes your variable (e.g. a class instance) can end up holding a large amoun
 
 For small Groovy scripts this may never be an issue but, for long running applications, data hanging around and not being used can start to soak up a serious amount of resources, especially memory. Once you've finished with a variable it's worth assigning its value to `null` to let the JVM know you don't need it anymore.
 
-You don't always need to explicitly set variables to `null` - this would make your code far less readable. The JVM knows that once a variable is no longer in scope, it's no longer accessible and, thus, is no longer needed. This means that if you have a variable declared inside a method, that its value is no longer needed once the method has completed. The same goes for variables declared within scopes such as loops. This can get a bit tricky when regarding closures and object references so it's not all plain sailing.
+You don't always need to explicitly set variables to `null` - this would make your code far less readable. The JVM knows that once a variable is no longer in scope, it's no longer accessible and, thus, is no longer needed. This means that if you have a variable declared inside a method, its value is no longer needed once the method has completed. The same goes for variables declared within scopes such as loops. This can get a bit tricky when regarding closures and object references so it's not all plain sailing.
 
 There is an important caveat: if multiple variables refer to the same data then the JVM can only release resources once all references have "unlatched". Let's examine this in the code below:
 

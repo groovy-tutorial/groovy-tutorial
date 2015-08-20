@@ -36,7 +36,7 @@ by the client code into the constructor and then assigned to the instance variab
 
 T> ## `static final` variable names in uppercase
 T> It is considered good form to use uppercase for final class variables - as seen with `static final String OWNER`.
-T> For multi-word names, separate each word with an underscore, as per `static final URL HOME_PAGE`.
+T> For multi-word names, separate each word with an underscore, as per: `static final URL HOME_PAGE`.
 
 ## Final fields and the map-like constructor
 Just remember that the map-like constructor that comes as a Groovy beans bonus won't help you with `final` variables.
@@ -65,6 +65,9 @@ First up, let's consider a class `FinalReport` that is meant to hold a set of `R
 
 {lang=groovy}
 <<[First stab at a protected report](code/08/09/final_report.groovy)
+
+First of all you'll notice the `@ToString(includeNames = true)` annotation. This is used to have a `toString()` method 
+generated for the class. This is really handy and I provide a description in the [Useful Annotations](#channotations) chapter.
 
 When setting up the `FinalReport` class I dutifully set `final List records` so that the list of records is `final` but
 two sections of code just blew a hole in my archive-ready report. The first one altered the text of a record in the report:
@@ -111,7 +114,7 @@ annotation does quite a number of things for me, including:
 * Makes properties `final`
 * Sets up a map-based constructor and a tuple constructor (as per `@TupleConstructor`)
 * Ensures that certain types of parameter (such as `Date` and collections) are defensively copied
-* Prepares a `toString` method (as per @ToString)
+* Prepares a `toString` method (as per `@ToString`)
 
 So here's how our `FinalReport` code now looks with the help of `@Immutable`:
 
@@ -158,7 +161,7 @@ setters:
 
 In the code above the `submitAssignment` method calls the `Assignment` constructor to create a new instance. This helps
 make sure that the student can't mysteriously change their answers after submitting. You can see that it's a pretty simple
-example a more complex classes will make this very difficult, especially if they have internal state that is hard to
+example and a more complex classes will make this very difficult, especially if they have internal state that is hard to
 reach.
 
 The third option is to have a class implement the `Cloneable` interface. If a third-party class provides this then you're
@@ -168,7 +171,8 @@ in luck and can make a copy (clone):
 <<[Using `Cloneable`](code/08/09/final_clone.groovy)
 
 As `Assignment` provides a `clone` method we just need to call it and we're returned a copy for our own use. Naturally,
-this doesn't help us if the author of `Assignment` doesn't provide us with a `clone` method.
+this doesn't help us if the author of `Assignment` doesn't provide us with a `clone` method. 
+Check out the [Useful Annotations](#channotations) chapter for the `@Canonical` annotation.
 
 T> ## Shallow copies vs Deep copies
 T> Copying can become a very complicated procedure depending on how deeply nested classes are within classes.

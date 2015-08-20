@@ -1,6 +1,6 @@
 # Constructors {#chconstructors}
 
-T> Can we build it?
+I> Can we build it?
 
 A constructor is a special type of method that is called when instantiating a new instance of a class. We create a new instance every time we use the `new` keyword:
 
@@ -24,7 +24,7 @@ Groovy gives us that little bit of syntactic sugar and lets us drop the square b
 
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
 
-Groovy gives you what looks like a built-in constructor that accepts a map (or map-like) syntax in which each of the keys match a name of a member variable. This is really useful for bean-type classes that we're using to keep data fields together. However, this isn't a true constructor as Groovy doesn't generate a `Person` constructor that takes a map as its parameter. Instead, the no-args constructor is called followed by the setters for each key in the map. This isn't usually a problem until you're [using `final` properties and fields](#chfinal).
+This looks like a built-in constructor that accepts a map (or map-like) syntax in which each of the keys match a name of a member variable. This is really useful for bean-type classes that we're using to keep data fields together. However, this isn't a true constructor as Groovy doesn't generate a `Person` constructor that takes a map as its parameter. Instead, the no-args constructor is called followed by the setters for each key in the map. This isn't usually a problem until you're [using `final` properties and fields](#chfinal).
 
 W> Note that `def astrid = new Person name: 'Astrid Smithson', email: 'astrid@example.com'` won't work - you need the parentheses.
 
@@ -51,7 +51,7 @@ Now that you've supplied a constructor you'll lose the built-in "map constructor
 	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com', mobile: '0418 111 222')
 	println astrid.dump()
 
-This will display: '<Person@45ceff52 name=[name:Astrid Smithson, email:astrid@example.com] email=null mobile=null>`. You should be able to see that the name property is just plain wrong.
+This will display: `<Person@45ceff52 name=[name:Astrid Smithson, email:astrid@example.com] email=null mobile=null>`. You should be able to see that the name property is just plain wrong.
 
 By adding the `Person(name)` constructor we've effectively changed `Person` so that it has two constructors: the no-argument constructor and one that accepts the `Person`'s name. If the coder using our `Person` class wanted to add an email or mobile number they'd have to do that after instantiating the instance.
 
@@ -113,7 +113,7 @@ T> ~~~~~~~~~~~~~~~
 There's two really interesting things to keep in mind with this:
 
 1. The constructor is being called (unlike with the "map constructor")
-2. This will work with the various Groovy and Java classes available
+2. This will work with all the various Groovy and Java classes
 
 On that last point, let's look at two quick examples to prove I'm not fooling you:
 

@@ -1,5 +1,7 @@
 # Inheritance {#chinheritance}
 
+Stay tuned!
+
 ## Abstract classes
 
 ## Final Classes and Methods

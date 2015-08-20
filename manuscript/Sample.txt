@@ -14,6 +14,16 @@ mainmatter.txt
 ./01/01_09_PackagesLibraries.md
 ./01/01_10_Grape.md
 ./02/02_00_Introduction.md
+./02/02_01_Variables.md
+./02/02_02_Objects.md
+./02/02_03_Booleans.md
+./02/02_04_Numbers.md
+./02/02_05_Strings.md
+./02/02_06_Collections.md
+./02/02_08_Arrays.md
+./02/02_09_Ranges.md
+./02/02_10_RegularExpressions.md
+./02/02_11_DataTypes.md
 ./03/03_00_Introduction.md
 ./04/04_00_Introduction.md
 ./05/05_00_Introduction.md

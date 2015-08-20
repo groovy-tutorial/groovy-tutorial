@@ -32,7 +32,7 @@ What if I don't want a setter or getter? You can define your own setter or gette
 <<[Change my ID will you?](code/08/04/no_accessor.groovy)
 
 
-In the code above you'll see that any call to `setId` will cause an exception to be thrown - whether it call the setter directly (`p.setId 1234`) or indirectly (`p.id = 1234`).
+In the code above you'll see that any call to `setId` will cause an exception to be thrown - whether it calls the setter directly (`p.setId 1234`) or indirectly (`p.id = 1234`).
 
 ## Fields
 Setters and getters **aren't generated for fields**. You need to create your own setters and getters for fields (if you want them). In the code below

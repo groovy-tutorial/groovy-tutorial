@@ -58,7 +58,7 @@ Here's another example, a method `findPrimes` that accepts a list of numbers (su
 {lang=groovy}
 <<[Finding primes](code/07/05/find_primes.groovy)
 
-If I wanted to be specific about my parameter data types, the correct data type for `closure` is `Closure`.  This lets me prepare a more static method signature of `def findPrimes(List list, Closure closure) `
+If I wanted to be specific about my parameter data types, the correct data type for `closure` is `Closure`.  This lets me prepare a static typed method signature of `def findPrimes(List list, Closure closure) `
 
 One last round at this one - this time to set a return value from the `findPrimes` method. The code is not really different to the previous example but it throws a number of items together: a typed method signature, a closure parameter, and a return value for the method (the list of primes).
 

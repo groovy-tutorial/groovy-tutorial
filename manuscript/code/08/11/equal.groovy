@@ -8,4 +8,6 @@ def agentSmith2 = agentSmith1
 def agentSmith3 = new Person(id: 411, name: 'Agent Smith')
 
 assert agentSmith1 == agentSmith2
+
+//This will fail
 assert agentSmith2 == agentSmith3

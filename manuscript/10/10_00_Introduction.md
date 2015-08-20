@@ -14,7 +14,7 @@ There are further Groovy features you may like to use in your projects:
     - [Templates](http://www.groovy-lang.org/processing-xml.html)
 
 I> ## The Groovy Documentation
-I> At time of writing, the Groovy Documentation still had many gaps. Don't let this put you off as you'll usually be able to find your answer with a web search or through the [mailing lists](http://www.groovy-lang.org/mailing-lists.html).
+I> At time of writing, the Groovy Documentation still has gaps but is coming together very nicely. Don't let this put you off as you'll usually be able to find your answer with a web search or through the [mailing lists](http://www.groovy-lang.org/mailing-lists.html).
 
 As I mentioned at the very beginning of this book, [Groovy in Action (2nd Edition)](http://www.manning.com/koenig2/) is also a great reference for those wanting to go further.
 

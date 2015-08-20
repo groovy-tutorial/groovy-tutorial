@@ -6,7 +6,23 @@ In the preceding chapters we looked at _instance_ properties/fields (variables) 
  provide a method that isn't bound to an instance or when we want a field/property that is used across instances. This is
  where _class methods_ and _class variables_ are utilised.
 
-Declaring a field/property  or method as static is easy: you just prepend the `static` modifier. Lets look at an example:
+So, when to use class methods and variables? There's a number of answers to this but the following three are the main ones:
+
+When a single property is best shared across all instances
+: This is often the case with configuration properties
+
+When a method isn't really specific to an instance
+: The method sits nicely with the class's concepts but doesn't need to relate directly to each instance
+
+When the class is really just a library of methods and constants
+: Sometimes you just need a set of utility methods
+
+It's important to note a few things about class methods:
+
+* They can't access `this` as there's no underlying instance
+* They can't use instance (member) variables
+
+Declaring a field/property or method as static is easy: you just prepend the `static` modifier. Lets look at an example:
 
 {lang=groovy}
 <<[A brief example of class methods and variables](code/08/08/static.groovy)
@@ -72,7 +88,7 @@ T> You'll also note that in that last example that I've thrown in some usage of 
 ## Static initializer blocks
 
 Classes don't have a constructor-style approach that you can use to prepare the class variables for use.
-However, there is a static form of the instance intializer block:
+However, there is a static form of the intializer block:
 
 {lang=groovy}
 <<[A static initializer](code/08/08/static_init.groovy)
@@ -83,18 +99,3 @@ allowing me to make sure that the configuration is ready to go rather than relyi
 Additionally, the initializer block will only be called once so the config file is only read once
  - much more efficient than if `loadConfig` is called over and over by other code.
 
-## When to use class methods
-
-A single property is best shared across all instances
-: This is often the case with configuration properties
-
-%%The method isn't really specific to an instance
-%%: The method
-
-The class is really just a library of methods
-: Sometimes you just need a set of utility methods
-
-It's important to note a few things about class methods:
-
-* They can't access `this` as there's no underlying instance
-* They can't use instance (member) variables

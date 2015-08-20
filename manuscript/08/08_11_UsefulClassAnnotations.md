@@ -1,4 +1,4 @@
-# Useful Annotations
+# Useful Annotations {#channotations}
 
 I> Note to self: let annotations do my work for me
 
@@ -60,7 +60,7 @@ Equality is not always easy to determine and will depend on the context in which
 is likely to cause some debate as to if matching only on `id` is enough. The `EqualsAndHashCode` annotation has a few options that are worth digging into.
 
 T> ##HashCode?
-T> A [hash codes](https://en.wikipedia.org/wiki/Java_hashCode%28%29) is a number calculated from an object.
+T> A [hash code](https://en.wikipedia.org/wiki/Java_hashCode%28%29) is a number calculated from an object.
 T> They're often used in [file verification](https://en.wikipedia.org/wiki/File_verification) and you may have seen
 T> them when downloading files (often they're MD5 or SHA1). In Groovy/Java, an object instance can be hashed into an Integer and
 T> this hash is used to help identify the instance against others.
@@ -85,7 +85,7 @@ This saves you from needing to stack your annotations:
 
 ## Immutable
 
-The `Immutable` annotation provides the same features as `Canonical` but locks down new instances so that they can't be changed after creation.
+The `Immutable` annotation provides similar features as `Canonical` but locks down new instances so that they can't be changed after creation.
 [Immutable objects](https://en.wikipedia.org/wiki/Immutable_object) can be very useful in systems using parallel processing or caching.
 
 {lang=groovy}

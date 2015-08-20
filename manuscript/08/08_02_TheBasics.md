@@ -29,7 +29,7 @@ In order to create an instance of the `Person` class we use the `new` keyword an
 	def john = new Person(name: 'John')
 	println john.getName()
 
-The call to `new Person(…)` is actually using a special method called a "constructor". Classes can define a variety of constructors to help with creating an instance and Groovy has some handy tricks we'll explore later.
+The call to `new Person(...)` is actually using a special method called a "constructor". Classes can define a variety of constructors to help with creating an instance and Groovy has some handy tricks we'll explore later.
 
 Instead of using the `def` keyword the variable could be declared as being of the `Person` type:
 
@@ -37,7 +37,6 @@ Instead of using the `def` keyword the variable could be declared as being of th
 
 I> ## Information hiding
 I> Groovy lets you hide fields and methods from other classes through the use of the `private` and `public` keywords. This helps us improve the level of [encapsulation](https://en.wikipedia.org/wiki/Encapsulation_(object-oriented_programming)) in our implementation.
-I> We'll get into this a lot more in subsequent chapters.
 
 ### Instance and Class Elements
 
@@ -61,7 +60,7 @@ The `final` keyword precedes static/instance fields and methods to make them con
 
 {title="Make it constant with `final`",lang=groovy}
 	class Person {
-	    static final specie = 'homo sapien'
+	    static final SPECIE = 'homo sapien'
 	    def name
 	}
 
@@ -115,7 +114,7 @@ Subclasses can also override methods and fields implemented by superclasses. Thi
 In the example below, `StaffMember` is a subclass of `Person`. The `StaffMember` class overrides the `getName` method and prefixes a string to the `name` returned by the superclass.
 
 {lang=groovy}
-<<[Overriding methods](code/08/02/trait.groovy)
+<<[Overriding methods](code/08/02/override.groovy)
 
 T> ## Stop the override
 T> Superclass methods declared with the `final` keyword can't be overridden.

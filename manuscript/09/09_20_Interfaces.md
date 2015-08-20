@@ -1,5 +1,7 @@
 # Interfaces
 
+Stay tuned!
+
 	interface SocialNetwork {
 	    def friend(Member friend)
 	

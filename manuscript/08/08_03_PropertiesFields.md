@@ -17,11 +17,11 @@ T> I could have used `Person astrid = new Person()`
 
 Groovy provides a built-in approach to passing in property values when creating a new instance. The code below creates a new `Person` but sets the property values using [named arguments](#chnamedarguments):
 
-	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com', mobile: '0418 111 222')
+    def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com', mobile: '0418 111 222')
 
 We don't have to set all of the properties, just the ones we need:
 
-	def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
+    def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
 
 T> ## This looks like a method call
 T> You're absolutely correct - `new Person()` calls a special type of method called a constructor. We'll cover these in the next chapter: [Constructors](#chconstructors). For now, know that Groovy provides this method for you.
@@ -29,18 +29,18 @@ T> You're absolutely correct - `new Person()` calls a special type of method cal
 ### Viewing an object's properties/fields
 If you try to use `println` to display the details for `astrid` you'll get something like `Person@46423706`. It's not very useful - just the type of the Object and an identifier. If you want to find out the field values, call the `dump` method that all objects inherit from `Object`:
 
-	println astrid.dump()
+    println astrid.dump()
 
 ### Typed properties
 
 Just as we saw [with variables](#chvariables_datatypes), properties can be defined with a specific data type, rather than with a dynamic type. The code below redefines the `Person` class with typed properties:
 
 {title="A basic person class with three typed properties",lang=groovy}
-class Person {
-    String name
-    String email
-    String mobile
-}
+    class Person {
+        String name
+        String email
+        String mobile
+    }
 
 T> ## Use `def` _or_ a type, not both
 T> Whilst `def String name` would work, the `def` is redundant and, by dropping it, you save four keystrokes for something more useful!
@@ -58,21 +58,21 @@ In the code below I have rewritten the `Person` class using fields rather than p
 
 {title="A basic person class with three fields",lang=groovy}
 
-	class Person {
-	    public name
-	    private email
-	    private mobile
-	}
+    class Person {
+        public name
+        private email
+        private mobile
+    }
 
 Firstly, you'll see that I haven't used the `def` keyword - I don't need to do this when I provide an access modifier. I could have declared `public def name` but it's not good style as the `def` is implied. We can specify a type for a field by stating the type after the access modifier:
 
 {title="A basic person class with three typed fields",lang=groovy}
 
-	class Person {
-	    public String name
-	    private String email
-	    private String mobile
-	}
+    class Person {
+        public String name
+        private String email
+        private String mobile
+    }
 
 T> ##Use typed fields for larger programs
 T> If you're writing code that others will use then definitely use fields. Using types is up to you but they do help other developers know what you're expecting.
@@ -82,11 +82,11 @@ Properties and fields are much like variables and can be declared with an initia
 
 {title="A basic person class with three typed fields, each with an initial value",lang=groovy}
 
-	class Person {
-	    public String name = 'anonymous'
-	    private String email = 'anon@example.com'
-	    private String mobile = ''
-	}
+    class Person {
+        public String name = 'anonymous'
+        private String email = 'anon@example.com'
+        private String mobile = ''
+    }
 
 The initial value doesn't have to be a literal, it can be determined from an expression.
 

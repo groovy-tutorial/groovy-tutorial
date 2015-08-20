@@ -17,7 +17,7 @@ Two things to keep in mind:
 1. Groovy applies `public` by default so you don't need to explicitly declare anything as `public`.
 2. Providing an access modifier means that `def` isn't needed when you're using dynamic types:
     * `private balance = 0` is preferred over `private def balance = 0`
-    * Similarly for methods: `private applyAccountCharges() {...}` rather than ` private def applyAccountCharges() {...}`
+    * Similarly for methods: `private applyAccountCharges() {...}` rather than `private def applyAccountCharges() {...}`
 
 For our `BankAccount` class we can make the `deposit` field `private`:
 

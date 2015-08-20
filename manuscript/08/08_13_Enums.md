@@ -10,7 +10,8 @@ whilst these are English-language keywords, the boolean value `true` isn't a str
 
     String t = 'true'
     Boolean b = true
-
+    
+    //This will fail
     assert t == b
 
 [^bool]: However, Boolean is a class and extends `java.lang.Object`. Enums implcitly extend `java.lang.Enum`.
@@ -33,7 +34,7 @@ Instead, we assign `myMonth` to the value of one of the constants as `AUG` is a 
 T> Check out `java.time.Month` if you need an enum for the months.
 
 One more point before moving on, the enum constants don't have to be declared in upper-case, that's just the usual approach
-and mirrors how we declared constants using the `final` modifier. It's a just a standard approach to style rather than
+and mirrors how we declared constants using the `static final` modifiers. It's a just a standard approach to style rather than
 required by the language.
 
 Let's take a look at another example - this time I'll create a `Gender` enum and use it in my `Person` class:
@@ -87,9 +88,8 @@ to lay them out as follows:
 3. Constructors
 4. Methods
 
-Some enums can describe not just a set of constants but also a series of constants that are declared in order. Groovy
-provides the built-in `next` and `previous` methods that help step through the constants in an enum. Let's look at a
-school grades enum and the result of calling `next` on each constant:
+Enums describe not just a set of constants but their order. Groovy provides the built-in `next` and `previous` methods 
+that help step through the constants in an enum. Let's look at a school grades enum and the result of calling `next` on each constant:
 
 {lang=groovy}
 <<[Iterate through an enum](code/08/13/grades.groovy)
@@ -100,7 +100,7 @@ Running this script will yield:
     CREDIT
     FAIL
 
-Unfortunately, according to Groovy, the next highest grade after `CREDIT` is `FAIL` - the `next` function .
+Unfortunately, according to Groovy, the next highest grade after `CREDIT` is `FAIL` - the `next` function just loops back to the first constant.
 This next version will fix that by overriding the default behaviours for `next` and `previous`:
 
 {lang=groovy}

@@ -30,7 +30,7 @@ There are times when we need to make sure we're specific when referring to insta
 In the example above I have provided a `setName(name)` method and set the instance's `name` property using `this.name = name`. This example
 is demonstrating a primary use of `this`: to delineate between the method parameter and the instance property. `this` can be used for both
 member variables (e.g. `this.email`) and when calling member methods (`this.setEmail()`) but is limited to elements within the class - it can't
-be called from outside the class (e.g. jenny.this.setName('Jenny')).
+be called from outside the class (e.g. `jenny.this.setName('Jenny')`).
 
 T> If I had declared `setName(n)` I wouldn't have needed to use `this.name = n` as `name = n` would suffice.
 T> However, using `name` makes for a more readable method signature so that would be my preference.

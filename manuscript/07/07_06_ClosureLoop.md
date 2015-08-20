@@ -41,7 +41,7 @@ It's important to remember that the list is changed by the `sort` method - the n
     assert animals == ['ox', 'cat', 'rabbit']
 
 
-When  the `sort` method is passed a closure that accepts two parameters then it works through the list by comparing neighbours. As sort changes the list, these neighbours change, resulting in the closure undertaking a number of comparisons, at least equal to the number of list items. This is powerful stuff so let's look at a sorting closure I used when discussing Relational Operators:
+When  the `sort` method is passed a closure that accepts two parameters then it works through the list by comparing neighbours. As sort changes the list, these neighbours change, resulting in the closure undertaking a number of comparisons, at least equal to the number of list items. This is powerful stuff so let's look at a sorting closure I used when discussing [Relational Operators](#chrelops):
 
 {lang=groovy}
 <<[Using `sort`](code/07/06/sort.groovy)
