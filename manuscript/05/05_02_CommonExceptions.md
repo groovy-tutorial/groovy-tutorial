@@ -28,7 +28,7 @@ This is an `Error`, not an `Exception` and occurs when your `assert` expression 
 
 I> `: 'This cannot be'` sets the error message for a failed assertion
 
-When your Groovy assertions fail you actually seem to receive a `org.\-codehaus.\-groovy.\-runtime.\-powerassert.\-PowerAssertionError` - a subclass of `java.lang.AssertionError`.
+When your Groovy assertions fail you actually seem to receive a `org.codehaus.groovy.runtime.`\-`powerassert.PowerAssertionError` - a subclass of `java.lang.AssertionError`.
 
 The `assert` statement is usually seen in tests and small scripts. It's usually better to signal an incorrect state/situation using `throws` - more about them in a later chapter.
 
