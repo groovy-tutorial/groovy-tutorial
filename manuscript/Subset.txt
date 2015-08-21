@@ -1,13 +1,1 @@
-./08/08_00_Introduction.md
-./08/08_01_Expando.md
-./08/08_02_TheBasics.md
-./08/08_03_PropertiesFields.md
-./08/08_04_GettersSetters.md
-./08/08_06_Methods.md
-./08/08_07_Constructors.md
-./08/08_08_ClassMembers.md
-./08/08_09_Final.md
-./08/08_10_AccessModifiers.md
-./08/08_11_UsefulClassAnnotations.md
-./08/08_12_LetGoInstance.md
-./08/08_13_Enums.md
+./03/03_95_ObjectOperators.md
