@@ -1,0 +1,3 @@
+&trade;
+&copy;
+&reg;
