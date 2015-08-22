@@ -1,1 +1,1 @@
-_testing/test2.md
+./frontmatter/LegalNotice.md

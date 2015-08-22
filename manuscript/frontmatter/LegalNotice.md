@@ -2,10 +2,13 @@
 
 Acknowledgement of trademarks:
 
-- Java is a registered trademark of Oracle and/or its affiliates.
-- Apple and OS X are trademarks of Apple Inc., registered in the U.S. and other countries
-- Microsoft and Windows are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.
-- Spring IO and Grails are the property of Pivotal Software, Inc. and its subsidiaries and affiliates
+- Java&trade; is a registered trademark of Oracle and/or its affiliates.
+- Apple&reg; and OS X&reg; are trademarks of Apple Inc., registered in the U.S. and other countries
+- Microsoft&reg; and Windows&reg; are either registered trademarks or trademarks of Microsoft Corporation in the United States and/or other countries.
+- Spring IO&reg; and Grails&trade; are trademarks/service marks of Pivotal Software, Inc. and its subsidiaries and affiliates
+- Gradle&trade; is a trademark of Gradle, Inc. in the United States and/or other jurisdictions.
+- Android&trade; is a trademark of Google Inc.
+- Git&trade; is a trademark of the Software Freedom Conservancy.
 
 None of the companies listed above endorse this book.
 
