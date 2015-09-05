@@ -3,9 +3,7 @@ package org.groovytutorial.shapes.triangle
 import org.groovytutorial.shapes.Triangle
 
 class TriangleRightAngled extends Triangle {
-    ; {
-        shapeName = 'Triangle - Right-angled'
-    }
+    static final String TRIANGLE_TYPE = 'Right-angled'
 
     TriangleRightAngled(Number sideA, Number sideB,
                         Number sideC = calculateSideC(sideA, sideB)) {
@@ -19,5 +17,10 @@ class TriangleRightAngled extends Triangle {
     @Override
     protected void calculateArea() {
         area = 0.5 * sides.a * sides.b
+    }
+
+    @Override
+    String getDisplayInfo() {
+        super.getDisplayInfo()
     }
 }

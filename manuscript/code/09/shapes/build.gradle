@@ -1,13 +1,17 @@
 apply plugin: 'groovy'
 apply plugin: 'codenarc'
 apply plugin: 'application'
+apply plugin: 'build-dashboard'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 repositories {
     jcenter()
 }
 
 dependencies {
-    compile localGroovy()
+    compile group: 'org.codehaus.groovy', name: 'groovy-all', version: "$project.groovyVersion"
+    testCompile group: 'org.spockframework', name: 'spock-core', version: "$project.spockVersion"
 }
 
 mainClassName = 'org.groovytutorial.shapes.app.Main'
@@ -18,7 +22,7 @@ task runScript(dependsOn: 'classes', type: JavaExec) {
     classpath = sourceSets.main.runtimeClasspath
 }
 
-codenarc.toolVersion = 0.24
+codenarc.toolVersion = "$project.codeNarcVersion"
 codenarcMain {
     ignoreFailures true
     configFile file('config/codenarc/ruleset.groovy')
@@ -33,4 +37,8 @@ codenarcTest {
     maxPriority1Violations 0
     maxPriority2Violations 10
     maxPriority3Violations 20
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = "$project.gradleVersion"
 }

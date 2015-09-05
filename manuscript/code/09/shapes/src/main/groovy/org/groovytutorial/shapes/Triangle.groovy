@@ -1,9 +1,11 @@
 package org.groovytutorial.shapes
 
+/**
+ *
+ */
 class Triangle extends BasicTwoDimensionalShape {
-    ; {
-        shapeName = 'Triangle'
-    }
+    static final String SHAPE_NAME = 'Triangle'
+    static final String TRIANGLE_TYPE = 'Generic'
 
     final Map sides
 
@@ -27,12 +29,16 @@ class Triangle extends BasicTwoDimensionalShape {
         perimeter = sum
     }
 
+    /**
+     * Uses Heron's formula to determine the area of the Triangle
+     *
+     * @see <a href="https://en.wikipedia.org/wiki/Heron%27s_formula">Wikipedia - Heron's Formula</a>
+     */
     @Override
     protected void calculateArea() {
-        //See Wikipedia - Heron's Formula: https://en.wikipedia.org/wiki/Heron%27s_formula
 
         Number a, b, c
-        (a, b, c) = [sides.a, sides.b, sides.c]
+        (a, b, c) = [ sides.a, sides.b, sides.c ]
 
         Number s = (a + b + c) / 2
 
@@ -41,7 +47,6 @@ class Triangle extends BasicTwoDimensionalShape {
 
     @Override
     String getDisplayInfo() {
-        "${super.displayInfo}: Side A = ${sides.a}; Side B = ${sides.b}; Side C = ${sides.c}; \
-            perimeter = $perimeter; area = $area"
+        "$SHAPE_NAME - $TRIANGLE_TYPE: Side A = ${sides.a}; Side B = ${sides.b}; Side C = ${sides.c}; perimeter = $perimeter; area = ${area}"
     }
 }

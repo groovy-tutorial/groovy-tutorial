@@ -1,12 +1,18 @@
 package org.groovytutorial.shapes
 
 class Rectangle extends BasicTwoDimensionalShape {
-    ; {
-        shapeName = 'Rectangle'
-    }
+
+    static final String SHAPE_NAME = 'Rectangle'
 
     final Number length
     final Number width
+
+    /**
+     * The default constructor - not useful
+     */
+    private Rectangle() {
+
+    }
 
     Rectangle(Number length, Number width) throws IllegalArgumentException {
         this.length = length
