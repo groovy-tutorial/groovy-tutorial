@@ -76,7 +76,7 @@ best works when you have the same functionality that can work with different par
 is likely to trip you up. Instead of overloading with that last example, I would have given the method a different signature that
 better reflects what the method is doing: `delayExercise(Integer duration, String activity)`.
 
-## Default parameter values can make this confusing
+### Default parameter values can make this confusing
 
 Try the code below in a groovyConsole:
 
@@ -93,7 +93,7 @@ However, my use of a default value for a parameter (`exercise(duration = 10)`) i
 In larger classes this can get a little confusing so, when it happens to you, start looking at the overloaded methods with
  default parameter values.
 
-## Overloading != Overriding
+### Overloading != Overriding
 Before we move on, it's worth highlighting two pieces of terminology:
 
 * **Overloading** is when a class is defined with methods with the same name but different parameters to others within the class or its superclass(es).
