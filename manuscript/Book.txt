@@ -87,6 +87,7 @@ mainmatter.txt
 ./08/08_11_UsefulClassAnnotations.md
 ./08/08_12_LetGoInstance.md
 ./08/08_13_Enums.md
+./08/08_14_Synchronized.md
 ./09/09_00_Introduction.md
 ./09/09_20_Interfaces.md
 ./09/09_21_Traits.md
