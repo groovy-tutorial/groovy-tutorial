@@ -10,9 +10,13 @@ I like the way it lets me use the Java skills I've built up over the years but i
 
 Groovy programs run on the Java Virtual Machine (JVM) and the JVM is installed across a huge spectrum of systems: desktops, servers, mobiles and the Internet of Things. Importantly, the Java world has been going through a great renewal phase. Where once the JVM and the Java programming language were almost synonyms, a range of JVM-based languages have appeared: Groovy, [Scala](http://www.scala-lang.org/), [Clojure](http://clojure.org/), [Jython](http://www.jython.org/). These aren't languages that run within a Java program (though many can do just that), these are languages that compile down to JVM bytecode and run in a way that means you don't even need to tell your SysAdmin that you didn't write it in Java. What's more, we're not at the "cutting edge" of this approach - it's been going for long enough that you can expect a level of stability that supports the use of these languages in real application development.
 
-In the following tutorials I aim to guide you through the basics of Groovy. I haven't really focussed on writing a "How to program" guide nor do I expend a lot of words comparing Groovy with Java. You may also notice that I haven't included the output of most of the code examples - this is to save some clutter in the text and encourage you pop open a groovyConsole and try the code for yourself. Go on, you know you'll love it.
+In the following sections I aim to guide you through the basics of Groovy. I haven't really focussed on writing a "How to program" guide nor do I expend a lot of words comparing Groovy with Java. You may also notice that I haven't included the output of most of the code examples - this is to save some clutter in the text and encourage you pop open a groovyConsole and try the code for yourself. Go on, you know you'll love it.
 
 I really hope that this tutorial gives you a basis in understanding the Groovy language and I hope that you start to see why I like Groovy so much.
+
+Enjoy!
+
+Duncan ([@groovytutorial](https://twitter.com/groovytutorial))
 
 Q> ## Did you know?
 Q> As of March 2015 Groovy entered the incubation phase at Apache?
@@ -20,12 +24,7 @@ Q> This is the first step towards having Groovy become a full-blown Apache proje
 
 ## Something Wrong?
 
-If you find something wrong I'd really appreciate you letting me know via either:
-
-- A [Leanpub email message](https://leanpub.com/groovytutorial/email_author/new); or
-- Through the [Feedback tool](https://leanpub.com/groovytutorial/feedback)
-
-Please remember that I'm not a big corporation or an automaton - I can't  respond immediately to queries and I am an assemblage of emotions that respond well to positive encouragement a lot better than negativity.
+If you find something wrong I'd really appreciate you letting me know via the [GitHub issue system](https://github.com/groovy-tutorial/groovy-tutorial/issues). Please remember that I'm not a big corporation or an automaton - I can't  respond immediately to queries and I am an assemblage of emotions that respond well to positive encouragement a lot better than negativity.
 
 ## Bookmarks
 
@@ -40,6 +39,9 @@ Core resources to have at-hand:
 - The [Java API](http://docs.oracle.com/javase/8/docs/api/) always comes in handy
 	- So do [The Java Tutorials](http://docs.oracle.com/javase/tutorial/)
 - Whilst not a perfect fit for Groovy, I tend to use the [Google Java Style](http://google-styleguide.googlecode.com/svn/trunk/javaguide.html) as my stern mentor.
+
+I've been establishing [www.groovy-tutorial.org](http://www.groovy-tutorial.org/) to supplement this book with practical
+Groovy tutorials. Keep an eye out for new content!
 
 Great blogs and sites that provide Groovy coding examples:
 
@@ -100,10 +102,11 @@ I'm making the "Groovy Tutorial" freely available because I feel that open sourc
 
 This work is licensed under a Creative Commons Attribution License - this means that you have the right to share and adapt the text as you see fit *but* you must give me _"appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use"_. If you decide to use the whole text or parts thereof in a manner that derives you an income I think it'd be civil of you to consider contributing to my retirement fund.
 
-All code samples are licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html)
+All code samples are licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0.html).
+If you would like to browse a subset of the code examples used in this book you'll find them in the [GitHub repository](https://github.com/groovy-tutorial/groovy-tutorial/tree/master/manuscript/code).
 
-The "source code" for this book is written in Markdown, based on the [LeanPub Manual](https://leanpub.com/help/manual). You can access the source from my [Git repository](https://bitbucket.org/duncan_dickinson/groovy-tutorial).
+The "source" for this book is written in Markdown, based on the [LeanPub Manual](https://leanpub.com/help/manual). You can access the source from my [GitHub repository](https://github.com/groovy-tutorial/groovy-tutorial).
 
-I don't provide any warranties, guarantees or  certainties[^note]. You should use this text to help you in your Groovy coding but you are responsible for your journey :)
+I don't provide any warranties, guarantees or certainties[^note]. You should use this text to help you in your Groovy coding but you are responsible for your journey :)
 
 [^note]: ... or pekignese
