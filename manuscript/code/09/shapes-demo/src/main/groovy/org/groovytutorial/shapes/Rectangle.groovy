@@ -3,24 +3,46 @@ package org.groovytutorial.shapes
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
 
+/**
+ * Describes a rectangle
+ *
+ * @author Duncan Dickinson
+ */
 @EqualsAndHashCode(includes = 'length,width')
 @ToString(includeNames = true, includeFields = true, includePackage = true)
 class Rectangle implements TwoDimensionalShape, Sides {
 
-    static final String SHAPE_NAME = 'Rectangle'
+    private static final String SHAPE_NAME = 'Rectangle'
 
-    final Number area
+    /** The area of the rectangle */
+    final BigDecimal area
 
-    Rectangle(Number length, Number width) {
-        sides.a = length
-        sides.b = width
-        sides.c = length
-        sides.d = width
-        this.area = sides.a * sides.b
+    /**
+     *
+     * @param length
+     * @param width
+     * @throws IllegalArgumentException if one of the sides <= 0
+     */
+    Rectangle(Number length, Number width) throws IllegalArgumentException {
+        a = length
+        b = width
+        c = length
+        d = width
+
+        //Calling this causes the Sides trait to calculate the perimeter
+        //and lock off its sideMap
+        this.perimeter
+
+        this.area = length * width
     }
 
     @Override
     String getDisplayInfo() {
-        "$SHAPE_NAME: length = ${sides.a}; width = ${sides.b}; perimeter = $perimeter; area = $area"
+        "$SHAPE_NAME: length = $a; width = $b; perimeter = $perimeter; area = $area"
+    }
+
+    @Override
+    String getShapeName() {
+        SHAPE_NAME
     }
 }

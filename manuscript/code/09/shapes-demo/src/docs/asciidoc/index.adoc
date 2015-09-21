@@ -1,0 +1,196 @@
+= A tour through a small Gradle-Groovy project
+Duncan Dickinson <duncan@groovy-tutorial.org>
+v0.1-DRAFT, 2015-09-15
+:groovy-version: 2.4.4
+:licence: Apache License, Version 2.0
+:licence-url: http://www.apache.org/licenses/LICENSE-2.0
+:src: https://github.com/groovy-tutorial/shapes-demo
+:sourcedir: ../../main/groovy
+:testdir: ../../test/groovy
+:level: basic
+:keywords: gradle, groovy, oo
+:description:
+:icons: font
+:source-highlighter: coderay
+:source-language: groovy
+:docinfo2:
+:toc:
+
+{description}
+
+== Introduction
+This is an introductory project that demonstrates aspects of a small Groovy program. The code here is described in the
+https://leanpub.com/groovytutorial[The Groovy 2 Tutorial] book, specifically in the https://leanpub.com/groovytutorial/read#leanpub-auto-more-object-oriented-programming[More object-oriented programming] section.
+
+The set of files associated with this tutorial contains:
+
+* The compiled distribution for installing on your system:
+** link:dist/shapes-demo-1.0-SNAPSHOT.zip[Zip version]
+** link:dist/shapes-demo-1.0-SNAPSHOT.tar[Tar version]
+* The project code in the `dev` directory, featuring:
+** Various http://gradle.org/[Gradle-related] files (e.g. `build.gradle`)
+** The Groovy source code in `src/main/groovy`
+** The http://spockframework.github.io/spock/docs/1.0/index.html[Spock tests] in `src/test/groovy`
+* link:reports/source-browser/index.html[A browsable view of the source code]
+* link:api/groovydoc/index.html[A copy of the generated GroovyDocs]
+* link:reports/buildDashboard/index.html[A variety of information reports], including
+** link:reports/codenarc/main.html[CodeNarc's analysis report]
+** link:reports/jacoco/test/html/index.html[Jacoco's test coverage report]
+** link:reports/tests/index.html[The results from the Spock tests]
+** Various Gradle project details:
+*** link:reports/project/dependencies/index.html[A list of the Gradle project's dependencies]
+*** link:reports/project/properties.txt[The Gradle project properties (text file)]
+*** link:reports/project/tasks.txt[The available Gradle tasks (text file)]
+
+=== Using this tutorial
+Access the source code:
+
+* {src}/tree/gh-pages[Source code on GitHub]
+* {src}/archive/gh-pages.zip[As a zip file]
+
+The code in this tutorial was prepared using Groovy version {groovy-version} and is licensed under {licence-url}[{licence}]
+
+You don't need Groovy or Gradle to run the codebase - you just need to have a Java JDK installed (at least v1.7).
+
+== Running and building the code
+
+The `dev` directory contains all of the codebase and the Gradle build environment. The information in this section
+assumes that you are working in a terminal/command-line environment and that your working directory is `dev`.
+
+=== Using Gradle
+
+The easiest way to run the code is to use the Gradle build, as defined in `build.gradle`.
+
+You don't need to download anything for this to work as the https://docs.gradle.org/current/userguide/wrapper_plugin.html[Gradle wrapper] will download everything you need.
+
+TIP: This guide doesn't provide an introductory tutorial to Gradle.
+Check out https://docs.gradle.org/current/userguide/tutorials.html[Chapter 3. Tutorials] in the Gradle User Guide if you
+need to know more than is covered here.
+
+==== Run the code
+To run the application via Gradle:
+
+For OS X, Linux and other *nix systems:
+
+    ./gradlew
+
+For Windows:
+
+    gradlew.bat
+
+This will compile and run the Groovy code as I've configured the `run` task to be the default so it will
+ run if you don't pass Gradle a specific task in the command line.
+
+==== The Gradle files
+There are a number of files relating to the Gradle build:
+
+* `build.gradle` is the primary file and describes what's needed to build the application
+* `gradle.properties` provides information to `build.gradle`
+    * I've enabled the https://docs.gradle.org/current/userguide/gradle_daemon.html[Gradle Daemon] - this creates a background process that makes it quicker to run builds.
+* `settings.gradle` is used, amongst other things, to give the project a name ("shapes-demo")
+* The Gradle wrapper plugin produces the following files:
+    * `gradlew` and `gradlew.bat` are used to run the Gradle build and will download a copy of Gradle if needed
+    * The `gradle/wrapper` directory houses the files needed by Gradle wrapper
+
+You'll also notice a `.gradle/` directory is created. This is used by Gradle to cache information and libraries etc.
+
+==== Review the build file
+Gradle uses a number of conventions that, if you follow them, make life a little easier. The first such convention
+is that the file describe how to build a project is named `build.gradle` and placed in the root directory of the project.
+
+Let's take a look at the build file:
+
+[source]
+.The `build.gradle` file
+----
+include::../../../build.gradle[]
+----
+<1> https://docs.gradle.org/current/userguide/plugins.html[Gradle Plugins] do the actual work of compiling, testing, reporting etc
+<2> https://docs.gradle.org/current/userguide/tutorial_groovy_projects.html[The groovy plugin] lets us compile Groovy code and prepare GroovyDocs
+<3> https://docs.gradle.org/current/userguide/application_plugin.html[The application plugin] builds the tar and zip distributions and provides the `run` tasks to try out the application
+<4> https://docs.gradle.org/current/userguide/buildDashboard_plugin.html[The build-dashboard plugin] creates a basic index to the various reports produced by other plugins
+<5> https://docs.gradle.org/current/userguide/project_reports_plugin.html[The project-report plugin] generates dependency, task and property reports for the project
+<6> https://docs.gradle.org/current/userguide/codenarc_plugin.html[The codenarc plugin] analyses the source code and produces a quality report using the http://codenarc.sourceforge.net/[CodeNarc software]
+<7> https://docs.gradle.org/current/userguide/jacoco_plugin.html[The jacoco plugin] reports on how well the source code is covered by tests using the http://eclemma.org/jacoco/[JaCoCo software]
+<8> https://github.com/johnrengelman/shadow/[The shadow plugin] creates a single Jar file containing the source code and other required libraries, giving you a single Jar for deployment
+<9> https://docs.gradle.org/current/userguide/eclipse_plugin.html[The eclipse plugin] provides functionality useful to those that want to work on the project using the http://eclipse.org/[Eclipse IDE]
+<10> https://docs.gradle.org/current/userguide/idea_plugin.html[The idea plugin] is for those using http://www.jetbrains.com/idea/[IntelliJ]
+<11> Repositories contain a collection of third-party libraries for use in the build (e.g. for compilation or running tests). I have chosen to use the https://bintray.com/bintray/jcenter[JCenter] repository but there are https://docs.gradle.org/current/userguide/dependency_management.html#sec:repositories[others to choose from]
+<12> The https://docs.gradle.org/current/userguide/writing_build_scripts.html#sec:extra_properties[`ext` properties] hold _extra_ user-defined properties for use in the build. You'll see I've set the various versions I want to use.
+<13> This is the Groovy version I'll use when declaring the project dependencies
+<14> This is the version of the http://docs.spockframework.org/[Spock Framework] I'll use to test my source code
+<15> I can use a specific Gradle version with the Gradle Wrapper to help make sure the build will work across different systems
+<16> This is the version of CodeNarc I need
+<17> The Gradle project has a number of properties, many I can read, some I can change. I don't actually need the enclosing `project.with {}`, I just feel it helps delineate what I'm setting.
+<18> One or more `defaultTasks` can be set to run if the user doesn't provide a specific task in the command line
+<19> The `mainClassName` sets the Groovy class to run when the Application plugin's `run` is called. It's also used when creating Jars.
+<20> This is where I pin the version of Gradle I want to use
+<21> Most projects don't write anything from scratch - in the https://docs.gradle.org/current/userguide/artifact_dependencies_tutorial.html[`dependencies` section] I can indicate additional artifacts I need to perform various tasks (e.g. compilation or testing). These are downloaded from the repositories I set up earlier (JCenter).
+<22> This configures the CodeNarc plugin - you'll see the rule sets are in the `config/codenarc` directory
+
+TIP: When you look at your local copy of `build.gradle`, you'll notice a number of inline comments that appear `//<n>`.
+These are used by the AsciiDoctor generator to aid in preparing this document - the comments don't affect the build in any way.
+
+Another convention for Gradle is the location of the source code files. As we're using the `groovy` plugin, we place the
+Groovy source code under `src/main/groovy` and all tests written in Groovy in `src/test/groovy`.
+
+==== Try out the Gradle GUI
+If you're new to Gradle, review the build via the gui: type the following commands in the same folder as
+`build.gradle` is located:
+
+For OS X, Linux and other *nix systems:
+
+    ./gradlew --gui
+
+For Windows:
+
+    gradlew.bat --gui
+
+==== Gradle tasks
+
+The Gradle build provides a number of interesting options. In Gradle these are called _tasks_ and you can
+see all of the available tasks by running `./gradlew tasks`. Here are a few tasks worth trying out:
+
+* `./gradlew clean`: removes all of the generated files (it doesn't delete the source code)
+* `./gradlew test jacoco`: will run all of the Spock tests and prepare a Jacoco report on the test coverage
+* `./gradlew check`: runs a http://codenarc.sourceforge.net/[CodeNarc] check and the http://spockframework.github.io/spock/docs/1.0/index.html[Spock tests]
+** You can find the output of these checks/tests in the `build/publish/reports/` directory - check them out in your browser.
+* `./gradlew groovydoc`: will generate the GroovyDoc for the project
+** The documentation is put into `build/docs/groovydoc/` and is best read in your browser
+* `./gradlew assemble`: creates a number of outputs that make distributing your code possible:
+** `build/distributions/`: contains `tar` and `zip` archives that can be distributed to others, including handy scripts to start your application
+
+==== The Über jar
+I've also added in the https://github.com/johnrengelman/shadow/[Gradle Shadow] plugin as it will create an über jar
+- one that hold the compiled codebase and all required libraries.
+To create this file, run `./gradlew shadowJar` and `build/libs/shapes-demo-1.0-SNAPSHOT-all.jar` will be created.
+Take the über jar out for a spin by running: `java -jar build/libs/shapes-demo-1.0-SNAPSHOT-all.jar`.
+
+=== Using the command line
+
+You don't have to use the Gradle build to build and run the code and it might be a useful learning experience to try out
+compiling and running the code from the command line. In order to do this you'll want to have both a JDK and Groovy installed.
+
+The information provided here has been prepared on an OS X system so should also work in Linux systems.
+Windows users will most likely need to change the file paths.
+
+__Note:__ All commands provided in this section are run from the base of the project distribution - that's where the
+`build.gradle` file is located.
+
+To run the code using `groovy`:
+
+    groovy -classpath src/main/groovy/ src/main/groovy/org/groovytutorial/shapes/app/Main.groovy
+
+To compile the classes to bytecode and run with Java we need to use `groovyc`:
+
+    groovyc -d classes src/main/groovy/org/groovytutorial/shapes/*.groovy src/main/groovy/org/groovytutorial/shapes/app/*.groovy src/main/groovy/org/groovytutorial/shapes/triangle/*.groovy
+    java -cp lib/groovy-all-2.4.4.jar:classes/ org.groovytutorial.shapes.app.Main
+
+To create a Jar:
+
+    groovyc -d classes src/main/groovy/org/groovytutorial/shapes/*.groovy src/main/groovy/org/groovytutorial/shapes/app/*.groovy src/main/groovy/org/groovytutorial/shapes/triangle/*.groovy
+    jar cvf lib/Shapes.jar -C classes .
+
+To run the Jar:
+
+    java -cp lib/groovy-all-2.4.4.jar:lib/Shapes.jar org.groovytutorial.shapes.app.Main
