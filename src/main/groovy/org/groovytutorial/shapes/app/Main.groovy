@@ -17,9 +17,15 @@ def shapes = [
         new TriangleIsosceles(2, 8),
         new TriangleEquilateral(6) ]
 
-shapes.each {
-    println it.displayInfo
-    println "  - toString(): ${it.toString()}"
-    println()
-}
+println """
+${'=' * 80}
 
+Welcome to the Shapes demo
+
+${'=' * 80}
+"""
+
+shapes.each {
+    println "${it.displayInfo}\n"
+    //println "  - toString(): ${it.toString()}"
+}

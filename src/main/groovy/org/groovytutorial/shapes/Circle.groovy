@@ -1,9 +1,9 @@
 package org.groovytutorial.shapes
 
+import static java.lang.Math.PI
+
 import groovy.transform.EqualsAndHashCode
 import groovy.transform.ToString
-
-import static java.lang.Math.PI
 
 /**
  * Describes a circle
@@ -12,48 +12,84 @@ import static java.lang.Math.PI
 @EqualsAndHashCode(includes = 'radius')
 @ToString(includeNames = true, includeFields = true, includePackage = true)
 final class Circle implements TwoDimensionalShape {
-    static final String SHAPE_NAME = 'Circle'
+    private     static final String SHAPE_NAME = 'Circle'
 
-    final Number radius
-    final Number perimeter
-    final Number area
+    /** The radius of the circle */
+    final BigDecimal radius
+
+    /** The circle's perimeter (circumference) */
+    final BigDecimal perimeter
+
+    /** The circle's area */
+    final BigDecimal area
 
     /**
      *
-     * @param radius the radius of the circle
+     * @param radius the radius of the circle (must be a positive number)
+     * @throws IllegalArgumentException if radius <= 0
      */
-    Circle(Number radius) {
+    Circle(BigDecimal radius) throws IllegalArgumentException {
+        ShapeUtil.checkSidesException(radius)
         this.radius = radius
         this.perimeter = calculatePerimeter(radius)
         this.area = calculateArea(radius)
     }
 
-    static Number calculateCircumference(Number radius) {
+    /**
+     * Helper function - defers to calculatePerimeter
+     * @see #calculatePerimeter(Number)
+     * @param radius
+     * @return the circumference (perimeter)
+     * @throws IllegalArgumentException if radius <= 0
+     */
+    static BigDecimal calculateCircumference(Number radius) throws IllegalArgumentException {
         calculatePerimeter(radius)
     }
 
-    static Number calculatePerimeter(Number radius) {
-        2 * PI * radius
+    /**
+     * Calculates the perimeter of a circle using the formula: p = 2*Pi*r
+     * @param radius
+     * @return the perimeter
+     * @throws IllegalArgumentException if radius <= 0
+     */
+    static BigDecimal calculatePerimeter(Number radius) throws IllegalArgumentException {
+        ShapeUtil.checkSidesException(radius)
+        (2 * PI * radius) as BigDecimal
     }
 
-    static Number calculateArea(Number radius) {
-        PI * radius**2
+    /**
+     * Calculates the area of a circle using the formula: a = Pi*r^2
+     * @param radius
+     * @return the area
+     * @throws IllegalArgumentException if radius <= 0
+     */
+    static BigDecimal calculateArea(Number radius) throws IllegalArgumentException {
+        ShapeUtil.checkSidesException(radius)
+        (PI * radius**2) as BigDecimal
     }
 
-    static Number calculateDiameter(Number radius) {
-        radius * 2
+    /**
+     * Calculates the circle's diameter using the formula: d = 2r
+     * @param radius
+     * @return the diameter
+     * @throws IllegalArgumentException if radius <= 0
+     */
+    static BigDecimal calculateDiameter(Number radius) throws IllegalArgumentException {
+        ShapeUtil.checkSidesException(radius)
+        (radius * 2) as BigDecimal
     }
 
     @Override
     String getDisplayInfo() {
-        "$SHAPE_NAME: radius = $radius; diameter = $diameter; circumference = ${circumference.trunc(4)}; area = ${area.trunc(4)}"
+        "$SHAPE_NAME: radius = $radius; diameter = $diameter; \
+circumference = ${circumference}; area = ${area}"
     }
 
     /**
      * Just a convenience - equivalent to getPerimeter
      * @return the circumference
      */
-    Number getCircumference() {
+    BigDecimal getCircumference() {
         perimeter
     }
 
@@ -65,16 +101,8 @@ final class Circle implements TwoDimensionalShape {
         calculateDiameter(this.radius)
     }
 
-    /**
-     *
-     * @param obj
-     * @return true if obj is a Circle and has the same radius as this instance, false otherwise
-     */
     @Override
-    boolean equals(Object obj) {
-        if (obj instanceof Circle) {
-            return this.radius == obj.radius
-        }
-        false
+    String getShapeName() {
+        SHAPE_NAME
     }
 }
