@@ -4,6 +4,9 @@ Stay tuned!
 
 ## Abstract classes
 
+## Utility classes
+Bloch - ch 4
+
 ## Final Classes and Methods
 
 {lang=groovy}
@@ -15,3 +18,5 @@ Stay tuned!
 
 {lang=groovy}
 <<[Methods marked `final` cannot be overridden](code/09/final_method2.groovy)
+
+## Composition

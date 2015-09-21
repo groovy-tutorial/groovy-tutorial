@@ -1,3 +1,3 @@
-# Traits
+# Traits {#chtraits}
 
 Stay tuned!

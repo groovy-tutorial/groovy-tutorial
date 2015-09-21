@@ -152,7 +152,7 @@ constants, consider the following alternatives
 * If the constant is part of a class's logic, declare the constant with the class
 * Consider creating a utility class that defines general constants of use in your program
 
-## The shapes library
+## The shapes demo
 
 One interface is defined within the shapes library: `TwoDimensionalShape`. This interface provides the following method
 signatures:
