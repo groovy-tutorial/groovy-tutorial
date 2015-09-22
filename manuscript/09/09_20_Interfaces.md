@@ -20,8 +20,8 @@ The syntax looks much like that of a `class` but you'll notice two key differenc
 1. There are two method signatures (`friend` and `unFriend`) but I haven't provided the code body for the method
 
 That last point is an important one: interfaces don't define implementations, they are used to define an API that is implemented
- by one or more classes. Well thought out interfaces are integral to code that is easier to maintain . Some developers will start
- a new
+ by one or more classes. Well thought out interfaces are integral to code that can be reused and maintained over time.
+ Some developers will start a new coding effort by determining the interfaces they'll need by asking "what elements will interact and how?".
 
 T> Method signatures provided in an interface don't need an [access modifier](#chaccessmodifiers) - they're always
 T> (and can only be) `public` - there's no use in an API that can't be implemented.
@@ -54,7 +54,7 @@ method signatures from an interface that is being implemented[^class].
 
 [^class]: It's also used for methods overriding those declared in a [superclass](#chinheritance).
 
-Groovy (and Java) classes can implement more than one interface but listing them after the `implements` keyword - just
+Groovy (and Java) classes can implement more than one interface by listing them after the `implements` keyword - just
  use a comma (`,`) between each interface:
 
 {title="Implementing more than one interface", lang=groovy}
@@ -102,28 +102,54 @@ I've provides a full code listing of the example below so that you can take this
 <<[Full code listing plus usage](code/09/social_network.groovy)
 
 ## Referring to objects by their interface
-An interface defines _functionality_ rather than state.
+An interface defines _functionality_ rather than state. In many cases you just want to interact with a specific
+set of an object's functionality and referring to the interface rather than a specific class can make your code more adaptable.
+Two interfaces, `java.util.Map` and `java.util.List`, come to mind when considering this:
 
-In many cases you just want to interact with a specific set of an object's functionality a . Two interfaces,
-`java.util.Map` and `java.util.List`, come to mind.
+* `java.util.Map` is implemented in a range of classes:
+    * `java.util.Properties` is used when reading and writing property files
+    * `java.util.LinkedHashMap` retains the order in which keys are inserted (and is used when you `def myMap = [:]`)
+    * `java.util.concurrent.ConcurrentHashMap` provides for full concurrency in retrievals and updates
+* `java.util.List`
+    * `java.util.ArrayList` provides a resizable array (and is used when you `def myList = []`)
+    * `java.util.Stack` is a last-in-first-out (LIFO) stack
 
+So whilst I might choose a specific implementation class for my variable because of a need such as speed or concurrency,
+other parts of my code may be more interested in the interface level (e.g. `java.util.Map`).
 When declaring a variable I can provide an interface as the data type, e.g. `Map posts = [:]`. This means that I don't
 really care which implementation of `Map` is assigned to `posts`, I'll only be accessing the methods declared by `Map`
 (e.g. `keySet`). In a slightly more convoluted example, `Posts p = new Member()` indicates that the variable `p` is only
 interested in the `Member` object's `Posts` functionality.
 
 Whilst handy for variable declaration, referring to interfaces when defining method parameters is extremely useful as it
- makes the method more abstract.
+ makes the method more abstract. Consider a method that will accept a `Map` parameter and iterate through it:
 
-Obviously, if you want to constrain usage to a specific implementation, you would declare that as the data type.
-So if you really need the functionality of `java.util.Stack` then use that instead of `java.util.List` - just take a
-moment to make sure it's really required.
+    def displayKeys(Map m) {
+        for (key in m.keySet()) {
+            println key
+        }
+    }
+
+    def myMap = [name: 'Bill', id: '1234']
+
+    displayKeys myMap
+
+So it's a rather useless example but the point is that the `displayKeys` method can accept any value for parameter `m`,
+provided `m` is an instance of a class that implements the `Map` interface. If I'd been specific and written the method
+signature as `def displayKeys(LinkedHashMap m)`, my method has a far narrower field of usage. As I'm just using the `Map`
+interface's `keySet` method, I don't really need to limit the possible values for `m`.
+
+Obviously, if you want/need to constrain usage to a specific implementation, you would declare that as the data type for the parameter.
+If the method needed the `storeToXML` functionality of `java.util.Properties` then I'd need to use that instead of
+`java.util.Map` - just take a moment to make sure it's really required.
 
 ## General advice
 ### Groovy interfaces don't allow default methods
 Java interfaces allow you to provide implementation for a method. Such methods are referred to as "default methods"
 as any implementing class doesn't have to provide their own implementation. This might be helpful when an interface
-needs to be
+needs to be updated/improved as it saves having to go through an existing codebase and providing the implementation.
+However, it's also a bit of a trap as that approach "wedges" in functionality that may not really fit the implementing
+classes (and their subclasses).
 
 Groovy's [traits]{#chtraits} gives you a neater approach to this.
 
@@ -141,12 +167,12 @@ isn't a good idea. Consider the following example:
         Member unFriend(Member enemy)
     }
 
-The example below provides a strong example as to how this is a bad idea as `MAX_FRIENDS` really is an implementation detail
+The example above provides a strong example as to how this is a bad idea as `MAX_FRIENDS` really is an implementation detail
 and, furthermore, the `interface` construct doesn't let us actually enforce the logic. The `SocialNetwork` interface
 relies on implementing classes to make the link.
 
 If you focus your interfaces on providing method signatures, your code will be easier to maintain. When you need to define
-constants, consider the following alternatives
+constants, consider the following alternatives:
 
 * For enumerated constants, definitely use an [enum]{#chenums}
 * If the constant is part of a class's logic, declare the constant with the class
@@ -154,12 +180,24 @@ constants, consider the following alternatives
 
 ## The shapes demo
 
-One interface is defined within the shapes library: `TwoDimensionalShape`. This interface provides the following method
-signatures:
-
-* `Number getPerimeter()`: will return the shape's perimeter
-* `Number getArea()`: will return the shape's area
-* `String getDisplayInfo()`: is used to prepare a handy description of the shape
+One interface is defined within the shapes library: `TwoDimensionalShape`:
 
 {lang=groovy}
 <<[The `TwoDimensionalShape` interface](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/TwoDimensionalShape.groovy)
+
+The interface is declared using the `interface` keyword followed by the name: `interface TwoDimensionalShape`.
+Within the interface is the following method signatures:
+
+* `BigDecimal getPerimeter()`: will return the shape's perimeter
+* `BigDecimal getArea()`: will return the shape's area
+* `String getDisplayInfo()`: is used to prepare a handy description of the shape
+* `String getShapeName()`: returns the name of the shape (e.g. square or circle)
+
+As mentioned earlier in this chapter, each method signature is listed without a definition block (`{...}`).
+It is up to the implementing class(es) to provide the "body" of the definition and the `Circle` class does just that:
+
+{lang=groovy}
+<<[The `Circle` class](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Circle.groovy)
+
+You'll notice that the `Circle` class doesn't explicitly provide an implementation for `getPerimeter()` and
+`getArea()` as Groovy will generate these for the member fields.
