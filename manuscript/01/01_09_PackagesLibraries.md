@@ -4,7 +4,7 @@ I> Groovy lets you take advantage of the core Java packages (the JDK) so let's t
 
 Except for very small programs, most Groovy and Java-based programs are made up of packages of code:
 
-- The `package` keyword is used to designate that a class is part of a package and we'll cover this more fully in the tutorial on object-oriented Groovy.
+- The `package` keyword is used to designate that a class is part of a package and we'll cover this more fully in the [Organising your code](#chorganising) chapter.
 - The `import` keyword is used to import classes from other packages into a program.
 
 Consider the sample code below:
