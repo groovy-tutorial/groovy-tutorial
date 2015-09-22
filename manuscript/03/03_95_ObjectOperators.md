@@ -10,7 +10,7 @@ It could be argued that all operators are object operators as nearly every varia
 | `?.`	| Safe Navigation Operator|
 | `as`	| Casting Operator	|
 | `is`	| Identity Operator	|
-| `instanceof`	| Type Comparison	|
+| `instanceof` `in`	| Type Comparisons	|
 | `.@`	| Field Operator	|
 | `.&`	| Method Reference	|
 
@@ -129,7 +129,7 @@ In the code below I describe a `Person` class and use a very helpful annotation 
 
 ## Type Comparison
 
-The Type Comparison operator (`instanceof`) is used to determine if a variable is an instance of the specified class.
+The Type Comparison operators (`instanceof` and `in`) is used to determine if a variable is an instance of the specified class.
 
 In this next example I check to make sure that `fred` is a `Person`:
 
@@ -141,6 +141,7 @@ In this next example I check to make sure that `fred` is a `Person`:
 	def fred = new Person(name: 'Fred')
 
 	assert fred instanceof Person
+	assert fred in Person
 
 
 Checking the variable's type can be useful in dynamically typed languages such as Groovy as it lets us check before we call a property or method that may not be there:
@@ -157,16 +158,16 @@ Checking the variable's type can be useful in dynamically typed languages such a
 	}
 
 
-In my `Person` example I'm not really using the full benefits of object-oriented programming that we can leverage in Groovy - primarily because we're yet to get up to that. However, trust me when I say that class hierarchies and interfaces give us a handy way to build up a family tree of classes and that we can use `instanceof` to check if the object instance has a legacy that helps us achieve an outcome. For example, the `Integer` and `Float` classes are a subclass (child) of the `Number` class.
+In my `Person` example I'm not really using the full benefits of object-oriented programming that we can leverage in Groovy - primarily because we're yet to get up to that. However, trust me when I say that class hierarchies and interfaces give us a handy way to build up a family tree of classes and that we can use `instanceof` or `in` to check if the object instance has a legacy that helps us achieve an outcome. For example, the `Integer` and `Float` classes are a subclass (child) of the `Number` class.
 
 I> ## Meanwhile, under the sea
 I>It's a bit like the [Linnaean taxonomy](http://en.wikipedia.org/wiki/Linnaean_taxonomy): `assert octopus instanceof Mollusc` and `slug instanceof Mollusc`. Check out the [Encyclopedia of Life](http://eol.org/pages/2195/overview) to learn more about molluscs - those little guys are really cool.
 
-In the example below I set up an `add` method that adds two numbers (handy!). Before I try to add those two numbers I use `instanceof` to make sure they're actually Numbers. If they aren't, I throw an exception at you.
+In the example below I set up an `add` method that adds two numbers (handy!). Before I try to add those two numbers I use `in` to make sure they're actually Numbers. If they aren't, I throw an exception at you.
 
 
 	def add(num1, num2) {
-	    if (num1 instanceof Number && num2 instanceof Number) {
+	    if (num1 in Number && num2 in Number) {
 	        return num1 + num2
 	    }
 	    throw new IllegalArgumentException('Parameters must be Numbers')

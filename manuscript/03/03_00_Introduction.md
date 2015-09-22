@@ -66,6 +66,6 @@ Operators are used with values and variables and the context in which they're us
 | `.&`	| Method Reference	|
 | `as`	| Casting Operator	|
 | `is`	| Identity Operator	|
-| `instanceof`	| Type Comparison	|
+| `instanceof`, `in`	| Type Comparison	|
 
 

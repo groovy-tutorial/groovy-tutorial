@@ -1,7 +1,7 @@
 def determineAverage(...values)
         throws IllegalArgumentException {
     for (item in values) {
-        if (item instanceof String) {
+        if (item in String) {
             throw new IllegalArgumentException()
         }
     }
