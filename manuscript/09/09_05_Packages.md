@@ -105,16 +105,16 @@ example I had two packages, `mypackage` and the sub-package `mypackage/app` and,
 appeared:
 
     mypackage/
-        Person.class
-        app/
-            Main.class
+    ├── Person.class
+    └── app
+        └── Main.class
 
 This structure reflects the one I should be using in my source:
 
-    mypackage/
-        Person.groovy
-        app/
-            Main.groovy
+    mypackage
+    ├── Person.groovy
+    └── app
+        └── Main.groovy
 
 Here's the logic:
 
@@ -164,13 +164,37 @@ Just take a moment before committing to a package name - you'll thank yourself i
 [^uscore]: I've converted the hyphen (`-`) to an underscore (`_`) as package names can't contain a hyphen
 (and domain names can't contain an underscore).
 
-## The shapes demo
+## The Shapes demo
 
 You'll find the following packages in the shapes demo source code:
 
 * `org.groovy_tutorial.shapes`
 * `org.groovy_tutorial.shapes.triangle`
 * `org.groovy_tutorial.shapes.app`
+
+These are all organised under the `src/main/groovy` directory:
+
+    └── org
+        └── groovy_tutorial
+            └── shapes
+                ├── Circle.groovy
+                ├── Rectangle.groovy
+                ├── ShapeUtil.groovy
+                ├── Sides.groovy
+                ├── Square.groovy
+                ├── Triangle.groovy
+                ├── TwoDimensionalShape.groovy
+                ├── app
+                │   ├── Main.groovy
+                │   └── package-info.groovy
+                ├── package-info.groovy
+                └── triangle
+                    ├── TriangleEquilateral.groovy
+                    ├── TriangleIsosceles.groovy
+                    ├── TriangleRightAngled.groovy
+                    ├── TriangleSubtype.groovy
+                    └── package-info.groovy
+
 
 Within each package's folder you'll notice a `package-info.groovy` file. This isn't a script but the documentation for the
 package. The `groovydoc` system will use this file when preparing the application's documentation.
