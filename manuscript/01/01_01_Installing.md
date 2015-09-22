@@ -40,19 +40,19 @@ Just make sure you're downloading a 2.4.x version!
 Once you have the JDK and Groovy installed you should see the GroovyConsole application in your Windows 7 Start menu. Start up the GroovyConsole application and you should be good to go.
 
 ### Mac OSX and Linux
-The Groovy enVironment Manager (GVM) is the best tool for getting Groovy running on your system. The GVM homepage is <http://gvmtool.net/> but you don't need to visit it to run an installation.
+SDKMAN! is the best tool for getting Groovy running on your system. The homepage is <http://sdkman.io/> but you don't need to visit it to run an installation.
 
 If you are comfortable with using the terminal then you just need to run the following command as a regular user[^curl]:
 
-	curl -s get.gvmtool.net | bash
+	curl -s get.sdkman.io | bash
 
-Once the `gvm` has been installed, run the following command to determine which versions of Groovy are available:
+Once SDKMAN! has been installed, run the following command to determine which versions of Groovy are available:
 
-	gvm list groovy
+	sdk list groovy
 
-You'll see a large table of version numbers but are most interested in those marked with 2.4.x - you'll want the version with the highest value of x (e.g. 2.4). To install Groovy you now just call `gvm` as below:
+You'll see a large table of version numbers but are most interested in those marked with 2.4.x - you'll want the version with the highest value of x (e.g. 2.4). To install Groovy you now just call `sdk` as below:
 
-	gvm install groovy 2.4.0
+	sdk install groovy 2.4.4
 
 ### Checking Groovy (all platforms)
 Once you have the JDK and Groovy installed, run the following command to double-check your Groovy version:
