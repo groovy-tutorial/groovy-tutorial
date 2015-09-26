@@ -2,9 +2,7 @@
 
 I> Interfaces are the best way to define your Application Programming Interface (API)
 
-Interfaces provide a set of [method signatures](https://en.wikipedia.org/wiki/Type_signature) that are intended to be implemented
- by classes - they are an extremely useful construct that allows you to define a "contract" between your code and other
- developers.
+Interfaces provide a set of [method signatures](https://en.wikipedia.org/wiki/Type_signature) that are intended to be implemented by classes - they are an extremely useful construct that allows you to define a "contract" between your code and other developers.
 
 Let's take a look at an example:
 

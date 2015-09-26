@@ -151,3 +151,9 @@ sometimes cause healthy debate when you ask "should I use an inner classes or a 
     print phil.mailingSticker
 
 The Groovy documentation covers [inner classes](http://docs.groovy-lang.org/latest/html/documentation/#_inner_class).
+
+## Closures as Classes
+SAM (Single Abstract Method) type coercion
+See Assigning a closure to a SAM type
+and Closure to arbitrary type coercion
+and Traits as SAM etc
