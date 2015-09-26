@@ -23,4 +23,10 @@ trait Riding implements Event {
     }
 }
 
-class Pentath
+class Triathlon implements Running, Swimming, Riding {
+
+}
+
+Triathlon competition = new Triathlon()
+
+competition.startEvent()

@@ -7,14 +7,14 @@ trait Running {
         }
         this.distance = distance
     }
-}
-
-class SportingEvent implements Running {
-    String name
 
     def getAdvert() {
         "${this.name} is a ${this.distance}m event"
     }
+}
+
+class SportingEvent implements Running {
+    String name
 }
 
 SportingEvent groovySprint = new SportingEvent(name: 'The Groovy 500', distance: 500)

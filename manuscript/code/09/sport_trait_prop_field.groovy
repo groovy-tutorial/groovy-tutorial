@@ -1,16 +1,31 @@
 trait Running {
+
     Integer distance
+
+    public String raceType = 'foot race event'
+
+    private Integer maxCompetitors = 10
 
     void startEvent() {
         println 'Ready, set, go!'
     }
+
 }
 
 class SportingEvent implements Running {
     String name
+
+    String describeEvent() {
+        "This is a ${Running__raceType} for ${Running__maxCompetitors} competitors"
+    }
 }
 
-SportingEvent stawellGift = new SportingEvent(name: 'The Stawell Gift', distance: 120)
+SportingEvent dash = new SportingEvent()
 
-println "Welcome to $stawellGift.name - a ${stawellGift.distance}m race"
-stawellGift.startEvent()
+assert dash.Running__raceType == 'foot race event'
+assert dash.Running__maxCompetitors == 10
+
+dash.Running__maxCompetitors = 99
+assert dash.Running__maxCompetitors == 99
+
+println dash.describeEvent()
