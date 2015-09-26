@@ -306,7 +306,9 @@ ruleset {
     //Yeah, this one doesn't like Spock's verbose naming
     //MethodName
     ObjectOverrideMisspelledMethodName
-    PackageName
+    PackageName {
+        regex = /[a-z]+[a-z0-9_]*(.[a-z0-9_]+)*/
+    }
     PackageNameMatchesFilePath
     ParameterName
     PropertyName

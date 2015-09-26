@@ -5,15 +5,13 @@ v0.1-DRAFT, 2015-09-15
 :licence: Apache License, Version 2.0
 :licence-url: http://www.apache.org/licenses/LICENSE-2.0
 :src: https://github.com/groovy-tutorial/shapes-demo
-:sourcedir: ../../main/groovy
-:testdir: ../../test/groovy
+:url: http://www.groovy-tutorial.org/shapes-demo/
 :level: basic
 :keywords: gradle, groovy, oo
-:description:
+:description: A small demonstration of a Groovy application using the Gradle build tool.
 :icons: font
 :source-highlighter: coderay
 :source-language: groovy
-:docinfo2:
 :toc:
 
 {description}
@@ -55,7 +53,37 @@ You don't need Groovy or Gradle to run the codebase - you just need to have a Ja
 == Running and building the code
 
 The `dev` directory contains all of the codebase and the Gradle build environment. The information in this section
-assumes that you are working in a terminal/command-line environment and that your working directory is `dev`.
+assumes that you are working in a terminal/command-line environment and that your working directory is the `dev`
+sub-directory.
+
+The codebase is small and provides some basic objects that describe 2D shapes. When run, the application displays
+some information about a few pre-configured shapes:
+
+[source,bash]
+.The application output
+----
+================================================================================
+
+Welcome to the Shapes demo
+
+================================================================================
+
+Rectangle: length = 10; width = 2; perimeter = 24; area = 20
+
+Square: length = 4; perimeter = 16; area = 16
+
+Circle: radius = 8; diameter = 16; circumference = 50.26548245743669; area = 201.06192982974676
+
+Triangle: Side A = 5; Side B = 8; Side C = 10; perimeter = 23; area = 19.8100353356575311636333935894072055816650390625
+
+Right-angled Triangle: Side A = 3; Side B = 4; Side C = 5.0; perimeter = 12.0; area = 6.0
+
+Isosceles Triangle: Side A = 2; Side B = 8; Side C = 8; perimeter = 18; area = 7.93725393319377214851328972144983708858489990234375
+
+Equilateral Isosceles Triangle: Side A = 6; Side B = 6; Side C = 6; perimeter = 18; area = 15.5884572681198942945002272608689963817596435546875
+----
+
+This code behind this display is found in the link:dev/src/main/groovy/org/groovytutorial/shapes/app/Main.groovy[Main.groovy] script.
 
 === Using Gradle
 
@@ -86,17 +114,17 @@ There are a number of files relating to the Gradle build:
 
 * `build.gradle` is the primary file and describes what's needed to build the application
 * `gradle.properties` provides information to `build.gradle`
-    * I've enabled the https://docs.gradle.org/current/userguide/gradle_daemon.html[Gradle Daemon] - this creates a background process that makes it quicker to run builds.
+** I've enabled the https://docs.gradle.org/current/userguide/gradle_daemon.html[Gradle Daemon] - this creates a background process that makes it quicker to run builds.
 * `settings.gradle` is used, amongst other things, to give the project a name ("shapes-demo")
 * The Gradle wrapper plugin produces the following files:
-    * `gradlew` and `gradlew.bat` are used to run the Gradle build and will download a copy of Gradle if needed
-    * The `gradle/wrapper` directory houses the files needed by Gradle wrapper
+** `gradlew` and `gradlew.bat` are used to run the Gradle build and will download a copy of Gradle if needed
+** The `gradle/wrapper` directory houses the files needed by Gradle wrapper
 
 You'll also notice a `.gradle/` directory is created. This is used by Gradle to cache information and libraries etc.
 
 ==== Review the build file
 Gradle uses a number of conventions that, if you follow them, make life a little easier. The first such convention
-is that the file describe how to build a project is named `build.gradle` and placed in the root directory of the project.
+is that the file describing how to build a project is named `build.gradle` and placed in the root directory of the project.
 
 Let's take a look at the build file:
 
@@ -162,7 +190,7 @@ see all of the available tasks by running `./gradlew tasks`. Here are a few task
 
 ==== The Über jar
 I've also added in the https://github.com/johnrengelman/shadow/[Gradle Shadow] plugin as it will create an über jar
-- one that hold the compiled codebase and all required libraries.
+- one that holds the compiled codebase and all required libraries.
 To create this file, run `./gradlew shadowJar` and `build/libs/shapes-demo-1.0-SNAPSHOT-all.jar` will be created.
 Take the über jar out for a spin by running: `java -jar build/libs/shapes-demo-1.0-SNAPSHOT-all.jar`.
 
@@ -184,7 +212,7 @@ To run the code using `groovy`:
 To compile the classes to bytecode and run with Java we need to use `groovyc`:
 
     groovyc -d classes src/main/groovy/org/groovytutorial/shapes/*.groovy src/main/groovy/org/groovytutorial/shapes/app/*.groovy src/main/groovy/org/groovytutorial/shapes/triangle/*.groovy
-    java -cp lib/groovy-all-2.4.4.jar:classes/ org.groovytutorial.shapes.app.Main
+    java -cp lib/groovy-all-2.4.4.jar:classes/ org.groovy_tutorial.shapes.app.Main
 
 To create a Jar:
 
@@ -193,4 +221,4 @@ To create a Jar:
 
 To run the Jar:
 
-    java -cp lib/groovy-all-2.4.4.jar:lib/Shapes.jar org.groovytutorial.shapes.app.Main
+    java -cp lib/groovy-all-2.4.4.jar:lib/Shapes.jar org.groovy_tutorial.shapes.app.Main
