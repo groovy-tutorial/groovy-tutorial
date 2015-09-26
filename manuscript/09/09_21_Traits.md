@@ -1,5 +1,7 @@
 # Traits {#chtraits}
 
+I> Traits were introduced in [Groovy 2.3](http://groovy-lang.org/releasenotes/groovy-2.3.html#Groovy2.3releasenotes-Traits)
+
 Where classes can be used to describe real or virtual "things", traits provide a construct for describing an ability or a set of related abilities. Let's consider two contexts in which we might use traits:
 
 * Using a `class` we might describe an `Animal` in terms of its features (`diet`, `distribution`) and then enhance the `Animal` with traits such as `Hopping` (for a wallaby) or `Climbing` (for a koala) or both (for a tree kangaroo).
@@ -189,6 +191,8 @@ Before leaving this topic, there are some things to note about the example:
 1. Concepts such as overriding and `super` will be covered more fully in the [chapter on Inheritance](#chinheritance).
 
 ## The Shapes demo
+
+
 
 {lang=groovy}
 <<[The `Sides` trait](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Sides.groovy)

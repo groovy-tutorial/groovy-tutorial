@@ -6,7 +6,7 @@ Now that you have a handle on constructing classes we'll explore the various Gro
 extensible codebase:
 
 * Interfaces: define a set of method signatures that are then implemented by a class (or classes).
-* Traits: add functionality to a class
+* Traits: add abilities to a class
 * Inheritance: Allows a class to inherit the functionality of another class and extend it.
     * When ClassA inherits from ClassB, we say that ClassA is a _subclass_ of ClassB and that ClassB is a _superclass_ of ClassA[^wp].
 
