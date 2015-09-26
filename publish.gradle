@@ -180,10 +180,10 @@ task syncPublishFiles(type: Sync, dependsOn: [ prepareForPublishing, asciidoctor
     from(distsDir) {
         into 'dist'
     }
-    from(shadowJar.destinationDir) {
+    /*from(shadowJar.destinationDir) {
         include shadowJar.archiveName
         into 'dist'
-    }
+    }*/
     from(projectDir) {
         includes = [ 'build.gradle',
                      'settings.gradle',
@@ -202,10 +202,11 @@ task syncPublishFiles(type: Sync, dependsOn: [ prepareForPublishing, asciidoctor
         exclude 'docs'
     }
     from 'LICENSE'
+    from '.nojekyll'
 }
 
 //See: https://github.com/ajoberstar/gradle-git/wiki/org.ajoberstar.github-pages
-apply plugin: 'org.ajoberstar.github-pages'
+//apply plugin: 'org.ajoberstar.github-pages'
 githubPages {
     repoUri = 'git@github.com:groovy-tutorial/shapes-demo.git'
     pages {

@@ -28,14 +28,14 @@ project.ext {                           //<12>
 
 //project.name is set in the settings.gradle file using: rootProject.name = 'shapes-demo'
 project.with {  //<17>
-    group 'org.groovytutorial.shapes'
+    group 'org.groovy_tutorial.shapes'
     version '1.0-SNAPSHOT'
     description = 'A tutorial covering basic Gradle usage and OO-development in Groovy'
 
     defaultTasks 'run'  //<18>
 
     //This is the class that is called when using the "run" task
-    mainClassName = 'org.groovytutorial.shapes.app.Main'    //<19>
+    mainClassName = 'org.groovy_tutorial.shapes.app.Main'    //<19>
 
     wrapper.gradleVersion = "$gradleVersion"                //<20>
 }
