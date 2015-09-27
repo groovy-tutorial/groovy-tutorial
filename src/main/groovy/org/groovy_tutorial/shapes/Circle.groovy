@@ -12,7 +12,7 @@ import groovy.transform.ToString
 @EqualsAndHashCode(includes = 'radius')
 @ToString(includeNames = true, includeFields = true, includePackage = true)
 final class Circle implements TwoDimensionalShape {
-    private     static final String SHAPE_NAME = 'Circle'
+    private static final String SHAPE_NAME = 'Circle'
 
     /** The radius of the circle */
     final BigDecimal radius
