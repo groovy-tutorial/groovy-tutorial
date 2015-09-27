@@ -1,7 +1,1 @@
-./09/09_00_Introduction.md
-./09/09_05_Packages.md
-./09/09_20_Interfaces.md
-./09/09_21_Traits.md
-./09/09_22_Inheritance.md
-backmatter/backmatter.txt
 ./09/09_90_ShapesDemo.md
