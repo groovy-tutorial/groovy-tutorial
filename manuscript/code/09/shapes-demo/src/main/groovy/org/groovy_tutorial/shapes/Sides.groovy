@@ -70,7 +70,7 @@ trait Sides {
             if (perimeter) {
                 throw new ReadOnlyPropertyException(name, Sides)
             }
-            if (value instanceof Number) {
+            if (value in Number) {
                 ShapeUtil.checkSidesException(value)
                 sideMap.put(name, value as Number)
                 return sideMap.get(name)
