@@ -151,7 +151,7 @@ needs to be updated/improved as it saves having to go through an existing codeba
 However, it's also a bit of a trap as that approach "wedges" in functionality that may not really fit the implementing
 classes (and their subclasses).
 
-Groovy's [traits]{#chtraits} gives you a neater approach to this.
+Groovy's [traits](#chtraits) gives you a neater approach to this.
 
 ### The constant interface antipattern
 
