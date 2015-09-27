@@ -27,7 +27,7 @@ To finish this chapter off I'll do a little bit of mucking around with set theor
 
 The `in` operator is used to determine if an item is "in" a list or is a key in a map.
 
-{title="Using the `in` operator",lang=groovy}
+{title="Using the `in` operator",lang=Java}
 	assert 6 in [1, 2, 6, 9]
 	assert !(3 in [1, 2, 6, 9])
 
@@ -148,7 +148,7 @@ When subtraction is applied to a Map the right-hand operand needs to be a key:va
 3. I attempt to remove `['English': 'C']` and __it is__ in `grades` so the removal occurs.
 
 
-{title="Subtracting from a map",lang=groovy}
+{title="Subtracting from a map",lang=Java}
 	def grades = ['Maths': 'A',
 	    'English': 'C',
 	    'Science': 'B']
@@ -362,7 +362,7 @@ If `disjoint()` returns `false` then some elements intersect.
 
 All this got me thinking further and looking into Google's Guava libraries - here's some code that uses Guava to scratch my set itch:
 
-{title="Sip some guava",lang=groovy}
+{title="Sip some guava",lang=Java}
 	@Grab(group='com.google.guava', module='guava', version='18.0')
 	import static com.google.common.collect.Sets.*
 

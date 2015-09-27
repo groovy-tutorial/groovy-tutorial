@@ -2,10 +2,10 @@
 
 I> Less than, greater than and so on - it's all about how the operands relate.
 
-Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`). 
+Similar to the Equality Operators, the expressions involving Relational Operators return a boolean result (`true` or `false`).
 
 {title="The relational operators"}
-|Operator|Name|     
+|Operator|Name|
 |:------:|:--------|
 |\>      |Greater than|
 |\>=     |Greater than or equal to|
@@ -15,7 +15,7 @@ Similar to the Equality Operators, the expressions involving Relational Operator
 
 All of the following operations resolve to `true`:
 
-{title="It's all `true`",lang=groovy}
+{title="It's all `true`",lang=Java}
 	assert 5 > 2
 	assert 4 >= 3
 	assert 4 >= 4
@@ -28,21 +28,21 @@ Ordinarily, the operands used in a relational comparison can be compared in a me
 	if ('easy' < 123) println "It's easier than 123"
 
 ## Spaceship
-The spaceship operator comes from the Perl programming language. The Spaceship operator is most often seen where sorting is done. 
+The spaceship operator comes from the Perl programming language. The Spaceship operator is most often seen where sorting is done.
 
 {title="The spaceship operator"}
-|Operator|  
+|Operator|
 |:------:|
-|`<=>`      |  
+|`<=>`      |
 
 In the example below the `sort` function uses the closure to define the sort algorithm and this is where the spaceship lands:
 
-{title="UFO sighting",lang=groovy}
+{title="UFO sighting",lang=Java}
 	def nums = [42, -99, 6.3, 1, 612, 1, -128, 28, 0]
-	
+
 	//Descending
 	println nums.sort{n1, n2 -> n2<=>n1 }
-	
+
 	//Ascending
 	println nums.sort{n1, n2 -> n1<=>n2 }
 
@@ -64,15 +64,15 @@ The following assertions all resolve as true:
 The `compareTo` method is used by Groovy to assess the result of relational operations:
 
 		assert 1.compareTo(2) == -1
-	
+
 I> There is a reasonable assumption that the two operands can be coerced (cast) into a similar type. This is why `1.compareTo('cat')` just won't work.
 
 Java's [`Comparable`](http://docs.oracle.com/javase/8/docs/api/index.html) interface is implemented by classes that allow instances to be compared. Custom classes can determine their own appropriate algorithm for the `Comparable`'s `compareTo` method and this will be available when you use the relational operators.
 
-{title="Overloading relational operators",lang=groovy}
+{title="Overloading relational operators",lang=Java}
 	class Num implements Comparable {
 	    def val
-	    
+
 	    @Override
 	    int compareTo(obj) {
 	         if (val < obj.val) {
@@ -81,14 +81,14 @@ Java's [`Comparable`](http://docs.oracle.com/javase/8/docs/api/index.html) inter
 	             return 1
 	         } else {
 	             return 0
-	         } 
+	         }
 	    }
 	}
-	
+
 	def a = new Num(val: 2)
 	def b = new Num(val: 5)
 	def c = new Num(val: 2)
-	
+
 	assert a < b
 	assert b > a
 	assert a != b

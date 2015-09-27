@@ -12,14 +12,14 @@ Groovy also gives us scientific notation and other number systems and we'll take
 ## Integers
 Integers are whole numbers and can be negative or positive:
 
-{title="Using Integers",lang=groovy}
+{title="Using Integers",lang=Java}
 	def age = 27
 	def coldDay = -8
 
 
 Groovy will also handle very large numbers:
 
-{title="Large numbers",lang=groovy}
+{title="Large numbers",lang=Java}
 	// 1 astronomical unit (au)
 	def distanceEarthToSun = 149597870700
 	def distanceNeptuneToSun = distanceEarthToSun * 30
@@ -28,7 +28,7 @@ Groovy will also handle very large numbers:
 ## Decimals
 Decimal numbers provide a fraction and can be negative or positive:
 
-{title="Using decimals",lang=groovy}
+{title="Using decimals",lang=Java}
 	def pi = 3.14159
 
 	// Measured in celsius
@@ -38,13 +38,13 @@ Decimal numbers provide a fraction and can be negative or positive:
 ## Scientific notation
 Base-10 (decimal) scientific notation ({$$}a * 10^b{/$$}) can also be used by placing an `e` or `E` before the exponent:
 
-{title="Using SN",lang=groovy}
+{title="Using SN",lang=Java}
 	def atomicMass = 1.67e-27
 
 
 The next example sets the `au` variable to 1.49597870700 * 10^11 and then checks to make sure I haven't messed up the exponent:
 
-{title="Just a check",lang=groovy}
+{title="Just a check",lang=Java}
 	def au = 1.49597870700e11
 	assert au == 149597870700
 
@@ -70,7 +70,7 @@ Most of the time we deal with decimal (base-10) numbers but there are other numb
 
 The code below illustrates the many faces of the number 15 (base-10):
 
-{title="Different number systems",lang=groovy}
+{title="Different number systems",lang=Java}
 	println 0b1111    //Binary
 	println 15         //Decimal
 	println 017       //Octal
@@ -79,14 +79,14 @@ The code below illustrates the many faces of the number 15 (base-10):
 
 To help you deal with long numbers Groovy lets you use underscores (`_`) to visually break up the number without changing its value:
 
-{title="Formatting large numbers",lang=groovy}
+{title="Formatting large numbers",lang=Java}
 	assert 1_000_000 == 1000000
 	assert 0b0001_0110_1101 == 365
 
 
 Let's close with a joke:
 
-{title="Lolz",lang=groovy}
+{title="Lolz",lang=Java}
 	def value = 0b10
 
 	println "There are only $value types of people in the world - those who know binary and those who don't"
@@ -98,7 +98,7 @@ Groovy (Java) numbers trace their lineage (inherit) back to `java.lang.Number`. 
 
 Most numerical classes (e.g. `Integer`) provide the handy `max` and `min` methods that let you compare two numbers of the same numerical type:
 
-{title="max and min",lang=groovy}
+{title="max and min",lang=Java}
 	assert Integer.max(10, 2) == 10
 	assert Integer.min(10, 2) == 2
 

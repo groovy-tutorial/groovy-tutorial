@@ -17,7 +17,7 @@ Clearly, _kittens_ aren't something that the _average_ calculation can understan
 ## Comment your method
 Firstly, make sure that `determineAverage` has some useful documentation such as:
 
-{lang=groovy}
+{lang=Java}
 <<[Provide comments](code/06/09/doc.groovy)
 
 In the example above I've just added a GroovyDoc comment block that describes what the method does, its parameter and what it will return. At the very least, other developers will see how they _should_ be using my method.
@@ -25,7 +25,7 @@ In the example above I've just added a GroovyDoc comment block that describes wh
 ## Check the parameters
 Next, I can be more defensive in my coding and make sure that the method has a prerequisite that needs to be met before it attempts to run.
 
-{lang=groovy}
+{lang=Java}
 <<[Check parameters](code/06/09/check_params.groovy)
 
 The approach above checks to make sure that no parameter is a `String` - if you pass one to the method you'll get an exception thrown back at you. In reality I should make sure that only numbers can be passed in and my check won't pick up a `Boolean` value - more on this in a moment.
@@ -36,7 +36,7 @@ What do you think would happen if I called the method with no parameters - `dete
 
 Well, the division would attempt to divide by zero and that's a fail so I need to also check that `values` isn't empty (I'll leave out the comments for brevity):
 
-{lang=groovy}
+{lang=Java}
 <<[Check *all* parameters](code/06/09/check_params2.groovy)
 
 Note that if no parameters are passed, I return `0`. I really don't like returning `null` from methods as it makes other developers then have to check for `null`. I also don't want to raise an exception - I'm happy enough to say that the average of no values is `0`.
@@ -45,7 +45,7 @@ Note that if no parameters are passed, I return `0`. I really don't like returni
 
 If I really want to get specific with the data types I'll take as parameters and return from the method then I can switch to static typing. I can make sure that all my parameters are of type `Number` (or one of its subtypes) and that I will return a value of type `Number`. The code below really gets specific about data types:
 
-{lang=groovy}
+{lang=Java}
 <<[Use typed parameters](code/06/09/typed.groovy)
 
 The following two calls to the method would work:
@@ -69,7 +69,7 @@ So, here's a little example using [Spock](http://docs.spockframework.org/en/late
 
 Firstly, this won't run in your groovyConsole. You need to copy the code into the online [Spock web console](http://meetspock.appspot.com)[^sample] and then click on "Run Script":
 
-{lang=groovy}
+{lang=Java}
 <<[A Spock example](code/06/09/spock.groovy)
 
 When you run this in the Spock web console you should get:

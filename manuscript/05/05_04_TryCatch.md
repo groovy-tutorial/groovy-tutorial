@@ -35,7 +35,7 @@ In fact, the `score` variable won't be visible to the `catch` block or a `finall
 ## try-catch
 The basic format of `try-catch`  is as follows:
 
-{title="`try-catch`",lang=groovy}
+{title="`try-catch`",lang=Java}
 	try {
 		//statements...
 	} catch (<Exception type> <var>) {
@@ -120,7 +120,7 @@ My preference is to use `try-finally` if I just want to tidy up resources (such 
 ## try-catch-finally
 The `try-catch` statement can have an optional `finally` block. This is run regardless of if an exception is raised. The `finally` block doesn't receive any incoming parameter and can appear no more than once per `try`:
 
-{title="`try-catch-finally`",lang=groovy}
+{title="`try-catch-finally`",lang=Java}
 	try {
 		//statements...
 	} catch (<Exception type> <var>) {
@@ -153,7 +153,7 @@ The `finally` block comes in handy when you need to tidy up resources before eit
 ## try-finally
 The third form of the `try` statement doesn't provide a `catch` block:
 
-{title="`try-finally`",lang=groovy}
+{title="`try-finally`",lang=Java}
 	try {
 		//statements...
 	} finally {

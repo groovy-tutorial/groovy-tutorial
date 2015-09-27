@@ -27,7 +27,7 @@ I> We'll cover a lot more on Objects in a [later tutorial](#choo) as they're so 
 
 Let's look at a Groovy script that declares a new class:
 
-{lang=groovy}
+{lang=Java}
 <<[Declaring a new class](code/02/02/declare_class.groovy)
 
 
@@ -39,14 +39,14 @@ T> You'll note the `{` in the code. This is called a curly bracket (or brace) an
 
 We declare the two properties in much the same way as we do for any variable:
 
-{title="Properties",lang=groovy}
+{title="Properties",lang=Java}
 	def name
 	def email
 
 
 A number of methods are declared to let us set and retrieve (get) the values of the  object's properties:
 
-{title="Methods",lang=groovy}
+{title="Methods",lang=Java}
 	def getName() {
 	    return this.name
 	}
@@ -68,7 +68,7 @@ T> Again you'll note the opening and closing brackets for each method, telling G
 
 After we've declared the `Person` class we can now create instances of the class and assign values to the properties:
 
-{title="Creating an instance",lang=groovy}
+{title="Creating an instance",lang=Java}
 	def david = new Person(name: 'David', email: 'david@example.com')
 
 We use `def david` as we would for other variables and then use `new Person` to indicated that `david` will hold an instance of the `Person` class. Lastly we call a special method called a _constructor_ that Groovy provides us for our objects: `(name: 'David', email: 'david@example.com')`. This sets up `david` with starting values for the properties.
@@ -87,7 +87,7 @@ You can see that the method call uses dot-point notation of `<variable name>.<me
 
 Lastly, we use the two `get` methods to display `david`'s information:
 
-{title="Calling methods",lang=groovy}
+{title="Calling methods",lang=Java}
 	println david.getName()
 	println david.getEmail()
 
@@ -100,7 +100,7 @@ The example `Person` class has demonstrated a number of Groovy's object-oriented
 
 You can create lots of `Person` instances and each will exist in their own context. This means that `david` and `sarah` don't get mixed up:
 
-{title="Creating instances",lang=groovy}
+{title="Creating instances",lang=Java}
 	def david = new Person(name: 'David', email: 'david@example.com')
 	def sarah = new Person(name: 'Sarah', email: 'sarah@example.com')
 
@@ -113,21 +113,21 @@ In the Groovy/Java family tree, `java.lang.Object` is the grand-daddy of all cla
 
 The `class` property is used to access the Class that defines the object. This can be really useful when we want to check what sort of object we're dealing with.
 
-{lang=groovy}
+{lang=Java}
 <<[The class property](code/02/02/class.groovy)
 
 ### `dump()`
 
 This will return a String that describes the object instance's internals. Try out the following code to see what gets dumped:
 
-{lang=groovy}
+{lang=Java}
 <<[The dump method](code/02/02/dump.groovy)
 
 ### `with()`
 
 This method works with closures ([we'll cover them later](#chclosures)) to give us an easy format for accessing a object's properties in methods. In the example below I wrap some code using `with` and don't have to use `david.name` and `david.email` to access those properties:
 
-{lang=groovy}
+{lang=Java}
 <<[The with method](code/02/02/with.groovy)
 
 ## Existing classes
@@ -136,13 +136,13 @@ The great strength/benefit/bonus of an object-oriented programming platform such
 
 If we were going to create a variable to hold a string (a piece of text) we would do something like:
 
-{title="Creating a new String",lang=groovy}
+{title="Creating a new String",lang=Java}
 	def quote = 'Well may we say "God save the Queen", because nothing will save the Governor-General!'
 
 
 We could also use the following code to do exactly the same thing as the code above:
 
-{title="Also creating a new String",lang=groovy}
+{title="Also creating a new String",lang=Java}
 	def quote = new String('Well may we say "God save the Queen", because nothing will save the Governor-General!')
 
 
@@ -153,7 +153,7 @@ T> I prefer the first version as it's a lot easier to read but the example provi
 
 Now that we have our `quote` string we actually also get a number of methods that help us handle our variable:
 
-{lang=groovy}
+{lang=Java}
 <<[Handy String methods](code/02/02/string.groovy)
 
 The example above demonstrates how we can call methods on an object instance and you'll see this used in the rest of the tutorials. Be sure to try out the code above to see what it does!
@@ -174,7 +174,7 @@ T>We use single- or double-quotes for string literals otherwise Groovy thinks th
 
 We can call methods directly on literal values as Groovy will create an appropriate object instance for us:
 
-{title="Calling a method from a literal",lang=groovy}
+{title="Calling a method from a literal",lang=Java}
 	assert 1.plus(1) == 2
 
 
@@ -190,5 +190,5 @@ This can start to be very useful when you look at lists and ranges - something w
 
 Lastly, as the literal is put into an object we can access methods and properties for the object. In the example below I can see what data type Groovy is actually using when I use 3.14:
 
-{title="Accessing properties from a literal",lang=groovy}
+{title="Accessing properties from a literal",lang=Java}
 	println 3.14.class.name

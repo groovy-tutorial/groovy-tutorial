@@ -4,7 +4,7 @@ I> Groovy uses a sneaky Map to provide named argument functionality
 
 You can use named arguments by having the first parameter be a Map. Consider the method below:
 
-{lang=groovy}
+{lang=Java}
 <<[Named parameters](code/06/04/named.groovy)
 
 The `options` parameter is actually a Map and this lets the caller use an interesting Groovy syntax when calling the method. Instead of passing a Map (`[:]`) to the `options` parameter, the caller can use the `key: value` format in their method call. This lets us call `displayMessage` in many ways, including:

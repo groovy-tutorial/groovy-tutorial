@@ -8,7 +8,7 @@ Groovy uses curly brackets `{..}` to enclose blocks of code. These are primarily
 
 Groovy doesn't allow the use of anonymous code block such as the one below:
 
-{title="A sample block",lang=groovy}
+{title="A sample block",lang=Java}
 	{
 	    def count = 0
 	    assert count == 0
@@ -17,7 +17,7 @@ Groovy doesn't allow the use of anonymous code block such as the one below:
 
 You need to label the block provided above if you want to use it in Groovy code:
 
-{title="A labelled block",lang=groovy}
+{title="A labelled block",lang=Java}
 	Block1:{
 	    def count = 0
 	    assert count == 0
@@ -28,7 +28,7 @@ This limitation is primarily due to the closure syntax - labelling the block ens
 
 Blocks appearing within blocks are called "nested blocks":
 
-{title="A nested block",lang=groovy}
+{title="A nested block",lang=Java}
 	Block1:{
 	    def count = 0
 	    assert count == 0
@@ -76,7 +76,7 @@ Variable Scope refers to the visibility of a variable from other blocks. A varia
 
 In the example below, the code within `Block1` can "see" the `count` variable so both asserts work:
 
-{title="A sample block",lang=groovy}
+{title="A sample block",lang=Java}
 	def count = 0
 
 	Block1: {

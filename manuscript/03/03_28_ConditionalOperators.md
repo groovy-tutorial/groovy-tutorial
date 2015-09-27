@@ -88,7 +88,7 @@ In a conditional-or statement, each expression is evaluated in left-to-right ord
 
 The conditional operator (`?:`) is most commonly used when assigning a value to a variable. A conditional expression is used for the first operand and placed to the left of the question-mark. If this resolves to `true` then the second operand is evaluated, otherwise the third operator is evaluated. This sounds a little confusing so let's look at an example:
 
-{title="A basic tax calculator",lang=groovy}
+{title="A basic tax calculator",lang=Java}
 	def salary = 100000
 
 	def taxBracket = salary < 75000 ? 'Bracket 1': 'Bracket 2'
@@ -100,7 +100,7 @@ In the code above the relational expression (`salary < 75000`) is evaluated and,
 
 The code below will calculate income tax based on the person's income:
 
-{title="More tax",lang=groovy}
+{title="More tax",lang=Java}
 	def salary = 100000
 
 	def tax = salary < 75000 ? salary * 0.1: salary * 0.2
@@ -112,7 +112,7 @@ I> Note that only one of the second _or_ third operands are evaluated. For examp
 
 A major benefit of the conditional operator is readability. Consider the previous code being re-written using an `if` statement and I trust you'll see that `?:` makes for more compact and readable code:
 
-{title="A less readable option",lang=groovy}
+{title="A less readable option",lang=Java}
 	def salary = 100000
 	def tax = 0
 
@@ -129,7 +129,7 @@ A major benefit of the conditional operator is readability. Consider the previou
 
 The conditional operator is also really useful for default values - these are used when you want to make sure a variable always has a value. In the code below the `Person` class has been prepared to ensure that any instance that has not been explicitly given a value for the `name` property is assigned `Anonymous` as the name:
 
-{title="Using `?:` to set a default value",lang=groovy}
+{title="Using `?:` to set a default value",lang=Java}
 	class Person {
 	    def name
 
@@ -200,7 +200,7 @@ To prove that I'm not just bloating my code to prove a point, here's a slightly 
 
 You'll note that I didn't bother with the `output` variable and dropped the parentheses (they're not required). The code is reasonably compact but rewritten in Groovy it gets even tidier:
 
-{title="Checking for null in Groovy",lang=groovy}
+{title="Checking for null in Groovy",lang=Java}
 	class NullTest {
 	    static main(args) {
 	        def t = null

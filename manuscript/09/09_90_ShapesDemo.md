@@ -1,7 +1,7 @@
 # Appendix: The Shapes demo code listing {#chshapesdemo}
 
 This chapter consists purely of the code listing for the Shapes demo.
-Please check out the [http://www.groovy-tutorial.org/shapes-demo/](Shapes demo mini site) as it provides the source code and a range of other reports and information.
+Please check out the [Shapes demo mini site](http://www.groovy-tutorial.org/shapes-demo/) as it provides the source code and a range of other reports and information.
 
 {pagebreak}
 

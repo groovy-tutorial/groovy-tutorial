@@ -6,22 +6,22 @@ There are times where we want to pass a variable number of parameters to the met
 
 One approach is to use a list for a catch-all parameter, such as `items` does in the code below:
 
-{lang=groovy}
+{lang=Java}
 <<[Using a list parameter](code/06/05/list.groovy)
 
 Whilst the list path is an option, Groovy supports the use of variable arguments (varargs) using the "three-dot" (`...`) notation for the last (and only the last) parameter:
 
-{lang=groovy}
+{lang=Java}
 <<[Using a varargs parameter](code/06/05/varargs.groovy)
 
 We can set a specific data type for the `items` parameter by placing the type before the `...`:
 
-{lang=groovy}
+{lang=Java}
 <<[Using a typed varargs parameter](code/06/05/varargs_typed.groovy)
 
 Let's return to the first example in this chapter and rewrite it using varargs:
 
-{lang=groovy}
+{lang=Java}
 <<[Varargs instead of a list](code/06/05/list_rewrite.groovy)
 
 So the `items` parameter is actually a list inside `buyGroceries` but the caller just passes a series of values to the method.

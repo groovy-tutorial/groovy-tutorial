@@ -24,7 +24,7 @@ It's important to note a few things about class methods:
 
 Declaring a field/property or method as static is easy: you just prepend the `static` modifier. Lets look at an example:
 
-{lang=groovy}
+{lang=Java}
 <<[A brief example of class methods and variables](code/08/08/static.groovy)
 
 The code above provides a common use of static variables as it reads in configuration from a source and makes that
@@ -55,7 +55,7 @@ use `static <varName>` and don't need `def`:
 Whilst the `Configuration` class only defines class methods and variables, classes can have a mix of these elements. The
 next example is more complex:
 
-{lang=groovy}
+{lang=Java}
 <<[A mix of static and instance elements](code/08/08/static_creditcard.groovy)
 
 _Running this code will cause an error to be displayed but don't panic - it's just saying that I haven't provided a
@@ -90,7 +90,7 @@ T> You'll also note that in that last example that I've thrown in some usage of 
 Classes don't have a constructor-style approach that you can use to prepare the class variables for use.
 However, there is a static form of the intializer block:
 
-{lang=groovy}
+{lang=Java}
 <<[A static initializer](code/08/08/static_init.groovy)
 
 You'll see that I've just moved the earlier `loadConfig` class method into a static initializer block (`static { }`).

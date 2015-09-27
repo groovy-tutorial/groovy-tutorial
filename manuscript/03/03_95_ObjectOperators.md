@@ -19,7 +19,7 @@ It could be argued that all operators are object operators as nearly every varia
 
 The Safe Navigation operator (`?.`) checks to make sure that a variable isn't `null` before calling the requested method. Consider the following code:
 
-{title="Hitting a null",lang=groovy}
+{title="Hitting a null",lang=Java}
 	class Person{
 	    def name
 	}
@@ -41,7 +41,7 @@ As `fred` somehow became `null` at some point in the code, that call to `fred.na
 
 In order to stop the NPE you'll normally see developers using an `if` statement to check that the variable isn't `null` before trying to call a method:
 
-{title="Checking for null",lang=groovy}
+{title="Checking for null",lang=Java}
 	class Person{
 	    def name
 	}
@@ -61,7 +61,7 @@ T>In the code above, `if (fred)` equates to true if `fred` isn't null - it's a h
 
 Groovy's Safe Navigation operator saves some time and code. In the code below, Groovy checks that the `fred` variable isn't `null`  before trying to access the `name` property - giving us a compact piece of code: `fred?.name`.
 
-{title="Safe navigation",lang=groovy}
+{title="Safe navigation",lang=Java}
 	class Person{
 	    def name
 	}
@@ -106,7 +106,7 @@ As we saw in the chapters on Equality Operators and Relational Operators, Groovy
 
 In the code below I describe a `Person` class and use a very helpful annotation (`@groovy.\-transform.\-EqualsAndHashCode`) so that Groovy sets up the approach to determining if two instances of `Person` are the same - such that `==` returns `true`. I've decided that all people will have a unique identifier and, provided two instances have the same identifier, they're the same person. This means that all three variations (`fred`, `freddie`, `frederick`) of the person with the ID `345` are equal (`==`) to each other. However, by using `is` I can see that, whilst `fred` and `freddie` point to the same instance of Person, `frederick` points to a different instance.
 
-{title="Can I see some identification?",lang=groovy}
+{title="Can I see some identification?",lang=Java}
 	@groovy.transform.EqualsAndHashCode(includes="id")
 	class Person{
 	    def id
@@ -133,7 +133,7 @@ The Type Comparison operators (`instanceof` and `in`) is used to determine if a 
 
 In this next example I check to make sure that `fred` is a `Person`:
 
-{title="Type comparison",lang=groovy}
+{title="Type comparison",lang=Java}
 	class Person{
 	    def name
 	}
@@ -197,7 +197,7 @@ In the example below I describe the `Person` class. When I then create an instan
 - `def intro = example.&introduceSelf` sets `intro` as a pointer (closure) to the `introduceSelf` method.
 	- Which is then called using `intro()`
 
-{title="Field operators and method references",lang=groovy}
+{title="Field operators and method references",lang=Java}
 	class Person {
 	    def name
 

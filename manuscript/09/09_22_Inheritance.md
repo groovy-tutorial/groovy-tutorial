@@ -6,7 +6,7 @@ All classes inherit from `java.lang.Object` but they also implement the `groovy.
 
 ## Type Comparison
 
-{lang=groovy}
+{lang=Java}
     class Person {}
 
     class SuperHero extends Person {}
@@ -28,14 +28,14 @@ Bloch - ch 4
 
 ## Final Classes and Methods
 
-{lang=groovy}
+{lang=Java}
 <<[Classes marked `final` cannot be extended](code/09/final_class.groovy)
 
-{lang=groovy}
+{lang=Java}
 <<[Methods marked `final` cannot be overridden](code/09/final_method.groovy)
 
 
-{lang=groovy}
+{lang=Java}
 <<[Methods marked `final` cannot be overridden](code/09/final_method2.groovy)
 
 ## Composition
@@ -46,7 +46,7 @@ Bloch - ch 4
 There's a lot of information you can extract from a class and this can come in handy when something isn't working quite
 right. Throughout writing this book I have used `groovyConsole` to probe classes in ways such as the following example:
 
-{lang=groovy}
+{lang=Java}
 
     package demo
 

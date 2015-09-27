@@ -19,7 +19,7 @@ The method name (`determineAverage`) may look a bit odd but it uses a naming str
 
 Let's return to that `determineAverage` method and get a complete script together - you can copy and paste this into `groovyConsole` and run it to experience the method first-hand:
 
-{lang=groovy}
+{lang=Java}
 <<[The determineAverage method](code/06/01/determineAverage.groovy)
 
 Let's look at the main components of that script:

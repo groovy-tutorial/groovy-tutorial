@@ -2,26 +2,26 @@
 
 I> Used to determine if two things match
 
-The equality operators return a boolean (`true` or `false`) result from a comparison. 
+The equality operators return a boolean (`true` or `false`) result from a comparison.
 
 {title="The equality operators"}
-|Operator|Name|     
+|Operator|Name|
 |:------:|:--------|
 |==      |Equal to |
 |!=      |Not equal to|
 
 All of the following comparisons evaluate as being `true`:
 
-{title="Some equality checks",lang=groovy}
+{title="Some equality checks",lang=Java}
 	assert -99 == -99
 	assert 'koala' == 'koala'
 	assert 'cat' != 'dog'
 	assert 6 != 7
-	
+
 	def domesticAnimal = 'dog'
 	def wildAnimal = 'lion'
 	assert domesticAnimal != wildAnimal
-	
+
 	def str1 = 'Hello'
 	def str2 = 'Hello'
 	assert str1 == str2
@@ -29,23 +29,23 @@ All of the following comparisons evaluate as being `true`:
 
 ## What Is Equality?
 
-Equality can be a little tricky - both for Groovy and humanity. Think about the statement "Hey cool, we have the same car!". This could mean that we have the same make and model but different instances of a car *or* it could mean that we share a car. 
+Equality can be a little tricky - both for Groovy and humanity. Think about the statement "Hey cool, we have the same car!". This could mean that we have the same make and model but different instances of a car *or* it could mean that we share a car.
 
 T> ##Groovy != Java
 T> For those coming from a Java background, `==` is used to determine if the two variables reference the same instance and the `equals` method is used to determine if two variables are equivalent. Groovy conflates `==` and `equals` to perform the same comparison.
 T> The `is` method performs the Groovy equivalent of Java's `==` and returns `true` if two variables refer to the same instance of an object
 
-{title="Using `is` and `==`",lang=groovy}
+{title="Using `is` and `==`",lang=Java}
 	def obj1 = new Object()
 	def obj2 = new Object()
 	def obj3 = obj1
-	
+
 	assert obj1.is(obj3)
 	assert ! obj1.is(obj2)
-	
+
 	assert obj1 != obj2
 	assert obj1 == obj3
-	
+
 	assert ! obj1.equals(obj2)
 	assert obj1.equals(obj3)
 
@@ -59,40 +59,40 @@ In the following example, the equality operator (`!=`) is evaluated before the a
 
 It is possible to define a custom implementation of `==` by overriding the `equals(Object obj)` method. This can be handy if your object has a simple method for determining equality, such as comparing staff members by their ID:
 
-{title="Overloading `==`",lang=groovy}
+{title="Overloading `==`",lang=Java}
 	class StaffMember {
 	    def id
-	    
+
 	    @Override
 	    boolean equals(obj) {
 	        if (this.id == obj.id) {
 	            return true
 	        } else {
-	            return false 
+	            return false
 	        }
 	    }
 	}
-	
+
 	def fred = new StaffMember(id: 12)
 	def jan = new StaffMember(id: 47)
 	def janet = new StaffMember(id: 47)
-	
+
 	assert fred != jan
 	assert jan == janet
 
 
 The Groovy package `groovy.transform` provides a handy annotation that generates an `equals` implementation which compares the object's properties. This reduces the previous `StaffMember` class to even fewer lines of code:
 
-{title="Using the built-n `EqualsAndHashCode`",lang=groovy}
+{title="Using the built-n `EqualsAndHashCode`",lang=Java}
 	@groovy.transform.EqualsAndHashCode
 	class StaffMember {
 	    def id
 	}
-	
+
 	def fred = new StaffMember(id: 12)
 	def jan = new StaffMember(id: 47)
 	def janet = new StaffMember(id: 47)
-	
+
 	assert fred != jan
 	assert jan == janet
 

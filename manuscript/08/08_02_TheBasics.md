@@ -14,7 +14,7 @@ T> The definition of the `Person` class now provides the programmer with an new 
 
 Objects consist of fields (data) and methods for interacting with that data. For example, the code below describes a `Person` class with a `name` field and a `getName` method:
 
-{title="A basic class with a field and a method",lang=groovy}
+{title="A basic class with a field and a method",lang=Java}
 	class Person {
 	    def name
 
@@ -44,7 +44,7 @@ In the `getName` method you'll notice the keyword `this` is used. You can transl
 
 Static fields and methods are also supported - these apply at a class level. By preceding a field or a method with the keyword `static` we indicate that it is relevant to all instances of the class. In the example below I set the `specie` field to be static and this means I access it at the class level by referring to `Person.specie`.
 
-{title="Class fields use the `static` keyword",lang=groovy}
+{title="Class fields use the `static` keyword",lang=Java}
 	class Person {
 	    static specie = 'homo sapien'
 	    def name
@@ -58,7 +58,7 @@ An (English) language lawyer might think that the keyword `static` indicates tha
 
 The `final` keyword precedes static/instance fields and methods to make them constant:
 
-{title="Make it constant with `final`",lang=groovy}
+{title="Make it constant with `final`",lang=Java}
 	class Person {
 	    static final SPECIE = 'homo sapien'
 	    def name
@@ -70,7 +70,7 @@ Constructors are a special type of method that is called when a new instance is 
 
 To define a custom constructor we define a method with the same name as the class but without the `def` preceding it. The example below declares a constructor this way (`Person(name)`):
 
-{lang=groovy}
+{lang=Java}
 <<[Constructing a person](code/08/02/constructor.groovy)
 
 T> ## The default is now lost
@@ -80,7 +80,7 @@ T> By providing our own constructor, `new Person(name: 'John')` no longer works 
 
 The overloading feature of Groovy classes allows us to create multiple versions of the same method. The parameter list for each version of the method varies to allow callers to provide either a different number of parameters (as in the example below) or with the same number of parameters but with different types. Overloading is useful but also consider using default values for parameters as this can help reduce the number of methods you need to write and maintain.
 
-{lang=groovy}
+{lang=Java}
 <<[Overloading the `mean` method](code/08/02/overload.groovy)
 
 T> ## Overloading constructors
@@ -91,7 +91,7 @@ T> Constructors are just methods so they can also be overloaded.
 
 The example below defines an interface named `Exercise` with a single method `run`. The `Athlete` class then implements the interface:
 
-{lang=groovy}
+{lang=Java}
 <<[Implementing an interface](code/08/02/interface.groovy)
 
 ## Inheritance
@@ -99,7 +99,7 @@ A *superclass* is one from which other classes inherit functionality. The "child
 
 In the code below, `StaffMember` is a subclass of `Person`. This allows `StaffMember` to access the `name` field defined in `Person`:
 
-{lang=groovy}
+{lang=Java}
 <<[Inheritance in action](code/08/02/inheritance.groovy)
 
 Unlike interfaces, superclasses can provide implemented methods and fields that subclasses can utilise. However, Superclasses can work somewhat like interfaces and their methods can be declared as `abstract` to force subclasses to provide their own implementation.
@@ -113,7 +113,7 @@ Subclasses can also override methods and fields implemented by superclasses. Thi
 
 In the example below, `StaffMember` is a subclass of `Person`. The `StaffMember` class overrides the `getName` method and prefixes a string to the `name` returned by the superclass.
 
-{lang=groovy}
+{lang=Java}
 <<[Overriding methods](code/08/02/override.groovy)
 
 T> ## Stop the override
@@ -137,14 +137,14 @@ In the example below:
 4. I can then create an instance of `Scrum` and provide it information for both the `Project`/`Scrum` hierarchy as well as the `Agile` trait.
 	1. I then call the `Agile` trait's `startIteration` method and our project is away!
 
-{lang=groovy}
+{lang=Java}
 <<[Applying a trait](code/08/02/trait.groovy)
 
 
 ## Packages
 As discussed earlier, Groovy allows programmers to group objects into `packages`. In the following snippet the `Person` class is allocated to the `myobjects` package:
 
-{title="Put classes into packages",lang=groovy}
+{title="Put classes into packages",lang=Java}
 	package myobjects
 
 	class Person {}

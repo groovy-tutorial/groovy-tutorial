@@ -17,7 +17,7 @@ It's sometimes difficult to determine where a set of methods might instead be be
 
 Let's take a look at an example trait:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic trait example](code/09/sport_trait.groovy)
 
 This type of layout is much as we saw for `class` and `interface` definitions:
@@ -36,14 +36,14 @@ At a guess, the `Running` and `Swimming` elements are traits and the `SafetyChec
 ## Properties and fields
 Traits can also declare properties:
 
-{lang=groovy}
+{lang=Java}
 <<[A trait with a property](code/09/sport_trait_prop.groovy)
 
 As you can see in the example above, the `Running` trait's `distance` property essentially becomes a property of the `SportingEvent` class. As for classes, getters and setters are generated for properties but you can supply your own if you need additional functionality.
 
 Fields within traits are somewhat different to those in classes. This can get a bit tricky so let's lay out the example code first:
 
-{lang=groovy}
+{lang=Java}
 <<[A trait with fields](code/09/sport_trait_prop_field.groovy)
 
 In the `Running` trait above you can see:
@@ -67,13 +67,13 @@ T> As we saw in the [Access Modifiers chapter](#chaccessmodifiers), Groovy doesn
 ## Methods
 Trait-defined methods are much the same as we saw with classes but the `private` access modifier prevents us from calling a trait's private methods. In the example below, the call to the private `SportingEvent.rigWinner` method (`race.rigWinner()`) will work but the call to the `Running` trait's private method (`race.slow()`) will cause a `groovy.lang.MissingMethodException`:
 
-{lang=groovy}
+{lang=Java}
 <<[Private methods](code/09/sport_trait_prop_field.groovy)
 
 ## Static members
 As demonstrated in the example below, traits can have static properties, fields and methods:
 
-{lang=groovy}
+{lang=Java}
 <<[Traits and static members](code/09/sport_static.groovy)
 
 * Accessing a static property: `SportingEvent.MAX_DISTANCE`
@@ -87,7 +87,7 @@ When a trait is implemented by a class, the relation can be seen as the trait is
 
 The code below reveals that a trait's class is that of the implementer:
 
-{title="Uncover the mystery",lang=groovy}
+{title="Uncover the mystery",lang=Java}
     trait MyTrait {
         Class whoIsThis() {
             this.class
@@ -100,20 +100,20 @@ The code below reveals that a trait's class is that of the implementer:
 
 In the next example you can see `this` being used internal to the trait (`this.distance = distance`) and the class (`${this.name}`) but also from the class into the trait (`${this.distance}`):
 
-{lang=groovy}
+{lang=Java}
 <<[Traits and `this`, again](code/09/sport_this.groovy)
 
 ## Self types
 That last example could have been rewritten such that the `getAdvert()` method is declared in the trait (rather than the class):
 
-{lang=groovy}
+{lang=Java}
 <<[Traits and `this`](code/09/sport_this2.groovy)
 
 This works fine as `SportingEvent` has a `name` property but there's nothing enforcing this and you're exposed to the risk of a `groovy.lang.MissingPropertyException` being raised at runtime if the method/property/field can't be found.
 
 The `@groovy.transform.SelfType` annotation is used if a trait needs to be tied to a specific implementing class. The example below demonstrates the `Running` trait annotated with `@SelfType(SportingEvent)`, indicating that the trait should only by implemented by `SportingEvent` (or one of its subtypes):
 
-{lang=groovy}
+{lang=Java}
 <<[The `@SelfType` annotation](code/09/sport_selftype.groovy)
 
 By setting `@SelfType(SportingEvent)` we can ensure that Groovy will refuse to compile the following attempt:
@@ -127,7 +127,7 @@ As Groovy's interfaces don't support default implementations it may be tempting 
 
 Once you've described your interface, a trait can implement the interface in the same manner as classes do, through the use of the `implements` keyword:
 
-{title="Trait implementing an interface",lang=groovy}
+{title="Trait implementing an interface",lang=Java}
     interface Locomotion {
         String getDescription()
     }
@@ -142,7 +142,7 @@ Once you've described your interface, a trait can implement the interface in the
 ## Implementing multiple traits
 As mentioned earlier, a class can implement more than one trait. This is straight-forward if the traits don't intersect in terms of members (properties/fields/methods), as is the case in the example below:
 
-{title="Simple implementation of two traits",lang=groovy}
+{title="Simple implementation of two traits",lang=Java}
     trait Hopping {
         String hop() { 'I am hopping' }
     }
@@ -162,8 +162,8 @@ There's nothing too difficult in the `TreeKangaroo` example but what if the trai
 
 I believe that the Triathlon consists of three parts - Running, Swimming, and Riding - and the example below sets up each of these as traits that implement the same interface:
 
-{lang=groovy}
-<<[Handling trait collision](code/09/sport_triathlon.groovy)
+{lang=Java}
+<<[Handling trait collision](code/09/triathlon.groovy)
 
 It's easy to see that the `Triathlon` class now has three possibilities when `competition.startEvent()` is called. In this scenario, Groovy will use the trait that was declared last - `Riding`. I've listed my traits in the order I want to run the events but I really do want to run all three events.
 
@@ -171,7 +171,7 @@ Groovy lets me manually determine how the colliding trait members will be treate
 
 In the improved `Triathlon` example below you'll notice that I've decided to implement the `Event` interface as a triathlon is an event consisting of three events:
 
-{title="Manual selection of trait methods",lang=groovy}
+{title="Manual selection of trait methods",lang=Java}
     class Triathlon implements Event, Running, Swimming, Riding {
         @Override
         void startEvent() {
@@ -196,7 +196,7 @@ The `Sides` trait is based on the notion that a two-dimensional shape consists o
 
 Let's take a look at the code for the `Sides` trait and then examine its components.
 
-{lang=groovy}
+{lang=Java}
 <<[The `Sides` trait](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Sides.groovy)
 
 Reviewing the code you'll see:
@@ -224,7 +224,7 @@ Both the `Triangle` and `Rectangle` classes implement the `Sides` trait as well 
 
 We can see the interaction between the a shape class and the `Sides` trait by examining the `Rectangle` class:
 
-{lang=groovy}
+{lang=Java}
 <<[The `Rectangle` class](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Rectangle.groovy)
 
 Most of `Rectangle`'s use of the trait is seen in the constructor as we set the sides of the rectangle though a really easy-to-understand notation:

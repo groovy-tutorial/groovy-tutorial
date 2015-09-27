@@ -4,14 +4,14 @@ I> Your method can throw an exception.
 
 A method is able to throw an exception just as we saw in the Exceptions tutorial. In the code below I throw an exception if the caller to `determineAverage()` tries to pass a String through as a parameter:
 
-{lang=groovy}
+{lang=Java}
 <<[Throwing an exception from a method](code/06/07/throw.groovy)
 
 None of that code is new to you except for the `throws IllegalArgumentException` that forms part of the method's signature[^sign]. The use of `throws` helps describe our method a little better by making callers aware of what to expect.
 
 Multiple exceptions can be listed against `throws`, as seen in the example below:
 
-{lang=groovy}
+{lang=Java}
 <<[Throwing exceptions from a method](code/06/07/throw_multiple.groovy)
 
 Groovy doesn't require that you explicitly provide a `throws` listing if your method throws an exception or passes up an exception that it doesn't handle. However, if your method is to be used by others, I'd suggest that including `throws` is worth the effort.

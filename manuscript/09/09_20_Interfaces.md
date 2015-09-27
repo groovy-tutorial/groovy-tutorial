@@ -6,7 +6,7 @@ Interfaces provide a set of [method signatures](https://en.wikipedia.org/wiki/Ty
 
 Let's take a look at an example:
 
-{title="An interface declaration",lang=groovy}
+{title="An interface declaration",lang=Java}
     interface SocialNetwork {
         Member friend(Member friend)
         Member unFriend(Member enemy)
@@ -27,7 +27,7 @@ T> (and can only be) `public` - there's no use in an API that can't be implement
 An interface can't be instantiated (e.g. `SocialNetwork network = new SocialNetwork()`) as it doesn't actually _do_ (implement) anything.
 In order to implement an interface, the `implements` keyword, followed by the interface's name, is used in the `class` declaration:
 
-{title="Implementing the interface",lang=groovy}
+{title="Implementing the interface",lang=Java}
     class Member implements SocialNetwork {
         String name
         def friends = [] as Set
@@ -55,7 +55,7 @@ method signatures from an interface that is being implemented[^class].
 Groovy (and Java) classes can implement more than one interface by listing them after the `implements` keyword - just
  use a comma (`,`) between each interface:
 
-{title="Implementing more than one interface", lang=groovy}
+{title="Implementing more than one interface", lang=Java}
     interface SocialNetwork {
         Member friend(Member friend)
         Member unFriend(Member enemy)
@@ -96,7 +96,7 @@ Q> wanted to demonstrate the scenario.
 
 I've provides a full code listing of the example below so that you can take this for a test spin in the groovyConsole:
 
-{lang=groovy}
+{lang=Java}
 <<[Full code listing plus usage](code/09/social_network.groovy)
 
 ## Referring to objects by their interface
@@ -159,7 +159,7 @@ In my earlier examples I omitted the fact that you can declare constants in an i
 sound like I've denied a useful piece of functionality but, in reality, the declaration of constants inside an interface
 isn't a good idea. Consider the following example:
 
-{title="Don't do this",lang=groovy}
+{title="Don't do this",lang=Java}
     interface SocialNetwork {
         static final MAX_FRIENDS = 100
 
@@ -182,7 +182,7 @@ constants, consider the following alternatives:
 
 One interface is defined within the shapes library: `TwoDimensionalShape`:
 
-{lang=groovy}
+{lang=Java}
 <<[The `TwoDimensionalShape` interface](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/TwoDimensionalShape.groovy)
 
 The interface is declared using the `interface` keyword followed by the name: `interface TwoDimensionalShape`.
@@ -196,7 +196,7 @@ Within the interface is the following method signatures:
 As mentioned earlier in this chapter, each method signature is listed without a definition block (`{...}`).
 It is up to the implementing class(es) to provide the "body" of the definition and the `Circle` class does just that:
 
-{lang=groovy}
+{lang=Java}
 <<[The `Circle` class](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Circle.groovy)
 
 You'll notice that the `Circle` class doesn't explicitly provide an implementation for `getPerimeter()` and

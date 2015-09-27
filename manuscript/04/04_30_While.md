@@ -4,7 +4,7 @@ I> The `while` loop comes in one model which will do just fine
 
 The `while` loop will  repeat a block of code whilst its condition is `true`:
 
-{title="While",lang=groovy}
+{title="While",lang=Java}
 	while (<condition>) {
 		//statements
 	}

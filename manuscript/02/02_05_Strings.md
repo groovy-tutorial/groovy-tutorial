@@ -14,7 +14,7 @@ There are two main ways in which you can declare a string in Groovy: single or d
 
 Here's a quick example of a fixed string and a GString in action:
 
-{title="Fixed strings and GStrings",lang=groovy}
+{title="Fixed strings and GStrings",lang=Java}
 	def pet = 'dog'
 	def petDescription = "My pet is a $pet"
 	println petDescription
@@ -37,7 +37,7 @@ Strings can contain escape sequences, allowing you to use non-printable characte
 
 The line feed (`\n`) is often used to move to a new line:
 
-{title="The line feed",lang=groovy}
+{title="The line feed",lang=Java}
 	print 'Hi \n there\n'
 
 
@@ -47,7 +47,7 @@ The form feed (`\f`) and carriage return (`\r`) aren't often used. Form feed ind
 
 The horizontal tab (`\t`) is essentially the same as the `tab` key on your keyboard. It's useful for formatting things like tables of information:
 
-{title="Sequences",lang=groovy}
+{title="Sequences",lang=Java}
 	println 'name\tage\tcolour'
 	println 'Sam\t12\tblue'
 	println 'Alice\t8\tgreen'
@@ -55,28 +55,28 @@ The horizontal tab (`\t`) is essentially the same as the `tab` key on your keybo
 
 If you wish to use a quote within your string that matches the quote type you're using to surround your string then you need to escape the internal quote using the `\` character. In the code below you can see the quotes being escaped (`\'` and `\"`):
 
-{title="Escape, escape!",lang=groovy}
+{title="Escape, escape!",lang=Java}
 	println 'That\'s mine'
 	println "I said \"NO!\""
 
 
 As the backslash (`\`) is used to escape characters, it needs an escape of its own. In order to use a backslash in a string you need to double it up (`\\`) as in the example below:
 
-{title="Backslashing",lang=groovy}
+{title="Backslashing",lang=Java}
 	println 'c:\\documents\\report.doc'
 
 
 ## GStrings
 In order to have Groovy interpolate the value of a variable we use the `$` symbol in front of the variable name - as you can see with `$pet` below:
 
-{title="GStrings",lang=groovy}
+{title="GStrings",lang=Java}
 	def pet = 'dog'
 	println "I own a $pet"
 
 
 This can be handy if you have a number of variables that you'd like to use in a string:
 
-{title="Interpolating strings",lang=groovy}
+{title="Interpolating strings",lang=Java}
 	def name = 'Sally'
 	def hobby = 'surfing'
 	println "Did you know that $name likes $hobby?"
@@ -88,13 +88,13 @@ T> You'll see this in a lot of Java code and I, for one, am pleased to see that 
 
 GStrings also let you interpolate more complicated expressions into a string by using `${...}`. In the following example we perform a calculation within the GString:
 
-{title="Operation in a GString",lang=groovy}
+{title="Operation in a GString",lang=Java}
 	println "10 to the power of 6 is ${10**6}"
 
 
 We can also access information about a variable in the same manner:
 
-{title="Operation in a GString",lang=groovy}
+{title="Operation in a GString",lang=Java}
 	def word = 'Supercalifragilisticexpialidocious'
 	println "$word has ${word.length()} letters"
 
@@ -105,7 +105,7 @@ I> The code `word.length()` calls the `length` method available on a string - we
 
 The examples given so far use short strings but longer strings would be cumbersome to type using `\n` all over the place. Instead, Groovy provides multiline strings - the code below declares a multiline fixed string:
 
-{title="A Multiline string",lang=groovy}
+{title="A Multiline string",lang=Java}
 	def poem = '''But the man from Snowy River let the pony have his head,
 	And he swung his stockwhip round and gave a cheer,
 	And he raced him down the mountain like a torrent down its bed,
@@ -116,7 +116,7 @@ The examples given so far use short strings but longer strings would be cumberso
 
 If you run the code above you'll see that new lines are used at the correct points in the display but the first line is not quite right. You can modify this slightly and place a backslash (`\`) at the start of the string - using statement continuation for readability:
 
-{title="Fixing the first line",lang=groovy}
+{title="Fixing the first line",lang=Java}
 	def poem = '''\
 	But the man from Snowy River let the pony have his head,
 	And he swung his stockwhip round and gave a cheer,
@@ -130,7 +130,7 @@ T> Without the backslash the code above would cause a blank newline to be printe
 
 GStrings can also be defined using the multiline format:
 
-{title="A multiline GString",lang=groovy}
+{title="A multiline GString",lang=Java}
 	def animal = 'velociraptor'
 
 	println """But the man from Snowy River let the ${animal} have his head,
@@ -151,7 +151,7 @@ Strings (text) are important aspects to human-based systems so most programming 
 * `reverse()`: returns the mirrored version of the string
 * `toUpperCase()` and `toLowerCase()`: returns the string with all of the characters converted to upper or lower case.
 
-{title="Some String methods",lang=groovy}
+{title="Some String methods",lang=Java}
 	def str = 'Hello, World'
 	println str.length()
 	println str.reverse()
@@ -161,7 +161,7 @@ Strings (text) are important aspects to human-based systems so most programming 
 
 The `trim()` method returns the string with any leading and trailing whitespace removed:
 
-{title="Trimming a String",lang=groovy}
+{title="Trimming a String",lang=Java}
 	def str = '  Hello, World  '
 	println str.trim()
 
@@ -171,7 +171,7 @@ The `substring` method returns a subsection of a string and can be used in two p
 * Provide a start index (e.g. `substring(7)`) to get the subsection that includes that index (i.e. the 7th character in the string) through to the end of the string
 * Provide a start and an end index (e.g. `substring(7, 9)`) to get the subsection that includes that start index through to the end index of the string
 
-{title="Substrings",lang=groovy}
+{title="Substrings",lang=Java}
 	def str = 'Hello, World'
 	println str.substring(7)
 	println str.substring(7,9)
@@ -182,7 +182,7 @@ A number of methods are provided to help you with basic searching:
 * The `indexOf` and `lastIndexOf` methods return the index (location) of the specified character in the string
 * `contains`, `startsWith`, and `endsWith` return `true` or `false` if the supplied parameter is located within the string
 
-{title="Basic searching",lang=groovy}
+{title="Basic searching",lang=Java}
 	def str = 'Hello, World'
 
 	//These methods return the index of the requested character
@@ -197,7 +197,7 @@ A number of methods are provided to help you with basic searching:
 
 The `replace` method lets us provide a string that we want to change to a new value:
 
-{title="Replacing text",lang=groovy}
+{title="Replacing text",lang=Java}
 	def str = 'Hello, World'
 
 	println str.replace('World', 'Fred')

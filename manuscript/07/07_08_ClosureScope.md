@@ -4,9 +4,9 @@ I> Closures can call into the context from which they were created.
 
 In the first chapter on closures I mentioned that: Closures represent a reference to a function (method) that is accompanied by a referencing environment. Up to now we've mainly used closures as methods that can be referenced by variables or passed as parameters. Methods declared in classes can access the fields in their class and closures can also access items such as variables available in the context from which they were created.
 
-I've tried to demonstrate this concept in the example below. You'll notice that my basic closure refers to a variable `code` that isn't a declared parameter of the closure nor is it a variable declared within the closure. Rather, `code` references a variable available within the scope in which the closure is declared - i.e. `code` can be accessed by the `doubleCross` closure as both are declared in the same block. 
+I've tried to demonstrate this concept in the example below. You'll notice that my basic closure refers to a variable `code` that isn't a declared parameter of the closure nor is it a variable declared within the closure. Rather, `code` references a variable available within the scope in which the closure is declared - i.e. `code` can be accessed by the `doubleCross` closure as both are declared in the same block.
 
-{lang=groovy}
+{lang=Java}
 <<[A small example of context](code/07/08/context.groovy)
 
 ## A More Involved Example
@@ -19,7 +19,7 @@ First of all I'll create a very basic class to describe an address book Contact.
 	    def name
 	    def phone
 
-	    def final call = { message -> 
+	    def final call = { message ->
 	        println "Calling ${this.name} on ${this.phone} with the message: '$message'"
 	    }
 	}
@@ -53,5 +53,5 @@ This will now cause each of the `call` closures to be called - allowing me to ge
 
 I broke up the code in the discussion so present it all here in full for you copy and try out for yourself:
 
-{lang=groovy}
+{lang=Java}
 <<[The complete Groovy message service](code/07/08/scope.groovy)

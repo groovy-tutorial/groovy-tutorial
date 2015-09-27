@@ -21,7 +21,7 @@ Two things to keep in mind:
 
 For our `BankAccount` class we can make the `deposit` field `private`:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic BankAccount with information hiding](code/08/10/bank_account.groovy)
 
 In the example above I set the `balance` field to `private` and then provide two `public` methods to allow for other code to perform a `deposit` or a `withdrawal`. The latter method even throws an exception if you try to take out too much.
@@ -33,7 +33,7 @@ Q> One great thing about open source, community-oriented software projects (like
 
 I'm usually pretty happy with the Python approach but if it was really a concern I could add the following method to my `BankAccount` class, as seen in the next example:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic BankAccount with tighter control](code/08/10/bank_account2.groovy)
 
 Groovy generates setters and getters for fields (such as `balance`) and properties. In the case of the `balance` field, the setter method named `setBalance` is actually called when I do something like `acct.balance = 1_000_000`. Knowing this, I overrode the setter Groovy would have created with my own version that does nothing and I also used the `private` modifier. This does two things:

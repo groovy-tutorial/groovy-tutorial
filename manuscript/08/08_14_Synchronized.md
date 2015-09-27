@@ -5,7 +5,7 @@ W> `synchronized` modifier but I leave in-depth investigation to other resources
 
 The `synchronized` keyword is used in concurrent environments in which multiple [threads](https://en.wikipedia.org/wiki/Thread_%28computing%29) are operating and there's potential that code running on different threads are interacting on the same section of code. The `synchronized` modifier is used to indicate that the associated element can only be accessed by one caller at a time. In the code below you'll see the various applications of `synchronized` available:
 
-{lang=groovy}
+{lang=Java}
 <<[Various usage of `synchronized`](code/08/14/pool.groovy)
 
 * First of all, member and static variables can be marked as `synchronized` - only one thread can read/write the variable at a time.

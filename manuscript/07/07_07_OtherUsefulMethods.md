@@ -31,20 +31,20 @@ The `split` method splits a collection into two lists: the first list contains a
 
 In the example below I use the `split` method to get a list of those who got a score over 100 and those that didn't.
 
-{lang=groovy}
+{lang=Java}
 <<[Using `split`](code/07/07/split.groovy)
 
 
 ##`with`
 
-The `with` method provides a handy approach to calling several methods and manipulating fields for an object. 
+The `with` method provides a handy approach to calling several methods and manipulating fields for an object.
 
 In the example below I use `with` to perform a set of operations on an instance of the `Person` class:
 
-{lang=groovy}
+{lang=Java}
 <<[Using `with`](code/07/07/with.groovy)
 
 This approach can be really useful when creating an object. In the snippet below I create a new `Person` and set up their details at the same time:
-	
-{lang=groovy}
+
+{lang=Java}
 <<[Using `with` at instantiation time](code/07/07/with.groovy)

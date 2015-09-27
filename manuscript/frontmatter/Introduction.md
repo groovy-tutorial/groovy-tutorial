@@ -73,7 +73,7 @@ Code presented within regular language looks something like:
 
 Blocks of code are presented as follows:
 
-{title="A block of code",lang=groovy}
+{title="A block of code",lang=Java}
 	def name = "Billy"
 	println "Hi there $name"
 

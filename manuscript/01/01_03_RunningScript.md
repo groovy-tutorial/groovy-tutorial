@@ -1,7 +1,7 @@
 # Running a script
 Now that we can output something to the screen, let's try and make our example a little more personal. Clear the Groovy Console editor and enter the following:
 
-{title="Using command-line arguments",lang=groovy}
+{title="Using command-line arguments",lang=Java}
     println "hello, ${args[0]}"
 
 Before we try to run this, let's look at what's in the code:

@@ -4,12 +4,12 @@ I> Parameters are method inputs that are used by the method to produce a result.
 
 Let's look at the last example from the previous chapter:
 
-{lang=groovy}
+{lang=Java}
 <<[The determineAverage method](code/06/01/determineAverage.groovy)
 
 You might be wondering what happened to the `scores` variable once it was passed to `determineAverage` as a parameter. Basically, Groovy gave it another name (`list`) for use within the method. Inside the method, `list` is just another variable. This means that if `determineAverage` changes `list` in some way, this is reflected in the `scores` variable used in the main script:
 
-{title="A poor example",lang=groovy}
+{title="A poor example",lang=Java}
 	def scores = [2, 7, 4, 3]
 	def result = determineAverage(scores)
 	println result
@@ -29,7 +29,7 @@ T> Deep down in the system, `scores` and `list` are names that point to the same
 
 Groovy lets you designate a data type for your parameters:
 
-{title="Parameter with data type",lang=groovy}
+{title="Parameter with data type",lang=Java}
 	def determineAverage(List list) {
 	    return list.sum() / list.size()
 	}
@@ -41,7 +41,7 @@ As you start to develop classes and larger programs, methods create your Applica
 
 Let's look at another method - one that needs several parameters:
 
-{title="Multiple parameters",lang=groovy}
+{title="Multiple parameters",lang=Java}
 	def callFriend(name, phone, message) {
 	    println "Dialling $name on $phone"
 	    println "Hi, $name - $message"

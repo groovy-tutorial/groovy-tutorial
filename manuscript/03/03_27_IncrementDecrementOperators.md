@@ -5,10 +5,10 @@ I> Number goes up. Number goes down.
 The increment operator increments a value to its next value. When you increment or decrement a variable using `++` or `--` the variable is modified to the new value.
 
 {title="Inc and dec"}
-|Operator|Name	| 
-|:------:|:--------| 
-|++      |Increment	| 
-|--      |Decrement	| 
+|Operator|Name	|
+|:------:|:--------|
+|++      |Increment	|
+|--      |Decrement	|
 
 
 The increment and decrement operators come in two flavours, prefix and postfix:
@@ -18,7 +18,7 @@ The increment and decrement operators come in two flavours, prefix and postfix:
 * Postfixes are assessed _after_ the statement is evaluated
 	* `assert 5++ == 5`
 
-{title="Using inc and dec",lang=groovy}
+{title="Using inc and dec",lang=Java}
 	assert 10++ == 10
 	assert ++10 == 11
 	assert --10 == 9
@@ -42,7 +42,7 @@ The increment and decrement behaves differently depending on the type of value b
 	assert ch == 'b'
 
 **Strings** are a little odd and it is the last character in the string that is affected:
-	
+
 	def str = 'hello'
 	str++
 	assert str == 'hellp'
@@ -53,7 +53,7 @@ The increment and decrement behaves differently depending on the type of value b
 	    LOW, MEDIUM, HIGH
 	}
 	def task = Priority.LOW
-	task++ 
+	task++
 	assert task == Priority.MEDIUM
 
 [^enums]: We'll [get to Enums much later](#chenums).
@@ -61,9 +61,9 @@ The increment and decrement behaves differently depending on the type of value b
 **BUT** be aware that you'll cycle back to the beginning of the value list. The following example is a good example of where you can easily get caught out:
 
 	def task = Priority.LOW
-	task-- 
+	task--
 	assert task == Priority.HIGH
- 
+
 
 ## Overloading the Increment and Decrement Operators
 
@@ -71,30 +71,30 @@ By overloading `next` and `previous` methods, a custom class can support the inc
 
 The example below demonstrates a class that increments/decrements by 2:
 
-{title="Overloading increment and decrement",lang=groovy}
+{title="Overloading increment and decrement",lang=Java}
 	class StepTwo extends Object {
 	    def value
-	
+
 	    StepTwo(val) {
 	        this.value = val
 	    }
-	
-	
+
+
 	    def next() {
 	        value += 2
 	        return this
 	    }
-	
+
 	    def previous() {
 	        value -= 2
 	        return this
 	    }
-	
+
 	    String toString() {
 	        return "I have a value of ${this.value}"
 	    }
 	}
-	
+
 	def two = new StepTwo(3)
 	println two
 	two++

@@ -104,7 +104,7 @@ For significantly more complex calculations such as the quadratic equation (belo
 x = {-b \pm \sqrt{b^2-4ac} \over 2a}
 {/$$}
 
-{title="Part implementation of the quadratic equation",lang=groovy}
+{title="Part implementation of the quadratic equation",lang=Java}
 	def a = 5
 	def b = 6
 	def c = 1

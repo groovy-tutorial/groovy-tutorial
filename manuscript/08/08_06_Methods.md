@@ -12,7 +12,7 @@ In [The basics of OO](#chbasicoo) I touched on instance and class elements:
 
 In the code below I have two instance properties (`name` and `email`) and an instance method (`getContact()`)
 
-{lang=groovy}
+{lang=Java}
 <<[`getContact` is an instance method](code/08/06/instance.groovy)
 
 When we look at the two instances of `People` (`jenny` and `dave`) we can see that the call to `getContact()` is specific to each
@@ -24,7 +24,7 @@ T> above I would normally have used `dave.contact`
 
 There are times when we need to make sure we're specific when referring to instance elements within a class. In order to do this, we use the `this` keyword:
 
-{lang=groovy}
+{lang=Java}
 <<[Using `this`](code/08/06/instance2.groovy)
 
 In the example above I have provided a `setName(name)` method and set the instance's `name` property using `this.name = name`. This example
@@ -44,7 +44,7 @@ I> I've deferred another method feature - overriding - to the chapter on [Inheri
 In the example below I provide two implementations of the `exercise` method: one that takes no parameters and another
 that takes one parameter (`duration`).
 
-{lang=groovy}
+{lang=Java}
 <<[A basic example of overloading](code/08/06/overload.groovy)
 
 Whilst my example has just two versions of the `exercise` method, I could keep adding more
@@ -52,14 +52,14 @@ Whilst my example has just two versions of the `exercise` method, I could keep a
 I'll need a baseline of functionality and, in order to save me writing this functionality into each version of `exercise`, I can
 call from one method to another:
 
-{lang=groovy}
+{lang=Java}
 <<[One method calling its cousin](code/08/06/overload2.groovy)
 
 In the previous versions of `exercise` I haven't used parameter types so my overloads must be differentiated by the number of parameters
 for each version of the method. However, if I provide specific parameter types I can have several variations of a method,
 differentiated by the parameter types:
 
-{lang=groovy}
+{lang=Java}
 <<[One method calling its cousin](code/08/06/overload3.groovy)
 
 Whilst I could have written another `exercise` method with `exercise(Integer duration, String activity)` I have already provided
@@ -80,7 +80,7 @@ better reflects what the method is doing: `delayExercise(Integer duration, Strin
 
 Try the code below in a groovyConsole:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic example of overloading](code/08/06/overload_fail.groovy)
 
 Unfortunately that example won't even run - Groovy reports that `method "java.lang.Object exercise()" that is already defined`.

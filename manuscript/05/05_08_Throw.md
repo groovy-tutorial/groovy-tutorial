@@ -6,7 +6,7 @@ The `throw` statement will cause an exception to be thrown. You'll use this insi
 
 Often, `new` is used within a `throw` statement to initialise a new exception instance. The example below will `throw` a `new` instance of the `IllegalStateException`. As part of creating the new exception instance I pass it a message to help inform the user as to why they're getting an exception:
 
-{title="Throwing an exception",lang=groovy}
+{title="Throwing an exception",lang=Java}
 	def numerator = 10
 	def denominator = -1
 
@@ -31,7 +31,7 @@ T> Use the short-form - it's more concise and it's what other developers expect 
 
 In the code above I `throw` an exception (`IllegalStateException`) to indicate a limitation in my program. As before, the `catch` will receive the thrown exception but this time it could be either the `IllegalStateException` or the `ArithmeticException`:
 
-{title="Catching different exceptions",lang=groovy}
+{title="Catching different exceptions",lang=Java}
 	def numerator = 10
 	def denominator = -1
 
@@ -52,7 +52,7 @@ In the code above I `throw` an exception (`IllegalStateException`) to indicate a
 
 The code above makes a little more sense than my earlier example as `denominator` may be `0` or a negative number and we are concerned with both possibilities. As mentioned earlier, we can use `|` to handle more than one exception type within the same `catch` block:
 
-{title="Grouping catches",lang=groovy}
+{title="Grouping catches",lang=Java}
 	def numerator = 10
 	def denominator = -1
 

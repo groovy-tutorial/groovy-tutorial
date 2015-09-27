@@ -27,7 +27,7 @@ The main parts of the console are:
 
 Once you have the Groovy Console open, enter the following line in the editor area:
 
-{title="Let's get groovy",lang=groovy}
+{title="Let's get groovy",lang=Java}
 	print 'hello, world'
 
 T> ## Groovy web console

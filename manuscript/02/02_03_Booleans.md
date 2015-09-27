@@ -4,7 +4,7 @@ I> Booleans help you get to the truth of the matter.
 
 Boolean variables are perhaps the simplest and can hold a value of either `true` or `false`.
 
-{title="Booleans",lang=groovy}
+{title="Booleans",lang=Java}
 	def truth = true
 	def lies = false
 
@@ -15,7 +15,7 @@ Booleans have a small number of methods that you generally won't find yourself u
 
 The `and(right)` method performs a logical 'and'
 
-{title="The and method",lang=groovy}
+{title="The and method",lang=Java}
 	def truth = true
 	def lies = false
 	assert truth.and(lies) == false
@@ -25,7 +25,7 @@ The [conditional And operator](#chcondops) (`&&`) is equivalent to the `and` met
 
 The `or(right)` method performs a logical 'or'
 
-{title="The or method",lang=groovy}
+{title="The or method",lang=Java}
 	def truth = true
 	def lies = false
 	assert truth.or(lies) == true

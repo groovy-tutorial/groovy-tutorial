@@ -27,7 +27,7 @@ Following this approach will help you avoid a mess of files that makes it hard t
 Let's take a look at a basic example in which I have a script that declares a `Person` class and then tries to do something
 with it:
 
-{title="First attempt at Person.groovy - will fail", lang=groovy}
+{title="First attempt at Person.groovy - will fail", lang=Java}
     package mypackage
 
     class Person {
@@ -54,7 +54,7 @@ assumes that you want to create a class with the same name as the file *but* you
 
 If we're following the rule of "One structure per file", we should only declare the `Person` class in `Person.groovy`:
 
-{title="Second attempt at Person.groovy - will work", lang=groovy}
+{title="Second attempt at Person.groovy - will work", lang=Java}
     package mypackage
 
     class Person {
@@ -63,7 +63,7 @@ If we're following the rule of "One structure per file", we should only declare 
 
 In the same directory we'll then create `Main.groovy`  and put it into the `mypackage.app` package as follows:
 
-{title="Main.groovy", lang=groovy}
+{title="Main.groovy", lang=Java}
     package mypackage.app
 
     import mypackage.Person

@@ -6,7 +6,7 @@ There are times when the number of possibilities are larger than a readable `if-
 
 Let's take a look at an example:
 
-{title="Switch",lang=groovy}
+{title="Switch",lang=Java}
 	switch (game) {
 	    case 'chess':
 	        println 'I like to play chess'
@@ -43,7 +43,7 @@ Falling through can be useful if you want to perform the same set of statements 
 
 Here's another example of falling through:
 
-{title="Falling through",lang=groovy}
+{title="Falling through",lang=Java}
 	def score = 2
 
 	println 'You win: '
@@ -87,7 +87,7 @@ Ranges can be used in the `case` and is selected when the switch value is in the
 
 Let's play some blackjack:
 
-{title="Switch with ranges",lang=groovy}
+{title="Switch with ranges",lang=Java}
 	switch (hand) {
 	    case 1..16:
 	        println 'HIT'
@@ -109,7 +109,7 @@ In the example below I set up a list of URI's[^uri] and assess them against regu
 
 T>The `each` method calls the closure for each value in a list
 
-{title="Switch with RegEx",lang=groovy}
+{title="Switch with RegEx",lang=Java}
 	def location = ['urn:isbn:0451450523',
 	                'http://en.wikipedia.org/wiki/Uniform_resource_locator',
 	                'HTTPS://secure.example.com/',
@@ -140,7 +140,7 @@ T>The `each` method calls the closure for each value in a list
 
 Groovy's `switch` can use a data type (Class) for comparison. Essentially, the switch will use the `instanceof` operator to compare the switch value with a class name provided in the `case`. In the example below I iterate through a list containing elements of various types. I use the `switch` statement to then determine the type of each list item:
 
-{title="Switch with class checks",lang=groovy}
+{title="Switch with class checks",lang=Java}
 	def objList = [ 10,
 	                'hello',
 	                [1, 5, 8],

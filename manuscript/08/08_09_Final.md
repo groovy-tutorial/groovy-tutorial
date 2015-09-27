@@ -8,7 +8,7 @@ mindful of a few gotchas, especially with collections and objects - we'll cover 
 
 First up, let's look at the `final` modifier in action:
 
-{lang=groovy}
+{lang=Java}
 <<[Class and instance usage](code/08/09/final.groovy)
 
 In the code above I've declared one class variable (`owner`) and one instance variable (`creationDate`) as `final`.
@@ -17,17 +17,17 @@ me when setting the value for a `final` variable:
 
 __Option 1: At the point of declaration (class and instance variables):__
 
-{lang=groovy}
+{lang=Java}
 <<(code/08/09/final_declaration.groovy)
 
 __Option 2: In an initializer block (class and instance variables):__
 
-{lang=groovy}
+{lang=Java}
 <<(code/08/09/final_initializer.groovy)
 
 __Option 3: In the constructor (instance variables only):__
 
-{lang=groovy}
+{lang=Java}
 <<(code/08/09/final_constructor.groovy)
 
 Option 1 is usually best for simple assignments (such as a value or a minor expression) and Option 2 is handy if the
@@ -43,7 +43,7 @@ Just remember that the map-like constructor that comes as a Groovy beans bonus w
 The code below won't work as Groovy is not setting `creationDate` in the constructor but through the setter after
 instantiating the instance:
 
-{title="The attempt to use handy built-in approach will fail", lang=groovy}
+{title="The attempt to use handy built-in approach will fail", lang=Java}
 ~~~~
 class Record {
     final Date creationDate
@@ -63,7 +63,7 @@ take a look at how this can happen and how we can stop it.
 First up, let's consider a class `FinalReport` that is meant to hold a set of `Record`s for archiving purposes. That means
  that once a `FinalReport` has been prepared, we don't want people tampering with it:
 
-{lang=groovy}
+{lang=Java}
 <<[First stab at a protected report](code/08/09/final_report.groovy)
 
 First of all you'll notice the `@ToString(includeNames = true)` annotation. This is used to have a `toString()` method
@@ -84,7 +84,7 @@ My `FinalReport` isn't really very final and is quite open to tampering. This is
 to make sure that you haven't made an incorrect assumption. Let's take a look at a more locked-down version of the previous
 code:
 
-{lang=groovy}
+{lang=Java}
 <<[Make it all `final`](code/08/09/final_report_final.groovy)
 
 You'll notice I've made a number of changes to really lock things down:
@@ -118,7 +118,7 @@ annotation does quite a number of things for me, including:
 
 So here's how our `FinalReport` code now looks with the help of `@Immutable`:
 
-{lang=groovy}
+{lang=Java}
 <<[Use the `@Immutable` annotation](code/08/09/final_report_immutable.groovy)
 
 You can easily see that the code for my `FinalReport` and `Record` classes has been cut right back. This is really
@@ -156,7 +156,7 @@ options:
 The second option is possible if I can use the object's properties to create another instance via the constructor and/or
 setters:
 
-{lang=groovy}
+{lang=Java}
 <<[Use the object's state to instantiate a copy](code/08/09/final_clone_manual.groovy)
 
 In the code above the `submitAssignment` method calls the `Assignment` constructor to create a new instance. This helps
@@ -167,7 +167,7 @@ reach.
 The third option is to have a class implement the `Cloneable` interface. If a third-party class provides this then you're
 in luck and can make a copy (clone):
 
-{lang=groovy}
+{lang=Java}
 <<[Using `Cloneable`](code/08/09/final_clone.groovy)
 
 As `Assignment` provides a `clone` method we just need to call it and we're returned a copy for our own use. Naturally,

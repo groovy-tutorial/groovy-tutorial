@@ -9,7 +9,7 @@ Except for very small programs, most Groovy and Java-based programs are made up 
 
 Consider the sample code below:
 
-{title="Using imports", lang=groovy}
+{title="Using imports", lang=Java}
 	package test
 
 	import java.time.Year

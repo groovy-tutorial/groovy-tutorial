@@ -4,7 +4,7 @@ I> Ranges describe a range of numbers.
 
 Ranges define a starting point and an end point. Let's look at a well-known type of range:
 
-{title="Declaring a range",lang=groovy}
+{title="Declaring a range",lang=Java}
 	def countdown = 10..0
 
 	println countdown.getFrom()
@@ -15,21 +15,21 @@ The `countdown` range starts at 10 and goes down to 0. The notation should be ea
 
 Printing out a range variable will display that a range is rather like a list of values - in the case of `countdown` they're numbers:
 
-{title="Ready for launch",lang=groovy}
+{title="Ready for launch",lang=Java}
 	def countdown = 10..0
 	println countdown
 
 
 Whilst my examples so far all go down, you can just as easily have a range that goes up:
 
-{title="Going up",lang=groovy}
+{title="Going up",lang=Java}
 	def floors = 1..10
 	println floors
 
 
 You can also use decimals but note that it is only the integer (whole-number) component that is stepped through:
 
-{title="Decimals in ranges",lang=groovy}
+{title="Decimals in ranges",lang=Java}
 	def countdown = 10.1..1.1
 	println countdown
 
@@ -38,7 +38,7 @@ You can also use decimals but note that it is only the integer (whole-number) co
 
 Ranges aren't just limited to inclusive ranges such as `1..10`. You can also declare a _half-open range_ using `..<` - that's two periods and a less-than. This denotes that the range ends prior to the number to the right. In the example below I setup a grading criteria that avoids an overlap between the grades:
 
-{title="Half-open range declarations",lang=groovy}
+{title="Half-open range declarations",lang=Java}
 	def gradeA = 90..100
 	def gradeB = 80..<90
 	def gradeC = 65..<80
@@ -48,7 +48,7 @@ Ranges aren't just limited to inclusive ranges such as `1..10`. You can also dec
 
 I could tweak the above code if I want to get fancy:
 
-{title="A fancier approach",lang=groovy}
+{title="A fancier approach",lang=Java}
 	def gradeA = 90..100
 	def gradeB = 80..<gradeA.getFrom()
 	def gradeC = 65..<gradeB.getFrom()
@@ -62,7 +62,7 @@ Ranges are primarily used with numbers but they can be of any object type that c
 
 Apart from numbers, individual characters (letters) can be used in ranges. In the example below I create a range of lower-case letters:
 
-{title="A range of characters",lang=groovy}
+{title="A range of characters",lang=Java}
 	def alphabet = 'a'..'z'
 	println alphabet
 
@@ -79,7 +79,7 @@ Ranges can be handy when dealing with `enums` as they give us the ability to set
 4. Set the `focus` variable as a range of `Priority` values
 5. Go through the list of tickets and pick up any that are set to the `priority` I care about.
 
-{title="Using a helpdesk ticket `enum`",lang=groovy}
+{title="Using a helpdesk ticket `enum`",lang=Java}
 	enum Priority {
 	    LOW,MEDIUM,HIGH,URGENT
 	}
@@ -119,7 +119,7 @@ You can access a subset of a list using a range subscript. In the example below 
 T> ## Zero-based lists
 T> Remember that lists are zero-based so `5` is element number 1
 
-{title="Accessing range elements",lang=groovy}
+{title="Accessing range elements",lang=Java}
 	def temperatures = [10, 5, 8, 3, 6]
 	def subTemp = temperatures[1..3]
 	assert subTemp == [5, 8, 3]
@@ -129,7 +129,7 @@ T> Remember that lists are zero-based so `5` is element number 1
 
 Ranges are most often see when we're using loops - we'll get to them in a later tutorial but here's an example of a launch sequence:
 
-{title="Looping with ranges",lang=groovy}
+{title="Looping with ranges",lang=Java}
 	def countdown = 10..0
 
 	for (i in countdown) {
@@ -139,7 +139,7 @@ Ranges are most often see when we're using loops - we'll get to them in a later 
 
 In the above example I store the range in the `countdown` variable in case I need it again later. If I don't really need to re-use the range I can put the range's literal value directly into the loop:
 
-{title="Looping with ranges refined",lang=groovy}
+{title="Looping with ranges refined",lang=Java}
 	for (i in 10..1) {
 	    println "T minus $i and counting"
 	}
@@ -149,14 +149,14 @@ In the above example I store the range in the `countdown` variable in case I nee
 
 We can use the `size()` method to find out how many elements are in the range:
 
-{title="The size method",lang=groovy}
+{title="The size method",lang=Java}
 	def dalmations = 1..101
 	println dalmations.size()
 
 
 As seen earlier, the `getFrom()` and `getTo()` methods return the start and final values respectively:
 
-{title="The range's start and end values",lang=groovy}
+{title="The range's start and end values",lang=Java}
 	def intRange = 1..10
 	println intRange.getFrom()
 	println intRange.getTo()
@@ -164,28 +164,28 @@ As seen earlier, the `getFrom()` and `getTo()` methods return the start and fina
 
 The `isReverse()` method returns `true` if a range iterates downwards (backwards):
 
-{title="Checking for reverse",lang=groovy}
+{title="Checking for reverse",lang=Java}
 	def countdown = 10..0
 	assert countdown.isReverse() == true
 
 
 You can can use the `reverse()` method to flip the range:
 
-{title="Reversing the range",lang=groovy}
+{title="Reversing the range",lang=Java}
 	def floors = 1..10
 	println floors.reverse()
 
 
 In order to check if a value is contained within a range we use the `containsWithinBounds` method and pass it the value we're checking on:
 
-{title="Checking bounds",lang=groovy}
+{title="Checking bounds",lang=Java}
 	def countdown = 10..0
 	assert countdown.containsWithinBounds(5) == true
 
 
 The `step` method returns a list based on going through the range via the specified increment (step). In the example below I step through the range one at a time (`step(1)`) and then two at a time (`step(2)`):
 
-{title="Stepping",lang=groovy}
+{title="Stepping",lang=Java}
 	def countdown = 5..1
 	assert countdown.step(1) == [5, 4, 3, 2, 1]
 	assert countdown.step(2) == [5, 3, 1]
@@ -208,7 +208,7 @@ We'll look into closures much more thoroughly in a [later tutorial](#chclosures)
 
 The `step` method will call a closure for each item in a range. In the example below I step through `countdown` one number at a time and, for each number, I display a message:
 
-{title="Stepping through a range with closures",lang=groovy}
+{title="Stepping through a range with closures",lang=Java}
 	def countdown = 10..1
 	countdown.step(1) {
 	    println "T minus $it and counting"
@@ -219,7 +219,7 @@ I>The syntax `countdown.step(1) {..}` probably looks a bit odd at this point - e
 
 I can use the range literal but need to place it within `(..)`:
 
-{title="Using the range literal",lang=groovy}
+{title="Using the range literal",lang=Java}
 	(10..1).step(1) {
 	    println "T minus $it and counting"
 	}
@@ -227,7 +227,7 @@ I can use the range literal but need to place it within `(..)`:
 
 You can change the size of each step - in the case below I step down by 2 each time. Run the code and notice that launch never happens!
 
-{title="Changing the step",lang=groovy}
+{title="Changing the step",lang=Java}
 	(10..1).step(2) {
 	    println "T minus $it and counting"
 	}

@@ -10,7 +10,7 @@ whilst these are English-language keywords, the boolean value `true` isn't a str
 
     String t = 'true'
     Boolean b = true
-    
+
     //This will fail
     assert t == b
 
@@ -18,7 +18,7 @@ whilst these are English-language keywords, the boolean value `true` isn't a str
 
 So let's take a look at a very simple enum:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic enum](code/08/13/enum.groovy)
 
 First up you'll see that the `enum` keyword replaces `class`. Next, I've named the enum `Months` and provided a set
@@ -39,12 +39,12 @@ required by the language.
 
 Let's take a look at another example - this time I'll create a `Gender` enum and use it in my `Person` class:
 
-{lang=groovy}
+{lang=Java}
 <<[Another basic enum](code/08/13/gender.groovy)
 
 There's probably nothing too new in that example but it helps us take a next step - to give the `Gender` enum constants a value:
 
-{lang=groovy}
+{lang=Java}
 <<[Adding to the enum](code/08/13/gender2.groovy)
 
 Describing that last example can get a litle tricky so I'm going to step through it.
@@ -88,10 +88,10 @@ to lay them out as follows:
 3. Constructors
 4. Methods
 
-Enums describe not just a set of constants but their order. Groovy provides the built-in `next` and `previous` methods 
+Enums describe not just a set of constants but their order. Groovy provides the built-in `next` and `previous` methods
 that help step through the constants in an enum. Let's look at a school grades enum and the result of calling `next` on each constant:
 
-{lang=groovy}
+{lang=Java}
 <<[Iterate through an enum](code/08/13/grades.groovy)
 
 Running this script will yield:
@@ -103,7 +103,7 @@ Running this script will yield:
 Unfortunately, according to Groovy, the next highest grade after `CREDIT` is `FAIL` - the `next` function just loops back to the first constant.
 This next version will fix that by overriding the default behaviours for `next` and `previous`:
 
-{lang=groovy}
+{lang=Java}
 <<[Enhancing the enum](code/08/13/grades2.groovy)
 
 This approach can be really useful when dealing with constants that can be escalated. Think about examples such as

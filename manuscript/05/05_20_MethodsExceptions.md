@@ -6,7 +6,7 @@ The code in this chapter is rather skewed as we'd rarely throw an exception and 
 
 Throwing an exception from a method results in no `return` value being returned to the caller - the caller needs to handle the exception. It's important to note that, where the `try` and/or `catch` block contain a `return` statement, the `finally` block will be evaluated __before__ the `return` is actually processed. In the next two examples below, the `println` in the `finally` block will always display.
 
-{title="Using `return` in `catch`",lang=groovy}
+{title="Using `return` in `catch`",lang=Java}
 	def testMethod() {
 	    try {
 	        10 / 0
@@ -17,7 +17,7 @@ Throwing an exception from a method results in no `return` value being returned 
 	    }
 	}
 
-{title="Using `return` in `try`",lang=groovy}
+{title="Using `return` in `try`",lang=Java}
 	def testMethod() {
 	    try {
 	        return 100

@@ -4,7 +4,7 @@ I> Parameters can have a default value to indicate the most likely usage
 
 One or more parameters can be defined with a default value. This can be really useful if most calls to the method will use the defaults:
 
-{lang=groovy}
+{lang=Java}
 <<[Parameters with defaults](code/06/03/defaults.groovy)
 
 The `displayMethod` can be called in a number of ways:

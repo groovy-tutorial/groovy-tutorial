@@ -7,7 +7,7 @@ In this chapter we'll delve more into properties and fields. They're *almost* th
 ## Properties
 The class below is composed of three properties and could be used to pass a person's details around in a system. You may come across references to this type of structure as "Groovy beans":
 
-{lang=groovy}
+{lang=Java}
 <<[A basic person class with three properties](code/08/03/properties_example.groovy)
 
 In the code above I create a new instance of the `Person` class by calling `new Person()` and can then access each property using dot-point notation. This type of class can be really handy when you just need a structure for storing and handing around data - say, for example, you load a record from a database and want to feed it to other classes and their methods for processing.
@@ -35,7 +35,7 @@ If you try to use `println` to display the details for `astrid` you'll get somet
 
 Just as we saw [with variables](#chvariables_datatypes), properties can be defined with a specific data type, rather than with a dynamic type. The code below redefines the `Person` class with typed properties:
 
-{title="A basic person class with three typed properties",lang=groovy}
+{title="A basic person class with three typed properties",lang=Java}
     class Person {
         String name
         String email
@@ -56,7 +56,7 @@ Q> [Access modifiers](#chaccessmodifiers) are covered very soon in their own cha
 
 In the code below I have rewritten the `Person` class using fields rather than properties:
 
-{title="A basic person class with three fields",lang=groovy}
+{title="A basic person class with three fields",lang=Java}
 
     class Person {
         public name
@@ -66,7 +66,7 @@ In the code below I have rewritten the `Person` class using fields rather than p
 
 Firstly, you'll see that I haven't used the `def` keyword - I don't need to do this when I provide an access modifier. I could have declared `public def name` but it's not good style as the `def` is implied. We can specify a type for a field by stating the type after the access modifier:
 
-{title="A basic person class with three typed fields",lang=groovy}
+{title="A basic person class with three typed fields",lang=Java}
 
     class Person {
         public String name
@@ -80,7 +80,7 @@ T> If you're writing code that others will use then definitely use fields. Using
 ## Default values
 Properties and fields are much like variables and can be declared with an initial value:
 
-{title="A basic person class with three typed fields, each with an initial value",lang=groovy}
+{title="A basic person class with three typed fields, each with an initial value",lang=Java}
 
     class Person {
         public String name = 'anonymous'
@@ -95,7 +95,7 @@ The initial value doesn't have to be a literal, it can be determined from an exp
 Groovy gives bean-style objects a really interesting approach to casting[^cast] a map or a list to an object. Let's get
 an example going first:
 
-{lang=groovy}
+{lang=Java}
 <<[Using a map to create a new instance](code/08/03/basic_mapcast.groovy)
 
 For the first person (`astrid`) I explicitly cast the map to a Person instance using

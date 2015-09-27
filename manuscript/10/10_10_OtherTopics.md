@@ -10,7 +10,7 @@ Groovy doesn't check data types at compile time. Thinking of Groovy as a dynamic
 
 Consider the following code:
 
-{lang=groovy}
+{lang=Java}
 	class Person {
 	    String id
 	    Integer getId() {id}
@@ -23,7 +23,7 @@ Groovy will compile this code with `groovyc` but when you try to run the code yo
 
 The `@groovy.transform.TypeChecked` annotation can be applied to the class to make sure types are checked at compilation time:
 
-{lang=groovy}
+{lang=Java}
 	@groovy.transform.TypeChecked
 	class Person {
 	    String id
@@ -36,7 +36,7 @@ The `@groovy.transform.TypeChecked` annotation can be applied to the class to ma
 Instead of a runtime exception I now get a compile-time error for trying to return an `Integer` from `getId()`. If I only want to have
 type checking performed on a specific method, I can just annotate that method:
 
-{lang=groovy}
+{lang=Java}
     class Person {
         String id
 
@@ -54,7 +54,7 @@ and [Type checking extensions](http://docs.groovy-lang.org/latest/html/documenta
 
 The `@groovy.transform.CompileStatic` annotation
 
-{lang=groovy}
+{lang=Java}
     @groovy.transform.CompileStatic
     class Person {
         Integer id
@@ -67,7 +67,7 @@ The `@groovy.transform.CompileStatic` annotation
 
 For more information please refer to the [Static compilation](http://docs.groovy-lang.org/latest/html/documentation/#_static_compilation)
 section in the Groovy documentation. Cédric Champeau's [10 things your static language can’t do](http://melix.github.io/blog/2014/12/10-things-static-cant-do.html) and
-Vinay Prajapati's [Compiling groovy code statically](www.tothenew.com/blog/compiling-groovy-code-statically) are also good reads.
+Vinay Prajapati's [Compiling groovy code statically](http://www.tothenew.com/blog/compiling-groovy-code-statically) are also good reads.
 
 ## Metaprogramming
 
@@ -80,7 +80,7 @@ at runtime. That only touched the surface of what's possible and, by digging dee
 
 That last item lets you extend the functionality of existing classes - here's a silly example:
 
-{lang=groovy}
+{lang=Java}
     Number.metaClass.addSeven << {
         delegate + 7
     }
@@ -117,7 +117,7 @@ there's a [Generics in Java](https://en.wikipedia.org/wiki/Generics_in_Java) art
 Inner classes are classes that are declared within another class. Often used to improve encapsulation, you can
 sometimes cause healthy debate when you ask "should I use an inner classes or a closure?".
 
-{title="Example inner class",lang=groovy}
+{title="Example inner class",lang=Java}
     import groovy.transform.ToString
 
     @ToString

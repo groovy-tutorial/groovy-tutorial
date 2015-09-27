@@ -4,7 +4,7 @@ I> Before we handle the exception let's see what it looks like.
 
 `Throwable` and all of its descendants provide a number of useful methods. Let's start off with a very basic `try-catch` block so that we can then dissect the NullPointerException:
 
-{title="What a catch",lang=groovy}
+{title="What a catch",lang=Java}
 	try {
 	    def person = null
 	    person.getName()

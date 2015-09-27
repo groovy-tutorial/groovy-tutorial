@@ -5,15 +5,15 @@ I> They're bit-oriented and not so much "wise"
 I have to admit that I haven't seen many instances of bitwise manipulation since my university assignments. That's not to say they're not used or not important - I've just not done a lot of programming that's called on bitwise operators.
 
 {title="The bitwise operators"}
-|Operator|Name     
-|:------:|:--------  
-| &	| Bitwise AND	|  
-| \|	| Bitwise OR	|  
-| ^	| Bitwise XOR[^xor]	|  
-| ~	| Bitwise negation (Not)	|  
-| >>	| Right shift	|  
-| >>>	| Right shift unsigned	|  
-| <<	| Left shift	| 
+|Operator|Name
+|:------:|:--------
+| &	| Bitwise AND	|
+| \|	| Bitwise OR	|
+| ^	| Bitwise XOR[^xor]	|
+| ~	| Bitwise negation (Not)	|
+| >>	| Right shift	|
+| >>>	| Right shift unsigned	|
+| <<	| Left shift	|
 
 [^xor]: Known as an Exclusive OR
 
@@ -58,34 +58,34 @@ The unix file permission scheme uses binary flags for read, write and execute pe
 
 Let's look at the example code first and then I'll discuss it:
 
-{title="A bitwise example",lang=groovy}
+{title="A bitwise example",lang=Java}
 	//Create global variables for the permissions
-	READ = 0b100      
-	WRITE = 0b010     
-	EXECUTE = 0b001  
-	
+	READ = 0b100
+	WRITE = 0b010
+	EXECUTE = 0b001
+
 	println 'Checking for READ:'
 	checkFile(READ)
-	
+
 	println 'Checking for WRITE:'
 	checkFile(WRITE)
-	
+
 	println 'Checking for READ or EXECUTE:'
 	checkFile(READ | EXECUTE)
-	
+
 	def checkFile (check) {
 	    def fileList = [:]
 	    for (i in 0..7) {
 	        fileList["File $i"] = i
 	    }
-	    
+
 	    for (file in fileList) {
 	        if (file.value & check) {
 	            println "$file.key (${displayFilePermission(file.value)}) meets criteria"
 	        }
 	    }
 	}
-	
+
 	def displayFilePermission(val) {
 	    def retval = ""
 	    retval <<= (READ & val)? 'r': '-'
@@ -98,17 +98,17 @@ W> Please note that I'm not really happy with my example (above) but it's the be
 
 First up I set the flags for each of the three elements using the `0b` prefix to indicate binary numbers:
 
-	READ = 0b100      
-	WRITE = 0b010     
+	READ = 0b100
+	WRITE = 0b010
 	EXECUTE = 0b001
 
 I then call my `checkFile` method to see which permissions match what I'm seeking. The third call to `checkFile` is the more interesting as I OR two flags: `READ | EXECUTE`. If I OR the READ flag (`100`) with the  EXECUTE flag (`001`) I get `101` (decimal 5):
 
 | Value	| Binary ||| Operator|
-|-----------------|:--:|:--:|:--:| :--:| 
-| READ	| 1	| 0	| 0	| OR	| 
-| EXECUTE	| 0	| 0	| 1	| 	|  
-| __Result__	| __1__	| __0__	| __1__	| __=__	|  
+|-----------------|:--:|:--:|:--:| :--:|
+| READ	| 1	| 0	| 0	| OR	|
+| EXECUTE	| 0	| 0	| 1	| 	|
+| __Result__	| __1__	| __0__	| __1__	| __=__	|
 
 The `checkFile` method does the checking for me. The first part of the method just creates a set of possible files - enough to cover the various variations of the `rwx` elements:
 
@@ -130,26 +130,26 @@ It's the second half of `checkFile` that does the important stuff:
 The `if (file.value & check)` performs an AND on the check requested (e.g. `READ`) and the file's permissions. If the AND returns a result greater than `0` then the file's permission match the `check`. For example, a file with execute permission (`--x`) meets the `READ | EXECUTE` criteria:
 
 |Item| Value	| Binary ||| Operator|
-|:----:|-----------------|:--:|:--:|:--:|:--:| 
-|`check`| READ \| EXECUTE	| 1	| 0	| 1	| AND	| 
-|`file`| `--x`	| 0	| 0	| 1	| 	|  
-| | __Result__	| __0__	| __0__	| __1__	| __=__	| 
+|:----:|-----------------|:--:|:--:|:--:|:--:|
+|`check`| READ \| EXECUTE	| 1	| 0	| 1	| AND	|
+|`file`| `--x`	| 0	| 0	| 1	| 	|
+| | __Result__	| __0__	| __0__	| __1__	| __=__	|
 
 A file with read and write permission (`rw-`) also matches:
 
 |Item| Value	| Binary ||| Operator|
-|:----:|-----------------|:--:| :--:|:--:|:--:| 
-|`check`| READ \| EXECUTE	| 1	| 0	| 1	| AND	| 
-|`file`| `rw-`	| 1	| 1	| 0	| 	|  
-| | __Result__	| __1__	| __0__	| __0__	| __=__	| 
+|:----:|-----------------|:--:| :--:|:--:|:--:|
+|`check`| READ \| EXECUTE	| 1	| 0	| 1	| AND	|
+|`file`| `rw-`	| 1	| 1	| 0	| 	|
+| | __Result__	| __1__	| __0__	| __0__	| __=__	|
 
 However, a file with only the write permission (`-w-`) will not successfully match:
 
 |Item| Value	| Binary ||| Operator|
-|:----:|-----------------|:--:|:--:|:--:|:--:| 
-|`check`| READ \| EXECUTE	| 1	| 0	| 1	| AND	| 
-|`file`| `-w-`	| 0	| 1	| 0	| 	|  
-| | __Result__	| __0__	| __0__	| __0__	| __=__	| 
+|:----:|-----------------|:--:|:--:|:--:|:--:|
+|`check`| READ \| EXECUTE	| 1	| 0	| 1	| AND	|
+|`file`| `-w-`	| 0	| 1	| 0	| 	|
+| | __Result__	| __0__	| __0__	| __0__	| __=__	|
 
 Lastly, the `displayFilePermission` method just helps me display the permissions in the `rwx` format.
 
@@ -160,7 +160,7 @@ I can negate (`~`) a value to indicate that I want the inverse of a value, rathe
 	println 'Checking for WRITE or EXECUTE:'
 	checkFile(~READ)
 
-I can XOR (`^`) to aggregate the permissions but ignore intersections (where both variables contain the same flag): 
+I can XOR (`^`) to aggregate the permissions but ignore intersections (where both variables contain the same flag):
 
 	def file1 = READ | EXECUTE
 	def file2 = WRITE | EXECUTE
@@ -185,9 +185,9 @@ With this is mind the following code demonstrates the left- and right-shift oper
 
 The code below displays a table in which each row represents a value that's be left-shifted by one position more than the prior row:
 
-{title="A bit shifting example",lang=groovy}
+{title="A bit shifting example",lang=Java}
 	def value = 0b0000_0000_0000_0000_1111_1111
-	
+
 	println '| Shift   | Hex      | Decimal  | Octal    | Binary                   |'
 	println '|---------|----------|----------|----------|--------------------------|'
 	(0..16).each {

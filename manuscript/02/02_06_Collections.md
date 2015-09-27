@@ -13,19 +13,19 @@ List variables contain several items and are declared using square brackets (`[.
 
 The example below declares a variable (`temperatures`) as an empty list:
 
-{title="Declaring an empty list",lang=groovy}
+{title="Declaring an empty list",lang=Java}
 	def temperatures = []
 
 
 The next examples declares the `temperatures` list with some initial values:
 
-{title="Declaring a list with values",lang=groovy}
+{title="Declaring a list with values",lang=Java}
 	def temperatures = [10, 5, 8, 3, 6]
 
 
 In the temperatures example the list contains just numbers but Groovy lists can contain a mix of data types:
 
-{title="Lists can contain mixed types",lang=groovy}
+{title="Lists can contain mixed types",lang=Java}
 	def mixed = [1, true, 'rabbit', 3.14]
 	println mixed[2]
 	println mixed[-3]
@@ -40,7 +40,7 @@ The `get()` method can also be used to access a list element by its index - e.g.
 
 I can provide multiple indexes in the subscript notation and grab the specified elements from the list. In the example below I grab elements 0 and 2 (`temperatures[0, 2]`) and then elements 1, 3 and 4 (`temperatures[1, 3, 4]`):
 
-{title="Using indexes with lists",lang=groovy}
+{title="Using indexes with lists",lang=Java}
 	def temperatures = [10, 5, 8, 3, 6]
 	assert temperatures[0, 2] == [10, 8]
 	assert temperatures[1, 3, 4] == [5, 3, 6]
@@ -48,14 +48,14 @@ I can provide multiple indexes in the subscript notation and grab the specified 
 
 Ranges can also be used in the subscript notation and, as demonstrated in the example below, return a list containing the items whose indexes are included in the range:
 
-{title="Using ranges with lists",lang=groovy}
+{title="Using ranges with lists",lang=Java}
 	def temperatures = [10, 5, 8, 3, 6]
 	assert temperatures[1..3] == [5, 8, 3]
 
 
 We can also use a mix of individual indexes and ranges as we see fit:
 
-{title="Indexes and ranges with lists",lang=groovy}
+{title="Indexes and ranges with lists",lang=Java}
 	def temperatures = [10, 5, 8, 3, 6]
 	assert temperatures[0..1, 3] == [10, 5, 3]
 	assert temperatures[0..1, 1..3] == [10, 5, 5, 8, 3]
@@ -72,7 +72,7 @@ What? Let's take a look:
 
 To add an element to a list we use the `add()` method or the `<<` operator:
 
-{title="Adding elements",lang=groovy}
+{title="Adding elements",lang=Java}
 	def mixed = [1, true, 'rabbit', 3.14]
 	mixed << 'biscuit'
 	mixed.add(101)
@@ -82,7 +82,7 @@ To add an element to a list we use the `add()` method or the `<<` operator:
 ### Sets
 Sets are much like lists but each element in a set is unique:
 
-{title="Declaring a Set",lang=groovy}
+{title="Declaring a Set",lang=Java}
 	def names = ['sally', 'bob', 'sally', 'jane'] as Set
 	println names
 
@@ -96,14 +96,14 @@ T> The `as` keyword is an operator used to cast a variable to another type. In t
 
 The `size()` method returns the number of elements in the list:
 
-{title="List size",lang=groovy}
+{title="List size",lang=Java}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	println periodic.size()
 
 
 The `first()` and `last()` methods return the first and last elements in a list. The `head()` method is synonymous with `first()`.
 
-{title="First and last methods",lang=groovy}
+{title="First and last methods",lang=Java}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	println periodic.first()
 	println periodic.head()
@@ -112,7 +112,7 @@ The `first()` and `last()` methods return the first and last elements in a list.
 
 The `tail()` method returns the list minus the first (head) element and the `init()` method returns the list minus the last element:
 
-{title="Tail method",lang=groovy}
+{title="Tail method",lang=Java}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	assert periodic.tail() == ['helium', 'lithium']
 	assert periodic.init() == ['hydrogen', 'helium']
@@ -120,28 +120,28 @@ The `tail()` method returns the list minus the first (head) element and the `ini
 
 The `contains()` method returns `true` if the requested element is contained in the list:
 
-{title="Contains method",lang=groovy}
+{title="Contains method",lang=Java}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	assert periodic.contains('helium') == true
 
 
 The `reverse()` method returns the mirror of the list:
 
-{title="Reverse method",lang=groovy}
+{title="Reverse method",lang=Java}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	println periodic.reverse()
 
 
 The `sort()` will sort the elements in a "natural" order. Basically, this relies on the list elements being comparable in some manner. The `sort` method is best used when the list contents are all of the same type (e.g. strings or numbers):
 
-{title="Sort method",lang=groovy}
+{title="Sort method",lang=Java}
 	def periodic = ['hydrogen', 'helium', 'lithium']
 	periodic.sort()
 
 
 The `asImmutable()` method is a handy way to set the list contents in stone -  "Immutable" essentially means "unchanging".
 
-{title="Don't go changing",lang=groovy}
+{title="Don't go changing",lang=Java}
 	def friends = ['fred', 'sally', 'akbar'].asImmutable()
 
 	//This next line will cause an exception:
@@ -154,13 +154,13 @@ Maps allow us to build up a type of look-up table using keys and values. Other l
 
 An empty map is declared using `[:]` and the example below shows this in use when declaring the `periodic` variable.
 
-{title="Declaring an empty map",lang=groovy}
+{title="Declaring an empty map",lang=Java}
 	def periodic = [:]
 
 
 Each key in a map is unique and points to a value in the map. In the example below we see the start of a basic periodic table by declaring a variable (`periodic`) with a set of key-value pairs (`key: value`) each separated by a comma (`,`) and held within square brackets (`[...]`):
 
-{title="Declaring a map with elements",lang=groovy}
+{title="Declaring a map with elements",lang=Java}
 	def periodic = ['h': 'hydrogen',
 			'he': 'helium',
 			'li': 'lithium']
@@ -185,7 +185,7 @@ T> I prefer the dot-point notation but sometimes you need to use square brackets
 
 The keys in a map can be names provided they adhere to the same rules we follow for variable names. That means that the keys in `periodic` don't have to be written as strings:
 
-{title="Keys as names",lang=groovy}
+{title="Keys as names",lang=Java}
 	def periodic = [h: 'hydrogen',
 	        he: 'helium',
 	        li: 'lithium']
@@ -194,7 +194,7 @@ The keys in a map can be names provided they adhere to the same rules we follow 
 ### Adding elements
 To add an element to a map we can use the square bracket, dot-point notation, `<<` operator, or `put()` method to add on a new key/value pair:
 
-{title="Adding elements",lang=groovy}
+{title="Adding elements",lang=Java}
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
@@ -210,7 +210,7 @@ To add an element to a map we can use the square bracket, dot-point notation, `<
 ### Keys
 Map keys don't have to be strings - they can be a mix of strings, numbers or other objects. Let's look at an example then go through the various bits of code:
 
-{lang=groovy}
+{lang=Java}
 <<[Different types of keys](code/02/06/keys.groovy)
 
 
@@ -233,7 +233,7 @@ T> I'd suggest you stick with strings as keys for now. I'd also suggest that usi
 
 For those interested in such things, the `(cluckers)` key isn't affected if I change the value of `cluckers` later on. If you append the code below to the chicken example you'll see that `mixedMap.get(cluckers)` will now return `null` as the match fails. You'll also notice that `println mixedMap` is the same output you get before changing `cluckers`:
 
-{title="Changing objects used as keys",lang=groovy}
+{title="Changing objects used as keys",lang=Java}
 	cluckers = new Chicken(name: 'Bill')
 	println mixedMap.get(cluckers)
 	println mixedMap
@@ -245,7 +245,7 @@ As with lists, the `size()` methods returns the number of elements in a map.
 
 The `get` method can be used to get the value for the requested key. A second optional parameter can be provided and is returned if the map does not contain the requested key:
 
-{title="Get method",lang=groovy}
+{title="Get method",lang=Java}
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
@@ -257,7 +257,7 @@ The `get` method can be used to get the value for the requested key. A second op
 
 The `keySet()` method returns a list containing all of the keys in a map and `values()` returns a list of the values in a map:
 
-{title="keySet method",lang=groovy}
+{title="keySet method",lang=Java}
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
@@ -268,7 +268,7 @@ The `keySet()` method returns a list containing all of the keys in a map and `va
 
 The `containsKey()` and `containsValue()` methods are useful for checking on map contents:
 
-{title="Checking for keys and values",lang=groovy}
+{title="Checking for keys and values",lang=Java}
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium']
@@ -279,7 +279,7 @@ The `containsKey()` and `containsValue()` methods are useful for checking on map
 
 The `asImmutable()` method works for maps in the same manner as it does for lists:
 
-{title="Don't go changing",lang=groovy}
+{title="Don't go changing",lang=Java}
 	def periodic = ['h': 'hydrogen',
 	        'he': 'helium',
 	        'li': 'lithium'].asImmutable()

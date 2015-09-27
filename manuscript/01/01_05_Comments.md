@@ -12,13 +12,13 @@ Comments are read by the Groovy compiler - they're purely used to help humans fo
 ## Single-line comments
 A single-line comment is introduced with two forward slash characters (`//`):
 
-{title="Single-line comment",lang=groovy}
+{title="Single-line comment",lang=Java}
 	//This is a single-line comment
 	println "hello, world"
 
 Single-line comments can be appended to a Groovy statement:
 
-{title="Inline comments",lang=groovy}
+{title="Inline comments",lang=Java}
 	def radius = 10
 	def pi = 3.14 //This is not very precise
 	def area = pi * (radius * radius)
@@ -27,7 +27,7 @@ Single-line comments can be appended to a Groovy statement:
 
 A multi-line comment is introduced by the characters `/*` and terminated with the characters `*/`. Generally, the `/*` and `*/` appear on their own line:
 
-{title="Multi-line comments",lang=groovy}
+{title="Multi-line comments",lang=Java}
 	/*
 	This is a multi-line comment
 	and here is the second line
@@ -35,7 +35,7 @@ A multi-line comment is introduced by the characters `/*` and terminated with th
 
 Multi-line comments are most commonly formatted with an asterisk (`*`) on each line, aligned with the introductory asterisk as follows:
 
-{title="Formatting multi-line comments",lang=groovy}
+{title="Formatting multi-line comments",lang=Java}
 	/*
 	 * This is a multiline comment
 	 * and here is the second line
@@ -43,12 +43,12 @@ Multi-line comments are most commonly formatted with an asterisk (`*`) on each l
 
 Multi-line comments can be introduced and terminated on a single line:
 
-{title="Multi-line one liners",lang=groovy}
+{title="Multi-line one liners",lang=Java}
 	/* This is a multiline comment on a single line */
 
 Nesting within a multi-line comment is not possible, rendering the following code invalid:
 
-{title="Don't nest comments",lang=groovy}
+{title="Don't nest comments",lang=Java}
 	/*
 	 * Multi-line comments cannot
 	 * /* be nested */

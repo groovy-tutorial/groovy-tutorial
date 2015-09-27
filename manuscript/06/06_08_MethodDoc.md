@@ -6,7 +6,7 @@ The `groovydoc` command that comes with the Groovy installation can be used to g
 
 Let's look at a Groovy method that features GroovyDoc comments:
 
-{lang=groovy}
+{lang=Java}
 <<[A method with doc comments](code/06/08/groovydoc.groovy)
 
 Taking a look at the commenting:

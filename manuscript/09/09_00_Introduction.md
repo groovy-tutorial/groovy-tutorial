@@ -19,12 +19,12 @@ Throughout this section I'll build up an example library for working with two-di
 
 As the Shapes demo source code is laid out as a larger project and divided into packages, you won't be able to run it
 via `groovyConsole`.
-To support you in trying out the demo I've setup the [http://www.groovy-tutorial.org/shapes-demo/](shapes demo)
+To support you in trying out the demo I've setup the [shapes demo](http://www.groovy-tutorial.org/shapes-demo/)
 mini site. This provides a number of handy resources:
 
-* A guide to building (compiling) the code both directly using `groovyc` and with the [http://gradle.org/](Gradle build tool).
+* A guide to building (compiling) the code both directly using `groovyc` and with the [Gradle build tool](http://gradle.org/).
 * Links to download the code
 * Various reports on the code
 
-Once you've read through the chapters in this section, head to the [http://www.groovy-tutorial.org/shapes-demo/](shapes demo)
+Once you've read through the chapters in this section, head to the [shapes demo](http://www.groovy-tutorial.org/shapes-demo/)
  mini site and give it a try.

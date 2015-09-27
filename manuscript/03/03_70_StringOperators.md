@@ -6,14 +6,14 @@ You'll spend a lot of your career manipulating strings so anything that makes th
 
 {title="String operators"}
 |Operator(s)       |Type
-|:-------------------:|:-----------| 
-|`+`, `<<`	| Concatenate Operator	|   
-|`<<=` `+=`	| Append Operator	|  
-|`-`	| Remove Operator	| 
-|`-=`	| Remove In-place Operator	|  
-|`*`	| Repeat Operator	|  
-|`*=`	| Repeat In-place Operator	|  
-|`++` `--`	| Increment and Decrement Operators	|  
+|:-------------------:|:-----------|
+|`+`, `<<`	| Concatenate Operator	|
+|`<<=` `+=`	| Append Operator	|
+|`-`	| Remove Operator	|
+|`-=`	| Remove In-place Operator	|
+|`*`	| Repeat Operator	|
+|`*=`	| Repeat In-place Operator	|
+|`++` `--`	| Increment and Decrement Operators	|
 
 ## Concatenate Operator
 
@@ -107,7 +107,7 @@ Works just like the remove operator (`-`) but does the match to the variable as 
 	println quote
 
 
-...and it can also use patterns: 
+...and it can also use patterns:
 
 
 	def str = 'cat bat rat monkey'
@@ -176,22 +176,22 @@ Java developers turn to the `StringBuilder` and `StringBuffer` classes to make t
 
 Let's take a look at two approaches to building a string. In the first example I'll use the `+=` operator and perform 1000 concatenations:
 
-{title="Timing the `+=` concatenation",lang=groovy}
+{title="Timing the `+=` concatenation",lang=Java}
 	import java.text.DecimalFormat
-	
+
 	def quote = 'It was the best of times. It was the worst of times.\n'
-	
+
 	def str = ""
-	
+
 	def startTime = System.nanoTime()
 	1000.times {
 	    str += quote
 	}
 	def endTime = System.nanoTime()
-	
+
 	DecimalFormat formatter = new DecimalFormat("#,###")
 	def duration = formatter.format(endTime - startTime)
-	
+
 	println "That took $duration nano seconds"
 
 W> ## Timing issues
@@ -199,22 +199,22 @@ W>Timing in this manner isn't perfect as you won't get the same answer each time
 
 In the next example I'll change just 1 thing: I'll use the `<<=` operator rather than `+=`:
 
-{title="Timing the `<<=` concatenation",lang=groovy}
+{title="Timing the `<<=` concatenation",lang=Java}
 	import java.text.DecimalFormat
-	
+
 	def quote = 'It was the best of times. It was the worst of times.\n'
-	
+
 	def str = ""
-	
+
 	def startTime = System.nanoTime()
 	1000.times {
 	    str <<= quote
 	}
 	def endTime = System.nanoTime()
-	
+
 	DecimalFormat formatter = new DecimalFormat("#,###")
 	def duration = formatter.format(endTime - startTime)
-	
+
 	println "That took $duration nano seconds"
 
 
@@ -227,4 +227,4 @@ To me this is evidence enough for me to use '<<=' over `+=`!
 
 ## Templates
 
-If you find yourself building strings around boilerplate text - such as a form letter - consider using [Groovy's templating system](http://www.groovy-lang.org/templating.html). 
+If you find yourself building strings around boilerplate text - such as a form letter - consider using [Groovy's templating system](http://www.groovy-lang.org/templating.html).

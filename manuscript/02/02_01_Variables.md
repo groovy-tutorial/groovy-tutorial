@@ -4,13 +4,13 @@ I> Let's look at how you declare a variable and what it is you're actually decla
 
 Groovy provides a few ways to create a variable but the best one to start with is to use the `def` keyword. In the example below I define (`def`) a new variable named `score` that can be used to hold a value later in my program:
 
-{title="Defining a variable",lang=groovy}
+{title="Defining a variable",lang=Java}
 	def score
 
 
 In the next example I assign `score` a value of 10 and ask Groovy to display the value of `score` using `println`:
 
-{title="Using a variable",lang=groovy}
+{title="Using a variable",lang=Java}
 	def score
 	score = 10
 	println score
@@ -18,7 +18,7 @@ In the next example I assign `score` a value of 10 and ask Groovy to display the
 
 Instead of declaring `score` and then assigning it the value `10` I can do this on a single line using `def score = 10`. I do just this in the example below and then change the value of `score` (it is a variable after all) - try this in your Groovy Console and the `println`s will show you the value of `score` after it's been set.
 
-{title="Changing the value",lang=groovy}
+{title="Changing the value",lang=Java}
 	def score = 10
 	println score
 	score = 11
@@ -29,26 +29,26 @@ You'll note that the second time I use `score` I don't need the `def` prefix as 
 
 If we're declaring a number of variables we could provide a `def` on each line:
 
-{lang=groovy}
+{lang=Java}
 	def myNumber
 	def myName
 
 
 Alternatively, the previous example could be represented on a single line in which each variable is separated by a comma (`,`):
 
-{lang=groovy}
+{lang=Java}
 	def myNumber, myName
 
 
 You can assign values to variables defined on a single line:
 
-{lang=groovy}
+{lang=Java}
 	def number1 = 10, number2 = 20
 
 
 A set of variables can be assigned values from a list (multiple assignment):
 
-{title="Multiple assignment",lang=groovy}
+{title="Multiple assignment",lang=Java}
 	def number1, number2
 	(number1, number2) = [10, 20]
 
@@ -58,7 +58,7 @@ A set of variables can be assigned values from a list (multiple assignment):
 
 In the next example a third variable is introduced but the assignment list only provides two elements. This will result in `number1` and `number2` being set but `number3` remaining without a value (`null`):
 
-{title="Multiple assignment",lang=groovy}
+{title="Multiple assignment",lang=Java}
 	def number1, number2, number3
 	(number1, number2, number3) = [10, 20]
 
@@ -69,7 +69,7 @@ In the next example a third variable is introduced but the assignment list only 
 
 Finally, we can perform multiple assignment at the point of declaring the variables:
 
-{title="Multiple assignment",lang=groovy}
+{title="Multiple assignment",lang=Java}
 	def (number1, number2, number3) = [10, 20, 30]
 
 	assert number1 == 10

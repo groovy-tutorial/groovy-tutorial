@@ -6,13 +6,13 @@ Regular expressions (RegEx's) get entire books devoted to them and you'll find s
 
 To define the regular expression pattern we use the `~/ /` syntax:
 
-{title="Declaring a regex",lang=groovy}
+{title="Declaring a regex",lang=Java}
 	def regex = ~/\n/
 
 
 Once stored as a variable, this regular expression can be used in a variety of ways. The example below sets up three string variables and tests them against the `regex` pattern by using the `matches` method - which returns `true` if the string matches the pattern:
 
-{title="Matching against a regex",lang=groovy}
+{title="Matching against a regex",lang=Java}
 	def regex = ~/https?:\/\/.*/
 
 	def httpUrl = 'http://www.example.com/'
@@ -51,7 +51,7 @@ These elements are used to match specific literal characters.
 
 In the example below I take a section of a poem and use the `split` method to get a list whose elements contain a single line from the poem.
 
-{title="Splitting a poem",lang=groovy}
+{title="Splitting a poem",lang=Java}
 	// The Ballad of the Drover by Henry Lawson
 	def poem = '''\
 	 Across the stony ridges,
@@ -134,7 +134,7 @@ A number of String methods can accept a regular expression and these are my pref
 
 We saw the `matches()` method at the beginning of the chapter:
 
-{title="Matching",lang=groovy}
+{title="Matching",lang=Java}
 	def regex = ~/https?:\/\/.*/
 	def httpUrl = 'http://www.example.com/'
 
@@ -143,7 +143,7 @@ We saw the `matches()` method at the beginning of the chapter:
 
 The `find()` method returns the first match against the pattern within the string. In the example below the `find()` will return the match against the port number in the URL:
 
-{title="Finding",lang=groovy}
+{title="Finding",lang=Java}
 	def regex = ~/:[0-9]+/
 	def httpUrl = 'http://www.example.com:8080/'
 
@@ -152,7 +152,7 @@ The `find()` method returns the first match against the pattern within the strin
 
 The `findAll()` method returns a list of matches for the pattern. In the example below I am returned all words in `speech` that start with `like`:
 
-{title="`findAll`",lang=groovy}
+{title="`findAll`",lang=Java}
 	def speech = '''This like guy like I know but like don\'t really like
 	 was like so mean but likely to be nice when you know him better.'''
 
@@ -163,7 +163,7 @@ The `findAll()` method returns a list of matches for the pattern. In the example
 
 The example below provides a very basic word counter by seeking out the `\b\w+\b` pattern and displaying the size of the list returned by `findAll`:
 
-{title="A word counter",lang=groovy}
+{title="A word counter",lang=Java}
 	def poem = '''\
 	 Across the stony ridges,
 	  Across the rolling plain,
@@ -177,7 +177,7 @@ The example below provides a very basic word counter by seeking out the `\b\w+\b
 
 The `replaceFirst()` and `replaceAll()` methods seek out matches and replace them in a manner that their names implies:
 
-{title="Replacing",lang=groovy}
+{title="Replacing",lang=Java}
 	def speech = '''This like guy like I know but like don\'t really like
 	 was like so mean but likely to be a nice guy when you know him better.'''
 
@@ -187,7 +187,7 @@ The `replaceFirst()` and `replaceAll()` methods seek out matches and replace the
 
 The `splitEachLine()` method is very handy when handling structured files such as comma-separated files. You can see in the example below that the first parameter is the pattern that will match commas (`~/,/`) and the second parameter is a closure that will do something for each line. Within the closure,  the `it` variable is a list with each element being the delimited segment of the text with the line:
 
-{title="Splitting",lang=groovy}
+{title="Splitting",lang=Java}
 	def csv = '''\
 	Bill,555-1234,cats
 	Jane,555-7485,dogs
@@ -204,7 +204,7 @@ The `java.util.regex.Pattern` class provides a number of useful methods. I prefe
 
 The static `matches` method is called against `Pattern` to evaluate a pattern against a piece of text. You'll note that the first parameter is the pattern but represented as a string so you drop the `~/../` notation:
 
-{title="Using `Pattern`",lang=groovy}
+{title="Using `Pattern`",lang=Java}
 	//Note the import
 	import java.util.regex.Pattern
 	assert Pattern.matches('https?://.*/', 'http://www.example.com/') == true
@@ -212,7 +212,7 @@ The static `matches` method is called against `Pattern` to evaluate a pattern ag
 
 The `matcher()` method is called against a regular expression pattern and is passed the text that is to be checked. A [`Matcher`](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Matcher.html) variable is returned and these give you a whole heap of regular expression functionality. In my example I just check for the match by calling `matches()`:
 
-{title="Using `Matcher`",lang=groovy}
+{title="Using `Matcher`",lang=Java}
 	def regex = ~/https?:\/\/.*/
 	def httpUrl = 'http://www.example.com/'
 	def matcher = regex.matcher(httpUrl)
@@ -221,7 +221,7 @@ The `matcher()` method is called against a regular expression pattern and is pas
 
 The `split()` method uses a pattern as a delimiter and returns the elements of the parameter broken up by the delimiter. In my example below I split the domain up based on the period (`.`) delimiter:
 
-{title="Another split`",lang=groovy}
+{title="Another split`",lang=Java}
 	def regex = ~/\./
 	def domain = 'www.example.com'
 

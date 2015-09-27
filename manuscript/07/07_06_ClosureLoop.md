@@ -10,14 +10,14 @@ In this chapter we'll take a look at a number of these methods.
 
 We looked at `each` in the previous chapter but let's do one more. In the example below I determine the average of a list of numbers and then use the `each` method to tell us something about each number's relationship to the average:
 
-{lang=groovy}
+{lang=Java}
 <<[Using `each`](code/07/06/each.groovy)
 
 ## `collect`
 
 The collect method calls a closure for each item in a list and returns a list of the results from each closure call. This next example takes a list of test scores and uses the closure's algorithm for returning a list of grades:
 
-{lang=groovy}
+{lang=Java}
 <<[Using `collect`](code/07/06/collect.groovy)
 
 
@@ -43,7 +43,7 @@ It's important to remember that the list is changed by the `sort` method - the n
 
 When  the `sort` method is passed a closure that accepts two parameters then it works through the list by comparing neighbours. As sort changes the list, these neighbours change, resulting in the closure undertaking a number of comparisons, at least equal to the number of list items. This is powerful stuff so let's look at a sorting closure I used when discussing [Relational Operators](#chrelops):
 
-{lang=groovy}
+{lang=Java}
 <<[Using `sort`](code/07/06/sort.groovy)
 
 

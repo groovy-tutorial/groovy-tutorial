@@ -55,12 +55,12 @@ Those last two options are very useful if you're going to pass a non-trivial clo
 
 Here's another example, a method `findPrimes` that accepts a list of numbers (such as a range) and a closure. The method loops through the list and, when it determines the item is a prime number it will call our closure:
 
-{lang=groovy}
+{lang=Java}
 <<[Finding primes](code/07/05/find_primes.groovy)
 
 If I wanted to be specific about my parameter data types, the correct data type for `closure` is `Closure`.  This lets me prepare a static typed method signature of `def findPrimes(List list, Closure closure) `
 
 One last round at this one - this time to set a return value from the `findPrimes` method. The code is not really different to the previous example but it throws a number of items together: a typed method signature, a closure parameter, and a return value for the method (the list of primes).
 
-{lang=groovy}
+{lang=Java}
 <<[Finding primes, part 2](code/07/05/find_primes2.groovy)

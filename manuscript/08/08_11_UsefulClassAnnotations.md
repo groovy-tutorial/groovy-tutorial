@@ -13,7 +13,7 @@ You can even write your own annotations but that's something for another book...
 The `toString()` method is used to provide a "human readable" representation of the object. It's available on all
 objects and you can override it but you can also just use the `ToString` annotation to make this even easier:
 
-{lang=groovy}
+{lang=Java}
 <<[The ToString annotation](code/08/11/ToString.groovy)
 
 T> Instead of using the full library path with `@groovy.transform.ToString` you can use the `import` keyword:
@@ -32,7 +32,7 @@ T>  }
 
 You can use several options at once:
 
-{lang=groovy}
+{lang=Java}
 <<[The ToString annotation with options](code/08/11/ToString2.groovy)
 
 ## EqualsAndHashCode
@@ -47,13 +47,13 @@ However, this isn't Groovy being clever, it's just seeing that `agentSmith1` and
 In the code below you'll see that a Person instance with the same `id` and `name` as another Person instance doesn't
 automatically equate to them being equal:
 
-{lang=groovy}
+{lang=Java}
 <<[Same, same but not equal](code/08/11/equal.groovy)
 
 By using the `EqualsAndHashCode` annotation I can tell Groovy that two instances of `Person` with the same `id` are actually
 equal:
 
-{lang=groovy}
+{lang=Java}
 <<[The EqualsAndHashCode annotation](code/08/11/EqualsAndHashCode.groovy)
 
 Equality is not always easy to determine and will depend on the context in which you're developing - my example above
@@ -75,12 +75,12 @@ The `Canonical` annotation brings together functionality from a suite of other a
 
 We've looked at these previously so let's jump to an example:
 
-{lang=groovy}
+{lang=Java}
 <<[The Canonical annotation](code/08/11/Canonical.groovy)
 
 This saves you from needing to stack your annotations:
 
-{lang=groovy}
+{lang=Java}
 <<[Canonical combines three annotations](code/08/11/Canonical_equiv.groovy)
 
 ## Immutable
@@ -88,7 +88,7 @@ This saves you from needing to stack your annotations:
 The `Immutable` annotation provides similar features as `Canonical` but locks down new instances so that they can't be changed after creation.
 [Immutable objects](https://en.wikipedia.org/wiki/Immutable_object) can be very useful in systems using parallel processing or caching.
 
-{lang=groovy}
+{lang=Java}
 <<[You can't touch this - it will cause an exception](code/08/11/Immutable.groovy)
 
 The code above will fail on `krusty.email = 'heyhey@example.com'` as the `Immutable` annotation marks the `email` field as `final`.

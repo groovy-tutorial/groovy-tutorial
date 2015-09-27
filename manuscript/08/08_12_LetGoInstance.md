@@ -10,7 +10,7 @@ You don't always need to explicitly set variables to `null` - this would make yo
 
 There is an important caveat: if multiple variables refer to the same data then the JVM can only release resources once all references have "unlatched". Let's examine this in the code below:
 
-{lang=groovy}
+{lang=Java}
 <<[Example of multiple references to the same data](code/08/12/let_go.groovy)
 
 I've defined a variable (`shakespeare`) to hold a new instance of the `SampleText` class and then said that another variable (`marlow`) points to that instance of `SampleText`. My call to `marlow.text` will still work despite my setting `shakespeare` to `null`. In this case we say that "`marlow` still holds a reference to the `SampleText` instance". This means that the JVM can't release the resources held by the instance until all references are set to `null`. I need to set `marlow` to `null` to completely release the resources.

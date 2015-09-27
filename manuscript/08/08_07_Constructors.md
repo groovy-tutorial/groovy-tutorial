@@ -4,7 +4,7 @@ I> Can we build it?
 
 A constructor is a special type of method that is called when instantiating a new instance of a class. We create a new instance every time we use the `new` keyword:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic bean-type class](code/08/07/basic.groovy)
 
 In the code above I define the `Person` class with three properties and then create a new instance in the `astrid` variable. The `new` keyword indicates to Groovy that a new `Person` instance is to be created. The `Person()` aspect is actually a call to the constructor for the class. However, I haven't actually provided a constructor for the `Person` class so what am I calling? Groovy classes all trace back to the `Object` class - where a class does not explicitly state that it inherits from (subclasses) another class it is automatically seen as a subclass of `Object`.
@@ -36,7 +36,7 @@ Whilst the no-args constructor and map parameter approach can be useful, you'll 
 
 If you need to do something specific in order to sensibly create a new instance of your class you'll need to define one or more constructors. So, let's look at an example:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic constructor for `Person`](code/08/07/basic_constructor.groovy)
 
 In order to define a constructor we declare a method that:
@@ -57,7 +57,7 @@ By adding the `Person(name)` constructor we've effectively changed `Person` so t
 
 We can define as many constructors as we feel necessary - they all carry the same name as their class but have different parameter lists (à la overloading). In the code below I provide two constructor definitions:
 
-{lang=groovy}
+{lang=Java}
 <<[A class with two constructor definitions](code/08/07/overloaded_constructor.groovy)
 
 T> I can still call `new Person()` as the no-argument constructor is still there.
@@ -127,7 +127,7 @@ On that last point, let's look at two quick examples to prove I'm not fooling yo
 ## TupleConstructor annotation
 The [`@groovy.transform.TupleConstructor`](http://docs.groovy-lang.org/latest/html/gapi/groovy/transform/TupleConstructor.html) is an annotation that we can add to our classes and have a variety of constructors automatically generated for us:
 
-{lang=groovy}
+{lang=Java}
 <<[The `TupleConstructor` annotation](code/08/07/tuple_constructor.groovy)
 
 The `TupleConstructor` annotation gives us the map-based constructor as well as a set of constructors matching the member variables - effectively generating the following constructors:
@@ -146,7 +146,7 @@ A stand-alone instance initializer block can be used to provide a base setup for
 
 Instance initializer blocks appear inside the class itself, surrounded by curly braces `{}`:
 
-{lang=groovy}
+{lang=Java}
 <<[A basic class with an initializer block](code/08/07/instance_initializer.groovy)
 
 The code above offers nothing over setting the property defaults directly (`UUID id = UUID.randomUUID()`) - it's just a simple example. You can use an initializer block or constructors, or both. The initializer block will be called before any constructor(s).
@@ -155,12 +155,12 @@ T> Whilst you can actually provide several initializer blocks, you probably just
 
 There is a small trap to be wary of when using an instance initializer block - the syntax Groovy uses for passing closures as parameters will cause a failure around initializer blocks in some conditions. The following code is an example of this and won't run:
 
-{lang=groovy}
+{lang=Java}
 <<[An initializer block that gets mistaken as a closure](code/08/07/instance_initializer_fail.groovy)
 
 In order to get around this, prefix the initializer block with a semicolon (`;`)[^initprefix]. This stamps a definite statement delimiter against the initializer block:
 
-{lang=groovy}
+{lang=Java}
 <<[A prefixed initializer block](code/08/07/instance_initializer_win.groovy)
 
 I'd suggest always using the prefix - it isn't messy and makes sure that Groovy knows it's looking at an initializer block.
@@ -172,7 +172,7 @@ It can be frustrating when you've written a nice looking class but things don't 
 This can be due to the stuff going on behind the scenes that isn't always immediately obvious.
 Let's take a look at a `Person` object that uses an initializer block and a constructor as well as provide a field setter and a helper method:
 
-{lang=groovy}
+{lang=Java}
 <<[Investigate the order of things](code/08/07/ordering.groovy)
 
 Running the code above will yield the following output:
@@ -196,7 +196,7 @@ However, the `changeName ` method may have been best to use `setName` rather tha
 
 If you do need to provide some checks or other logic before allowing a field to be set then it might be worth placing this logic in another (private) method that doesn't change any instance fields directly. To achieve this, the method's parameters would cover all of the required items for validation (e.g. `private String checkName(name, validNameList)`) and return the name (if valid) or throw an exception if the check fails. The code might look something like:
 
-{lang=groovy}
+{lang=Java}
 	private String checkName(name, validNameList) throws IllegalArgumentException {
         if (name in validNameList) {
             return name

@@ -35,7 +35,7 @@ It is important to note that the type is selected at each assignment - a variabl
 ## Using a specific type
 A variable can be declared as being of a specific data type. When using a type, drop the `def` keyword:
 
-{title="Declaring a variable using a specific type",lang=groovy}
+{title="Declaring a variable using a specific type",lang=Java}
 	Integer myNum = 1
 	String myName = "Fred nurk"
 
@@ -111,7 +111,7 @@ The table below maps the types defined in `java.lang` against their equivalent p
 
 You can check those value ranges by using the `MIN_VALUE` and `MAX_VALUE` constants available on the various classes representing numbers:
 
-{title="Determining value range",lang=groovy}
+{title="Determining value range",lang=Java}
 	println Integer.MIN_VALUE
 	println Integer.MAX_VALUE
 	println Float.MIN_VALUE
@@ -127,7 +127,7 @@ I> _Autoboxing_ refers to the automatic conversion of a primitive type to a refe
 
 Groovy will convert values assigned to variables into the variable's declared data type. For example, the code below declares a variable of type "String" and then assigns it 3.14 (a number). The assertion that the variable remains of type "String" will succeed, indicating that `3.14` was converted to a String value by Groovy before being assigned to the `myName` variable.
 
-{title="Checking the type",lang=groovy}
+{title="Checking the type",lang=Java}
 	String myName = "Fred nurk"
 	myName = 3.14
 	assert myName.class == java.lang.String
@@ -145,7 +145,7 @@ Care must be taken to not rely totally on this automatic conversion. In the exam
 
 The `as` operator can be used to cast (change) a value to another class.
 
-{title="Casting",lang=groovy}
+{title="Casting",lang=Java}
 	def pi = 3.1415926535 as Integer
 	assert 3 == pi
 
@@ -172,7 +172,7 @@ This will be discussed further in the [Object Operators tutorial](#chobjectopera
 
 Here's a small example of grabbing the whole (integer) component from a number:
 
-{title="Getting the integer",lang=groovy}
+{title="Getting the integer",lang=Java}
 	def pi = 3.1415926535
 	assert 3 == pi.intValue()
 	assert 3 == pi.toInteger()
