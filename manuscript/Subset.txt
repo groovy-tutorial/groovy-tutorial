@@ -3,3 +3,5 @@
 ./09/09_20_Interfaces.md
 ./09/09_21_Traits.md
 ./09/09_22_Inheritance.md
+backmatter/backmatter.txt
+./09/09_90_ShapesDemo.md

@@ -97,4 +97,5 @@ mainmatter.txt
 ./10/10_10_OtherTopics.md
 ./10/10_11_GreatBeyond.md
 backmatter/backmatter.txt
+./09/09_90_ShapesDemo.md
 backmatter/Colophon.md

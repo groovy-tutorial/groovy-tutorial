@@ -183,7 +183,7 @@ constants, consider the following alternatives:
 One interface is defined within the shapes library: `TwoDimensionalShape`:
 
 {lang=groovy}
-<<[The `TwoDimensionalShape` interface](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/TwoDimensionalShape.groovy)
+<<[The `TwoDimensionalShape` interface](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/TwoDimensionalShape.groovy)
 
 The interface is declared using the `interface` keyword followed by the name: `interface TwoDimensionalShape`.
 Within the interface is the following method signatures:
@@ -197,7 +197,7 @@ As mentioned earlier in this chapter, each method signature is listed without a 
 It is up to the implementing class(es) to provide the "body" of the definition and the `Circle` class does just that:
 
 {lang=groovy}
-<<[The `Circle` class](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Circle.groovy)
+<<[The `Circle` class](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Circle.groovy)
 
 You'll notice that the `Circle` class doesn't explicitly provide an implementation for `getPerimeter()` and
 `getArea()` as Groovy will generate these for the member fields.

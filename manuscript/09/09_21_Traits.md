@@ -197,7 +197,7 @@ The `Sides` trait is based on the notion that a two-dimensional shape consists o
 Let's take a look at the code for the `Sides` trait and then examine its components.
 
 {lang=groovy}
-<<[The `Sides` trait](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Sides.groovy)
+<<[The `Sides` trait](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Sides.groovy)
 
 Reviewing the code you'll see:
 
@@ -225,7 +225,7 @@ Both the `Triangle` and `Rectangle` classes implement the `Sides` trait as well 
 We can see the interaction between the a shape class and the `Sides` trait by examining the `Rectangle` class:
 
 {lang=groovy}
-<<[The `Rectangle` class](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Rectangle.groovy)
+<<[The `Rectangle` class](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Rectangle.groovy)
 
 Most of `Rectangle`'s use of the trait is seen in the constructor as we set the sides of the rectangle though a really easy-to-understand notation:
 
