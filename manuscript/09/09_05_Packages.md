@@ -54,7 +54,7 @@ assumes that you want to create a class with the same name as the file *but* you
 
 If we're following the rule of "One structure per file", we should only declare the `Person` class in `Person.groovy`:
 
-    {title="Second attempt at Person.groovy - will work", lang=groovy}
+{title="Second attempt at Person.groovy - will work", lang=groovy}
     package mypackage
 
     class Person {
@@ -63,7 +63,7 @@ If we're following the rule of "One structure per file", we should only declare 
 
 In the same directory we'll then create `Main.groovy`  and put it into the `mypackage.app` package as follows:
 
-    {title="Main.groovy", lang=groovy}
+{title="Main.groovy", lang=groovy}
     package mypackage.app
 
     import mypackage.Person

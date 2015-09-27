@@ -192,11 +192,52 @@ Before leaving this topic, there are some things to note about the example:
 
 ## The Shapes demo
 
-The `Sides` trait is based on the notion that a two-dimensional shape consists of a
+The `Sides` trait is based on the notion that a two-dimensional shape consists of a set of sides (edges). In most cases there'd be at least 3 sides to a 2D shape (circles being the exception with 1 side) and it's possible to determine a shape's perimeter by adding up the lengths of the sides. In the `Sides` trait I wanted to provide classes with the ability to name each side using a single lower-case letter (e.g. `a`, `b`, `c`) and associate the side's length.
+
+Let's take a look at the code for the `Sides` trait and then examine its components.
 
 {lang=groovy}
 <<[The `Sides` trait](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Sides.groovy)
 
-All classes inherit from `java.lang.Object` but they also implement the `groovy.lang.GroovyObject` interface.
+Reviewing the code you'll see:
+
+* Each side will be added to the `sideMap` with a lower-case letter as the key and the side's length as the value
+    * The `SIDE_NAME_PATTERN` provides a very basic pattern to limit the acceptable keys
+    * The `getSideMap()` will return a clone[^clone] of `sideMap` - this helps protect the property from changing externally to the trait.
+* The `perimeter` field will hold the perimeter of the shape
+    * This is calculated via the `getPerimeter()` method (more on this in a moment)
+    * Note how the perimeter is calculated only once
+
+Aside from the items listed above, you'll notice two versions of the `propertyMissing` method. This is a special Groovy method that is called when a getter or setter is called on a property that doesn't exist. The `propertyMissing(String name)` is called when code attempts to access (get) a property and `propertyMissing(String name, value)` is called when an attempt is made to mutate (set) a non-existent property. The getter is reasonably straight-forward as it just checks that the requested property name matches the `SIDE_NAME_PATTERN` and, if so, tries to access the property from `sideMap`.
+
+The setter version of `propertyMissing` is a little more complex and, stepping through the method, we can see:
+
+1. The requested property `name` must match `SIDE_NAME_PATTERN`
+2. If the `perimeter` has already been calculated we throw an exception as the set of `sideMap` is locked down once `perimeter` has been set
+3. The `value` for the side (it's length) must be a `Number`
+4. A utility method `ShapeUtil.checkSidesException` is called to ensure that `value > 0` as we don't want negative- or zero-length sides
+5. Once all of those preconditions are met the property can be set
+
+All of this results in the `Sides` trait providing implementing classes with not only the ability to store a list of sides and calculate the perimeter but also lets them use a nice letter-based notation for the sides.
+
+Both the `Triangle` and `Rectangle` classes implement the `Sides` trait as well as the `TwoDimensionalShape` interface. By implementing `Sides`, these classes are provided with an implementation of the `getPerimeter()` method required by the `TwoDimensionalShape` interface.
+
+We can see the interaction between the a shape class and the `Sides` trait by examining the `Rectangle` class:
+
+{lang=groovy}
+<<[The `Rectangle` class](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Rectangle.groovy)
+
+Most of `Rectangle`'s use of the trait is seen in the constructor as we set the sides of the rectangle though a really easy-to-understand notation:
+
+    a = length
+    b = width
+    c = length
+    d = width
+
+The use of the `Sides` trait means that instances of `Rectangle` can use notation such as `myRectangle.a`.
+
+The `Rectangle` constructor also calls `this.perimeter` so as to calculate the perimeter - not because we specifically need it in the constructor but because it locks down the set of sides for the rectangle instance.
 
 I> The `Circle` class could have implemented the `Sides` trait but I left this out so as to specifically demonstrate a `class` implementing an `interface`.
+
+[^clone]: Cloning was mentioned briefly [in the last section](#secclone)

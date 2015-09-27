@@ -66,7 +66,7 @@ First up, let's consider a class `FinalReport` that is meant to hold a set of `R
 {lang=groovy}
 <<[First stab at a protected report](code/08/09/final_report.groovy)
 
-First of all you'll notice the `@ToString(includeNames = true)` annotation. This is used to have a `toString()` method 
+First of all you'll notice the `@ToString(includeNames = true)` annotation. This is used to have a `toString()` method
 generated for the class. This is really handy and I provide a description in the [Useful Annotations](#channotations) chapter.
 
 When setting up the `FinalReport` class I dutifully set `final List records` so that the list of records is `final` but
@@ -124,7 +124,7 @@ So here's how our `FinalReport` code now looks with the help of `@Immutable`:
 You can easily see that the code for my `FinalReport` and `Record` classes has been cut right back. This is really
 helpful in many situations **but** `@Immutable` can't do everything so make sure you [read the documentation](http://docs.groovy-lang.org/latest/html/gapi/groovy/transform/Immutable.html).
 
-### Copying and cloning
+### Copying and cloning {#secclone}
 
 Just wandering a little off the `final` path, let's take a quick look at how we could defensively handle mutable objects.
 Defensively copying basic objects such as `String` and `Integers` is easy as it happens at assignment time:
@@ -171,7 +171,7 @@ in luck and can make a copy (clone):
 <<[Using `Cloneable`](code/08/09/final_clone.groovy)
 
 As `Assignment` provides a `clone` method we just need to call it and we're returned a copy for our own use. Naturally,
-this doesn't help us if the author of `Assignment` doesn't provide us with a `clone` method. 
+this doesn't help us if the author of `Assignment` doesn't provide us with a `clone` method.
 Check out the [Useful Annotations](#channotations) chapter for the `@Canonical` annotation.
 
 T> ## Shallow copies vs Deep copies

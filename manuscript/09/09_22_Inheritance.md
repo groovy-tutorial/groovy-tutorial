@@ -2,7 +2,7 @@
 
 Stay tuned!
 
-
+All classes inherit from `java.lang.Object` but they also implement the `groovy.lang.GroovyObject` interface.
 
 ## Type Comparison
 
