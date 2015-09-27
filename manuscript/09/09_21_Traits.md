@@ -87,7 +87,7 @@ When a trait is implemented by a class, the relation can be seen as the trait is
 
 The code below reveals that a trait's class is that of the implementer:
 
-{title='Uncover the mystery',lang=groovy}
+{title="Uncover the mystery",lang=groovy}
     trait MyTrait {
         Class whoIsThis() {
             this.class
@@ -127,7 +127,7 @@ As Groovy's interfaces don't support default implementations it may be tempting 
 
 Once you've described your interface, a trait can implement the interface in the same manner as classes do, through the use of the `implements` keyword:
 
-{title='Trait implementing an interface',lang=groovy}
+{title="Trait implementing an interface",lang=groovy}
     interface Locomotion {
         String getDescription()
     }
@@ -142,7 +142,7 @@ Once you've described your interface, a trait can implement the interface in the
 ## Implementing multiple traits
 As mentioned earlier, a class can implement more than one trait. This is straight-forward if the traits don't intersect in terms of members (properties/fields/methods), as is the case in the example below:
 
-{title='Simple implementation of two traits',lang=groovy}
+{title="Simple implementation of two traits",lang=groovy}
     trait Hopping {
         String hop() { 'I am hopping' }
     }
@@ -171,7 +171,7 @@ Groovy lets me manually determine how the colliding trait members will be treate
 
 In the improved `Triathlon` example below you'll notice that I've decided to implement the `Event` interface as a triathlon is an event consisting of three events:
 
-{title='Manual selection of trait methods',lang=groovy}
+{title="Manual selection of trait methods",lang=groovy}
     class Triathlon implements Event, Running, Swimming, Riding {
         @Override
         void startEvent() {
@@ -192,9 +192,11 @@ Before leaving this topic, there are some things to note about the example:
 
 ## The Shapes demo
 
-
+The `Sides` trait is based on the notion that a two-dimensional shape consists of a
 
 {lang=groovy}
 <<[The `Sides` trait](code/09/shapes/src/main/groovy/org/groovytutorial/shapes/Sides.groovy)
 
 All classes inherit from `java.lang.Object` but they also implement the `groovy.lang.GroovyObject` interface.
+
+I> The `Circle` class could have implemented the `Sides` trait but I left this out so as to specifically demonstrate a `class` implementing an `interface`.

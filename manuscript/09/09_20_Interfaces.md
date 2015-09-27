@@ -142,7 +142,9 @@ If the method needed the `storeToXML` functionality of `java.util.Properties` th
 `java.util.Map` - just take a moment to make sure it's really required.
 
 ## General advice
+
 ### Groovy interfaces don't allow default methods
+
 Java interfaces allow you to provide implementation for a method. Such methods are referred to as "default methods"
 as any implementing class doesn't have to provide their own implementation. This might be helpful when an interface
 needs to be updated/improved as it saves having to go through an existing codebase and providing the implementation.
