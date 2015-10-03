@@ -91,7 +91,7 @@ The remove operator (`-`) removes the first instance of a string or regular expr
 
 The example above will display `It was the worst times.`
 
-A regular expression pattern can also be used if you want to use a pattern. In the example below, the first occurrence of "bat" or "rat" is removed, resulting in `cat  rat monkey` (_note the double space_)
+A regular expression pattern can also be used if you want to use a pattern. In the example below, the first occurrence of "bat" or "rat" is removed, resulting in `cat  rat monkey`:
 
 
 	println 'cat bat rat monkey' - ~/[br]at/

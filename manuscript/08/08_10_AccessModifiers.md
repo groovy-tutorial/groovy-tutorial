@@ -49,7 +49,7 @@ W> Groovy and Java both support a technique called _reflection_ that allows prog
 [^securitymanager]: If you want to really get into this topic, start with <http://docs.oracle.com/javase/tutorial/essential/environment/security.html>
 
 ## Applying Access Modifiers
-The following access methods are available:
+The following access modifiers are available:
 
 * Classes:
     * `public`

@@ -47,9 +47,9 @@ Suffixes can also be used if you want to be really specific about the data type 
 |:------:|:------|:------:|
 | `I` or `i`| Integer	| `12i`	|
 | `L` or `l`| Long	| `23423l`	|
-|`G` or `g`	| BigInteger	| `1_000_000g`	|
 |`F` or `f`	| Float	| `3.1415f`	|
 |`D` or `d`	| Double	| `3.1415d`	|
+|`G` or `g`	| BigInteger	| `1_000_000g`	|
 |`G` or `g`	| BigDecimal	| `3.1415g`	|
 
 You may have noticed that BigInteger and BigDecimal have the same suffix - this isn't a typo - Groovy works out which one you need simply by determining if the number is a whole number (BigInteger) or a decimal (BigDecimal).
@@ -92,7 +92,6 @@ As Groovy imports the `java.lang` package as well as the `java.math.BigDecimal` 
  - `Closure`: The class that holds closure values
 
 The types listed above are often referred to as _reference types_, indicating that they relate to a class definition. Groovy also provides a set of _primitive types_ that are more closely aligned to the C programming language than an object-oriented language such as Java and Groovy.
-%%In most cases, use of a reference type should be preferred and Groovy's dynamic typing uses _reference types_.
 
 ### Primitive types
 The table below maps the types defined in `java.lang` against their equivalent primitive types:

@@ -21,7 +21,7 @@ I've indicated that this code:
 - Is part of a `package` named `test`
 - Needs to use the `Year` class defined in the `java.time` package
 
-This notion of packaging allows for thousands of developers to create classes and packages without clashing. If another developer creates a `Year` class but put it into a package with a name other than `java.time` then all will be well. Oh, and you'd never start your own package name with `java.` - that really won't work out well for you[^pkg].
+This notion of packaging allows for thousands of developers to create classes and packages without clashing. If another developer creates a `Year` class but puts it into a package with a name other than `java.time` then all will be well. Oh, and you'd never start your own package name with `java.` - that really won't work out well for you[^pkg].
 
 Before you write any new code you should always check out these resources in the order I've given below:
 

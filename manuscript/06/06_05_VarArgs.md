@@ -1,4 +1,4 @@
-# Variable Arguments (Varargs)
+# Variable Arguments (Varargs) {#chvarargs}
 
 I> Some methods are happy to take as many parameters as you can muster.
 

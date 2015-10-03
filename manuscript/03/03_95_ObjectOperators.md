@@ -57,7 +57,7 @@ In order to stop the NPE you'll normally see developers using an `if` statement 
 	}
 
 
-T>In the code above, `if (fred)` equates to true if `fred` isn't null - it's a handy bit of Groovy syntax we'll cover when we get to the [tutorial on the `if` statement](#chif).
+T>In the code above, `if (fred)` equates to true if `fred` isn't null.
 
 Groovy's Safe Navigation operator saves some time and code. In the code below, Groovy checks that the `fred` variable isn't `null`  before trying to access the `name` property - giving us a compact piece of code: `fred?.name`.
 
@@ -85,7 +85,7 @@ The Casting operator (`as`) changes the data type of a value or variable to the 
 	def nums = [1, 6, 3, 9, 3] as Set
 
 
-I> For those that like to know the secret sauce, this actually casts `num` to be a `java.util.LinkedHashSet`. I know this because `nums.class.name` knows this.
+I> For those that like to know the secret sauce, this actually casts `nums` to be a `java.util.LinkedHashSet`. I know this because `nums.class.name` knows this.
 
 The `as` tells Groovy that you want to convert the item to be of the specified data type (class) - in the example above I use `Set`. The code below demonstrates a few more conversions:
 
@@ -104,7 +104,7 @@ The Identity operator (`is`) determines if two variables are referencing the sam
 
 As we saw in the chapters on Equality Operators and Relational Operators, Groovy uses the `==` operator to determine if two objects are equivalent based on their state. Using `==` for this purpose is really useful and improves code readability *but* it means that the traditional Java use of `==` to determine if two objects reference the same instance needs a replacement in Groovy. The `is` method is that replacement.
 
-In the code below I describe a `Person` class and use a very helpful annotation (`@groovy.\-transform.\-EqualsAndHashCode`) so that Groovy sets up the approach to determining if two instances of `Person` are the same - such that `==` returns `true`. I've decided that all people will have a unique identifier and, provided two instances have the same identifier, they're the same person. This means that all three variations (`fred`, `freddie`, `frederick`) of the person with the ID `345` are equal (`==`) to each other. However, by using `is` I can see that, whilst `fred` and `freddie` point to the same instance of Person, `frederick` points to a different instance.
+In the code below I describe a `Person` class and use a very helpful annotation (`@groovy.`\-`transform.`\-`EqualsAndHashCode`) so that Groovy sets up the approach to determining if two instances of `Person` are the same - such that `==` returns `true`. I've decided that all people will have a unique identifier and, provided two instances have the same identifier, they're the same person. This means that all three variations (`fred`, `freddie`, `frederick`) of the person with the ID `345` are equal (`==`) to each other. However, by using `is` I can see that, whilst `fred` and `freddie` point to the same instance of Person, `frederick` points to a different instance.
 
 {title="Can I see some identification?",lang=Java}
 	@groovy.transform.EqualsAndHashCode(includes="id")
@@ -185,7 +185,7 @@ T>Granted, I could have declared `def add(Number num1, Number num2)` but that wo
 
 I> I won't discuss these two operators to any depth at this point.
 
-The Field operator (`.@`) provides direct access to an object's property (field) rather than using a getter/setter. _Use with a lot of caution or, even better, don't use it at all._
+The Field operator (`.@`) provides direct access to an object's property (field) rather than using a getter/setter. _Use this with a lot of caution or, even better, don't use it at all._
 
 The Method Reference operator (`.&`) returns a reference to an object method. This can be handy when you'd like to use the method as a closure. This is a very useful feature so use it at will!
 

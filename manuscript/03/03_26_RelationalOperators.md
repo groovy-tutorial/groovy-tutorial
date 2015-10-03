@@ -94,4 +94,4 @@ Java's [`Comparable`](http://docs.oracle.com/javase/8/docs/api/index.html) inter
 	assert a != b
 	assert a == c
 
-You'll notice that I've tested `a != b` and `a == c` - these equality operators actually calls the `compareTo` method. There's been a bit of discussion about how Groovy handles `==` and the underlying `equals` and `compareTo` methods so if you're looking to overload these operators it'd be worth your time checking up on [what the Groovy developers are planning](http://blackdragsview.blogspot.fr/2015/02/getting-rid-of-compareto-for.html).
+You'll notice that I've tested `a != b` and `a == c` - these equality operators actually call the `compareTo` method. There's been a bit of discussion about how Groovy handles `==` and the underlying `equals` and `compareTo` methods so if you're looking to overload these operators it'd be worth your time checking up on [what the Groovy developers are planning](http://blackdragsview.blogspot.fr/2015/02/getting-rid-of-compareto-for.html).

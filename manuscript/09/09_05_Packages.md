@@ -13,7 +13,7 @@ We'll start by looking at packages and then move onto directory structures.
 ## Packages
 Code that doesn't specify a package is said to be in the _default_ package. Most of the code we've looked at so far
 has been lacking a specific package and is automatically put into the default package - this is perfectly fine for small applications and scripts.
-However, once you start to build larger codebase you'll want to start breaking you classes, enums, interfaces etc into
+However, once you start to build larger codebase you'll want to start breaking your classes, enums, interfaces etc into
 separate files and collect them into packages.
 
 The generally agreed approach to structuring larger codebases is to:
@@ -79,7 +79,7 @@ Note that I'm actually creating two packages:
 As `Person` isn't in the same package as `Main`, we need to import it using the fully qualified name for the `Person`
 class: `mypackage.Person`.
 
-### Compiling and running
+## Compiling and running
 Now that you have a `Person.groovy` file and a `Main.groovy` file you can run `groovyc Main.groovy Person.groovy`[^short] to
 compile the two files. Once `groovyc` has completed you'll notice the following:
 
@@ -97,6 +97,34 @@ You can run your compiled Groovy classes using Java by doing the following:
 2. Now run `java -cp groovy-all-2.4.4.jar:. mypackage.app.Main`
 
 [^short]: Short form: `groovyc *.groovy`
+
+# Naming your packages
+
+If all Groovy and Java programmers just relied on the default package or `mypackage` it'd be almost impossible to
+share code as it's extremely likely more than one `Person` class would be created. The [package naming convention](http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html) helps to avoid this and there are two key elements to remember:
+
+1. Package names are written in lower-case to avoid clashing with elements such as class names.
+1. It is recommended that a reversed domain name is used as the base package name
+
+The first point is straight-forward so let's explore the second. If you or the company you work for own a domain name,
+you basically just reverse it and then prefix specific package names. For example, as I own the `groovy-tutorial.org`
+domain I should use:[^uscore]
+
+    `org.groovy_tutorial.mypackage`
+
+I would use `org.groovy_tutorial` as the basis and then start with a prefix that reflects a project or library name for
+ which I'm developing (e.g. `org.groovy_tutorial.shapes`). If I didn't own a domain I could have used the name
+ of the site on which my code is hosted:
+
+    com.github.groovy_tutorial.shapes_demo
+
+I'm not pretending to own `github.com` but I've also included the organisation name and project name to ensure uniqueness.
+
+One final point to remember is that your chosen package name needs to be based on something that's not likely to change
+and isn't pinned to a single person. I've seen email addresses used (e.g. `com.gmail.example`) but this isn't the best idea.
+Just take a moment before committing to a package name - you'll thank yourself if the code is still going in five years.
+
+[^uscore]: I've converted the hyphen (`-`) to an underscore (`_`) as package names can't contain a hyphen (and domain names can't contain an underscore).
 
 # Packages and directory structure
 Groovy is very forgiving and I can put all of my code files in a single directory, regardless of which package I say they're
@@ -134,35 +162,6 @@ You'll find the compiled class files in the `classes` directory (as set by the `
 At this point you're probably thinking that having to individually name all of the directories in a large codebase
 is going to be unwieldy and you're absolutely correct. Once you get beyond a few files you'll turn to a build system
 such as [Gradle](http://gradle.org).
-
-## Naming your packages
-
-If all Groovy and Java programmers just relied on the default package or `mypackage` it'd be almost impossible to
-share code as it's extremely likely more that one `Person` class would be created. The [package naming convention](http://docs.oracle.com/javase/tutorial/java/package/namingpkgs.html) helps to avoid this and there are two key elements to remember:
-
-1. Package names are written in lower-case to avoid clashing with elements such as class names.
-1. It is recommended that a reversed domain name is used as the base package name
-
-The first point is straight-forward so let's explore the second. If you or the company you work for own a domain name,
-you basically just reverse it and then prefix specific package names. For example, as I own the `groovy-tutorial.org`
-domain I should use:[^uscore]
-
-    `org.groovy_tutorial.mypackage`
-
-I would use `org.groovy_tutorial` as the basis and then start with a prefix that reflects a project or library name for
- which I'm developing (e.g. `org.groovy_tutorial.shapes`). If I didn't own a domain I could have used the name
- of the site on which my code is hosted:
-
-    com.github.groovy_tutorial.shapes_demo
-
-I'm not pretending to own `github.com` but I've also included the organisation name and project name to ensure uniqueness.
-
-One final point to remember is that your chosen package name needs to be based on something that's not likely to change
-and isn't pinned to a single person. I've seen email addresses used (e.g. `com.gmail.example`) but this isn't the best idea.
-Just take a moment before committing to a package name - you'll thank yourself if the code is still going in five years.
-
-[^uscore]: I've converted the hyphen (`-`) to an underscore (`_`) as package names can't contain a hyphen
-(and domain names can't contain an underscore).
 
 # The Shapes demo - packages
 

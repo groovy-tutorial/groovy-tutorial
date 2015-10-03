@@ -107,6 +107,6 @@ If you would like to browse a subset of the code examples used in this book you'
 
 The "source" for this book is written in Markdown, based on the [LeanPub Manual](https://leanpub.com/help/manual). You can access the source from my [GitHub repository](https://github.com/groovy-tutorial/groovy-tutorial).
 
-I don't provide any warranties, guarantees or certainties[^note]. You should use this text to help you in your Groovy coding but you are responsible for your journey :)
+I don't provide any warranties, guarantees or certainties[^pekignese]. You should use this text to help you in your Groovy coding but you are responsible for your journey :)
 
-[^note]: ... or pekignese
+[^pekignese]: ... or pekignese

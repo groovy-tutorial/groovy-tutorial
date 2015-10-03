@@ -15,7 +15,7 @@ First up, we'll look at how to organise your code before those classes get out o
 [^wp]: See: [Wikipedia: Inheritance (object-oriented programming)](https://en.wikipedia.org/wiki/Inheritance_%28object-oriented_programming%29#Subclasses_and_superclasses)
 
 ## The Shapes demo
-Throughout this section I'll build up an example library for working with two-dimensional shapes. You'll see these in each of the following chapters under the __The shapes demo__ sub-heading and a full listing is available [as an appendix](#chshapesdemo).
+Throughout this section I'll build up an example library for working with two-dimensional shapes. You'll see this in chapters with the __The shapes demo__ prefix and a full listing is available [as an appendix](#chshapesdemo).
 
 As the Shapes demo source code is laid out as a larger project and divided into packages, you won't be able to run it
 via `groovyConsole`.

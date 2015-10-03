@@ -51,8 +51,10 @@ For those that have come from languages such as C++ and Java the script `print "
 
 T> ## Running java
 T> To run the code above we'd need to run the following from the command line:
-T> `> javac Hello.java`
-T> `> java -cp . Hello`
+T>
+T>      javac Hello.java
+T>      java -cp . Hello
+T>
 
 When I look at the code above I see why Groovy is so appealing to me:
 

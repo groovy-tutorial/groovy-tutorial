@@ -68,7 +68,7 @@ T> As we saw in the [Access Modifiers chapter](#chaccessmodifiers), Groovy doesn
 Trait-defined methods are much the same as we saw with classes but the `private` access modifier prevents us from calling a trait's private methods. In the example below, the call to the private `SportingEvent.rigWinner` method (`race.rigWinner()`) will work but the call to the `Running` trait's private method (`race.slow()`) will cause a `groovy.lang.MissingMethodException`:
 
 {lang=Java}
-<<[Private methods](code/09/sport_trait_prop_field.groovy)
+<<[Private methods](code/09/sport_private_method.groovy)
 
 # Trait static members
 As demonstrated in the example below, traits can have static properties, fields and methods:
@@ -83,7 +83,7 @@ As demonstrated in the example below, traits can have static properties, fields 
 Static member support doesn't appear to be "fully baked" at this time so it's a good idea to keep an eye on the [Groovy documentation](http://docs.groovy-lang.org/latest/html/documentation/#_static_methods_properties_and_fields).
 
 # The class-trait relationship
-When a trait is implemented by a class, the relation can be seen as the trait is "folded" into the implementing class. We saw this when we called the `SportingEvents` constructor and could se the `Running` trait's properties. Because of this relationship, traits can refer to `this` to access instance members.
+When a trait is implemented by a class, the relation can be seen as the trait is "folded" into the implementing class. We saw this when we called the `SportingEvents` constructor and could see the `Running` trait's properties. Because of this relationship, traits can refer to `this` to access instance members.
 
 The code below reveals that a trait's class is that of the implementer:
 
@@ -208,12 +208,12 @@ Reviewing the code you'll see:
     * This is calculated via the `getPerimeter()` method (more on this in a moment)
     * Note how the perimeter is calculated only once
 
-Aside from the items listed above, you'll notice two versions of the `propertyMissing` method. This is a special Groovy method that is called when a getter or setter is called on a property that doesn't exist. The `propertyMissing(String name)` is called when code attempts to access (get) a property and `propertyMissing(String name, value)` is called when an attempt is made to mutate (set) a non-existent property. The getter is reasonably straight-forward as it just checks that the requested property name matches the `SIDE_NAME_PATTERN` and, if so, tries to access the property from `sideMap`.
+Aside from the items listed above, you'll notice two versions of the `propertyMissing` method. This is a special Groovy method that is called when a getter or setter is called on a property that doesn't exist. The `propertyMissing(String name)` is called when code attempts to access (get) a non-existent property and `propertyMissing(String name, value)` is called when an attempt is made to mutate (set) a non-existent property. The getter is reasonably straight-forward as it just checks that the requested property name matches the `SIDE_NAME_PATTERN` and, if so, tries to access the property from `sideMap`.
 
 The setter version of `propertyMissing` is a little more complex and, stepping through the method, we can see:
 
 1. The requested property `name` must match `SIDE_NAME_PATTERN`
-2. If the `perimeter` has already been calculated we throw an exception as the set of `sideMap` is locked down once `perimeter` has been set
+2. If the `perimeter` has already been calculated we throw an exception as `sideMap` is locked down once `perimeter` has been set
 3. The `value` for the side (it's length) must be a `Number`
 4. A utility method `ShapeUtil.checkSidesException` is called to ensure that `value > 0` as we don't want negative- or zero-length sides
 5. Once all of those preconditions are met the property can be set

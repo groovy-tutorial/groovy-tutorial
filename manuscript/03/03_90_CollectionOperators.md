@@ -281,7 +281,7 @@ One last example of using the spread operator:
 	buyGroceries(*shoppingList)
 
 
-T>Realistically, the `items` parameter is a list but it proves the point. We'll look into this type of method parameter in the tutorial on methods.
+T> Realistically, the `items` parameter is a list but it proves the point. We'll look into this type of method parameter in in the [VarArgs chapter](#chvarargs).
 
 ### Multiply Operator
 

@@ -42,7 +42,7 @@ Base-10 (decimal) scientific notation ({$$}a * 10^b{/$$}) can also be used by pl
 	def atomicMass = 1.67e-27
 
 
-The next example sets the `au` variable to 1.49597870700 * 10^11 and then checks to make sure I haven't messed up the exponent:
+The next example sets the `au` variable to {$$}1.49597870700 * 10^11{/$$} and then checks to make sure I haven't messed up the exponent:
 
 {title="Just a check",lang=Java}
 	def au = 1.49597870700e11
@@ -54,7 +54,7 @@ In the previous two examples you can see a signed (positive or negative) integer
 * `e-27` is negatively signed
 * `e11` can also be written as `e+11` and is positively signed
 
-W> This tutorial will give you an overview that will cover most types of numbers but if you expect to be handling very large or very small numbers and calculations with such numbers then you really need to do some research to make sure you don't become a victim of truncation (where parts of the number are chopped off) and other issues with precision.
+W> This tutorial will give you an overview that will cover most types of numbers. If you expect to be handling very large or very small numbers, and calculations with such numbers, then you really need to do some research to make sure that you don't become a victim of truncation (where parts of the number are chopped off) and other issues with precision.
 
 
 ## Number Systems

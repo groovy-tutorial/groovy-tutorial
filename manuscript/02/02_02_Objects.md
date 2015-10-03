@@ -5,17 +5,11 @@ I> Groovy is an object-oriented programming language and it's essential to under
 But what is an object? Well, an object is an encapsulation of properties and methods:
 
 * __Properties__ and __Fields__ are variables that hold data about the object
-  * For example, a person object may have properties such as:
-    * `name`
-    * `email`
+  * For example, a person object may have properties such as `name` and `email`
   * There is a difference between Properties and Fields but we'll [look into that later](#chpropertiesfields).
 * __Methods__ are a means for accessing and manipulating the object's properties
-  * For example a person object may have methods such as:
-    * `getName()`
-	* `setName(name)`
-  * Methods can take parameters and/or return values. For example:
-	* `getName()` would return the person's name
-	* `setName(name)` takes 1 parameter (`name`) and sets the person's name to that value
+  * For example a person object may have methods such as `getName()` and `setName(name)`
+  * Methods can take parameters and/or return values. For example: `getName()` would return the person's name; and `setName(name)` takes 1 parameter (`name`) and sets the person's name to that value
   * Methods are sometimes called _functions_
 
 We use the `class` structure to define this assembly of properties and methods.

@@ -86,7 +86,7 @@ In a conditional-or statement, each expression is evaluated in left-to-right ord
 
 ## Conditional Operator
 
-The conditional operator (`?:`) is most commonly used when assigning a value to a variable. A conditional expression is used for the first operand and placed to the left of the question-mark. If this resolves to `true` then the second operand is evaluated, otherwise the third operator is evaluated. This sounds a little confusing so let's look at an example:
+The conditional operator (`?:`) is most commonly used when assigning a value to a variable. A conditional expression is used for the first operand and placed to the left of the question-mark. If this resolves to `true` then the second operand is evaluated, otherwise the third operand is evaluated. This sounds a little confusing so let's look at an example:
 
 {title="A basic tax calculator",lang=Java}
 	def salary = 100000

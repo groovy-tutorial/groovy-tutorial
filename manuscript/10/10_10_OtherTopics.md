@@ -1,4 +1,4 @@
-# Other OO Topics
+# Other Topics
 
 This book can't cover everything but hopefully it's shown you a solid body of Groovy skills that will get you started.
 In this chapter I'll very briefly touch on a few additional items that you may be interested in and give you some links
@@ -72,7 +72,7 @@ Vinay Prajapati's [Compiling groovy code statically](http://www.tothenew.com/blo
 ## Metaprogramming
 
 In the Shapes demo I touched very briefly on metaprogramming when I used the `propertyMissing` method to provide properties
-at runtime. That only touched the surface of what's possible and, by digging deeper you'll discover how to:
+at runtime. That only glanced the surface of what's possible and, by digging deeper you'll discover how to:
 
 * Use the `invokeMethod` and `methodMissing` methods of `groovy.lang.GroovyObject` to let you class provide methods on-the-fly
 * Intercept method calls with `groovy.lang.GroovyInterceptable`

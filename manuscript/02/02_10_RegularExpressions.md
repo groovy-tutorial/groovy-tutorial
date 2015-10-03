@@ -26,7 +26,7 @@ Once stored as a variable, this regular expression can be used in a variety of w
 
 In the code above, `~/https?:\/\/.*/` is the regular expression pattern that's essentially looking for any string starting with `http` or `https`. The `s?` will match 0 or 1 occurrence of `s` in the pattern. You'll notice the odd-looking `\/\/` - I need to escape the forward slashes in `http://` so that Groovy doesn't confuse them with the slashes used to define the regular expression pattern (`~/../`).
 
-We'll also look at the special operators for regular expressions in the next tutorial: Operators.
+We'll also look at the special operators for regular expressions in the [section on Operators](#chops).
 
 Underpinning Groovy's regular expression functionality is the Java class [`java.util.regex.Pattern`](http://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html). Groovy handles the compiling of the pattern and this helps you focus on the struggle of getting the regular expression correct :)
 

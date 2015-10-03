@@ -1,6 +1,6 @@
 # The great beyond
 
-That covers most (not all) of the Groovy syntax. My goal was to introduce you to the "core" syntax of Groovy so that you can start programming with a good working knowledge in the language. From this point I hope you'll find this book and the [Groovy documentation](http://www.groovy-lang.org/documentation.html) an essential companion to your efforts.
+That covers most (not all) of the Groovy syntax. My goal was to introduce you to the "core" syntax of Groovy so that you can start programming with a good working knowledge in the language. From this point I hope you'll find this book and the [Groovy documentation](http://www.groovy-lang.org/documentation.html) to be essential companions in your Groovy programming efforts.
 
 There are further Groovy features you may like to use in your projects:
 

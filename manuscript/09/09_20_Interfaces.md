@@ -94,7 +94,7 @@ Q> By declaring `Map posts = [:]` in the `Member` class, I know that Groovy will
 Q> This will match the `Map getPosts()` signature. I could also do this explicitly and provide an `@Override` but I
 Q> wanted to demonstrate the scenario.
 
-I've provides a full code listing of the example below so that you can take this for a test spin in the groovyConsole:
+I've provided a full code listing of the example below so that you can take this for a test spin in the groovyConsole:
 
 {lang=Java}
 <<[Full code listing plus usage](code/09/social_network.groovy)
@@ -174,7 +174,7 @@ relies on implementing classes to make the link.
 If you focus your interfaces on providing method signatures, your code will be easier to maintain. When you need to define
 constants, consider the following alternatives:
 
-* For enumerated constants, definitely use an [enum]{#chenums}
+* For enumerated constants, definitely use an [enum](#chenums)
 * If the constant is part of a class's logic, declare the constant with the class
 * Consider creating a utility class that defines general constants of use in your program
 
