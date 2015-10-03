@@ -98,7 +98,7 @@ You can run your compiled Groovy classes using Java by doing the following:
 
 [^short]: Short form: `groovyc *.groovy`
 
-## Directory structure
+# Packages and directory structure
 Groovy is very forgiving and I can put all of my code files in a single directory, regardless of which package I say they're
 in. This, however, is poor practice and I should create a directory structure that mirrors my package structure. In the last
 example I had two packages, `mypackage` and the sub-package `mypackage/app` and, when compiled, the following directory structure
@@ -164,7 +164,7 @@ Just take a moment before committing to a package name - you'll thank yourself i
 [^uscore]: I've converted the hyphen (`-`) to an underscore (`_`) as package names can't contain a hyphen
 (and domain names can't contain an underscore).
 
-## The Shapes demo
+# The Shapes demo - packages
 
 You'll find the following packages in the shapes demo source code:
 

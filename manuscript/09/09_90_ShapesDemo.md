@@ -3,6 +3,8 @@
 This chapter consists purely of the code listing for the Shapes demo.
 Please check out the [Shapes demo mini site](http://www.groovy-tutorial.org/shapes-demo/) as it provides the source code and a range of other reports and information.
 
+![The Shapes Demo class diagram](images/ClassDiagram.png)
+
 {pagebreak}
 
 ## `package org.groovy_tutorial.shapes`

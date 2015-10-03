@@ -99,7 +99,7 @@ I've provides a full code listing of the example below so that you can take this
 {lang=Java}
 <<[Full code listing plus usage](code/09/social_network.groovy)
 
-## Referring to objects by their interface
+# Referring to objects by their interface
 An interface defines _functionality_ rather than state. In many cases you just want to interact with a specific
 set of an object's functionality and referring to the interface rather than a specific class can make your code more adaptable.
 Two interfaces, `java.util.Map` and `java.util.List`, come to mind when considering this:
@@ -141,9 +141,9 @@ Obviously, if you want/need to constrain usage to a specific implementation, you
 If the method needed the `storeToXML` functionality of `java.util.Properties` then I'd need to use that instead of
 `java.util.Map` - just take a moment to make sure it's really required.
 
-## General advice
+# General advice for interfaces
 
-### Groovy interfaces don't allow default methods
+## Groovy interfaces don't allow default methods
 
 Java interfaces allow you to provide implementation for a method. Such methods are referred to as "default methods"
 as any implementing class doesn't have to provide their own implementation. This might be helpful when an interface
@@ -153,7 +153,7 @@ classes (and their subclasses).
 
 Groovy's [traits](#chtraits) gives you a neater approach to this.
 
-### The constant interface antipattern
+## The constant interface antipattern
 
 In my earlier examples I omitted the fact that you can declare constants in an interface. At first glance this might
 sound like I've denied a useful piece of functionality but, in reality, the declaration of constants inside an interface
@@ -178,7 +178,7 @@ constants, consider the following alternatives:
 * If the constant is part of a class's logic, declare the constant with the class
 * Consider creating a utility class that defines general constants of use in your program
 
-## The Shapes demo
+# The Shapes demo - Interfaces
 
 One interface is defined within the shapes library: `TwoDimensionalShape`:
 

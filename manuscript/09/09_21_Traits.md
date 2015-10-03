@@ -33,7 +33,7 @@ When it comes to use the `trait` in a class, the `implements` key is used: `clas
 
 At a guess, the `Running` and `Swimming` elements are traits and the `SafetyCheck` element could be a trait or an interface - we'd need to check the source code or `groovydoc`.
 
-## Properties and fields
+# Trait properties and fields
 Traits can also declare properties:
 
 {lang=Java}
@@ -64,13 +64,13 @@ The fully qualified name format is a bit odd but, as we've looked at packages ea
 
 T> As we saw in the [Access Modifiers chapter](#chaccessmodifiers), Groovy doesn't enforce the `private` modifier in traits.
 
-## Methods
+# Trait methods
 Trait-defined methods are much the same as we saw with classes but the `private` access modifier prevents us from calling a trait's private methods. In the example below, the call to the private `SportingEvent.rigWinner` method (`race.rigWinner()`) will work but the call to the `Running` trait's private method (`race.slow()`) will cause a `groovy.lang.MissingMethodException`:
 
 {lang=Java}
 <<[Private methods](code/09/sport_trait_prop_field.groovy)
 
-## Static members
+# Trait static members
 As demonstrated in the example below, traits can have static properties, fields and methods:
 
 {lang=Java}
@@ -82,7 +82,7 @@ As demonstrated in the example below, traits can have static properties, fields 
 
 Static member support doesn't appear to be "fully baked" at this time so it's a good idea to keep an eye on the [Groovy documentation](http://docs.groovy-lang.org/latest/html/documentation/#_static_methods_properties_and_fields).
 
-## The class-trait relationship
+# The class-trait relationship
 When a trait is implemented by a class, the relation can be seen as the trait is "folded" into the implementing class. We saw this when we called the `SportingEvents` constructor and could se the `Running` trait's properties. Because of this relationship, traits can refer to `this` to access instance members.
 
 The code below reveals that a trait's class is that of the implementer:
@@ -122,7 +122,7 @@ By setting `@SelfType(SportingEvent)` we can ensure that Groovy will refuse to c
 
 Just be mindful with this capability - you want to make sure that you aren't coupling your classes and traits too much. Thankfully, `@SelfType` can also be passed an interface, allowing for a more broadly implemented trait.
 
-## Traits and interfaces
+# Traits and interfaces
 As Groovy's interfaces don't support default implementations it may be tempting to favour traits. This isn't a good idea and you should try to describe interactions within your code and with other developers via an API described in interfaces.
 
 Once you've described your interface, a trait can implement the interface in the same manner as classes do, through the use of the `implements` keyword:
@@ -139,7 +139,7 @@ Once you've described your interface, a trait can implement the interface in the
         }
     }
 
-## Implementing multiple traits
+# Implementing multiple traits {#chtraitsmultiple}
 As mentioned earlier, a class can implement more than one trait. This is straight-forward if the traits don't intersect in terms of members (properties/fields/methods), as is the case in the example below:
 
 {title="Simple implementation of two traits",lang=Java}
@@ -190,7 +190,7 @@ Before leaving this topic, there are some things to note about the example:
 1. Use of the `<TraitName>.super.` prefix doesn't have to occur just in cases of a collision - you may just use it to clarify a section of code.
 1. Concepts such as overriding and `super` will be covered more fully in the [chapter on Inheritance](#chinheritance).
 
-## The Shapes demo
+# The Shapes demo - Traits
 
 The `Sides` trait is based on the notion that a two-dimensional shape consists of a set of sides (edges). In most cases there'd be at least 3 sides to a 2D shape (circles being the exception with 1 side) and it's possible to determine a shape's perimeter by adding up the lengths of the sides. In the `Sides` trait I wanted to provide classes with the ability to name each side using a single lower-case letter (e.g. `a`, `b`, `c`) and associate the side's length.
 
