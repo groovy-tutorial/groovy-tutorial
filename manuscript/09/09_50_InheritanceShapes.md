@@ -23,4 +23,4 @@ Q> * A `TriangleSubtype` `interface` might have been a better idea but I felt th
 Q>
 Q> I'm not really happy with `TriangleSubtype` but it helped me demonstrate `@SelfType` and the use of a `trait` to provide a default implementation similar to the functionality available in Java interfaces.
 
-The Shapes demo doesn't declare any abstract classes.
+I> The Shapes demo doesn't declare any abstract classes.

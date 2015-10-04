@@ -41,6 +41,20 @@ Traits can also declare properties:
 
 As you can see in the example above, the `Running` trait's `distance` property essentially becomes a property of the `SportingEvent` class. As for classes, getters and setters are generated for properties but you can supply your own if you need additional functionality.
 
+W> ## Member variables
+W> Trait member variables (fields/properties) cannot use prefix or postfix operators (`++` & `--`) in such a way that they change the value of the variable. You'll need to use the compound assignment operators (`+=` & `-=`) instead.
+W> Attempting the code below will cause a compilation error:
+W> {lang=java}
+W> ~~~~~~~~
+W>    trait Counting {
+W>        Number value = 1
+W>
+W>        def increment() {
+W>            value++
+W>        }
+W>    }
+W> ~~~~~~~~
+
 Fields within traits are somewhat different to those in classes. This can get a bit tricky so let's lay out the example code first:
 
 {lang=Java}
