@@ -6,7 +6,3 @@ myInfo.addPropertyChangeListener { evt ->
 }
 
 myInfo.pet = 'Fido'
-
-myInfo.addPropertyChangeListener { evt ->
-    println "$evt.propertyName was changed: from $evt.oldValue to $evt.newValue"
-}

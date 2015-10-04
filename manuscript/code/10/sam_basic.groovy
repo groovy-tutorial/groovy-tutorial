@@ -5,7 +5,6 @@ interface Command {
 class Invoker {
     private final commands = [ ]
 
-
     void addReceiver(Command command) {
         this.commands << command
     }

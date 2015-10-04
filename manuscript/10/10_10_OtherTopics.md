@@ -4,7 +4,7 @@ This book can't cover everything but hopefully it's shown you a solid body of Gr
 
 ## Type Checking
 
-Groovy doesn't check data types at compile time. Thinking of Groovy as a dynamic language helps you see why this may be the case - variables could be changing types as they move through the system and my code can use approaches such as [duck typing](https://en.wikipedia.org/wiki/Duck_typing) to focus on behaviours rather than tasks. However, you may want to be specific about types and catch incorrect type allocations at compile time.
+Groovy doesn't check data types at compile time. Thinking of Groovy as a dynamic language helps you see why this may be the case - variables could be changing types as they move through the system and my code can use approaches such as [duck typing](https://en.wikipedia.org/wiki/Duck_typing) to focus on behaviours rather than types. However, you may want to be specific about types and catch incorrect type allocations at compile time.
 
 Consider the following code:
 
@@ -50,17 +50,16 @@ and [Type checking extensions](http://docs.groovy-lang.org/latest/html/documenta
 
 ## Static Compilation
 
-The `@groovy.transform.CompileStatic` annotation combines the functionality of `@groovy.transform.TypeChecked` with direct method invocation. Essentially, this removes the need for the Groovy runtime to be involved when using statically compiled classes and methods.
+The `@groovy.transform.CompileStatic` annotation combines the functionality of `@groovy.`\-`transform.`\-`TypeChecked` with direct method invocation. Essentially, this removes the need for the Groovy runtime to be involved when using statically compiled classes and methods.
 
 For more information please refer to the [Static compilation](http://docs.groovy-lang.org/latest/html/documentation/#_static_compilation)
-section in the Groovy documentation. Cédric Champeau's [10 things your static language can’t do](http://melix.github.io/blog/2014/12/10-things-static-cant-do.html) and
-Vinay Prajapati's [Compiling groovy code statically](http://www.tothenew.com/blog/compiling-groovy-code-statically), and the [Java Performance Tuning Guide](http://java-performance.info/static-code-compilation-groovy-2-0/) are also good reads.
+section in the Groovy documentation. [10 things your static language can’t do](http://melix.github.io/blog/2014/12/10-things-static-cant-do.html), [Compiling groovy code statically](http://www.tothenew.com/blog/compiling-groovy-code-statically), and the [Java Performance Tuning Guide](http://java-performance.info/static-code-compilation-groovy-2-0/) are also good reads.
 
 ## Metaprogramming
 
 In the Shapes demo I touched very briefly on metaprogramming when I used the `propertyMissing` method to provide properties at runtime. That only glanced the surface of what's possible and, by digging deeper you'll discover how to:
 
-* Use the `invokeMethod` and `methodMissing` methods of `groovy.lang.GroovyObject` to let you class handle and provide methods on-the-fly
+* Use the `invokeMethod` and `methodMissing` methods of `groovy.lang.GroovyObject` to let your class handle and provide methods on-the-fly
 * Intercept method calls with `groovy.lang.GroovyInterceptable`
 * Access another class's `MetaClass` to add methods
 
@@ -72,14 +71,12 @@ That last item lets you extend the functionality of existing classes - here's a 
     }
 
     Number n = 10
-    println n.addSeven()
-
-    println 20.addSeven()
+    assert 27 == 20.addSeven()
 
 For more information please refer to the [Metaprogramming](http://docs.groovy-lang.org/latest/html/documentation/#_metaprogramming) section in the Groovy documentation.
 
 ## Generics
-Generics allow classes, interfaces or methods to adapt to an instance-specified data type. You most often see generics used with collections such as Lists and Maps. The following uses the diamond notation (`<>`) to indicate that the `nums` list should contain subtypes of `Number`:
+Generics allow classes, interfaces or methods to adapt to an instance-specified data type. You most often see generics used with collections such as Lists and Maps. The following snippet uses the diamond notation (`<>`) to indicate that the `nums` list should contain subtypes of `Number`:
 
     List<Number> nums = [1, 2, 3, 4, 5]
 
@@ -94,8 +91,7 @@ However, Groovy isn't overly respectful of generics and the following also works
         List<Number> nums = [1, 2, 3, 4, 'rabbit']
     }
 
-The Java Tutorial features a [section on Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html) and
-there's a [Generics in Java](https://en.wikipedia.org/wiki/Generics_in_Java) article in Wikipedia.
+The Java Tutorial features a [section on Generics](https://docs.oracle.com/javase/tutorial/java/generics/index.html) and there's a [Generics in Java](https://en.wikipedia.org/wiki/Generics_in_Java) article in Wikipedia.
 
 ## Inner Classes
 Inner classes are classes that are declared within another class. Often used to improve encapsulation, you can
@@ -138,12 +134,12 @@ The Groovy documentation covers [inner classes](http://docs.groovy-lang.org/late
 
 ## Single abstract methods
 
-A number of classes related to responding to an event or triggering the execution of a command implement an interface with a Single Abstract Method (SAM). Such interfaces have one method signature defined and this is usually focused on handling an event raised by an invoking class. A common example is a class such as a `Button` that handles user events such as a mouse click - the `Button` doesn't necessarily know what you need it to do and it concerns itself more with presentation in the user interface.
+A number of classes related to responding to an event implement an interface with a Single Abstract Method (SAM). Such interfaces have one method signature defined and this is usually focused on handling an event raised by an invoking class. A common example is a class such as a `Button` that handles user events such as a mouse click - the `Button` doesn't necessarily know what you need it to do and it concerns itself more with presentation in the user interface.
 
 Traditionally, Java developers would use what's called an [anonymous class](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html). These are just written to handle the event but, as a class, aren't useful as a more generic member of the codebase. This book hasn't delved into them but Groovy supports anonymous classes and the example below will give you an indication of what one looks like:
 
 {lang=Java}
-<<[An anonymous class as a SAM](code/10/sam_object.groovy)
+<<[An anonymous class as a SAM](code/10/sam_obj.groovy)
 
 In the example above you'll see that the `window.addReceiver` method is passed an interesting piece of syntac in `new Command() {...}`. An anonymous class is declared with the `new` keyword being invoked on an existing interface or class that the anonymous class will extend and then the body of the class is provided. For SAM interfaces this is usually what you can see in the example - a single-method anonymous class. As soon as you get an even moderately functional user interface you'll start to see anonymous classes everywhere.
 
@@ -156,7 +152,7 @@ In the code above, Groovy transparently coerces the closure to the correct inter
 
     window.addReceiver { println "I just received a '$it' event" } as Command
 
-The Groovy documentation has [a section on SAMs](http://docs.groovy-lang.org/latest/html/documentation/#closure-coercion) and Wikipedia describes the [Command Pattern](https://en.wikipedia.org/wiki/Command_pattern#Terminology) on which
+The Groovy documentation has [a section on SAMs](http://docs.groovy-lang.org/latest/html/documentation/#closure-coercion) and Wikipedia describes the [Command Pattern](https://en.wikipedia.org/wiki/Command_pattern#Terminology) on which this model of interaction is based.
 
 ### Observable Maps
 
