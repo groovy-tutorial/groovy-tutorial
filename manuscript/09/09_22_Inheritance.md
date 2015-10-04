@@ -43,7 +43,7 @@ Single and multiple inheritance
 
 : Multiple inheritance can suffer from the [diamond problem](https://en.wikipedia.org/wiki/Multiple_inheritance#The_diamond_problem) in which the multiple paths through which subtyping occurs can make it difficult to determine the origin of an overridden method.
 
-: Groovy's class subtyping, being based in single inheritance, doesn't suffer from this problem as there is only one path back through the hierarchy.
+: Groovy's class inheritance, being based in single inheritance, doesn't suffer from this problem as there is only one path back through the hierarchy.
 
 : However, Groovy classes can implement multiple traits and this can lead to the same problems encountered in multiple inheritance. The two approaches to resolving this (manual- or automatic-resolution) were discussed in [the chapter on Traits](#chtraitsmultiple).
 
@@ -65,7 +65,7 @@ Implementation inheritance or interface inheritance
 
 : Aim to use interface inheritance heavily and implementation inheritance sparingly.
 
-Leaky abstraction
+Leaky implementation/abstraction
 
 : Inheritance may help in terms of code-reuse but it's important to make sure that a class correctly encapsulates the desired concepts and doesn't suffer from implementation leakage. As a superclass gets more complex or the subtype hierarchy gets deeper, implementations from higher-level supertypes start to build up and the lower-level subclasses end up with a large number of methods that may have no utility to that class. This will also blow out the number of tests you'll need.
 
@@ -77,7 +77,7 @@ Composition
 
 : Sometimes human language leads us astray and the notion of a `StudentClassList` makes us think that such a class could `extend` an existing `List` implementation. However, it's likely that `StudentClassList` really just needs a `List` as a member variable and will provide a set of methods to manage the business logic around the list.
 
-: It is often safer to use composition instead of inheritance if you're considering creating a subtype for a class in a package that you don't have control over. Whilst parts of your class might just be a _wrapper class_ brokering the interaction between its interface and the member variable, this is very useful if the other class changes.
+: It is often safer to use composition instead of inheritance if you're considering creating a subclassing a class in a package that you don't have control over. Whilst your class might just be a _wrapper class_ brokering the interaction between its interface and the member variable, this is very useful if the other class changes.
 
 : It can be tempting to use implementation inheritance to "pass down" useful instance methods. Where this occurs it's likely to be more useful take the composition approach or consider providing such methods as `static`, especially if the method logic is broadly useful.
 

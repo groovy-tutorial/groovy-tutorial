@@ -1,6 +1,6 @@
 # Subclassing
 
-As we saw in [the previous chapter](#chinheritance), the `extends` keyword announces that a class is a subtype of another:
+As we saw in [the previous chapter](#chinheritance), the `extends` keyword announces that a class is a subclass of another:
 
 {lang=Java}
     class Person {}
@@ -48,7 +48,7 @@ The script will output:
 * The `@Override` annotation signals that the `toString` method provided in `SuperHero` is overriding a method defined by the superclass.
     * This is a helpful annotation as Groovy will throw a compilation error if no pre-defined method signature exists - for example, if I mistyped the method as `tooString`.
     * In fact I could have used the `@Override` annotation in the `Person` class as well because `toString` is a method defined in `java.lang.Object`, the superclass for all Groovy classes.
-* The `SuperHero` implementation of `toString` includes the call to `super.toString()`. The `super` keyword allows subclasses to access the superclass's methods and member variables (properties and fields) [^multitraits]
+* The `SuperHero` implementation of `toString` includes the call to `super.toString()`. The `super` keyword allows subclasses to specifically access the superclass's methods and member variables (properties and fields) [^multitraits]
 
 [^multitraits]: We also saw `super` in [the chapter on traits](#chtraitsmultiple) when considering a trait that implements other traits.
 
@@ -56,6 +56,7 @@ T> ## The importance of `java.lang.Object`
 T> All classes extend from `java.lang.Object` - this is implied even when your class doesn't explicitly declare a superclass. Groovy objects also implement the `groovy.lang.GroovyObject` interface.
 T>
 T> You could check this by running the following code:
+T>
 T> {lang="java"}
 T> ~~~~~~~~~~~~~~~
 T>    class TestClass {}
@@ -72,7 +73,7 @@ The call to `super(name)` invokes a call to the `Person(String name)` constructo
 
 ## Type comparison
 
-The `in` operator[^inopref] makes it possible to determine if class `extends` another class or `implements` an interface or a trait. The example below demonstrates a set of checks against the `SuperHero` class
+The `in` operator[^inopref] makes it possible to determine if one class `extends` another class or `implements` an interface or a trait. The example below demonstrates a set of checks against the `SuperHero` class
 
 {lang=Java}
     class Person {}

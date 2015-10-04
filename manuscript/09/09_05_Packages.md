@@ -1,6 +1,6 @@
 # Organising your code {#chorganising}
 
-When you start getting into writing larger code bases you'll need to think about how to organise your code. You don't have to do this
+When you start writing larger code bases you'll need to think about how to organise your code. You don't have to do this
 if you're using Groovy to write scripts that can fit into a reasonable file size (say, 400 lines) but really large files
 can become difficult to scroll through and debug. There are two complementary tactics you can use when working with larger
 bodies of code:
@@ -80,8 +80,11 @@ As `Person` isn't in the same package as `Main`, we need to import it using the 
 class: `mypackage.Person`.
 
 ## Compiling and running
-Now that you have a `Person.groovy` file and a `Main.groovy` file you can run `groovyc Main.groovy Person.groovy`[^short] to
-compile the two files. Once `groovyc` has completed you'll notice the following:
+Now that you have a `Person.groovy` file and a `Main.groovy` file you can run
+
+    groovyc Main.groovy Person.groovy
+
+to compile the two files[^short]. Once `groovyc` has completed you'll notice the following:
 
 1. A `mypackage` subdirectory has been created and contains `Person.class`
 1. A `mypackage/app` subdirectory has been created and contains `Main.class`
@@ -110,7 +113,7 @@ The first point is straight-forward so let's explore the second. If you or the c
 you basically just reverse it and then prefix specific package names. For example, as I own the `groovy-tutorial.org`
 domain I should use:[^uscore]
 
-    `org.groovy_tutorial.mypackage`
+    org.groovy_tutorial.mypackage
 
 I would use `org.groovy_tutorial` as the basis and then start with a prefix that reflects a project or library name for
  which I'm developing (e.g. `org.groovy_tutorial.shapes`). If I didn't own a domain I could have used the name

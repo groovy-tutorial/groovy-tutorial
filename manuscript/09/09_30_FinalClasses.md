@@ -2,7 +2,7 @@
 
 I> The `final` modifier was discussed in the chapter on [Final Variables](#chfinal) in reference to establishing class and instance constants.
 
-A class is marked with the `final` modifier cannot be extended (subclassed) by another class. In the example below we draw a line at `SuperHero` and the attempt to create a `SuperSuperHero` will cause a compilation error:
+A class marked with the `final` modifier cannot be extended (subclassed) by another class. In the example below we draw a line at `SuperHero` and the attempt to create a `SuperSuperHero` will cause a compilation error:
 
 {lang=Java}
 <<[Classes marked `final` cannot be extended](code/09/final_class.groovy)

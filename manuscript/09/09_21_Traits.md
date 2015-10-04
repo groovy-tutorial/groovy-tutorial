@@ -44,6 +44,7 @@ As you can see in the example above, the `Running` trait's `distance` property e
 W> ## Member variables
 W> Trait member variables (fields/properties) cannot use prefix or postfix operators (`++` & `--`) in such a way that they change the value of the variable. You'll need to use the compound assignment operators (`+=` & `-=`) instead.
 W> Attempting the code below will cause a compilation error:
+W>
 W> {lang=java}
 W> ~~~~~~~~
 W>    trait Counting {
@@ -76,7 +77,7 @@ The fully qualified name format is a bit odd but, as we've looked at packages ea
     * If `Running` was declared in the `events.track` package: `events_track_Running__raceType`
     * and so on...
 
-T> As we saw in the [Access Modifiers chapter](#chaccessmodifiers), Groovy doesn't enforce the `private` modifier in traits.
+T> Just as we saw in the [Access Modifiers chapter](#chaccessmodifiers), Groovy doesn't enforce the `private` modifier trait fields.
 
 # Trait methods
 Trait-defined methods are much the same as we saw with classes but the `private` access modifier prevents us from calling a trait's private methods. In the example below, the call to the private `SportingEvent.rigWinner` method (`race.rigWinner()`) will work but the call to the `Running` trait's private method (`race.slow()`) will cause a `groovy.lang.MissingMethodException`:
@@ -125,7 +126,7 @@ That last example could have been rewritten such that the `getAdvert()` method i
 
 This works fine as `SportingEvent` has a `name` property but there's nothing enforcing this and you're exposed to the risk of a `groovy.lang.MissingPropertyException` being raised at runtime if the method/property/field can't be found.
 
-The `@groovy.transform.SelfType` annotation is used if a trait needs to be tied to a specific implementing class. The example below demonstrates the `Running` trait annotated with `@SelfType(SportingEvent)`, indicating that the trait should only by implemented by `SportingEvent` (or one of its subtypes):
+The `@groovy.transform.SelfType` annotation is used if a trait needs to be tied to a specific implementing class. The example below demonstrates the `Running` trait annotated with `@SelfType(SportingEvent)`, indicating that the trait should only by implemented by `SportingEvent` (or one of its subclasses):
 
 {lang=Java}
 <<[The `@SelfType` annotation](code/09/sport_selftype.groovy)
@@ -254,4 +255,4 @@ The `Rectangle` constructor also calls `this.perimeter` so as to calculate the p
 
 I> The `Circle` class could have implemented the `Sides` trait but I left this out so as to specifically demonstrate a `class` implementing an `interface`.
 
-[^clone]: Cloning was mentioned briefly [in the last section](#secclone)
+[^clone]: Cloning was [mentioned previously](#secclone)

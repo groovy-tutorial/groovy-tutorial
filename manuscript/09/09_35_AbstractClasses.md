@@ -7,7 +7,7 @@ When a class is marked with the `abstract` modifier it cannot be instantiated. T
 
     def myObj = new Thing()
 
-The main reason you would create an `abstract` class is to establish a base class for a number of subclasses. This is somewhat similar to an interface as abstract classes usually also define one or more method signatures that need to be implemented. Unlike interfaces though, abstract classes can provide a mix of method signatures and method implementations.
+The main reason you would create an `abstract` class is to establish a base class for a number of subclasses. This is somewhat similar to an interface as abstract classes usually also define one or more method signatures that need to be implemented. Unlike interfaces, abstract classes can provide a mix of method signatures and method implementations.
 
 T> ## Concrete classes
 T> Classes providing the implementation of an abstract class or an interface are often referred to as "concrete" classes. These implementation classes often bear the same name as the abstract class/interface but add the suffix `Impl` or just `I`. For example, my concrete implementation of `Thing` could be called `ThingImpl` - it's purely a naming strategy and up for debate.

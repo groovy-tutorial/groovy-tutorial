@@ -132,7 +132,7 @@ Whilst handy for variable declaration, referring to interfaces when defining met
 
     displayKeys myMap
 
-So it's a rather useless example but the point is that the `displayKeys` method can accept any value for parameter `m`,
+It's a rather useless example but the point is that the `displayKeys` method can accept any value for parameter `m`,
 provided `m` is an instance of a class that implements the `Map` interface. If I'd been specific and written the method
 signature as `def displayKeys(LinkedHashMap m)`, my method has a far narrower field of usage. As I'm just using the `Map`
 interface's `keySet` method, I don't really need to limit the possible values for `m`.
@@ -193,8 +193,7 @@ Within the interface is the following method signatures:
 * `String getDisplayInfo()`: is used to prepare a handy description of the shape
 * `String getShapeName()`: returns the name of the shape (e.g. square or circle)
 
-As mentioned earlier in this chapter, each method signature is listed without a definition block (`{...}`).
-It is up to the implementing class(es) to provide the "body" of the definition and the `Circle` class does just that:
+Each method signature is listed without a definition block (`{...}`) and it is up to the implementing class(es) to provide the "body" of the definition. The `Circle` class does just that:
 
 {lang=Java}
 <<[The `Circle` class](code/09/shapes-demo/src/main/groovy/org/groovy_tutorial/shapes/Circle.groovy)

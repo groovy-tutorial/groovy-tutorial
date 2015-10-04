@@ -6,10 +6,10 @@ The class hierachy for the Shapes demo is provided below:
 
 Inheritance is used in a number of places:
 
-* The `Square` class is a subtype of `Rectangle` as squares are a special type of rectangle in which all four sides have the same length.
+* The `Square` class is a subclass of `Rectangle` as squares are a special type of rectangle in which all four sides have the same length.
     * `Square` doesn't need to do much over the already provided `Rectangle` class
 * The `Triangle` class is extended by two subtypes: `TriangleRightAngled` and `TriangleIsosceles`
-    * `TriangleEquilateral` is a subtype of `TriangleIsosceles`
+    * `TriangleEquilateral` is a subclass of `TriangleIsosceles`
 
 The three `Triangle` subtypes encapsulate specific refinements such as the definition of the sides and refinement of the `calculateArea` calculation. By making `calculateArea` a `static` method, each subtype makes the calculation easily available to other code as well as tying the `calculateArea` instance method to the static method.
 
