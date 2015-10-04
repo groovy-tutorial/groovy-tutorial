@@ -53,7 +53,7 @@ and [Type checking extensions](http://docs.groovy-lang.org/latest/html/documenta
 The `@groovy.transform.CompileStatic` annotation combines the functionality of `@groovy.`\-`transform.`\-`TypeChecked` with direct method invocation. Essentially, this removes the need for the Groovy runtime to be involved when using statically compiled classes and methods.
 
 For more information please refer to the [Static compilation](http://docs.groovy-lang.org/latest/html/documentation/#_static_compilation)
-section in the Groovy documentation. [10 things your static language can’t do](http://melix.github.io/blog/2014/12/10-things-static-cant-do.html), [Compiling groovy code statically](http://www.tothenew.com/blog/compiling-groovy-code-statically), and the [Java Performance Tuning Guide](http://java-performance.info/static-code-compilation-groovy-2-0/) are also good reads.
+section in the Groovy documentation. [10 things your static language can't do](http://melix.github.io/blog/2014/12/10-things-static-cant-do.html), [Compiling groovy code statically](http://www.tothenew.com/blog/compiling-groovy-code-statically), and the [Java Performance Tuning Guide](http://java-performance.info/static-code-compilation-groovy-2-0/) are also good reads.
 
 ## Metaprogramming
 
@@ -134,14 +134,14 @@ The Groovy documentation covers [inner classes](http://docs.groovy-lang.org/late
 
 ## Single abstract methods
 
-A number of classes related to responding to an event implement an interface with a Single Abstract Method (SAM). Such interfaces have one method signature defined and this is usually focused on handling an event raised by an invoking class. A common example is a class such as a `Button` that handles user events such as a mouse click - the `Button` doesn't necessarily know what you need it to do and it concerns itself more with presentation in the user interface.
+A number of classes related to responding to events implement an interface with a Single Abstract Method (SAM). Such interfaces have one method signature defined and this is usually focused on handling an event raised by an invoking class. A common example is a class such as a `Button` that handles user events such as a mouse click - the `Button` doesn't necessarily know what you need it to do and it concerns itself more with presentation in the user interface.
 
 Traditionally, Java developers would use what's called an [anonymous class](https://docs.oracle.com/javase/tutorial/java/javaOO/anonymousclasses.html). These are just written to handle the event but, as a class, aren't useful as a more generic member of the codebase. This book hasn't delved into them but Groovy supports anonymous classes and the example below will give you an indication of what one looks like:
 
 {lang=Java}
 <<[An anonymous class as a SAM](code/10/sam_obj.groovy)
 
-In the example above you'll see that the `window.addReceiver` method is passed an interesting piece of syntac in `new Command() {...}`. An anonymous class is declared with the `new` keyword being invoked on an existing interface or class that the anonymous class will extend and then the body of the class is provided. For SAM interfaces this is usually what you can see in the example - a single-method anonymous class. As soon as you get an even moderately functional user interface you'll start to see anonymous classes everywhere.
+In the example above you'll see that the `window.addReceiver` method is passed an interesting piece of syntax in `new Command() {...}`. An anonymous class is declared with the `new` keyword being invoked on an existing interface or class that the anonymous class will extend and then the body of the class is provided. For SAM interfaces this is usually what you can see in the example - a single-method anonymous class. As soon as you get an even moderately functional user interface you'll start to see anonymous classes everywhere.
 
 Luckily, Groovy allows you to use a closure _instead_ of an anonymous class for SAM interfaces and this helps unclutter the code:
 
