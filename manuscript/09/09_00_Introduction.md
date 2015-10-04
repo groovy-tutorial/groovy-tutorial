@@ -8,7 +8,7 @@ extensible codebase:
 * Interfaces: define a set of method signatures that are then implemented by a class (or classes).
 * Traits: add abilities to a class
 * Inheritance: Allows a class to inherit the functionality of another class and extend it.
-    * When ClassA inherits from ClassB, we say that ClassA is a _subclass_ of ClassB and that ClassB is a _superclass_ of ClassA[^wp].
+    * When `ChildClass` inherits from `ParentClass`, we say that `ChildClass` is a _subclass_ of `ParentClass` and that `ParentClass` is a _superclass_ of `ChildClass`[^wp].
 
 First up, we'll look at how to organise your code before those classes get out of hand.
 

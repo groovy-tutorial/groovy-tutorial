@@ -180,4 +180,4 @@ T> It's worth having a quick read of Wikipedia's article on [object copying](htt
 
 ## Final classes and methods
 The `final` modifier can also be used against `class` and method declarations. We'll look into this in the
-[chapter on inheritance](#chinheritance)
+[chapter on Final Classes](#chinheritancefinal)

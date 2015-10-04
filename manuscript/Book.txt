@@ -93,6 +93,11 @@ mainmatter.txt
 ./09/09_20_Interfaces.md
 ./09/09_21_Traits.md
 ./09/09_22_Inheritance.md
+./09/09_25_Subclassing.md
+./09/09_30_FinalClasses.md
+./09/09_35_AbstractClasses.md
+./09/09_40_Composition.md
+./09/09_50_InheritanceShapes.md
 ./10/10_00_Introduction.md
 ./10/10_10_OtherTopics.md
 ./10/10_11_GreatBeyond.md

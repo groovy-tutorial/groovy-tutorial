@@ -26,5 +26,5 @@ class BizarroSuperHero extends SuperHero {
 
 def batBoy = new BizarroSuperHero(name: 'Bryce Rain')
 
-println batBoy.discoverName()
-println batBoy.discoverName(true)
+assert batBoy.discoverName() == 'Unknown'
+assert batBoy.discoverName(true) == 'Bryce Rain'
