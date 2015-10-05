@@ -38,7 +38,7 @@ try {
 
 //This will fail with java.lang.UnsupportedOperationException
 try {
-    report.records << new Record('Record Z', 'You just go hacked')
+    report.records << new Record('Record Z', 'You just got hacked')
 } catch (UnsupportedOperationException e) {
     println 'Sorry, you can\'t add a record to a final report'
 }

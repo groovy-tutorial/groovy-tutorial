@@ -24,7 +24,7 @@ We don't have to set all of the properties, just the ones we need:
     def astrid = new Person(name: 'Astrid Smithson', email: 'astrid@example.com')
 
 T> ## This looks like a method call
-T> You're absolutely correct - `new Person()` calls a special type of method called a constructor. We'll cover these in the next chapter: [Constructors](#chconstructors). For now, know that Groovy provides this method for you.
+T> You're absolutely correct - `new Person()` calls a special type of method called a constructor. We'll cover these in the [Constructors](#chconstructors) chapter. For now, know that Groovy provides this method for you.
 
 ### Viewing an object's properties/fields
 If you try to use `println` to display the details for `astrid` you'll get something like `Person@46423706`. It's not very useful - just the type of the Object and an identifier. If you want to find out the field values, call the `dump` method that all objects inherit from `Object`:

@@ -18,12 +18,15 @@ objects and you can override it but you can also just use the `ToString` annotat
 
 T> Instead of using the full library path with `@groovy.transform.ToString` you can use the `import` keyword:
 T>
+T> {lang=java}
+T> ~~~~~~~~
 T>  import groovy.transform.ToString
 T>
 T>  @ToString
 T>  class Person {
 T>  	//...
 T>  }
+T> ~~~~~~~~
 
 `ToString` takes a few options:
 

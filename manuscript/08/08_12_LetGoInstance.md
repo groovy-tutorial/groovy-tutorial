@@ -16,6 +16,6 @@ There is an important caveat: if multiple variables refer to the same data then 
 I've defined a variable (`shakespeare`) to hold a new instance of the `SampleText` class and then said that another variable (`marlow`) points to that instance of `SampleText`. My call to `marlow.text` will still work despite my setting `shakespeare` to `null`. In this case we say that "`marlow` still holds a reference to the `SampleText` instance". This means that the JVM can't release the resources held by the instance until all references are set to `null`. I need to set `marlow` to `null` to completely release the resources.
 
 T> ## Keeping track of references
-T> Building up unused references to data is how a program will use up all of your JVM's memory and slowing everything to a crawl over time. When you have variables or collections of variables (such as lists) that you keep and add to over a long period of time you need to make sure you clean up what you don't need.
+T> Building up unused references to data is how a program will use up all of your JVM's memory and slow everything to a crawl over time. When you have variables or collections of variables (such as lists) that you keep and add to over a long period of time you need to make sure you clean up what you don't need.
 
 There's a lot more to garbage collection than I want to cover here but if you spend a few moments searching "Java Garbage Collection" you'll be able to delve deep into the topic.

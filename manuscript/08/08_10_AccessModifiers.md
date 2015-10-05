@@ -1,5 +1,5 @@
 # Access Modifiers {#chaccessmodifiers}
-Classes are used to embody an abstraction of some real or virtual entity. You can probably guess what a `BankAccount` or a `EmailMessage` class embodies. In some cases we might be happy for other code to change a value held in a class instance or to run a method. However, in the case of a `BankAccount` class we are likely to need some sort of _information hiding_ that moderates what other code is allowed to do:
+Classes are used to embody an abstraction of some real or virtual entity. You can probably guess what a `BankAccount` or an `EmailMessage` class embodies. In some cases we might be happy for other code to change a value held in a class instance or to run a method. However, in the case of a `BankAccount` class we are likely to need some sort of _information hiding_ that moderates what other code is allowed to do:
 
 * The `balance` field shouldn't be directly accessible. Rather, two methods `deposit` and `withdrawal` have to be used.
 * The `withdrawal` method should not allow you take take out more money than the current balance.
@@ -19,7 +19,7 @@ Two things to keep in mind:
     * `private balance = 0` is preferred over `private def balance = 0`
     * Similarly for methods: `private applyAccountCharges() {...}` rather than `private def applyAccountCharges() {...}`
 
-For our `BankAccount` class we can make the `deposit` field `private`:
+For our `BankAccount` class we can make the `balance` field `private`:
 
 {lang=Java}
 <<[A basic BankAccount with information hiding](code/08/10/bank_account.groovy)
@@ -36,7 +36,7 @@ I'm usually pretty happy with the Python approach but if it was really a concern
 {lang=Java}
 <<[A basic BankAccount with tighter control](code/08/10/bank_account2.groovy)
 
-Groovy generates setters and getters for fields (such as `balance`) and properties. In the case of the `balance` field, the setter method named `setBalance` is actually called when I do something like `acct.balance = 1_000_000`. Knowing this, I overrode the setter Groovy would have created with my own version that does nothing and I also used the `private` modifier. This does two things:
+Groovy generates setters and getters for _properties_ but I need provide them for _fields_. In the case of the `balance` field, the setter method named `setBalance` is actually called when I do something like `acct.balance = 1_000_000`. Knowing this, I overrode the setter Groovy would have created with my own version that does nothing and I also used the `private` modifier. This does two things:
 
 1. The `private` modifier reinforces to other developers that they should not try to directly change the value of `balance`
 2. If the other developers just don't listen then I ignore their attempt to change the `balance`.

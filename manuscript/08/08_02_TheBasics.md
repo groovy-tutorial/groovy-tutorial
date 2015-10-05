@@ -3,7 +3,9 @@
 This chapter will provide a whirlwind tour of the various object oriented programming concepts supported by Groovy.
 
 ## Classes
-Object-oriented programmers use *classes* to classify objects. As such, a class defines the fields (properties) and methods of an object.
+Object-oriented programmers use *classes* to classify objects. As such, a class defines the properties (fields)[^fieldprop] and methods of an object.
+
+[^fieldprop]: At this stage I'll use 'field' and 'property' interchageably - there is a difference but I'll discuss this soon.
 
 In Groovy the `class` keyword if used when declaring a new class:
 
@@ -12,9 +14,9 @@ In Groovy the `class` keyword if used when declaring a new class:
 T> ## Classes are types
 T> The definition of the `Person` class now provides the programmer with an new reference type.
 
-Objects consist of fields (data) and methods for interacting with that data. For example, the code below describes a `Person` class with a `name` field and a `getName` method:
+Objects consist of properties (data) and methods for interacting with that data. For example, the code below describes a `Person` class with a `name` property and a `getName` method:
 
-{title="A basic class with a field and a method",lang=Java}
+{title="A basic class with a property and a method",lang=Java}
 	class Person {
 	    def name
 
@@ -40,11 +42,11 @@ I> Groovy lets you hide fields and methods from other classes through the use of
 
 ### Instance and Class Elements
 
-In the `getName` method you'll notice the keyword `this` is used. You can translate `this` to mean "this instance". Groovy supports instance fields and methods - those operating on a specific instance of the class. This means that your code isolates one instance from another and prevents you from inadvertently altering instances.
+In the `getName` method you'll notice the keyword `this` is used. You can translate `this` to mean "this instance". Groovy supports instance properties and methods - those operating on a specific instance of the class. This means that your code isolates one instance from another and prevents you from inadvertently altering instances.
 
-Static fields and methods are also supported - these apply at a class level. By preceding a field or a method with the keyword `static` we indicate that it is relevant to all instances of the class. In the example below I set the `specie` field to be static and this means I access it at the class level by referring to `Person.specie`.
+Static fields/properties and methods are also supported - these apply at a class level. By preceding a field or a method with the keyword `static` we indicate that it is relevant to all instances of the class. In the example below I set the `specie` field to be static and this means I access it at the class level by referring to `Person.specie`.
 
-{title="Class fields use the `static` keyword",lang=Java}
+{title="Class properties use the `static` keyword",lang=Java}
 	class Person {
 	    static specie = 'homo sapien'
 	    def name
@@ -105,8 +107,7 @@ In the code below, `StaffMember` is a subclass of `Person`. This allows `StaffMe
 Unlike interfaces, superclasses can provide implemented methods and fields that subclasses can utilise. However, Superclasses can work somewhat like interfaces and their methods can be declared as `abstract` to force subclasses to provide their own implementation.
 
 T> ## Multiple inheritance is not supported
-T> Unlike some other OO languages (e.g. C++), Groovy does not support multiple inheritance. This means that a class cannot extend more than one superclass. However, Groovy classes can implement more than one interface.
-T> Groovy does support classes implementing multiple interfaces and traits.
+T> Unlike some other OO languages (e.g. C++), Groovy does not support multiple inheritance. This means that a class cannot extend more than one superclass. However, Groovy does support classes implementing multiple interfaces and traits.
 
 ### Overriding methods
 Subclasses can also override methods and fields implemented by superclasses. This lets subclasses provide more contextual implementations if needed. A subclass can refer directly to superclass fields and methods by using the `super` keyword.

@@ -32,5 +32,5 @@ FinalReport report = new FinalReport(recordSet)
 report.records[1].text = 'REDACTED'
 println report.records[1]
 
-report.records << new Record('Record Z', 'You just go hacked')
+report.records << new Record('Record Z', 'You just got hacked')
 println report

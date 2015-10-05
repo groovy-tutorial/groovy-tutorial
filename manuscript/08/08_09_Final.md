@@ -3,7 +3,7 @@
 I> Don't go changing to try and please me (_Just the way you are, Billy Joel_)
 
 The `final` modifier can be prefixed to a class- or instance-variable declaration so as to declare it to be immutable (something that doesn't change).
-Once set, any attempt to change the value will result in `groovy.lang.ReadOnlyPropertyException` but you have to be
+Once set, any attempt to change the value will result in a `groovy.lang.`\-`ReadOnlyPropertyException` but you have to be
 mindful of a few gotchas, especially with collections and objects - we'll cover these shortly.
 
 First up, let's look at the `final` modifier in action:
