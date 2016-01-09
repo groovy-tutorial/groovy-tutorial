@@ -47,4 +47,4 @@ In the example below I use `with` to perform a set of operations on an instance 
 This approach can be really useful when creating an object. In the snippet below I create a new `Person` and set up their details at the same time:
 
 {lang=Java}
-<<[Using `with` at instantiation time](code/07/07/with.groovy)
+<<[Using `with` at instantiation time](code/07/07/with_constructor.groovy)

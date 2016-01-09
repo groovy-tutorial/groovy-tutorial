@@ -26,7 +26,7 @@ Instead of declaring `score` and then assigning it the value `10` I can do this 
 
 You'll note that the second time I use `score` I don't need the `def` prefix as I've already declared `score` and don't need to redeclare it.
 
-I> When writing a Groovy script (such as in the Groovy Console) you may notice that you don't need to explicitly declare a variable before using it - this is due to how scripts are run by Groovy. The [Groovy documentation](http://docs.groovy-lang.org/latest/html/documentation/index.html#_variables) provides more detail as to how/why this is. 
+I> When writing a Groovy script (such as in the Groovy Console) you may notice that you don't need to explicitly declare a variable before using it - this is due to how scripts are run by Groovy. The [Groovy documentation](http://docs.groovy-lang.org/latest/html/documentation/index.html#_variables) provides more detail as to how/why this is.
 
 If we're declaring a number of variables we could provide a `def` on each line:
 
