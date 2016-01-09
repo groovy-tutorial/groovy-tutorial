@@ -19,7 +19,7 @@ First of all I'll create a very basic class to describe an address book Contact.
 	    def name
 	    def phone
 
-	    def final call = { message ->
+	    final call = { message ->
 	        println "Calling ${this.name} on ${this.phone} with the message: '$message'"
 	    }
 	}
