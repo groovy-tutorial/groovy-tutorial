@@ -84,6 +84,13 @@ Some code doesn't feature a title and is presented so as to be more aligned with
 
 I've opted not to display line numbers with code as it makes copy and paste difficult.
 
+The book formatting/layout process can cause code to be broken over to another line. In these cases a backslash (`\`) is added at the end of the first line:
+
+    def x = 10 \
+    + 1
+
+Unfortunately this syntax isn't always Groovy-compliant and can cause the code to fail. If a code listing doesn't seem to work your best bet is to remove the backslash and newline.
+
 ### Asides
 
 I use a variety of asides to note information. These appear with an icon and some text and, on most occasions, feature a title.
