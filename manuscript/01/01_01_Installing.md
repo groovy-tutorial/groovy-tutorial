@@ -16,7 +16,7 @@ W> It is notoriously difficult to provide this type of information in a stable m
 
 I know this chapter is about installing Groovy but perhaps it's worth leaving this until later. The [Groovy web console](http://groovyconsole.appspot.com) is an online Groovy console that should let you run most of the sample code provided in this book. Provided you have web access you can skip through to the next chapter and get straight into writing some code!
 
-However, please note that the web console has some limitations and won't run code that attempts to access URLs and files. 
+However, please note that the web console has some limitations and won't run code that attempts to access URLs and files.
 
 ## Install a Java Virtual Machine
 All methods for installing Groovy require that you have a Java Virtual Machine (JVM) installed. For the purposes of this book we'll use the Java 8 SE JDK (Java 8 Standard Edition Development Kit). You'll notice that Java 8 may also be represented as Java 1.8 - the former is the Java Platform version number (8) and the latter is the version string (1.8).
