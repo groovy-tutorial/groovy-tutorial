@@ -2,7 +2,7 @@
 
 I> Comments are used to clarify sections of Groovy code. Groovy supports two types of comments - single line and multi-line.
 
-Comments are read by the Groovy compiler - they're purely used to help humans follow your code. They're really important once your code becomes more complex and your programs larger. Key places you'll see/use comments are:
+Comments are not read by the Groovy compiler - they're purely used to help humans follow your code. They're really important once your code becomes more complex and your programs larger. Key places you'll see/use comments are:
 
 1. When a complex algorithm is being used
 2. When specific business logic is being implemented
