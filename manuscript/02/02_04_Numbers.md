@@ -42,7 +42,7 @@ Base-10 (decimal) scientific notation ({$$}a * 10^b{/$$}) can also be used by pl
 	def atomicMass = 1.67e-27
 
 
-The next example sets the `au` variable to {$$}1.49597870700 * 10^11{/$$} and then checks to make sure I haven't messed up the exponent:
+The next example sets the `au` variable to {$$}1.49597870700 * 10^{11}{/$$} and then checks to make sure I haven't messed up the exponent:
 
 {title="Just a check",lang=Java}
 	def au = 1.49597870700e11
